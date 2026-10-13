@@ -239,3 +239,22 @@
 | 4b-7,11 | `scripts/export-promotions-catalog.mjs` | 132f1b4 | f03ace8 | ลอกตามเดิม |
 | 4b-7,11 | `proxy.ts` | 132f1b4 | f03ace8 | ลอกตามเดิม |
 | 4b-7,11 | `scripts/i18n-swap-imports.mjs` | 132f1b4 | f03ace8 | ลอกตามเดิม |
+| 8-14 | `app/components/hub/DesktopHubModalProvider.tsx` | 132f1b4 | 95e4c5e | ลอกตามเดิม (manifest: ชื่อแบรนด์/สี) |
+| 8-14 | `app/components/hub/hubModalRegistry.ts` | 132f1b4 | 95e4c5e | ลอกตามเดิม (manifest: ชื่อแบรนด์/สี) |
+| 8-14 | `app/components/hub/HubNavLink.tsx` | 132f1b4 | 95e4c5e | ลอกตามเดิม (manifest: ชื่อแบรนด์/สี) |
+| 8-14 | `app/components/hub/useIsDesktop.ts` | 132f1b4 | 95e4c5e | ลอกตามเดิม (manifest: ชื่อแบรนด์/สี) |
+| 8-14 | `app/components/i18n/LanguagePickerProvider.tsx` | 132f1b4 | 95e4c5e | ลอกตามเดิม (manifest: ชื่อแบรนด์/สี) |
+| 8-14 | `app/components/i18n/LocaleFlag.tsx` | 132f1b4 | 95e4c5e | ลอกตามเดิม (manifest: ชื่อแบรนด์/สี) |
+| 8-14 | `app/components/lottery/lotteryUtils.ts` | 132f1b4 | 95e4c5e | ลอกตามเดิม (manifest: ชื่อแบรนด์/สี) |
+| 8-14 | `app/components/notifications/NotificationProvider.tsx` | 132f1b4 | 95e4c5e | ลอกตามเดิม (manifest: ชื่อแบรนด์/สี) |
+| 8-14 | `app/components/promotions/promotionDetailHref.ts` | 132f1b4 | 95e4c5e | ลอกตามเดิม (manifest: ชื่อแบรนด์/สี) |
+| 8-14 | `app/components/promotions/PromotionsCatalogProvider.tsx` | 132f1b4 | 95e4c5e | ลอกตามเดิม (manifest: ชื่อแบรนด์/สี) |
+| 8-14 | `app/components/pwa/PwaInstallProvider.tsx` | 132f1b4 | 95e4c5e | ลอกตามเดิม (manifest: ชื่อแบรนด์/สี) |
+| 8-14 | `app/components/vip/StackedAlphaVideo.tsx` | 132f1b4 | 95e4c5e | ลอกตามเดิม (manifest: ชื่อแบรนด์/สี) |
+| 8-14 | `app/data/notificationsMockData.ts` | 132f1b4 | 95e4c5e | ลอกตามเดิม (manifest: ชื่อแบรนด์/สี) |
+| 8-14 | `app/data/providerGamesData.ts` | 132f1b4 | 95e4c5e | ลอกตามเดิม (manifest: ชื่อแบรนด์/สี) |
+| 8-14 | `app/manifest.ts` | 132f1b4 | 95e4c5e | ลอกตามเดิม (manifest: ชื่อแบรนด์/สี) |
+| 8-14 | `app/serwist/[path]/route.ts` | 132f1b4 | 95e4c5e | ลอกตามเดิม (manifest: ชื่อแบรนด์/สี) |
+| 8-14 | `app/sw.ts` | 132f1b4 | 95e4c5e | ลอกตามเดิม (manifest: ชื่อแบรนด์/สี) |
+| 8-14 | `lib/vipRoutes.ts` | 132f1b4 | 95e4c5e | ลอกตามเดิม (manifest: ชื่อแบรนด์/สี) |
+| 8-14 | `next.config.ts` | 132f1b4 | 95e4c5e | ลอกตามเดิม (manifest: ชื่อแบรนด์/สี) |
