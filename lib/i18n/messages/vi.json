@@ -1,0 +1,1639 @@
+{
+  "meta": {
+    "title": "XGAMBET — Vương quốc giải trí",
+    "description": "Sảnh game giải trí XGAMBET"
+  },
+  "common": {
+    "language": "Ngôn ngữ",
+    "languagePicker": {
+      "title": "Chọn ngôn ngữ",
+      "description": "Thay đổi ngôn ngữ hiển thị trên trang",
+      "close": "Đóng bảng chọn ngôn ngữ"
+    },
+    "close": "Đóng",
+    "retry": "Thử lại",
+    "loading": "Đang tải…",
+    "confirm": "Xác nhận",
+    "cancel": "Hủy",
+    "processing": "Đang xử lý…",
+    "back": "Quay lại",
+    "next": "Tiếp theo",
+    "backStep": "Quay lại bước trước",
+    "loadFailed": "Không thể tải dữ liệu",
+    "emptyCategory": "Chưa có mục nào trong danh mục này",
+    "refCode": "Mã tham chiếu: {code}",
+    "units": {
+      "people": {
+        "other": "{n} người"
+      },
+      "records": {
+        "other": "{n} mục"
+      },
+      "credits": {
+        "other": "{n} credit"
+      },
+      "gems": {
+        "other": "{n} Gems"
+      },
+      "million": "{n}M"
+    },
+    "carousel": {
+      "prev": "Cuộn {title} về trước",
+      "next": "Cuộn {title} về sau"
+    },
+    "pagination": {
+      "label": "Phân trang",
+      "prev": "Trang trước",
+      "page": "Trang {page}",
+      "next": "Trang sau"
+    },
+    "notifications": {
+      "title": "Thông báo",
+      "close": "Đóng thông báo",
+      "tabsLabel": "Loại thông báo",
+      "tabs": {
+        "all": "Tất cả",
+        "privileges": "Đặc quyền",
+        "messages": "Tin nhắn"
+      },
+      "empty": "Không có tin nhắn mới",
+      "contactChannels": "Kênh liên hệ"
+    },
+    "coupon": {
+      "title": "Đổi mã coupon",
+      "close": "Đóng phần đổi mã coupon",
+      "description": "Nhập mã để đổi credit miễn phí",
+      "codeLabel": "Mã coupon",
+      "codePlaceholder": "Nhập mã coupon",
+      "codeRequired": "Vui lòng nhập mã coupon",
+      "submit": "Đổi credit miễn phí",
+      "submitting": "Đang kiểm tra..."
+    }
+  },
+  "nav": {
+    "bottomNav": {
+      "label": "Menu chính",
+      "withdraw": "Rút tiền",
+      "deposit": "Nạp tiền",
+      "menu": "Menu",
+      "cashback": "Hoàn tiền",
+      "contact": "Liên hệ"
+    },
+    "header": {
+      "openMenu": "Mở menu",
+      "promotions": "Khuyến mãi",
+      "profile": "Hồ sơ",
+      "home": "Trang chủ XGAMBET",
+      "showSidebar": "Hiện menu bên trái",
+      "hideSidebar": "Ẩn menu bên trái",
+      "mainCategories": "Danh mục chính",
+      "searchLabel": "Tìm game hoặc nhà cung cấp",
+      "searchPlaceholder": "Tìm kiếm",
+      "deposit": "Nạp tiền",
+      "depositAria": "Nạp tiền",
+      "transactionHistory": "Lịch sử giao dịch",
+      "walletDeposit": "Nạp tiền và xem số dư",
+      "walletBalance": "Số dư credit"
+    },
+    "desktop": {
+      "quickMenu": "Menu nhanh",
+      "rightRail": "Menu sự kiện và khuyến mãi",
+      "sidebar": "Menu chính trên máy tính",
+      "gameCategories": "Danh mục game",
+      "games": "Game",
+      "system": "Hệ thống",
+      "contactUs": "Liên hệ chúng tôi",
+      "topBar": "Thanh tìm kiếm và tài khoản",
+      "searchGames": "Tìm game",
+      "searchGamesPlaceholder": "Tìm game, nhà cung cấp hoặc tựa game yêu thích..."
+    },
+    "drawer": {
+      "title": "Menu",
+      "close": "Đóng menu",
+      "deposit": "Nạp tiền",
+      "withdraw": "Rút tiền",
+      "playBonus": "Thưởng doanh số cược",
+      "lossBonus": "Thưởng thua cược",
+      "referralLink": "Link giới thiệu",
+      "referralLinkLoginHint": "Đăng nhập để xem link của bạn",
+      "copyReferralLink": "Sao chép link giới thiệu",
+      "linkCopied": "Đã sao chép link",
+      "linkCopyFailed": "Không thể sao chép link",
+      "gameBalance": "Số dư game",
+      "gems": "Gems",
+      "tickets": "Vé"
+    },
+    "menuSections": {
+      "personal": "Cá nhân",
+      "privileges": "Đặc quyền",
+      "rewards": "Phần thưởng"
+    },
+    "menu": {
+      "profile": "Hồ sơ",
+      "transactions": "Giao dịch",
+      "rank": "Hạng",
+      "promotions": "Khuyến mãi",
+      "cashback": "Hoàn tiền",
+      "checkIn": "Điểm danh",
+      "referral": "Mời bạn bè",
+      "rewardHub": "Quay thưởng",
+      "wheel": "Vòng quay",
+      "gemsShop": "Cửa hàng Gems",
+      "activities": "Sự kiện",
+      "coupon": "Mã coupon",
+      "vipRank": "Cấp VIP",
+      "referralEarnings": "Thu nhập hoa hồng",
+      "referFriend": "Mời bạn bè",
+      "specialBonus": "Thưởng đặc biệt",
+      "history": "Lịch sử",
+      "language": "Ngôn ngữ"
+    },
+    "hub": {
+      "promotions": "Khuyến mãi",
+      "activities": "Sự kiện",
+      "cashback": "Hoàn tiền",
+      "gemsStore": "Cửa hàng Gems",
+      "account": "Thông tin tài khoản",
+      "referral": "Mời bạn bè",
+      "transactions": "Giao dịch",
+      "checkIn": "Điểm danh hằng ngày",
+      "vip": "VIP"
+    },
+    "footer": {
+      "label": "Chân trang XGAMBET",
+      "home": "Trang chủ XGAMBET",
+      "certifications": "Chứng nhận",
+      "auditedBy": "Kiểm toán bởi",
+      "approvedBy": "Được phê duyệt bởi",
+      "playResponsibly": "Chơi có trách nhiệm",
+      "ageRestriction": "Chỉ dành cho người từ 18 tuổi trở lên",
+      "paymentMethods": "Phương thức thanh toán",
+      "community": "Cộng đồng",
+      "liveChat": "Chat trực tuyến",
+      "social": "Mạng xã hội",
+      "links": "Liên kết chân trang",
+      "disclaimer": "XGAMBET cung cấp dịch vụ giải trí trực tuyến cho người chơi đủ tuổi theo quy định pháp luật tại nơi bạn sinh sống. Vui lòng chơi có trách nhiệm và tự chịu trách nhiệm về quyết định của mình. Thông tin công ty và giấy phép chỉ là dữ liệu mẫu để hiển thị (mock), dùng để thử nghiệm giao diện.",
+      "tagline": "Mọi trò chơi và sự kiện trong một nơi",
+      "columns": {
+        "platform": "Nền tảng",
+        "sports": "Thể thao",
+        "casino": "Casino",
+        "promotions": "Khuyến mãi",
+        "info": "Thông tin",
+        "services": "Dịch vụ"
+      },
+      "link": {
+        "profile": "Hồ sơ",
+        "transactions": "Giao dịch",
+        "lotterySlips": "Phiếu cược xổ số",
+        "accountSettings": "Cài đặt tài khoản",
+        "dailyCheckIn": "Điểm danh hằng ngày",
+        "gemStore": "Cửa hàng Gems",
+        "leaderboard": "Bảng xếp hạng",
+        "predictions": "Dự đoán",
+        "liveSports": "Thể thao trực tiếp",
+        "sports": "Thể thao",
+        "esports": "Esports",
+        "tournaments": "Giải đấu",
+        "football": "Bóng đá",
+        "basketball": "Bóng rổ",
+        "tennis": "Tennis",
+        "cricket": "Cricket",
+        "lobby": "Sảnh game",
+        "popularGames": "Game phổ biến",
+        "liveCasino": "Casino trực tuyến",
+        "newGames": "Game mới",
+        "crashGames": "Game Crash",
+        "tableGames": "Game bàn",
+        "slots": "Slots",
+        "bonusBuy": "Mua bonus",
+        "roulette": "Roulette",
+        "providers": "Nhà cung cấp",
+        "allPromotions": "Tất cả khuyến mãi",
+        "sportsWelcome": "Thưởng chào mừng Thể thao",
+        "casinoWelcome": "Thưởng chào mừng Casino",
+        "weeklyCashback": "Hoàn tiền hằng tuần",
+        "sportsClub": "Câu lạc bộ Thể thao",
+        "vipClub": "Câu lạc bộ VIP",
+        "referFriends": "Mời bạn bè",
+        "aboutUs": "Về chúng tôi",
+        "events": "Sự kiện",
+        "careers": "Tuyển dụng",
+        "contactUs": "Liên hệ chúng tôi",
+        "brand": "Thương hiệu",
+        "responsibleGaming": "Chơi có trách nhiệm",
+        "helpCenter": "Trung tâm trợ giúp",
+        "guide": "Hướng dẫn",
+        "luckyWheel": "Vòng quay may mắn",
+        "lottery": "Xổ số",
+        "fishing": "Bắn cá",
+        "lossRebate": "Hoàn tiền thua cược",
+        "casino": "Casino",
+        "promotions": "Khuyến mãi",
+        "vipLevel": "Cấp VIP",
+        "privacy": "Chính sách bảo mật",
+        "terms": "Điều khoản & Điều kiện",
+        "feedback": "Gửi phản hồi",
+        "sitemap": "Sơ đồ trang"
+      }
+    }
+  },
+  "auth": {
+    "login": "Đăng nhập",
+    "signUp": "Đăng ký",
+    "signUpShort": "Đăng ký",
+    "logout": "Đăng xuất",
+    "loginSheet": {
+      "close": "Đóng đăng nhập",
+      "subtitle": "Dùng số điện thoại và mật khẩu bạn đã đăng ký",
+      "submitting": "Đang đăng nhập...",
+      "noAccount": "Chưa có tài khoản?",
+      "success": "Đăng nhập thành công",
+      "failed": "Đăng nhập thất bại"
+    },
+    "signUpSheet": {
+      "close": "Đóng đăng ký",
+      "welcome": "Chào mừng đến với XGAMBET",
+      "tagline": "Bắt đầu cuộc vui theo cách của bạn",
+      "haveAccount": "Đã có tài khoản?",
+      "submitting": "Đang đăng ký...",
+      "success": "Đăng ký hoàn tất. Chào mừng bạn!",
+      "failed": "Đăng ký thất bại",
+      "pickerClose": "Đóng bảng chọn",
+      "loadingBanks": "Đang tải danh sách ngân hàng…",
+      "banksFailed": "Không thể tải danh sách ngân hàng",
+      "loadingChannels": "Đang tải danh sách kênh…",
+      "channelsFailed": "Không thể tải danh sách kênh"
+    },
+    "fields": {
+      "phone": "Số điện thoại",
+      "phonePlaceholder": "Nhập số điện thoại",
+      "password": "Mật khẩu",
+      "passwordPlaceholder": "Nhập mật khẩu",
+      "confirmPassword": "Xác nhận mật khẩu",
+      "confirmPasswordPlaceholder": "Nhập lại mật khẩu",
+      "showPassword": "Hiện mật khẩu",
+      "hidePassword": "Ẩn mật khẩu",
+      "firstName": "Tên",
+      "lastName": "Họ",
+      "bankAccount": "Số tài khoản ngân hàng",
+      "bankAccountPlaceholder": "Số tài khoản",
+      "bank": "Ngân hàng",
+      "bankPlaceholder": "Chọn ngân hàng",
+      "channel": "Bạn biết đến chúng tôi qua đâu?",
+      "channelPlaceholder": "Chọn kênh"
+    },
+    "validation": {
+      "phone": "Số điện thoại gồm 10 chữ số, bắt đầu bằng 0",
+      "passwordRequired": "Vui lòng nhập mật khẩu",
+      "passwordLength": "Mật khẩu phải từ 6–32 ký tự",
+      "passwordMismatch": "Mật khẩu không khớp",
+      "firstName": "Vui lòng nhập tên, chỉ dùng chữ cái",
+      "lastName": "Vui lòng nhập họ, chỉ dùng chữ cái",
+      "bankAccount": "Số tài khoản phải gồm 10–12 chữ số",
+      "bankRequired": "Vui lòng chọn ngân hàng",
+      "channelRequired": "Vui lòng chọn kênh"
+    },
+    "account": {
+      "title": "Thông tin tài khoản",
+      "profile": "Hồ sơ",
+      "closeProfile": "Đóng hồ sơ",
+      "loadingProfile": "Đang tải hồ sơ…",
+      "profileFailed": "Không thể tải hồ sơ",
+      "loading": "Đang tải thông tin tài khoản…",
+      "failed": "Không thể tải thông tin tài khoản",
+      "retryHint": "Hãy thử lại. Nếu vẫn không được, hãy đăng xuất rồi đăng nhập lại."
+    },
+    "loginPrompt": {
+      "title": "Đăng nhập để xem nội dung này",
+      "description": "Mục này chỉ dành cho thành viên"
+    },
+    "logoutConfirm": {
+      "title": "Đăng xuất?",
+      "description": "Bạn sẽ cần đăng nhập lại để nạp tiền, rút tiền hoặc chơi bằng tài khoản này",
+      "stay": "Ở lại"
+    }
+  },
+  "errors": {
+    "notFoundTitle": "Không tìm thấy trang",
+    "backHome": "Về trang chủ",
+    "notFound": {
+      "metaTitle": "Không tìm thấy trang — XGAMBET",
+      "title": "Chúng tôi không tìm thấy trang này",
+      "description": "Liên kết có thể bị sai hoặc trang đã được chuyển đi",
+      "viewPromotions": "Xem khuyến mãi"
+    },
+    "route": {
+      "title": "Đã xảy ra lỗi",
+      "description": "Không thể tải trang này. Vui lòng thử lại. Nếu sự cố vẫn tiếp diễn, hãy liên hệ bộ phận chăm sóc khách hàng."
+    },
+    "offline": {
+      "title": "Không có kết nối internet",
+      "description": "Hãy bật kết nối rồi mở lại XGAMBET"
+    },
+    "api": {
+      "network": "Không thể kết nối đến máy chủ. Hãy kiểm tra internet và thử lại.",
+      "parse": "Không thể đọc phản hồi từ máy chủ",
+      "unauthorized": "Vui lòng đăng nhập lại",
+      "generic": "Đã xảy ra lỗi. Vui lòng thử lại."
+    }
+  },
+  "home": {
+    "categories": {
+      "home": "Trang chủ",
+      "casino": "Casino",
+      "slots": "Slots",
+      "fishing": "Bắn cá",
+      "sports": "Thể thao",
+      "lottery": "Xổ số",
+      "cards": "Game bài"
+    },
+    "categoryNav": {
+      "ariaLabel": "Danh mục game"
+    },
+    "sections": {
+      "hotGames": "Game hot",
+      "slots": "SLOTS",
+      "casino": "Casino",
+      "fishing": "Bắn cá",
+      "sports": "Thể thao",
+      "empty": "Chưa có game nào trong danh mục này"
+    },
+    "intro": {
+      "title": "Vũ trụ giải trí",
+      "gamesBefore": "Hơn",
+      "gamesAfter": "game,",
+      "providersBefore": "hơn",
+      "providersAfter": "nhà cung cấp,",
+      "sports": "và các sự kiện thể thao trên toàn thế giới"
+    },
+    "featureActions": {
+      "ariaLabel": "Tính năng đặc biệt"
+    },
+    "search": {
+      "formAriaLabel": "Tìm game và nhà cung cấp",
+      "label": "Tìm game hoặc nhà cung cấp",
+      "clear": "Xóa tìm kiếm"
+    },
+    "hallOfFame": {
+      "tabsAriaLabel": "Chọn bảng Thành tích hàng đầu",
+      "empty": "Chưa có dữ liệu"
+    },
+    "carousel": {
+      "prev": "Slide trước",
+      "next": "Slide sau",
+      "scroll": "Duyệt banner",
+      "pickSlide": "Chọn slide banner",
+      "goToSlide": "Đến slide {index}"
+    },
+    "peekCarousel": {
+      "ariaLabel": "Banner khuyến mãi và sự kiện"
+    },
+    "promoCarousel": {
+      "ariaLabel": "Banner khuyến mãi và đặc quyền",
+      "listAriaLabel": "Khuyến mãi"
+    },
+    "welcomeBanner": {
+      "ariaLabel": "Banner chào mừng và khuyến mãi",
+      "slidesAriaLabel": "Các slide banner chào mừng"
+    },
+    "auth": {
+      "login": "Đăng nhập",
+      "signUp": "Đăng ký",
+      "loginToSeeEvents": "Đăng nhập hoặc đăng ký để xem sự kiện"
+    },
+    "events": {
+      "title": "Sự kiện",
+      "slidesAriaLabel": "Các slide {title}",
+      "goTo": "Đến {name}"
+    },
+    "announcement": {
+      "ariaLabel": "Thông báo hệ thống",
+      "label": "Tin tức"
+    },
+    "categoryProviders": {
+      "comingSoon": "Nhà cung cấp cho danh mục này sắp ra mắt. Hiện bạn có thể thử Casino, Slots, Bắn cá hoặc Thể thao.",
+      "liveCasino": "Casino trực tuyến",
+      "providersFallback": "Nhà cung cấp",
+      "providerCount": {
+        "other": "({count} nhà cung cấp)"
+      },
+      "gamesByProviderAriaLabel": "Game {category} của nhà cung cấp đã chọn",
+      "listAriaLabel": "Nhà cung cấp trong danh mục đã chọn",
+      "searchPlaceholder": {
+        "casino": "Tìm casino trực tuyến | Nhà cung cấp",
+        "fishing": "Tìm game bắn cá | Nhà cung cấp",
+        "cards": "Tìm game bài | Nhà cung cấp",
+        "sports": "Tìm thể thao | Nhà cung cấp",
+        "default": "Tìm game | Nhà cung cấp"
+      }
+    },
+    "quickBanners": {
+      "ariaLabel": "Điểm nổi bật nhanh",
+      "promo": {
+        "title": "Khuyến mãi đặc biệt",
+        "subtitle": "Ưu đãi độc quyền dành riêng cho bạn"
+      },
+      "event": {
+        "title": "Sự kiện",
+        "subtitle": "Sự kiện diễn ra suốt ngày đêm"
+      },
+      "news": {
+        "title": "Tin tức",
+        "subtitle": "Tin tức bạn không nên bỏ lỡ"
+      }
+    },
+    "mostOnline": {
+      "title": "Đang được chơi nhiều nhất",
+      "favoriteAdd": "Thêm vào yêu thích",
+      "favoriteRemove": "Xóa khỏi yêu thích",
+      "playingNow": "{count} đang chơi"
+    },
+    "popular": {
+      "title": "Phổ biến",
+      "empty": "Chưa có mục nào trong danh mục này"
+    },
+    "providers": {
+      "empty": "Chưa có nhà cung cấp",
+      "marqueeAriaLabel": "Nhà cung cấp game",
+      "logoAriaLabel": "Nhà cung cấp {name}"
+    },
+    "a2hs": {
+      "title": "Thêm vào màn hình chính",
+      "cardTitle": "Thêm lối tắt ngay hôm nay!",
+      "cardSubtitle": "Trải nghiệm tốt hơn. Thêm ngay",
+      "platformsAriaLabel": "Chọn thiết bị của bạn",
+      "stepsTitle": "Cách thêm lối tắt ({platform})",
+      "installed": "Đã cài đặt ứng dụng",
+      "steps": {
+        "android1": "Nhấn vào menu ⋮ ở góc trên bên phải của Chrome",
+        "android2": "Chọn \"Cài đặt ứng dụng\" hoặc \"Thêm vào màn hình chính\"",
+        "android3": "Nhấn \"Cài đặt\" hoặc \"Thêm\" để xác nhận",
+        "ios1": "Nhấn nút \"Chia sẻ\" ở cuối Safari",
+        "ios2": "Chọn \"Thêm vào Màn hình chính\"",
+        "ios3": "Nhấn \"Thêm\" ở góc trên bên phải để xác nhận",
+        "launch": "Mở trang ngay từ biểu tượng ứng dụng của chúng tôi"
+      }
+    },
+    "desktopMenu": {
+      "referral": {
+        "title": "Mời bạn bè",
+        "subtitle": "Nhận thưởng 2 tầng",
+        "ariaLabel": "Mời bạn bè, nhận thưởng 2 tầng"
+      },
+      "checkIn": {
+        "title": "Điểm danh",
+        "subtitle": "ĐIỂM DANH",
+        "ariaLabel": "Điểm danh hằng ngày"
+      },
+      "wheel": {
+        "title": "Vòng quay",
+        "subtitle": "VÒNG QUAY MAY MẮN",
+        "ariaLabel": "Vòng quay may mắn"
+      },
+      "gems": {
+        "title": "Cửa hàng Gems",
+        "subtitle": "CỬA HÀNG GEMS",
+        "ariaLabel": "Cửa hàng Gems"
+      },
+      "coupon": {
+        "title": "Mã coupon",
+        "subtitle": "COUPON",
+        "ariaLabel": "Đổi mã coupon"
+      },
+      "vip": {
+        "title": "Hạng VIP",
+        "subtitle": "Đặc quyền thành viên",
+        "ariaLabel": "Hạng VIP, đặc quyền thành viên"
+      }
+    }
+  },
+  "games": {
+    "filters": {
+      "allInOne": "Tất cả trong một",
+      "allProviders": "Tất cả nhà cung cấp",
+      "allGameProviders": "Tất cả nhà cung cấp",
+      "dropsAndWins": "Drops & Wins",
+      "chicken": "Đá gà",
+      "buyFeature": "Mua vòng quay miễn phí",
+      "jackpot": "Jackpot",
+      "megaways": "Megaways",
+      "baccarat": "Baccarat",
+      "roulette": "Roulette",
+      "blackjack": "Blackjack",
+      "gameShows": "Game Shows",
+      "sicbo": "Tài xỉu/Rồng Hổ",
+      "football": "Bóng đá",
+      "basketball": "Bóng rổ",
+      "esports": "Esports",
+      "boxing": "Muay Thái",
+      "tennis": "Tennis",
+      "arcade": "Arcade",
+      "multiplayer": "Nhiều người chơi",
+      "hot": "Xu hướng"
+    },
+    "subHeader": {
+      "back": "Quay lại"
+    },
+    "breadcrumb": {
+      "ariaLabel": "Đường dẫn",
+      "backToCategory": "Quay lại tất cả {category}"
+    },
+    "slots": {
+      "title": "Slots",
+      "providerAriaLabel": "{name} — Slots",
+      "providerCount": {
+        "other": "({count} nhà cung cấp)"
+      }
+    },
+    "casino": {
+      "title": "Casino trực tuyến",
+      "count": {
+        "other": "({count} bàn/nhà cung cấp)"
+      }
+    },
+    "sport": {
+      "title": "Thể thao",
+      "count": {
+        "other": "({count} mục/nhà cung cấp)"
+      }
+    },
+    "providerGames": {
+      "searchPlaceholder": "Tìm game của nhà cung cấp này",
+      "backToCategory": "Quay lại tất cả {category}",
+      "gameCount": {
+        "other": "({count} game)"
+      },
+      "notFoundTitle": "Không tìm thấy game",
+      "notFoundHint": "Hãy thử từ khóa khác, hoặc xóa tìm kiếm để xem tất cả game",
+      "favoriteAdd": "Thêm vào yêu thích",
+      "favoriteRemove": "Xóa khỏi yêu thích"
+    },
+    "play": {
+      "playingAriaLabel": "Đang chơi {title}",
+      "fullscreen": "Toàn màn hình",
+      "exitFullscreen": "Thoát toàn màn hình",
+      "iframePlaceholder": "Khu vực iframe game (bản mẫu)"
+    }
+  },
+  "lottery": {
+    "hub": {
+      "title": "Xổ số",
+      "subtitle": "Chọn loại xổ số để đặt cược",
+      "featuredAria": "Xổ số nổi bật",
+      "allMarketsAria": "Tất cả xổ số",
+      "mySlips": "Phiếu của tôi",
+      "mySlipsAria": "Xem phiếu của tôi",
+      "mySlipsPendingAria": "Xem phiếu của tôi — {count} đang xử lý",
+      "daysLeft": {
+        "other": "{count} ngày"
+      }
+    },
+    "markets": {
+      "generic": "Xổ số",
+      "thaiGovernment": "Xổ số Chính phủ Thái Lan",
+      "yiki5": "Yiki 5 phút",
+      "yiki15": "Yiki 15 phút",
+      "yiki30": "Yiki 30 phút",
+      "baac": "Xổ số BAAC",
+      "laos": "Xổ số Lào",
+      "hanoi": "Xổ số Hà Nội",
+      "malaysia": "Xổ số Malaysia",
+      "dowJones": "Xổ số Dow Jones",
+      "china": "Xổ số chứng khoán Trung Quốc",
+      "germany": "Xổ số chứng khoán Đức",
+      "russia": "Xổ số chứng khoán Nga",
+      "korea": "Xổ số chứng khoán Hàn Quốc",
+      "nikkei": "Xổ số Nikkei",
+      "uk": "Xổ số chứng khoán Anh",
+      "hongKong": "Xổ số Hang Seng",
+      "taiwan": "Xổ số chứng khoán Đài Loan",
+      "singapore": "Xổ số chứng khoán Singapore",
+      "india": "Xổ số chứng khoán Ấn Độ",
+      "egypt": "Xổ số chứng khoán Ai Cập"
+    },
+    "status": {
+      "open": "Đang mở",
+      "closed": "Đã đóng",
+      "closedAlready": "Đã đóng cược",
+      "closesIn": "Đóng sau",
+      "closesInTime": "Đóng sau {time}",
+      "countdownDays": "{days} ngày {time}"
+    },
+    "groups": {
+      "three": "3 chữ số",
+      "two": "2 chữ số",
+      "run": "Chạy"
+    },
+    "betTypes": {
+      "threeTop": "3 số trên",
+      "threeTod": "3 số đảo",
+      "threeFront": "3 số đầu",
+      "threeBottom": "3 số dưới",
+      "threeTopTod": "3 trên đảo",
+      "threeTopReverse": "3 trên đảo ngược",
+      "threeTopComboTod": "3 trên + đảo",
+      "twoTop": "2 số trên",
+      "twoBottom": "2 số dưới",
+      "twoTopReverse": "2 trên đảo ngược",
+      "twoBottomReverse": "2 dưới đảo ngược",
+      "twoTopBottom": "2 trên/dưới",
+      "twoTopBottomReverse": "2 trên/dưới đảo ngược",
+      "runTop": "Chạy trên",
+      "runBottom": "Chạy dưới"
+    },
+    "round": {
+      "time": "Kỳ {time}",
+      "draw": "Quay số {date}",
+      "market": "{market} {date}",
+      "numbered": "Kỳ {n}",
+      "current": "Kỳ quay hiện tại"
+    },
+    "rounds": {
+      "empty": "Chưa có kỳ nào mở cược",
+      "listAria": "Các kỳ",
+      "showAll": {
+        "other": "Xem tất cả các kỳ ({count} kỳ)"
+      },
+      "play": "Cược ngay",
+      "loading": "Đang tải các kỳ…",
+      "loadError": "Không thể tải các kỳ",
+      "openCountPrefix": "Số kỳ đang mở:",
+      "openCountSuffix": ""
+    },
+    "market": {
+      "sidebarAria": "Các loại xổ số",
+      "rules": "Luật chơi / Tỷ lệ trả thưởng",
+      "notFoundTitle": "Không tìm thấy xổ số",
+      "notFoundDescription": "Loại xổ số này có thể không còn khả dụng. Hãy chọn loại khác ở trang xổ số.",
+      "viewAll": "Xem tất cả xổ số",
+      "marketNotFound": "Không tìm thấy loại xổ số"
+    },
+    "rules": {
+      "payoutHeading": "Tỷ lệ trả thưởng cho 1 baht",
+      "limitsHeading": "Tiền cược mỗi phiếu",
+      "minBet": "Tối thiểu",
+      "maxBet": "Tối đa"
+    },
+    "results": {
+      "title": "Kết quả mới nhất",
+      "morePage": "Tất cả kết quả >>",
+      "tableAria": "Kết quả xổ số mới nhất",
+      "colMarket": "Xổ số",
+      "colDate": "Kỳ / Ngày",
+      "empty": "Chưa có kết quả",
+      "today": "Hôm nay"
+    },
+    "thaiResult": {
+      "title": "Kết quả kỳ trước",
+      "firstPrize": "Giải nhất",
+      "back3": "3 số cuối"
+    },
+    "draw": {
+      "aria": "Chi tiết kỳ quay"
+    },
+    "board": {
+      "pickAria": "Chọn số",
+      "reverse": "Đảo",
+      "actionsAria": "Bước tiếp theo",
+      "back": "Quay lại",
+      "enterPrice": "Nhập tiền cược",
+      "digitGroupAria": "Số chữ số",
+      "betTypeAria": "Loại cược",
+      "payout": "Trả thưởng {rate}",
+      "loading": "Đang tải bảng cược…",
+      "roundNotFoundTitle": "Không tìm thấy kỳ",
+      "roundNotFoundNext": "Kỳ này có thể đã đóng. Hãy chọn kỳ tiếp theo trong danh sách.",
+      "roundNotFoundOther": "Kỳ này có thể đã đóng. Hãy chọn kỳ khác trong danh sách.",
+      "viewAllRounds": "Xem tất cả các kỳ"
+    },
+    "inputMode": {
+      "aria": "Cách nhập số",
+      "manual": "Nhập số",
+      "grid": "Chọn từ bảng"
+    },
+    "feedback": {
+      "duplicate": "{number} đã có trong phiếu cược",
+      "added": {
+        "other": "Đã thêm {number} vào phiếu cược ({count} mục)"
+      },
+      "undone": "Đã hoàn tác mục vừa nhập",
+      "closed": "Đã đóng cược",
+      "removed": "Đã xóa {number} khỏi phiếu cược"
+    },
+    "pad": {
+      "hundreds": "Hàng trăm",
+      "selectedCount": "Đã chọn {count}",
+      "gridAria": "Bảng số",
+      "enteredAria": "Số đã nhập {value}",
+      "empty": "trống",
+      "clear": "Xóa",
+      "backspace": "Xóa chữ số cuối"
+    },
+    "slip": {
+      "itemCount": {
+        "other": "{count} mục"
+      },
+      "removeAria": "Xóa {label} {number}",
+      "priceAria": "Tiền cược cho {label} {number}",
+      "enterPrice": "Nhập tiền cược",
+      "toolbarAria": "Công cụ phiếu cược",
+      "undo": "Hoàn tác mục vừa nhập",
+      "clearAll": "Xóa phiếu cược",
+      "emptyPickType": "Chọn loại cược, sau đó chạm vào các số để thêm vào phiếu cược",
+      "emptyEnterNumber": "Chưa có gì ở đây. Hãy nhập các số bạn muốn cược."
+    },
+    "price": {
+      "aria": "Nhập tiền cược và gửi phiếu",
+      "sameForAll": "Cùng mức cược cho tất cả",
+      "edit": "Sửa",
+      "total": "Tổng cộng",
+      "chipsAria": "Chọn mức cược",
+      "backToNumbers": "Sửa số",
+      "submitting": "Đang gửi…",
+      "submit": "Gửi phiếu cược"
+    },
+    "submit": {
+      "failedTitle": "Không thể gửi phiếu cược",
+      "done": "OK",
+      "close": "Đóng",
+      "networkError": "Không thể kết nối đến máy chủ"
+    },
+    "summary": {
+      "aria": "Tóm tắt phiếu cược",
+      "drawDate": "Ngày quay số {date}",
+      "copyAria": "Sao chép mã phiếu cược",
+      "slipId": "Phiếu #{id}",
+      "purchased": "Mua lúc {date}",
+      "submitted": "Đã gửi",
+      "note": "Ghi chú: {note}",
+      "noNote": "Không có ghi chú",
+      "stake": "Tiền cược",
+      "winLoss": "Thắng/Thua",
+      "allSlips": "Tất cả phiếu cược",
+      "continue": "Tiếp tục cược",
+      "copied": "Đã sao chép mã phiếu cược",
+      "copyFailed": "Không thể sao chép mã phiếu cược"
+    },
+    "slips": {
+      "title": "Tất cả phiếu cược",
+      "loading": "Đang tải phiếu cược…",
+      "emptyTitle": "Chưa có phiếu cược nào",
+      "emptyDescription": "Chọn một loại xổ số và gửi phiếu cược đầu tiên của bạn.",
+      "goPlay": "Đến xổ số",
+      "stake": "Tiền cược {amount}",
+      "summaryTitle": "Tóm tắt phiếu cược",
+      "notFoundTitle": "Không tìm thấy phiếu cược",
+      "notFoundDescription": "Phiếu cược có thể đã bị xóa hoặc liên kết không hợp lệ.",
+      "viewAll": "Xem tất cả phiếu cược",
+      "tabs": {
+        "pending": "Đang xử lý",
+        "history": "Lịch sử",
+        "aria": "Loại phiếu"
+      },
+      "filters": {
+        "aria": "Bộ lọc phiếu",
+        "market": "Thị trường",
+        "result": "Kết quả",
+        "range": "Khoảng thời gian",
+        "allMarkets": "Tất cả thị trường",
+        "allResults": "Tất cả kết quả",
+        "today": "Hôm nay",
+        "days7": "7 ngày",
+        "days30": "30 ngày",
+        "custom": "Tùy chọn"
+      },
+      "status": {
+        "waitingDraw": "Chờ quay số",
+        "waitingSettle": "Chờ tính kết quả",
+        "won": "Trúng thưởng",
+        "lost": "Không trúng",
+        "void": "Đã hủy (hoàn tiền)"
+      },
+      "summary": {
+        "count": "{count} phiếu",
+        "stake": "Tổng cược {amount}",
+        "net": "Thắng/thua ròng"
+      },
+      "card": {
+        "drawAt": "Quay số {date}",
+        "settledAt": "Có kết quả {date}"
+      },
+      "emptyPending": {
+        "title": "Không có phiếu đang xử lý",
+        "description": "Phiếu đã gửi và chưa có kết quả sẽ hiển thị ở đây."
+      },
+      "emptyHistory": {
+        "title": "Chưa có lịch sử phiếu",
+        "description": "Phiếu đã có kết quả được lưu trong {days} ngày."
+      },
+      "emptyFiltered": "Không có phiếu phù hợp bộ lọc",
+      "clearFilters": "Xóa bộ lọc",
+      "loadMore": "Tải thêm",
+      "loadingMore": "Đang tải…",
+      "loadMoreError": "Không tải thêm được. Vui lòng thử lại.",
+      "loadError": "Không tải được phiếu",
+      "retentionNote": "Lịch sử được lưu {days} ngày"
+    }
+  },
+  "wallet": {
+    "shared": {
+      "submitting": "Đang gửi...",
+      "copied": "Đã sao chép",
+      "copyAccountNumber": "Sao chép số tài khoản",
+      "currencyUnit": "THB"
+    },
+    "deposit": {
+      "title": "Nạp tiền",
+      "close": "Đóng nạp tiền",
+      "selectMethod": "Chọn phương thức nạp tiền",
+      "methodsAria": "Phương thức nạp tiền",
+      "methodsLoading": "Đang tải phương thức nạp tiền…",
+      "methodsError": "Không thể tải phương thức nạp tiền",
+      "bankAccountLoading": "Đang tải tài khoản nhận tiền…",
+      "bankAccountError": "Không thể tải tài khoản nhận tiền",
+      "methods": {
+        "bank": {
+          "title": "Tài khoản ngân hàng",
+          "subtitle": "Chuyển khoản qua tài khoản ngân hàng"
+        },
+        "gateway": {
+          "title": "Cổng thanh toán",
+          "subtitle": "Nạp tiền qua cổng thanh toán"
+        },
+        "truemoney": {
+          "title": "Ví TrueMoney",
+          "subtitle": "Nạp tiền qua ví TrueMoney"
+        }
+      },
+      "bank": {
+        "title": "Nạp tiền qua tài khoản ngân hàng",
+        "back": "Quay lại phương thức nạp tiền",
+        "bankLabel": "Ngân hàng",
+        "accountName": "Tên tài khoản",
+        "accountNumber": "Số tài khoản",
+        "amountLabel": "Số tiền nạp",
+        "quickAmount": "Số tiền nhanh",
+        "quickAmountHint": "Chọn một mức hoặc nhập số tiền khác",
+        "next": "Tiếp theo"
+      },
+      "confirm": {
+        "title": "Xác nhận nạp tiền",
+        "back": "Quay lại sửa số tiền",
+        "step": "Bước {current}/{total}",
+        "transferAmount": "Số tiền cần chuyển",
+        "accountNameLabel": "Tên tài khoản:",
+        "accountNumberLabel": "Số tài khoản:",
+        "sampleNote": "Thông tin tài khoản mẫu",
+        "slipTitle": "Đính kèm biên lai chuyển khoản",
+        "slipPick": "Chạm để đính kèm biên lai",
+        "slipChange": "Chạm lần nữa để đổi ảnh",
+        "slipFromDevice": "Chọn ảnh từ thiết bị của bạn",
+        "slipHint": "Hãy đính kèm biên lai sau khi chuyển khoản xong",
+        "submit": "Xác nhận nạp tiền"
+      },
+      "finalConfirm": {
+        "title": "Gửi yêu cầu nạp tiền?",
+        "description": "Kiểm tra số tiền và biên lai trước khi gửi để duyệt",
+        "confirm": "Gửi yêu cầu nạp tiền",
+        "amountLabel": "Số tiền nạp"
+      }
+    },
+    "withdraw": {
+      "title": "Rút tiền",
+      "close": "Đóng rút tiền",
+      "accountLoading": "Đang tải tài khoản nhận tiền…",
+      "accountError": "Không thể tải tài khoản nhận tiền",
+      "changeAccount": "Đổi tài khoản nhận tiền",
+      "transferToYourAccount": "Chuyển về tài khoản của bạn",
+      "amountLabel": "Số tiền rút",
+      "available": "Khả dụng ฿{amount}",
+      "withdrawAll": "Rút toàn bộ",
+      "quickAmountHint": "Chạm vào một mức để chỉnh sửa",
+      "submit": "Xác nhận rút tiền",
+      "confirm": {
+        "title": "Gửi yêu cầu rút tiền?",
+        "description": "Chuyển đến {bank} {account}",
+        "confirm": "Xác nhận rút tiền",
+        "amountLabel": "Số tiền rút"
+      }
+    },
+    "pending": {
+      "deposit": {
+        "title": "Nạp tiền đang chờ xử lý",
+        "subtitle": "Đang chờ đối soát giao dịch chuyển khoản của bạn"
+      },
+      "withdraw": {
+        "title": "Rút tiền đang chờ xử lý",
+        "subtitle": "Yêu cầu của bạn đang được xử lý"
+      },
+      "rows": {
+        "channel": "Phương thức",
+        "reference": "Mã tham chiếu",
+        "transactionAt": "Ngày",
+        "receivingAccount": "Tài khoản nhận"
+      },
+      "close": "Đóng",
+      "done": "Xong",
+      "viewHistory": "Xem lịch sử giao dịch",
+      "copyReference": "Sao chép mã tham chiếu",
+      "referenceCopied": "Đã sao chép mã tham chiếu",
+      "referenceCopyFailed": "Không thể sao chép mã tham chiếu"
+    }
+  },
+  "transactions": {
+    "title": "Lịch sử giao dịch",
+    "pageLoading": "Đang tải...",
+    "kindTabs": {
+      "aria": "Loại giao dịch",
+      "deposit": "Nạp tiền",
+      "withdraw": "Rút tiền",
+      "promotion": "Khuyến mãi",
+      "bet": "Cược"
+    },
+    "filter": {
+      "label": "Chọn ngày",
+      "openCalendar": "Mở bộ chọn ngày",
+      "clear": "Xóa",
+      "search": "Tìm kiếm"
+    },
+    "calendar": {
+      "title": "Chọn khoảng ngày",
+      "close": "Đóng",
+      "cancel": "Hủy",
+      "confirm": "Xác nhận"
+    },
+    "status": {
+      "completed": "Thành công",
+      "pending": "Đang chờ",
+      "failed": "Thất bại"
+    },
+    "betType": {
+      "bet": "Cược",
+      "result": "Kết quả"
+    },
+    "columns": {
+      "amount": "Số tiền",
+      "channel": "Phương thức",
+      "account": "Tài khoản",
+      "createdAt": "Ngày giờ",
+      "status": "Trạng thái",
+      "detail": "Chi tiết",
+      "completedAt": "Hoàn thành lúc",
+      "promotionName": "Khuyến mãi",
+      "playStart": "Ngày bắt đầu",
+      "playEnd": "Ngày kết thúc",
+      "freeSpins": "Vòng quay miễn phí",
+      "perRound": "Mỗi vòng",
+      "provider": "Nhà cung cấp",
+      "gameName": "Game",
+      "expiresWithin": "Hết hạn sau",
+      "game": "Game",
+      "date": "Ngày",
+      "time": "Giờ",
+      "type": "Loại",
+      "betAmount": "Số tiền",
+      "openingBalance": "Số dư đầu",
+      "closingBalance": "Số dư cuối"
+    },
+    "empty": "Không có dữ liệu",
+    "paginationAria": "Các trang lịch sử cược",
+    "loginRequired": "Vui lòng đăng nhập để xem giao dịch của bạn",
+    "loadError": "Không thể tải giao dịch",
+    "retry": "Thử lại",
+    "loading": "Đang tải giao dịch…",
+    "summary": {
+      "depositTotal": "Tổng nạp:",
+      "withdrawTotal": "Tổng rút:",
+      "promotionClaims": "Khuyến mãi đã nhận:",
+      "winLossTotal": "Tổng thắng/thua:",
+      "stakeTotal": "Tổng tiền cược:"
+    }
+  },
+  "profile": {
+    "logout": "Đăng xuất",
+    "retry": "Thử lại",
+    "backHome": "Về trang chủ",
+    "field": {
+      "copy": "Sao chép",
+      "edit": "Sửa"
+    },
+    "account": {
+      "title": "Thông tin tài khoản",
+      "loading": "Đang tải thông tin tài khoản…",
+      "loadErrorTitle": "Không thể tải thông tin tài khoản",
+      "loadErrorDescription": "Vui lòng thử lại. Nếu vẫn không được, hãy đăng xuất rồi đăng nhập lại.",
+      "tabs": {
+        "personal": "Thông tin cá nhân",
+        "bank": "Tài khoản ngân hàng"
+      },
+      "gameUser": "Tên đăng nhập game",
+      "copyGameUser": "Sao chép tên đăng nhập game",
+      "gameUserCopied": "Đã sao chép tên đăng nhập game",
+      "copyFailed": "Không thể sao chép",
+      "password": "Mật khẩu",
+      "changePassword": "Đổi mật khẩu",
+      "transactionHistory": "Lịch sử giao dịch",
+      "transactionHistoryHint": "Nạp tiền · Rút tiền · Cược"
+    },
+    "avatar": {
+      "change": "Đổi ảnh đại diện",
+      "tapToChange": "Chạm vào ảnh để thay đổi",
+      "pickerTitle": "Chọn ảnh đại diện",
+      "pickerDescription": "Chọn một nhân vật — được lưu ngay khi bạn chạm",
+      "saveFailed": "Không thể lưu. Vui lòng thử lại.",
+      "close": "Đóng",
+      "srLabel": "Ảnh đại diện của {name}",
+      "presetName": "Nhân vật {n}"
+    },
+    "hub": {
+      "navAriaLabel": "Menu hồ sơ",
+      "vipLevel": "Cấp VIP",
+      "transactions": "Nạp & Rút tiền",
+      "myDiamonds": "Gems của tôi",
+      "lossRebate": "Thưởng hoàn tiền thua cược",
+      "affiliate": "Số dư đại lý",
+      "activePromotion": "Khuyến mãi đang áp dụng",
+      "greeting": "Xin chào {name}",
+      "joinedAt": "Tham gia: {date}",
+      "playerId": "ID người chơi: {id}",
+      "copyPlayerId": "Sao chép ID người chơi",
+      "playerIdCopied": "Đã sao chép ID người chơi",
+      "copyPlayerIdFailed": "Không thể sao chép ID"
+    },
+    "referralInvite": {
+      "title": "Mời bạn bè, nhận thưởng",
+      "description": "Chia sẻ link với bạn bè và nhận một phần từ tiền cược của họ",
+      "linkLabel": "Link mời",
+      "copyLink": "Sao chép link mời",
+      "linkCopied": "Đã sao chép link",
+      "copyLinkFailed": "Không thể sao chép link"
+    },
+    "summary": {
+      "copyId": "Sao chép ID",
+      "idCopied": "Đã sao chép ID",
+      "copyIdFailed": "Không thể sao chép ID",
+      "phoneVerified": "Đã xác minh số điện thoại"
+    },
+    "dashboard": {
+      "title": "Tổng quan hệ thống / Dashboard",
+      "subtitle": "Tóm tắt thời gian thực các số liệu chính của hệ thống",
+      "dateRange": "12/12/2023, 00:00 - 23:59",
+      "vsYesterday": "so với hôm qua",
+      "unitAccounts": "tài khoản",
+      "period": {
+        "today": "Hôm nay",
+        "week": "Tuần",
+        "month": "Tháng",
+        "year": "Năm"
+      },
+      "nav": {
+        "overview": "Tổng quan",
+        "betReports": "Báo cáo cược",
+        "members": "Thành viên",
+        "marketing": "Marketing",
+        "promotions": "Khuyến mãi",
+        "transactions": "Giao dịch",
+        "reports": "Báo cáo",
+        "settings": "Cài đặt"
+      },
+      "kpi": {
+        "totalDeposit": "Tổng nạp",
+        "totalWithdraw": "Tổng rút",
+        "netProfit": "Lợi nhuận ròng",
+        "totalBets": "Tổng tiền cược",
+        "newMembers": "Thành viên mới",
+        "firstDeposit": "Nạp lần đầu"
+      },
+      "chart": {
+        "deposit": "Nạp tiền (THB)",
+        "withdraw": "Rút tiền (THB)",
+        "transactionCount": "Giao dịch",
+        "accountCount": "Tài khoản"
+      },
+      "journey": {
+        "title": "Hành trình khách hàng",
+        "signUp": "Đã đăng ký",
+        "firstDeposit": "Nạp lần đầu",
+        "firstBet": "Hoạt động (cược lần đầu)"
+      },
+      "trend": {
+        "title": "Nạp - Rút hôm nay",
+        "subtitle": "Giao dịch theo thời gian (Shadcn Chart)",
+        "net": "Ròng"
+      },
+      "banks": {
+        "title": "Tỷ lệ ngân hàng của khách hàng",
+        "totalAccounts": "Tổng số tài khoản"
+      },
+      "channels": {
+        "title": "Khách hàng biết đến chúng tôi qua đâu",
+        "channel": "Kênh",
+        "customers": "Khách hàng",
+        "share": "Tỷ lệ"
+      },
+      "activeHours": {
+        "title": "Giờ hoạt động của khách hàng"
+      },
+      "depositDistribution": {
+        "title": "Phân bổ số tiền nạp của khách hàng"
+      },
+      "hourlyMembers": {
+        "title": "Thành viên mới theo giờ"
+      }
+    }
+  },
+  "vip": {
+    "tabs": {
+      "ariaLabel": "Menu VIP",
+      "myLevel": "Cấp của tôi",
+      "rank": "Hạng",
+      "benefits": "Quyền lợi"
+    },
+    "status": {
+      "loading": "Đang tải...",
+      "playerLoading": "Đang tải thông tin VIP…",
+      "playerError": "Không thể tải thông tin VIP",
+      "ranksLoading": "Đang tải các cấp VIP…",
+      "ranksError": "Không thể tải các cấp VIP",
+      "benefitsLoading": "Đang tải quyền lợi…",
+      "benefitsError": "Không thể tải quyền lợi",
+      "retry": "Thử lại"
+    },
+    "level": {
+      "label": "Cấp",
+      "next": "Cấp tiếp theo",
+      "currentAriaLabel": "Cấp VIP hiện tại",
+      "benefitsAndMaintainAriaLabel": "Quyền lợi và duy trì cấp"
+    },
+    "rankStatus": {
+      "current": "Cấp hiện tại",
+      "cleared": "Đã đạt",
+      "locked": "Chưa đạt"
+    },
+    "carousel": {
+      "previous": "Hạng trước",
+      "next": "Hạng sau",
+      "turnoverTarget": "Doanh số cược {amount}"
+    },
+    "progress": {
+      "levelUpTo": "Lên VIP {level}",
+      "bothRequired": "Cần đạt cả hai điều kiện",
+      "overallAriaLabel": "Tiến độ tổng thể {percent} phần trăm",
+      "deposit": "Nạp tiền",
+      "turnover": "Doanh số cược",
+      "target": "Mục tiêu {amount}",
+      "complete": "Hoàn thành",
+      "remaining": "Còn {amount}"
+    },
+    "maintain": {
+      "title": "Duy trì cấp VIP",
+      "subtitleWithDowngrade": "Đạt cả hai điều kiện, nếu không sẽ xuống VIP {level}",
+      "daysRemaining": "ngày còn lại"
+    },
+    "benefitsTable": {
+      "title": "Quyền lợi theo cấp",
+      "scrollHint": "Cuộn để xem thêm các cấp"
+    },
+    "benefitRows": {
+      "cashback": "Thưởng hoàn tiền",
+      "rolling": "Thưởng doanh số",
+      "diamondDeposit": "Gems từ tiền nạp",
+      "fastWithdraw": "Rút tiền nhanh",
+      "vipManager": "Quản lý VIP",
+      "upgradeBonus": "Thưởng thăng cấp",
+      "depositCondition": "Điều kiện nạp tiền",
+      "turnoverCondition": "Điều kiện doanh số cược"
+    },
+    "benefitValues": {
+      "faster": "✓ Nhanh hơn",
+      "max": "✓ Tối đa",
+      "notRequired": "Không có"
+    },
+    "myLevelBenefits": {
+      "cashback": "Hoàn tiền",
+      "rolling": "Doanh số",
+      "diamondDeposit": "Gems nạp tiền"
+    },
+    "missions": {
+      "login": "Đăng nhập",
+      "deposit": "Nạp tiền",
+      "play": "Chơi",
+      "unitDays": "ngày",
+      "unitTimes": "lần"
+    }
+  },
+  "referral": {
+    "pageTitle": "Mời bạn bè",
+    "tabs": {
+      "ariaLabel": "Menu giới thiệu",
+      "overview": "Tổng quan",
+      "users": "Bạn bè đã mời",
+      "earning": "Thu nhập"
+    },
+    "status": {
+      "overviewLoading": "Đang tải thông tin giới thiệu…",
+      "overviewError": "Không thể tải thông tin giới thiệu",
+      "earningsLoading": "Đang tải thu nhập…",
+      "earningsError": "Không thể tải thu nhập",
+      "usersLoading": "Đang tải danh sách bạn bè…",
+      "usersError": "Không thể tải danh sách bạn bè"
+    },
+    "loginPrompt": {
+      "title": "Đăng nhập để xem link giới thiệu của bạn",
+      "description": "Link giới thiệu và thu nhập của bạn sẽ hiển thị sau khi đăng nhập"
+    },
+    "promo": {
+      "ariaLabel": "Khuyến mãi giới thiệu",
+      "title": "Mời bạn bè, nhận thưởng 2 tầng",
+      "description": "Chia sẻ link của bạn và nhận một phần từ tiền cược của bạn bè"
+    },
+    "link": {
+      "title": "Link giới thiệu của bạn",
+      "copied": "Đã sao chép link",
+      "copyFailed": "Không thể sao chép link"
+    },
+    "stats": {
+      "title": "Thống kê của bạn",
+      "friends": "Bạn bè đã tham gia",
+      "totalTurnover": "Tổng doanh số cược",
+      "totalEarnings": "Tổng thu nhập"
+    },
+    "tiers": {
+      "title": "Nhận thưởng từ 2 tầng",
+      "description": "Chia sẻ link của bạn và nhận hoa hồng từ doanh số cược của mạng lưới",
+      "rateHint": "doanh số cược",
+      "tier1": {
+        "title": "Tầng 1 — Bạn bè trực tiếp",
+        "subtitle": "Bạn bè đăng ký bằng link của bạn"
+      },
+      "tier2": {
+        "title": "Tầng 2 — Bạn của bạn bè",
+        "subtitle": "Những người được bạn bè của bạn mời"
+      }
+    },
+    "checks": {
+      "realtime": "Tính toán theo thời gian thực",
+      "lifetimeCommission": "Hoa hồng trọn đời",
+      "minWithdraw": "Rút tối thiểu ฿50.00"
+    },
+    "steps": {
+      "title": "Bắt đầu với 3 bước đơn giản",
+      "copy": "Sao chép link",
+      "share": "Chia sẻ với bạn bè",
+      "earn": "Nhận hoa hồng"
+    },
+    "periods": {
+      "ariaLabel": "Kỳ thu nhập",
+      "all": "Tất cả",
+      "today": "Hôm nay",
+      "lastWeek": "Tuần trước",
+      "lastMonth": "Tháng trước"
+    },
+    "earning": {
+      "claimableIncome": "Thu nhập có thể nhận",
+      "claimableBonus": "Thưởng có thể nhận",
+      "claim": "Nhận thưởng",
+      "receivedTotal": "Tổng đã nhận {amount}",
+      "received": "Đã nhận {amount}",
+      "periodSummaryAriaLabel": "Tóm tắt thu nhập trong kỳ đã chọn",
+      "networkIncomePeriod": "Thu nhập mạng lưới (kỳ đã chọn)",
+      "totalAccumulated": "Tích lũy {amount}",
+      "detailsTitle": "Chi tiết thu nhập",
+      "historyTitle": "Lịch sử nhận thưởng",
+      "bonusAmount": "Số tiền thưởng",
+      "date": "Ngày",
+      "empty": "Chưa có lịch sử nhận thưởng",
+      "paginationAriaLabel": "Các trang lịch sử nhận thưởng"
+    },
+    "users": {
+      "registeredAt": "Ngày tham gia",
+      "empty": "Chưa có bạn bè nào đăng ký bằng link của bạn",
+      "paginationAriaLabel": "Các trang danh sách bạn bè"
+    },
+    "pagination": {
+      "showing": "Hiển thị {start}–{end} trong {total}"
+    }
+  },
+  "cashback": {
+    "pageTitle": "Hoàn tiền",
+    "tabs": {
+      "ariaLabel": "Loại hoàn tiền",
+      "play": "Hoàn tiền",
+      "loss": "Hoàn thua"
+    },
+    "status": {
+      "panelsLoading": "Đang tải hoàn tiền…",
+      "panelsError": "Không thể tải hoàn tiền",
+      "lossRebateLoading": "Đang tải hoàn tiền thua cược…",
+      "lossRebateError": "Không thể tải hoàn tiền thua cược"
+    },
+    "panel": {
+      "playSubtitle": "Hoàn tiền theo doanh số cược của bạn",
+      "lossSubtitle": "Hoàn tiền theo số tiền thua ròng của bạn",
+      "nothingToClaim": "Chưa có gì để nhận",
+      "claimed": "Đã nhận",
+      "cycleDaily": "Hằng ngày lúc 00:00",
+      "claimableAmount": "Số tiền có thể nhận",
+      "accumulatedThisCycle": "Đã tích lũy (chu kỳ này)",
+      "refresh": "Làm mới số tiền"
+    },
+    "periods": {
+      "ariaLabel": "Kỳ tóm tắt hoàn tiền",
+      "all": "Tất cả",
+      "today": "Hôm nay",
+      "lastWeek": "Tuần trước",
+      "lastMonth": "Tháng trước"
+    },
+    "rules": {
+      "title": "Chi tiết điều khoản",
+      "item": "Mục",
+      "value": "Giá trị",
+      "rate": "Tỷ lệ",
+      "min": "Tối thiểu",
+      "maxPerClaim": "Tối đa mỗi lần nhận",
+      "cycle": "Chu kỳ tính"
+    },
+    "lossRebate": {
+      "statusCalculated": "Đã tính",
+      "historyTitle": "Lịch sử hoàn tiền thua cược",
+      "selectMonth": "Chọn tháng",
+      "period": "Kỳ",
+      "netLoss": "Thua ròng",
+      "bonusReceived": "Thưởng đã nhận",
+      "receivedDate": "Ngày nhận",
+      "empty": "Không có lịch sử trong tháng đã chọn",
+      "paginationAriaLabel": "Các trang lịch sử hoàn tiền thua cược",
+      "termsTitle": "Điều khoản hoàn tiền thua cược",
+      "terms": {
+        "basis": "Hoàn tiền thua cược được tính từ số tiền thua ròng hợp lệ trong mỗi chu kỳ.",
+        "claimWindow": "Bạn cần nhận thưởng trong thời gian cho phép, nếu không thưởng sẽ hết hạn.",
+        "subjectToChange": "Tỷ lệ và điều khoản có thể thay đổi theo thông báo của website.",
+        "sampleData": "Dữ liệu trên trang này là dữ liệu mẫu để hiển thị giao diện."
+      },
+      "formula": {
+        "title": "Chi tiết cách tính",
+        "eligibleNetLoss": "Thua ròng hợp lệ",
+        "rate": "Tỷ lệ hoàn tiền thua cược",
+        "bonus": "Thưởng hoàn tiền thua cược",
+        "sampleNote": "Các con số và tỷ lệ hiển thị chỉ là ví dụ."
+      }
+    },
+    "pagination": {
+      "showing": "Hiển thị {start}–{end} trong {total}"
+    }
+  },
+  "rewards": {
+    "actions": {
+      "claim": "Nhận",
+      "close": "Đóng",
+      "ok": "OK"
+    },
+    "status": {
+      "claimed": "Đã nhận"
+    },
+    "hub": {
+      "title": "Phần thưởng",
+      "loading": "Đang tải phần thưởng…",
+      "loadError": "Không thể tải phần thưởng",
+      "pointsLoading": "Đang tải điểm…",
+      "pointsLoadError": "Không thể tải dữ liệu phần thưởng",
+      "bannersAria": "Khuyến mãi phần thưởng",
+      "shortcutsAria": "Menu phần thưởng",
+      "summaryAria": "Số dư credit và điểm",
+      "totalCredits": "Tổng credit",
+      "pointsBalance": "Số dư điểm"
+    },
+    "shortcuts": {
+      "luckyBox": "Hộp may mắn",
+      "randomCard": "Thẻ ngẫu nhiên",
+      "freespins": "Vòng quay miễn phí / Chip"
+    },
+    "banners": {
+      "luckyBoxSubtitle": "Dùng điểm để đổi Hộp may mắn",
+      "randomCardSubtitle": "Lật thẻ để trúng thưởng",
+      "termsLabel": "Điều khoản & điều kiện"
+    },
+    "redeemBoard": {
+      "subtitle": "Trúng thưởng",
+      "pointsLabel": "Điểm",
+      "drawCost": "{cost} điểm mỗi lượt",
+      "startDraw": "Bắt đầu quay thưởng",
+      "history": "Lịch sử đổi thưởng"
+    },
+    "luckyBox": {
+      "pageTitle": "Hộp may mắn",
+      "loading": "Đang tải Hộp may mắn…",
+      "loadError": "Không thể tải Hộp may mắn"
+    },
+    "randomCard": {
+      "pageTitle": "Thẻ ngẫu nhiên",
+      "loading": "Đang tải Thẻ ngẫu nhiên…",
+      "loadError": "Không thể tải Thẻ ngẫu nhiên"
+    },
+    "freespins": {
+      "title": "Vòng quay miễn phí / Chip",
+      "comingSoonDesc": "Tính năng đang được phát triển — sắp có thể đổi bằng điểm"
+    },
+    "checkIn": {
+      "title": "Điểm danh hằng ngày",
+      "loading": "Đang tải điểm danh…",
+      "loadError": "Không thể tải điểm danh",
+      "subtitle": "Điểm danh mỗi ngày để nhận thêm Gems",
+      "bonusBefore": "Chỉ còn",
+      "bonusDays": {
+        "other": "{count} ngày"
+      },
+      "bonusAfter": "nữa để nhận thưởng",
+      "bonusGems": "{amount} Gems",
+      "progressTotal": "/ {total} ngày",
+      "dayStatus": {
+        "claimed": "Đã nhận",
+        "today": "Nhận",
+        "locked": "Sắp tới"
+      },
+      "weekdays": {
+        "mon": "T2",
+        "tue": "T3",
+        "wed": "T4",
+        "thu": "T5",
+        "fri": "T6",
+        "sat": "T7",
+        "sun": "CN"
+      },
+      "cumulativeTitle": "Thưởng chuỗi ngày",
+      "cumulativeDesc": "Đạt từng mốc điểm danh để nhận thêm nhiều Gems",
+      "milestoneGems": "{amount} Gems",
+      "milestoneDays": "Điểm danh {days} ngày",
+      "milestoneDialog": {
+        "title": "Thưởng điểm danh đủ {days} ngày",
+        "progress": "Đã điểm danh {done}/{total} ngày",
+        "claim": "Nhận thưởng",
+        "claimed": "Đã nhận thưởng",
+        "daysLeft": "Điểm danh thêm {count} ngày"
+      },
+      "claimedToday": "Đã điểm danh hôm nay",
+      "claimToday": "Nhận thưởng hôm nay",
+      "success": {
+        "title": "Đã nhận thưởng",
+        "descBefore": "Bạn đã nhận được",
+        "descAfter": ""
+      },
+      "desktop": {
+        "summaryAria": "Tóm tắt điểm danh",
+        "progressAria": "Tiến độ điểm danh",
+        "weekProgress": "Tiến độ tuần này",
+        "daysUnit": "ngày",
+        "claimTodayAria": "Nhận thưởng hôm nay",
+        "claimToday": "Nhận thưởng hôm nay",
+        "claimedToday": "Đã nhận thưởng",
+        "streakAria": "Tiến độ 7 ngày",
+        "streakDay": "Ngày {day}",
+        "listTitle": "Thưởng điểm danh",
+        "dayTitle": "Ngày {day}",
+        "specialReward": "Thưởng đặc biệt",
+        "bonusDayDesc": "Điểm danh đủ cả tuần để nhận thêm credit",
+        "dailyDesc": "Thưởng điểm danh hằng ngày",
+        "locked": "Đã khóa"
+      }
+    },
+    "wheel": {
+      "title": "Vòng quay may mắn",
+      "subtitle": "Quay mỗi ngày để trúng giải lớn",
+      "loading": "Đang tải Vòng quay may mắn…",
+      "loadError": "Không thể tải Vòng quay may mắn",
+      "backHome": "Về trang chủ",
+      "winMessage": "Chúc mừng! Bạn đã trúng {prize}",
+      "justNow": "Vừa xong",
+      "prizeKind": {
+        "gems": "Gems",
+        "credit": "Credit"
+      },
+      "gemsBalanceAria": "Số dư Gems của bạn",
+      "ticketsAria": "Vé của bạn",
+      "spinAria": "Quay vòng quay",
+      "methodTabsAria": "Chọn cách quay",
+      "methodGems": "Gems ×{cost}",
+      "methodTicket": "Vé ×{cost}",
+      "spinning": "Đang quay…",
+      "spinNow": "Quay ngay",
+      "useTickets": {
+        "other": "Dùng {count} vé"
+      },
+      "useGems": "Dùng {amount} Gems",
+      "noTickets": "Hết vé — hãy thử quay bằng Gems",
+      "notEnoughGems": "Không đủ Gems — hãy nạp thêm Gems",
+      "hint": "Quay giải trí và trúng thưởng mỗi ngày",
+      "sampleNote": "Giải thưởng và số dư ví chỉ là dữ liệu mẫu",
+      "liveWinners": {
+        "title": "Người trúng thưởng gần đây",
+        "gemsWon": "+{amount} Gems",
+        "received": "Đã trúng",
+        "gemsAmount": "{amount} Gems"
+      },
+      "history": {
+        "title": "Lịch sử quay của tôi",
+        "usedGems": "Gems",
+        "usedTicket": "Vé",
+        "prevPage": "Trang trước",
+        "nextPage": "Trang sau"
+      }
+    },
+    "gemsStore": {
+      "title": "Cửa hàng Gems",
+      "loading": "Đang tải Cửa hàng Gems…",
+      "loadError": "Không thể tải Cửa hàng Gems",
+      "redeemHeading": "Đổi credit",
+      "termsTitle": "Điều khoản đổi thưởng",
+      "redeemShort": "Đổi",
+      "notEnoughShort": "Thiếu",
+      "redeem": "Đổi",
+      "redeemAria": "Đổi {credits}",
+      "notEnoughGems": "Không đủ Gems",
+      "summary": {
+        "balanceLabel": "Số dư Gems",
+        "balanceAria": "Số dư Gems {amount}",
+        "today": "Hôm nay",
+        "thisWeek": "Tuần này"
+      },
+      "confirm": {
+        "title": "{amount} credit",
+        "subtitle": "Dùng {gems} Gems để đổi {credits} credit",
+        "creditsLabel": "Credit",
+        "gemsUsed": "Gems đã dùng",
+        "balanceAfter": "Số dư sau khi đổi",
+        "cancel": "Hủy",
+        "confirm": "Xác nhận",
+        "processing": "Đang xử lý…"
+      }
+    },
+    "activities": {
+      "title": "Sự kiện",
+      "loading": "Đang tải sự kiện…",
+      "loadError": "Không thể tải sự kiện",
+      "listAria": "Danh sách sự kiện",
+      "closeDetail": "Đóng chi tiết sự kiện",
+      "viewDetails": "Xem chi tiết",
+      "categoryTabsAria": "Danh mục sự kiện",
+      "categories": {
+        "slots": "Slots",
+        "casino": "Casino"
+      },
+      "progress": {
+        "title": "Doanh số cược của bạn",
+        "current": "Doanh số hiện tại",
+        "rank1Target": "Mục tiêu hạng 1",
+        "rewardCount": "Thưởng {earned} / {cap}"
+      },
+      "tiers": {
+        "rank": "Hạng",
+        "turn": "Doanh số",
+        "bonus": "Thưởng",
+        "claim": "Nhận",
+        "notEligible": "Chưa đủ điều kiện"
+      },
+      "rulesTitle": "Thể lệ & điều khoản sự kiện"
+    }
+  },
+  "promotions": {
+    "title": "Khuyến mãi",
+    "loading": "Đang tải khuyến mãi…",
+    "loadError": "Không thể tải khuyến mãi",
+    "loadErrorDesc": "Hãy kiểm tra kết nối internet và thử lại",
+    "retry": "Thử lại",
+    "forYou": "Khuyến mãi dành cho bạn",
+    "filterAria": "Lọc khuyến mãi theo danh mục",
+    "categories": {
+      "all": "Tất cả",
+      "slots": "Slots",
+      "casino": "Casino",
+      "sport": "Thể thao",
+      "newMember": "Thành viên mới",
+      "daily": "Hằng ngày",
+      "privilege": "Đặc quyền"
+    },
+    "empty": {
+      "category": "Chưa có khuyến mãi nào trong danh mục này",
+      "categoryHint": "Chưa có khuyến mãi nào trong danh mục này — hãy thử xem Tất cả",
+      "activitiesHint": "Chưa có sự kiện nào trong danh mục này — hãy thử xem Tất cả"
+    },
+    "hub": {
+      "promotionsListAria": "Danh sách khuyến mãi",
+      "activitiesListAria": "Danh sách sự kiện",
+      "selectedDetailAria": "Chi tiết đã chọn"
+    },
+    "detail": {
+      "title": "Chi tiết khuyến mãi",
+      "heading": "Chi tiết",
+      "loading": "Đang tải chi tiết…",
+      "close": "Đóng chi tiết khuyến mãi",
+      "notFound": "Không tìm thấy chi tiết khuyến mãi",
+      "notFoundDesc": "Khuyến mãi này có thể đã kết thúc hoặc không tải được"
+    },
+    "mobile": {
+      "expires": "Kết thúc {date}",
+      "readTerms": "Xem điều khoản",
+      "readTermsAria": "{title} — Xem điều khoản"
+    }
+  }
+}

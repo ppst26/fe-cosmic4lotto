@@ -1,0 +1,170 @@
+{
+  "categories": {
+    "home": "โฮม",
+    "casino": "คาสิโน",
+    "slots": "สล็อต",
+    "fishing": "ยิงปลา",
+    "sports": "กีฬา",
+    "lottery": "หวย",
+    "cards": "เกมไพ่"
+  },
+  "categoryNav": {
+    "ariaLabel": "แถบเลือกหมวดหมู่เกม"
+  },
+  "sections": {
+    "hotGames": "เกมยอดฮิต",
+    "slots": "SLOTS",
+    "casino": "คาสิโน",
+    "fishing": "ยิงปลา",
+    "sports": "กีฬา",
+    "empty": "ยังไม่มีเกมในหมวดนี้"
+  },
+  "intro": {
+    "title": "อาณาจักรแห่งความมันส์",
+    "gamesBefore": "เกมมากกว่า",
+    "gamesAfter": "เกม",
+    "providersBefore": "ผู้ให้บริการมากกว่า",
+    "providersAfter": "ราย",
+    "sports": "การแข่งขันกีฬาทั่วโลก"
+  },
+  "featureActions": {
+    "ariaLabel": "ฟีเจอร์พิเศษ"
+  },
+  "search": {
+    "formAriaLabel": "แบบฟอร์มค้นหาเกมและผู้ให้บริการ",
+    "label": "ค้นหาเกมหรือผู้ให้บริการ",
+    "clear": "ล้างคำค้นหา"
+  },
+  "hallOfFame": {
+    "tabsAriaLabel": "เลือกตาราง Top Performance",
+    "empty": "ยังไม่มีรายการ"
+  },
+  "carousel": {
+    "prev": "สไลด์ก่อนหน้า",
+    "next": "สไลด์ถัดไป",
+    "scroll": "เลื่อนดูแบนเนอร์",
+    "pickSlide": "เลือกสไลด์แบนเนอร์",
+    "goToSlide": "ไปยังสไลด์ที่ {index}"
+  },
+  "peekCarousel": {
+    "ariaLabel": "แบนเนอร์โปรโมชันและกิจกรรม"
+  },
+  "promoCarousel": {
+    "ariaLabel": "แบนเนอร์โปรโมชันและสิทธิพิเศษ",
+    "listAriaLabel": "รายการโปรโมชัน"
+  },
+  "welcomeBanner": {
+    "ariaLabel": "แบนเนอร์ต้อนรับและโปรโมชัน",
+    "slidesAriaLabel": "สไลด์แบนเนอร์ต้อนรับ"
+  },
+  "auth": {
+    "login": "เข้าสู่ระบบ",
+    "signUp": "สมัครสมาชิก",
+    "loginToSeeEvents": "เข้าสู่ระบบหรือสมัครสมาชิกเพื่อดูกิจกรรม"
+  },
+  "events": {
+    "title": "กิจกรรม",
+    "slidesAriaLabel": "สไลด์{title}",
+    "goTo": "ไปยัง{name}"
+  },
+  "announcement": {
+    "ariaLabel": "ประกาศจากระบบ",
+    "label": "ประกาศ"
+  },
+  "categoryProviders": {
+    "comingSoon": "กำลังเตรียมค่ายเกมในหมวดนี้ — ลองเลือกคาสิโน สล็อต ยิงปลา หรือกีฬาก่อนนะ",
+    "liveCasino": "ไลฟ์คาสิโน",
+    "providersFallback": "ค่ายเกม",
+    "providerCount": {
+      "other": "({count} ค่ายเกม)"
+    },
+    "gamesByProviderAriaLabel": "รายการเกม{category}ตามค่ายที่เลือก",
+    "listAriaLabel": "รายการค่ายเกมตามหมวดที่เลือก",
+    "searchPlaceholder": {
+      "casino": "ค้นหาคาสิโนสด | ค่าย",
+      "fishing": "ค้นหายิงปลา | ค่าย",
+      "cards": "ค้นหาเกมไพ่ | ค่าย",
+      "sports": "ค้นหากีฬา | ค่าย",
+      "default": "ค้นหาเกม | ค่าย"
+    }
+  },
+  "quickBanners": {
+    "ariaLabel": "เมนูไฮไลต์ด่วน",
+    "promo": {
+      "title": "โปรโมชั่นพิเศษ",
+      "subtitle": "โปรโมชั่นพิเศษเฉพาะคุณ"
+    },
+    "event": {
+      "title": "กิจกรรม",
+      "subtitle": "กิจกรรมตลอด 24 ชั่วโมง"
+    },
+    "news": {
+      "title": "ข่าวสาร",
+      "subtitle": "ข่าวสารที่คุณไม่ควรพลาด"
+    }
+  },
+  "mostOnline": {
+    "title": "ออนไลน์มากที่สุดในขณะนี้",
+    "favoriteAdd": "เพิ่มในรายการโปรด",
+    "favoriteRemove": "เอาออกจากรายการโปรด",
+    "playingNow": "กำลังเล่นอยู่ {count} คน"
+  },
+  "popular": {
+    "title": "ยอดนิยม",
+    "empty": "ยังไม่มีรายการในหมวดนี้"
+  },
+  "providers": {
+    "empty": "ยังไม่มีผู้ให้บริการ",
+    "marqueeAriaLabel": "ผู้ให้บริการเกม",
+    "logoAriaLabel": "ผู้ให้บริการ {name}"
+  },
+  "a2hs": {
+    "title": "เพิ่มปุ่มลัดหน้าโฮม",
+    "cardTitle": "เพิ่มปุ่มลัดได้แล้ววันนี้!",
+    "cardSubtitle": "สัมผัสประสบการณ์ที่เหนือกว่า เพิ่มปุ่มเลย",
+    "platformsAriaLabel": "เลือกระบบปฏิบัติการ",
+    "stepsTitle": "วิธีเพิ่มปุ่มลัด ({platform})",
+    "installed": "ติดตั้งแอปแล้ว",
+    "steps": {
+      "android1": "แตะเมนู ⋮ ที่มุมบนขวาของ Chrome",
+      "android2": "เลือก「ติดตั้งแอป」หรือ「เพิ่มไปที่หน้าจอหลัก」",
+      "android3": "กด「ติดตั้ง」หรือ「เพิ่ม」เพื่อยืนยัน",
+      "ios1": "แตะปุ่ม「แชร์」ที่ด้านล่าง Safari",
+      "ios2": "เลือก「เพิ่มที่หน้าโฮม」",
+      "ios3": "กด「เพิ่ม」มุมขวาบนเพื่อยืนยัน",
+      "launch": "กดเข้า หน้าเว็ปผ่านไอคอนแอพของเราได้ทันที"
+    }
+  },
+  "desktopMenu": {
+    "referral": {
+      "title": "แนะนำเพื่อน",
+      "subtitle": "สร้างรายได้ 2 ชั้น",
+      "ariaLabel": "แนะนำเพื่อน สร้างรายได้ 2 ชั้น"
+    },
+    "checkIn": {
+      "title": "เช็คอิน",
+      "subtitle": "CHECK-IN",
+      "ariaLabel": "เช็คอิน CHECK-IN"
+    },
+    "wheel": {
+      "title": "วงล้อ",
+      "subtitle": "LUCKY WHEEL",
+      "ariaLabel": "วงล้อ LUCKY WHEEL"
+    },
+    "gems": {
+      "title": "ร้านค้าเพชร",
+      "subtitle": "GEMS SHOP",
+      "ariaLabel": "ร้านค้าเพชร GEMS SHOP"
+    },
+    "coupon": {
+      "title": "คูปอง",
+      "subtitle": "COUPON",
+      "ariaLabel": "แลกคูปอง COUPON"
+    },
+    "vip": {
+      "title": "ยศ VIP",
+      "subtitle": "สิทธิพิเศษสมาชิก",
+      "ariaLabel": "ยศ VIP สิทธิพิเศษสมาชิก"
+    }
+  }
+}

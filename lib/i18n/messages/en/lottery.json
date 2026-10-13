@@ -1,0 +1,255 @@
+{
+  "hub": {
+    "title": "Lottery",
+    "subtitle": "Choose a lottery to bet on",
+    "featuredAria": "Featured lotteries",
+    "allMarketsAria": "All lotteries",
+    "mySlips": "My slips",
+    "mySlipsAria": "View my slips",
+    "mySlipsPendingAria": "View my slips — {count} in progress",
+    "daysLeft": { "one": "{count} day", "other": "{count} days" }
+  },
+  "markets": {
+    "generic": "Lottery",
+    "thaiGovernment": "Thai Government Lottery",
+    "yiki5": "Yiki 5 Min",
+    "yiki15": "Yiki 15 Min",
+    "yiki30": "Yiki 30 Min",
+    "baac": "BAAC Lottery",
+    "laos": "Lao Lottery",
+    "hanoi": "Hanoi Lottery",
+    "malaysia": "Malaysia Lottery",
+    "dowJones": "Dow Jones Lottery",
+    "china": "China Stock Lottery",
+    "germany": "Germany Stock Lottery",
+    "russia": "Russia Stock Lottery",
+    "korea": "Korea Stock Lottery",
+    "nikkei": "Nikkei Lottery",
+    "uk": "UK Stock Lottery",
+    "hongKong": "Hang Seng Lottery",
+    "taiwan": "Taiwan Stock Lottery",
+    "singapore": "Singapore Stock Lottery",
+    "india": "India Stock Lottery",
+    "egypt": "Egypt Stock Lottery"
+  },
+  "status": {
+    "open": "Open",
+    "closed": "Closed",
+    "closedAlready": "Betting closed",
+    "closesIn": "Closes in",
+    "closesInTime": "Closes in {time}",
+    "countdownDays": "{days}d {time}"
+  },
+  "groups": {
+    "three": "3 Digits",
+    "two": "2 Digits",
+    "run": "Running"
+  },
+  "betTypes": {
+    "threeTop": "3 Top",
+    "threeTod": "3 Tod",
+    "threeFront": "3 Front",
+    "threeBottom": "3 Bottom",
+    "threeTopTod": "3 Top Tod",
+    "threeTopReverse": "3 Top Reverse",
+    "threeTopComboTod": "3 Top + Tod",
+    "twoTop": "2 Top",
+    "twoBottom": "2 Bottom",
+    "twoTopReverse": "2 Top Reverse",
+    "twoBottomReverse": "2 Bottom Reverse",
+    "twoTopBottom": "2 Top/Bottom",
+    "twoTopBottomReverse": "2 Top/Bottom Reverse",
+    "runTop": "Run Top",
+    "runBottom": "Run Bottom"
+  },
+  "round": {
+    "time": "Round {time}",
+    "draw": "Draw {date}",
+    "market": "{market} {date}",
+    "numbered": "Round {n}",
+    "current": "Current draw"
+  },
+  "rounds": {
+    "empty": "No rounds open for betting yet",
+    "listAria": "Rounds",
+    "showAll": { "one": "Show all rounds ({count} round)", "other": "Show all rounds ({count} rounds)" },
+    "play": "Bet Now",
+    "loading": "Loading rounds…",
+    "loadError": "Couldn't load rounds",
+    "openCountPrefix": "Open rounds:",
+    "openCountSuffix": ""
+  },
+  "market": {
+    "sidebarAria": "Lottery types",
+    "rules": "Rules / Payout rates",
+    "notFoundTitle": "Lottery not found",
+    "notFoundDescription": "This lottery may no longer be available. Pick another one from the lottery page.",
+    "viewAll": "View All Lotteries",
+    "marketNotFound": "Lottery market not found"
+  },
+  "rules": {
+    "payoutHeading": "Payout per 1 baht",
+    "limitsHeading": "Bet amount per entry",
+    "minBet": "Minimum",
+    "maxBet": "Maximum"
+  },
+  "results": {
+    "title": "Latest Results",
+    "morePage": "All results >>",
+    "tableAria": "Latest lottery results",
+    "colMarket": "Lottery",
+    "colDate": "Draw / Date",
+    "empty": "No results yet",
+    "today": "Today"
+  },
+  "thaiResult": {
+    "title": "Previous Draw Results",
+    "firstPrize": "1st Prize",
+    "back3": "3 Back"
+  },
+  "draw": {
+    "aria": "Draw details"
+  },
+  "board": {
+    "pickAria": "Pick numbers",
+    "reverse": "Reverse",
+    "actionsAria": "Next steps",
+    "back": "Back",
+    "enterPrice": "Set Stakes",
+    "digitGroupAria": "Number of digits",
+    "betTypeAria": "Bet type",
+    "payout": "Pays {rate}",
+    "loading": "Loading bet board…",
+    "roundNotFoundTitle": "Round not found",
+    "roundNotFoundNext": "This round may be closed. Pick the next round from the list.",
+    "roundNotFoundOther": "This round may be closed. Pick another round from the list.",
+    "viewAllRounds": "View All Rounds"
+  },
+  "inputMode": {
+    "aria": "Number input method",
+    "manual": "Enter Numbers",
+    "grid": "Pick from Grid"
+  },
+  "feedback": {
+    "duplicate": "{number} is already in the slip",
+    "added": { "one": "Added {number} to the slip ({count} item)", "other": "Added {number} to the slip ({count} items)" },
+    "undone": "Last entry undone",
+    "closed": "Betting closed",
+    "removed": "Removed {number} from the slip"
+  },
+  "pad": {
+    "hundreds": "Hundreds",
+    "selectedCount": "{count} selected",
+    "gridAria": "Number grid",
+    "enteredAria": "Entered number {value}",
+    "empty": "empty",
+    "clear": "Clear",
+    "backspace": "Delete last digit"
+  },
+  "slip": {
+    "itemCount": { "one": "{count} item", "other": "{count} items" },
+    "removeAria": "Remove {label} {number}",
+    "priceAria": "Stake for {label} {number}",
+    "enterPrice": "Set stake",
+    "toolbarAria": "Slip tools",
+    "undo": "Undo last entry",
+    "clearAll": "Clear slip",
+    "emptyPickType": "Choose a bet type, then tap numbers to add them to the slip",
+    "emptyEnterNumber": "Nothing here yet. Enter the numbers you want to bet on."
+  },
+  "price": {
+    "aria": "Set stakes and submit slip",
+    "sameForAll": "Same stake for all",
+    "edit": "Edit",
+    "total": "Total",
+    "chipsAria": "Choose stake",
+    "backToNumbers": "Edit Numbers",
+    "submitting": "Submitting…",
+    "submit": "Submit Slip"
+  },
+  "submit": {
+    "failedTitle": "Couldn't submit slip",
+    "done": "OK",
+    "close": "Close",
+    "networkError": "Can't connect to the server"
+  },
+  "summary": {
+    "aria": "Slip summary",
+    "drawDate": "Draw date {date}",
+    "copyAria": "Copy slip number",
+    "slipId": "Slip #{id}",
+    "purchased": "Purchased {date}",
+    "submitted": "Submitted",
+    "note": "Note: {note}",
+    "noNote": "No note",
+    "stake": "Stake",
+    "winLoss": "Win/Loss",
+    "allSlips": "All Slips",
+    "continue": "Keep Betting",
+    "copied": "Slip number copied",
+    "copyFailed": "Couldn't copy slip number"
+  },
+  "slips": {
+    "title": "All Slips",
+    "loading": "Loading slips…",
+    "emptyTitle": "No slips yet",
+    "emptyDescription": "Pick a lottery and submit your first slip.",
+    "goPlay": "Go to Lottery",
+    "stake": "Stake {amount}",
+    "summaryTitle": "Slip Summary",
+    "notFoundTitle": "Slip not found",
+    "notFoundDescription": "The slip may have been removed or the link is invalid.",
+    "viewAll": "View All Slips",
+    "tabs": {
+      "pending": "In progress",
+      "history": "History",
+      "aria": "Slip type"
+    },
+    "filters": {
+      "aria": "Slip filters",
+      "market": "Market",
+      "result": "Result",
+      "range": "Date range",
+      "allMarkets": "All markets",
+      "allResults": "All results",
+      "today": "Today",
+      "days7": "7 days",
+      "days30": "30 days",
+      "custom": "Custom"
+    },
+    "status": {
+      "waitingDraw": "Awaiting draw",
+      "waitingSettle": "Awaiting result",
+      "won": "Won",
+      "lost": "Lost",
+      "void": "Cancelled (refunded)"
+    },
+    "summary": {
+      "count": {
+        "one": "{count} slip",
+        "other": "{count} slips"
+      },
+      "stake": "Total stake {amount}",
+      "net": "Net win/loss"
+    },
+    "card": {
+      "drawAt": "Draw {date}",
+      "settledAt": "Settled {date}"
+    },
+    "emptyPending": {
+      "title": "No slips in progress",
+      "description": "Submitted slips that haven't been settled yet will show up here."
+    },
+    "emptyHistory": {
+      "title": "No slip history yet",
+      "description": "Settled slips are kept for {days} days."
+    },
+    "emptyFiltered": "No slips match these filters",
+    "clearFilters": "Clear filters",
+    "loadMore": "Load more",
+    "loadingMore": "Loading…",
+    "loadMoreError": "Couldn't load more. Please try again.",
+    "loadError": "Couldn't load slips",
+    "retentionNote": "History is kept for {days} days"
+  }
+}

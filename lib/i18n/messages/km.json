@@ -1,0 +1,1639 @@
+{
+  "meta": {
+    "title": "XGAMBET — នគរនៃភាពរំភើប",
+    "description": "ទំព័រហ្គេម XGAMBET"
+  },
+  "common": {
+    "language": "ភាសា",
+    "languagePicker": {
+      "title": "ជ្រើសរើសភាសា",
+      "description": "ប្តូរភាសាដែលបង្ហាញលើគេហទំព័រ",
+      "close": "បិទការជ្រើសរើសភាសា"
+    },
+    "close": "បិទ",
+    "retry": "សាកល្បងម្តងទៀត",
+    "loading": "កំពុងផ្ទុក…",
+    "confirm": "បញ្ជាក់",
+    "cancel": "បោះបង់",
+    "processing": "កំពុងដំណើរការ…",
+    "back": "ត្រឡប់ក្រោយ",
+    "next": "បន្ទាប់",
+    "backStep": "ត្រឡប់ទៅជំហានមុន",
+    "loadFailed": "មិនអាចផ្ទុកទិន្នន័យបានទេ",
+    "emptyCategory": "មិនទាន់មានអ្វីក្នុងប្រភេទនេះទេ",
+    "refCode": "លេខយោង៖ {code}",
+    "units": {
+      "people": {
+        "other": "{n} នាក់"
+      },
+      "records": {
+        "other": "{n} ធាតុ"
+      },
+      "credits": {
+        "other": "{n} ក្រេឌីត"
+      },
+      "gems": {
+        "other": "{n} Gems"
+      },
+      "million": "{n}M"
+    },
+    "carousel": {
+      "prev": "រំកិល {title} ថយក្រោយ",
+      "next": "រំកិល {title} ទៅមុខ"
+    },
+    "pagination": {
+      "label": "ការបែងចែកទំព័រ",
+      "prev": "ទំព័រមុន",
+      "page": "ទំព័រទី {page}",
+      "next": "ទំព័របន្ទាប់"
+    },
+    "notifications": {
+      "title": "ការជូនដំណឹង",
+      "close": "បិទការជូនដំណឹង",
+      "tabsLabel": "ប្រភេទការជូនដំណឹង",
+      "tabs": {
+        "all": "ទាំងអស់",
+        "privileges": "សិទ្ធិពិសេស",
+        "messages": "សារ"
+      },
+      "empty": "គ្មានសារថ្មីទេ",
+      "contactChannels": "ឆានែលទំនាក់ទំនង"
+    },
+    "coupon": {
+      "title": "ប្តូរគូប៉ុង",
+      "close": "បិទការប្តូរគូប៉ុង",
+      "description": "បញ្ចូលកូដដើម្បីប្តូរក្រេឌីតឥតគិតថ្លៃ",
+      "codeLabel": "កូដគូប៉ុង",
+      "codePlaceholder": "បញ្ចូលកូដគូប៉ុង",
+      "codeRequired": "សូមបញ្ចូលកូដគូប៉ុង",
+      "submit": "ប្តូរក្រេឌីតឥតគិតថ្លៃ",
+      "submitting": "កំពុងពិនិត្យ..."
+    }
+  },
+  "nav": {
+    "bottomNav": {
+      "label": "ម៉ឺនុយមេ",
+      "withdraw": "ដកប្រាក់",
+      "deposit": "ដាក់ប្រាក់",
+      "menu": "ម៉ឺនុយ",
+      "cashback": "Cashback",
+      "contact": "ទាក់ទង"
+    },
+    "header": {
+      "openMenu": "បើកម៉ឺនុយ",
+      "promotions": "ប្រូម៉ូសិន",
+      "profile": "ប្រវត្តិរូប",
+      "home": "ទំព័រដើម XGAMBET",
+      "showSidebar": "បង្ហាញម៉ឺនុយខាងឆ្វេង",
+      "hideSidebar": "លាក់ម៉ឺនុយខាងឆ្វេង",
+      "mainCategories": "ប្រភេទសំខាន់ៗ",
+      "searchLabel": "ស្វែងរកហ្គេម ឬអ្នកផ្តល់សេវា",
+      "searchPlaceholder": "ស្វែងរក",
+      "deposit": "ដាក់ប្រាក់",
+      "depositAria": "ដាក់ប្រាក់",
+      "transactionHistory": "ប្រវត្តិប្រតិបត្តិការ",
+      "walletDeposit": "ដាក់ប្រាក់ និងមើលសមតុល្យ",
+      "walletBalance": "សមតុល្យក្រេឌីត"
+    },
+    "desktop": {
+      "quickMenu": "ម៉ឺនុយរហ័ស",
+      "rightRail": "ម៉ឺនុយព្រឹត្តិការណ៍ និងប្រូម៉ូសិន",
+      "sidebar": "ម៉ឺនុយមេលើកុំព្យូទ័រ",
+      "gameCategories": "ប្រភេទហ្គេម",
+      "games": "ហ្គេម",
+      "system": "ប្រព័ន្ធ",
+      "contactUs": "ទាក់ទងយើង",
+      "topBar": "របារស្វែងរក និងគណនី",
+      "searchGames": "ស្វែងរកហ្គេម",
+      "searchGamesPlaceholder": "ស្វែងរកហ្គេម អ្នកផ្តល់សេវា ឬហ្គេមដែលអ្នកចូលចិត្ត..."
+    },
+    "drawer": {
+      "title": "ម៉ឺនុយ",
+      "close": "បិទម៉ឺនុយ",
+      "deposit": "ដាក់ប្រាក់",
+      "withdraw": "ដកប្រាក់",
+      "playBonus": "រង្វាន់តាមការភ្នាល់",
+      "lossBonus": "រង្វាន់ពេលខាត",
+      "referralLink": "តំណណែនាំ",
+      "referralLinkLoginHint": "ចូលគណនីដើម្បីមើលតំណរបស់អ្នក",
+      "copyReferralLink": "ចម្លងតំណណែនាំ",
+      "linkCopied": "បានចម្លងតំណ",
+      "linkCopyFailed": "មិនអាចចម្លងតំណបានទេ",
+      "gameBalance": "សមតុល្យហ្គេម",
+      "gems": "Gems",
+      "tickets": "សំបុត្រ"
+    },
+    "menuSections": {
+      "personal": "ផ្ទាល់ខ្លួន",
+      "privileges": "សិទ្ធិពិសេស",
+      "rewards": "រង្វាន់"
+    },
+    "menu": {
+      "profile": "ប្រវត្តិរូប",
+      "transactions": "ប្រតិបត្តិការ",
+      "rank": "ចំណាត់ថ្នាក់",
+      "promotions": "ប្រូម៉ូសិន",
+      "cashback": "Cashback",
+      "checkIn": "ចុះវត្តមាន",
+      "referral": "ណែនាំមិត្តភក្តិ",
+      "rewardHub": "ចាប់រង្វាន់",
+      "wheel": "កង់សំណាង",
+      "gemsShop": "ហាង Gems",
+      "activities": "ព្រឹត្តិការណ៍",
+      "coupon": "គូប៉ុង",
+      "vipRank": "កម្រិត VIP",
+      "referralEarnings": "ប្រាក់កុម្មីសិន",
+      "referFriend": "ណែនាំមិត្តភក្តិ",
+      "specialBonus": "រង្វាន់ពិសេស",
+      "history": "ប្រវត្តិ",
+      "language": "ភាសា"
+    },
+    "hub": {
+      "promotions": "ប្រូម៉ូសិន",
+      "activities": "ព្រឹត្តិការណ៍",
+      "cashback": "Cashback",
+      "gemsStore": "ហាង Gems",
+      "account": "ព័ត៌មានគណនី",
+      "referral": "ណែនាំមិត្តភក្តិ",
+      "transactions": "ប្រតិបត្តិការ",
+      "checkIn": "ចុះវត្តមានប្រចាំថ្ងៃ",
+      "vip": "VIP"
+    },
+    "footer": {
+      "label": "បាតទំព័រគេហទំព័រ XGAMBET",
+      "home": "ទំព័រដើម XGAMBET",
+      "certifications": "វិញ្ញាបនបត្រ",
+      "auditedBy": "ត្រួតពិនិត្យដោយ",
+      "approvedBy": "អនុម័តដោយ",
+      "playResponsibly": "លេងដោយទំនួលខុសត្រូវ",
+      "ageRestriction": "សម្រាប់អាយុ 18 ឆ្នាំឡើងទៅប៉ុណ្ណោះ",
+      "paymentMethods": "វិធីបង់ប្រាក់",
+      "community": "សហគមន៍",
+      "liveChat": "ជជែកផ្ទាល់",
+      "social": "បណ្តាញសង្គម",
+      "links": "តំណបាតទំព័រ",
+      "disclaimer": "XGAMBET ផ្តល់ការកម្សាន្តអនឡាញសម្រាប់អ្នកលេងដែលមានអាយុស្របច្បាប់នៅតំបន់របស់អ្នក។ សូមលេងដោយទំនួលខុសត្រូវ ហើយទទួលខុសត្រូវចំពោះការសម្រេចចិត្តរបស់ខ្លួនឯង។ ព័ត៌មានក្រុមហ៊ុន និងអាជ្ញាប័ណ្ណគឺជាទិន្នន័យគំរូសម្រាប់បង្ហាញប៉ុណ្ណោះ (mock) ប្រើសម្រាប់សាកល្បង UI។",
+      "tagline": "ហ្គេម និងព្រឹត្តិការណ៍ទាំងអស់របស់អ្នក នៅកន្លែងតែមួយ",
+      "columns": {
+        "platform": "វេទិកា",
+        "sports": "កីឡា",
+        "casino": "កាស៊ីណូ",
+        "promotions": "ប្រូម៉ូសិន",
+        "info": "ព័ត៌មាន",
+        "services": "សេវាកម្ម"
+      },
+      "link": {
+        "profile": "ប្រវត្តិរូប",
+        "transactions": "ប្រតិបត្តិការ",
+        "lotterySlips": "សន្លឹកភ្នាល់ឆ្នោត",
+        "accountSettings": "ការកំណត់គណនី",
+        "dailyCheckIn": "ចុះវត្តមានប្រចាំថ្ងៃ",
+        "gemStore": "ហាង Gems",
+        "leaderboard": "តារាងចំណាត់ថ្នាក់",
+        "predictions": "ការទស្សន៍ទាយ",
+        "liveSports": "កីឡាផ្ទាល់",
+        "sports": "កីឡា",
+        "esports": "អ៊ីស្ព័រ",
+        "tournaments": "ការប្រកួតជើងឯក",
+        "football": "បាល់ទាត់",
+        "basketball": "បាល់បោះ",
+        "tennis": "វាយកូនបាល់",
+        "cricket": "គ្រីឃីត",
+        "lobby": "ឡូប៊ី",
+        "popularGames": "ហ្គេមពេញនិយម",
+        "liveCasino": "កាស៊ីណូផ្ទាល់",
+        "newGames": "ហ្គេមថ្មី",
+        "crashGames": "ហ្គេម Crash",
+        "tableGames": "ហ្គេមតុ",
+        "slots": "ស្លុត",
+        "bonusBuy": "ទិញ Bonus",
+        "roulette": "រ៉ូឡែត",
+        "providers": "អ្នកផ្តល់សេវា",
+        "allPromotions": "ប្រូម៉ូសិនទាំងអស់",
+        "sportsWelcome": "រង្វាន់ស្វាគមន៍កីឡា",
+        "casinoWelcome": "រង្វាន់ស្វាគមន៍កាស៊ីណូ",
+        "weeklyCashback": "Cashback ប្រចាំសប្តាហ៍",
+        "sportsClub": "ក្លឹបកីឡា",
+        "vipClub": "ក្លឹប VIP",
+        "referFriends": "ណែនាំមិត្តភក្តិ",
+        "aboutUs": "អំពីយើង",
+        "events": "ព្រឹត្តិការណ៍",
+        "careers": "ឱកាសការងារ",
+        "contactUs": "ទាក់ទងយើង",
+        "brand": "ម៉ាក",
+        "responsibleGaming": "ការលេងដោយទំនួលខុសត្រូវ",
+        "helpCenter": "មជ្ឈមណ្ឌលជំនួយ",
+        "guide": "ការណែនាំ",
+        "luckyWheel": "កង់សំណាង",
+        "lottery": "ឆ្នោត",
+        "fishing": "បាញ់ត្រី",
+        "lossRebate": "សងប្រាក់ខាត",
+        "casino": "កាស៊ីណូ",
+        "promotions": "ប្រូម៉ូសិន",
+        "vipLevel": "កម្រិត VIP",
+        "privacy": "គោលការណ៍ឯកជនភាព",
+        "terms": "លក្ខខណ្ឌ",
+        "feedback": "ផ្តល់មតិកែលម្អ",
+        "sitemap": "ផែនទីគេហទំព័រ"
+      }
+    }
+  },
+  "auth": {
+    "login": "ចូលគណនី",
+    "signUp": "ចុះឈ្មោះ",
+    "signUpShort": "ចុះឈ្មោះ",
+    "logout": "ចាកចេញ",
+    "loginSheet": {
+      "close": "បិទការចូលគណនី",
+      "subtitle": "ប្រើលេខទូរស័ព្ទ និងពាក្យសម្ងាត់ដែលអ្នកបានចុះឈ្មោះ",
+      "submitting": "កំពុងចូលគណនី...",
+      "noAccount": "មិនទាន់មានគណនីមែនទេ?",
+      "success": "ចូលគណនីជោគជ័យ",
+      "failed": "ចូលគណនីមិនបានសម្រេច"
+    },
+    "signUpSheet": {
+      "close": "បិទការចុះឈ្មោះ",
+      "welcome": "សូមស្វាគមន៍មកកាន់ XGAMBET",
+      "tagline": "ចាប់ផ្តើមភាពសប្បាយតាមបែបរបស់អ្នក",
+      "haveAccount": "មានគណនីរួចហើយមែនទេ?",
+      "submitting": "កំពុងចុះឈ្មោះ...",
+      "success": "ចុះឈ្មោះរួចរាល់ ស្វាគមន៍!",
+      "failed": "ចុះឈ្មោះមិនបានសម្រេច",
+      "pickerClose": "បិទការជ្រើសរើស",
+      "loadingBanks": "កំពុងផ្ទុកធនាគារ…",
+      "banksFailed": "មិនអាចផ្ទុកធនាគារបានទេ",
+      "loadingChannels": "កំពុងផ្ទុកឆានែល…",
+      "channelsFailed": "មិនអាចផ្ទុកឆានែលបានទេ"
+    },
+    "fields": {
+      "phone": "លេខទូរស័ព្ទ",
+      "phonePlaceholder": "បញ្ចូលលេខទូរស័ព្ទ",
+      "password": "ពាក្យសម្ងាត់",
+      "passwordPlaceholder": "បញ្ចូលពាក្យសម្ងាត់",
+      "confirmPassword": "បញ្ជាក់ពាក្យសម្ងាត់",
+      "confirmPasswordPlaceholder": "បញ្ចូលពាក្យសម្ងាត់ម្តងទៀត",
+      "showPassword": "បង្ហាញពាក្យសម្ងាត់",
+      "hidePassword": "លាក់ពាក្យសម្ងាត់",
+      "firstName": "នាមខ្លួន",
+      "lastName": "នាមត្រកូល",
+      "bankAccount": "លេខគណនីធនាគារ",
+      "bankAccountPlaceholder": "លេខគណនី",
+      "bank": "ធនាគារ",
+      "bankPlaceholder": "ជ្រើសរើសធនាគារ",
+      "channel": "តើអ្នកស្គាល់យើងតាមរយៈអ្វី?",
+      "channelPlaceholder": "ជ្រើសរើសឆានែល"
+    },
+    "validation": {
+      "phone": "លេខទូរស័ព្ទត្រូវមាន 10 ខ្ទង់ ហើយចាប់ផ្តើមដោយ 0",
+      "passwordRequired": "សូមបញ្ចូលពាក្យសម្ងាត់របស់អ្នក",
+      "passwordLength": "ពាក្យសម្ងាត់ត្រូវមាន 6–32 តួអក្សរ",
+      "passwordMismatch": "ពាក្យសម្ងាត់មិនត្រូវគ្នាទេ",
+      "firstName": "សូមបញ្ចូលនាមខ្លួនដោយប្រើតែអក្សរ",
+      "lastName": "សូមបញ្ចូលនាមត្រកូលដោយប្រើតែអក្សរ",
+      "bankAccount": "លេខគណនីត្រូវមាន 10–12 ខ្ទង់",
+      "bankRequired": "សូមជ្រើសរើសធនាគារ",
+      "channelRequired": "សូមជ្រើសរើសឆានែល"
+    },
+    "account": {
+      "title": "ព័ត៌មានគណនី",
+      "profile": "ប្រវត្តិរូប",
+      "closeProfile": "បិទប្រវត្តិរូប",
+      "loadingProfile": "កំពុងផ្ទុកប្រវត្តិរូប…",
+      "profileFailed": "មិនអាចផ្ទុកប្រវត្តិរូបបានទេ",
+      "loading": "កំពុងផ្ទុកព័ត៌មានគណនី…",
+      "failed": "មិនអាចផ្ទុកព័ត៌មានគណនីបានទេ",
+      "retryHint": "សូមសាកល្បងម្តងទៀត។ បើនៅតែមិនបាន សូមចាកចេញ រួចចូលគណនីឡើងវិញ។"
+    },
+    "loginPrompt": {
+      "title": "ចូលគណនីដើម្បីមើលផ្នែកនេះ",
+      "description": "ផ្នែកនេះសម្រាប់សមាជិកប៉ុណ្ណោះ"
+    },
+    "logoutConfirm": {
+      "title": "ចាកចេញពីគណនី?",
+      "description": "អ្នកត្រូវចូលគណនីម្តងទៀតដើម្បីដាក់ប្រាក់ ដកប្រាក់ ឬលេងជាមួយគណនីនេះ",
+      "stay": "នៅបន្ត"
+    }
+  },
+  "errors": {
+    "notFoundTitle": "រកមិនឃើញទំព័រ",
+    "backHome": "ត្រឡប់ទៅទំព័រដើម",
+    "notFound": {
+      "metaTitle": "រកមិនឃើញទំព័រ — XGAMBET",
+      "title": "យើងរកមិនឃើញទំព័រនោះទេ",
+      "description": "តំណអាចខុស ឬទំព័រអាចត្រូវបានផ្លាស់ប្តូរ",
+      "viewPromotions": "មើលប្រូម៉ូសិន"
+    },
+    "route": {
+      "title": "មានបញ្ហាកើតឡើង",
+      "description": "ទំព័រនេះផ្ទុកមិនបាន។ សូមសាកល្បងម្តងទៀត។ បើបញ្ហានៅតែកើតមាន សូមទាក់ទងផ្នែកបម្រើអតិថិជន។"
+    },
+    "offline": {
+      "title": "គ្មានអ៊ីនធឺណិត",
+      "description": "សូមបើកអ៊ីនធឺណិត រួចបើក XGAMBET ម្តងទៀត"
+    },
+    "api": {
+      "network": "មិនអាចភ្ជាប់ទៅម៉ាស៊ីនមេបានទេ។ សូមពិនិត្យអ៊ីនធឺណិត រួចសាកល្បងម្តងទៀត។",
+      "parse": "មិនអាចអានការឆ្លើយតបពីម៉ាស៊ីនមេបានទេ",
+      "unauthorized": "សូមចូលគណនីម្តងទៀត",
+      "generic": "មានបញ្ហាកើតឡើង។ សូមសាកល្បងម្តងទៀត។"
+    }
+  },
+  "home": {
+    "categories": {
+      "home": "ទំព័រដើម",
+      "casino": "កាស៊ីណូ",
+      "slots": "ស្លុត",
+      "fishing": "បាញ់ត្រី",
+      "sports": "កីឡា",
+      "lottery": "ឆ្នោត",
+      "cards": "ហ្គេមបៀរ"
+    },
+    "categoryNav": {
+      "ariaLabel": "ប្រភេទហ្គេម"
+    },
+    "sections": {
+      "hotGames": "ហ្គេមពេញនិយម",
+      "slots": "ស្លុត",
+      "casino": "កាស៊ីណូ",
+      "fishing": "បាញ់ត្រី",
+      "sports": "កីឡា",
+      "empty": "មិនទាន់មានហ្គេមក្នុងប្រភេទនេះទេ"
+    },
+    "intro": {
+      "title": "សកលលោកនៃភាពរំភើប",
+      "gamesBefore": "ជាង",
+      "gamesAfter": "ហ្គេម,",
+      "providersBefore": "ជាង",
+      "providersAfter": "អ្នកផ្តល់សេវា,",
+      "sports": "និងព្រឹត្តិការណ៍កីឡាទូទាំងពិភពលោក"
+    },
+    "featureActions": {
+      "ariaLabel": "មុខងារពិសេស"
+    },
+    "search": {
+      "formAriaLabel": "ស្វែងរកហ្គេម និងអ្នកផ្តល់សេវា",
+      "label": "ស្វែងរកហ្គេម ឬអ្នកផ្តល់សេវា",
+      "clear": "សម្អាតការស្វែងរក"
+    },
+    "hallOfFame": {
+      "tabsAriaLabel": "ជ្រើសរើសតារាង Top Performance",
+      "empty": "មិនទាន់មានទិន្នន័យទេ"
+    },
+    "carousel": {
+      "prev": "ស្លាយមុន",
+      "next": "ស្លាយបន្ទាប់",
+      "scroll": "រកមើលបដា",
+      "pickSlide": "ជ្រើសរើសស្លាយបដា",
+      "goToSlide": "ទៅស្លាយទី {index}"
+    },
+    "peekCarousel": {
+      "ariaLabel": "បដាប្រូម៉ូសិន និងព្រឹត្តិការណ៍"
+    },
+    "promoCarousel": {
+      "ariaLabel": "បដាប្រូម៉ូសិន និងសិទ្ធិពិសេស",
+      "listAriaLabel": "ប្រូម៉ូសិន"
+    },
+    "welcomeBanner": {
+      "ariaLabel": "បដាស្វាគមន៍ និងប្រូម៉ូសិន",
+      "slidesAriaLabel": "ស្លាយបដាស្វាគមន៍"
+    },
+    "auth": {
+      "login": "ចូលគណនី",
+      "signUp": "ចុះឈ្មោះ",
+      "loginToSeeEvents": "ចូលគណនី ឬចុះឈ្មោះដើម្បីមើលព្រឹត្តិការណ៍"
+    },
+    "events": {
+      "title": "ព្រឹត្តិការណ៍",
+      "slidesAriaLabel": "ស្លាយ {title}",
+      "goTo": "ទៅកាន់ {name}"
+    },
+    "announcement": {
+      "ariaLabel": "សេចក្តីប្រកាសប្រព័ន្ធ",
+      "label": "ដំណឹង"
+    },
+    "categoryProviders": {
+      "comingSoon": "អ្នកផ្តល់សេវាសម្រាប់ប្រភេទនេះនឹងមកដល់ឆាប់ៗ។ សូមសាកល្បងកាស៊ីណូ ស្លុត បាញ់ត្រី ឬកីឡាសិនទៅ។",
+      "liveCasino": "កាស៊ីណូផ្ទាល់",
+      "providersFallback": "អ្នកផ្តល់សេវា",
+      "providerCount": {
+        "other": "({count} អ្នកផ្តល់សេវា)"
+      },
+      "gamesByProviderAriaLabel": "ហ្គេម {category} ពីអ្នកផ្តល់សេវាដែលបានជ្រើសរើស",
+      "listAriaLabel": "អ្នកផ្តល់សេវាក្នុងប្រភេទដែលបានជ្រើសរើស",
+      "searchPlaceholder": {
+        "casino": "ស្វែងរកកាស៊ីណូផ្ទាល់ | អ្នកផ្តល់សេវា",
+        "fishing": "ស្វែងរកបាញ់ត្រី | អ្នកផ្តល់សេវា",
+        "cards": "ស្វែងរកហ្គេមបៀរ | អ្នកផ្តល់សេវា",
+        "sports": "ស្វែងរកកីឡា | អ្នកផ្តល់សេវា",
+        "default": "ស្វែងរកហ្គេម | អ្នកផ្តល់សេវា"
+      }
+    },
+    "quickBanners": {
+      "ariaLabel": "ចំណុចសំខាន់រហ័ស",
+      "promo": {
+        "title": "ប្រូម៉ូសិនពិសេស",
+        "subtitle": "ប្រូម៉ូសិនផ្តាច់មុខសម្រាប់អ្នក"
+      },
+      "event": {
+        "title": "ព្រឹត្តិការណ៍",
+        "subtitle": "ព្រឹត្តិការណ៍ពេញ 24 ម៉ោង"
+      },
+      "news": {
+        "title": "ដំណឹង",
+        "subtitle": "ដំណឹងដែលមិនគួរខកខាន"
+      }
+    },
+    "mostOnline": {
+      "title": "លេងច្រើនជាងគេឥឡូវនេះ",
+      "favoriteAdd": "បន្ថែមទៅចំណូលចិត្ត",
+      "favoriteRemove": "ដកចេញពីចំណូលចិត្ត",
+      "playingNow": "{count} នាក់កំពុងលេង"
+    },
+    "popular": {
+      "title": "ពេញនិយម",
+      "empty": "មិនទាន់មានអ្វីក្នុងប្រភេទនេះទេ"
+    },
+    "providers": {
+      "empty": "មិនទាន់មានអ្នកផ្តល់សេវាទេ",
+      "marqueeAriaLabel": "អ្នកផ្តល់ហ្គេម",
+      "logoAriaLabel": "អ្នកផ្តល់សេវា {name}"
+    },
+    "a2hs": {
+      "title": "បន្ថែមទៅអេក្រង់ដើម",
+      "cardTitle": "បន្ថែមផ្លូវកាត់ថ្ងៃនេះ!",
+      "cardSubtitle": "ទទួលបានបទពិសោធន៍ល្អជាង។ បន្ថែមឥឡូវនេះ",
+      "platformsAriaLabel": "ជ្រើសរើសឧបករណ៍របស់អ្នក",
+      "stepsTitle": "របៀបបន្ថែមផ្លូវកាត់ ({platform})",
+      "installed": "បានដំឡើងកម្មវិធី",
+      "steps": {
+        "android1": "ចុចម៉ឺនុយ ⋮ នៅខាងលើស្តាំនៃ Chrome",
+        "android2": "ជ្រើសរើស \"Install app\" ឬ \"Add to Home screen\"",
+        "android3": "ចុច \"Install\" ឬ \"Add\" ដើម្បីបញ្ជាក់",
+        "ios1": "ចុចប៊ូតុង \"Share\" នៅខាងក្រោម Safari",
+        "ios2": "ជ្រើសរើស \"Add to Home Screen\"",
+        "ios3": "ចុច \"Add\" នៅខាងលើស្តាំដើម្បីបញ្ជាក់",
+        "launch": "បើកគេហទំព័រភ្លាមៗពីរូបតំណាងកម្មវិធីរបស់យើង"
+      }
+    },
+    "desktopMenu": {
+      "referral": {
+        "title": "ណែនាំមិត្តភក្តិ",
+        "subtitle": "ទទួលបាន 2 ថ្នាក់",
+        "ariaLabel": "ណែនាំមិត្តភក្តិ ទទួលបាន 2 ថ្នាក់"
+      },
+      "checkIn": {
+        "title": "ចុះវត្តមាន",
+        "subtitle": "ចុះវត្តមាន",
+        "ariaLabel": "ចុះវត្តមានប្រចាំថ្ងៃ"
+      },
+      "wheel": {
+        "title": "កង់",
+        "subtitle": "កង់សំណាង",
+        "ariaLabel": "កង់សំណាង"
+      },
+      "gems": {
+        "title": "ហាង Gems",
+        "subtitle": "ហាង Gems",
+        "ariaLabel": "ហាង Gems"
+      },
+      "coupon": {
+        "title": "គូប៉ុង",
+        "subtitle": "គូប៉ុង",
+        "ariaLabel": "ប្តូរគូប៉ុង"
+      },
+      "vip": {
+        "title": "ចំណាត់ថ្នាក់ VIP",
+        "subtitle": "ឯកសិទ្ធិសមាជិក",
+        "ariaLabel": "ចំណាត់ថ្នាក់ VIP ឯកសិទ្ធិសមាជិក"
+      }
+    }
+  },
+  "games": {
+    "filters": {
+      "allInOne": "ទាំងអស់ក្នុងមួយ",
+      "allProviders": "អ្នកផ្តល់សេវាទាំងអស់",
+      "allGameProviders": "អ្នកផ្តល់សេវាទាំងអស់",
+      "dropsAndWins": "Drops & Wins",
+      "chicken": "ជល់មាន់",
+      "buyFeature": "ទិញបង្វិលឥតគិតថ្លៃ",
+      "jackpot": "ហ្សែកផត",
+      "megaways": "Megaways",
+      "baccarat": "បាការ៉ា",
+      "roulette": "រ៉ូឡែត",
+      "blackjack": "ប៊្លែកជែក",
+      "gameShows": "ហ្គេមសូវ",
+      "sicbo": "ស៊ីកបូ/ដ្រាហ្គិនធីហ្គឺ",
+      "football": "បាល់ទាត់",
+      "basketball": "បាល់បោះ",
+      "esports": "អ៊ីស្ព័រ",
+      "boxing": "គុនខ្មែរ",
+      "tennis": "វាយកូនបាល់",
+      "arcade": "អាខេត",
+      "multiplayer": "ពហុអ្នកលេង",
+      "hot": "កំពុងពេញនិយម"
+    },
+    "subHeader": {
+      "back": "ត្រឡប់ក្រោយ"
+    },
+    "breadcrumb": {
+      "ariaLabel": "ផ្លូវរុករក",
+      "backToCategory": "ត្រឡប់ទៅ {category} ទាំងអស់"
+    },
+    "slots": {
+      "title": "ស្លុត",
+      "providerAriaLabel": "{name} — ស្លុត",
+      "providerCount": {
+        "other": "({count} អ្នកផ្តល់សេវា)"
+      }
+    },
+    "casino": {
+      "title": "កាស៊ីណូផ្ទាល់",
+      "count": {
+        "other": "({count} តុ/អ្នកផ្តល់សេវា)"
+      }
+    },
+    "sport": {
+      "title": "កីឡា",
+      "count": {
+        "other": "({count} ធាតុ/អ្នកផ្តល់សេវា)"
+      }
+    },
+    "providerGames": {
+      "searchPlaceholder": "ស្វែងរកហ្គេមពីអ្នកផ្តល់សេវានេះ",
+      "backToCategory": "ត្រឡប់ទៅ {category} ទាំងអស់",
+      "gameCount": {
+        "other": "({count} ហ្គេម)"
+      },
+      "notFoundTitle": "រកមិនឃើញហ្គេម",
+      "notFoundHint": "សាកល្បងពាក្យស្វែងរកផ្សេង ឬសម្អាតការស្វែងរកដើម្បីមើលហ្គេមទាំងអស់",
+      "favoriteAdd": "បន្ថែមទៅចំណូលចិត្ត",
+      "favoriteRemove": "ដកចេញពីចំណូលចិត្ត"
+    },
+    "play": {
+      "playingAriaLabel": "កំពុងលេង {title}",
+      "fullscreen": "ពេញអេក្រង់",
+      "exitFullscreen": "ចាកចេញពីពេញអេក្រង់",
+      "iframePlaceholder": "ផ្ទៃ iframe ហ្គេម (គំរូ)"
+    }
+  },
+  "lottery": {
+    "hub": {
+      "title": "ឆ្នោត",
+      "subtitle": "ជ្រើសរើសឆ្នោតដើម្បីភ្នាល់",
+      "featuredAria": "ឆ្នោតពិសេស",
+      "allMarketsAria": "ឆ្នោតទាំងអស់",
+      "mySlips": "សន្លឹកភ្នាល់របស់ខ្ញុំ",
+      "mySlipsAria": "មើលសន្លឹកភ្នាល់របស់ខ្ញុំ",
+      "mySlipsPendingAria": "មើលសន្លឹកភ្នាល់របស់ខ្ញុំ — កំពុងដំណើរការ {count} សន្លឹក",
+      "daysLeft": {
+        "other": "{count} ថ្ងៃ"
+      }
+    },
+    "markets": {
+      "generic": "ឆ្នោត",
+      "thaiGovernment": "ឆ្នោតរដ្ឋាភិបាលថៃ",
+      "yiki5": "យីគី 5 នាទី",
+      "yiki15": "យីគី 15 នាទី",
+      "yiki30": "យីគី 30 នាទី",
+      "baac": "ឆ្នោត ធ.ក.ស.",
+      "laos": "ឆ្នោតឡាវ",
+      "hanoi": "ឆ្នោតហាណូយ",
+      "malaysia": "ឆ្នោតម៉ាឡេស៊ី",
+      "dowJones": "ឆ្នោតដៅជូនស៍",
+      "china": "ឆ្នោតភាគហ៊ុនចិន",
+      "germany": "ឆ្នោតភាគហ៊ុនអាល្លឺម៉ង់",
+      "russia": "ឆ្នោតភាគហ៊ុនរុស្ស៊ី",
+      "korea": "ឆ្នោតភាគហ៊ុនកូរ៉េ",
+      "nikkei": "ឆ្នោតនីកកី",
+      "uk": "ឆ្នោតភាគហ៊ុនអង់គ្លេស",
+      "hongKong": "ឆ្នោតហ័ងសិង",
+      "taiwan": "ឆ្នោតភាគហ៊ុនតៃវ៉ាន់",
+      "singapore": "ឆ្នោតភាគហ៊ុនសិង្ហបុរី",
+      "india": "ឆ្នោតភាគហ៊ុនឥណ្ឌា",
+      "egypt": "ឆ្នោតភាគហ៊ុនអេហ្ស៊ីប"
+    },
+    "status": {
+      "open": "បើក",
+      "closed": "បិទ",
+      "closedAlready": "បិទទទួលភ្នាល់ហើយ",
+      "closesIn": "បិទក្នុង",
+      "closesInTime": "បិទក្នុង {time}",
+      "countdownDays": "{days}ថ្ងៃ {time}"
+    },
+    "groups": {
+      "three": "3 ខ្ទង់",
+      "two": "2 ខ្ទង់",
+      "run": "រត់"
+    },
+    "betTypes": {
+      "threeTop": "3 ខ្ទង់លើ",
+      "threeTod": "3 ខ្ទង់ឆ្លាស់",
+      "threeFront": "3 ខ្ទង់មុខ",
+      "threeBottom": "3 ខ្ទង់ក្រោម",
+      "threeTopTod": "3 លើឆ្លាស់",
+      "threeTopReverse": "3 លើត្រឡប់",
+      "threeTopComboTod": "3 លើ + ឆ្លាស់",
+      "twoTop": "2 ខ្ទង់លើ",
+      "twoBottom": "2 ខ្ទង់ក្រោម",
+      "twoTopReverse": "2 លើត្រឡប់",
+      "twoBottomReverse": "2 ក្រោមត្រឡប់",
+      "twoTopBottom": "2 លើ/ក្រោម",
+      "twoTopBottomReverse": "2 លើ/ក្រោមត្រឡប់",
+      "runTop": "រត់លើ",
+      "runBottom": "រត់ក្រោម"
+    },
+    "round": {
+      "time": "ជុំម៉ោង {time}",
+      "draw": "ចាប់ឆ្នោត {date}",
+      "market": "{market} {date}",
+      "numbered": "ជុំទី {n}",
+      "current": "ការចាប់ឆ្នោតបច្ចុប្បន្ន"
+    },
+    "rounds": {
+      "empty": "មិនទាន់មានជុំបើកទទួលភ្នាល់ទេ",
+      "listAria": "ជុំ",
+      "showAll": {
+        "other": "បង្ហាញជុំទាំងអស់ ({count} ជុំ)"
+      },
+      "play": "ភ្នាល់ឥឡូវ",
+      "loading": "កំពុងផ្ទុកជុំ…",
+      "loadError": "មិនអាចផ្ទុកជុំបានទេ",
+      "openCountPrefix": "ជុំដែលកំពុងបើក៖",
+      "openCountSuffix": ""
+    },
+    "market": {
+      "sidebarAria": "ប្រភេទឆ្នោត",
+      "rules": "ច្បាប់ / អត្រាបើកប្រាក់",
+      "notFoundTitle": "រកមិនឃើញឆ្នោត",
+      "notFoundDescription": "ឆ្នោតនេះប្រហែលជាលែងមានហើយ។ សូមជ្រើសរើសឆ្នោតផ្សេងពីទំព័រឆ្នោត។",
+      "viewAll": "មើលឆ្នោតទាំងអស់",
+      "marketNotFound": "រកមិនឃើញទីផ្សារឆ្នោត"
+    },
+    "rules": {
+      "payoutHeading": "អត្រាបើកក្នុង ១ បាត",
+      "limitsHeading": "ទឹកប្រាក់ភ្នាល់ក្នុងមួយធាតុ",
+      "minBet": "អប្បបរមា",
+      "maxBet": "អតិបរមា"
+    },
+    "results": {
+      "title": "លទ្ធផលចុងក្រោយ",
+      "morePage": "លទ្ធផលទាំងអស់ >>",
+      "tableAria": "លទ្ធផលឆ្នោតចុងក្រោយ",
+      "colMarket": "ឆ្នោត",
+      "colDate": "ជុំ / កាលបរិច្ឆេទ",
+      "empty": "មិនទាន់មានលទ្ធផលទេ",
+      "today": "ថ្ងៃនេះ"
+    },
+    "thaiResult": {
+      "title": "លទ្ធផលការចាប់ឆ្នោតមុន",
+      "firstPrize": "រង្វាន់ទី 1",
+      "back3": "3 ខ្ទង់ក្រោយ"
+    },
+    "draw": {
+      "aria": "ព័ត៌មានលម្អិតនៃការចាប់ឆ្នោត"
+    },
+    "board": {
+      "pickAria": "ជ្រើសរើសលេខ",
+      "reverse": "ត្រឡប់",
+      "actionsAria": "ជំហានបន្ទាប់",
+      "back": "ត្រឡប់ក្រោយ",
+      "enterPrice": "កំណត់ទឹកប្រាក់",
+      "digitGroupAria": "ចំនួនខ្ទង់",
+      "betTypeAria": "ប្រភេទភ្នាល់",
+      "payout": "បើក {rate}",
+      "loading": "កំពុងផ្ទុកតារាងភ្នាល់…",
+      "roundNotFoundTitle": "រកមិនឃើញជុំ",
+      "roundNotFoundNext": "ជុំនេះប្រហែលជាបិទហើយ។ សូមជ្រើសរើសជុំបន្ទាប់ពីបញ្ជី។",
+      "roundNotFoundOther": "ជុំនេះប្រហែលជាបិទហើយ។ សូមជ្រើសរើសជុំផ្សេងពីបញ្ជី។",
+      "viewAllRounds": "មើលជុំទាំងអស់"
+    },
+    "inputMode": {
+      "aria": "វិធីបញ្ចូលលេខ",
+      "manual": "បញ្ចូលលេខ",
+      "grid": "ជ្រើសពីតារាង"
+    },
+    "feedback": {
+      "duplicate": "{number} មានក្នុងសន្លឹកភ្នាល់រួចហើយ",
+      "added": {
+        "other": "បានបន្ថែម {number} ទៅសន្លឹកភ្នាល់ ({count} ធាតុ)"
+      },
+      "undone": "បានលុបចោលធាតុចុងក្រោយ",
+      "closed": "បិទទទួលភ្នាល់ហើយ",
+      "removed": "បានដក {number} ចេញពីសន្លឹកភ្នាល់"
+    },
+    "pad": {
+      "hundreds": "រយ",
+      "selectedCount": "បានជ្រើស {count}",
+      "gridAria": "តារាងលេខ",
+      "enteredAria": "លេខដែលបានបញ្ចូល {value}",
+      "empty": "ទទេ",
+      "clear": "សម្អាត",
+      "backspace": "លុបខ្ទង់ចុងក្រោយ"
+    },
+    "slip": {
+      "itemCount": {
+        "other": "{count} ធាតុ"
+      },
+      "removeAria": "ដក {label} {number} ចេញ",
+      "priceAria": "ទឹកប្រាក់សម្រាប់ {label} {number}",
+      "enterPrice": "កំណត់ទឹកប្រាក់",
+      "toolbarAria": "ឧបករណ៍សន្លឹកភ្នាល់",
+      "undo": "លុបចោលធាតុចុងក្រោយ",
+      "clearAll": "សម្អាតសន្លឹកភ្នាល់",
+      "emptyPickType": "ជ្រើសរើសប្រភេទភ្នាល់ រួចចុចលេខដើម្បីបន្ថែមទៅសន្លឹកភ្នាល់",
+      "emptyEnterNumber": "មិនទាន់មានអ្វីទេ។ សូមបញ្ចូលលេខដែលអ្នកចង់ភ្នាល់។"
+    },
+    "price": {
+      "aria": "កំណត់ទឹកប្រាក់ និងបញ្ជូនសន្លឹកភ្នាល់",
+      "sameForAll": "ទឹកប្រាក់ដូចគ្នាទាំងអស់",
+      "edit": "កែ",
+      "total": "សរុប",
+      "chipsAria": "ជ្រើសរើសទឹកប្រាក់",
+      "backToNumbers": "កែលេខ",
+      "submitting": "កំពុងបញ្ជូន…",
+      "submit": "បញ្ជូនសន្លឹកភ្នាល់"
+    },
+    "submit": {
+      "failedTitle": "មិនអាចបញ្ជូនសន្លឹកភ្នាល់បានទេ",
+      "done": "យល់ព្រម",
+      "close": "បិទ",
+      "networkError": "មិនអាចភ្ជាប់ទៅម៉ាស៊ីនមេបានទេ"
+    },
+    "summary": {
+      "aria": "សង្ខេបសន្លឹកភ្នាល់",
+      "drawDate": "ថ្ងៃចាប់ឆ្នោត {date}",
+      "copyAria": "ចម្លងលេខសន្លឹកភ្នាល់",
+      "slipId": "សន្លឹកភ្នាល់ #{id}",
+      "purchased": "ទិញនៅ {date}",
+      "submitted": "បានបញ្ជូន",
+      "note": "កំណត់ចំណាំ៖ {note}",
+      "noNote": "គ្មានកំណត់ចំណាំ",
+      "stake": "ទឹកប្រាក់ភ្នាល់",
+      "winLoss": "ឈ្នះ/ចាញ់",
+      "allSlips": "សន្លឹកភ្នាល់ទាំងអស់",
+      "continue": "បន្តភ្នាល់",
+      "copied": "បានចម្លងលេខសន្លឹកភ្នាល់",
+      "copyFailed": "មិនអាចចម្លងលេខសន្លឹកភ្នាល់បានទេ"
+    },
+    "slips": {
+      "title": "សន្លឹកភ្នាល់ទាំងអស់",
+      "loading": "កំពុងផ្ទុកសន្លឹកភ្នាល់…",
+      "emptyTitle": "មិនទាន់មានសន្លឹកភ្នាល់ទេ",
+      "emptyDescription": "ជ្រើសរើសឆ្នោត ហើយបញ្ជូនសន្លឹកភ្នាល់ដំបូងរបស់អ្នក។",
+      "goPlay": "ទៅកាន់ឆ្នោត",
+      "stake": "ទឹកប្រាក់ {amount}",
+      "summaryTitle": "សង្ខេបសន្លឹកភ្នាល់",
+      "notFoundTitle": "រកមិនឃើញសន្លឹកភ្នាល់",
+      "notFoundDescription": "សន្លឹកភ្នាល់ប្រហែលជាត្រូវបានលុប ឬតំណមិនត្រឹមត្រូវ។",
+      "viewAll": "មើលសន្លឹកភ្នាល់ទាំងអស់",
+      "tabs": {
+        "pending": "កំពុងដំណើរការ",
+        "history": "ប្រវត្តិ",
+        "aria": "ប្រភេទសន្លឹកភ្នាល់"
+      },
+      "filters": {
+        "aria": "តម្រងសន្លឹកភ្នាល់",
+        "market": "ឆ្នោត",
+        "result": "លទ្ធផល",
+        "range": "រយៈពេល",
+        "allMarkets": "ឆ្នោតទាំងអស់",
+        "allResults": "លទ្ធផលទាំងអស់",
+        "today": "ថ្ងៃនេះ",
+        "days7": "7 ថ្ងៃ",
+        "days30": "30 ថ្ងៃ",
+        "custom": "កំណត់ខ្លួនឯង"
+      },
+      "status": {
+        "waitingDraw": "រង់ចាំចាប់ឆ្នោត",
+        "waitingSettle": "រង់ចាំសម្រេចលទ្ធផល",
+        "won": "ឈ្នះ",
+        "lost": "ចាញ់",
+        "void": "បានបោះបង់ (សងប្រាក់វិញ)"
+      },
+      "summary": {
+        "count": "{count} សន្លឹក",
+        "stake": "ភ្នាល់សរុប {amount}",
+        "net": "ឈ្នះ/ចាញ់សុទ្ធ"
+      },
+      "card": {
+        "drawAt": "ចាប់ឆ្នោត {date}",
+        "settledAt": "សម្រេច {date}"
+      },
+      "emptyPending": {
+        "title": "គ្មានសន្លឹកភ្នាល់កំពុងដំណើរការ",
+        "description": "សន្លឹកដែលបានបញ្ជូន ហើយមិនទាន់សម្រេចលទ្ធផល នឹងបង្ហាញនៅទីនេះ។"
+      },
+      "emptyHistory": {
+        "title": "មិនទាន់មានប្រវត្តិសន្លឹកភ្នាល់",
+        "description": "សន្លឹកដែលសម្រេចលទ្ធផលហើយ ត្រូវរក្សាទុក {days} ថ្ងៃ។"
+      },
+      "emptyFiltered": "រកមិនឃើញសន្លឹកតាមតម្រងនេះ",
+      "clearFilters": "សម្អាតតម្រង",
+      "loadMore": "ផ្ទុកបន្ថែម",
+      "loadingMore": "កំពុងផ្ទុក…",
+      "loadMoreError": "ផ្ទុកបន្ថែមមិនបាន សូមព្យាយាមម្តងទៀត។",
+      "loadError": "ផ្ទុកសន្លឹកភ្នាល់មិនបាន",
+      "retentionNote": "រក្សាទុកប្រវត្តិ {days} ថ្ងៃ"
+    }
+  },
+  "wallet": {
+    "shared": {
+      "submitting": "កំពុងបញ្ជូន...",
+      "copied": "បានចម្លង",
+      "copyAccountNumber": "ចម្លងលេខគណនី",
+      "currencyUnit": "THB"
+    },
+    "deposit": {
+      "title": "ដាក់ប្រាក់",
+      "close": "បិទការដាក់ប្រាក់",
+      "selectMethod": "ជ្រើសរើសវិធីដាក់ប្រាក់",
+      "methodsAria": "វិធីដាក់ប្រាក់",
+      "methodsLoading": "កំពុងផ្ទុកវិធីដាក់ប្រាក់…",
+      "methodsError": "មិនអាចផ្ទុកវិធីដាក់ប្រាក់បានទេ",
+      "bankAccountLoading": "កំពុងផ្ទុកគណនីទទួលប្រាក់…",
+      "bankAccountError": "មិនអាចផ្ទុកគណនីទទួលប្រាក់បានទេ",
+      "methods": {
+        "bank": {
+          "title": "គណនីធនាគារ",
+          "subtitle": "ផ្ទេរតាមគណនីធនាគារ"
+        },
+        "gateway": {
+          "title": "ច្រកទូទាត់",
+          "subtitle": "ដាក់ប្រាក់តាម ច្រកទូទាត់"
+        },
+        "truemoney": {
+          "title": "កាបូប TrueMoney",
+          "subtitle": "ដាក់ប្រាក់តាមកាបូប TrueMoney"
+        }
+      },
+      "bank": {
+        "title": "ដាក់ប្រាក់តាមគណនីធនាគារ",
+        "back": "ត្រឡប់ទៅវិធីដាក់ប្រាក់",
+        "bankLabel": "ធនាគារ",
+        "accountName": "ឈ្មោះគណនី",
+        "accountNumber": "លេខគណនី",
+        "amountLabel": "ចំនួនទឹកប្រាក់ដាក់",
+        "quickAmount": "ចំនួនរហ័ស",
+        "quickAmountHint": "ជ្រើសរើសចំនួន ឬបញ្ចូលដោយខ្លួនឯង",
+        "next": "បន្ទាប់"
+      },
+      "confirm": {
+        "title": "បញ្ជាក់ការដាក់ប្រាក់",
+        "back": "ត្រឡប់ទៅកែចំនួនទឹកប្រាក់",
+        "step": "ជំហានទី {current} នៃ {total}",
+        "transferAmount": "ចំនួនទឹកប្រាក់ត្រូវផ្ទេរ",
+        "accountNameLabel": "ឈ្មោះគណនី៖ ",
+        "accountNumberLabel": "លេខគណនី៖ ",
+        "sampleNote": "ព័ត៌មានគណនីគំរូ",
+        "slipTitle": "ភ្ជាប់វិក្កយបត្រផ្ទេរប្រាក់",
+        "slipPick": "ចុចដើម្បីភ្ជាប់វិក្កយបត្រ",
+        "slipChange": "ចុចម្តងទៀតដើម្បីប្តូររូបភាព",
+        "slipFromDevice": "ជ្រើសរូបភាពពីឧបករណ៍របស់អ្នក",
+        "slipHint": "សូមភ្ជាប់វិក្កយបត្រ បន្ទាប់ពីផ្ទេរប្រាក់រួច",
+        "submit": "បញ្ជាក់ការដាក់ប្រាក់"
+      },
+      "finalConfirm": {
+        "title": "បញ្ជូនសំណើដាក់ប្រាក់?",
+        "description": "ពិនិត្យចំនួនទឹកប្រាក់ និងវិក្កយបត្រ មុនបញ្ជូនដើម្បីត្រួតពិនិត្យ",
+        "confirm": "បញ្ជូនការដាក់ប្រាក់",
+        "amountLabel": "ចំនួនទឹកប្រាក់ដាក់"
+      }
+    },
+    "withdraw": {
+      "title": "ដកប្រាក់",
+      "close": "បិទការដកប្រាក់",
+      "accountLoading": "កំពុងផ្ទុកគណនីទទួលប្រាក់…",
+      "accountError": "មិនអាចផ្ទុកគណនីទទួលប្រាក់បានទេ",
+      "changeAccount": "ប្តូរគណនីទទួលប្រាក់",
+      "transferToYourAccount": "ផ្ទេរទៅគណនីរបស់អ្នក",
+      "amountLabel": "ចំនួនទឹកប្រាក់ដក",
+      "available": "អាចដកបាន ฿{amount}",
+      "withdrawAll": "ដកទាំងអស់",
+      "quickAmountHint": "ចុចលើចំនួនដើម្បីកែ",
+      "submit": "បញ្ជាក់ការដកប្រាក់",
+      "confirm": {
+        "title": "បញ្ជូនសំណើដកប្រាក់?",
+        "description": "ផ្ទេរទៅ {bank} {account}",
+        "confirm": "បញ្ជាក់ការដកប្រាក់",
+        "amountLabel": "ចំនួនទឹកប្រាក់ដក"
+      }
+    },
+    "pending": {
+      "deposit": {
+        "title": "កំពុងរង់ចាំការដាក់ប្រាក់",
+        "subtitle": "កំពុងរង់ចាំផ្គូផ្គងការផ្ទេរប្រាក់របស់អ្នក"
+      },
+      "withdraw": {
+        "title": "កំពុងរង់ចាំការដកប្រាក់",
+        "subtitle": "សំណើរបស់អ្នកកំពុងដំណើរការ"
+      },
+      "rows": {
+        "channel": "វិធីសាស្ត្រ",
+        "reference": "លេខយោង",
+        "transactionAt": "កាលបរិច្ឆេទ",
+        "receivingAccount": "គណនីទទួលប្រាក់"
+      },
+      "close": "បិទ",
+      "done": "រួចរាល់",
+      "viewHistory": "មើលប្រវត្តិប្រតិបត្តិការ",
+      "copyReference": "ចម្លងលេខយោង",
+      "referenceCopied": "បានចម្លងលេខយោង",
+      "referenceCopyFailed": "មិនអាចចម្លងលេខយោងបានទេ"
+    }
+  },
+  "transactions": {
+    "title": "ប្រវត្តិប្រតិបត្តិការ",
+    "pageLoading": "កំពុងផ្ទុក...",
+    "kindTabs": {
+      "aria": "ប្រភេទប្រតិបត្តិការ",
+      "deposit": "ដាក់ប្រាក់",
+      "withdraw": "ដកប្រាក់",
+      "promotion": "ប្រូម៉ូសិន",
+      "bet": "ការភ្នាល់"
+    },
+    "filter": {
+      "label": "ជ្រើសរើសកាលបរិច្ឆេទ",
+      "openCalendar": "បើកប្រតិទិន",
+      "clear": "សម្អាត",
+      "search": "ស្វែងរក"
+    },
+    "calendar": {
+      "title": "ជ្រើសរើសចន្លោះកាលបរិច្ឆេទ",
+      "close": "បិទ",
+      "cancel": "បោះបង់",
+      "confirm": "បញ្ជាក់"
+    },
+    "status": {
+      "completed": "ជោគជ័យ",
+      "pending": "កំពុងរង់ចាំ",
+      "failed": "បរាជ័យ"
+    },
+    "betType": {
+      "bet": "ភ្នាល់",
+      "result": "លទ្ធផល"
+    },
+    "columns": {
+      "amount": "ចំនួនទឹកប្រាក់",
+      "channel": "វិធីសាស្ត្រ",
+      "account": "គណនី",
+      "createdAt": "កាលបរិច្ឆេទ និងម៉ោង",
+      "status": "ស្ថានភាព",
+      "detail": "ព័ត៌មានលម្អិត",
+      "completedAt": "បញ្ចប់នៅ",
+      "promotionName": "ប្រូម៉ូសិន",
+      "playStart": "ថ្ងៃចាប់ផ្តើម",
+      "playEnd": "ថ្ងៃបញ្ចប់",
+      "freeSpins": "បង្វិលឥតគិតថ្លៃ",
+      "perRound": "ក្នុងមួយជុំ",
+      "provider": "អ្នកផ្តល់សេវា",
+      "gameName": "ហ្គេម",
+      "expiresWithin": "ផុតកំណត់ក្នុង",
+      "game": "ហ្គេម",
+      "date": "កាលបរិច្ឆេទ",
+      "time": "ម៉ោង",
+      "type": "ប្រភេទ",
+      "betAmount": "ទឹកប្រាក់ភ្នាល់",
+      "openingBalance": "សមតុល្យដើមគ្រា",
+      "closingBalance": "សមតុល្យចុងគ្រា"
+    },
+    "empty": "រកមិនឃើញទិន្នន័យ",
+    "paginationAria": "ទំព័រប្រវត្តិភ្នាល់",
+    "loginRequired": "សូមចូលគណនីដើម្បីមើលប្រតិបត្តិការរបស់អ្នក",
+    "loadError": "មិនអាចផ្ទុកប្រតិបត្តិការបានទេ",
+    "retry": "សាកល្បងម្តងទៀត",
+    "loading": "កំពុងផ្ទុកប្រតិបត្តិការ…",
+    "summary": {
+      "depositTotal": "ការដាក់ប្រាក់សរុប៖",
+      "withdrawTotal": "ការដកប្រាក់សរុប៖",
+      "promotionClaims": "ប្រូម៉ូសិនដែលបានទទួល៖",
+      "winLossTotal": "ឈ្នះ/ចាញ់សរុប៖",
+      "stakeTotal": "ការភ្នាល់សរុប៖"
+    }
+  },
+  "profile": {
+    "logout": "ចាកចេញ",
+    "retry": "សាកល្បងម្តងទៀត",
+    "backHome": "ត្រឡប់ទៅទំព័រដើម",
+    "field": {
+      "copy": "ចម្លង",
+      "edit": "កែ"
+    },
+    "account": {
+      "title": "ព័ត៌មានគណនី",
+      "loading": "កំពុងផ្ទុកព័ត៌មានគណនី…",
+      "loadErrorTitle": "មិនអាចផ្ទុកព័ត៌មានគណនីបានទេ",
+      "loadErrorDescription": "សូមសាកល្បងម្តងទៀត។ បើនៅតែមិនបាន សូមចាកចេញ រួចចូលគណនីឡើងវិញ។",
+      "tabs": {
+        "personal": "ព័ត៌មានផ្ទាល់ខ្លួន",
+        "bank": "គណនីធនាគារ"
+      },
+      "gameUser": "ឈ្មោះអ្នកប្រើហ្គេម",
+      "copyGameUser": "ចម្លងឈ្មោះអ្នកប្រើហ្គេម",
+      "gameUserCopied": "បានចម្លងឈ្មោះអ្នកប្រើហ្គេម",
+      "copyFailed": "មិនអាចចម្លងបានទេ",
+      "password": "ពាក្យសម្ងាត់",
+      "changePassword": "ប្តូរពាក្យសម្ងាត់",
+      "transactionHistory": "ប្រវត្តិប្រតិបត្តិការ",
+      "transactionHistoryHint": "ដាក់ប្រាក់ · ដកប្រាក់ · ភ្នាល់"
+    },
+    "avatar": {
+      "change": "ប្តូររូបភាពប្រវត្តិរូប",
+      "tapToChange": "ចុចលើរូបភាពដើម្បីប្តូរ",
+      "pickerTitle": "ជ្រើសរើសរូបភាពប្រវត្តិរូប",
+      "pickerDescription": "ជ្រើសរើសតួអង្គ — រក្សាទុកភ្លាមៗពេលចុច",
+      "saveFailed": "មិនអាចរក្សាទុកបានទេ។ សូមសាកល្បងម្តងទៀត។",
+      "close": "បិទ",
+      "srLabel": "រូបភាពប្រវត្តិរូបរបស់ {name}",
+      "presetName": "តួអង្គ {n}"
+    },
+    "hub": {
+      "navAriaLabel": "ម៉ឺនុយប្រវត្តិរូប",
+      "vipLevel": "កម្រិត VIP",
+      "transactions": "ដាក់ប្រាក់ និងដកប្រាក់",
+      "myDiamonds": "Gems របស់ខ្ញុំ",
+      "lossRebate": "រង្វាន់សងប្រាក់ខាត",
+      "affiliate": "សមតុល្យភ្នាក់ងារ",
+      "activePromotion": "ប្រូម៉ូសិនកំពុងប្រើ",
+      "greeting": "សួស្តី {name}",
+      "joinedAt": "ចូលរួមនៅ៖ {date}",
+      "playerId": "លេខសម្គាល់អ្នកលេង៖ {id}",
+      "copyPlayerId": "ចម្លងលេខសម្គាល់អ្នកលេង",
+      "playerIdCopied": "បានចម្លងលេខសម្គាល់អ្នកលេង",
+      "copyPlayerIdFailed": "មិនអាចចម្លងលេខសម្គាល់បានទេ"
+    },
+    "referralInvite": {
+      "title": "អញ្ជើញមិត្តភក្តិ ទទួលបានរង្វាន់",
+      "description": "ចែករំលែកតំណរបស់អ្នកជាមួយមិត្តភក្តិ ហើយទទួលចំណែកពីការលេងរបស់ពួកគេ",
+      "linkLabel": "តំណអញ្ជើញ",
+      "copyLink": "ចម្លងតំណអញ្ជើញ",
+      "linkCopied": "បានចម្លងតំណ",
+      "copyLinkFailed": "មិនអាចចម្លងតំណបានទេ"
+    },
+    "summary": {
+      "copyId": "ចម្លង ID",
+      "idCopied": "បានចម្លង ID",
+      "copyIdFailed": "មិនអាចចម្លង ID បានទេ",
+      "phoneVerified": "បានផ្ទៀងផ្ទាត់លេខទូរស័ព្ទ"
+    },
+    "dashboard": {
+      "title": "ទិដ្ឋភាពទូទៅប្រព័ន្ធ / ផ្ទាំងគ្រប់គ្រង",
+      "subtitle": "សង្ខេបទិន្នន័យសំខាន់ៗរបស់ប្រព័ន្ធតាមពេលវេលាជាក់ស្តែង",
+      "dateRange": "12 ធ្នូ 2023, 00:00 - 23:59",
+      "vsYesterday": "ធៀបនឹងម្សិលមិញ",
+      "unitAccounts": "គណនី",
+      "period": {
+        "today": "ថ្ងៃនេះ",
+        "week": "សប្តាហ៍",
+        "month": "ខែ",
+        "year": "ឆ្នាំ"
+      },
+      "nav": {
+        "overview": "ទិដ្ឋភាពទូទៅ",
+        "betReports": "របាយការណ៍ភ្នាល់",
+        "members": "សមាជិក",
+        "marketing": "ទីផ្សារ",
+        "promotions": "ប្រូម៉ូសិន",
+        "transactions": "ប្រតិបត្តិការ",
+        "reports": "របាយការណ៍",
+        "settings": "ការកំណត់"
+      },
+      "kpi": {
+        "totalDeposit": "ការដាក់ប្រាក់សរុប",
+        "totalWithdraw": "ការដកប្រាក់សរុប",
+        "netProfit": "ប្រាក់ចំណេញសុទ្ធ",
+        "totalBets": "ការភ្នាល់សរុប",
+        "newMembers": "សមាជិកថ្មី",
+        "firstDeposit": "ការដាក់ប្រាក់ដំបូង"
+      },
+      "chart": {
+        "deposit": "ការដាក់ប្រាក់ (THB)",
+        "withdraw": "ការដកប្រាក់ (THB)",
+        "transactionCount": "ប្រតិបត្តិការ",
+        "accountCount": "គណនី"
+      },
+      "journey": {
+        "title": "ដំណើរអតិថិជន",
+        "signUp": "បានចុះឈ្មោះ",
+        "firstDeposit": "ការដាក់ប្រាក់ដំបូង",
+        "firstBet": "សកម្ម (ភ្នាល់ដំបូង)"
+      },
+      "trend": {
+        "title": "ការដាក់ប្រាក់ - ការដកប្រាក់ថ្ងៃនេះ",
+        "subtitle": "ប្រតិបត្តិការតាមពេលវេលា (Shadcn Chart)",
+        "net": "សុទ្ធ"
+      },
+      "banks": {
+        "title": "ចំណែកធនាគាររបស់អតិថិជន",
+        "totalAccounts": "គណនីសរុប"
+      },
+      "channels": {
+        "title": "របៀបដែលអតិថិជនស្គាល់យើង",
+        "channel": "ឆានែល",
+        "customers": "អតិថិជន",
+        "share": "ចំណែក"
+      },
+      "activeHours": {
+        "title": "ម៉ោងសកម្មរបស់អតិថិជន"
+      },
+      "depositDistribution": {
+        "title": "ការចែកចាយការដាក់ប្រាក់របស់អតិថិជន"
+      },
+      "hourlyMembers": {
+        "title": "សមាជិកថ្មីតាមម៉ោង"
+      }
+    }
+  },
+  "vip": {
+    "tabs": {
+      "ariaLabel": "ម៉ឺនុយ VIP",
+      "myLevel": "កម្រិតរបស់ខ្ញុំ",
+      "rank": "ចំណាត់ថ្នាក់",
+      "benefits": "អត្ថប្រយោជន៍"
+    },
+    "status": {
+      "loading": "កំពុងផ្ទុក...",
+      "playerLoading": "កំពុងផ្ទុកព័ត៌មាន VIP…",
+      "playerError": "មិនអាចផ្ទុកព័ត៌មាន VIP បានទេ",
+      "ranksLoading": "កំពុងផ្ទុកកម្រិត VIP…",
+      "ranksError": "មិនអាចផ្ទុកកម្រិត VIP បានទេ",
+      "benefitsLoading": "កំពុងផ្ទុកអត្ថប្រយោជន៍…",
+      "benefitsError": "មិនអាចផ្ទុកអត្ថប្រយោជន៍បានទេ",
+      "retry": "សាកល្បងម្តងទៀត"
+    },
+    "level": {
+      "label": "កម្រិត",
+      "next": "កម្រិតបន្ទាប់",
+      "currentAriaLabel": "កម្រិត VIP បច្ចុប្បន្ន",
+      "benefitsAndMaintainAriaLabel": "អត្ថប្រយោជន៍ និងការរក្សាកម្រិត"
+    },
+    "rankStatus": {
+      "current": "កម្រិតបច្ចុប្បន្ន",
+      "cleared": "បានបញ្ចប់",
+      "locked": "មិនទាន់ដល់"
+    },
+    "carousel": {
+      "previous": "ចំណាត់ថ្នាក់មុន",
+      "next": "ចំណាត់ថ្នាក់បន្ទាប់",
+      "turnoverTarget": "ការភ្នាល់ {amount}"
+    },
+    "progress": {
+      "levelUpTo": "ឡើងកម្រិតទៅ VIP {level}",
+      "bothRequired": "ត្រូវបំពេញលក្ខខណ្ឌទាំងពីរ",
+      "overallAriaLabel": "វឌ្ឍនភាពសរុប {percent} ភាគរយ",
+      "deposit": "ដាក់ប្រាក់",
+      "turnover": "ការភ្នាល់",
+      "target": "គោលដៅ {amount}",
+      "complete": "បានបញ្ចប់",
+      "remaining": "នៅសល់ {amount}"
+    },
+    "maintain": {
+      "title": "រក្សាកម្រិត VIP",
+      "subtitleWithDowngrade": "បំពេញទាំងពីរ បើមិនដូច្នោះនឹងធ្លាក់ទៅ VIP {level}",
+      "daysRemaining": "ថ្ងៃទៀត"
+    },
+    "benefitsTable": {
+      "title": "អត្ថប្រយោជន៍តាមកម្រិត",
+      "scrollHint": "អូសដើម្បីមើលកម្រិតច្រើនទៀត"
+    },
+    "benefitRows": {
+      "cashback": "រង្វាន់ Cashback",
+      "rolling": "រង្វាន់វិលភ្នាល់",
+      "diamondDeposit": "Gems ពីការដាក់ប្រាក់",
+      "fastWithdraw": "ដកប្រាក់លឿន",
+      "vipManager": "អ្នកគ្រប់គ្រង VIP",
+      "upgradeBonus": "ប្រាក់រង្វាន់ឡើងកម្រិត",
+      "depositCondition": "លក្ខខណ្ឌដាក់ប្រាក់",
+      "turnoverCondition": "លក្ខខណ្ឌការភ្នាល់"
+    },
+    "benefitValues": {
+      "faster": "✓ លឿនជាង",
+      "max": "✓ អតិបរមា",
+      "notRequired": "គ្មាន"
+    },
+    "myLevelBenefits": {
+      "cashback": "Cashback",
+      "rolling": "វិលភ្នាល់",
+      "diamondDeposit": "Gems ពីការដាក់ប្រាក់"
+    },
+    "missions": {
+      "login": "ចូលគណនី",
+      "deposit": "ដាក់ប្រាក់",
+      "play": "លេង",
+      "unitDays": "ថ្ងៃ",
+      "unitTimes": "ដង"
+    }
+  },
+  "referral": {
+    "pageTitle": "អញ្ជើញមិត្តភក្តិ",
+    "tabs": {
+      "ariaLabel": "ម៉ឺនុយណែនាំមិត្ត",
+      "overview": "ទិដ្ឋភាពទូទៅ",
+      "users": "មិត្តភក្តិដែលបានណែនាំ",
+      "earning": "ចំណូល"
+    },
+    "status": {
+      "overviewLoading": "កំពុងផ្ទុកព័ត៌មានណែនាំមិត្ត…",
+      "overviewError": "មិនអាចផ្ទុកព័ត៌មានណែនាំមិត្តបានទេ",
+      "earningsLoading": "កំពុងផ្ទុកចំណូល…",
+      "earningsError": "មិនអាចផ្ទុកចំណូលបានទេ",
+      "usersLoading": "កំពុងផ្ទុកបញ្ជីមិត្តភក្តិ…",
+      "usersError": "មិនអាចផ្ទុកបញ្ជីមិត្តភក្តិបានទេ"
+    },
+    "loginPrompt": {
+      "title": "ចូលគណនីដើម្បីមើលតំណណែនាំរបស់អ្នក",
+      "description": "តំណណែនាំ និងចំណូលរបស់អ្នកនឹងបង្ហាញបន្ទាប់ពីចូលគណនី"
+    },
+    "promo": {
+      "ariaLabel": "ប្រូម៉ូសិនណែនាំមិត្ត",
+      "title": "អញ្ជើញមិត្តភក្តិ ទទួលបាន 2 ថ្នាក់",
+      "description": "ចែករំលែកតំណរបស់អ្នក ហើយទទួលចំណែកពីការលេងរបស់មិត្តភក្តិ"
+    },
+    "link": {
+      "title": "តំណណែនាំរបស់អ្នក",
+      "copied": "បានចម្លងតំណ",
+      "copyFailed": "មិនអាចចម្លងតំណបានទេ"
+    },
+    "stats": {
+      "title": "ស្ថិតិរបស់អ្នក",
+      "friends": "មិត្តភក្តិដែលបានចូលរួម",
+      "totalTurnover": "ការភ្នាល់សរុប",
+      "totalEarnings": "ចំណូលសរុប"
+    },
+    "tiers": {
+      "title": "ទទួលបានពី 2 ថ្នាក់",
+      "description": "ចែករំលែកតំណរបស់អ្នក ហើយទទួលកុម្មីសិនពីការភ្នាល់របស់បណ្តាញអ្នក",
+      "rateHint": "នៃការភ្នាល់",
+      "tier1": {
+        "title": "ថ្នាក់ទី 1 — មិត្តភក្តិផ្ទាល់",
+        "subtitle": "មិត្តភក្តិដែលចុះឈ្មោះតាមតំណរបស់អ្នក"
+      },
+      "tier2": {
+        "title": "ថ្នាក់ទី 2 — មិត្តភក្តិរបស់មិត្តភក្តិ",
+        "subtitle": "មិត្តភក្តិដែលមិត្តភក្តិរបស់អ្នកអញ្ជើញ"
+      }
+    },
+    "checks": {
+      "realtime": "គណនាតាមពេលវេលាជាក់ស្តែង",
+      "lifetimeCommission": "កុម្មីសិនពេញមួយជីវិត",
+      "minWithdraw": "ដកអប្បបរមា ฿50.00"
+    },
+    "steps": {
+      "title": "ចាប់ផ្តើមបានក្នុង 3 ជំហានងាយៗ",
+      "copy": "ចម្លងតំណ",
+      "share": "ចែករំលែកជាមួយមិត្តភក្តិ",
+      "earn": "ទទួលកុម្មីសិន"
+    },
+    "periods": {
+      "ariaLabel": "រយៈពេលចំណូល",
+      "all": "ទាំងអស់",
+      "today": "ថ្ងៃនេះ",
+      "lastWeek": "សប្តាហ៍មុន",
+      "lastMonth": "ខែមុន"
+    },
+    "earning": {
+      "claimableIncome": "ចំណូលអាចទាមទារបាន",
+      "claimableBonus": "រង្វាន់អាចទាមទារបាន",
+      "claim": "ទាមទាររង្វាន់",
+      "receivedTotal": "បានទាមទារសរុប {amount}",
+      "received": "បានទាមទារ {amount}",
+      "periodSummaryAriaLabel": "សង្ខេបចំណូលសម្រាប់រយៈពេលដែលបានជ្រើស",
+      "networkIncomePeriod": "ចំណូលបណ្តាញ (រយៈពេលដែលបានជ្រើស)",
+      "totalAccumulated": "សរុបទាំងអស់ {amount}",
+      "detailsTitle": "ព័ត៌មានលម្អិតចំណូល",
+      "historyTitle": "ប្រវត្តិរង្វាន់",
+      "bonusAmount": "ចំនួនរង្វាន់",
+      "date": "កាលបរិច្ឆេទ",
+      "empty": "មិនទាន់មានប្រវត្តិរង្វាន់ទេ",
+      "paginationAriaLabel": "ទំព័រប្រវត្តិរង្វាន់"
+    },
+    "users": {
+      "registeredAt": "ចូលរួមនៅ",
+      "empty": "មិនទាន់មានមិត្តភក្តិចុះឈ្មោះតាមតំណរបស់អ្នកទេ",
+      "paginationAriaLabel": "ទំព័របញ្ជីមិត្តភក្តិ"
+    },
+    "pagination": {
+      "showing": "បង្ហាញ {start}–{end} ក្នុងចំណោម {total}"
+    }
+  },
+  "cashback": {
+    "pageTitle": "Cashback",
+    "tabs": {
+      "ariaLabel": "ប្រភេទ Cashback",
+      "play": "Cashback",
+      "loss": "សងប្រាក់ខាត"
+    },
+    "status": {
+      "panelsLoading": "កំពុងផ្ទុក Cashback…",
+      "panelsError": "មិនអាចផ្ទុក Cashback បានទេ",
+      "lossRebateLoading": "កំពុងផ្ទុកការសងប្រាក់ខាត…",
+      "lossRebateError": "មិនអាចផ្ទុកការសងប្រាក់ខាតបានទេ"
+    },
+    "panel": {
+      "playSubtitle": "Cashback ពីការភ្នាល់របស់អ្នក",
+      "lossSubtitle": "សងវិញពីការខាតសុទ្ធរបស់អ្នក",
+      "nothingToClaim": "មិនទាន់មានអ្វីត្រូវទាមទារទេ",
+      "claimed": "បានទាមទារ",
+      "cycleDaily": "ជារៀងរាល់ថ្ងៃ ម៉ោង 00:00",
+      "claimableAmount": "ចំនួនអាចទាមទារបាន",
+      "accumulatedThisCycle": "ចំនួនបូកស្ថិតិ (វដ្តនេះ)",
+      "refresh": "ធ្វើបច្ចុប្បន្នភាពចំនួន"
+    },
+    "periods": {
+      "ariaLabel": "រយៈពេលសង្ខេប Cashback",
+      "all": "ទាំងអស់",
+      "today": "ថ្ងៃនេះ",
+      "lastWeek": "សប្តាហ៍មុន",
+      "lastMonth": "ខែមុន"
+    },
+    "rules": {
+      "title": "លម្អិតលក្ខខណ្ឌ",
+      "item": "ធាតុ",
+      "value": "តម្លៃ",
+      "rate": "អត្រា",
+      "min": "អប្បបរមា",
+      "maxPerClaim": "អតិបរមាក្នុងមួយដង",
+      "cycle": "វដ្តគណនា"
+    },
+    "lossRebate": {
+      "statusCalculated": "បានគណនា",
+      "historyTitle": "ប្រវត្តិសងប្រាក់ខាត",
+      "selectMonth": "ជ្រើសរើសខែ",
+      "period": "រយៈពេល",
+      "netLoss": "ការខាតសុទ្ធ",
+      "bonusReceived": "រង្វាន់ដែលបានទទួល",
+      "receivedDate": "ថ្ងៃទទួល",
+      "empty": "គ្មានប្រវត្តិសម្រាប់ខែដែលបានជ្រើស",
+      "paginationAriaLabel": "ទំព័រប្រវត្តិសងប្រាក់ខាត",
+      "termsTitle": "លក្ខខណ្ឌសងប្រាក់ខាត",
+      "terms": {
+        "basis": "ការសងប្រាក់ខាតត្រូវបានគណនាពីការខាតសុទ្ធដែលមានសិទ្ធិក្នុងវដ្តនីមួយៗ។",
+        "claimWindow": "រង្វាន់ត្រូវទាមទារក្នុងអំឡុងពេលដែលអាចទាមទារបាន បើមិនដូច្នោះនឹងផុតកំណត់។",
+        "subjectToChange": "អត្រា និងលក្ខខណ្ឌអាចផ្លាស់ប្តូរតាមការប្រកាសរបស់គេហទំព័រ។",
+        "sampleData": "ទិន្នន័យក្នុងទំព័រនេះជាទិន្នន័យគំរូសម្រាប់បង្ហាញ UI។"
+      },
+      "formula": {
+        "title": "ព័ត៌មានលម្អិតនៃការគណនា",
+        "eligibleNetLoss": "ការខាតសុទ្ធដែលមានសិទ្ធិ",
+        "rate": "អត្រាសងប្រាក់ខាត",
+        "bonus": "រង្វាន់សងប្រាក់ខាត",
+        "sampleNote": "ចំនួន និងអត្រាដែលបង្ហាញគឺជាឧទាហរណ៍។"
+      }
+    },
+    "pagination": {
+      "showing": "បង្ហាញ {start}–{end} ក្នុងចំណោម {total}"
+    }
+  },
+  "rewards": {
+    "actions": {
+      "claim": "ទាមទារ",
+      "close": "បិទ",
+      "ok": "យល់ព្រម"
+    },
+    "status": {
+      "claimed": "បានទាមទារ"
+    },
+    "hub": {
+      "title": "រង្វាន់",
+      "loading": "កំពុងផ្ទុករង្វាន់…",
+      "loadError": "មិនអាចផ្ទុករង្វាន់បានទេ",
+      "pointsLoading": "កំពុងផ្ទុកពិន្ទុ…",
+      "pointsLoadError": "មិនអាចផ្ទុកទិន្នន័យរង្វាន់បានទេ",
+      "bannersAria": "ប្រូម៉ូសិនរង្វាន់",
+      "shortcutsAria": "ម៉ឺនុយរង្វាន់",
+      "summaryAria": "សមតុល្យក្រេឌីត និងពិន្ទុ",
+      "totalCredits": "ក្រេឌីតសរុប",
+      "pointsBalance": "សមតុល្យពិន្ទុ"
+    },
+    "shortcuts": {
+      "luckyBox": "ប្រអប់សំណាង",
+      "randomCard": "កាតចៃដន្យ",
+      "freespins": "បង្វិលឥតគិតថ្លៃ / ឆីប"
+    },
+    "banners": {
+      "luckyBoxSubtitle": "ប្តូរ ប្រអប់សំណាង ដោយពិន្ទុ",
+      "randomCardSubtitle": "បើកកាតដើម្បីឈ្នះរង្វាន់",
+      "termsLabel": "លក្ខខណ្ឌ"
+    },
+    "redeemBoard": {
+      "subtitle": "ឈ្នះរង្វាន់",
+      "pointsLabel": "ពិន្ទុ",
+      "drawCost": "{cost} ពិន្ទុក្នុងមួយដង",
+      "startDraw": "ចាប់ផ្តើមចាប់រង្វាន់",
+      "history": "ប្រវត្តិប្តូរ"
+    },
+    "luckyBox": {
+      "pageTitle": "ប្រអប់សំណាង",
+      "loading": "កំពុងផ្ទុក ប្រអប់សំណាង…",
+      "loadError": "មិនអាចផ្ទុក ប្រអប់សំណាង បានទេ"
+    },
+    "randomCard": {
+      "pageTitle": "កាតចៃដន្យ",
+      "loading": "កំពុងផ្ទុកកាតចៃដន្យ…",
+      "loadError": "មិនអាចផ្ទុកកាតចៃដន្យបានទេ"
+    },
+    "freespins": {
+      "title": "បង្វិលឥតគិតថ្លៃ / ឆីប",
+      "comingSoonDesc": "មុខងារនេះកំពុងអភិវឌ្ឍ — ឆាប់ៗនឹងអាចប្តូរដោយពិន្ទុ"
+    },
+    "checkIn": {
+      "title": "ចុះវត្តមានប្រចាំថ្ងៃ",
+      "loading": "កំពុងផ្ទុកការចុះវត្តមាន…",
+      "loadError": "មិនអាចផ្ទុកការចុះវត្តមានបានទេ",
+      "subtitle": "ចុះវត្តមានរៀងរាល់ថ្ងៃដើម្បីទទួល Gems បន្ថែម",
+      "bonusBefore": "នៅសល់ត្រឹមតែ",
+      "bonusDays": {
+        "other": "{count} ថ្ងៃ"
+      },
+      "bonusAfter": "ទៀត ដើម្បីទទួលរង្វាន់",
+      "bonusGems": "{amount} Gems",
+      "progressTotal": "/ {total} ថ្ងៃ",
+      "dayStatus": {
+        "claimed": "បានទាមទារ",
+        "today": "ទាមទារ",
+        "locked": "នឹងមកដល់"
+      },
+      "weekdays": {
+        "mon": "ច.",
+        "tue": "អ.",
+        "wed": "ពុ.",
+        "thu": "ព្រ.",
+        "fri": "សុ.",
+        "sat": "ស.",
+        "sun": "អា."
+      },
+      "cumulativeTitle": "រង្វាន់ជាប់ៗគ្នា",
+      "cumulativeDesc": "សម្រេចគោលដៅចុះវត្តមាននីមួយៗដើម្បីទទួល Gems ច្រើន",
+      "milestoneGems": "{amount} Gems",
+      "milestoneDays": "ចុះវត្តមាន {days} ថ្ងៃ",
+      "milestoneDialog": {
+        "title": "រង្វាន់ចុះវត្តមានគ្រប់ {days} ថ្ងៃ",
+        "progress": "បានចុះវត្តមាន {done}/{total} ថ្ងៃ",
+        "claim": "ទទួលរង្វាន់",
+        "claimed": "បានទទួលរង្វាន់ហើយ",
+        "daysLeft": "ចុះវត្តមានបន្ថែម {count} ថ្ងៃទៀត"
+      },
+      "claimedToday": "បានចុះវត្តមានថ្ងៃនេះ",
+      "claimToday": "ទាមទាររង្វាន់ថ្ងៃនេះ",
+      "success": {
+        "title": "បានទាមទាររង្វាន់",
+        "descBefore": "អ្នកទទួលបាន",
+        "descAfter": ""
+      },
+      "desktop": {
+        "summaryAria": "សង្ខេបការចុះវត្តមាន",
+        "progressAria": "វឌ្ឍនភាពចុះវត្តមាន",
+        "weekProgress": "វឌ្ឍនភាពសប្តាហ៍នេះ",
+        "daysUnit": "ថ្ងៃ",
+        "claimTodayAria": "ទាមទាររង្វាន់ថ្ងៃនេះ",
+        "claimToday": "ទាមទាររង្វាន់ថ្ងៃនេះ",
+        "claimedToday": "បានទាមទាររង្វាន់",
+        "streakAria": "វឌ្ឍនភាព 7 ថ្ងៃ",
+        "streakDay": "ថ្ងៃទី {day}",
+        "listTitle": "រង្វាន់ចុះវត្តមាន",
+        "dayTitle": "ថ្ងៃទី {day}",
+        "specialReward": "រង្វាន់ពិសេស",
+        "bonusDayDesc": "ចុះវត្តមានពេញមួយសប្តាហ៍ដើម្បីទទួលក្រេឌីតបន្ថែម",
+        "dailyDesc": "រង្វាន់ចុះវត្តមានប្រចាំថ្ងៃ",
+        "locked": "ជាប់សោ"
+      }
+    },
+    "wheel": {
+      "title": "កង់សំណាង",
+      "subtitle": "បង្វិលរាល់ថ្ងៃដើម្បីឈ្នះរង្វាន់ធំ",
+      "loading": "កំពុងផ្ទុកកង់សំណាង…",
+      "loadError": "មិនអាចផ្ទុកកង់សំណាងបានទេ",
+      "backHome": "ត្រឡប់ទៅទំព័រដើម",
+      "winMessage": "សូមអបអរសាទរ! អ្នកឈ្នះ {prize}",
+      "justNow": "ទើបតែឥឡូវ",
+      "prizeKind": {
+        "gems": "Gems",
+        "credit": "ក្រេឌីត"
+      },
+      "gemsBalanceAria": "សមតុល្យ Gems របស់អ្នក",
+      "ticketsAria": "សំបុត្ររបស់អ្នក",
+      "spinAria": "បង្វិលកង់",
+      "methodTabsAria": "ជ្រើសរើសវិធីបង្វិល",
+      "methodGems": "Gems ×{cost}",
+      "methodTicket": "សំបុត្រ ×{cost}",
+      "spinning": "កំពុងបង្វិល…",
+      "spinNow": "បង្វិលឥឡូវ",
+      "useTickets": {
+        "other": "ប្រើសំបុត្រ {count} សន្លឹក"
+      },
+      "useGems": "ប្រើ {amount} Gems",
+      "noTickets": "គ្មានសំបុត្រ — សាកល្បងបង្វិលដោយ Gems",
+      "notEnoughGems": "Gems មិនគ្រប់គ្រាន់ — សូមបញ្ចូល Gems បន្ថែម",
+      "hint": "បង្វិលដើម្បីភាពសប្បាយ និងឈ្នះរង្វាន់រាល់ថ្ងៃ",
+      "sampleNote": "រង្វាន់ និងសមតុល្យកាបូបគំរូ",
+      "liveWinners": {
+        "title": "អ្នកឈ្នះថ្មីៗ",
+        "gemsWon": "+{amount} Gems",
+        "received": "ឈ្នះ",
+        "gemsAmount": "{amount} Gems"
+      },
+      "history": {
+        "title": "ប្រវត្តិបង្វិលរបស់ខ្ញុំ",
+        "usedGems": "Gems",
+        "usedTicket": "សំបុត្រ",
+        "prevPage": "ទំព័រមុន",
+        "nextPage": "ទំព័របន្ទាប់"
+      }
+    },
+    "gemsStore": {
+      "title": "ហាង Gems",
+      "loading": "កំពុងផ្ទុកហាង Gems…",
+      "loadError": "មិនអាចផ្ទុកហាង Gems បានទេ",
+      "redeemHeading": "ប្តូរក្រេឌីត",
+      "termsTitle": "លក្ខខណ្ឌប្តូរ",
+      "redeemShort": "ប្តូរ",
+      "notEnoughShort": "ខ្វះ",
+      "redeem": "ប្តូរ",
+      "redeemAria": "ប្តូរ {credits}",
+      "notEnoughGems": "Gems មិនគ្រប់គ្រាន់",
+      "summary": {
+        "balanceLabel": "សមតុល្យ Gems",
+        "balanceAria": "សមតុល្យ Gems {amount}",
+        "today": "ថ្ងៃនេះ",
+        "thisWeek": "សប្តាហ៍នេះ"
+      },
+      "confirm": {
+        "title": "{amount} ក្រេឌីត",
+        "subtitle": "ប្រើ {gems} Gems ដើម្បីប្តូរ {credits} ក្រេឌីត",
+        "creditsLabel": "ក្រេឌីត",
+        "gemsUsed": "Gems ដែលបានប្រើ",
+        "balanceAfter": "សមតុល្យក្រោយប្តូរ",
+        "cancel": "បោះបង់",
+        "confirm": "បញ្ជាក់",
+        "processing": "កំពុងដំណើរការ…"
+      }
+    },
+    "activities": {
+      "title": "ព្រឹត្តិការណ៍",
+      "loading": "កំពុងផ្ទុកព្រឹត្តិការណ៍…",
+      "loadError": "មិនអាចផ្ទុកព្រឹត្តិការណ៍បានទេ",
+      "listAria": "បញ្ជីព្រឹត្តិការណ៍",
+      "closeDetail": "បិទព័ត៌មានលម្អិតព្រឹត្តិការណ៍",
+      "viewDetails": "មើលព័ត៌មានលម្អិត",
+      "categoryTabsAria": "ប្រភេទព្រឹត្តិការណ៍",
+      "categories": {
+        "slots": "ស្លុត",
+        "casino": "កាស៊ីណូ"
+      },
+      "progress": {
+        "title": "ការភ្នាល់របស់អ្នក",
+        "current": "ការភ្នាល់បច្ចុប្បន្ន",
+        "rank1Target": "គោលដៅថ្នាក់ទី 1",
+        "rewardCount": "រង្វាន់ {earned} / {cap}"
+      },
+      "tiers": {
+        "rank": "ថ្នាក់",
+        "turn": "ការភ្នាល់",
+        "bonus": "រង្វាន់",
+        "claim": "ទាមទារ",
+        "notEligible": "មិនមានសិទ្ធិ"
+      },
+      "rulesTitle": "ច្បាប់ និងលក្ខខណ្ឌព្រឹត្តិការណ៍"
+    }
+  },
+  "promotions": {
+    "title": "ប្រូម៉ូសិន",
+    "loading": "កំពុងផ្ទុកប្រូម៉ូសិន…",
+    "loadError": "មិនអាចផ្ទុកប្រូម៉ូសិនបានទេ",
+    "loadErrorDesc": "សូមពិនិត្យអ៊ីនធឺណិតរបស់អ្នក រួចសាកល្បងម្តងទៀត",
+    "retry": "សាកល្បងម្តងទៀត",
+    "forYou": "ប្រូម៉ូសិនសម្រាប់អ្នក",
+    "filterAria": "ត្រងប្រូម៉ូសិនតាមប្រភេទ",
+    "categories": {
+      "all": "ទាំងអស់",
+      "slots": "ស្លុត",
+      "casino": "កាស៊ីណូ",
+      "sport": "កីឡា",
+      "newMember": "សមាជិកថ្មី",
+      "daily": "ប្រចាំថ្ងៃ",
+      "privilege": "សិទ្ធិពិសេស"
+    },
+    "empty": {
+      "category": "មិនទាន់មានប្រូម៉ូសិនក្នុងប្រភេទនេះទេ",
+      "categoryHint": "មិនទាន់មានប្រូម៉ូសិនក្នុងប្រភេទនេះទេ — សាកល្បងជ្រើស \"ទាំងអស់\"",
+      "activitiesHint": "មិនទាន់មានព្រឹត្តិការណ៍ក្នុងប្រភេទនេះទេ — សាកល្បងជ្រើស \"ទាំងអស់\""
+    },
+    "hub": {
+      "promotionsListAria": "បញ្ជីប្រូម៉ូសិន",
+      "activitiesListAria": "បញ្ជីព្រឹត្តិការណ៍",
+      "selectedDetailAria": "ព័ត៌មានលម្អិតដែលបានជ្រើស"
+    },
+    "detail": {
+      "title": "ព័ត៌មានលម្អិតប្រូម៉ូសិន",
+      "heading": "ព័ត៌មានលម្អិត",
+      "loading": "កំពុងផ្ទុកព័ត៌មានលម្អិត…",
+      "close": "បិទព័ត៌មានលម្អិតប្រូម៉ូសិន",
+      "notFound": "រកមិនឃើញព័ត៌មានលម្អិតប្រូម៉ូសិន",
+      "notFoundDesc": "ប្រូម៉ូសិននេះប្រហែលជាបានបញ្ចប់ ឬផ្ទុកមិនបាន"
+    },
+    "mobile": {
+      "expires": "បញ្ចប់ {date}",
+      "readTerms": "អានលក្ខខណ្ឌ",
+      "readTermsAria": "{title} — អានលក្ខខណ្ឌ"
+    }
+  }
+}

@@ -1,0 +1,41 @@
+{
+  "title": "โปรโมชั่น",
+  "loading": "กำลังโหลดโปรโมชั่น…",
+  "loadError": "โหลดโปรโมชั่นไม่สำเร็จ",
+  "loadErrorDesc": "ตรวจสอบอินเทอร์เน็ตแล้วลองใหม่อีกครั้ง",
+  "retry": "ลองใหม่",
+  "forYou": "โปรโมชั่นสำหรับคุณ",
+  "filterAria": "กรองโปรโมชั่นตามหมวด",
+  "categories": {
+    "all": "ทั้งหมด",
+    "slots": "สล็อต",
+    "casino": "คาสิโน",
+    "sport": "กีฬา",
+    "newMember": "สมาชิกใหม่",
+    "daily": "ประจำวัน",
+    "privilege": "สิทธิพิเศษ"
+  },
+  "empty": {
+    "category": "ยังไม่มีโปรโมชั่นในหมวดนี้",
+    "categoryHint": "ยังไม่มีโปรโมชั่นในหมวดนี้ — ลองเลือก All Promotions",
+    "activitiesHint": "ยังไม่มีกิจกรรมในหมวดนี้ — ลองเลือก All Promotions"
+  },
+  "hub": {
+    "promotionsListAria": "รายการโปรโมชั่น",
+    "activitiesListAria": "รายการกิจกรรม",
+    "selectedDetailAria": "รายละเอียดที่เลือก"
+  },
+  "detail": {
+    "title": "รายละเอียดโปรโมชั่น",
+    "heading": "รายละเอียด",
+    "loading": "กำลังโหลดรายละเอียด…",
+    "close": "ปิดรายละเอียดโปรโมชั่น",
+    "notFound": "ไม่พบรายละเอียดโปรโมชั่น",
+    "notFoundDesc": "โปรโมชั่นนี้อาจหมดเวลาแล้ว หรือโหลดไม่สำเร็จ"
+  },
+  "mobile": {
+    "expires": "หมดเขต {date}",
+    "readTerms": "อ่านเงื่อนไข",
+    "readTermsAria": "{title} — อ่านเงื่อนไข"
+  }
+}

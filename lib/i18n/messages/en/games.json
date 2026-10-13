@@ -1,0 +1,72 @@
+{
+  "filters": {
+    "allInOne": "All-in-One",
+    "allProviders": "All Providers",
+    "allGameProviders": "All Providers",
+    "dropsAndWins": "Drops & Wins",
+    "chicken": "Cockfighting",
+    "buyFeature": "Buy Free Spins",
+    "jackpot": "Jackpot",
+    "megaways": "Megaways",
+    "baccarat": "Baccarat",
+    "roulette": "Roulette",
+    "blackjack": "Blackjack",
+    "gameShows": "Game Shows",
+    "sicbo": "Sic Bo/Dragon Tiger",
+    "football": "Football",
+    "basketball": "Basketball",
+    "esports": "Esports",
+    "boxing": "Muay Thai",
+    "tennis": "Tennis",
+    "arcade": "Arcade",
+    "multiplayer": "Multiplayer",
+    "hot": "Trending"
+  },
+  "subHeader": {
+    "back": "Back"
+  },
+  "breadcrumb": {
+    "ariaLabel": "Breadcrumb",
+    "backToCategory": "Back to all {category}"
+  },
+  "slots": {
+    "title": "Slots",
+    "providerAriaLabel": "{name} — Slots",
+    "providerCount": {
+      "one": "({count} provider)",
+      "other": "({count} providers)"
+    }
+  },
+  "casino": {
+    "title": "Live Casino",
+    "count": {
+      "one": "({count} table/provider)",
+      "other": "({count} tables/providers)"
+    }
+  },
+  "sport": {
+    "title": "Sports",
+    "count": {
+      "one": "({count} item/provider)",
+      "other": "({count} items/providers)"
+    }
+  },
+  "providerGames": {
+    "searchPlaceholder": "Search games from this provider",
+    "backToCategory": "Back to all {category}",
+    "gameCount": {
+      "one": "({count} game)",
+      "other": "({count} games)"
+    },
+    "notFoundTitle": "No games found",
+    "notFoundHint": "Try a different search, or clear the search to see all games",
+    "favoriteAdd": "Add to favorites",
+    "favoriteRemove": "Remove from favorites"
+  },
+  "play": {
+    "playingAriaLabel": "Playing {title}",
+    "fullscreen": "Fullscreen",
+    "exitFullscreen": "Exit fullscreen",
+    "iframePlaceholder": "Game iframe area (prototype)"
+  }
+}

@@ -1,0 +1,92 @@
+{
+  "pageTitle": "Invite Friends",
+  "tabs": {
+    "ariaLabel": "Referral menu",
+    "overview": "Overview",
+    "users": "Referred Friends",
+    "earning": "Earnings"
+  },
+  "status": {
+    "overviewLoading": "Loading referral info…",
+    "overviewError": "Couldn't load referral info",
+    "earningsLoading": "Loading earnings…",
+    "earningsError": "Couldn't load earnings",
+    "usersLoading": "Loading friends list…",
+    "usersError": "Couldn't load friends list"
+  },
+  "loginPrompt": {
+    "title": "Log in to see your referral link",
+    "description": "Your referral link and earnings will appear after you log in"
+  },
+  "promo": {
+    "ariaLabel": "Referral promotion",
+    "title": "Invite Friends, Earn 2 Tiers",
+    "description": "Share your link and earn a share of your friends' play"
+  },
+  "link": {
+    "title": "Your Referral Link",
+    "copied": "Link copied",
+    "copyFailed": "Couldn't copy link"
+  },
+  "stats": {
+    "title": "Your Stats",
+    "friends": "Friends Joined",
+    "totalTurnover": "Total Turnover",
+    "totalEarnings": "Total Earnings"
+  },
+  "tiers": {
+    "title": "Earn from 2 Tiers",
+    "description": "Share your link and earn commission on your network's turnover",
+    "rateHint": "of turnover",
+    "tier1": {
+      "title": "Tier 1 — Direct Friends",
+      "subtitle": "Friends who sign up with your link"
+    },
+    "tier2": {
+      "title": "Tier 2 — Friends of Friends",
+      "subtitle": "Friends invited by your friends"
+    }
+  },
+  "checks": {
+    "realtime": "Real-time calculation",
+    "lifetimeCommission": "Lifetime commission",
+    "minWithdraw": "Min. withdrawal ฿50.00"
+  },
+  "steps": {
+    "title": "Get Started in 3 Easy Steps",
+    "copy": "Copy Link",
+    "share": "Share with Friends",
+    "earn": "Earn Commission"
+  },
+  "periods": {
+    "ariaLabel": "Earnings period",
+    "all": "All",
+    "today": "Today",
+    "lastWeek": "Last Week",
+    "lastMonth": "Last Month"
+  },
+  "earning": {
+    "claimableIncome": "Claimable Earnings",
+    "claimableBonus": "Claimable Bonus",
+    "claim": "Claim Bonus",
+    "receivedTotal": "Total claimed {amount}",
+    "received": "Claimed {amount}",
+    "periodSummaryAriaLabel": "Earnings summary for selected period",
+    "networkIncomePeriod": "Network earnings (selected period)",
+    "totalAccumulated": "All-time {amount}",
+    "detailsTitle": "Earnings Details",
+    "historyTitle": "Bonus History",
+    "bonusAmount": "Bonus Amount",
+    "date": "Date",
+    "empty": "No bonus history yet",
+    "paginationAriaLabel": "Bonus history pages"
+  },
+  "users": {
+    "registeredAt": "Joined",
+    "empty": "No friends have signed up with your link yet",
+    "paginationAriaLabel": "Friends list pages"
+  },
+  "pagination": {
+    "showing": "Showing {start}–{end} of {total}"
+  }
+}

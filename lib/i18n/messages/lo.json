@@ -1,0 +1,1639 @@
+{
+  "auth": {
+    "login": "ເຂົ້າສູ່ລະບົບ",
+    "signUp": "ສະໝັກສະມາຊິກ",
+    "signUpShort": "ສະໝັກ",
+    "logout": "ອອກຈາກລະບົບ",
+    "loginSheet": {
+      "close": "ປິດໜ້າເຂົ້າສູ່ລະບົບ",
+      "subtitle": "ໃຊ້ເບີໂທແລະລະຫັດຜ່ານທີ່ທ່ານສະໝັກໄວ້",
+      "submitting": "ກຳລັງເຂົ້າສູ່ລະບົບ...",
+      "noAccount": "ຍັງບໍ່ມີບັນຊີບໍ?",
+      "success": "ເຂົ້າສູ່ລະບົບສຳເລັດ",
+      "failed": "ເຂົ້າສູ່ລະບົບບໍ່ສຳເລັດ"
+    },
+    "signUpSheet": {
+      "close": "ປິດໜ້າສະໝັກສະມາຊິກ",
+      "welcome": "ຍິນດີຕ້ອນຮັບສູ່ XGAMBET",
+      "tagline": "ເລີ່ມຕົ້ນຄວາມມ່ວນໃນແບບຂອງທ່ານ",
+      "haveAccount": "ມີບັນຊີຢູ່ແລ້ວບໍ?",
+      "submitting": "ກຳລັງສະໝັກ...",
+      "success": "ສະໝັກສະມາຊິກສຳເລັດ ຍິນດີຕ້ອນຮັບ!",
+      "failed": "ສະໝັກບໍ່ສຳເລັດ",
+      "pickerClose": "ປິດຕົວເລືອກ",
+      "loadingBanks": "ກຳລັງໂຫຼດລາຍຊື່ທະນາຄານ…",
+      "banksFailed": "ໂຫຼດລາຍຊື່ທະນາຄານບໍ່ສຳເລັດ",
+      "loadingChannels": "ກຳລັງໂຫຼດຊ່ອງທາງ…",
+      "channelsFailed": "ໂຫຼດຊ່ອງທາງບໍ່ສຳເລັດ"
+    },
+    "fields": {
+      "phone": "ເບີໂທລະສັບ",
+      "phonePlaceholder": "ໃສ່ເບີໂທລະສັບ",
+      "password": "ລະຫັດຜ່ານ",
+      "passwordPlaceholder": "ໃສ່ລະຫັດຜ່ານ",
+      "confirmPassword": "ຢືນຢັນລະຫັດຜ່ານ",
+      "confirmPasswordPlaceholder": "ໃສ່ລະຫັດຜ່ານອີກຄັ້ງ",
+      "showPassword": "ສະແດງລະຫັດຜ່ານ",
+      "hidePassword": "ເຊື່ອງລະຫັດຜ່ານ",
+      "firstName": "ຊື່ແທ້",
+      "lastName": "ນາມສະກຸນ",
+      "bankAccount": "ເລກບັນຊີທະນາຄານ",
+      "bankAccountPlaceholder": "ເລກບັນຊີ",
+      "bank": "ທະນາຄານ",
+      "bankPlaceholder": "ເລືອກທະນາຄານ",
+      "channel": "ທ່ານຮູ້ຈັກເຮົາຈາກຊ່ອງທາງໃດ?",
+      "channelPlaceholder": "ເລືອກຊ່ອງທາງ"
+    },
+    "validation": {
+      "phone": "ເບີໂທລະສັບຕ້ອງເປັນຕົວເລກ 10 ຫຼັກ ເລີ່ມດ້ວຍ 0",
+      "passwordRequired": "ກະລຸນາໃສ່ລະຫັດຜ່ານ",
+      "passwordLength": "ລະຫັດຜ່ານຕ້ອງມີ 6–32 ຕົວອັກສອນ",
+      "passwordMismatch": "ລະຫັດຜ່ານບໍ່ກົງກັນ",
+      "firstName": "ກະລຸນາໃສ່ຊື່ແທ້ເປັນຕົວອັກສອນເທົ່ານັ້ນ",
+      "lastName": "ກະລຸນາໃສ່ນາມສະກຸນເປັນຕົວອັກສອນເທົ່ານັ້ນ",
+      "bankAccount": "ເລກບັນຊີຕ້ອງເປັນຕົວເລກ 10–12 ຫຼັກ",
+      "bankRequired": "ກະລຸນາເລືອກທະນາຄານ",
+      "channelRequired": "ກະລຸນາເລືອກຊ່ອງທາງ"
+    },
+    "account": {
+      "title": "ຂໍ້ມູນບັນຊີ",
+      "profile": "ໂປຣໄຟລ໌",
+      "closeProfile": "ປິດໂປຣໄຟລ໌",
+      "loadingProfile": "ກຳລັງໂຫຼດໂປຣໄຟລ໌…",
+      "profileFailed": "ໂຫຼດໂປຣໄຟລ໌ບໍ່ສຳເລັດ",
+      "loading": "ກຳລັງໂຫຼດຂໍ້ມູນບັນຊີ…",
+      "failed": "ໂຫຼດຂໍ້ມູນບັນຊີບໍ່ສຳເລັດ",
+      "retryHint": "ກະລຸນາລອງໃໝ່ ຖ້າຍັງບໍ່ໄດ້ ໃຫ້ອອກຈາກລະບົບແລ້ວເຂົ້າສູ່ລະບົບໃໝ່"
+    },
+    "loginPrompt": {
+      "title": "ເຂົ້າສູ່ລະບົບເພື່ອເບິ່ງຂໍ້ມູນນີ້",
+      "description": "ສ່ວນນີ້ສະເພາະສະມາຊິກເທົ່ານັ້ນ"
+    },
+    "logoutConfirm": {
+      "title": "ອອກຈາກລະບົບບໍ?",
+      "description": "ທ່ານຈະຕ້ອງເຂົ້າສູ່ລະບົບໃໝ່ເພື່ອຝາກ ຖອນ ຫຼືເລ່ນເກມດ້ວຍບັນຊີນີ້",
+      "stay": "ຢູ່ຕໍ່"
+    }
+  },
+  "cashback": {
+    "pageTitle": "ຄືນຍອດ",
+    "tabs": {
+      "ariaLabel": "ປະເພດຄືນຍອດ",
+      "play": "ຄືນຍອດເລ່ນ",
+      "loss": "ຄືນຍອດເສຍ"
+    },
+    "status": {
+      "panelsLoading": "ກຳລັງໂຫຼດຄືນຍອດ…",
+      "panelsError": "ໂຫຼດຂໍ້ມູນຄືນຍອດບໍ່ສຳເລັດ",
+      "lossRebateLoading": "ກຳລັງໂຫຼດຄືນຍອດເສຍ…",
+      "lossRebateError": "ໂຫຼດຂໍ້ມູນຄືນຍອດເສຍບໍ່ສຳເລັດ"
+    },
+    "panel": {
+      "playSubtitle": "ຄືນຈາກຍອດເທີນທີ່ເລ່ນ",
+      "lossSubtitle": "ຄືນຈາກຍອດເສຍສຸດທິ",
+      "nothingToClaim": "ຍັງບໍ່ມີຍອດໃຫ້ຮັບ",
+      "claimed": "ຮັບແລ້ວ",
+      "cycleDaily": "ທຸກວັນ 00:00",
+      "claimableAmount": "ຍອດຄືນທີ່ຮັບໄດ້",
+      "accumulatedThisCycle": "ຍອດຄືນສະສົມ (ຮອບນີ້)",
+      "refresh": "ຣີເຟຣຊຍອດຄືນ"
+    },
+    "periods": {
+      "ariaLabel": "ຊ່ວງເວລາສະຫຼຸບຄືນຍອດ",
+      "all": "ທັງໝົດ",
+      "today": "ມື້ນີ້",
+      "lastWeek": "ອາທິດທີ່ແລ້ວ",
+      "lastMonth": "ເດືອນທີ່ແລ້ວ"
+    },
+    "rules": {
+      "title": "ລາຍລະອຽດເງື່ອນໄຂ",
+      "item": "ລາຍການ",
+      "value": "ຄ່າ",
+      "rate": "ອັດຕາຄືນ",
+      "min": "ຂັ້ນຕ່ຳ",
+      "maxPerClaim": "ສູງສຸດຕໍ່ຄັ້ງ",
+      "cycle": "ຮອບຄຳນວນ"
+    },
+    "lossRebate": {
+      "statusCalculated": "ຄຳນວນແລ້ວ",
+      "historyTitle": "ປະຫວັດການຮັບຄືນຍອດເສຍ",
+      "selectMonth": "ເລືອກເດືອນ",
+      "period": "ຮອບຄຳນວນ",
+      "netLoss": "ຍອດເສຍສຸດທິ",
+      "bonusReceived": "ໂບນັດທີ່ໄດ້ຮັບ",
+      "receivedDate": "ວັນທີຮັບ",
+      "empty": "ບໍ່ມີປະຫວັດໃນເດືອນທີ່ເລືອກ",
+      "paginationAriaLabel": "ປ່ຽນໜ້າປະຫວັດຄືນຍອດເສຍ",
+      "termsTitle": "ເງື່ອນໄຂການຄືນຍອດເສຍ",
+      "terms": {
+        "basis": "ການຄືນຍອດເສຍຄຳນວນຈາກຍອດເສຍສຸດທິທີ່ເຂົ້າເງື່ອນໄຂໃນແຕ່ລະຮອບທີ່ກຳນົດ",
+        "claimWindow": "ຕ້ອງກົດຮັບໂບນັດພາຍໃນໄລຍະເວລາທີ່ລະບົບເປີດໃຫ້ຮັບ ຖ້າບໍ່ດັ່ງນັ້ນໂບນັດຈະໝົດອາຍຸ",
+        "subjectToChange": "ອັດຕາຄືນແລະເງື່ອນໄຂອາດປ່ຽນແປງຕາມປະກາດຂອງເວັບໄຊ",
+        "sampleData": "ຂໍ້ມູນໃນໜ້ານີ້ເປັນຕົວຢ່າງສຳລັບການສະແດງຜົນ UI"
+      },
+      "formula": {
+        "title": "ລາຍລະອຽດການຄຳນວນ",
+        "eligibleNetLoss": "ຍອດເສຍສຸດທິທີ່ເຂົ້າເງື່ອນໄຂ",
+        "rate": "ອັດຕາຄືນຍອດເສຍ",
+        "bonus": "ໂບນັດຄືນຍອດເສຍ",
+        "sampleNote": "ຕົວເລກແລະອັດຕາທີ່ສະແດງເປັນຕົວຢ່າງ"
+      }
+    },
+    "pagination": {
+      "showing": "ສະແດງ {start}–{end} ຈາກ {total}"
+    }
+  },
+  "common": {
+    "language": "ພາສາ",
+    "languagePicker": {
+      "title": "ເລືອກພາສາ",
+      "description": "ປ່ຽນພາສາທີ່ສະແດງເທິງເວັບໄຊ",
+      "close": "ປິດໜ້າເລືອກພາສາ"
+    },
+    "close": "ປິດ",
+    "retry": "ລອງໃໝ່",
+    "loading": "ກຳລັງໂຫຼດ…",
+    "confirm": "ຢືນຢັນ",
+    "cancel": "ຍົກເລີກ",
+    "processing": "ກຳລັງດຳເນີນການ…",
+    "back": "ກັບຄືນ",
+    "next": "ຕໍ່ໄປ",
+    "backStep": "ກັບໄປຂັ້ນຕອນກ່ອນໜ້າ",
+    "loadFailed": "ໂຫຼດຂໍ້ມູນບໍ່ສຳເລັດ",
+    "emptyCategory": "ຍັງບໍ່ມີລາຍການໃນໝວດນີ້",
+    "refCode": "ລະຫັດອ້າງອີງ: {code}",
+    "units": {
+      "people": {
+        "other": "{n} ຄົນ"
+      },
+      "records": {
+        "other": "{n} ລາຍການ"
+      },
+      "credits": {
+        "other": "{n} ເຄຣດິດ"
+      },
+      "gems": {
+        "other": "{n} Gems"
+      },
+      "million": "{n} ລ້ານ"
+    },
+    "carousel": {
+      "prev": "ເລື່ອນ {title} ໄປກຸ່ມກ່ອນໜ້າ",
+      "next": "ເລື່ອນ {title} ໄປກຸ່ມຕໍ່ໄປ"
+    },
+    "pagination": {
+      "label": "ປ່ຽນໜ້າ",
+      "prev": "ໜ້າກ່ອນ",
+      "page": "ໜ້າ {page}",
+      "next": "ໜ້າຕໍ່ໄປ"
+    },
+    "notifications": {
+      "title": "ການແຈ້ງເຕືອນ",
+      "close": "ປິດການແຈ້ງເຕືອນ",
+      "tabsLabel": "ປະເພດການແຈ້ງເຕືອນ",
+      "tabs": {
+        "all": "ທັງໝົດ",
+        "privileges": "ສິດພິເສດ",
+        "messages": "ຂໍ້ຄວາມ"
+      },
+      "empty": "ບໍ່ມີຂໍ້ຄວາມໃໝ່",
+      "contactChannels": "ຊ່ອງທາງຕິດຕໍ່"
+    },
+    "coupon": {
+      "title": "ແລກຄູປອງ",
+      "close": "ປິດໜ້າແລກຄູປອງ",
+      "description": "ໃສ່ໂຄ້ດເພື່ອແລກເຄຣດິດຟຣີ",
+      "codeLabel": "ລະຫັດຄູປອງ",
+      "codePlaceholder": "ໃສ່ໂຄ້ດຄູປອງ",
+      "codeRequired": "ກະລຸນາໃສ່ລະຫັດຄູປອງ",
+      "submit": "ແລກເຄຣດິດຟຣີ",
+      "submitting": "ກຳລັງກວດສອບ..."
+    }
+  },
+  "errors": {
+    "notFoundTitle": "ບໍ່ພົບໜ້າ",
+    "backHome": "ກັບໜ້າຫຼັກ",
+    "notFound": {
+      "metaTitle": "ບໍ່ພົບໜ້ານີ້ — XGAMBET",
+      "title": "ບໍ່ພົບໜ້າທີ່ທ່ານຕ້ອງການ",
+      "description": "ລິ້ງອາດບໍ່ຖືກຕ້ອງ ຫຼືໜ້ານີ້ຖືກຍ້າຍໄປແລ້ວ",
+      "viewPromotions": "ເບິ່ງໂປຣໂມຊັນ"
+    },
+    "route": {
+      "title": "ເກີດຂໍ້ຜິດພາດ",
+      "description": "ໜ້ານີ້ໂຫຼດບໍ່ສຳເລັດ ກະລຸນາລອງໃໝ່ ຖ້າຍັງພົບບັນຫາ ກະລຸນາຕິດຕໍ່ຝ່າຍບໍລິການລູກຄ້າ"
+    },
+    "offline": {
+      "title": "ບໍ່ມີການເຊື່ອມຕໍ່ອິນເຕີເນັດ",
+      "description": "ເປີດເນັດແລ້ວເຂົ້າ XGAMBET ອີກຄັ້ງ"
+    },
+    "api": {
+      "network": "ເຊື່ອມຕໍ່ເຊີບເວີບໍ່ໄດ້ ກະລຸນາກວດສອບອິນເຕີເນັດແລ້ວລອງໃໝ່",
+      "parse": "ອ່ານຜົນຈາກເຊີບເວີບໍ່ໄດ້",
+      "unauthorized": "ກະລຸນາເຂົ້າສູ່ລະບົບໃໝ່",
+      "generic": "ເກີດຂໍ້ຜິດພາດ ກະລຸນາລອງໃໝ່ອີກຄັ້ງ"
+    }
+  },
+  "games": {
+    "filters": {
+      "allInOne": "ລວມທຸກຢ່າງ",
+      "allProviders": "ທຸກຄ່າຍ",
+      "allGameProviders": "ທຸກຄ່າຍເກມ",
+      "dropsAndWins": "Drops & Wins",
+      "chicken": "ຊົນໄກ່",
+      "buyFeature": "ຊື້ຟຣີສະປິນ",
+      "jackpot": "ແຈັກພອດ",
+      "megaways": "Megaways",
+      "baccarat": "ບາຄາຣາ",
+      "roulette": "ຣູເລັດ",
+      "blackjack": "ແບລັກແຈັກ",
+      "gameShows": "ເກມໂຊ",
+      "sicbo": "ໄຮໂລ/ເສືອມັງກອນ",
+      "football": "ບານເຕະ",
+      "basketball": "ບານບ້ວງ",
+      "esports": "ອີສະປອດ",
+      "boxing": "ມວຍໄທ",
+      "tennis": "ເທັນນິດ",
+      "arcade": "ອາເຄດ",
+      "multiplayer": "ຫ້ອງລວມ",
+      "hot": "ມາແຮງ"
+    },
+    "subHeader": {
+      "back": "ກັບຄືນ"
+    },
+    "breadcrumb": {
+      "ariaLabel": "ເສັ້ນທາງນຳທາງ",
+      "backToCategory": "ກັບໄປໜ້າລວມ{category}"
+    },
+    "slots": {
+      "title": "ສະລັອດ",
+      "providerAriaLabel": "{name} — ສະລັອດ",
+      "providerCount": {
+        "other": "({count} ຄ່າຍເກມ)"
+      }
+    },
+    "casino": {
+      "title": "ຄາຊິໂນສົດ",
+      "count": {
+        "other": "({count} ໂຕະ/ຄ່າຍເກມ)"
+      }
+    },
+    "sport": {
+      "title": "ກິລາ",
+      "count": {
+        "other": "({count} ລາຍການ/ຄ່າຍເກມ)"
+      }
+    },
+    "providerGames": {
+      "searchPlaceholder": "ຊອກຫາເກມໃນຄ່າຍນີ້",
+      "backToCategory": "ກັບໄປໜ້າລວມ{category}",
+      "gameCount": {
+        "other": "({count} ເກມ)"
+      },
+      "notFoundTitle": "ບໍ່ພົບເກມທີ່ຊອກຫາ",
+      "notFoundHint": "ລອງຊອກຫາດ້ວຍຄຳອື່ນ ຫຼືລ້າງຊ່ອງຊອກຫາເພື່ອເບິ່ງເກມທັງໝົດ",
+      "favoriteAdd": "ເພີ່ມເຂົ້າລາຍການໂປດ",
+      "favoriteRemove": "ເອົາອອກຈາກລາຍການໂປດ"
+    },
+    "play": {
+      "playingAriaLabel": "ກຳລັງເລ່ນ {title}",
+      "fullscreen": "ເຕັມຈໍ",
+      "exitFullscreen": "ອອກຈາກໂໝດເຕັມຈໍ",
+      "iframePlaceholder": "ພື້ນທີ່ iframe ຂອງເກມ (prototype)"
+    }
+  },
+  "home": {
+    "categories": {
+      "home": "ໜ້າຫຼັກ",
+      "casino": "ຄາຊິໂນ",
+      "slots": "ສະລັອດ",
+      "fishing": "ຍິງປາ",
+      "sports": "ກິລາ",
+      "lottery": "ຫວຍ",
+      "cards": "ເກມໄພ່"
+    },
+    "categoryNav": {
+      "ariaLabel": "ໝວດເກມ"
+    },
+    "sections": {
+      "hotGames": "ເກມຍອດນິຍົມ",
+      "slots": "ສະລັອດ",
+      "casino": "ຄາຊິໂນ",
+      "fishing": "ຍິງປາ",
+      "sports": "ກິລາ",
+      "empty": "ຍັງບໍ່ມີເກມໃນໝວດນີ້"
+    },
+    "intro": {
+      "title": "ຈັກກະວານແຫ່ງຄວາມມ່ວນ",
+      "gamesBefore": "ເກມຫຼາຍກວ່າ",
+      "gamesAfter": "ເກມ,",
+      "providersBefore": "ຄ່າຍເກມຫຼາຍກວ່າ",
+      "providersAfter": "ຄ່າຍ,",
+      "sports": "ແລະການແຂ່ງຂັນກິລາທົ່ວໂລກ"
+    },
+    "featureActions": {
+      "ariaLabel": "ຟີເຈີພິເສດ"
+    },
+    "search": {
+      "formAriaLabel": "ແບບຟອມຊອກຫາເກມແລະຄ່າຍເກມ",
+      "label": "ຊອກຫາເກມ ຫຼືຄ່າຍເກມ",
+      "clear": "ລ້າງຄຳຊອກຫາ"
+    },
+    "hallOfFame": {
+      "tabsAriaLabel": "ເລືອກຕາຕະລາງ Top Performance",
+      "empty": "ຍັງບໍ່ມີລາຍການ"
+    },
+    "carousel": {
+      "prev": "ສະໄລດ໌ກ່ອນໜ້າ",
+      "next": "ສະໄລດ໌ຕໍ່ໄປ",
+      "scroll": "ເລື່ອນເບິ່ງແບນເນີ",
+      "pickSlide": "ເລືອກສະໄລດ໌ແບນເນີ",
+      "goToSlide": "ໄປສະໄລດ໌ທີ {index}"
+    },
+    "peekCarousel": {
+      "ariaLabel": "ແບນເນີໂປຣໂມຊັນແລະກິດຈະກຳ"
+    },
+    "promoCarousel": {
+      "ariaLabel": "ແບນເນີໂປຣໂມຊັນແລະສິດພິເສດ",
+      "listAriaLabel": "ລາຍການໂປຣໂມຊັນ"
+    },
+    "welcomeBanner": {
+      "ariaLabel": "ແບນເນີຕ້ອນຮັບແລະໂປຣໂມຊັນ",
+      "slidesAriaLabel": "ສະໄລດ໌ແບນເນີຕ້ອນຮັບ"
+    },
+    "auth": {
+      "login": "ເຂົ້າສູ່ລະບົບ",
+      "signUp": "ສະໝັກສະມາຊິກ",
+      "loginToSeeEvents": "ເຂົ້າສູ່ລະບົບ ຫຼືສະໝັກສະມາຊິກເພື່ອເບິ່ງກິດຈະກຳ"
+    },
+    "events": {
+      "title": "ກິດຈະກຳ",
+      "slidesAriaLabel": "ສະໄລດ໌{title}",
+      "goTo": "ໄປທີ່{name}"
+    },
+    "announcement": {
+      "ariaLabel": "ປະກາດຈາກລະບົບ",
+      "label": "ປະກາດ"
+    },
+    "categoryProviders": {
+      "comingSoon": "ກຳລັງກະກຽມຄ່າຍເກມໃນໝວດນີ້ — ລອງເລືອກຄາຊິໂນ ສະລັອດ ຍິງປາ ຫຼືກິລາກ່ອນເດີ",
+      "liveCasino": "ຄາຊິໂນສົດ",
+      "providersFallback": "ຄ່າຍເກມ",
+      "providerCount": {
+        "other": "({count} ຄ່າຍເກມ)"
+      },
+      "gamesByProviderAriaLabel": "ລາຍການເກມ{category}ຕາມຄ່າຍທີ່ເລືອກ",
+      "listAriaLabel": "ລາຍການຄ່າຍເກມຕາມໝວດທີ່ເລືອກ",
+      "searchPlaceholder": {
+        "casino": "ຊອກຫາຄາຊິໂນສົດ | ຄ່າຍ",
+        "fishing": "ຊອກຫາຍິງປາ | ຄ່າຍ",
+        "cards": "ຊອກຫາເກມໄພ່ | ຄ່າຍ",
+        "sports": "ຊອກຫາກິລາ | ຄ່າຍ",
+        "default": "ຊອກຫາເກມ | ຄ່າຍ"
+      }
+    },
+    "quickBanners": {
+      "ariaLabel": "ເມນູໄຮໄລດ່ວນ",
+      "promo": {
+        "title": "ໂປຣໂມຊັນພິເສດ",
+        "subtitle": "ໂປຣໂມຊັນພິເສດສະເພາະທ່ານ"
+      },
+      "event": {
+        "title": "ກິດຈະກຳ",
+        "subtitle": "ກິດຈະກຳຕະຫຼອດ 24 ຊົ່ວໂມງ"
+      },
+      "news": {
+        "title": "ຂ່າວສານ",
+        "subtitle": "ຂ່າວສານທີ່ທ່ານບໍ່ຄວນພາດ"
+      }
+    },
+    "mostOnline": {
+      "title": "ມີຄົນເລ່ນຫຼາຍທີ່ສຸດຕອນນີ້",
+      "favoriteAdd": "ເພີ່ມເຂົ້າລາຍການໂປດ",
+      "favoriteRemove": "ເອົາອອກຈາກລາຍການໂປດ",
+      "playingNow": "ກຳລັງເລ່ນຢູ່ {count} ຄົນ"
+    },
+    "popular": {
+      "title": "ຍອດນິຍົມ",
+      "empty": "ຍັງບໍ່ມີລາຍການໃນໝວດນີ້"
+    },
+    "providers": {
+      "empty": "ຍັງບໍ່ມີຄ່າຍເກມ",
+      "marqueeAriaLabel": "ຄ່າຍເກມ",
+      "logoAriaLabel": "ຄ່າຍເກມ {name}"
+    },
+    "a2hs": {
+      "title": "ເພີ່ມທາງລັດໜ້າຫຼັກ",
+      "cardTitle": "ເພີ່ມທາງລັດໄດ້ແລ້ວມື້ນີ້!",
+      "cardSubtitle": "ສຳຜັດປະສົບການທີ່ດີກວ່າ ເພີ່ມທາງລັດເລີຍ",
+      "platformsAriaLabel": "ເລືອກອຸປະກອນຂອງທ່ານ",
+      "stepsTitle": "ວິທີເພີ່ມທາງລັດ ({platform})",
+      "installed": "ຕິດຕັ້ງແອັບແລ້ວ",
+      "steps": {
+        "android1": "ແຕະເມນູ ⋮ ມຸມຂວາເທິງຂອງ Chrome",
+        "android2": "ເລືອກ「ຕິດຕັ້ງແອັບ」ຫຼື「ເພີ່ມໃສ່ໜ້າຈໍຫຼັກ」",
+        "android3": "ກົດ「ຕິດຕັ້ງ」ຫຼື「ເພີ່ມ」ເພື່ອຢືນຢັນ",
+        "ios1": "ແຕະປຸ່ມ「ແບ່ງປັນ」ທາງລຸ່ມຂອງ Safari",
+        "ios2": "ເລືອກ「ເພີ່ມໃສ່ໜ້າຈໍຫຼັກ」",
+        "ios3": "ກົດ「ເພີ່ມ」ມຸມຂວາເທິງເພື່ອຢືນຢັນ",
+        "launch": "ເຂົ້າເວັບໄຊໄດ້ທັນທີຜ່ານໄອຄອນແອັບຂອງເຮົາ"
+      }
+    },
+    "desktopMenu": {
+      "referral": {
+        "title": "ແນະນຳໝູ່",
+        "subtitle": "ສ້າງລາຍຮັບ 2 ຊັ້ນ",
+        "ariaLabel": "ແນະນຳໝູ່ ສ້າງລາຍຮັບ 2 ຊັ້ນ"
+      },
+      "checkIn": {
+        "title": "ເຊັກອິນ",
+        "subtitle": "CHECK-IN",
+        "ariaLabel": "ເຊັກອິນລາຍວັນ"
+      },
+      "wheel": {
+        "title": "ວົງລໍ້",
+        "subtitle": "LUCKY WHEEL",
+        "ariaLabel": "ວົງລໍ້ນຳໂຊກ"
+      },
+      "gems": {
+        "title": "ຮ້ານ Gems",
+        "subtitle": "GEMS SHOP",
+        "ariaLabel": "ຮ້ານ Gems"
+      },
+      "coupon": {
+        "title": "ຄູປອງ",
+        "subtitle": "COUPON",
+        "ariaLabel": "ແລກຄູປອງ"
+      },
+      "vip": {
+        "title": "ລະດັບ VIP",
+        "subtitle": "ສິດພິເສດສະມາຊິກ",
+        "ariaLabel": "ລະດັບ VIP ສິດພິເສດສະມາຊິກ"
+      }
+    }
+  },
+  "lottery": {
+    "hub": {
+      "title": "ແທງຫວຍ",
+      "subtitle": "ເລືອກປະເພດຫວຍທີ່ຕ້ອງການແທງ",
+      "featuredAria": "ຫວຍແນະນຳ",
+      "allMarketsAria": "ປະເພດຫວຍທັງໝົດ",
+      "mySlips": "ໂພຍຂອງຂ້ອຍ",
+      "mySlipsAria": "ເບິ່ງໂພຍຂອງຂ້ອຍ",
+      "mySlipsPendingAria": "ເບິ່ງໂພຍຂອງຂ້ອຍ — ກຳລັງດຳເນີນການ {count} ໂພຍ",
+      "daysLeft": {
+        "other": "{count} ວັນ"
+      }
+    },
+    "markets": {
+      "generic": "ຫວຍ",
+      "thaiGovernment": "ຫວຍລັດຖະບານໄທ",
+      "yiki5": "ຫວຍຢີ່ກີ 5 ນາທີ",
+      "yiki15": "ຫວຍຢີ່ກີ 15 ນາທີ",
+      "yiki30": "ຫວຍຢີ່ກີ 30 ນາທີ",
+      "baac": "ຫວຍ ທ.ກ.ສ.",
+      "laos": "ຫວຍລາວ",
+      "hanoi": "ຫວຍຮ່າໂນ້ຍ",
+      "malaysia": "ຫວຍມາເລ",
+      "dowJones": "ຫວຍດາວໂຈນ",
+      "china": "ຫວຍຈີນ",
+      "germany": "ຫວຍເຢຍລະມັນ",
+      "russia": "ຫວຍລັດເຊຍ",
+      "korea": "ຫວຍເກົາຫຼີ",
+      "nikkei": "ຫວຍນິເກອິ",
+      "uk": "ຫວຍອັງກິດ",
+      "hongKong": "ຫວຍຮັ່ງເສັງ",
+      "taiwan": "ຫວຍໄຕ້ຫວັນ",
+      "singapore": "ຫວຍສິງກະໂປ",
+      "india": "ຫວຍອິນເດຍ",
+      "egypt": "ຫວຍອີຢິບ"
+    },
+    "status": {
+      "open": "ເປີດຮັບແທງ",
+      "closed": "ປິດຮັບແທງ",
+      "closedAlready": "ປິດຮັບແທງແລ້ວ",
+      "closesIn": "ປິດຮັບໃນ",
+      "closesInTime": "ປິດຮັບໃນ {time}",
+      "countdownDays": "{days} ວັນ {time}"
+    },
+    "groups": {
+      "three": "3 ຕົວ",
+      "two": "2 ຕົວ",
+      "run": "ເລກວິ່ງ"
+    },
+    "betTypes": {
+      "threeTop": "3 ຕົວເທິງ",
+      "threeTod": "3 ຕົວໂຕ໊ດ",
+      "threeFront": "3 ຕົວໜ້າ",
+      "threeBottom": "3 ຕົວລຸ່ມ",
+      "threeTopTod": "3 ຕົວເທິງໂຕ໊ດ",
+      "threeTopReverse": "3 ຕົວເທິງກັບ",
+      "threeTopComboTod": "3 ຕົວເທິງ + ໂຕ໊ດ",
+      "twoTop": "2 ຕົວເທິງ",
+      "twoBottom": "2 ຕົວລຸ່ມ",
+      "twoTopReverse": "2 ຕົວເທິງກັບ",
+      "twoBottomReverse": "2 ຕົວລຸ່ມກັບ",
+      "twoTopBottom": "2 ຕົວເທິງ/ລຸ່ມ",
+      "twoTopBottomReverse": "2 ຕົວເທິງ/ລຸ່ມກັບ",
+      "runTop": "ວິ່ງເທິງ",
+      "runBottom": "ວິ່ງລຸ່ມ"
+    },
+    "round": {
+      "time": "ຮອບ {time} ໂມງ",
+      "draw": "ງວດ {date}",
+      "market": "{market} {date}",
+      "numbered": "ຮອບ {n}",
+      "current": "ງວດປັດຈຸບັນ"
+    },
+    "rounds": {
+      "empty": "ຍັງບໍ່ມີຮອບທີ່ເປີດຮັບແທງ",
+      "listAria": "ລາຍການຮອບ",
+      "showAll": {
+        "other": "ສະແດງທຸກຮອບ ({count} ຮອບ)"
+      },
+      "play": "ແທງຫວຍ",
+      "loading": "ກຳລັງໂຫຼດຮອບ…",
+      "loadError": "ໂຫຼດຮອບບໍ່ສຳເລັດ",
+      "openCountPrefix": "ຮອບທີ່ເປີດໃຫ້ເລ່ນ",
+      "openCountSuffix": "ຮອບ"
+    },
+    "market": {
+      "sidebarAria": "ປະເພດຫວຍ",
+      "rules": "ກົດກະຕິກາ / ອັດຕາການຈ່າຍ",
+      "notFoundTitle": "ບໍ່ພົບປະເພດຫວຍນີ້",
+      "notFoundDescription": "ຫວຍນີ້ອາດປິດໃຫ້ບໍລິການແລ້ວ ເລືອກຫວຍອື່ນຈາກໜ້າລວມ",
+      "viewAll": "ເບິ່ງຫວຍທັງໝົດ",
+      "marketNotFound": "ບໍ່ພົບຕະຫຼາດຫວຍນີ້"
+    },
+    "rules": {
+      "payoutHeading": "ອັດຕາຈ່າຍຕໍ່ 1 ບາດ",
+      "limitsHeading": "ຍອດແທງຕໍ່ລາຍການ",
+      "minBet": "ຂັ້ນຕ່ຳ",
+      "maxBet": "ສູງສຸດ"
+    },
+    "results": {
+      "title": "ຜົນຫວຍຫຼ້າສຸດ",
+      "morePage": "ໜ້າຜົນຫວຍ >>",
+      "tableAria": "ລາຍການຜົນຫວຍຫຼ້າສຸດ",
+      "colMarket": "ປະເພດຫວຍ",
+      "colDate": "ງວດ / ວັນທີ",
+      "empty": "ຍັງບໍ່ມີຜົນຫວຍ",
+      "today": "ມື້ນີ້"
+    },
+    "thaiResult": {
+      "title": "ຜົນລາງວັນງວດກ່ອນ",
+      "firstPrize": "ລາງວັນທີ 1",
+      "back3": "3 ຕົວທ້າຍ"
+    },
+    "draw": {
+      "aria": "ຂໍ້ມູນງວດ"
+    },
+    "board": {
+      "pickAria": "ເລືອກເລກ",
+      "reverse": "ກັບເລກ",
+      "actionsAria": "ດຳເນີນການຕໍ່",
+      "back": "ກັບໜ້າກ່ອນ",
+      "enterPrice": "ໃສ່ລາຄາ",
+      "digitGroupAria": "ຈຳນວນຫຼັກ",
+      "betTypeAria": "ປະເພດການແທງ",
+      "payout": "ຈ່າຍ {rate}",
+      "loading": "ກຳລັງໂຫຼດກະດານແທງ…",
+      "roundNotFoundTitle": "ບໍ່ພົບຮອບທີ່ເລືອກ",
+      "roundNotFoundNext": "ຮອບນີ້ອາດປິດຮັບແທງແລ້ວ ເລືອກຮອບຖັດໄປຈາກລາຍການຮອບ",
+      "roundNotFoundOther": "ຮອບນີ້ອາດປິດຮັບແທງແລ້ວ ເລືອກຮອບອື່ນໄດ້ຈາກລາຍການຮອບ",
+      "viewAllRounds": "ເບິ່ງຮອບທັງໝົດ"
+    },
+    "inputMode": {
+      "aria": "ວິທີໃສ່ເລກ",
+      "manual": "ໃສ່ເລກເອງ",
+      "grid": "ເລືອກຈາກແຜງເລກ"
+    },
+    "feedback": {
+      "duplicate": "{number} ມີໃນໂພຍແລ້ວ",
+      "added": {
+        "other": "ເພີ່ມ {number} ລົງໂພຍແລ້ວ ({count} ລາຍການ)"
+      },
+      "undone": "ຍ້ອນຄືນລາຍການຫຼ້າສຸດແລ້ວ",
+      "closed": "ປິດຮັບແທງແລ້ວ",
+      "removed": "ເອົາ {number} ອອກຈາກໂພຍແລ້ວ"
+    },
+    "pad": {
+      "hundreds": "ຫຼັກຮ້ອຍ",
+      "selectedCount": "ເລືອກແລ້ວ {count}",
+      "gridAria": "ແຜງເລກ",
+      "enteredAria": "ເລກທີ່ໃສ່ {value}",
+      "empty": "ຫວ່າງ",
+      "clear": "ລ້າງ",
+      "backspace": "ລຶບຕົວເລກຫຼ້າສຸດ"
+    },
+    "slip": {
+      "itemCount": {
+        "other": "{count} ລາຍການ"
+      },
+      "removeAria": "ລຶບ {label} {number}",
+      "priceAria": "ລາຄາ {label} {number}",
+      "enterPrice": "ໃສ່ລາຄາ",
+      "toolbarAria": "ເຄື່ອງມືໂພຍ",
+      "undo": "ຍ້ອນຄືນລາຍການຫຼ້າສຸດ",
+      "clearAll": "ລ້າງໂພຍທັງໝົດ",
+      "emptyPickType": "ເລືອກປະເພດແລ້ວກົດເລກເພື່ອເພີ່ມລົງໂພຍ",
+      "emptyEnterNumber": "ຍັງບໍ່ມີຂໍ້ມູນ ກະລຸນາໃສ່ເລກທີ່ຕ້ອງການແທງ"
+    },
+    "price": {
+      "aria": "ໃສ່ລາຄາແລະສົ່ງໂພຍ",
+      "sameForAll": "ລາຄາເທົ່າກັນທັງໝົດ",
+      "edit": "ແກ້ໄຂ",
+      "total": "ລວມ",
+      "chipsAria": "ເລືອກລາຄາ",
+      "backToNumbers": "ກັບໄປແກ້ເລກ",
+      "submitting": "ກຳລັງສົ່ງ…",
+      "submit": "ສົ່ງໂພຍ"
+    },
+    "submit": {
+      "failedTitle": "ສົ່ງໂພຍບໍ່ສຳເລັດ",
+      "done": "ຮຽບຮ້ອຍ",
+      "close": "ປິດ",
+      "networkError": "ບໍ່ສາມາດເຊື່ອມຕໍ່ເຊີບເວີໄດ້"
+    },
+    "summary": {
+      "aria": "ສະຫຼຸບໂພຍ",
+      "drawDate": "ງວດວັນທີ {date}",
+      "copyAria": "ສຳເນົາເລກໂພຍ",
+      "slipId": "ໂພຍ #{id}",
+      "purchased": "ຊື້ {date}",
+      "submitted": "ສົ່ງໂພຍແລ້ວ",
+      "note": "ໝາຍເຫດ {note}",
+      "noNote": "ບໍ່ມີບັນທຶກຂໍ້ຄວາມ",
+      "stake": "ເດີມພັນ",
+      "winLoss": "ແພ້/ຊະນະ",
+      "allSlips": "ໂພຍທັງໝົດ",
+      "continue": "ແທງຕໍ່",
+      "copied": "ສຳເນົາເລກໂພຍແລ້ວ",
+      "copyFailed": "ບໍ່ສາມາດສຳເນົາເລກໂພຍໄດ້"
+    },
+    "slips": {
+      "title": "ໂພຍທັງໝົດ",
+      "loading": "ກຳລັງໂຫຼດໂພຍ…",
+      "emptyTitle": "ຍັງບໍ່ມີໂພຍທີ່ສົ່ງ",
+      "emptyDescription": "ເລືອກຫວຍທີ່ຕ້ອງການແລ້ວສົ່ງໂພຍທຳອິດໄດ້ເລີຍ",
+      "goPlay": "ໄປແທງຫວຍ",
+      "stake": "ເດີມພັນ {amount}",
+      "summaryTitle": "ສະຫຼຸບໂພຍ",
+      "notFoundTitle": "ບໍ່ພົບໂພຍນີ້",
+      "notFoundDescription": "ໂພຍອາດຖືກລຶບ ຫຼືລິ້ງບໍ່ຖືກຕ້ອງ",
+      "viewAll": "ເບິ່ງໂພຍທັງໝົດ",
+      "tabs": {
+        "pending": "ກຳລັງດຳເນີນການ",
+        "history": "ປະຫວັດ",
+        "aria": "ປະເພດໂພຍ"
+      },
+      "filters": {
+        "aria": "ຕົວກັ່ນຕອງໂພຍ",
+        "market": "ຕະຫຼາດຫວຍ",
+        "result": "ຜົນໂພຍ",
+        "range": "ໄລຍະເວລາ",
+        "allMarkets": "ທຸກຕະຫຼາດ",
+        "allResults": "ທຸກຜົນ",
+        "today": "ມື້ນີ້",
+        "days7": "7 ວັນ",
+        "days30": "30 ວັນ",
+        "custom": "ກຳນົດເອງ"
+      },
+      "status": {
+        "waitingDraw": "ລໍຖ້າອອກຜົນ",
+        "waitingSettle": "ລໍຖ້າສະຫຼຸບຜົນ",
+        "won": "ຖືກລາງວັນ",
+        "lost": "ບໍ່ຖືກລາງວັນ",
+        "void": "ຍົກເລີກ (ຄືນເງິນ)"
+      },
+      "summary": {
+        "count": "{count} ໂພຍ",
+        "stake": "ເດີມພັນລວມ {amount}",
+        "net": "ໄດ້/ເສຍສຸດທິ"
+      },
+      "card": {
+        "drawAt": "ອອກຜົນ {date}",
+        "settledAt": "ສະຫຼຸບຜົນ {date}"
+      },
+      "emptyPending": {
+        "title": "ບໍ່ມີໂພຍທີ່ກຳລັງດຳເນີນການ",
+        "description": "ໂພຍທີ່ສົ່ງແລ້ວ ແລະ ຍັງບໍ່ສະຫຼຸບຜົນຈະສະແດງຢູ່ບ່ອນນີ້"
+      },
+      "emptyHistory": {
+        "title": "ຍັງບໍ່ມີປະຫວັດໂພຍ",
+        "description": "ໂພຍທີ່ສະຫຼຸບຜົນແລ້ວຈະເກັບໄວ້ໃຫ້ເບິ່ງຍ້ອນຫຼັງ {days} ວັນ"
+      },
+      "emptyFiltered": "ບໍ່ພົບໂພຍຕາມຕົວກັ່ນຕອງນີ້",
+      "clearFilters": "ລ້າງຕົວກັ່ນຕອງ",
+      "loadMore": "ໂຫຼດເພີ່ມ",
+      "loadingMore": "ກຳລັງໂຫຼດ…",
+      "loadMoreError": "ໂຫຼດເພີ່ມບໍ່ສຳເລັດ ລອງໃໝ່ອີກຄັ້ງ",
+      "loadError": "ໂຫຼດໂພຍບໍ່ສຳເລັດ",
+      "retentionNote": "ເກັບປະຫວັດຍ້ອນຫຼັງ {days} ວັນ"
+    }
+  },
+  "meta": {
+    "title": "XGAMBET — ຈັກກະວານແຫ່ງຄວາມມ່ວນ",
+    "description": "ໜ້າເລືອກເກມ XGAMBET"
+  },
+  "nav": {
+    "bottomNav": {
+      "label": "ເມນູຫຼັກ",
+      "withdraw": "ຖອນເງິນ",
+      "deposit": "ຝາກເງິນ",
+      "menu": "ເມນູ",
+      "cashback": "ຄືນຍອດ",
+      "contact": "ຕິດຕໍ່"
+    },
+    "header": {
+      "openMenu": "ເປີດເມນູ",
+      "promotions": "ໂປຣໂມຊັນ",
+      "profile": "ໂປຣໄຟລ໌",
+      "home": "ໜ້າຫຼັກ XGAMBET",
+      "showSidebar": "ສະແດງເມນູດ້ານຊ້າຍ",
+      "hideSidebar": "ເຊື່ອງເມນູດ້ານຊ້າຍ",
+      "mainCategories": "ໝວດຫຼັກ",
+      "searchLabel": "ຊອກຫາເກມ ຫຼືຄ່າຍເກມ",
+      "searchPlaceholder": "ຊອກຫາ",
+      "deposit": "ຝາກ",
+      "depositAria": "ຝາກເງິນ",
+      "transactionHistory": "ປະຫວັດທຸລະກຳ",
+      "walletDeposit": "ຝາກເງິນແລະເບິ່ງຍອດເຄຣດິດ",
+      "walletBalance": "ຍອດເຄຣດິດ"
+    },
+    "desktop": {
+      "quickMenu": "ເມນູດ່ວນ",
+      "rightRail": "ເມນູກິດຈະກຳແລະໂປຣໂມຊັນ",
+      "sidebar": "ເມນູຫຼັກເດັສທັອບ",
+      "gameCategories": "ໝວດເກມ",
+      "games": "ເກມ",
+      "system": "ລະບົບ",
+      "contactUs": "ຕິດຕໍ່ພວກເຮົາ",
+      "topBar": "ແຖບຊອກຫາແລະບັນຊີ",
+      "searchGames": "ຊອກຫາເກມ",
+      "searchGamesPlaceholder": "ຊອກຫາເກມ, ຄ່າຍເກມ ຫຼືຊື່ເກມທີ່ທ່ານມັກ..."
+    },
+    "drawer": {
+      "title": "ເມນູ",
+      "close": "ປິດເມນູ",
+      "deposit": "ຝາກເງິນ",
+      "withdraw": "ຖອນເງິນ",
+      "playBonus": "ໂບນັດຍອດເທີນ",
+      "lossBonus": "ໂບນັດຍອດເສຍ",
+      "referralLink": "ລິ້ງແນະນຳໝູ່",
+      "referralLinkLoginHint": "ເຂົ້າສູ່ລະບົບເພື່ອເບິ່ງລິ້ງ",
+      "copyReferralLink": "ສຳເນົາລິ້ງແນະນຳໝູ່",
+      "linkCopied": "ສຳເນົາລິ້ງແລ້ວ",
+      "linkCopyFailed": "ບໍ່ສາມາດສຳເນົາລິ້ງໄດ້",
+      "gameBalance": "ຍອດເງິນໃນເກມ",
+      "gems": "Gems",
+      "tickets": "ຕັ້ວ"
+    },
+    "menuSections": {
+      "personal": "ຂໍ້ມູນສ່ວນຕົວ",
+      "privileges": "ສິດພິເສດ",
+      "rewards": "ລາງວັນ"
+    },
+    "menu": {
+      "profile": "ໂປຣໄຟລ໌",
+      "transactions": "ທຸລະກຳ",
+      "rank": "ແຣັງ",
+      "promotions": "ໂປຣໂມຊັນ",
+      "cashback": "ຄືນຍອດ",
+      "checkIn": "ເຊັກອິນ",
+      "referral": "ຊວນໝູ່",
+      "rewardHub": "ສຸ່ມລາງວັນ",
+      "wheel": "ວົງລໍ້",
+      "gemsShop": "ຮ້ານ Gems",
+      "activities": "ກິດຈະກຳ",
+      "coupon": "ຄູປອງ",
+      "vipRank": "ລະດັບ VIP",
+      "referralEarnings": "ລາຍໄດ້ຄອມມິດຊັນ",
+      "referFriend": "ແນະນຳໝູ່",
+      "specialBonus": "ໂບນັດພິເສດ",
+      "history": "ປະຫວັດ",
+      "language": "ພາສາ"
+    },
+    "hub": {
+      "promotions": "ໂປຣໂມຊັນ",
+      "activities": "ກິດຈະກຳ",
+      "cashback": "ຄືນຍອດ",
+      "gemsStore": "ຮ້ານ Gems",
+      "account": "ຂໍ້ມູນບັນຊີ",
+      "referral": "ຊວນໝູ່",
+      "transactions": "ທຸລະກຳ",
+      "checkIn": "ເຊັກອິນລາຍວັນ",
+      "vip": "VIP"
+    },
+    "footer": {
+      "label": "ສ່ວນທ້າຍເວັບໄຊ XGAMBET",
+      "home": "ໜ້າຫຼັກ XGAMBET",
+      "certifications": "ການຮັບຮອງ",
+      "auditedBy": "ກວດສອບໂດຍ",
+      "approvedBy": "ອະນຸມັດໂດຍ",
+      "playResponsibly": "ເລ່ນຢ່າງມີສະຕິ",
+      "ageRestriction": "ອາຍຸ 18 ປີຂຶ້ນໄປເທົ່ານັ້ນ",
+      "paymentMethods": "ວິທີການຊຳລະເງິນ",
+      "community": "ຊຸມຊົນ",
+      "liveChat": "ແຊັດອອນລາຍ",
+      "social": "ສື່ສັງຄົມ",
+      "links": "ລິ້ງສ່ວນທ້າຍເວັບ",
+      "disclaimer": "XGAMBET ໃຫ້ບໍລິການຄວາມບັນເທີງອອນລາຍສຳລັບຜູ້ເລ່ນທີ່ມີອາຍຸຄົບຕາມກົດໝາຍໃນເຂດຂອງທ່ານ ກະລຸນາເລ່ນຢ່າງມີສະຕິແລະຮັບຜິດຊອບຕໍ່ການຕັດສິນໃຈຂອງຕົນເອງ ຂໍ້ມູນບໍລິສັດແລະໃບອະນຸຍາດເປັນຕົວຢ່າງເພື່ອການສະແດງຜົນ (mock) ໃຊ້ເພື່ອທົດສອບ UI ເທົ່ານັ້ນ",
+      "tagline": "ລວມເກມແລະກິດຈະກຳໄວ້ໃນບ່ອນດຽວ",
+      "columns": {
+        "platform": "ແພລັດຟອມ",
+        "sports": "ກິລາ",
+        "casino": "ຄາຊິໂນ",
+        "promotions": "ໂປຣໂມຊັນ",
+        "info": "ຂໍ້ມູນ",
+        "services": "ບໍລິການ"
+      },
+      "link": {
+        "profile": "ໂປຣໄຟລ໌",
+        "transactions": "ທຸລະກຳ",
+        "lotterySlips": "ໂພຍຫວຍ",
+        "accountSettings": "ຕັ້ງຄ່າບັນຊີ",
+        "dailyCheckIn": "ເຊັກອິນລາຍວັນ",
+        "gemStore": "ຮ້ານ Gems",
+        "leaderboard": "ຕາຕະລາງອັນດັບ",
+        "predictions": "ທາຍຜົນ",
+        "liveSports": "ກິລາສົດ",
+        "sports": "ກິລາ",
+        "esports": "ອີສະປອດ",
+        "tournaments": "ທັວນາເມັນ",
+        "football": "ບານເຕະ",
+        "basketball": "ບານບ້ວງ",
+        "tennis": "ເທັນນິດ",
+        "cricket": "ຄຣິກເກັດ",
+        "lobby": "ລັອບບີ້",
+        "popularGames": "ເກມຍອດນິຍົມ",
+        "liveCasino": "ຄາຊິໂນສົດ",
+        "newGames": "ເກມໃໝ່",
+        "crashGames": "ເກມແຄຣດ",
+        "tableGames": "ເກມໂຕະ",
+        "slots": "ສະລັອດ",
+        "bonusBuy": "ຊື້ໂບນັດ",
+        "roulette": "ຣູເລັດ",
+        "providers": "ຄ່າຍເກມ",
+        "allPromotions": "ໂປຣໂມຊັນທັງໝົດ",
+        "sportsWelcome": "ໂບນັດຕ້ອນຮັບກິລາ",
+        "casinoWelcome": "ໂບນັດຕ້ອນຮັບຄາຊິໂນ",
+        "weeklyCashback": "ຄືນຍອດລາຍອາທິດ",
+        "sportsClub": "ຄລັບກິລາ",
+        "vipClub": "ຄລັບ VIP",
+        "referFriends": "ຊວນໝູ່",
+        "aboutUs": "ກ່ຽວກັບພວກເຮົາ",
+        "events": "ກິດຈະກຳ",
+        "careers": "ຮ່ວມງານກັບພວກເຮົາ",
+        "contactUs": "ຕິດຕໍ່ພວກເຮົາ",
+        "brand": "ແບຣນ",
+        "responsibleGaming": "ເລ່ນຢ່າງມີສະຕິ",
+        "helpCenter": "ສູນຊ່ວຍເຫຼືອ",
+        "guide": "ຄູ່ມື",
+        "luckyWheel": "ວົງລໍ້ນຳໂຊກ",
+        "lottery": "ຫວຍ",
+        "fishing": "ຍິງປາ",
+        "lossRebate": "ຄືນຍອດເສຍ",
+        "casino": "ຄາຊິໂນ",
+        "promotions": "ໂປຣໂມຊັນ",
+        "vipLevel": "ລະດັບ VIP",
+        "privacy": "ນະໂຍບາຍຄວາມເປັນສ່ວນຕົວ",
+        "terms": "ຂໍ້ກຳນົດແລະເງື່ອນໄຂ",
+        "feedback": "ແບ່ງປັນຄວາມຄິດເຫັນ",
+        "sitemap": "ແຜນຜັງເວັບ"
+      }
+    }
+  },
+  "profile": {
+    "logout": "ອອກຈາກລະບົບ",
+    "retry": "ລອງໃໝ່",
+    "backHome": "ກັບໜ້າຫຼັກ",
+    "field": {
+      "copy": "ສຳເນົາ",
+      "edit": "ແກ້ໄຂ"
+    },
+    "account": {
+      "title": "ຂໍ້ມູນບັນຊີ",
+      "loading": "ກຳລັງໂຫຼດຂໍ້ມູນບັນຊີ…",
+      "loadErrorTitle": "ໂຫຼດຂໍ້ມູນບັນຊີບໍ່ສຳເລັດ",
+      "loadErrorDescription": "ກະລຸນາລອງໃໝ່ ຖ້າຍັງບໍ່ໄດ້ ໃຫ້ອອກຈາກລະບົບແລ້ວເຂົ້າສູ່ລະບົບໃໝ່",
+      "tabs": {
+        "personal": "ຂໍ້ມູນສ່ວນຕົວ",
+        "bank": "ບັນຊີທະນາຄານ"
+      },
+      "gameUser": "ຊື່ຜູ້ໃຊ້ເຂົ້າເກມ",
+      "copyGameUser": "ສຳເນົາຊື່ຜູ້ໃຊ້ເຂົ້າເກມ",
+      "gameUserCopied": "ສຳເນົາຊື່ຜູ້ໃຊ້ເຂົ້າເກມແລ້ວ",
+      "copyFailed": "ບໍ່ສາມາດສຳເນົາໄດ້",
+      "password": "ລະຫັດຜ່ານ",
+      "changePassword": "ປ່ຽນລະຫັດຜ່ານ",
+      "transactionHistory": "ປະຫວັດທຸລະກຳ",
+      "transactionHistoryHint": "ຝາກ · ຖອນ · ເດີມພັນ"
+    },
+    "avatar": {
+      "change": "ປ່ຽນຮູບໂປຣໄຟລ໌",
+      "tapToChange": "ແຕະຮູບເພື່ອປ່ຽນໂປຣໄຟລ໌",
+      "pickerTitle": "ເລືອກຮູບໂປຣໄຟລ໌",
+      "pickerDescription": "ເລືອກຮູບຈາກຊຸດຕົວລະຄອນ — ບັນທຶກທັນທີເມື່ອແຕະ",
+      "saveFailed": "ບັນທຶກບໍ່ສຳເລັດ ກະລຸນາລອງໃໝ່",
+      "close": "ປິດ",
+      "srLabel": "ຮູບໂປຣໄຟລ໌ຂອງ {name}",
+      "presetName": "ຕົວລະຄອນ {n}"
+    },
+    "hub": {
+      "navAriaLabel": "ເມນູໂປຣໄຟລ໌",
+      "vipLevel": "ລະດັບ VIP",
+      "transactions": "ລາຍການຝາກຖອນ",
+      "myDiamonds": "Gems ຂອງຂ້ອຍ",
+      "lossRebate": "ໂບນັດຍອດເສຍ",
+      "affiliate": "ຍອດ Affiliate",
+      "activePromotion": "ໂປຣໂມຊັນທີ່ໃຊ້ຢູ່",
+      "greeting": "ສະບາຍດີ {name}",
+      "joinedAt": "ເຂົ້າຮ່ວມເມື່ອ: {date}",
+      "playerId": "ID ຜູ້ເລ່ນ: {id}",
+      "copyPlayerId": "ສຳເນົາ ID ຜູ້ເລ່ນ",
+      "playerIdCopied": "ສຳເນົາ ID ຜູ້ເລ່ນແລ້ວ",
+      "copyPlayerIdFailed": "ບໍ່ສາມາດສຳເນົາ ID ໄດ້"
+    },
+    "referralInvite": {
+      "title": "ຊວນໝູ່ຮັບໂບນັດ",
+      "description": "ແບ່ງປັນລິ້ງໃຫ້ໝູ່ສະໝັກ ຮັບສ່ວນແບ່ງລາຍໄດ້ຈາກຍອດເລ່ນ",
+      "linkLabel": "ລິ້ງຊວນໝູ່",
+      "copyLink": "ສຳເນົາລິ້ງຊວນໝູ່",
+      "linkCopied": "ສຳເນົາລິ້ງແລ້ວ",
+      "copyLinkFailed": "ບໍ່ສາມາດສຳເນົາລິ້ງໄດ້"
+    },
+    "summary": {
+      "copyId": "ສຳເນົາ ID",
+      "idCopied": "ສຳເນົາ ID ແລ້ວ",
+      "copyIdFailed": "ບໍ່ສາມາດສຳເນົາ ID ໄດ້",
+      "phoneVerified": "ຢືນຢັນເບີແລ້ວ"
+    },
+    "dashboard": {
+      "title": "ພາບລວມລະບົບ / Dashboard",
+      "subtitle": "ສະຫຼຸບຂໍ້ມູນສຳຄັນຂອງລະບົບແບບເວລາຈິງ",
+      "dateRange": "12 ທ.ວ. 2023, 00:00 - 23:59",
+      "vsYesterday": "ທຽບກັບມື້ວານ",
+      "unitAccounts": "ບັນຊີ",
+      "period": {
+        "today": "ມື້ນີ້",
+        "week": "ອາທິດ",
+        "month": "ເດືອນ",
+        "year": "ປີ"
+      },
+      "nav": {
+        "overview": "ພາບລວມລະບົບ",
+        "betReports": "ລາຍງານການເດີມພັນ",
+        "members": "ສະມາຊິກ",
+        "marketing": "ການຕະຫຼາດ",
+        "promotions": "ໂປຣໂມຊັນ",
+        "transactions": "ທຸລະກຳ",
+        "reports": "ລາຍງານ",
+        "settings": "ຕັ້ງຄ່າ"
+      },
+      "kpi": {
+        "totalDeposit": "ຍອດຝາກລວມ",
+        "totalWithdraw": "ຍອດຖອນລວມ",
+        "netProfit": "ກຳໄລສຸດທິ",
+        "totalBets": "ຍອດເດີມພັນ",
+        "newMembers": "ສະມາຊິກໃໝ່",
+        "firstDeposit": "ຝາກຄັ້ງທຳອິດ"
+      },
+      "chart": {
+        "deposit": "ຍອດຝາກ (THB)",
+        "withdraw": "ຍອດຖອນ (THB)",
+        "transactionCount": "ຈຳນວນລາຍການ",
+        "accountCount": "ຈຳນວນບັນຊີ"
+      },
+      "journey": {
+        "title": "ເສັ້ນທາງລູກຄ້າ",
+        "signUp": "ສະໝັກໃໝ່",
+        "firstDeposit": "ຝາກຄັ້ງທຳອິດ",
+        "firstBet": "Active (ເດີມພັນຄັ້ງທຳອິດ)"
+      },
+      "trend": {
+        "title": "ຝາກ - ຖອນ ຕະຫຼອດທັງວັນ",
+        "subtitle": "ພາບລວມທຸລະກຳຕາມຊ່ວງເວລາ (Shadcn Chart)",
+        "net": "ຍອດສຸດທິ"
+      },
+      "banks": {
+        "title": "ສັດສ່ວນທະນາຄານທີ່ລູກຄ້າໃຊ້",
+        "totalAccounts": "ບັນຊີທັງໝົດ"
+      },
+      "channels": {
+        "title": "ຊ່ອງທາງທີ່ລູກຄ້າຮູ້ຈັກເວັບຂອງເຮົາ",
+        "channel": "ຊ່ອງທາງ",
+        "customers": "ຈຳນວນລູກຄ້າ",
+        "share": "ສັດສ່ວນ"
+      },
+      "activeHours": {
+        "title": "ຊ່ວງເວລາທີ່ລູກຄ້າໃຊ້ງານ"
+      },
+      "depositDistribution": {
+        "title": "ການກະຈາຍຍອດຝາກຂອງລູກຄ້າ"
+      },
+      "hourlyMembers": {
+        "title": "ສະມາຊິກໃໝ່ລາຍຊົ່ວໂມງ"
+      }
+    }
+  },
+  "promotions": {
+    "title": "ໂປຣໂມຊັນ",
+    "loading": "ກຳລັງໂຫຼດໂປຣໂມຊັນ…",
+    "loadError": "ໂຫຼດໂປຣໂມຊັນບໍ່ສຳເລັດ",
+    "loadErrorDesc": "ກວດສອບອິນເຕີເນັດແລ້ວລອງໃໝ່ອີກຄັ້ງ",
+    "retry": "ລອງໃໝ່",
+    "forYou": "ໂປຣໂມຊັນສຳລັບທ່ານ",
+    "filterAria": "ກັ່ນຕອງໂປຣໂມຊັນຕາມໝວດ",
+    "categories": {
+      "all": "ທັງໝົດ",
+      "slots": "ສະລັອດ",
+      "casino": "ຄາຊິໂນ",
+      "sport": "ກິລາ",
+      "newMember": "ສະມາຊິກໃໝ່",
+      "daily": "ປະຈຳວັນ",
+      "privilege": "ສິດພິເສດ"
+    },
+    "empty": {
+      "category": "ຍັງບໍ່ມີໂປຣໂມຊັນໃນໝວດນີ້",
+      "categoryHint": "ຍັງບໍ່ມີໂປຣໂມຊັນໃນໝວດນີ້ — ລອງເລືອກ「ທັງໝົດ」",
+      "activitiesHint": "ຍັງບໍ່ມີກິດຈະກຳໃນໝວດນີ້ — ລອງເລືອກ「ທັງໝົດ」"
+    },
+    "hub": {
+      "promotionsListAria": "ລາຍການໂປຣໂມຊັນ",
+      "activitiesListAria": "ລາຍການກິດຈະກຳ",
+      "selectedDetailAria": "ລາຍລະອຽດທີ່ເລືອກ"
+    },
+    "detail": {
+      "title": "ລາຍລະອຽດໂປຣໂມຊັນ",
+      "heading": "ລາຍລະອຽດ",
+      "loading": "ກຳລັງໂຫຼດລາຍລະອຽດ…",
+      "close": "ປິດລາຍລະອຽດໂປຣໂມຊັນ",
+      "notFound": "ບໍ່ພົບລາຍລະອຽດໂປຣໂມຊັນ",
+      "notFoundDesc": "ໂປຣໂມຊັນນີ້ອາດໝົດເວລາແລ້ວ ຫຼືໂຫຼດບໍ່ສຳເລັດ"
+    },
+    "mobile": {
+      "expires": "ສິ້ນສຸດ {date}",
+      "readTerms": "ອ່ານເງື່ອນໄຂ",
+      "readTermsAria": "{title} — ອ່ານເງື່ອນໄຂ"
+    }
+  },
+  "referral": {
+    "pageTitle": "ແນະນຳໝູ່",
+    "tabs": {
+      "ariaLabel": "ເມນູແນະນຳໝູ່",
+      "overview": "ພາບລວມ",
+      "users": "ໝູ່ທີ່ແນະນຳ",
+      "earning": "ລາຍໄດ້"
+    },
+    "status": {
+      "overviewLoading": "ກຳລັງໂຫຼດຂໍ້ມູນແນະນຳໝູ່…",
+      "overviewError": "ໂຫຼດຂໍ້ມູນແນະນຳໝູ່ບໍ່ສຳເລັດ",
+      "earningsLoading": "ກຳລັງໂຫຼດລາຍໄດ້…",
+      "earningsError": "ໂຫຼດລາຍໄດ້ບໍ່ສຳເລັດ",
+      "usersLoading": "ກຳລັງໂຫຼດລາຍຊື່ໝູ່…",
+      "usersError": "ໂຫຼດລາຍຊື່ໝູ່ບໍ່ສຳເລັດ"
+    },
+    "loginPrompt": {
+      "title": "ເຂົ້າສູ່ລະບົບເພື່ອເບິ່ງລິ້ງແນະນຳໝູ່",
+      "description": "ລິ້ງແລະລາຍໄດ້ຈາກການແນະນຳຈະສະແດງຫຼັງເຂົ້າສູ່ລະບົບ"
+    },
+    "promo": {
+      "ariaLabel": "ໂປຣໂມຊັນແນະນຳໝູ່",
+      "title": "ຊວນໝູ່ ຮັບລາຍໄດ້ 2 ຊັ້ນ",
+      "description": "ແບ່ງປັນລິ້ງໃຫ້ໝູ່ ແລ້ວຮັບສ່ວນແບ່ງຈາກຍອດເລ່ນ"
+    },
+    "link": {
+      "title": "ລິ້ງແນະນຳຂອງທ່ານ",
+      "copied": "ສຳເນົາລິ້ງແລ້ວ",
+      "copyFailed": "ບໍ່ສາມາດສຳເນົາລິ້ງໄດ້"
+    },
+    "stats": {
+      "title": "ສະຖິຕິຂອງທ່ານ",
+      "friends": "ໝູ່ທີ່ສະໝັກ",
+      "totalTurnover": "ຍອດເທີນລວມ",
+      "totalEarnings": "ລາຍໄດ້ສະສົມ"
+    },
+    "tiers": {
+      "title": "ຮັບລາຍໄດ້ 2 ຊັ້ນ",
+      "description": "ແບ່ງປັນລິ້ງແລ້ວຮັບສ່ວນແບ່ງຈາກຍອດເທີນຂອງເຄືອຂ່າຍ",
+      "rateHint": "ຈາກຍອດເທີນ",
+      "tier1": {
+        "title": "ຊັ້ນ 1 — ໝູ່ໂດຍກົງ",
+        "subtitle": "ໝູ່ທີ່ສະໝັກຜ່ານລິ້ງຂອງທ່ານ"
+      },
+      "tier2": {
+        "title": "ຊັ້ນ 2 — ໝູ່ຂອງໝູ່",
+        "subtitle": "ໝູ່ທີ່ໝູ່ຂອງທ່ານຊວນຕໍ່"
+      }
+    },
+    "checks": {
+      "realtime": "ຄຳນວນແບບເວລາຈິງ",
+      "lifetimeCommission": "ຮັບຄ່າຄອມຕະຫຼອດຊີບ",
+      "minWithdraw": "ຖອນຂັ້ນຕ່ຳ ฿50.00"
+    },
+    "steps": {
+      "title": "ເລີ່ມຕົ້ນງ່າຍໆໃນ 3 ຂັ້ນຕອນ",
+      "copy": "ສຳເນົາລິ້ງ",
+      "share": "ແບ່ງປັນໃຫ້ໝູ່",
+      "earn": "ຮັບສ່ວນແບ່ງ"
+    },
+    "periods": {
+      "ariaLabel": "ຊ່ວງເວລາລາຍໄດ້",
+      "all": "ທັງໝົດ",
+      "today": "ມື້ນີ້",
+      "lastWeek": "ອາທິດທີ່ແລ້ວ",
+      "lastMonth": "ເດືອນທີ່ແລ້ວ"
+    },
+    "earning": {
+      "claimableIncome": "ລາຍໄດ້ທີ່ຮັບໄດ້",
+      "claimableBonus": "ໂບນັດທີ່ຮັບໄດ້",
+      "claim": "ຮັບໂບນັດ",
+      "receivedTotal": "ຮັບສະສົມແລ້ວ {amount}",
+      "received": "ຮັບສະສົມ {amount}",
+      "periodSummaryAriaLabel": "ສະຫຼຸບລາຍໄດ້ຊ່ວງທີ່ເລືອກ",
+      "networkIncomePeriod": "ລາຍໄດ້ຈາກເຄືອຂ່າຍ (ຊ່ວງທີ່ເລືອກ)",
+      "totalAccumulated": "ສະສົມທັງໝົດ {amount}",
+      "detailsTitle": "ລາຍລະອຽດການສ້າງລາຍໄດ້",
+      "historyTitle": "ປະຫວັດການຮັບໂບນັດ",
+      "bonusAmount": "ຈຳນວນໂບນັດ",
+      "date": "ວັນທີ",
+      "empty": "ຍັງບໍ່ມີປະຫວັດການຮັບໂບນັດ",
+      "paginationAriaLabel": "ປ່ຽນໜ້າປະຫວັດໂບນັດ"
+    },
+    "users": {
+      "registeredAt": "ສະໝັກເມື່ອ",
+      "empty": "ຍັງບໍ່ມີໝູ່ສະໝັກຜ່ານລິ້ງຂອງທ່ານ",
+      "paginationAriaLabel": "ປ່ຽນໜ້າລາຍຊື່ໝູ່"
+    },
+    "pagination": {
+      "showing": "ສະແດງ {start}–{end} ຈາກ {total}"
+    }
+  },
+  "rewards": {
+    "actions": {
+      "claim": "ຮັບລາງວັນ",
+      "close": "ປິດ",
+      "ok": "ຕົກລົງ"
+    },
+    "status": {
+      "claimed": "ຮັບແລ້ວ"
+    },
+    "hub": {
+      "title": "ສຸ່ມລາງວັນ",
+      "loading": "ກຳລັງໂຫຼດສູນລາງວັນ…",
+      "loadError": "ໂຫຼດສູນລາງວັນບໍ່ສຳເລັດ",
+      "pointsLoading": "ກຳລັງໂຫຼດຄະແນນ…",
+      "pointsLoadError": "ໂຫຼດຂໍ້ມູນລາງວັນບໍ່ສຳເລັດ",
+      "bannersAria": "ໂປຣໂມຊັນລາງວັນ",
+      "shortcutsAria": "ເມນູລາງວັນ",
+      "summaryAria": "ຍອດເຄຣດິດແລະຄະແນນ",
+      "totalCredits": "ເຄຣດິດທັງໝົດ",
+      "pointsBalance": "ຄະແນນຄົງເຫຼືອ"
+    },
+    "shortcuts": {
+      "luckyBox": "ແລກກ່ອງສຸ່ມ",
+      "randomCard": "ແລກບັດສຸ່ມ",
+      "freespins": "ແລກຮັບຟຣີສະປິນ/ຊິບ"
+    },
+    "banners": {
+      "luckyBoxSubtitle": "ແລກກ່ອງສຸ່ມດ້ວຍຄະແນນ",
+      "randomCardSubtitle": "ເປີດບັດລຸ້ນລາງວັນ",
+      "termsLabel": "ເງື່ອນໄຂເພີ່ມເຕີມ"
+    },
+    "redeemBoard": {
+      "subtitle": "ສຸ່ມລາງວັນ",
+      "pointsLabel": "ຄະແນນສະສົມ",
+      "drawCost": "ສຸ່ມລາງວັນຄັ້ງລະ {cost} ຄະແນນ",
+      "startDraw": "ເລີ່ມສຸ່ມ",
+      "history": "ປະຫວັດການແລກລາງວັນ"
+    },
+    "luckyBox": {
+      "pageTitle": "ແລກກ່ອງສຸ່ມ",
+      "loading": "ກຳລັງໂຫຼດ Lucky Box…",
+      "loadError": "ໂຫຼດ Lucky Box ບໍ່ສຳເລັດ"
+    },
+    "randomCard": {
+      "pageTitle": "ແລກບັດສຸ່ມ",
+      "loading": "ກຳລັງໂຫຼດບັດສຸ່ມ…",
+      "loadError": "ໂຫຼດບັດສຸ່ມບໍ່ສຳເລັດ"
+    },
+    "freespins": {
+      "title": "ຟຣີສະປິນ / ຊິບ",
+      "comingSoonDesc": "ຟີເຈີນີ້ກຳລັງພັດທະນາ — ຈະເປີດໃຫ້ແລກດ້ວຍຄະແນນໃນໄວໆນີ້"
+    },
+    "checkIn": {
+      "title": "ເຊັກອິນລາຍວັນ",
+      "loading": "ກຳລັງໂຫຼດເຊັກອິນ…",
+      "loadError": "ໂຫຼດຂໍ້ມູນເຊັກອິນບໍ່ສຳເລັດ",
+      "subtitle": "ເຊັກອິນຕໍ່ເນື່ອງ ຮັບ Gems ໂບນັດພິເສດ",
+      "bonusBefore": "ອີກ",
+      "bonusDays": {
+        "other": "{count} ວັນ"
+      },
+      "bonusAfter": "ໄດ້ໂບນັດ",
+      "bonusGems": "{amount} Gems",
+      "progressTotal": "/ {total} ວັນ",
+      "dayStatus": {
+        "claimed": "ຮັບແລ້ວ",
+        "today": "ກົດຮັບ",
+        "locked": "ລໍຖ້າຮັບ"
+      },
+      "weekdays": {
+        "mon": "ຈ.",
+        "tue": "ຄ.",
+        "wed": "ພ.",
+        "thu": "ພຫ.",
+        "fri": "ສຸ.",
+        "sat": "ສ.",
+        "sun": "ອາ."
+      },
+      "cumulativeTitle": "ລາງວັນເຊັກອິນສະສົມ",
+      "cumulativeDesc": "ເຊັກອິນຄົບຕາມກຳນົດ ຮັບ Gems ໂບນັດໃຫຍ່",
+      "milestoneGems": "{amount} Gems",
+      "milestoneDays": "ເຊັກອິນ {days} ວັນ",
+      "milestoneDialog": {
+        "title": "ລາງວັນເຊັກອິນຄົບ {days} ວັນ",
+        "progress": "ເຊັກອິນແລ້ວ {done}/{total} ວັນ",
+        "claim": "ຮັບລາງວັນ",
+        "claimed": "ຮັບລາງວັນແລ້ວ",
+        "daysLeft": "ເຊັກອິນອີກ {count} ວັນ"
+      },
+      "claimedToday": "ເຊັກອິນແລ້ວມື້ນີ້",
+      "claimToday": "ກົດຮັບລາງວັນມື້ນີ້",
+      "success": {
+        "title": "ຮັບລາງວັນສຳເລັດແລ້ວ",
+        "descBefore": "ທ່ານໄດ້ຮັບ",
+        "descAfter": "ແລ້ວ"
+      },
+      "desktop": {
+        "summaryAria": "ສະຫຼຸບເຊັກອິນ",
+        "progressAria": "ຄວາມຄືບໜ້າເຊັກອິນ",
+        "weekProgress": "ຄວາມຄືບໜ້າອາທິດນີ້",
+        "daysUnit": "ວັນ",
+        "claimTodayAria": "ຮັບລາງວັນມື້ນີ້",
+        "claimToday": "ຮັບລາງວັນມື້ນີ້",
+        "claimedToday": "ຮັບລາງວັນແລ້ວ",
+        "streakAria": "ຄວາມຄືບໜ້າ 7 ວັນ",
+        "streakDay": "ວັນທີ {day}",
+        "listTitle": "ລາຍການເຊັກອິນ",
+        "dayTitle": "ວັນທີ {day}",
+        "specialReward": "ລາງວັນພິເສດ",
+        "bonusDayDesc": "ເຊັກອິນຄົບອາທິດ ຮັບເຄຣດິດໂບນັດ",
+        "dailyDesc": "ລາງວັນເຊັກອິນປະຈຳວັນ",
+        "locked": "ລັອກ"
+      }
+    },
+    "wheel": {
+      "title": "ວົງລໍ້ນຳໂຊກ",
+      "subtitle": "ໝູນລຸ້ນຮັບລາງວັນໃຫຍ່ທຸກວັນ",
+      "loading": "ກຳລັງໂຫຼດວົງລໍ້…",
+      "loadError": "ໂຫຼດວົງລໍ້ບໍ່ສຳເລັດ",
+      "backHome": "ກັບໜ້າຫຼັກ",
+      "winMessage": "ຂໍສະແດງຄວາມຍິນດີ! ທ່ານໄດ້ຮັບ {prize}",
+      "justNow": "ເມື່ອກີ້",
+      "prizeKind": {
+        "gems": "Gems",
+        "credit": "ເຄຣດິດ"
+      },
+      "gemsBalanceAria": "ຍອດ Gems ຂອງທ່ານ",
+      "ticketsAria": "ຈຳນວນຕັ້ວຂອງທ່ານ",
+      "spinAria": "ໝູນວົງລໍ້",
+      "methodTabsAria": "ເລືອກວິທີໝູນວົງລໍ້",
+      "methodGems": "Gems ×{cost}",
+      "methodTicket": "ຕັ້ວ ×{cost}",
+      "spinning": "ກຳລັງໝູນ…",
+      "spinNow": "ໝູນເລີຍ",
+      "useTickets": {
+        "other": "ໃຊ້ {count} ຕັ້ວ"
+      },
+      "useGems": "ໃຊ້ {amount} Gems",
+      "noTickets": "ບໍ່ມີຕັ້ວ ລອງໝູນດ້ວຍ Gems",
+      "notEnoughGems": "Gems ບໍ່ພໍ ລອງເຕີມ Gems",
+      "hint": "ໝູນມ່ວນໆ ລຸ້ນຮັບລາງວັນໄດ້ທຸກວັນ",
+      "sampleNote": "ຕົວຢ່າງລາງວັນແລະຍອດກະເປົາເງິນ",
+      "liveWinners": {
+        "title": "ຜູ້ຊະນະຫຼ້າສຸດ",
+        "gemsWon": "+{amount} Gems",
+        "received": "ໄດ້ຮັບ",
+        "gemsAmount": "{amount} Gems"
+      },
+      "history": {
+        "title": "ປະຫວັດການໝູນຂອງຂ້ອຍ",
+        "usedGems": "ໃຊ້ Gems",
+        "usedTicket": "ໃຊ້ຕັ້ວ",
+        "prevPage": "ໜ້າກ່ອນ",
+        "nextPage": "ໜ້າຕໍ່ໄປ"
+      }
+    },
+    "gemsStore": {
+      "title": "ຮ້ານ Gems",
+      "loading": "ກຳລັງໂຫຼດຮ້ານ Gems…",
+      "loadError": "ໂຫຼດຮ້ານ Gems ບໍ່ສຳເລັດ",
+      "redeemHeading": "ແລກເຄຣດິດ",
+      "termsTitle": "ເງື່ອນໄຂການແລກລາງວັນ",
+      "redeemShort": "ແລກ",
+      "notEnoughShort": "ບໍ່ພໍ",
+      "redeem": "ແລກລາງວັນ",
+      "redeemAria": "ແລກລາງວັນ {credits}",
+      "notEnoughGems": "Gems ບໍ່ພໍ",
+      "summary": {
+        "balanceLabel": "Gems ຄົງເຫຼືອ",
+        "balanceAria": "Gems ຄົງເຫຼືອ {amount}",
+        "today": "ມື້ນີ້",
+        "thisWeek": "ອາທິດນີ້"
+      },
+      "confirm": {
+        "title": "{amount} ເຄຣດິດ",
+        "subtitle": "ໃຊ້ {gems} Gems ແລກເປັນ {credits} ເຄຣດິດ",
+        "creditsLabel": "ເຄຣດິດ",
+        "gemsUsed": "Gems ທີ່ໃຊ້",
+        "balanceAfter": "ຄົງເຫຼືອຫຼັງແລກ",
+        "cancel": "ຍົກເລີກ",
+        "confirm": "ຢືນຢັນ",
+        "processing": "ກຳລັງດຳເນີນການ…"
+      }
+    },
+    "activities": {
+      "title": "ກິດຈະກຳ",
+      "loading": "ກຳລັງໂຫຼດກິດຈະກຳ…",
+      "loadError": "ໂຫຼດກິດຈະກຳບໍ່ສຳເລັດ",
+      "listAria": "ລາຍການກິດຈະກຳ",
+      "closeDetail": "ປິດລາຍລະອຽດກິດຈະກຳ",
+      "viewDetails": "ເບິ່ງລາຍລະອຽດ",
+      "categoryTabsAria": "ໝວດກິດຈະກຳ",
+      "categories": {
+        "slots": "ສະລັອດ",
+        "casino": "ຄາຊິໂນ"
+      },
+      "progress": {
+        "title": "ຍອດເທີນຂອງທ່ານ",
+        "current": "ຍອດເທີນປັດຈຸບັນ",
+        "rank1Target": "ເປົ້າໝາຍອັນດັບທີ 1",
+        "rewardCount": "ຈຳນວນລາງວັນ {earned} / {cap}"
+      },
+      "tiers": {
+        "rank": "ອັນດັບ",
+        "turn": "ເທີນ",
+        "bonus": "ໂບນັດ",
+        "claim": "ຮັບລາງວັນ",
+        "notEligible": "ບໍ່ຜ່ານເງື່ອນໄຂ"
+      },
+      "rulesTitle": "ກົດກະຕິກາແລະເງື່ອນໄຂກິດຈະກຳ"
+    }
+  },
+  "transactions": {
+    "title": "ປະຫວັດການເຮັດທຸລະກຳ",
+    "pageLoading": "ກຳລັງໂຫຼດ...",
+    "kindTabs": {
+      "aria": "ປະເພດທຸລະກຳ",
+      "deposit": "ຝາກ",
+      "withdraw": "ຖອນ",
+      "promotion": "ໂປຣໂມຊັນ",
+      "bet": "ເດີມພັນ"
+    },
+    "filter": {
+      "label": "ເລືອກວັນທີ",
+      "openCalendar": "ເປີດປະຕິທິນເລືອກວັນທີ",
+      "clear": "ລ້າງ",
+      "search": "ຊອກຫາ"
+    },
+    "calendar": {
+      "title": "ເລືອກຊ່ວງວັນທີ",
+      "close": "ປິດ",
+      "cancel": "ຍົກເລີກ",
+      "confirm": "ຢືນຢັນ"
+    },
+    "status": {
+      "completed": "ສຳເລັດ",
+      "pending": "ລໍຖ້າດຳເນີນການ",
+      "failed": "ບໍ່ສຳເລັດ"
+    },
+    "betType": {
+      "bet": "ເດີມພັນ",
+      "result": "ຜົນ"
+    },
+    "columns": {
+      "amount": "ຈຳນວນເງິນ",
+      "channel": "ຊ່ອງທາງ",
+      "account": "ບັນຊີທີ່ເຮັດລາຍການ",
+      "createdAt": "ວັນ-ເວລາທີ່ເຮັດລາຍການ",
+      "status": "ສະຖານະ",
+      "detail": "ລາຍການ",
+      "completedAt": "ວັນ-ເວລາທີ່ເຮັດລາຍການສຳເລັດ",
+      "promotionName": "ຊື່ໂປຣໂມຊັນ",
+      "playStart": "ວັນທີເລີ່ມເລ່ນ",
+      "playEnd": "ວັນທີສິ້ນສຸດ",
+      "freeSpins": "ຟຣີສະປິນ",
+      "perRound": "ຈຳນວນຕໍ່ຮອບ",
+      "provider": "ຄ່າຍເກມ",
+      "gameName": "ຊື່ເກມ",
+      "expiresWithin": "ໝົດອາຍຸພາຍໃນ",
+      "game": "ເກມ",
+      "date": "ວັນທີ",
+      "time": "ເວລາ",
+      "type": "ປະເພດ",
+      "betAmount": "ຍອດເງິນ",
+      "openingBalance": "ຍອດເງິນເລີ່ມຕົ້ນ",
+      "closingBalance": "ຍອດເງິນສິ້ນສຸດ"
+    },
+    "empty": "ບໍ່ພົບຂໍ້ມູນ",
+    "paginationAria": "ປ່ຽນໜ້າລາຍການເດີມພັນ",
+    "loginRequired": "ກະລຸນາເຂົ້າສູ່ລະບົບເພື່ອເບິ່ງລາຍການທຸລະກຳ",
+    "loadError": "ໂຫຼດລາຍການທຸລະກຳບໍ່ສຳເລັດ",
+    "retry": "ລອງໃໝ່",
+    "loading": "ກຳລັງໂຫຼດລາຍການ…",
+    "summary": {
+      "depositTotal": "ຍອດຝາກທັງໝົດ :",
+      "withdrawTotal": "ຍອດຖອນທັງໝົດ :",
+      "promotionClaims": "ຈຳນວນການຮັບໂປຣໂມຊັນ :",
+      "winLossTotal": "ຍອດຊະນະ/ແພ້ລວມ :",
+      "stakeTotal": "ຍອດເດີມພັນລວມ :"
+    }
+  },
+  "vip": {
+    "tabs": {
+      "ariaLabel": "ເມນູ VIP",
+      "myLevel": "ລະດັບຂອງຂ້ອຍ",
+      "rank": "ແຣັງ",
+      "benefits": "ສິດທິປະໂຫຍດ"
+    },
+    "status": {
+      "loading": "ກຳລັງໂຫຼດ...",
+      "playerLoading": "ກຳລັງໂຫຼດຂໍ້ມູນ VIP…",
+      "playerError": "ໂຫຼດຂໍ້ມູນ VIP ບໍ່ສຳເລັດ",
+      "ranksLoading": "ກຳລັງໂຫຼດລະດັບ VIP…",
+      "ranksError": "ໂຫຼດລະດັບ VIP ບໍ່ສຳເລັດ",
+      "benefitsLoading": "ກຳລັງໂຫຼດສິດທິປະໂຫຍດ…",
+      "benefitsError": "ໂຫຼດສິດທິປະໂຫຍດບໍ່ສຳເລັດ",
+      "retry": "ລອງໃໝ່"
+    },
+    "level": {
+      "label": "ລະດັບ",
+      "next": "ລະດັບຖັດໄປ",
+      "currentAriaLabel": "ລະດັບ VIP ປັດຈຸບັນ",
+      "benefitsAndMaintainAriaLabel": "ສິດທິປະໂຫຍດແລະການຮັກສາລະດັບ"
+    },
+    "rankStatus": {
+      "current": "ລະດັບປັດຈຸບັນ",
+      "cleared": "ຜ່ານແລ້ວ",
+      "locked": "ຍັງບໍ່ຮອດ"
+    },
+    "carousel": {
+      "previous": "ແຣັງກ່ອນໜ້າ",
+      "next": "ແຣັງຖັດໄປ",
+      "turnoverTarget": "ເທີນ {amount}"
+    },
+    "progress": {
+      "levelUpTo": "ເລື່ອນຂຶ້ນສູ່ VIP {level}",
+      "bothRequired": "ຕ້ອງຄົບທັງສອງເງື່ອນໄຂ",
+      "overallAriaLabel": "ຄວາມຄືບໜ້າລວມ {percent} ເປີເຊັນ",
+      "deposit": "ຝາກ",
+      "turnover": "ເທີນ",
+      "target": "ເປົ້າ {amount}",
+      "complete": "ຄົບແລ້ວ",
+      "remaining": "ຂາດອີກ {amount}"
+    },
+    "maintain": {
+      "title": "ຮັກສາລະດັບ VIP",
+      "subtitleWithDowngrade": "ຕ້ອງຄົບທັງສອງ ບໍ່ດັ່ງນັ້ນຈະຫຼຸດເປັນ VIP {level}",
+      "daysRemaining": "ວັນຄົງເຫຼືອ"
+    },
+    "benefitsTable": {
+      "title": "ສິດທິປະໂຫຍດແຕ່ລະລະດັບ",
+      "scrollHint": "ເລື່ອນເພື່ອເບິ່ງລະດັບເພີ່ມເຕີມ"
+    },
+    "benefitRows": {
+      "cashback": "ຄືນຍອດພິເສດ",
+      "rolling": "ໂຣລລິ່ງພິເສດ",
+      "diamondDeposit": "Gems ຈາກການຝາກ",
+      "fastWithdraw": "ຖອນດ່ວນ",
+      "vipManager": "VIP Manager",
+      "upgradeBonus": "ໂບນັດອັບເກຣດ",
+      "depositCondition": "ເງື່ອນໄຂການຝາກ",
+      "turnoverCondition": "ເງື່ອນໄຂເທີນ"
+    },
+    "benefitValues": {
+      "faster": "✓ ໄວຂຶ້ນ",
+      "max": "✓ ສູງສຸດ",
+      "notRequired": "ບໍ່ກຳນົດ"
+    },
+    "myLevelBenefits": {
+      "cashback": "ຄືນຍອດ",
+      "rolling": "ໂຣລລິ່ງ",
+      "diamondDeposit": "Gems ຈາກການຝາກ"
+    },
+    "missions": {
+      "login": "ເຂົ້າສູ່ລະບົບ",
+      "deposit": "ຝາກເງິນ",
+      "play": "ເຂົ້າເລ່ນ",
+      "unitDays": "ວັນ",
+      "unitTimes": "ຄັ້ງ"
+    }
+  },
+  "wallet": {
+    "shared": {
+      "submitting": "ກຳລັງສົ່ງ...",
+      "copied": "ສຳເນົາແລ້ວ",
+      "copyAccountNumber": "ສຳເນົາເລກບັນຊີ",
+      "currencyUnit": "THB"
+    },
+    "deposit": {
+      "title": "ຝາກເງິນ",
+      "close": "ປິດໜ້າຝາກເງິນ",
+      "selectMethod": "ເລືອກຊ່ອງທາງການຝາກເງິນ",
+      "methodsAria": "ຊ່ອງທາງຝາກເງິນ",
+      "methodsLoading": "ກຳລັງໂຫຼດຊ່ອງທາງຝາກ…",
+      "methodsError": "ໂຫຼດຊ່ອງທາງຝາກບໍ່ສຳເລັດ",
+      "bankAccountLoading": "ກຳລັງໂຫຼດບັນຊີຮັບໂອນ…",
+      "bankAccountError": "ໂຫຼດບັນຊີຮັບໂອນບໍ່ສຳເລັດ",
+      "methods": {
+        "bank": {
+          "title": "ບັນຊີທະນາຄານ",
+          "subtitle": "ໂອນເງິນຜ່ານບັນຊີທະນາຄານ"
+        },
+        "gateway": {
+          "title": "Payment Gateway",
+          "subtitle": "ຝາກເງິນຜ່ານລະບົບຊຳລະເງິນ"
+        },
+        "truemoney": {
+          "title": "TrueMoney Wallet",
+          "subtitle": "ຝາກເງິນຜ່ານ TrueMoney Wallet"
+        }
+      },
+      "bank": {
+        "title": "ຝາກຜ່ານບັນຊີທະນາຄານ",
+        "back": "ກັບໄປເລືອກຊ່ອງທາງຝາກ",
+        "bankLabel": "ທະນາຄານ",
+        "accountName": "ຊື່ບັນຊີ",
+        "accountNumber": "ເລກບັນຊີ",
+        "amountLabel": "ຈຳນວນເງິນທີ່ຕ້ອງການຝາກ",
+        "quickAmount": "ເລືອກຍອດເງິນດ່ວນ",
+        "quickAmountHint": "ເລືອກຍອດເງິນ ຫຼືໃສ່ຈຳນວນທີ່ຕ້ອງການ",
+        "next": "ຕໍ່ໄປ"
+      },
+      "confirm": {
+        "title": "ຢືນຢັນການຝາກເງິນ",
+        "back": "ກັບໄປແກ້ໄຂຍອດຝາກ",
+        "step": "ຂັ້ນຕອນ {current} ຈາກ {total}",
+        "transferAmount": "ຍອດເງິນທີ່ຕ້ອງໂອນ",
+        "accountNameLabel": "ຊື່ບັນຊີ: ",
+        "accountNumberLabel": "ເລກບັນຊີ: ",
+        "sampleNote": "ຂໍ້ມູນບັນຊີເປັນຕົວຢ່າງ",
+        "slipTitle": "ແນບສະລິບການໂອນ",
+        "slipPick": "ແຕະເພື່ອແນບສະລິບ",
+        "slipChange": "ປ່ຽນຮູບໄດ້ໂດຍແຕະອີກຄັ້ງ",
+        "slipFromDevice": "ເລືອກຮູບພາບຈາກອຸປະກອນ",
+        "slipHint": "ແນບສະລິບຫຼັງໂອນເງິນຮຽບຮ້ອຍແລ້ວ",
+        "submit": "ຢືນຢັນການຝາກເງິນ"
+      },
+      "finalConfirm": {
+        "title": "ຢືນຢັນສົ່ງຄຳຂໍຝາກເງິນບໍ?",
+        "description": "ກວດສອບຍອດແລະສະລິບກ່ອນສົ່ງຄຳຂໍໃຫ້ລະບົບກວດສອບ",
+        "confirm": "ສົ່ງຄຳຂໍຝາກ",
+        "amountLabel": "ຍອດຝາກ"
+      }
+    },
+    "withdraw": {
+      "title": "ຖອນເງິນ",
+      "close": "ປິດໜ້າຖອນເງິນ",
+      "accountLoading": "ກຳລັງໂຫຼດບັນຊີຮັບເງິນ…",
+      "accountError": "ໂຫຼດບັນຊີຮັບເງິນບໍ່ສຳເລັດ",
+      "changeAccount": "ປ່ຽນບັນຊີຮັບເງິນ",
+      "transferToYourAccount": "ໂອນເຂົ້າບັນຊີຂອງທ່ານ",
+      "amountLabel": "ຈຳນວນເງິນທີ່ຕ້ອງການຖອນ",
+      "available": "ຖອນໄດ້ ฿{amount}",
+      "withdrawAll": "ຖອນທັງໝົດ",
+      "quickAmountHint": "ແຕະຍອດເງິນເພື່ອແກ້ໄຂ",
+      "submit": "ຢືນຢັນຖອນເງິນ",
+      "confirm": {
+        "title": "ຢືນຢັນສົ່ງຄຳຂໍຖອນເງິນບໍ?",
+        "description": "ໂອນເຂົ້າ {bank} {account}",
+        "confirm": "ຢືນຢັນຖອນ",
+        "amountLabel": "ຍອດຖອນ"
+      }
+    },
+    "pending": {
+      "deposit": {
+        "title": "ຝາກເງິນລໍຖ້າດຳເນີນການ",
+        "subtitle": "ລໍຖ້າຈັບຄູ່ຍອດໂອນ"
+      },
+      "withdraw": {
+        "title": "ຖອນເງິນລໍຖ້າດຳເນີນການ",
+        "subtitle": "ລະບົບກຳລັງດຳເນີນການຄຳຂໍຂອງທ່ານ"
+      },
+      "rows": {
+        "channel": "ຊ່ອງທາງ",
+        "reference": "ເລກອ້າງອີງ",
+        "transactionAt": "ວັນທີເຮັດລາຍການ",
+        "receivingAccount": "ບັນຊີຮັບເງິນ"
+      },
+      "close": "ປິດ",
+      "done": "ຮຽບຮ້ອຍ",
+      "viewHistory": "ເບິ່ງປະຫວັດລາຍການ",
+      "copyReference": "ສຳເນົາເລກອ້າງອີງ",
+      "referenceCopied": "ສຳເນົາເລກອ້າງອີງແລ້ວ",
+      "referenceCopyFailed": "ບໍ່ສາມາດສຳເນົາເລກອ້າງອີງໄດ້"
+    }
+  }
+}

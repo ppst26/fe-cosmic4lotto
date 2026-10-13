@@ -1,0 +1,41 @@
+{
+  "title": "Promotions",
+  "loading": "Loading promotions…",
+  "loadError": "Couldn't load promotions",
+  "loadErrorDesc": "Check your internet connection and try again",
+  "retry": "Try Again",
+  "forYou": "Promotions for You",
+  "filterAria": "Filter promotions by category",
+  "categories": {
+    "all": "All",
+    "slots": "Slots",
+    "casino": "Casino",
+    "sport": "Sports",
+    "newMember": "New Members",
+    "daily": "Daily",
+    "privilege": "Privileges"
+  },
+  "empty": {
+    "category": "No promotions in this category yet",
+    "categoryHint": "No promotions in this category yet — try All",
+    "activitiesHint": "No events in this category yet — try All"
+  },
+  "hub": {
+    "promotionsListAria": "Promotions list",
+    "activitiesListAria": "Events list",
+    "selectedDetailAria": "Selected details"
+  },
+  "detail": {
+    "title": "Promotion Details",
+    "heading": "Details",
+    "loading": "Loading details…",
+    "close": "Close promotion details",
+    "notFound": "Promotion details not found",
+    "notFoundDesc": "This promotion may have ended or failed to load"
+  },
+  "mobile": {
+    "expires": "Ends {date}",
+    "readTerms": "Read Terms",
+    "readTermsAria": "{title} — Read terms"
+  }
+}

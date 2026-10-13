@@ -1,0 +1,59 @@
+{
+  "language": "Language",
+  "languagePicker": {
+    "title": "Choose language",
+    "description": "Change the language shown on the site",
+    "close": "Close language picker"
+  },
+  "close": "Close",
+  "retry": "Try again",
+  "loading": "Loading…",
+  "confirm": "Confirm",
+  "cancel": "Cancel",
+  "processing": "Processing…",
+  "back": "Back",
+  "next": "Next",
+  "backStep": "Back to previous step",
+  "loadFailed": "Couldn't load data",
+  "emptyCategory": "Nothing in this category yet",
+  "refCode": "Reference: {code}",
+  "units": {
+    "people": { "one": "{n} person", "other": "{n} people" },
+    "records": { "one": "{n} item", "other": "{n} items" },
+    "credits": { "one": "{n} credit", "other": "{n} credits" },
+    "gems": { "one": "{n} gem", "other": "{n} gems" },
+    "million": "{n}M"
+  },
+  "carousel": {
+    "prev": "Scroll {title} back",
+    "next": "Scroll {title} forward"
+  },
+  "pagination": {
+    "label": "Pagination",
+    "prev": "Previous page",
+    "page": "Page {page}",
+    "next": "Next page"
+  },
+  "notifications": {
+    "title": "Notifications",
+    "close": "Close notifications",
+    "tabsLabel": "Notification types",
+    "tabs": {
+      "all": "All",
+      "privileges": "Perks",
+      "messages": "Messages"
+    },
+    "empty": "No new messages",
+    "contactChannels": "Contact channels"
+  },
+  "coupon": {
+    "title": "Redeem Coupon",
+    "close": "Close coupon redemption",
+    "description": "Enter a code to redeem free credit",
+    "codeLabel": "Coupon code",
+    "codePlaceholder": "Enter coupon code",
+    "codeRequired": "Please enter a coupon code",
+    "submit": "Redeem Free Credit",
+    "submitting": "Checking..."
+  }
+}

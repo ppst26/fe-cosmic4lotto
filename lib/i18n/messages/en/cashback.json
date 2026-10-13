@@ -1,0 +1,68 @@
+{
+  "pageTitle": "Cashback",
+  "tabs": {
+    "ariaLabel": "Cashback type",
+    "play": "Cashback",
+    "loss": "Loss Rebate"
+  },
+  "status": {
+    "panelsLoading": "Loading cashback…",
+    "panelsError": "Couldn't load cashback",
+    "lossRebateLoading": "Loading loss rebate…",
+    "lossRebateError": "Couldn't load loss rebate"
+  },
+  "panel": {
+    "playSubtitle": "Cashback on your turnover",
+    "lossSubtitle": "Rebate on your net losses",
+    "nothingToClaim": "Nothing to claim yet",
+    "claimed": "Claimed",
+    "cycleDaily": "Daily at 00:00",
+    "claimableAmount": "Claimable Amount",
+    "accumulatedThisCycle": "Accumulated (this cycle)",
+    "refresh": "Refresh amount"
+  },
+  "periods": {
+    "ariaLabel": "Cashback summary period",
+    "all": "All",
+    "today": "Today",
+    "lastWeek": "Last Week",
+    "lastMonth": "Last Month"
+  },
+  "rules": {
+    "title": "Terms Details",
+    "item": "Item",
+    "value": "Value",
+    "rate": "Rate",
+    "min": "Minimum",
+    "maxPerClaim": "Max per claim",
+    "cycle": "Calculation cycle"
+  },
+  "lossRebate": {
+    "statusCalculated": "Calculated",
+    "historyTitle": "Loss Rebate History",
+    "selectMonth": "Select month",
+    "period": "Period",
+    "netLoss": "Net Loss",
+    "bonusReceived": "Bonus Received",
+    "receivedDate": "Received On",
+    "empty": "No history for the selected month",
+    "paginationAriaLabel": "Loss rebate history pages",
+    "termsTitle": "Loss Rebate Terms",
+    "terms": {
+      "basis": "Loss rebate is calculated from eligible net losses within each cycle.",
+      "claimWindow": "Bonuses must be claimed while the claim window is open, or they will expire.",
+      "subjectToChange": "Rates and terms may change as announced by the website.",
+      "sampleData": "Data on this page is sample data for UI display."
+    },
+    "formula": {
+      "title": "Calculation Details",
+      "eligibleNetLoss": "Eligible net loss",
+      "rate": "Loss rebate rate",
+      "bonus": "Loss rebate bonus",
+      "sampleNote": "Figures and rates shown are examples."
+    }
+  },
+  "pagination": {
+    "showing": "Showing {start}–{end} of {total}"
+  }
+}

@@ -1,0 +1,105 @@
+{
+  "shared": {
+    "submitting": "Submitting...",
+    "copied": "Copied",
+    "copyAccountNumber": "Copy account number",
+    "currencyUnit": "THB"
+  },
+  "deposit": {
+    "title": "Deposit",
+    "close": "Close deposit",
+    "selectMethod": "Choose a deposit method",
+    "methodsAria": "Deposit methods",
+    "methodsLoading": "Loading deposit methods…",
+    "methodsError": "Couldn't load deposit methods",
+    "bankAccountLoading": "Loading receiving account…",
+    "bankAccountError": "Couldn't load receiving account",
+    "methods": {
+      "bank": {
+        "title": "Bank account",
+        "subtitle": "Transfer via bank account"
+      },
+      "gateway": {
+        "title": "Payment Gateway",
+        "subtitle": "Deposit via payment gateway"
+      },
+      "truemoney": {
+        "title": "TrueMoney Wallet",
+        "subtitle": "Deposit via TrueMoney Wallet"
+      }
+    },
+    "bank": {
+      "title": "Deposit via Bank Account",
+      "back": "Back to deposit methods",
+      "bankLabel": "Bank",
+      "accountName": "Account name",
+      "accountNumber": "Account number",
+      "amountLabel": "Deposit amount",
+      "quickAmount": "Quick amounts",
+      "quickAmountHint": "Pick an amount or enter your own",
+      "next": "Next"
+    },
+    "confirm": {
+      "title": "Confirm Deposit",
+      "back": "Back to edit amount",
+      "step": "Step {current} of {total}",
+      "transferAmount": "Amount to transfer",
+      "accountNameLabel": "Account name: ",
+      "accountNumberLabel": "Account no.: ",
+      "sampleNote": "Sample account details",
+      "slipTitle": "Attach transfer slip",
+      "slipPick": "Tap to attach slip",
+      "slipChange": "Tap again to change the image",
+      "slipFromDevice": "Choose an image from your device",
+      "slipHint": "Attach the slip after completing your transfer",
+      "submit": "Confirm Deposit"
+    },
+    "finalConfirm": {
+      "title": "Submit deposit request?",
+      "description": "Check the amount and slip before submitting for review",
+      "confirm": "Submit Deposit",
+      "amountLabel": "Deposit amount"
+    }
+  },
+  "withdraw": {
+    "title": "Withdraw",
+    "close": "Close withdraw",
+    "accountLoading": "Loading receiving account…",
+    "accountError": "Couldn't load receiving account",
+    "changeAccount": "Change receiving account",
+    "transferToYourAccount": "Transfer to your account",
+    "amountLabel": "Withdrawal amount",
+    "available": "Available ฿{amount}",
+    "withdrawAll": "Withdraw all",
+    "quickAmountHint": "Tap an amount to edit",
+    "submit": "Confirm Withdrawal",
+    "confirm": {
+      "title": "Submit withdrawal request?",
+      "description": "Transfer to {bank} {account}",
+      "confirm": "Confirm Withdrawal",
+      "amountLabel": "Withdrawal amount"
+    }
+  },
+  "pending": {
+    "deposit": {
+      "title": "Deposit Pending",
+      "subtitle": "Waiting to match your transfer"
+    },
+    "withdraw": {
+      "title": "Withdrawal Pending",
+      "subtitle": "Your request is being processed"
+    },
+    "rows": {
+      "channel": "Method",
+      "reference": "Reference no.",
+      "transactionAt": "Date",
+      "receivingAccount": "Receiving account"
+    },
+    "close": "Close",
+    "done": "Done",
+    "viewHistory": "View transaction history",
+    "copyReference": "Copy reference number",
+    "referenceCopied": "Reference number copied",
+    "referenceCopyFailed": "Couldn't copy reference number"
+  }
+}

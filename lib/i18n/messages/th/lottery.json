@@ -1,0 +1,252 @@
+{
+  "hub": {
+    "title": "แทงหวย",
+    "subtitle": "เลือกประเภทหวยที่ต้องการแทง",
+    "featuredAria": "หวยแนะนำ",
+    "allMarketsAria": "ประเภทหวยทั้งหมด",
+    "mySlips": "โพยของฉัน",
+    "mySlipsAria": "ดูโพยของฉัน",
+    "mySlipsPendingAria": "ดูโพยของฉัน — กำลังดำเนินการ {count} โพย",
+    "daysLeft": "{count} วัน"
+  },
+  "markets": {
+    "generic": "หวย",
+    "thaiGovernment": "หวยรัฐบาลไทย",
+    "yiki5": "หวยยี่กี 5 นาที",
+    "yiki15": "หวยยี่กี 15 นาที",
+    "yiki30": "หวยยี่กี 30 นาที",
+    "baac": "หวย ธ.ก.ส.",
+    "laos": "หวยลาว",
+    "hanoi": "หวยฮานอย",
+    "malaysia": "หวยมาเลย์",
+    "dowJones": "หวยดาวโจนส์",
+    "china": "หวยจีน",
+    "germany": "หวยเยอรมัน",
+    "russia": "หวยรัสเซีย",
+    "korea": "หวยเกาหลี",
+    "nikkei": "หวยนิเคอิ",
+    "uk": "หวยอังกฤษ",
+    "hongKong": "หวยฮั่งเส็ง",
+    "taiwan": "หวยไต้หวัน",
+    "singapore": "หวยสิงคโปร์",
+    "india": "หวยอินเดีย",
+    "egypt": "หวยอียิปต์"
+  },
+  "status": {
+    "open": "เปิดรับแทง",
+    "closed": "ปิดรับแทง",
+    "closedAlready": "ปิดรับแทงแล้ว",
+    "closesIn": "ปิดรับใน",
+    "closesInTime": "ปิดรับใน {time}",
+    "countdownDays": "{days} วัน {time}"
+  },
+  "groups": {
+    "three": "3 ตัว",
+    "two": "2 ตัว",
+    "run": "เลขวิ่ง"
+  },
+  "betTypes": {
+    "threeTop": "3 ตัวบน",
+    "threeTod": "3 ตัวโต๊ด",
+    "threeFront": "3 ตัวหน้า",
+    "threeBottom": "3 ตัวล่าง",
+    "threeTopTod": "3 ตัวบนโต๊ด",
+    "threeTopReverse": "3 ตัวบนกลับ",
+    "threeTopComboTod": "3 ตัวบน + โต๊ด",
+    "twoTop": "2 ตัวบน",
+    "twoBottom": "2 ตัวล่าง",
+    "twoTopReverse": "2 ตัวบนกลับ",
+    "twoBottomReverse": "2 ตัวล่างกลับ",
+    "twoTopBottom": "2 ตัวบน/ล่าง",
+    "twoTopBottomReverse": "2 ตัวบน/ล่างกลับ",
+    "runTop": "วิ่งบน",
+    "runBottom": "วิ่งล่าง"
+  },
+  "round": {
+    "time": "รอบ {time} น.",
+    "draw": "งวด {date}",
+    "market": "{market} {date}",
+    "numbered": "รอบ {n}",
+    "current": "งวดปัจจุบัน"
+  },
+  "rounds": {
+    "empty": "ยังไม่มีรอบที่เปิดรับแทง",
+    "listAria": "รายการรอบ",
+    "showAll": "แสดงรอบทั้งหมด ({count} รอบ)",
+    "play": "แทงหวย",
+    "loading": "กำลังโหลดรอบ…",
+    "loadError": "โหลดรอบไม่สำเร็จ",
+    "openCountPrefix": "รอบที่เปิดให้เล่น",
+    "openCountSuffix": "รอบ"
+  },
+  "market": {
+    "sidebarAria": "ประเภทหวย",
+    "rules": "กติกา / อัตราการจ่าย",
+    "notFoundTitle": "ไม่พบประเภทหวยนี้",
+    "notFoundDescription": "หวยนี้อาจปิดให้บริการแล้ว เลือกหวยอื่นจากหน้ารวม",
+    "viewAll": "ดูหวยทั้งหมด",
+    "marketNotFound": "ไม่พบตลาดหวยนี้"
+  },
+  "rules": {
+    "payoutHeading": "อัตราจ่ายต่อ 1 บาท",
+    "limitsHeading": "ยอดแทงต่อรายการ",
+    "minBet": "ขั้นต่ำ",
+    "maxBet": "สูงสุด"
+  },
+  "results": {
+    "title": "ผลหวยล่าสุด",
+    "morePage": "หน้าผลหวย >>",
+    "tableAria": "รายการผลหวยล่าสุด",
+    "colMarket": "ประเภทหวย",
+    "colDate": "งวด / วันที่",
+    "empty": "ยังไม่มีผลหวย",
+    "today": "วันนี้"
+  },
+  "thaiResult": {
+    "title": "ผลรางวัลงวดก่อน",
+    "firstPrize": "รางวัลที่ 1",
+    "back3": "3 ตัวท้าย"
+  },
+  "draw": {
+    "aria": "ข้อมูลงวด"
+  },
+  "board": {
+    "pickAria": "เลือกเลข",
+    "reverse": "กลับเลข",
+    "actionsAria": "ดำเนินการต่อ",
+    "back": "กลับหน้าก่อนหน้า",
+    "enterPrice": "ใส่ราคา",
+    "digitGroupAria": "จำนวนหลัก",
+    "betTypeAria": "ประเภทการแทง",
+    "payout": "จ่าย {rate}",
+    "loading": "กำลังโหลดกระดานแทง…",
+    "roundNotFoundTitle": "ไม่พบรอบที่เลือก",
+    "roundNotFoundNext": "รอบนี้อาจปิดรับแทงแล้ว เลือกรอบถัดไปจากรายการรอบ",
+    "roundNotFoundOther": "รอบนี้อาจปิดรับแทงแล้ว เลือกรอบอื่นได้จากรายการรอบ",
+    "viewAllRounds": "ดูรอบทั้งหมด"
+  },
+  "inputMode": {
+    "aria": "วิธีใส่เลข",
+    "manual": "กรอกเลขเอง",
+    "grid": "เลือกจากแผงเลข"
+  },
+  "feedback": {
+    "duplicate": "{number} มีในโพยแล้ว",
+    "added": "เพิ่ม {number} ลงโพย {count} รายการ",
+    "undone": "ย้อนรายการล่าสุดแล้ว",
+    "closed": "ปิดรับแทงแล้ว",
+    "removed": "เอา {number} ออกจากโพย"
+  },
+  "pad": {
+    "hundreds": "หลักร้อย",
+    "selectedCount": "เลือกแล้ว {count}",
+    "gridAria": "แผงเลข",
+    "enteredAria": "เลขที่กรอก {value}",
+    "empty": "ว่าง",
+    "clear": "ล้าง",
+    "backspace": "ลบตัวเลขล่าสุด"
+  },
+  "slip": {
+    "itemCount": "{count} รายการ",
+    "removeAria": "ลบ {label} {number}",
+    "priceAria": "ราคา {label} {number}",
+    "enterPrice": "ใส่ราคา",
+    "toolbarAria": "เครื่องมือโพย",
+    "undo": "ย้อนกลับรายการล่าสุด",
+    "clearAll": "ล้างโพยทั้งหมด",
+    "emptyPickType": "เลือกประเภทแล้วกดเลขเพื่อเพิ่มลงโพย",
+    "emptyEnterNumber": "ยังไม่มีข้อมูล กรุณาใส่เลขที่ต้องการแทง"
+  },
+  "price": {
+    "aria": "ใส่ราคาและส่งโพย",
+    "sameForAll": "ราคาเท่ากันทั้งหมด",
+    "edit": "แก้ไข",
+    "total": "รวม",
+    "chipsAria": "เลือกราคา",
+    "backToNumbers": "กลับแก้ไขเลข",
+    "submitting": "กำลังส่ง…",
+    "submit": "ส่งโพย"
+  },
+  "submit": {
+    "failedTitle": "ส่งโพยไม่สำเร็จ",
+    "done": "เรียบร้อย",
+    "close": "ปิด",
+    "networkError": "ไม่สามารถเชื่อมต่อเซิร์ฟเวอร์"
+  },
+  "summary": {
+    "aria": "สรุปโพย",
+    "drawDate": "งวดวันที่ {date}",
+    "copyAria": "คัดลอกเลขโพย",
+    "slipId": "โพย #{id}",
+    "purchased": "ซื้อ {date}",
+    "submitted": "ส่งโพยแล้ว",
+    "note": "โน้ต {note}",
+    "noNote": "ไม่มีบันทึกข้อความ",
+    "stake": "เดิมพัน",
+    "winLoss": "แพ้/ชนะ",
+    "allSlips": "โพยทั้งหมด",
+    "continue": "แทงต่อ",
+    "copied": "คัดลอกเลขโพยแล้ว",
+    "copyFailed": "ไม่สามารถคัดลอกเลขโพยได้"
+  },
+  "slips": {
+    "title": "โพยทั้งหมด",
+    "loading": "กำลังโหลดโพย…",
+    "emptyTitle": "ยังไม่มีโพยที่ส่ง",
+    "emptyDescription": "เลือกหวยที่ต้องการแล้วส่งโพยแรกได้เลย",
+    "goPlay": "ไปแทงหวย",
+    "stake": "เดิมพัน {amount}",
+    "summaryTitle": "สรุปโพย",
+    "notFoundTitle": "ไม่พบโพยนี้",
+    "notFoundDescription": "โพยอาจถูกลบหรือลิงก์ไม่ถูกต้อง",
+    "viewAll": "ดูโพยทั้งหมด",
+    "tabs": {
+      "pending": "กำลังดำเนินการ",
+      "history": "ประวัติ",
+      "aria": "ประเภทโพย"
+    },
+    "filters": {
+      "aria": "ตัวกรองโพย",
+      "market": "ตลาดหวย",
+      "result": "ผลโพย",
+      "range": "ช่วงเวลา",
+      "allMarkets": "ทุกตลาด",
+      "allResults": "ทุกผล",
+      "today": "วันนี้",
+      "days7": "7 วัน",
+      "days30": "30 วัน",
+      "custom": "กำหนดเอง"
+    },
+    "status": {
+      "waitingDraw": "รอออกผล",
+      "waitingSettle": "รอสรุปผล",
+      "won": "ถูกรางวัล",
+      "lost": "ไม่ถูกรางวัล",
+      "void": "ยกเลิก (คืนเงิน)"
+    },
+    "summary": {
+      "count": "{count} โพย",
+      "stake": "เดิมพันรวม {amount}",
+      "net": "ได้/เสียสุทธิ"
+    },
+    "card": {
+      "drawAt": "ออกผล {date}",
+      "settledAt": "สรุปผล {date}"
+    },
+    "emptyPending": {
+      "title": "ไม่มีโพยที่กำลังดำเนินการ",
+      "description": "โพยที่ส่งแล้วและยังไม่สรุปผลจะแสดงที่นี่"
+    },
+    "emptyHistory": {
+      "title": "ยังไม่มีประวัติโพย",
+      "description": "โพยที่สรุปผลแล้วจะเก็บไว้ให้ดูย้อนหลัง {days} วัน"
+    },
+    "emptyFiltered": "ไม่พบโพยตามตัวกรองนี้",
+    "clearFilters": "ล้างตัวกรอง",
+    "loadMore": "โหลดเพิ่ม",
+    "loadingMore": "กำลังโหลด…",
+    "loadMoreError": "โหลดเพิ่มไม่สำเร็จ ลองใหม่อีกครั้ง",
+    "loadError": "โหลดโพยไม่สำเร็จ",
+    "retentionNote": "เก็บประวัติย้อนหลัง {days} วัน"
+  }
+}

@@ -1,0 +1,69 @@
+{
+  "title": "ประวัติการทำรายการ",
+  "pageLoading": "กำลังโหลด...",
+  "kindTabs": {
+    "aria": "ประเภทรายการธุรกรรม",
+    "deposit": "ฝาก",
+    "withdraw": "ถอน",
+    "promotion": "โปรโมชัน",
+    "bet": "เดิมพัน"
+  },
+  "filter": {
+    "label": "เลือกวันที่",
+    "openCalendar": "เปิดปฏิทินเลือกวันที่",
+    "clear": "ล้าง",
+    "search": "ค้นหา"
+  },
+  "calendar": {
+    "title": "เลือกช่วงวันที่",
+    "close": "ปิด",
+    "cancel": "ยกเลิก",
+    "confirm": "ยืนยัน"
+  },
+  "status": {
+    "completed": "สำเร็จ",
+    "pending": "รอดำเนินการ",
+    "failed": "ไม่สำเร็จ"
+  },
+  "betType": {
+    "bet": "เดิมพัน",
+    "result": "ผลลัพธ์"
+  },
+  "columns": {
+    "amount": "จำนวนเงิน",
+    "channel": "ช่องทาง",
+    "account": "บัญชีที่ทำรายการ",
+    "createdAt": "วัน-เวลา ที่ทำรายการ",
+    "status": "สถานะ",
+    "detail": "ทำรายการ",
+    "completedAt": "วัน-เวลา ที่ทำรายการสำเร็จ",
+    "promotionName": "ชื่อโปรโมชั่น",
+    "playStart": "วันที่เริ่มเล่น",
+    "playEnd": "วันที่สิ้นสุด",
+    "freeSpins": "ฟรีสปิน",
+    "perRound": "จำนวนต่อรอบ",
+    "provider": "ค่ายเกม",
+    "gameName": "ชื่อเกม",
+    "expiresWithin": "หมดอายุภายใน",
+    "game": "เกม",
+    "date": "วันที่",
+    "time": "เวลา",
+    "type": "ประเภท",
+    "betAmount": "ยอดเงิน",
+    "openingBalance": "ยอดเงินเริ่มต้น",
+    "closingBalance": "ยอดเงินสิ้นสุด"
+  },
+  "empty": "ไม่พบข้อมูล",
+  "paginationAria": "เปลี่ยนหน้ารายการเดิมพัน",
+  "loginRequired": "กรุณาเข้าสู่ระบบเพื่อดูรายการธุรกรรม",
+  "loadError": "โหลดรายการธุรกรรมไม่สำเร็จ",
+  "retry": "ลองใหม่",
+  "loading": "กำลังโหลดรายการ…",
+  "summary": {
+    "depositTotal": "ยอดฝากทั้งหมด :",
+    "withdrawTotal": "ยอดถอนทั้งหมด :",
+    "promotionClaims": "จำนวนการรับโปรโมชั่น :",
+    "winLossTotal": "ยอดวิน/ลอสรวม :",
+    "stakeTotal": "ยอดเดิมพันรวม :"
+  }
+}

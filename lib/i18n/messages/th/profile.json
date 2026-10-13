@@ -1,0 +1,133 @@
+{
+  "logout": "ออกจากระบบ",
+  "retry": "ลองใหม่",
+  "backHome": "กลับหน้าแรก",
+  "field": {
+    "copy": "คัดลอก",
+    "edit": "แก้ไข"
+  },
+  "account": {
+    "title": "ข้อมูลบัญชี",
+    "loading": "กำลังโหลดข้อมูลบัญชี…",
+    "loadErrorTitle": "โหลดข้อมูลบัญชีไม่สำเร็จ",
+    "loadErrorDescription": "ลองใหม่อีกครั้ง หากยังไม่ได้ ให้ออกจากระบบแล้วเข้าสู่ระบบใหม่",
+    "tabs": {
+      "personal": "ข้อมูลส่วนตัว",
+      "bank": "บัญชีธนาคาร"
+    },
+    "gameUser": "ยูสเซอร์เข้าเกม",
+    "copyGameUser": "คัดลอกยูสเซอร์เข้าเกม",
+    "gameUserCopied": "คัดลอกยูสเซอร์เข้าเกมแล้ว",
+    "copyFailed": "ไม่สามารถคัดลอกได้",
+    "password": "รหัสผ่าน",
+    "changePassword": "เปลี่ยนรหัสผ่าน",
+    "transactionHistory": "ประวัติธุรกรรม",
+    "transactionHistoryHint": "ฝาก · ถอน · เดิมพัน"
+  },
+  "avatar": {
+    "change": "เปลี่ยนรูปโปรไฟล์",
+    "tapToChange": "แตะรูปเพื่อเปลี่ยนโปรไฟล์",
+    "pickerTitle": "เลือกรูปโปรไฟล์",
+    "pickerDescription": "เลือกรูปจากชุดตัวละคร — บันทึกทันทีเมื่อแตะ",
+    "saveFailed": "บันทึกไม่สำเร็จ ลองอีกครั้ง",
+    "close": "ปิด",
+    "srLabel": "รูปโปรไฟล์ {name}",
+    "presetName": "ตัวละคร {n}"
+  },
+  "hub": {
+    "navAriaLabel": "เมนูโปรไฟล์",
+    "vipLevel": "ระดับชั้น VIP",
+    "transactions": "รายการฝากถอน",
+    "myDiamonds": "เพชรของฉัน",
+    "lossRebate": "โบนัสยอดเสีย",
+    "affiliate": "ยอด Affiliate",
+    "activePromotion": "โปรโมชั่นที่ใช้อยู่",
+    "greeting": "สวัสดี {name}",
+    "joinedAt": "เข้าร่วมเมื่อ: {date}",
+    "playerId": "ID ผู้เล่น: {id}",
+    "copyPlayerId": "คัดลอกไอดีผู้เล่น",
+    "playerIdCopied": "คัดลอกไอดีผู้เล่นแล้ว",
+    "copyPlayerIdFailed": "ไม่สามารถคัดลอกไอดีได้"
+  },
+  "referralInvite": {
+    "title": "ชวนเพื่อนรับโบนัส",
+    "description": "แชร์ลิงก์ให้เพื่อนสมัคร รับส่วนแบ่งรายได้จากยอดเล่น",
+    "linkLabel": "ลิงก์ชวนเพื่อน",
+    "copyLink": "คัดลอกลิงก์ชวนเพื่อน",
+    "linkCopied": "คัดลอกลิงก์แล้ว",
+    "copyLinkFailed": "ไม่สามารถคัดลอกลิงก์ได้"
+  },
+  "summary": {
+    "copyId": "คัดลอก ID",
+    "idCopied": "คัดลอก ID แล้ว",
+    "copyIdFailed": "ไม่สามารถคัดลอก ID ได้",
+    "phoneVerified": "ยืนยันเบอร์แล้ว"
+  },
+  "dashboard": {
+    "title": "ภาพรวมระบบ / Dashboard",
+    "subtitle": "สรุปข้อมูลสำคัญของระบบ แบบเรียลไทม์",
+    "dateRange": "12 ธ.ค. 2023, 00:00 - 23:59",
+    "vsYesterday": "จากเมื่อวาน",
+    "unitAccounts": "บัญชี",
+    "period": {
+      "today": "วันนี้",
+      "week": "สัปดาห์",
+      "month": "เดือน",
+      "year": "ปี"
+    },
+    "nav": {
+      "overview": "ภาพรวมระบบ",
+      "betReports": "รายงานการเดิมพัน",
+      "members": "สมาชิก",
+      "marketing": "การตลาด",
+      "promotions": "โปรโมชั่น",
+      "transactions": "ธุรกรรม",
+      "reports": "รายงาน",
+      "settings": "ตั้งค่า"
+    },
+    "kpi": {
+      "totalDeposit": "ยอดฝากรวม",
+      "totalWithdraw": "ยอดถอนรวม",
+      "netProfit": "กำไรสุทธิ",
+      "totalBets": "ยอดเดิมพัน",
+      "newMembers": "สมาชิกใหม่",
+      "firstDeposit": "First Deposit"
+    },
+    "chart": {
+      "deposit": "ยอดฝาก (THB)",
+      "withdraw": "ยอดถอน (THB)",
+      "transactionCount": "จำนวนรายการ",
+      "accountCount": "จำนวนบัญชี"
+    },
+    "journey": {
+      "title": "เส้นทางลูกค้า",
+      "signUp": "สมัครใหม่",
+      "firstDeposit": "ทำฝากครั้งแรก",
+      "firstBet": "Active (เดิมพันครั้งแรก)"
+    },
+    "trend": {
+      "title": "ฝาก - ถอน ตลอดทั้งวัน",
+      "subtitle": "ภาพรวมธุรกรรมตามช่วงเวลา (Shadcn Chart)",
+      "net": "ยอดสุทธิ"
+    },
+    "banks": {
+      "title": "สัดส่วนธนาคารที่ลูกค้าใช้งาน",
+      "totalAccounts": "บัญชีทั้งหมด"
+    },
+    "channels": {
+      "title": "ช่องทางที่ลูกค้ารู้จักเว็บเรา",
+      "channel": "ช่องทาง",
+      "customers": "จำนวนลูกค้า",
+      "share": "สัดส่วน"
+    },
+    "activeHours": {
+      "title": "ช่วงเวลาที่ลูกค้าใช้งาน"
+    },
+    "depositDistribution": {
+      "title": "การกระจายยอดฝากของลูกค้า"
+    },
+    "hourlyMembers": {
+      "title": "สมาชิกใหม่ รายชั่วโมง"
+    }
+  }
+}

@@ -1,0 +1,1639 @@
+{
+  "auth": {
+    "login": "Masuk",
+    "signUp": "Daftar",
+    "signUpShort": "Daftar",
+    "logout": "Keluar",
+    "loginSheet": {
+      "close": "Tutup halaman masuk",
+      "subtitle": "Gunakan nomor ponsel dan kata sandi yang Anda daftarkan",
+      "submitting": "Sedang masuk...",
+      "noAccount": "Belum punya akun?",
+      "success": "Berhasil masuk",
+      "failed": "Gagal masuk"
+    },
+    "signUpSheet": {
+      "close": "Tutup halaman pendaftaran",
+      "welcome": "Selamat datang di XGAMBET",
+      "tagline": "Mulai keseruan dengan gayamu",
+      "haveAccount": "Sudah punya akun?",
+      "submitting": "Sedang mendaftar...",
+      "success": "Pendaftaran berhasil. Selamat datang!",
+      "failed": "Pendaftaran gagal",
+      "pickerClose": "Tutup pilihan",
+      "loadingBanks": "Memuat daftar bank…",
+      "banksFailed": "Gagal memuat daftar bank",
+      "loadingChannels": "Memuat daftar saluran…",
+      "channelsFailed": "Gagal memuat daftar saluran"
+    },
+    "fields": {
+      "phone": "Nomor ponsel",
+      "phonePlaceholder": "Masukkan nomor ponsel",
+      "password": "Kata sandi",
+      "passwordPlaceholder": "Masukkan kata sandi",
+      "confirmPassword": "Konfirmasi kata sandi",
+      "confirmPasswordPlaceholder": "Masukkan kembali kata sandi",
+      "showPassword": "Tampilkan kata sandi",
+      "hidePassword": "Sembunyikan kata sandi",
+      "firstName": "Nama depan",
+      "lastName": "Nama belakang",
+      "bankAccount": "Nomor rekening bank",
+      "bankAccountPlaceholder": "Nomor rekening",
+      "bank": "Bank",
+      "bankPlaceholder": "Pilih bank",
+      "channel": "Tahu kami dari mana?",
+      "channelPlaceholder": "Pilih saluran"
+    },
+    "validation": {
+      "phone": "Nomor ponsel harus 10 digit dan diawali angka 0",
+      "passwordRequired": "Silakan masukkan kata sandi",
+      "passwordLength": "Kata sandi harus 6–32 karakter",
+      "passwordMismatch": "Kata sandi tidak cocok",
+      "firstName": "Silakan masukkan nama depan hanya dengan huruf",
+      "lastName": "Silakan masukkan nama belakang hanya dengan huruf",
+      "bankAccount": "Nomor rekening harus 10–12 digit",
+      "bankRequired": "Silakan pilih bank",
+      "channelRequired": "Silakan pilih saluran"
+    },
+    "account": {
+      "title": "Info Akun",
+      "profile": "Profil",
+      "closeProfile": "Tutup profil",
+      "loadingProfile": "Memuat profil…",
+      "profileFailed": "Gagal memuat profil",
+      "loading": "Memuat info akun…",
+      "failed": "Gagal memuat info akun",
+      "retryHint": "Coba lagi. Jika masih gagal, keluar lalu masuk kembali."
+    },
+    "loginPrompt": {
+      "title": "Masuk untuk melihat ini",
+      "description": "Bagian ini khusus untuk member"
+    },
+    "logoutConfirm": {
+      "title": "Keluar dari akun?",
+      "description": "Anda perlu masuk lagi untuk setor, tarik dana, atau bermain dengan akun ini",
+      "stay": "Tetap di sini"
+    }
+  },
+  "cashback": {
+    "pageTitle": "Cashback",
+    "tabs": {
+      "ariaLabel": "Jenis cashback",
+      "play": "Cashback",
+      "loss": "Rebate Kekalahan"
+    },
+    "status": {
+      "panelsLoading": "Memuat cashback…",
+      "panelsError": "Gagal memuat cashback",
+      "lossRebateLoading": "Memuat rebate kekalahan…",
+      "lossRebateError": "Gagal memuat rebate kekalahan"
+    },
+    "panel": {
+      "playSubtitle": "Cashback dari turnover Anda",
+      "lossSubtitle": "Rebate dari kekalahan bersih Anda",
+      "nothingToClaim": "Belum ada yang bisa diklaim",
+      "claimed": "Sudah diklaim",
+      "cycleDaily": "Setiap hari pukul 00:00",
+      "claimableAmount": "Jumlah yang Bisa Diklaim",
+      "accumulatedThisCycle": "Terkumpul (siklus ini)",
+      "refresh": "Perbarui jumlah"
+    },
+    "periods": {
+      "ariaLabel": "Periode ringkasan cashback",
+      "all": "Semua",
+      "today": "Hari Ini",
+      "lastWeek": "Minggu Lalu",
+      "lastMonth": "Bulan Lalu"
+    },
+    "rules": {
+      "title": "Rincian Syarat",
+      "item": "Item",
+      "value": "Nilai",
+      "rate": "Persentase",
+      "min": "Minimum",
+      "maxPerClaim": "Maksimum per klaim",
+      "cycle": "Siklus perhitungan"
+    },
+    "lossRebate": {
+      "statusCalculated": "Sudah dihitung",
+      "historyTitle": "Riwayat Rebate Kekalahan",
+      "selectMonth": "Pilih bulan",
+      "period": "Periode",
+      "netLoss": "Kekalahan Bersih",
+      "bonusReceived": "Bonus Diterima",
+      "receivedDate": "Tanggal Diterima",
+      "empty": "Tidak ada riwayat untuk bulan yang dipilih",
+      "paginationAriaLabel": "Halaman riwayat rebate kekalahan",
+      "termsTitle": "Syarat Rebate Kekalahan",
+      "terms": {
+        "basis": "Rebate kekalahan dihitung dari kekalahan bersih yang memenuhi syarat dalam setiap siklus.",
+        "claimWindow": "Bonus harus diklaim selama waktu klaim masih dibuka, jika tidak akan hangus.",
+        "subjectToChange": "Persentase dan syarat dapat berubah sesuai pengumuman dari situs.",
+        "sampleData": "Data di halaman ini hanyalah contoh untuk tampilan UI."
+      },
+      "formula": {
+        "title": "Rincian Perhitungan",
+        "eligibleNetLoss": "Kekalahan bersih yang memenuhi syarat",
+        "rate": "Persentase rebate kekalahan",
+        "bonus": "Bonus rebate kekalahan",
+        "sampleNote": "Angka dan persentase yang ditampilkan hanyalah contoh."
+      }
+    },
+    "pagination": {
+      "showing": "Menampilkan {start}–{end} dari {total}"
+    }
+  },
+  "common": {
+    "language": "Bahasa",
+    "languagePicker": {
+      "title": "Pilih bahasa",
+      "description": "Ubah bahasa tampilan situs",
+      "close": "Tutup pilihan bahasa"
+    },
+    "close": "Tutup",
+    "retry": "Coba lagi",
+    "loading": "Memuat…",
+    "confirm": "Konfirmasi",
+    "cancel": "Batal",
+    "processing": "Memproses…",
+    "back": "Kembali",
+    "next": "Lanjut",
+    "backStep": "Kembali ke langkah sebelumnya",
+    "loadFailed": "Gagal memuat data",
+    "emptyCategory": "Belum ada isi di kategori ini",
+    "refCode": "Referensi: {code}",
+    "units": {
+      "people": {
+        "other": "{n} orang"
+      },
+      "records": {
+        "other": "{n} item"
+      },
+      "credits": {
+        "other": "{n} kredit"
+      },
+      "gems": {
+        "other": "{n} gems"
+      },
+      "million": "{n} jt"
+    },
+    "carousel": {
+      "prev": "Geser {title} ke belakang",
+      "next": "Geser {title} ke depan"
+    },
+    "pagination": {
+      "label": "Penomoran halaman",
+      "prev": "Halaman sebelumnya",
+      "page": "Halaman {page}",
+      "next": "Halaman berikutnya"
+    },
+    "notifications": {
+      "title": "Notifikasi",
+      "close": "Tutup notifikasi",
+      "tabsLabel": "Jenis notifikasi",
+      "tabs": {
+        "all": "Semua",
+        "privileges": "Keistimewaan",
+        "messages": "Pesan"
+      },
+      "empty": "Tidak ada pesan baru",
+      "contactChannels": "Kontak kami"
+    },
+    "coupon": {
+      "title": "Tukar Kupon",
+      "close": "Tutup penukaran kupon",
+      "description": "Masukkan kode untuk menukar kredit gratis",
+      "codeLabel": "Kode kupon",
+      "codePlaceholder": "Masukkan kode kupon",
+      "codeRequired": "Silakan masukkan kode kupon",
+      "submit": "Tukar Kredit Gratis",
+      "submitting": "Memeriksa..."
+    }
+  },
+  "errors": {
+    "notFoundTitle": "Halaman tidak ditemukan",
+    "backHome": "Kembali ke beranda",
+    "notFound": {
+      "metaTitle": "Halaman Tidak Ditemukan — XGAMBET",
+      "title": "Halaman tidak ditemukan",
+      "description": "Tautan mungkin salah atau halaman sudah dipindahkan",
+      "viewPromotions": "Lihat Promo"
+    },
+    "route": {
+      "title": "Terjadi kesalahan",
+      "description": "Halaman ini gagal dimuat. Silakan coba lagi. Jika masalah berlanjut, hubungi layanan pelanggan."
+    },
+    "offline": {
+      "title": "Tidak ada koneksi internet",
+      "description": "Aktifkan koneksi Anda lalu buka kembali XGAMBET"
+    },
+    "api": {
+      "network": "Tidak dapat terhubung ke server. Periksa koneksi internet Anda lalu coba lagi.",
+      "parse": "Respons server tidak dapat dibaca",
+      "unauthorized": "Silakan masuk kembali",
+      "generic": "Terjadi kesalahan. Silakan coba lagi."
+    }
+  },
+  "games": {
+    "filters": {
+      "allInOne": "Semua dalam Satu",
+      "allProviders": "Semua Provider",
+      "allGameProviders": "Semua Provider",
+      "dropsAndWins": "Drops & Wins",
+      "chicken": "Sabung Ayam",
+      "buyFeature": "Beli Free Spin",
+      "jackpot": "Jackpot",
+      "megaways": "Megaways",
+      "baccarat": "Baccarat",
+      "roulette": "Roulette",
+      "blackjack": "Blackjack",
+      "gameShows": "Game Show",
+      "sicbo": "Sic Bo/Dragon Tiger",
+      "football": "Sepak Bola",
+      "basketball": "Bola Basket",
+      "esports": "Esports",
+      "boxing": "Muay Thai",
+      "tennis": "Tenis",
+      "arcade": "Arcade",
+      "multiplayer": "Multiplayer",
+      "hot": "Terpopuler"
+    },
+    "subHeader": {
+      "back": "Kembali"
+    },
+    "breadcrumb": {
+      "ariaLabel": "Jejak navigasi",
+      "backToCategory": "Kembali ke semua {category}"
+    },
+    "slots": {
+      "title": "Slot",
+      "providerAriaLabel": "{name} — Slot",
+      "providerCount": {
+        "other": "({count} provider)"
+      }
+    },
+    "casino": {
+      "title": "Live Casino",
+      "count": {
+        "other": "({count} meja/provider)"
+      }
+    },
+    "sport": {
+      "title": "Olahraga",
+      "count": {
+        "other": "({count} item/provider)"
+      }
+    },
+    "providerGames": {
+      "searchPlaceholder": "Cari game dari provider ini",
+      "backToCategory": "Kembali ke semua {category}",
+      "gameCount": {
+        "other": "({count} game)"
+      },
+      "notFoundTitle": "Game tidak ditemukan",
+      "notFoundHint": "Coba kata kunci lain, atau hapus pencarian untuk melihat semua game",
+      "favoriteAdd": "Tambah ke favorit",
+      "favoriteRemove": "Hapus dari favorit"
+    },
+    "play": {
+      "playingAriaLabel": "Sedang memainkan {title}",
+      "fullscreen": "Layar penuh",
+      "exitFullscreen": "Keluar dari layar penuh",
+      "iframePlaceholder": "Area iframe game (prototipe)"
+    }
+  },
+  "home": {
+    "categories": {
+      "home": "Beranda",
+      "casino": "Casino",
+      "slots": "Slot",
+      "fishing": "Tembak Ikan",
+      "sports": "Olahraga",
+      "lottery": "Togel",
+      "cards": "Kartu"
+    },
+    "categoryNav": {
+      "ariaLabel": "Kategori game"
+    },
+    "sections": {
+      "hotGames": "Game Terpopuler",
+      "slots": "SLOT",
+      "casino": "Casino",
+      "fishing": "Tembak Ikan",
+      "sports": "Olahraga",
+      "empty": "Belum ada game di kategori ini"
+    },
+    "intro": {
+      "title": "Semesta Keseruan",
+      "gamesBefore": "Lebih dari",
+      "gamesAfter": "game,",
+      "providersBefore": "lebih dari",
+      "providersAfter": "provider,",
+      "sports": "dan pertandingan olahraga dari seluruh dunia"
+    },
+    "featureActions": {
+      "ariaLabel": "Fitur spesial"
+    },
+    "search": {
+      "formAriaLabel": "Cari game dan provider",
+      "label": "Cari game atau provider",
+      "clear": "Hapus pencarian"
+    },
+    "hallOfFame": {
+      "tabsAriaLabel": "Pilih tabel Performa Terbaik",
+      "empty": "Belum ada data"
+    },
+    "carousel": {
+      "prev": "Slide sebelumnya",
+      "next": "Slide berikutnya",
+      "scroll": "Telusuri banner",
+      "pickSlide": "Pilih slide banner",
+      "goToSlide": "Ke slide {index}"
+    },
+    "peekCarousel": {
+      "ariaLabel": "Banner promo dan event"
+    },
+    "promoCarousel": {
+      "ariaLabel": "Banner promo dan keistimewaan",
+      "listAriaLabel": "Promo"
+    },
+    "welcomeBanner": {
+      "ariaLabel": "Banner selamat datang dan promo",
+      "slidesAriaLabel": "Slide banner selamat datang"
+    },
+    "auth": {
+      "login": "Masuk",
+      "signUp": "Daftar",
+      "loginToSeeEvents": "Masuk atau daftar untuk melihat event"
+    },
+    "events": {
+      "title": "Event",
+      "slidesAriaLabel": "Slide {title}",
+      "goTo": "Ke {name}"
+    },
+    "announcement": {
+      "ariaLabel": "Pengumuman sistem",
+      "label": "Berita"
+    },
+    "categoryProviders": {
+      "comingSoon": "Provider untuk kategori ini segera hadir. Untuk saat ini, coba Casino, Slot, Tembak Ikan, atau Olahraga.",
+      "liveCasino": "Live Casino",
+      "providersFallback": "Provider",
+      "providerCount": {
+        "other": "({count} provider)"
+      },
+      "gamesByProviderAriaLabel": "Game {category} dari provider yang dipilih",
+      "listAriaLabel": "Provider di kategori yang dipilih",
+      "searchPlaceholder": {
+        "casino": "Cari live casino | Provider",
+        "fishing": "Cari tembak ikan | Provider",
+        "cards": "Cari kartu | Provider",
+        "sports": "Cari olahraga | Provider",
+        "default": "Cari game | Provider"
+      }
+    },
+    "quickBanners": {
+      "ariaLabel": "Sorotan cepat",
+      "promo": {
+        "title": "Promo Spesial",
+        "subtitle": "Penawaran eksklusif khusus untuk Anda"
+      },
+      "event": {
+        "title": "Event",
+        "subtitle": "Event sepanjang waktu"
+      },
+      "news": {
+        "title": "Berita",
+        "subtitle": "Berita yang tidak boleh terlewat"
+      }
+    },
+    "mostOnline": {
+      "title": "Paling Banyak Dimainkan Sekarang",
+      "favoriteAdd": "Tambah ke favorit",
+      "favoriteRemove": "Hapus dari favorit",
+      "playingNow": "{count} sedang bermain"
+    },
+    "popular": {
+      "title": "Populer",
+      "empty": "Belum ada isi di kategori ini"
+    },
+    "providers": {
+      "empty": "Belum ada provider",
+      "marqueeAriaLabel": "Provider game",
+      "logoAriaLabel": "Provider {name}"
+    },
+    "a2hs": {
+      "title": "Tambah ke Layar Utama",
+      "cardTitle": "Tambahkan pintasan hari ini!",
+      "cardSubtitle": "Nikmati pengalaman lebih baik. Tambahkan sekarang",
+      "platformsAriaLabel": "Pilih perangkat Anda",
+      "stepsTitle": "Cara menambahkan pintasan ({platform})",
+      "installed": "Aplikasi terpasang",
+      "steps": {
+        "android1": "Ketuk menu ⋮ di kanan atas Chrome",
+        "android2": "Pilih \"Instal aplikasi\" atau \"Tambahkan ke Layar utama\"",
+        "android3": "Ketuk \"Instal\" atau \"Tambahkan\" untuk konfirmasi",
+        "ios1": "Ketuk tombol \"Bagikan\" di bagian bawah Safari",
+        "ios2": "Pilih \"Tambah ke Layar Utama\"",
+        "ios3": "Ketuk \"Tambah\" di kanan atas untuk konfirmasi",
+        "launch": "Buka situs seketika dari ikon aplikasi kami"
+      }
+    },
+    "desktopMenu": {
+      "referral": {
+        "title": "Ajak Teman",
+        "subtitle": "Untung di 2 tingkat",
+        "ariaLabel": "Ajak teman, untung di 2 tingkat"
+      },
+      "checkIn": {
+        "title": "Check-in",
+        "subtitle": "CHECK-IN",
+        "ariaLabel": "Check-in harian"
+      },
+      "wheel": {
+        "title": "Roda",
+        "subtitle": "LUCKY WHEEL",
+        "ariaLabel": "Roda keberuntungan"
+      },
+      "gems": {
+        "title": "Toko Gems",
+        "subtitle": "GEMS SHOP",
+        "ariaLabel": "Toko Gems"
+      },
+      "coupon": {
+        "title": "Kupon",
+        "subtitle": "COUPON",
+        "ariaLabel": "Tukar kupon"
+      },
+      "vip": {
+        "title": "Peringkat VIP",
+        "subtitle": "Keistimewaan member",
+        "ariaLabel": "Peringkat VIP, keistimewaan member"
+      }
+    }
+  },
+  "lottery": {
+    "hub": {
+      "title": "Togel",
+      "subtitle": "Pilih pasaran untuk dipasang",
+      "featuredAria": "Pasaran unggulan",
+      "allMarketsAria": "Semua pasaran",
+      "mySlips": "Slip saya",
+      "mySlipsAria": "Lihat slip saya",
+      "mySlipsPendingAria": "Lihat slip saya — {count} berjalan",
+      "daysLeft": {
+        "other": "{count} hari"
+      }
+    },
+    "markets": {
+      "generic": "Togel",
+      "thaiGovernment": "Lotere Pemerintah Thailand",
+      "yiki5": "Yiki 5 Menit",
+      "yiki15": "Yiki 15 Menit",
+      "yiki30": "Yiki 30 Menit",
+      "baac": "Lotere BAAC",
+      "laos": "Lotere Laos",
+      "hanoi": "Lotere Hanoi",
+      "malaysia": "Lotere Malaysia",
+      "dowJones": "Lotere Dow Jones",
+      "china": "Lotere Saham China",
+      "germany": "Lotere Saham Jerman",
+      "russia": "Lotere Saham Rusia",
+      "korea": "Lotere Saham Korea",
+      "nikkei": "Lotere Nikkei",
+      "uk": "Lotere Saham Inggris",
+      "hongKong": "Lotere Hang Seng",
+      "taiwan": "Lotere Saham Taiwan",
+      "singapore": "Lotere Saham Singapura",
+      "india": "Lotere Saham India",
+      "egypt": "Lotere Saham Mesir"
+    },
+    "status": {
+      "open": "Buka",
+      "closed": "Tutup",
+      "closedAlready": "Taruhan ditutup",
+      "closesIn": "Tutup dalam",
+      "closesInTime": "Tutup dalam {time}",
+      "countdownDays": "{days} hr {time}"
+    },
+    "groups": {
+      "three": "3 Digit",
+      "two": "2 Digit",
+      "run": "Colok"
+    },
+    "betTypes": {
+      "threeTop": "3 Atas",
+      "threeTod": "3 Acak",
+      "threeFront": "3 Depan",
+      "threeBottom": "3 Bawah",
+      "threeTopTod": "3 Atas Acak",
+      "threeTopReverse": "3 Atas Balik",
+      "threeTopComboTod": "3 Atas + Acak",
+      "twoTop": "2 Atas",
+      "twoBottom": "2 Bawah",
+      "twoTopReverse": "2 Atas Balik",
+      "twoBottomReverse": "2 Bawah Balik",
+      "twoTopBottom": "2 Atas/Bawah",
+      "twoTopBottomReverse": "2 Atas/Bawah Balik",
+      "runTop": "Colok Atas",
+      "runBottom": "Colok Bawah"
+    },
+    "round": {
+      "time": "Putaran {time}",
+      "draw": "Undian {date}",
+      "market": "{market} {date}",
+      "numbered": "Putaran {n}",
+      "current": "Undian saat ini"
+    },
+    "rounds": {
+      "empty": "Belum ada putaran yang dibuka untuk taruhan",
+      "listAria": "Putaran",
+      "showAll": {
+        "other": "Tampilkan semua putaran ({count} putaran)"
+      },
+      "play": "Pasang Sekarang",
+      "loading": "Memuat putaran…",
+      "loadError": "Gagal memuat putaran",
+      "openCountPrefix": "Putaran yang dibuka:",
+      "openCountSuffix": ""
+    },
+    "market": {
+      "sidebarAria": "Jenis togel",
+      "rules": "Aturan / Rasio bayaran",
+      "notFoundTitle": "Togel tidak ditemukan",
+      "notFoundDescription": "Togel ini mungkin sudah tidak tersedia. Pilih togel lain dari halaman togel.",
+      "viewAll": "Lihat Semua Togel",
+      "marketNotFound": "Pasaran togel tidak ditemukan"
+    },
+    "rules": {
+      "payoutHeading": "Bayaran per 1 baht",
+      "limitsHeading": "Taruhan per item",
+      "minBet": "Minimum",
+      "maxBet": "Maksimum"
+    },
+    "results": {
+      "title": "Hasil Terbaru",
+      "morePage": "Semua hasil >>",
+      "tableAria": "Hasil togel terbaru",
+      "colMarket": "Togel",
+      "colDate": "Undian / Tanggal",
+      "empty": "Belum ada hasil",
+      "today": "Hari Ini"
+    },
+    "thaiResult": {
+      "title": "Hasil Undian Sebelumnya",
+      "firstPrize": "Hadiah 1",
+      "back3": "3 Belakang"
+    },
+    "draw": {
+      "aria": "Detail undian"
+    },
+    "board": {
+      "pickAria": "Pilih angka",
+      "reverse": "Balik",
+      "actionsAria": "Langkah berikutnya",
+      "back": "Kembali",
+      "enterPrice": "Atur Taruhan",
+      "digitGroupAria": "Jumlah digit",
+      "betTypeAria": "Jenis taruhan",
+      "payout": "Bayar {rate}",
+      "loading": "Memuat papan taruhan…",
+      "roundNotFoundTitle": "Putaran tidak ditemukan",
+      "roundNotFoundNext": "Putaran ini mungkin sudah ditutup. Pilih putaran berikutnya dari daftar.",
+      "roundNotFoundOther": "Putaran ini mungkin sudah ditutup. Pilih putaran lain dari daftar.",
+      "viewAllRounds": "Lihat Semua Putaran"
+    },
+    "inputMode": {
+      "aria": "Cara input angka",
+      "manual": "Ketik Angka",
+      "grid": "Pilih dari Tabel"
+    },
+    "feedback": {
+      "duplicate": "{number} sudah ada di slip",
+      "added": {
+        "other": "{number} ditambahkan ke slip ({count} item)"
+      },
+      "undone": "Entri terakhir dibatalkan",
+      "closed": "Taruhan ditutup",
+      "removed": "{number} dihapus dari slip"
+    },
+    "pad": {
+      "hundreds": "Ratusan",
+      "selectedCount": "{count} dipilih",
+      "gridAria": "Tabel angka",
+      "enteredAria": "Angka yang dimasukkan {value}",
+      "empty": "kosong",
+      "clear": "Hapus",
+      "backspace": "Hapus digit terakhir"
+    },
+    "slip": {
+      "itemCount": {
+        "other": "{count} item"
+      },
+      "removeAria": "Hapus {label} {number}",
+      "priceAria": "Taruhan untuk {label} {number}",
+      "enterPrice": "Atur taruhan",
+      "toolbarAria": "Alat slip",
+      "undo": "Batalkan entri terakhir",
+      "clearAll": "Kosongkan slip",
+      "emptyPickType": "Pilih jenis taruhan, lalu ketuk angka untuk menambahkannya ke slip",
+      "emptyEnterNumber": "Belum ada isi. Masukkan angka yang ingin Anda pasang."
+    },
+    "price": {
+      "aria": "Atur taruhan dan kirim slip",
+      "sameForAll": "Taruhan sama untuk semua",
+      "edit": "Ubah",
+      "total": "Total",
+      "chipsAria": "Pilih nominal taruhan",
+      "backToNumbers": "Ubah Angka",
+      "submitting": "Mengirim…",
+      "submit": "Kirim Slip"
+    },
+    "submit": {
+      "failedTitle": "Slip gagal dikirim",
+      "done": "OK",
+      "close": "Tutup",
+      "networkError": "Tidak dapat terhubung ke server"
+    },
+    "summary": {
+      "aria": "Ringkasan slip",
+      "drawDate": "Tanggal undian {date}",
+      "copyAria": "Salin nomor slip",
+      "slipId": "Slip #{id}",
+      "purchased": "Dibeli {date}",
+      "submitted": "Terkirim",
+      "note": "Catatan: {note}",
+      "noNote": "Tanpa catatan",
+      "stake": "Taruhan",
+      "winLoss": "Menang/Kalah",
+      "allSlips": "Semua Slip",
+      "continue": "Lanjut Pasang",
+      "copied": "Nomor slip disalin",
+      "copyFailed": "Gagal menyalin nomor slip"
+    },
+    "slips": {
+      "title": "Semua Slip",
+      "loading": "Memuat slip…",
+      "emptyTitle": "Belum ada slip",
+      "emptyDescription": "Pilih togel dan kirim slip pertama Anda.",
+      "goPlay": "Ke Togel",
+      "stake": "Taruhan {amount}",
+      "summaryTitle": "Ringkasan Slip",
+      "notFoundTitle": "Slip tidak ditemukan",
+      "notFoundDescription": "Slip mungkin sudah dihapus atau tautannya tidak valid.",
+      "viewAll": "Lihat Semua Slip",
+      "tabs": {
+        "pending": "Berjalan",
+        "history": "Riwayat",
+        "aria": "Jenis slip"
+      },
+      "filters": {
+        "aria": "Filter slip",
+        "market": "Pasaran",
+        "result": "Hasil",
+        "range": "Rentang waktu",
+        "allMarkets": "Semua pasaran",
+        "allResults": "Semua hasil",
+        "today": "Hari ini",
+        "days7": "7 hari",
+        "days30": "30 hari",
+        "custom": "Kustom"
+      },
+      "status": {
+        "waitingDraw": "Menunggu undian",
+        "waitingSettle": "Menunggu hasil",
+        "won": "Menang",
+        "lost": "Kalah",
+        "void": "Dibatalkan (dana kembali)"
+      },
+      "summary": {
+        "count": "{count} slip",
+        "stake": "Total taruhan {amount}",
+        "net": "Menang/kalah bersih"
+      },
+      "card": {
+        "drawAt": "Undian {date}",
+        "settledAt": "Selesai {date}"
+      },
+      "emptyPending": {
+        "title": "Tidak ada slip yang berjalan",
+        "description": "Slip yang sudah dikirim dan belum selesai akan muncul di sini."
+      },
+      "emptyHistory": {
+        "title": "Belum ada riwayat slip",
+        "description": "Slip yang sudah selesai disimpan selama {days} hari."
+      },
+      "emptyFiltered": "Tidak ada slip yang cocok dengan filter",
+      "clearFilters": "Hapus filter",
+      "loadMore": "Muat lagi",
+      "loadingMore": "Memuat…",
+      "loadMoreError": "Gagal memuat lagi. Coba lagi.",
+      "loadError": "Gagal memuat slip",
+      "retentionNote": "Riwayat disimpan selama {days} hari"
+    }
+  },
+  "meta": {
+    "title": "XGAMBET — Kerajaan Keseruan",
+    "description": "Lobi game XGAMBET (Front-end)"
+  },
+  "nav": {
+    "bottomNav": {
+      "label": "Menu utama",
+      "withdraw": "Tarik Dana",
+      "deposit": "Setor",
+      "menu": "Menu",
+      "cashback": "Cashback",
+      "contact": "Kontak"
+    },
+    "header": {
+      "openMenu": "Buka menu",
+      "promotions": "Promo",
+      "profile": "Profil",
+      "home": "Beranda XGAMBET",
+      "showSidebar": "Tampilkan menu kiri",
+      "hideSidebar": "Sembunyikan menu kiri",
+      "mainCategories": "Kategori utama",
+      "searchLabel": "Cari game atau provider",
+      "searchPlaceholder": "Cari",
+      "deposit": "Setor",
+      "depositAria": "Setor",
+      "transactionHistory": "Riwayat transaksi",
+      "walletDeposit": "Setor dan lihat saldo",
+      "walletBalance": "Saldo kredit"
+    },
+    "desktop": {
+      "quickMenu": "Menu cepat",
+      "rightRail": "Menu event dan promo",
+      "sidebar": "Menu utama desktop",
+      "gameCategories": "Kategori game",
+      "games": "Game",
+      "system": "Sistem",
+      "contactUs": "Hubungi Kami",
+      "topBar": "Bilah pencarian dan akun",
+      "searchGames": "Cari game",
+      "searchGamesPlaceholder": "Cari game, provider, atau judul favorit Anda..."
+    },
+    "drawer": {
+      "title": "Menu",
+      "close": "Tutup menu",
+      "deposit": "Setor",
+      "withdraw": "Tarik Dana",
+      "playBonus": "Bonus Turnover",
+      "lossBonus": "Bonus Kekalahan",
+      "referralLink": "Tautan referral",
+      "referralLinkLoginHint": "Masuk untuk melihat tautan Anda",
+      "copyReferralLink": "Salin tautan referral",
+      "linkCopied": "Tautan disalin",
+      "linkCopyFailed": "Gagal menyalin tautan",
+      "gameBalance": "Saldo Game",
+      "gems": "Gems",
+      "tickets": "Tiket"
+    },
+    "menuSections": {
+      "personal": "Pribadi",
+      "privileges": "Keistimewaan",
+      "rewards": "Hadiah"
+    },
+    "menu": {
+      "profile": "Profil",
+      "transactions": "Transaksi",
+      "rank": "Peringkat",
+      "promotions": "Promo",
+      "cashback": "Cashback",
+      "checkIn": "Check-in",
+      "referral": "Ajak Teman",
+      "rewardHub": "Undian Hadiah",
+      "wheel": "Roda",
+      "gemsShop": "Toko Gems",
+      "activities": "Event",
+      "coupon": "Kupon",
+      "vipRank": "Level VIP",
+      "referralEarnings": "Penghasilan Komisi",
+      "referFriend": "Ajak Teman",
+      "specialBonus": "Bonus Spesial",
+      "history": "Riwayat",
+      "language": "Bahasa"
+    },
+    "hub": {
+      "promotions": "Promo",
+      "activities": "Event",
+      "cashback": "Cashback",
+      "gemsStore": "Toko Gems",
+      "account": "Info Akun",
+      "referral": "Ajak Teman",
+      "transactions": "Transaksi",
+      "checkIn": "Check-in Harian",
+      "vip": "VIP"
+    },
+    "footer": {
+      "label": "Footer situs XGAMBET",
+      "home": "Beranda XGAMBET",
+      "certifications": "Sertifikasi",
+      "auditedBy": "Diaudit oleh",
+      "approvedBy": "Disetujui oleh",
+      "playResponsibly": "Bermain dengan Bijak",
+      "ageRestriction": "Khusus usia 18 tahun ke atas",
+      "paymentMethods": "Metode Pembayaran",
+      "community": "Komunitas",
+      "liveChat": "Live Chat",
+      "social": "Media Sosial",
+      "links": "Tautan footer",
+      "disclaimer": "XGAMBET menyediakan hiburan online bagi pemain yang telah cukup umur menurut hukum di wilayah Anda. Bermainlah dengan bijak dan bertanggung jawablah atas keputusan Anda sendiri. Detail perusahaan dan lisensi hanyalah data contoh untuk tampilan (mock) yang digunakan untuk pengujian UI.",
+      "tagline": "Semua game dan event dalam satu tempat",
+      "columns": {
+        "platform": "Platform",
+        "sports": "Olahraga",
+        "casino": "Casino",
+        "promotions": "Promo",
+        "info": "Info",
+        "services": "Layanan"
+      },
+      "link": {
+        "profile": "Profil",
+        "transactions": "Transaksi",
+        "lotterySlips": "Slip Togel",
+        "accountSettings": "Pengaturan Akun",
+        "dailyCheckIn": "Check-in Harian",
+        "gemStore": "Toko Gem",
+        "leaderboard": "Papan Peringkat",
+        "predictions": "Prediksi",
+        "liveSports": "Olahraga Live",
+        "sports": "Olahraga",
+        "esports": "Esports",
+        "tournaments": "Turnamen",
+        "football": "Sepak Bola",
+        "basketball": "Bola Basket",
+        "tennis": "Tenis",
+        "cricket": "Kriket",
+        "lobby": "Lobi",
+        "popularGames": "Game Populer",
+        "liveCasino": "Live Casino",
+        "newGames": "Game Baru",
+        "crashGames": "Game Crash",
+        "tableGames": "Game Meja",
+        "slots": "Slot",
+        "bonusBuy": "Bonus Buy",
+        "roulette": "Roulette",
+        "providers": "Provider",
+        "allPromotions": "Semua Promo",
+        "sportsWelcome": "Bonus Selamat Datang Olahraga",
+        "casinoWelcome": "Bonus Selamat Datang Casino",
+        "weeklyCashback": "Cashback Mingguan",
+        "sportsClub": "Klub Olahraga",
+        "vipClub": "Klub VIP",
+        "referFriends": "Ajak Teman",
+        "aboutUs": "Tentang Kami",
+        "events": "Event",
+        "careers": "Karier",
+        "contactUs": "Hubungi Kami",
+        "brand": "Merek",
+        "responsibleGaming": "Bermain dengan Bertanggung Jawab",
+        "helpCenter": "Pusat Bantuan",
+        "guide": "Panduan",
+        "luckyWheel": "Roda Keberuntungan",
+        "lottery": "Togel",
+        "fishing": "Tembak Ikan",
+        "lossRebate": "Rebate Kekalahan",
+        "casino": "Casino",
+        "promotions": "Promo",
+        "vipLevel": "Level VIP",
+        "privacy": "Kebijakan Privasi",
+        "terms": "Syarat & Ketentuan",
+        "feedback": "Kirim Masukan",
+        "sitemap": "Peta Situs"
+      }
+    }
+  },
+  "profile": {
+    "logout": "Keluar",
+    "retry": "Coba Lagi",
+    "backHome": "Kembali ke beranda",
+    "field": {
+      "copy": "Salin",
+      "edit": "Ubah"
+    },
+    "account": {
+      "title": "Info Akun",
+      "loading": "Memuat info akun…",
+      "loadErrorTitle": "Gagal memuat info akun",
+      "loadErrorDescription": "Silakan coba lagi. Jika masih gagal, keluar lalu masuk kembali.",
+      "tabs": {
+        "personal": "Data Pribadi",
+        "bank": "Rekening Bank"
+      },
+      "gameUser": "Username Game",
+      "copyGameUser": "Salin username game",
+      "gameUserCopied": "Username game disalin",
+      "copyFailed": "Gagal menyalin",
+      "password": "Kata sandi",
+      "changePassword": "Ganti kata sandi",
+      "transactionHistory": "Riwayat Transaksi",
+      "transactionHistoryHint": "Setoran · Penarikan · Taruhan"
+    },
+    "avatar": {
+      "change": "Ganti foto profil",
+      "tapToChange": "Ketuk foto untuk menggantinya",
+      "pickerTitle": "Pilih Foto Profil",
+      "pickerDescription": "Pilih karakter — langsung tersimpan saat diketuk",
+      "saveFailed": "Gagal menyimpan. Silakan coba lagi.",
+      "close": "Tutup",
+      "srLabel": "Foto profil {name}",
+      "presetName": "Karakter {n}"
+    },
+    "hub": {
+      "navAriaLabel": "Menu profil",
+      "vipLevel": "Level VIP",
+      "transactions": "Setoran & Penarikan",
+      "myDiamonds": "Gems Saya",
+      "lossRebate": "Bonus Rebate Kekalahan",
+      "affiliate": "Saldo Afiliasi",
+      "activePromotion": "Promo Aktif",
+      "greeting": "Hai {name}",
+      "joinedAt": "Bergabung: {date}",
+      "playerId": "ID Pemain: {id}",
+      "copyPlayerId": "Salin ID pemain",
+      "playerIdCopied": "ID pemain disalin",
+      "copyPlayerIdFailed": "Gagal menyalin ID"
+    },
+    "referralInvite": {
+      "title": "Ajak Teman, Dapat Bonus",
+      "description": "Bagikan tautan Anda ke teman dan dapatkan bagian dari permainan mereka",
+      "linkLabel": "Tautan Undangan",
+      "copyLink": "Salin tautan undangan",
+      "linkCopied": "Tautan disalin",
+      "copyLinkFailed": "Gagal menyalin tautan"
+    },
+    "summary": {
+      "copyId": "Salin ID",
+      "idCopied": "ID disalin",
+      "copyIdFailed": "Gagal menyalin ID",
+      "phoneVerified": "Ponsel terverifikasi"
+    },
+    "dashboard": {
+      "title": "Ikhtisar Sistem / Dashboard",
+      "subtitle": "Ringkasan data utama sistem secara real-time",
+      "dateRange": "12 Des 2023, 00:00 - 23:59",
+      "vsYesterday": "dibanding kemarin",
+      "unitAccounts": "akun",
+      "period": {
+        "today": "Hari Ini",
+        "week": "Minggu",
+        "month": "Bulan",
+        "year": "Tahun"
+      },
+      "nav": {
+        "overview": "Ikhtisar",
+        "betReports": "Laporan Taruhan",
+        "members": "Member",
+        "marketing": "Pemasaran",
+        "promotions": "Promo",
+        "transactions": "Transaksi",
+        "reports": "Laporan",
+        "settings": "Pengaturan"
+      },
+      "kpi": {
+        "totalDeposit": "Total Setoran",
+        "totalWithdraw": "Total Penarikan",
+        "netProfit": "Laba Bersih",
+        "totalBets": "Total Taruhan",
+        "newMembers": "Member Baru",
+        "firstDeposit": "Setoran Pertama"
+      },
+      "chart": {
+        "deposit": "Setoran (THB)",
+        "withdraw": "Penarikan (THB)",
+        "transactionCount": "Transaksi",
+        "accountCount": "Akun"
+      },
+      "journey": {
+        "title": "Perjalanan Pelanggan",
+        "signUp": "Mendaftar",
+        "firstDeposit": "Setoran Pertama",
+        "firstBet": "Aktif (Taruhan Pertama)"
+      },
+      "trend": {
+        "title": "Setoran - Penarikan Hari Ini",
+        "subtitle": "Transaksi dari waktu ke waktu (Shadcn Chart)",
+        "net": "Bersih"
+      },
+      "banks": {
+        "title": "Porsi Bank Pelanggan",
+        "totalAccounts": "Total akun"
+      },
+      "channels": {
+        "title": "Dari Mana Pelanggan Mengenal Kami",
+        "channel": "Saluran",
+        "customers": "Pelanggan",
+        "share": "Porsi"
+      },
+      "activeHours": {
+        "title": "Jam Aktif Pelanggan"
+      },
+      "depositDistribution": {
+        "title": "Distribusi Setoran Pelanggan"
+      },
+      "hourlyMembers": {
+        "title": "Member Baru per Jam"
+      }
+    }
+  },
+  "promotions": {
+    "title": "Promo",
+    "loading": "Memuat promo…",
+    "loadError": "Gagal memuat promo",
+    "loadErrorDesc": "Periksa koneksi internet Anda lalu coba lagi",
+    "retry": "Coba Lagi",
+    "forYou": "Promo untuk Anda",
+    "filterAria": "Filter promo berdasarkan kategori",
+    "categories": {
+      "all": "Semua",
+      "slots": "Slot",
+      "casino": "Casino",
+      "sport": "Olahraga",
+      "newMember": "Member Baru",
+      "daily": "Harian",
+      "privilege": "Keistimewaan"
+    },
+    "empty": {
+      "category": "Belum ada promo di kategori ini",
+      "categoryHint": "Belum ada promo di kategori ini — coba pilih Semua",
+      "activitiesHint": "Belum ada event di kategori ini — coba pilih Semua"
+    },
+    "hub": {
+      "promotionsListAria": "Daftar promo",
+      "activitiesListAria": "Daftar event",
+      "selectedDetailAria": "Detail yang dipilih"
+    },
+    "detail": {
+      "title": "Detail Promo",
+      "heading": "Detail",
+      "loading": "Memuat detail…",
+      "close": "Tutup detail promo",
+      "notFound": "Detail promo tidak ditemukan",
+      "notFoundDesc": "Promo ini mungkin sudah berakhir atau gagal dimuat"
+    },
+    "mobile": {
+      "expires": "Berakhir {date}",
+      "readTerms": "Baca Syarat",
+      "readTermsAria": "{title} — Baca syarat"
+    }
+  },
+  "referral": {
+    "pageTitle": "Ajak Teman",
+    "tabs": {
+      "ariaLabel": "Menu referral",
+      "overview": "Ikhtisar",
+      "users": "Teman Diajak",
+      "earning": "Penghasilan"
+    },
+    "status": {
+      "overviewLoading": "Memuat info referral…",
+      "overviewError": "Gagal memuat info referral",
+      "earningsLoading": "Memuat penghasilan…",
+      "earningsError": "Gagal memuat penghasilan",
+      "usersLoading": "Memuat daftar teman…",
+      "usersError": "Gagal memuat daftar teman"
+    },
+    "loginPrompt": {
+      "title": "Masuk untuk melihat tautan referral Anda",
+      "description": "Tautan referral dan penghasilan Anda akan tampil setelah masuk"
+    },
+    "promo": {
+      "ariaLabel": "Promo referral",
+      "title": "Ajak Teman, Untung di 2 Tingkat",
+      "description": "Bagikan tautan Anda dan dapatkan bagian dari permainan teman Anda"
+    },
+    "link": {
+      "title": "Tautan Referral Anda",
+      "copied": "Tautan disalin",
+      "copyFailed": "Gagal menyalin tautan"
+    },
+    "stats": {
+      "title": "Statistik Anda",
+      "friends": "Teman Bergabung",
+      "totalTurnover": "Total Turnover",
+      "totalEarnings": "Total Penghasilan"
+    },
+    "tiers": {
+      "title": "Untung dari 2 Tingkat",
+      "description": "Bagikan tautan Anda dan dapatkan komisi dari turnover jaringan Anda",
+      "rateHint": "dari turnover",
+      "tier1": {
+        "title": "Tingkat 1 — Teman Langsung",
+        "subtitle": "Teman yang mendaftar lewat tautan Anda"
+      },
+      "tier2": {
+        "title": "Tingkat 2 — Teman dari Teman",
+        "subtitle": "Teman yang diajak oleh teman Anda"
+      }
+    },
+    "checks": {
+      "realtime": "Dihitung real-time",
+      "lifetimeCommission": "Komisi seumur hidup",
+      "minWithdraw": "Tarik dana min. ฿50.00"
+    },
+    "steps": {
+      "title": "Mulai dalam 3 Langkah Mudah",
+      "copy": "Salin Tautan",
+      "share": "Bagikan ke Teman",
+      "earn": "Dapatkan Komisi"
+    },
+    "periods": {
+      "ariaLabel": "Periode penghasilan",
+      "all": "Semua",
+      "today": "Hari Ini",
+      "lastWeek": "Minggu Lalu",
+      "lastMonth": "Bulan Lalu"
+    },
+    "earning": {
+      "claimableIncome": "Penghasilan yang Bisa Diklaim",
+      "claimableBonus": "Bonus yang Bisa Diklaim",
+      "claim": "Klaim Bonus",
+      "receivedTotal": "Total diklaim {amount}",
+      "received": "Diklaim {amount}",
+      "periodSummaryAriaLabel": "Ringkasan penghasilan periode yang dipilih",
+      "networkIncomePeriod": "Penghasilan jaringan (periode yang dipilih)",
+      "totalAccumulated": "Sepanjang waktu {amount}",
+      "detailsTitle": "Rincian Penghasilan",
+      "historyTitle": "Riwayat Bonus",
+      "bonusAmount": "Jumlah Bonus",
+      "date": "Tanggal",
+      "empty": "Belum ada riwayat bonus",
+      "paginationAriaLabel": "Halaman riwayat bonus"
+    },
+    "users": {
+      "registeredAt": "Bergabung",
+      "empty": "Belum ada teman yang mendaftar lewat tautan Anda",
+      "paginationAriaLabel": "Halaman daftar teman"
+    },
+    "pagination": {
+      "showing": "Menampilkan {start}–{end} dari {total}"
+    }
+  },
+  "rewards": {
+    "actions": {
+      "claim": "Klaim",
+      "close": "Tutup",
+      "ok": "OK"
+    },
+    "status": {
+      "claimed": "Sudah diklaim"
+    },
+    "hub": {
+      "title": "Hadiah",
+      "loading": "Memuat hadiah…",
+      "loadError": "Gagal memuat hadiah",
+      "pointsLoading": "Memuat poin…",
+      "pointsLoadError": "Gagal memuat data hadiah",
+      "bannersAria": "Promo hadiah",
+      "shortcutsAria": "Menu hadiah",
+      "summaryAria": "Saldo kredit dan poin",
+      "totalCredits": "Total kredit",
+      "pointsBalance": "Saldo poin"
+    },
+    "shortcuts": {
+      "luckyBox": "Lucky Box",
+      "randomCard": "Kartu Acak",
+      "freespins": "Free Spin / Chip"
+    },
+    "banners": {
+      "luckyBoxSubtitle": "Tukar Lucky Box dengan poin",
+      "randomCardSubtitle": "Buka kartu dan menangkan hadiah",
+      "termsLabel": "Syarat & ketentuan"
+    },
+    "redeemBoard": {
+      "subtitle": "Menangkan hadiah",
+      "pointsLabel": "Poin",
+      "drawCost": "{cost} poin per undian",
+      "startDraw": "Mulai Undian",
+      "history": "Riwayat penukaran"
+    },
+    "luckyBox": {
+      "pageTitle": "Lucky Box",
+      "loading": "Memuat Lucky Box…",
+      "loadError": "Gagal memuat Lucky Box"
+    },
+    "randomCard": {
+      "pageTitle": "Kartu Acak",
+      "loading": "Memuat Kartu Acak…",
+      "loadError": "Gagal memuat Kartu Acak"
+    },
+    "freespins": {
+      "title": "Free Spin / Chip",
+      "comingSoonDesc": "Fitur ini sedang dikembangkan — segera bisa ditukar dengan poin"
+    },
+    "checkIn": {
+      "title": "Check-in Harian",
+      "loading": "Memuat check-in…",
+      "loadError": "Gagal memuat check-in",
+      "subtitle": "Check-in setiap hari untuk bonus Gems",
+      "bonusBefore": "Tinggal",
+      "bonusDays": {
+        "other": "{count} hari"
+      },
+      "bonusAfter": "lagi untuk bonus",
+      "bonusGems": "{amount} Gems",
+      "progressTotal": "/ {total} hari",
+      "dayStatus": {
+        "claimed": "Diklaim",
+        "today": "Klaim",
+        "locked": "Segera"
+      },
+      "weekdays": {
+        "mon": "Sen",
+        "tue": "Sel",
+        "wed": "Rab",
+        "thu": "Kam",
+        "fri": "Jum",
+        "sat": "Sab",
+        "sun": "Min"
+      },
+      "cumulativeTitle": "Hadiah Beruntun",
+      "cumulativeDesc": "Capai setiap target check-in untuk bonus Gems besar",
+      "milestoneGems": "{amount} Gems",
+      "milestoneDays": "Check-in {days} hari",
+      "milestoneDialog": {
+        "title": "Hadiah check-in {days} hari",
+        "progress": "Sudah check-in {done}/{total} hari",
+        "claim": "Klaim hadiah",
+        "claimed": "Hadiah sudah diklaim",
+        "daysLeft": "Check-in {count} hari lagi"
+      },
+      "claimedToday": "Sudah check-in hari ini",
+      "claimToday": "Klaim Hadiah Hari Ini",
+      "success": {
+        "title": "Hadiah berhasil diklaim",
+        "descBefore": "Anda menerima",
+        "descAfter": ""
+      },
+      "desktop": {
+        "summaryAria": "Ringkasan check-in",
+        "progressAria": "Progres check-in",
+        "weekProgress": "Progres minggu ini",
+        "daysUnit": "hari",
+        "claimTodayAria": "Klaim hadiah hari ini",
+        "claimToday": "Klaim Hadiah Hari Ini",
+        "claimedToday": "Hadiah Sudah Diklaim",
+        "streakAria": "Progres 7 hari",
+        "streakDay": "Hari {day}",
+        "listTitle": "Hadiah Check-in",
+        "dayTitle": "Hari {day}",
+        "specialReward": "Hadiah spesial",
+        "bonusDayDesc": "Check-in sepanjang minggu untuk bonus kredit",
+        "dailyDesc": "Hadiah check-in harian",
+        "locked": "Terkunci"
+      }
+    },
+    "wheel": {
+      "title": "Roda Keberuntungan",
+      "subtitle": "Putar setiap hari untuk hadiah besar",
+      "loading": "Memuat Roda Keberuntungan…",
+      "loadError": "Gagal memuat Roda Keberuntungan",
+      "backHome": "Kembali ke beranda",
+      "winMessage": "Selamat! Anda memenangkan {prize}",
+      "justNow": "Baru saja",
+      "prizeKind": {
+        "gems": "Gems",
+        "credit": "Kredit"
+      },
+      "gemsBalanceAria": "Saldo Gems Anda",
+      "ticketsAria": "Tiket Anda",
+      "spinAria": "Putar roda",
+      "methodTabsAria": "Pilih cara memutar",
+      "methodGems": "Gems ×{cost}",
+      "methodTicket": "Tiket ×{cost}",
+      "spinning": "Memutar…",
+      "spinNow": "Putar Sekarang",
+      "useTickets": {
+        "other": "Menggunakan {count} tiket"
+      },
+      "useGems": "Menggunakan {amount} Gems",
+      "noTickets": "Tiket habis — coba putar dengan Gems",
+      "notEnoughGems": "Gems tidak cukup — isi Gems terlebih dahulu",
+      "hint": "Putar untuk seru-seruan dan menangkan hadiah setiap hari",
+      "sampleNote": "Hadiah dan saldo dompet hanyalah contoh",
+      "liveWinners": {
+        "title": "Pemenang Terbaru",
+        "gemsWon": "+{amount} Gems",
+        "received": "Menang",
+        "gemsAmount": "{amount} Gems"
+      },
+      "history": {
+        "title": "Riwayat Putaran Saya",
+        "usedGems": "Gems",
+        "usedTicket": "Tiket",
+        "prevPage": "Halaman sebelumnya",
+        "nextPage": "Halaman berikutnya"
+      }
+    },
+    "gemsStore": {
+      "title": "Toko Gems",
+      "loading": "Memuat Toko Gems…",
+      "loadError": "Gagal memuat Toko Gems",
+      "redeemHeading": "Tukar Kredit",
+      "termsTitle": "Syarat Penukaran",
+      "redeemShort": "Tukar",
+      "notEnoughShort": "Kurang",
+      "redeem": "Tukar",
+      "redeemAria": "Tukar {credits}",
+      "notEnoughGems": "Gems tidak cukup",
+      "summary": {
+        "balanceLabel": "Saldo Gems",
+        "balanceAria": "Saldo Gems {amount}",
+        "today": "Hari ini",
+        "thisWeek": "Minggu ini"
+      },
+      "confirm": {
+        "title": "{amount} kredit",
+        "subtitle": "Gunakan {gems} Gems untuk menukar {credits} kredit",
+        "creditsLabel": "Kredit",
+        "gemsUsed": "Gems yang digunakan",
+        "balanceAfter": "Saldo setelahnya",
+        "cancel": "Batal",
+        "confirm": "Konfirmasi",
+        "processing": "Memproses…"
+      }
+    },
+    "activities": {
+      "title": "Event",
+      "loading": "Memuat event…",
+      "loadError": "Gagal memuat event",
+      "listAria": "Daftar event",
+      "closeDetail": "Tutup detail event",
+      "viewDetails": "Lihat Detail",
+      "categoryTabsAria": "Kategori event",
+      "categories": {
+        "slots": "Slot",
+        "casino": "Casino"
+      },
+      "progress": {
+        "title": "Turnover Anda",
+        "current": "Turnover saat ini",
+        "rank1Target": "Target Tingkat 1",
+        "rewardCount": "Hadiah {earned} / {cap}"
+      },
+      "tiers": {
+        "rank": "Tingkat",
+        "turn": "Turnover",
+        "bonus": "Bonus",
+        "claim": "Klaim",
+        "notEligible": "Belum memenuhi syarat"
+      },
+      "rulesTitle": "Aturan & Syarat Event"
+    }
+  },
+  "transactions": {
+    "title": "Riwayat Transaksi",
+    "pageLoading": "Memuat...",
+    "kindTabs": {
+      "aria": "Jenis transaksi",
+      "deposit": "Setor",
+      "withdraw": "Tarik Dana",
+      "promotion": "Promo",
+      "bet": "Taruhan"
+    },
+    "filter": {
+      "label": "Pilih tanggal",
+      "openCalendar": "Buka pemilih tanggal",
+      "clear": "Hapus",
+      "search": "Cari"
+    },
+    "calendar": {
+      "title": "Pilih Rentang Tanggal",
+      "close": "Tutup",
+      "cancel": "Batal",
+      "confirm": "Konfirmasi"
+    },
+    "status": {
+      "completed": "Berhasil",
+      "pending": "Menunggu",
+      "failed": "Gagal"
+    },
+    "betType": {
+      "bet": "Taruhan",
+      "result": "Hasil"
+    },
+    "columns": {
+      "amount": "Jumlah",
+      "channel": "Metode",
+      "account": "Rekening",
+      "createdAt": "Tanggal & Waktu",
+      "status": "Status",
+      "detail": "Detail",
+      "completedAt": "Waktu Selesai",
+      "promotionName": "Promo",
+      "playStart": "Tanggal Mulai",
+      "playEnd": "Tanggal Berakhir",
+      "freeSpins": "Free Spin",
+      "perRound": "Per Putaran",
+      "provider": "Provider",
+      "gameName": "Game",
+      "expiresWithin": "Berakhir Dalam",
+      "game": "Game",
+      "date": "Tanggal",
+      "time": "Waktu",
+      "type": "Jenis",
+      "betAmount": "Jumlah",
+      "openingBalance": "Saldo Awal",
+      "closingBalance": "Saldo Akhir"
+    },
+    "empty": "Data tidak ditemukan",
+    "paginationAria": "Halaman riwayat taruhan",
+    "loginRequired": "Silakan masuk untuk melihat transaksi Anda",
+    "loadError": "Gagal memuat transaksi",
+    "retry": "Coba lagi",
+    "loading": "Memuat transaksi…",
+    "summary": {
+      "depositTotal": "Total setoran:",
+      "withdrawTotal": "Total penarikan:",
+      "promotionClaims": "Promo yang diklaim:",
+      "winLossTotal": "Total menang/kalah:",
+      "stakeTotal": "Total taruhan:"
+    }
+  },
+  "vip": {
+    "tabs": {
+      "ariaLabel": "Menu VIP",
+      "myLevel": "Level Saya",
+      "rank": "Peringkat",
+      "benefits": "Keuntungan"
+    },
+    "status": {
+      "loading": "Memuat...",
+      "playerLoading": "Memuat info VIP…",
+      "playerError": "Gagal memuat info VIP",
+      "ranksLoading": "Memuat level VIP…",
+      "ranksError": "Gagal memuat level VIP",
+      "benefitsLoading": "Memuat keuntungan…",
+      "benefitsError": "Gagal memuat keuntungan",
+      "retry": "Coba Lagi"
+    },
+    "level": {
+      "label": "Level",
+      "next": "Level berikutnya",
+      "currentAriaLabel": "Level VIP saat ini",
+      "benefitsAndMaintainAriaLabel": "Keuntungan dan syarat mempertahankan level"
+    },
+    "rankStatus": {
+      "current": "Level saat ini",
+      "cleared": "Tercapai",
+      "locked": "Belum tercapai"
+    },
+    "carousel": {
+      "previous": "Peringkat sebelumnya",
+      "next": "Peringkat berikutnya",
+      "turnoverTarget": "Turnover {amount}"
+    },
+    "progress": {
+      "levelUpTo": "Naik ke VIP {level}",
+      "bothRequired": "Kedua syarat harus terpenuhi",
+      "overallAriaLabel": "Progres keseluruhan {percent} persen",
+      "deposit": "Setoran",
+      "turnover": "Turnover",
+      "target": "Target {amount}",
+      "complete": "Selesai",
+      "remaining": "Kurang {amount}"
+    },
+    "maintain": {
+      "title": "Pertahankan Level VIP",
+      "subtitleWithDowngrade": "Penuhi keduanya atau turun ke VIP {level}",
+      "daysRemaining": "hari lagi"
+    },
+    "benefitsTable": {
+      "title": "Keuntungan per Level",
+      "scrollHint": "Geser untuk melihat level lainnya"
+    },
+    "benefitRows": {
+      "cashback": "Bonus Cashback",
+      "rolling": "Bonus Rolling",
+      "diamondDeposit": "Gems dari Setoran",
+      "fastWithdraw": "Penarikan Cepat",
+      "vipManager": "Manajer VIP",
+      "upgradeBonus": "Bonus Naik Level",
+      "depositCondition": "Syarat Setoran",
+      "turnoverCondition": "Syarat Turnover"
+    },
+    "benefitValues": {
+      "faster": "✓ Lebih Cepat",
+      "max": "✓ Maks",
+      "notRequired": "Tidak ada"
+    },
+    "myLevelBenefits": {
+      "cashback": "Cashback",
+      "rolling": "Rolling",
+      "diamondDeposit": "Gems Setoran"
+    },
+    "missions": {
+      "login": "Masuk",
+      "deposit": "Setor",
+      "play": "Main",
+      "unitDays": "hari",
+      "unitTimes": "kali"
+    }
+  },
+  "wallet": {
+    "shared": {
+      "submitting": "Mengirim...",
+      "copied": "Disalin",
+      "copyAccountNumber": "Salin nomor rekening",
+      "currencyUnit": "THB"
+    },
+    "deposit": {
+      "title": "Setor",
+      "close": "Tutup setoran",
+      "selectMethod": "Pilih metode setoran",
+      "methodsAria": "Metode setoran",
+      "methodsLoading": "Memuat metode setoran…",
+      "methodsError": "Gagal memuat metode setoran",
+      "bankAccountLoading": "Memuat rekening penerima…",
+      "bankAccountError": "Gagal memuat rekening penerima",
+      "methods": {
+        "bank": {
+          "title": "Rekening bank",
+          "subtitle": "Transfer lewat rekening bank"
+        },
+        "gateway": {
+          "title": "Payment Gateway",
+          "subtitle": "Setor lewat payment gateway"
+        },
+        "truemoney": {
+          "title": "TrueMoney Wallet",
+          "subtitle": "Setor lewat TrueMoney Wallet"
+        }
+      },
+      "bank": {
+        "title": "Setor via Rekening Bank",
+        "back": "Kembali ke metode setoran",
+        "bankLabel": "Bank",
+        "accountName": "Nama rekening",
+        "accountNumber": "Nomor rekening",
+        "amountLabel": "Jumlah setoran",
+        "quickAmount": "Jumlah cepat",
+        "quickAmountHint": "Pilih jumlah atau masukkan sendiri",
+        "next": "Lanjut"
+      },
+      "confirm": {
+        "title": "Konfirmasi Setoran",
+        "back": "Kembali untuk mengubah jumlah",
+        "step": "Langkah {current} dari {total}",
+        "transferAmount": "Jumlah yang harus ditransfer",
+        "accountNameLabel": "Nama rekening: ",
+        "accountNumberLabel": "No. rekening: ",
+        "sampleNote": "Detail rekening contoh",
+        "slipTitle": "Lampirkan bukti transfer",
+        "slipPick": "Ketuk untuk melampirkan bukti",
+        "slipChange": "Ketuk lagi untuk mengganti gambar",
+        "slipFromDevice": "Pilih gambar dari perangkat Anda",
+        "slipHint": "Lampirkan bukti setelah transfer selesai",
+        "submit": "Konfirmasi Setoran"
+      },
+      "finalConfirm": {
+        "title": "Kirim permintaan setoran?",
+        "description": "Periksa jumlah dan bukti transfer sebelum dikirim untuk diverifikasi",
+        "confirm": "Kirim Setoran",
+        "amountLabel": "Jumlah setoran"
+      }
+    },
+    "withdraw": {
+      "title": "Tarik Dana",
+      "close": "Tutup penarikan dana",
+      "accountLoading": "Memuat rekening penerima…",
+      "accountError": "Gagal memuat rekening penerima",
+      "changeAccount": "Ganti rekening penerima",
+      "transferToYourAccount": "Transfer ke rekening Anda",
+      "amountLabel": "Jumlah penarikan",
+      "available": "Tersedia ฿{amount}",
+      "withdrawAll": "Tarik semua",
+      "quickAmountHint": "Ketuk jumlah untuk mengubahnya",
+      "submit": "Konfirmasi Penarikan",
+      "confirm": {
+        "title": "Kirim permintaan penarikan?",
+        "description": "Transfer ke {bank} {account}",
+        "confirm": "Konfirmasi Penarikan",
+        "amountLabel": "Jumlah penarikan"
+      }
+    },
+    "pending": {
+      "deposit": {
+        "title": "Setoran Menunggu",
+        "subtitle": "Menunggu pencocokan transfer Anda"
+      },
+      "withdraw": {
+        "title": "Penarikan Menunggu",
+        "subtitle": "Permintaan Anda sedang diproses"
+      },
+      "rows": {
+        "channel": "Metode",
+        "reference": "No. referensi",
+        "transactionAt": "Tanggal",
+        "receivingAccount": "Rekening penerima"
+      },
+      "close": "Tutup",
+      "done": "Selesai",
+      "viewHistory": "Lihat riwayat transaksi",
+      "copyReference": "Salin nomor referensi",
+      "referenceCopied": "Nomor referensi disalin",
+      "referenceCopyFailed": "Gagal menyalin nomor referensi"
+    }
+  }
+}

@@ -1,0 +1,1639 @@
+{
+  "meta": {
+    "title": "XGAMBET — စိတ်လှုပ်ရှားမှုတို့၏ ဘုရင့်နိုင်ငံ",
+    "description": "XGAMBET ဂိမ်းလော်ဘီ"
+  },
+  "common": {
+    "language": "ဘာသာစကား",
+    "languagePicker": {
+      "title": "ဘာသာစကား ရွေးပါ",
+      "description": "ဆိုက်တွင် ပြသမည့် ဘာသာစကားကို ပြောင်းပါ",
+      "close": "ဘာသာစကားရွေးချယ်မှုကို ပိတ်မည်"
+    },
+    "close": "ပိတ်မည်",
+    "retry": "ထပ်ကြိုးစားမည်",
+    "loading": "ရယူနေသည်…",
+    "confirm": "အတည်ပြု",
+    "cancel": "ပယ်ဖျက်",
+    "processing": "လုပ်ဆောင်နေသည်…",
+    "back": "နောက်သို့",
+    "next": "ရှေ့ဆက်",
+    "backStep": "ယခင်အဆင့်သို့ ပြန်မည်",
+    "loadFailed": "ဒေတာကို ရယူ၍ မရပါ",
+    "emptyCategory": "ဤအမျိုးအစားတွင် မရှိသေးပါ",
+    "refCode": "ကိုးကားနံပါတ်- {code}",
+    "units": {
+      "people": {
+        "other": "{n} ဦး"
+      },
+      "records": {
+        "other": "{n} ခု"
+      },
+      "credits": {
+        "other": "ခရက်ဒစ် {n}"
+      },
+      "gems": {
+        "other": "Gems {n}"
+      },
+      "million": "{n} သန်း"
+    },
+    "carousel": {
+      "prev": "{title} ကို နောက်သို့ လှိမ့်မည်",
+      "next": "{title} ကို ရှေ့သို့ လှိမ့်မည်"
+    },
+    "pagination": {
+      "label": "စာမျက်နှာခွဲခြင်း",
+      "prev": "ယခင်စာမျက်နှာ",
+      "page": "စာမျက်နှာ {page}",
+      "next": "နောက်စာမျက်နှာ"
+    },
+    "notifications": {
+      "title": "အသိပေးချက်များ",
+      "close": "အသိပေးချက်များကို ပိတ်မည်",
+      "tabsLabel": "အသိပေးချက် အမျိုးအစားများ",
+      "tabs": {
+        "all": "အားလုံး",
+        "privileges": "အထူးအခွင့်အရေး",
+        "messages": "မက်ဆေ့ချ်"
+      },
+      "empty": "မက်ဆေ့ချ်အသစ် မရှိပါ",
+      "contactChannels": "ဆက်သွယ်ရန် လမ်းကြောင်းများ"
+    },
+    "coupon": {
+      "title": "ကူပွန် လဲယူရန်",
+      "close": "ကူပွန်လဲယူခြင်းကို ပိတ်မည်",
+      "description": "ကုဒ်ထည့်၍ အခမဲ့ခရက်ဒစ် လဲယူပါ",
+      "codeLabel": "ကူပွန်ကုဒ်",
+      "codePlaceholder": "ကူပွန်ကုဒ် ထည့်ပါ",
+      "codeRequired": "ကူပွန်ကုဒ် ထည့်ပါ",
+      "submit": "အခမဲ့ခရက်ဒစ် လဲယူမည်",
+      "submitting": "စစ်ဆေးနေသည်..."
+    }
+  },
+  "nav": {
+    "bottomNav": {
+      "label": "ပင်မမီနူး",
+      "withdraw": "ငွေထုတ်",
+      "deposit": "ငွေသွင်း",
+      "menu": "မီနူး",
+      "cashback": "ငွေပြန်အမ်း",
+      "contact": "ဆက်သွယ်ရန်"
+    },
+    "header": {
+      "openMenu": "မီနူး ဖွင့်မည်",
+      "promotions": "ပရိုမိုးရှင်းများ",
+      "profile": "ပရိုဖိုင်",
+      "home": "XGAMBET ပင်မ",
+      "showSidebar": "ဘယ်ဘက်မီနူး ပြမည်",
+      "hideSidebar": "ဘယ်ဘက်မီနူး ဖျောက်မည်",
+      "mainCategories": "အဓိကအမျိုးအစားများ",
+      "searchLabel": "ဂိမ်း သို့မဟုတ် ပံ့ပိုးသူ ရှာပါ",
+      "searchPlaceholder": "ရှာဖွေရန်",
+      "deposit": "ငွေသွင်း",
+      "depositAria": "ငွေသွင်း",
+      "transactionHistory": "ငွေစာရင်းမှတ်တမ်း",
+      "walletDeposit": "ငွေသွင်းပြီး လက်ကျန်ကြည့်ရန်",
+      "walletBalance": "ခရက်ဒစ်လက်ကျန်"
+    },
+    "desktop": {
+      "quickMenu": "အမြန်မီနူး",
+      "rightRail": "အီဗင့်နှင့် ပရိုမိုးရှင်း မီနူး",
+      "sidebar": "ဒက်စ်တော့ ပင်မမီနူး",
+      "gameCategories": "ဂိမ်းအမျိုးအစားများ",
+      "games": "ဂိမ်းများ",
+      "system": "စနစ်",
+      "contactUs": "ဆက်သွယ်ရန်",
+      "topBar": "ရှာဖွေရေးနှင့် အကောင့်ဘား",
+      "searchGames": "ဂိမ်းရှာရန်",
+      "searchGamesPlaceholder": "ဂိမ်း၊ ပံ့ပိုးသူ သို့မဟုတ် အကြိုက်ဆုံးဂိမ်းများ ရှာပါ..."
+    },
+    "drawer": {
+      "title": "မီနူး",
+      "close": "မီနူး ပိတ်မည်",
+      "deposit": "ငွေသွင်း",
+      "withdraw": "ငွေထုတ်",
+      "playBonus": "လောင်းကြေးပမာဏ ဘောနပ်စ်",
+      "lossBonus": "ရှုံးငွေ ဘောနပ်စ်",
+      "referralLink": "ဖိတ်ခေါ်လင့်ခ်",
+      "referralLinkLoginHint": "သင့်လင့်ခ်ကြည့်ရန် ဝင်ရောက်ပါ",
+      "copyReferralLink": "ဖိတ်ခေါ်လင့်ခ် ကူးယူမည်",
+      "linkCopied": "လင့်ခ် ကူးယူပြီး",
+      "linkCopyFailed": "လင့်ခ် ကူးယူ၍ မရပါ",
+      "gameBalance": "ဂိမ်းလက်ကျန်",
+      "gems": "Gems",
+      "tickets": "လက်မှတ်များ"
+    },
+    "menuSections": {
+      "personal": "ကိုယ်ရေး",
+      "privileges": "အထူးအခွင့်အရေး",
+      "rewards": "ဆုလာဘ်များ"
+    },
+    "menu": {
+      "profile": "ပရိုဖိုင်",
+      "transactions": "ငွေစာရင်း",
+      "rank": "အဆင့်",
+      "promotions": "ပရိုမိုးရှင်းများ",
+      "cashback": "ငွေပြန်အမ်း",
+      "checkIn": "Check-in",
+      "referral": "သူငယ်ချင်းဖိတ်ရန်",
+      "rewardHub": "ကံစမ်းမဲ",
+      "wheel": "ကံစမ်းဘီး",
+      "gemsShop": "Gems ဆိုင်",
+      "activities": "အီဗင့်များ",
+      "coupon": "ကူပွန်",
+      "vipRank": "VIP အဆင့်",
+      "referralEarnings": "ကော်မရှင်ဝင်ငွေ",
+      "referFriend": "သူငယ်ချင်းဖိတ်ရန်",
+      "specialBonus": "အထူးဘောနပ်စ်",
+      "history": "မှတ်တမ်း",
+      "language": "ဘာသာစကား"
+    },
+    "hub": {
+      "promotions": "ပရိုမိုးရှင်းများ",
+      "activities": "အီဗင့်များ",
+      "cashback": "ငွေပြန်အမ်း",
+      "gemsStore": "Gems ဆိုင်",
+      "account": "အကောင့်အချက်အလက်",
+      "referral": "သူငယ်ချင်းဖိတ်ရန်",
+      "transactions": "ငွေစာရင်း",
+      "checkIn": "နေ့စဉ် Check-in",
+      "vip": "VIP"
+    },
+    "footer": {
+      "label": "XGAMBET ဆိုက်အောက်ခြေ",
+      "home": "XGAMBET ပင်မ",
+      "certifications": "လက်မှတ်များ",
+      "auditedBy": "စစ်ဆေးသူ",
+      "approvedBy": "ခွင့်ပြုသူ",
+      "playResponsibly": "တာဝန်သိစွာ ကစားပါ",
+      "ageRestriction": "အသက် 18 နှစ်နှင့်အထက်သာ",
+      "paymentMethods": "ငွေပေးချေနည်းများ",
+      "community": "အသိုင်းအဝိုင်း",
+      "liveChat": "လိုက်ဗ်ချက်",
+      "social": "ဆိုရှယ်မီဒီယာ",
+      "links": "အောက်ခြေလင့်ခ်များ",
+      "disclaimer": "XGAMBET သည် သက်ဆိုင်ရာဒေသတွင် ဥပဒေအရ သတ်မှတ်အသက်ပြည့်သူများအတွက် အွန်လိုင်းဖျော်ဖြေရေး ဝန်ဆောင်မှု ပေးပါသည်။ တာဝန်သိစွာ ကစားပြီး ကိုယ်တိုင်ဆုံးဖြတ်ချက်များအတွက် ကိုယ်တိုင်တာဝန်ယူပါ။ ကုမ္ပဏီနှင့် လိုင်စင်အသေးစိတ်များသည် UI စမ်းသပ်ရန် ပြသသည့် နမူနာဒေတာ (mock) သာ ဖြစ်ပါသည်။",
+      "tagline": "သင့်ဂိမ်းနှင့် အီဗင့်အားလုံး တစ်နေရာတည်း",
+      "columns": {
+        "platform": "ပလက်ဖောင်း",
+        "sports": "အားကစား",
+        "casino": "ကာစီနို",
+        "promotions": "ပရိုမိုးရှင်း",
+        "info": "အချက်အလက်",
+        "services": "ဝန်ဆောင်မှုများ"
+      },
+      "link": {
+        "profile": "ပရိုဖိုင်",
+        "transactions": "ငွေစာရင်း",
+        "lotterySlips": "ထီစလစ်များ",
+        "accountSettings": "အကောင့်ဆက်တင်",
+        "dailyCheckIn": "နေ့စဉ် Check-in",
+        "gemStore": "Gem ဆိုင်",
+        "leaderboard": "အဆင့်ဇယား",
+        "predictions": "ခန့်မှန်းချက်များ",
+        "liveSports": "လိုက်ဗ်အားကစား",
+        "sports": "အားကစား",
+        "esports": "အီးစပို့",
+        "tournaments": "ပြိုင်ပွဲများ",
+        "football": "ဘောလုံး",
+        "basketball": "ဘတ်စကက်ဘော",
+        "tennis": "တင်းနစ်",
+        "cricket": "ခရစ်ကက်",
+        "lobby": "လော်ဘီ",
+        "popularGames": "ရေပန်းစားဂိမ်းများ",
+        "liveCasino": "လိုက်ဗ်ကာစီနို",
+        "newGames": "ဂိမ်းအသစ်များ",
+        "crashGames": "ခရက်ရှ်ဂိမ်းများ",
+        "tableGames": "စားပွဲဂိမ်းများ",
+        "slots": "စလော့",
+        "bonusBuy": "ဘောနပ်စ်ဝယ်ယူ",
+        "roulette": "ရူးလက်",
+        "providers": "ပံ့ပိုးသူများ",
+        "allPromotions": "ပရိုမိုးရှင်းအားလုံး",
+        "sportsWelcome": "အားကစား ကြိုဆိုဘောနပ်စ်",
+        "casinoWelcome": "ကာစီနို ကြိုဆိုဘောနပ်စ်",
+        "weeklyCashback": "အပတ်စဉ် ငွေပြန်အမ်း",
+        "sportsClub": "အားကစားကလပ်",
+        "vipClub": "VIP ကလပ်",
+        "referFriends": "သူငယ်ချင်းဖိတ်ရန်",
+        "aboutUs": "ကျွန်ုပ်တို့အကြောင်း",
+        "events": "အီဗင့်များ",
+        "careers": "အလုပ်အကိုင်များ",
+        "contactUs": "ဆက်သွယ်ရန်",
+        "brand": "ဘရန်း",
+        "responsibleGaming": "တာဝန်သိစွာ ကစားခြင်း",
+        "helpCenter": "အကူအညီစင်တာ",
+        "guide": "လမ်းညွှန်",
+        "luckyWheel": "ကံစမ်းဘီး",
+        "lottery": "ထီ",
+        "fishing": "ငါးပစ်",
+        "lossRebate": "ရှုံးငွေပြန်အမ်း",
+        "casino": "ကာစီနို",
+        "promotions": "ပရိုမိုးရှင်းများ",
+        "vipLevel": "VIP အဆင့်",
+        "privacy": "ကိုယ်ရေးကိုယ်တာ မူဝါဒ",
+        "terms": "စည်းကမ်းနှင့် သတ်မှတ်ချက်များ",
+        "feedback": "အကြံပြုချက် ပေးရန်",
+        "sitemap": "ဆိုက်မြေပုံ"
+      }
+    }
+  },
+  "auth": {
+    "login": "ဝင်ရောက်ရန်",
+    "signUp": "စာရင်းသွင်းရန်",
+    "signUpShort": "စာရင်းသွင်း",
+    "logout": "ထွက်ရန်",
+    "loginSheet": {
+      "close": "ဝင်ရောက်ရန်ပိတ်မည်",
+      "subtitle": "စာရင်းသွင်းထားသော ဖုန်းနံပါတ်နှင့် စကားဝှက်ကို အသုံးပြုပါ",
+      "submitting": "ဝင်ရောက်နေသည်...",
+      "noAccount": "အကောင့်မရှိသေးဘူးလား။",
+      "success": "ဝင်ရောက်မှု အောင်မြင်ပါသည်",
+      "failed": "ဝင်ရောက်၍ မရပါ"
+    },
+    "signUpSheet": {
+      "close": "စာရင်းသွင်းခြင်းကို ပိတ်မည်",
+      "welcome": "XGAMBET မှ ကြိုဆိုပါသည်",
+      "tagline": "သင့်စတိုင်နှင့် ပျော်ရွှင်မှု စတင်လိုက်ပါ",
+      "haveAccount": "အကောင့်ရှိပြီးသားလား။",
+      "submitting": "စာရင်းသွင်းနေသည်...",
+      "success": "စာရင်းသွင်းပြီးပါပြီ။ ကြိုဆိုပါသည်။",
+      "failed": "စာရင်းသွင်း၍ မရပါ",
+      "pickerClose": "ရွေးချယ်မှုကို ပိတ်မည်",
+      "loadingBanks": "ဘဏ်များ ရယူနေသည်…",
+      "banksFailed": "ဘဏ်များကို ရယူ၍ မရပါ",
+      "loadingChannels": "ရွေးချယ်စရာများ ရယူနေသည်…",
+      "channelsFailed": "ရွေးချယ်စရာများကို ရယူ၍ မရပါ"
+    },
+    "fields": {
+      "phone": "ဖုန်းနံပါတ်",
+      "phonePlaceholder": "ဖုန်းနံပါတ် ထည့်ပါ",
+      "password": "စကားဝှက်",
+      "passwordPlaceholder": "စကားဝှက် ထည့်ပါ",
+      "confirmPassword": "စကားဝှက် အတည်ပြုပါ",
+      "confirmPasswordPlaceholder": "စကားဝှက် ထပ်ထည့်ပါ",
+      "showPassword": "စကားဝှက် ပြမည်",
+      "hidePassword": "စကားဝှက် ဝှက်မည်",
+      "firstName": "အမည်",
+      "lastName": "အမည်ဆက်",
+      "bankAccount": "ဘဏ်အကောင့်နံပါတ်",
+      "bankAccountPlaceholder": "အကောင့်နံပါတ်",
+      "bank": "ဘဏ်",
+      "bankPlaceholder": "ဘဏ် ရွေးပါ",
+      "channel": "ကျွန်ုပ်တို့ကို ဘယ်လိုသိခဲ့သလဲ။",
+      "channelPlaceholder": "ရွေးချယ်ပါ"
+    },
+    "validation": {
+      "phone": "ဖုန်းနံပါတ်သည် 0 ဖြင့်စသော ဂဏန်း 10 လုံး ဖြစ်ရပါမည်",
+      "passwordRequired": "စကားဝှက် ထည့်ပါ",
+      "passwordLength": "စကားဝှက်သည် စာလုံး 6–32 လုံး ဖြစ်ရပါမည်",
+      "passwordMismatch": "စကားဝှက်များ မကိုက်ညီပါ",
+      "firstName": "အမည်ကို စာလုံးများဖြင့်သာ ထည့်ပါ",
+      "lastName": "အမည်ဆက်ကို စာလုံးများဖြင့်သာ ထည့်ပါ",
+      "bankAccount": "အကောင့်နံပါတ်သည် ဂဏန်း 10–12 လုံး ဖြစ်ရပါမည်",
+      "bankRequired": "ဘဏ် ရွေးပါ",
+      "channelRequired": "ရွေးချယ်စရာတစ်ခု ရွေးပါ"
+    },
+    "account": {
+      "title": "အကောင့်အချက်အလက်",
+      "profile": "ပရိုဖိုင်",
+      "closeProfile": "ပရိုဖိုင်ကို ပိတ်မည်",
+      "loadingProfile": "ပရိုဖိုင် ရယူနေသည်…",
+      "profileFailed": "ပရိုဖိုင်ကို ရယူ၍ မရပါ",
+      "loading": "အကောင့်အချက်အလက် ရယူနေသည်…",
+      "failed": "အကောင့်အချက်အလက်ကို ရယူ၍ မရပါ",
+      "retryHint": "ထပ်ကြိုးစားကြည့်ပါ။ မရသေးပါက ထွက်ပြီး ပြန်ဝင်ပါ။"
+    },
+    "loginPrompt": {
+      "title": "ကြည့်ရှုရန် ဝင်ရောက်ပါ",
+      "description": "ဤအပိုင်းသည် အဖွဲ့ဝင်များအတွက်သာ ဖြစ်သည်"
+    },
+    "logoutConfirm": {
+      "title": "ထွက်မလား။",
+      "description": "ဤအကောင့်ဖြင့် ငွေသွင်း၊ ငွေထုတ်၊ ကစားရန် ပြန်ဝင်ရောက်ရပါမည်",
+      "stay": "မထွက်ပါ"
+    }
+  },
+  "errors": {
+    "notFoundTitle": "စာမျက်နှာ မတွေ့ပါ",
+    "backHome": "ပင်မစာမျက်နှာသို့ ပြန်မည်",
+    "notFound": {
+      "metaTitle": "စာမျက်နှာ မတွေ့ပါ — XGAMBET",
+      "title": "ထိုစာမျက်နှာကို ရှာမတွေ့ပါ",
+      "description": "လင့်ခ်မှားနေခြင်း သို့မဟုတ် စာမျက်နှာ ရွှေ့သွားခြင်း ဖြစ်နိုင်ပါသည်",
+      "viewPromotions": "ပရိုမိုးရှင်းများ ကြည့်မည်"
+    },
+    "route": {
+      "title": "တစ်စုံတစ်ခု မှားယွင်းသွားပါသည်",
+      "description": "ဤစာမျက်နှာကို ဖွင့်၍ မရပါ။ ထပ်ကြိုးစားကြည့်ပါ။ ပြဿနာ ဆက်ရှိနေပါက ဖောက်သည်ဝန်ဆောင်မှုသို့ ဆက်သွယ်ပါ။"
+    },
+    "offline": {
+      "title": "အင်တာနက် ချိတ်ဆက်မှု မရှိပါ",
+      "description": "အင်တာနက်ဖွင့်ပြီး XGAMBET ကို ပြန်ဖွင့်ပါ"
+    },
+    "api": {
+      "network": "ဆာဗာသို့ ချိတ်ဆက်၍ မရပါ။ အင်တာနက်ကို စစ်ဆေးပြီး ထပ်ကြိုးစားပါ။",
+      "parse": "ဆာဗာ၏ တုံ့ပြန်ချက်ကို ဖတ်၍ မရပါ",
+      "unauthorized": "ကျေးဇူးပြု၍ ပြန်လည်ဝင်ရောက်ပါ",
+      "generic": "တစ်စုံတစ်ခု မှားယွင်းသွားပါသည်။ ထပ်ကြိုးစားပါ။"
+    }
+  },
+  "home": {
+    "categories": {
+      "home": "ပင်မ",
+      "casino": "ကာစီနို",
+      "slots": "စလော့",
+      "fishing": "ငါးပစ်",
+      "sports": "အားကစား",
+      "lottery": "ထီ",
+      "cards": "ကတ်ဂိမ်း"
+    },
+    "categoryNav": {
+      "ariaLabel": "ဂိမ်းအမျိုးအစားများ"
+    },
+    "sections": {
+      "hotGames": "ရေပန်းစားဂိမ်းများ",
+      "slots": "စလော့",
+      "casino": "ကာစီနို",
+      "fishing": "ငါးပစ်",
+      "sports": "အားကစား",
+      "empty": "ဤအမျိုးအစားတွင် ဂိမ်း မရှိသေးပါ"
+    },
+    "intro": {
+      "title": "စိတ်လှုပ်ရှားဖွယ် စကြဝဠာ",
+      "gamesBefore": "ဂိမ်း",
+      "gamesAfter": "ကျော်၊",
+      "providersBefore": "ပံ့ပိုးသူ",
+      "providersAfter": "ကျော်၊",
+      "sports": "နှင့် ကမ္ဘာတစ်ဝန်း အားကစားပွဲများ"
+    },
+    "featureActions": {
+      "ariaLabel": "အထူးလုပ်ဆောင်ချက်များ"
+    },
+    "search": {
+      "formAriaLabel": "ဂိမ်းနှင့် ပံ့ပိုးသူ ရှာဖွေရန်",
+      "label": "ဂိမ်း သို့မဟုတ် ပံ့ပိုးသူ ရှာပါ",
+      "clear": "ရှာဖွေမှု ဖျက်မည်"
+    },
+    "hallOfFame": {
+      "tabsAriaLabel": "အကောင်းဆုံးစွမ်းဆောင်ရည် ဇယား ရွေးပါ",
+      "empty": "မှတ်တမ်း မရှိသေးပါ"
+    },
+    "carousel": {
+      "prev": "ယခင်စလိုက်",
+      "next": "နောက်စလိုက်",
+      "scroll": "ဘန်နာများ ကြည့်ရန်",
+      "pickSlide": "ဘန်နာစလိုက် ရွေးပါ",
+      "goToSlide": "စလိုက် {index} သို့ သွားမည်"
+    },
+    "peekCarousel": {
+      "ariaLabel": "ပရိုမိုးရှင်းနှင့် အီဗင့် ဘန်နာများ"
+    },
+    "promoCarousel": {
+      "ariaLabel": "ပရိုမိုးရှင်းနှင့် အထူးအခွင့်အရေး ဘန်နာများ",
+      "listAriaLabel": "ပရိုမိုးရှင်းများ"
+    },
+    "welcomeBanner": {
+      "ariaLabel": "ကြိုဆိုရေးနှင့် ပရိုမိုးရှင်း ဘန်နာများ",
+      "slidesAriaLabel": "ကြိုဆိုရေး ဘန်နာစလိုက်များ"
+    },
+    "auth": {
+      "login": "ဝင်ရောက်ရန်",
+      "signUp": "စာရင်းသွင်းရန်",
+      "loginToSeeEvents": "အီဗင့်များ ကြည့်ရန် ဝင်ရောက်ပါ သို့မဟုတ် စာရင်းသွင်းပါ"
+    },
+    "events": {
+      "title": "အီဗင့်များ",
+      "slidesAriaLabel": "{title} စလိုက်များ",
+      "goTo": "{name} သို့ သွားမည်"
+    },
+    "announcement": {
+      "ariaLabel": "စနစ်ကြေညာချက်များ",
+      "label": "သတင်း"
+    },
+    "categoryProviders": {
+      "comingSoon": "ဤအမျိုးအစား၏ ပံ့ပိုးသူများ မကြာမီ လာမည်။ ယခုအတွက် ကာစီနို၊ စလော့၊ ငါးပစ် သို့မဟုတ် အားကစားကို စမ်းကြည့်ပါ။",
+      "liveCasino": "လိုက်ဗ်ကာစီနို",
+      "providersFallback": "ပံ့ပိုးသူများ",
+      "providerCount": {
+        "other": "(ပံ့ပိုးသူ {count} ခု)"
+      },
+      "gamesByProviderAriaLabel": "ရွေးထားသောပံ့ပိုးသူ၏ {category} ဂိမ်းများ",
+      "listAriaLabel": "ရွေးထားသောအမျိုးအစားရှိ ပံ့ပိုးသူများ",
+      "searchPlaceholder": {
+        "casino": "လိုက်ဗ်ကာစီနို | ပံ့ပိုးသူ ရှာပါ",
+        "fishing": "ငါးပစ် | ပံ့ပိုးသူ ရှာပါ",
+        "cards": "ကတ်ဂိမ်း | ပံ့ပိုးသူ ရှာပါ",
+        "sports": "အားကစား | ပံ့ပိုးသူ ရှာပါ",
+        "default": "ဂိမ်း | ပံ့ပိုးသူ ရှာပါ"
+      }
+    },
+    "quickBanners": {
+      "ariaLabel": "အမြန်ကြည့်ရန်",
+      "promo": {
+        "title": "အထူးပရိုမိုးရှင်းများ",
+        "subtitle": "သင့်အတွက်သီးသန့် ပရိုမိုးရှင်းများ"
+      },
+      "event": {
+        "title": "အီဗင့်များ",
+        "subtitle": "အချိန်ပြည့် အီဗင့်များ"
+      },
+      "news": {
+        "title": "သတင်း",
+        "subtitle": "လွတ်မသွားစေသင့်သော သတင်းများ"
+      }
+    },
+    "mostOnline": {
+      "title": "ယခု အများဆုံးကစားနေသည်",
+      "favoriteAdd": "အကြိုက်ဆုံးထဲ ထည့်မည်",
+      "favoriteRemove": "အကြိုက်ဆုံးမှ ဖယ်မည်",
+      "playingNow": "ယခု {count} ဦး ကစားနေသည်"
+    },
+    "popular": {
+      "title": "ရေပန်းစား",
+      "empty": "ဤအမျိုးအစားတွင် မရှိသေးပါ"
+    },
+    "providers": {
+      "empty": "ပံ့ပိုးသူ မရှိသေးပါ",
+      "marqueeAriaLabel": "ဂိမ်းပံ့ပိုးသူများ",
+      "logoAriaLabel": "ပံ့ပိုးသူ {name}"
+    },
+    "a2hs": {
+      "title": "ပင်မစခရင်သို့ ထည့်ရန်",
+      "cardTitle": "ယနေ့ ရှော့ကတ် ထည့်လိုက်ပါ!",
+      "cardSubtitle": "ပိုမိုကောင်းမွန်သော အတွေ့အကြုံရရန် ယခုထည့်ပါ",
+      "platformsAriaLabel": "သင့်စက်ကို ရွေးပါ",
+      "stepsTitle": "ရှော့ကတ် ထည့်နည်း ({platform})",
+      "installed": "အက်ပ် ထည့်သွင်းပြီး",
+      "steps": {
+        "android1": "Chrome ၏ ညာဘက်အပေါ်ရှိ ⋮ မီနူးကို နှိပ်ပါ",
+        "android2": "“Install app” သို့မဟုတ် “Add to Home screen” ကို ရွေးပါ",
+        "android3": "“Install” သို့မဟုတ် “Add” ကို နှိပ်၍ အတည်ပြုပါ",
+        "ios1": "Safari အောက်ခြေရှိ “Share” ခလုတ်ကို နှိပ်ပါ",
+        "ios2": "“Add to Home Screen” ကို ရွေးပါ",
+        "ios3": "ညာဘက်အပေါ်ရှိ “Add” ကို နှိပ်၍ အတည်ပြုပါ",
+        "launch": "ကျွန်ုပ်တို့၏ အက်ပ်အိုင်ကွန်မှ ဆိုက်ကို ချက်ချင်းဖွင့်ပါ"
+      }
+    },
+    "desktopMenu": {
+      "referral": {
+        "title": "သူငယ်ချင်းဖိတ်ရန်",
+        "subtitle": "အဆင့် 2 ဆင့်ဖြင့် ရှာဖွေပါ",
+        "ariaLabel": "သူငယ်ချင်းဖိတ်ပါ၊ အဆင့် 2 ဆင့်ဖြင့် ရှာဖွေပါ"
+      },
+      "checkIn": {
+        "title": "Check-In",
+        "subtitle": "CHECK-IN",
+        "ariaLabel": "နေ့စဉ် Check-in"
+      },
+      "wheel": {
+        "title": "ကံစမ်းဘီး",
+        "subtitle": "LUCKY WHEEL",
+        "ariaLabel": "ကံစမ်းဘီး"
+      },
+      "gems": {
+        "title": "Gems ဆိုင်",
+        "subtitle": "GEMS SHOP",
+        "ariaLabel": "Gems ဆိုင်"
+      },
+      "coupon": {
+        "title": "ကူပွန်",
+        "subtitle": "COUPON",
+        "ariaLabel": "ကူပွန် လဲယူရန်"
+      },
+      "vip": {
+        "title": "VIP အဆင့်",
+        "subtitle": "အဖွဲ့ဝင်အခွင့်အရေး",
+        "ariaLabel": "VIP အဆင့်၊ အဖွဲ့ဝင်အခွင့်အရေး"
+      }
+    }
+  },
+  "games": {
+    "filters": {
+      "allInOne": "အားလုံးတစ်နေရာတည်း",
+      "allProviders": "ပံ့ပိုးသူအားလုံး",
+      "allGameProviders": "ပံ့ပိုးသူအားလုံး",
+      "dropsAndWins": "Drops & Wins",
+      "chicken": "ကြက်ပွဲ",
+      "buyFeature": "Free Spins ဝယ်ယူ",
+      "jackpot": "ဂျက်ပေါ့",
+      "megaways": "Megaways",
+      "baccarat": "ဘာကာရက်",
+      "roulette": "ရူးလက်",
+      "blackjack": "ဘလက်ဂျက်",
+      "gameShows": "ဂိမ်းရှိုး",
+      "sicbo": "ဆစ်ဘို/ဒရဂွန်တိုက်ဂါ",
+      "football": "ဘောလုံး",
+      "basketball": "ဘတ်စကက်ဘော",
+      "esports": "အီးစပို့",
+      "boxing": "ထိုင်းလက်ဝှေ့",
+      "tennis": "တင်းနစ်",
+      "arcade": "အားကေ့ဒ်",
+      "multiplayer": "ပွဲစုံကစား",
+      "hot": "ရေပန်းစား"
+    },
+    "subHeader": {
+      "back": "နောက်သို့"
+    },
+    "breadcrumb": {
+      "ariaLabel": "လမ်းကြောင်း",
+      "backToCategory": "{category} အားလုံးသို့ ပြန်မည်"
+    },
+    "slots": {
+      "title": "စလော့",
+      "providerAriaLabel": "{name} — စလော့",
+      "providerCount": {
+        "other": "(ပံ့ပိုးသူ {count} ခု)"
+      }
+    },
+    "casino": {
+      "title": "လိုက်ဗ်ကာစီနို",
+      "count": {
+        "other": "(စားပွဲ/ပံ့ပိုးသူ {count} ခု)"
+      }
+    },
+    "sport": {
+      "title": "အားကစား",
+      "count": {
+        "other": "(ပွဲစဉ်/ပံ့ပိုးသူ {count} ခု)"
+      }
+    },
+    "providerGames": {
+      "searchPlaceholder": "ဤပံ့ပိုးသူ၏ ဂိမ်းများ ရှာပါ",
+      "backToCategory": "{category} အားလုံးသို့ ပြန်မည်",
+      "gameCount": {
+        "other": "(ဂိမ်း {count} ခု)"
+      },
+      "notFoundTitle": "ဂိမ်း မတွေ့ပါ",
+      "notFoundHint": "အခြားစာလုံးဖြင့် ရှာကြည့်ပါ သို့မဟုတ် ရှာဖွေမှုကို ဖျက်၍ ဂိမ်းအားလုံး ကြည့်ပါ",
+      "favoriteAdd": "အကြိုက်ဆုံးထဲ ထည့်မည်",
+      "favoriteRemove": "အကြိုက်ဆုံးမှ ဖယ်မည်"
+    },
+    "play": {
+      "playingAriaLabel": "{title} ကစားနေသည်",
+      "fullscreen": "မျက်နှာပြင်အပြည့်",
+      "exitFullscreen": "မျက်နှာပြင်အပြည့်မှ ထွက်မည်",
+      "iframePlaceholder": "ဂိမ်း iframe နေရာ (နမူနာ)"
+    }
+  },
+  "lottery": {
+    "hub": {
+      "title": "ထီ",
+      "subtitle": "လောင်းလိုသော ထီကို ရွေးပါ",
+      "featuredAria": "အထူးပြုထီများ",
+      "allMarketsAria": "ထီအားလုံး",
+      "mySlips": "ကျွန်ုပ်၏စလစ်",
+      "mySlipsAria": "ကျွန်ုပ်၏စလစ်များ ကြည့်ရန်",
+      "mySlipsPendingAria": "ကျွန်ုပ်၏စလစ်များ ကြည့်ရန် — လုပ်ဆောင်နေဆဲ {count} စောင်",
+      "daysLeft": {
+        "other": "{count} ရက်"
+      }
+    },
+    "markets": {
+      "generic": "ထီ",
+      "thaiGovernment": "ထိုင်းအစိုးရထီ",
+      "yiki5": "Yiki 5 မိနစ်",
+      "yiki15": "Yiki 15 မိနစ်",
+      "yiki30": "Yiki 30 မိနစ်",
+      "baac": "BAAC ထီ",
+      "laos": "လာအိုထီ",
+      "hanoi": "ဟနွိုင်းထီ",
+      "malaysia": "မလေးရှားထီ",
+      "dowJones": "ဒေါ်ဂျုံးစ်ထီ",
+      "china": "တရုတ်စတော့ထီ",
+      "germany": "ဂျာမနီစတော့ထီ",
+      "russia": "ရုရှားစတော့ထီ",
+      "korea": "ကိုရီးယားစတော့ထီ",
+      "nikkei": "နီကေအိထီ",
+      "uk": "ဗြိတိန်စတော့ထီ",
+      "hongKong": "ဟန်ဆန်ထီ",
+      "taiwan": "ထိုင်ဝမ်စတော့ထီ",
+      "singapore": "စင်ကာပူစတော့ထီ",
+      "india": "အိန္ဒိယစတော့ထီ",
+      "egypt": "အီဂျစ်စတော့ထီ"
+    },
+    "status": {
+      "open": "ဖွင့်ထားသည်",
+      "closed": "ပိတ်ပြီ",
+      "closedAlready": "လောင်းချိန် ပိတ်ပြီ",
+      "closesIn": "ပိတ်ရန်ကျန်",
+      "closesInTime": "{time} အတွင်း ပိတ်မည်",
+      "countdownDays": "{days}ရက် {time}"
+    },
+    "groups": {
+      "three": "သုံးလုံး",
+      "two": "နှစ်လုံး",
+      "run": "တစ်လုံးလိုက်"
+    },
+    "betTypes": {
+      "threeTop": "သုံးလုံးအပေါ်",
+      "threeTod": "သုံးလုံးပတ်လည်",
+      "threeFront": "သုံးလုံးရှေ့",
+      "threeBottom": "သုံးလုံးအောက်",
+      "threeTopTod": "သုံးလုံးအပေါ်ပတ်လည်",
+      "threeTopReverse": "သုံးလုံးအပေါ်ပြောင်းပြန်",
+      "threeTopComboTod": "သုံးလုံးအပေါ် + ပတ်လည်",
+      "twoTop": "နှစ်လုံးအပေါ်",
+      "twoBottom": "နှစ်လုံးအောက်",
+      "twoTopReverse": "နှစ်လုံးအပေါ်ပြောင်းပြန်",
+      "twoBottomReverse": "နှစ်လုံးအောက်ပြောင်းပြန်",
+      "twoTopBottom": "နှစ်လုံးအပေါ်/အောက်",
+      "twoTopBottomReverse": "နှစ်လုံးအပေါ်/အောက်ပြောင်းပြန်",
+      "runTop": "တစ်လုံးအပေါ်",
+      "runBottom": "တစ်လုံးအောက်"
+    },
+    "round": {
+      "time": "{time} ပွဲစဉ်",
+      "draw": "ပွဲစဉ် {date}",
+      "market": "{market} {date}",
+      "numbered": "ပွဲစဉ် {n}",
+      "current": "လက်ရှိပွဲစဉ်"
+    },
+    "rounds": {
+      "empty": "လောင်းနိုင်သော ပွဲစဉ် မရှိသေးပါ",
+      "listAria": "ပွဲစဉ်များ",
+      "showAll": {
+        "other": "ပွဲစဉ်အားလုံး ပြမည် ({count} ပွဲ)"
+      },
+      "play": "ယခုလောင်းမည်",
+      "loading": "ပွဲစဉ်များ ရယူနေသည်…",
+      "loadError": "ပွဲစဉ်များကို ရယူ၍ မရပါ",
+      "openCountPrefix": "ဖွင့်ထားသောပွဲစဉ်-",
+      "openCountSuffix": ""
+    },
+    "market": {
+      "sidebarAria": "ထီအမျိုးအစားများ",
+      "rules": "စည်းကမ်းများ / ဆပေးနှုန်းများ",
+      "notFoundTitle": "ထီ မတွေ့ပါ",
+      "notFoundDescription": "ဤထီကို မရနိုင်တော့ပါ။ ထီစာမျက်နှာမှ အခြားတစ်ခု ရွေးပါ။",
+      "viewAll": "ထီအားလုံး ကြည့်မည်",
+      "marketNotFound": "ထီအမျိုးအစား မတွေ့ပါ"
+    },
+    "rules": {
+      "payoutHeading": "၁ ဘတ်လျှင် ဆပေးနှုန်း",
+      "limitsHeading": "တစ်ခုချင်း လောင်းကြေးပမာဏ",
+      "minBet": "အနည်းဆုံး",
+      "maxBet": "အများဆုံး"
+    },
+    "results": {
+      "title": "နောက်ဆုံးရလဒ်များ",
+      "morePage": "ရလဒ်အားလုံး >>",
+      "tableAria": "နောက်ဆုံးထီရလဒ်များ",
+      "colMarket": "ထီ",
+      "colDate": "ပွဲစဉ် / ရက်စွဲ",
+      "empty": "ရလဒ် မရှိသေးပါ",
+      "today": "ယနေ့"
+    },
+    "thaiResult": {
+      "title": "ယခင်ပွဲစဉ် ရလဒ်များ",
+      "firstPrize": "ပထမဆု",
+      "back3": "နောက်သုံးလုံး"
+    },
+    "draw": {
+      "aria": "ပွဲစဉ်အသေးစိတ်"
+    },
+    "board": {
+      "pickAria": "ဂဏန်းများ ရွေးပါ",
+      "reverse": "ပြောင်းပြန်",
+      "actionsAria": "နောက်အဆင့်များ",
+      "back": "နောက်သို့",
+      "enterPrice": "လောင်းကြေး သတ်မှတ်ရန်",
+      "digitGroupAria": "ဂဏန်းအလုံးရေ",
+      "betTypeAria": "လောင်းကြေးအမျိုးအစား",
+      "payout": "ဆပေးနှုန်း {rate}",
+      "loading": "လောင်းကွက် ရယူနေသည်…",
+      "roundNotFoundTitle": "ပွဲစဉ် မတွေ့ပါ",
+      "roundNotFoundNext": "ဤပွဲစဉ် ပိတ်သွားပြီ ဖြစ်နိုင်ပါသည်။ စာရင်းမှ နောက်ပွဲစဉ်ကို ရွေးပါ။",
+      "roundNotFoundOther": "ဤပွဲစဉ် ပိတ်သွားပြီ ဖြစ်နိုင်ပါသည်။ စာရင်းမှ အခြားပွဲစဉ်ကို ရွေးပါ။",
+      "viewAllRounds": "ပွဲစဉ်အားလုံး ကြည့်မည်"
+    },
+    "inputMode": {
+      "aria": "ဂဏန်းထည့်သွင်းနည်း",
+      "manual": "ဂဏန်းရိုက်ထည့်",
+      "grid": "ဇယားမှ ရွေးချယ်"
+    },
+    "feedback": {
+      "duplicate": "{number} သည် စလစ်ထဲတွင် ရှိပြီးသား ဖြစ်သည်",
+      "added": {
+        "other": "စလစ်ထဲသို့ {number} ထည့်ပြီး ({count} ခု)"
+      },
+      "undone": "နောက်ဆုံးထည့်ထားသည်ကို ပြန်ဖျက်ပြီး",
+      "closed": "လောင်းချိန် ပိတ်ပြီ",
+      "removed": "စလစ်မှ {number} ကို ဖယ်ပြီး"
+    },
+    "pad": {
+      "hundreds": "ရာဂဏန်း",
+      "selectedCount": "ရွေးထားသည် {count} ခု",
+      "gridAria": "ဂဏန်းဇယား",
+      "enteredAria": "ထည့်ထားသော ဂဏန်း {value}",
+      "empty": "ဗလာ",
+      "clear": "ဖျက်မည်",
+      "backspace": "နောက်ဆုံးဂဏန်း ဖျက်မည်"
+    },
+    "slip": {
+      "itemCount": {
+        "other": "{count} ခု"
+      },
+      "removeAria": "{label} {number} ကို ဖယ်မည်",
+      "priceAria": "{label} {number} အတွက် လောင်းကြေး",
+      "enterPrice": "လောင်းကြေးထည့်ရန်",
+      "toolbarAria": "စလစ်ကိရိယာများ",
+      "undo": "နောက်ဆုံးကို ပြန်ဖျက်မည်",
+      "clearAll": "စလစ်ရှင်းမည်",
+      "emptyPickType": "လောင်းကြေးအမျိုးအစား ရွေးပြီး ဂဏန်းများကို နှိပ်၍ စလစ်ထဲ ထည့်ပါ",
+      "emptyEnterNumber": "ဤနေရာတွင် မရှိသေးပါ။ လောင်းလိုသော ဂဏန်းများ ထည့်ပါ။"
+    },
+    "price": {
+      "aria": "လောင်းကြေးသတ်မှတ်ပြီး စလစ်တင်ရန်",
+      "sameForAll": "အားလုံး လောင်းကြေးတူ",
+      "edit": "ပြင်မည်",
+      "total": "စုစုပေါင်း",
+      "chipsAria": "လောင်းကြေး ရွေးပါ",
+      "backToNumbers": "ဂဏန်းပြင်မည်",
+      "submitting": "တင်နေသည်…",
+      "submit": "စလစ်တင်မည်"
+    },
+    "submit": {
+      "failedTitle": "စလစ်တင်၍ မရပါ",
+      "done": "အိုကေ",
+      "close": "ပိတ်မည်",
+      "networkError": "ဆာဗာသို့ ချိတ်ဆက်၍ မရပါ"
+    },
+    "summary": {
+      "aria": "စလစ်အကျဉ်းချုပ်",
+      "drawDate": "ပွဲစဉ်ရက် {date}",
+      "copyAria": "စလစ်နံပါတ် ကူးယူမည်",
+      "slipId": "စလစ် #{id}",
+      "purchased": "ဝယ်ယူသည့်ရက် {date}",
+      "submitted": "တင်ပြီး",
+      "note": "မှတ်ချက်- {note}",
+      "noNote": "မှတ်ချက် မရှိပါ",
+      "stake": "လောင်းကြေး",
+      "winLoss": "အနိုင်/အရှုံး",
+      "allSlips": "စလစ်အားလုံး",
+      "continue": "ဆက်လောင်းမည်",
+      "copied": "စလစ်နံပါတ် ကူးယူပြီး",
+      "copyFailed": "စလစ်နံပါတ် ကူးယူ၍ မရပါ"
+    },
+    "slips": {
+      "title": "စလစ်အားလုံး",
+      "loading": "စလစ်များ ရယူနေသည်…",
+      "emptyTitle": "စလစ် မရှိသေးပါ",
+      "emptyDescription": "ထီတစ်ခု ရွေးပြီး ပထမစလစ်ကို တင်လိုက်ပါ။",
+      "goPlay": "ထီသို့ သွားမည်",
+      "stake": "လောင်းကြေး {amount}",
+      "summaryTitle": "စလစ်အကျဉ်းချုပ်",
+      "notFoundTitle": "စလစ် မတွေ့ပါ",
+      "notFoundDescription": "စလစ်ကို ဖယ်ရှားထားခြင်း သို့မဟုတ် လင့်ခ် မမှန်ခြင်း ဖြစ်နိုင်ပါသည်။",
+      "viewAll": "စလစ်အားလုံး ကြည့်မည်",
+      "tabs": {
+        "pending": "လုပ်ဆောင်နေဆဲ",
+        "history": "မှတ်တမ်း",
+        "aria": "စလစ်အမျိုးအစား"
+      },
+      "filters": {
+        "aria": "စလစ်စစ်ထုတ်မှု",
+        "market": "ထီဈေးကွက်",
+        "result": "ရလဒ်",
+        "range": "ကာလ",
+        "allMarkets": "ဈေးကွက်အားလုံး",
+        "allResults": "ရလဒ်အားလုံး",
+        "today": "ယနေ့",
+        "days7": "7 ရက်",
+        "days30": "30 ရက်",
+        "custom": "ကိုယ်တိုင်သတ်မှတ်"
+      },
+      "status": {
+        "waitingDraw": "ဆုမဲဖွင့်ရန် စောင့်ဆိုင်း",
+        "waitingSettle": "ရလဒ်အတည်ပြုရန် စောင့်ဆိုင်း",
+        "won": "ဆုပေါက်",
+        "lost": "ဆုမပေါက်",
+        "void": "ပယ်ဖျက်ပြီး (ငွေပြန်အမ်း)"
+      },
+      "summary": {
+        "count": "စလစ် {count} စောင်",
+        "stake": "လောင်းကြေးစုစုပေါင်း {amount}",
+        "net": "အသားတင် အနိုင်/အရှုံး"
+      },
+      "card": {
+        "drawAt": "ဆုမဲဖွင့်ချိန် {date}",
+        "settledAt": "အတည်ပြုချိန် {date}"
+      },
+      "emptyPending": {
+        "title": "လုပ်ဆောင်နေဆဲ စလစ်မရှိပါ",
+        "description": "ပေးပို့ပြီး ရလဒ်မအတည်ပြုရသေးသော စလစ်များ ဤနေရာတွင် ပြပါမည်"
+      },
+      "emptyHistory": {
+        "title": "စလစ်မှတ်တမ်း မရှိသေးပါ",
+        "description": "ရလဒ်အတည်ပြုပြီးသော စလစ်များကို {days} ရက်အထိ သိမ်းဆည်းထားပါမည်"
+      },
+      "emptyFiltered": "ဤစစ်ထုတ်မှုနှင့် ကိုက်ညီသော စလစ်မရှိပါ",
+      "clearFilters": "စစ်ထုတ်မှုများ ရှင်းလင်းရန်",
+      "loadMore": "ထပ်ဖော်ပြရန်",
+      "loadingMore": "ဖွင့်နေသည်…",
+      "loadMoreError": "ထပ်မံဖွင့်၍မရပါ ပြန်ကြိုးစားပါ",
+      "loadError": "စလစ်များ ဖွင့်၍မရပါ",
+      "retentionNote": "မှတ်တမ်းကို {days} ရက်အထိ သိမ်းဆည်းထားသည်"
+    }
+  },
+  "wallet": {
+    "shared": {
+      "submitting": "တင်နေသည်...",
+      "copied": "ကူးယူပြီး",
+      "copyAccountNumber": "အကောင့်နံပါတ် ကူးယူမည်",
+      "currencyUnit": "ဘတ်"
+    },
+    "deposit": {
+      "title": "ငွေသွင်း",
+      "close": "ငွေသွင်းကို ပိတ်မည်",
+      "selectMethod": "ငွေသွင်းနည်း ရွေးပါ",
+      "methodsAria": "ငွေသွင်းနည်းများ",
+      "methodsLoading": "ငွေသွင်းနည်းများ ရယူနေသည်…",
+      "methodsError": "ငွေသွင်းနည်းများကို ရယူ၍ မရပါ",
+      "bankAccountLoading": "လက်ခံအကောင့် ရယူနေသည်…",
+      "bankAccountError": "လက်ခံအကောင့်ကို ရယူ၍ မရပါ",
+      "methods": {
+        "bank": {
+          "title": "ဘဏ်အကောင့်",
+          "subtitle": "ဘဏ်အကောင့်ဖြင့် လွှဲပါ"
+        },
+        "gateway": {
+          "title": "ငွေပေးချေမှု ဂိတ်ဝေး",
+          "subtitle": "ငွေပေးချေမှု ဂိတ်ဝေးဖြင့် ငွေသွင်းပါ"
+        },
+        "truemoney": {
+          "title": "TrueMoney Wallet",
+          "subtitle": "TrueMoney Wallet ဖြင့် ငွေသွင်းပါ"
+        }
+      },
+      "bank": {
+        "title": "ဘဏ်အကောင့်ဖြင့် ငွေသွင်းရန်",
+        "back": "ငွေသွင်းနည်းများသို့ ပြန်မည်",
+        "bankLabel": "ဘဏ်",
+        "accountName": "အကောင့်အမည်",
+        "accountNumber": "အကောင့်နံပါတ်",
+        "amountLabel": "ငွေသွင်းပမာဏ",
+        "quickAmount": "အမြန်ပမာဏများ",
+        "quickAmountHint": "ပမာဏတစ်ခု ရွေးပါ သို့မဟုတ် ကိုယ်တိုင်ထည့်ပါ",
+        "next": "ရှေ့ဆက်"
+      },
+      "confirm": {
+        "title": "ငွေသွင်း အတည်ပြုရန်",
+        "back": "ပမာဏပြင်ရန် ပြန်မည်",
+        "step": "အဆင့် {current} / {total}",
+        "transferAmount": "လွှဲရမည့်ပမာဏ",
+        "accountNameLabel": "အကောင့်အမည်- ",
+        "accountNumberLabel": "အကောင့်နံပါတ်- ",
+        "sampleNote": "နမူနာအကောင့်အချက်အလက်",
+        "slipTitle": "ငွေလွှဲပြေစာ ပူးတွဲပါ",
+        "slipPick": "ပြေစာပူးတွဲရန် နှိပ်ပါ",
+        "slipChange": "ပုံပြောင်းရန် ထပ်နှိပ်ပါ",
+        "slipFromDevice": "စက်ထဲမှ ပုံတစ်ပုံ ရွေးပါ",
+        "slipHint": "ငွေလွှဲပြီးမှ ပြေစာကို ပူးတွဲပါ",
+        "submit": "ငွေသွင်း အတည်ပြု"
+      },
+      "finalConfirm": {
+        "title": "ငွေသွင်းတောင်းဆိုမှု တင်မလား။",
+        "description": "တင်မည့်အချိန်မတိုင်မီ ပမာဏနှင့် ပြေစာကို ပြန်စစ်ပါ",
+        "confirm": "ငွေသွင်းတင်မည်",
+        "amountLabel": "ငွေသွင်းပမာဏ"
+      }
+    },
+    "withdraw": {
+      "title": "ငွေထုတ်",
+      "close": "ငွေထုတ်ကို ပိတ်မည်",
+      "accountLoading": "လက်ခံအကောင့် ရယူနေသည်…",
+      "accountError": "လက်ခံအကောင့်ကို ရယူ၍ မရပါ",
+      "changeAccount": "လက်ခံအကောင့် ပြောင်းမည်",
+      "transferToYourAccount": "သင့်အကောင့်သို့ လွှဲပေးမည်",
+      "amountLabel": "ငွေထုတ်ပမာဏ",
+      "available": "ထုတ်နိုင်ငွေ ฿{amount}",
+      "withdrawAll": "အားလုံးထုတ်မည်",
+      "quickAmountHint": "ပမာဏကို နှိပ်၍ ပြင်ပါ",
+      "submit": "ငွေထုတ် အတည်ပြု",
+      "confirm": {
+        "title": "ငွေထုတ်တောင်းဆိုမှု တင်မလား။",
+        "description": "{bank} {account} သို့ လွှဲပေးမည်",
+        "confirm": "ငွေထုတ် အတည်ပြု",
+        "amountLabel": "ငွေထုတ်ပမာဏ"
+      }
+    },
+    "pending": {
+      "deposit": {
+        "title": "ငွေသွင်း စောင့်ဆိုင်းဆဲ",
+        "subtitle": "သင့်ငွေလွှဲမှုနှင့် တိုက်ဆိုင်စစ်ဆေးရန် စောင့်နေသည်"
+      },
+      "withdraw": {
+        "title": "ငွေထုတ် စောင့်ဆိုင်းဆဲ",
+        "subtitle": "သင့်တောင်းဆိုမှုကို လုပ်ဆောင်နေသည်"
+      },
+      "rows": {
+        "channel": "နည်းလမ်း",
+        "reference": "ကိုးကားနံပါတ်",
+        "transactionAt": "ရက်စွဲ",
+        "receivingAccount": "လက်ခံအကောင့်"
+      },
+      "close": "ပိတ်မည်",
+      "done": "ပြီးပြီ",
+      "viewHistory": "ငွေစာရင်းမှတ်တမ်း ကြည့်မည်",
+      "copyReference": "ကိုးကားနံပါတ် ကူးယူမည်",
+      "referenceCopied": "ကိုးကားနံပါတ် ကူးယူပြီး",
+      "referenceCopyFailed": "ကိုးကားနံပါတ် ကူးယူ၍ မရပါ"
+    }
+  },
+  "transactions": {
+    "title": "ငွေစာရင်းမှတ်တမ်း",
+    "pageLoading": "ရယူနေသည်...",
+    "kindTabs": {
+      "aria": "ငွေစာရင်းအမျိုးအစား",
+      "deposit": "ငွေသွင်း",
+      "withdraw": "ငွေထုတ်",
+      "promotion": "ပရိုမိုးရှင်း",
+      "bet": "လောင်းကြေး"
+    },
+    "filter": {
+      "label": "ရက်စွဲ ရွေးပါ",
+      "openCalendar": "ပြက္ခဒိန် ဖွင့်မည်",
+      "clear": "ရှင်းမည်",
+      "search": "ရှာမည်"
+    },
+    "calendar": {
+      "title": "ရက်စွဲအပိုင်းအခြား ရွေးပါ",
+      "close": "ပိတ်မည်",
+      "cancel": "ပယ်ဖျက်",
+      "confirm": "အတည်ပြု"
+    },
+    "status": {
+      "completed": "အောင်မြင်",
+      "pending": "စောင့်ဆိုင်းဆဲ",
+      "failed": "မအောင်မြင်"
+    },
+    "betType": {
+      "bet": "လောင်း",
+      "result": "ရလဒ်"
+    },
+    "columns": {
+      "amount": "ပမာဏ",
+      "channel": "နည်းလမ်း",
+      "account": "အကောင့်",
+      "createdAt": "ရက်စွဲနှင့် အချိန်",
+      "status": "အခြေအနေ",
+      "detail": "အသေးစိတ်",
+      "completedAt": "ပြီးစီးချိန်",
+      "promotionName": "ပရိုမိုးရှင်း",
+      "playStart": "စတင်ရက်",
+      "playEnd": "ပြီးဆုံးရက်",
+      "freeSpins": "Free Spins",
+      "perRound": "တစ်ပွဲလျှင်",
+      "provider": "ပံ့ပိုးသူ",
+      "gameName": "ဂိမ်း",
+      "expiresWithin": "သက်တမ်းကုန်ရန်",
+      "game": "ဂိမ်း",
+      "date": "ရက်စွဲ",
+      "time": "အချိန်",
+      "type": "အမျိုးအစား",
+      "betAmount": "ပမာဏ",
+      "openingBalance": "အစလက်ကျန်",
+      "closingBalance": "အဆုံးလက်ကျန်"
+    },
+    "empty": "ဒေတာ မတွေ့ပါ",
+    "paginationAria": "လောင်းကြေးမှတ်တမ်း စာမျက်နှာများ",
+    "loginRequired": "ငွေစာရင်းကြည့်ရန် ဝင်ရောက်ပါ",
+    "loadError": "ငွေစာရင်းကို ရယူ၍ မရပါ",
+    "retry": "ထပ်ကြိုးစားမည်",
+    "loading": "ငွေစာရင်း ရယူနေသည်…",
+    "summary": {
+      "depositTotal": "ငွေသွင်းစုစုပေါင်း-",
+      "withdrawTotal": "ငွေထုတ်စုစုပေါင်း-",
+      "promotionClaims": "ထုတ်ယူထားသော ပရိုမိုးရှင်း-",
+      "winLossTotal": "အနိုင်/အရှုံးစုစုပေါင်း-",
+      "stakeTotal": "လောင်းကြေးစုစုပေါင်း-"
+    }
+  },
+  "profile": {
+    "logout": "ထွက်ရန်",
+    "retry": "ထပ်ကြိုးစားမည်",
+    "backHome": "ပင်မစာမျက်နှာသို့ ပြန်မည်",
+    "field": {
+      "copy": "ကူးယူ",
+      "edit": "ပြင်မည်"
+    },
+    "account": {
+      "title": "အကောင့်အချက်အလက်",
+      "loading": "အကောင့်အချက်အလက် ရယူနေသည်…",
+      "loadErrorTitle": "အကောင့်အချက်အလက်ကို ရယူ၍ မရပါ",
+      "loadErrorDescription": "ထပ်ကြိုးစားကြည့်ပါ။ မရသေးပါက ထွက်ပြီး ပြန်ဝင်ပါ။",
+      "tabs": {
+        "personal": "ကိုယ်ရေးအချက်အလက်",
+        "bank": "ဘဏ်အကောင့်"
+      },
+      "gameUser": "ဂိမ်းအသုံးပြုသူအမည်",
+      "copyGameUser": "ဂိမ်းအသုံးပြုသူအမည် ကူးယူမည်",
+      "gameUserCopied": "ဂိမ်းအသုံးပြုသူအမည် ကူးယူပြီး",
+      "copyFailed": "ကူးယူ၍ မရပါ",
+      "password": "စကားဝှက်",
+      "changePassword": "စကားဝှက် ပြောင်းမည်",
+      "transactionHistory": "ငွေစာရင်းမှတ်တမ်း",
+      "transactionHistoryHint": "ငွေသွင်း · ငွေထုတ် · လောင်းကြေး"
+    },
+    "avatar": {
+      "change": "ပရိုဖိုင်ပုံ ပြောင်းမည်",
+      "tapToChange": "ပုံကို နှိပ်၍ ပြောင်းပါ",
+      "pickerTitle": "ပရိုဖိုင်ပုံ ရွေးပါ",
+      "pickerDescription": "ဇာတ်ကောင်တစ်ခု ရွေးပါ — နှိပ်လိုက်သည်နှင့် သိမ်းပါမည်",
+      "saveFailed": "သိမ်း၍ မရပါ။ ထပ်ကြိုးစားပါ။",
+      "close": "ပိတ်မည်",
+      "srLabel": "{name} ၏ ပရိုဖိုင်ပုံ",
+      "presetName": "ဇာတ်ကောင် {n}"
+    },
+    "hub": {
+      "navAriaLabel": "ပရိုဖိုင်မီနူး",
+      "vipLevel": "VIP အဆင့်",
+      "transactions": "ငွေသွင်း & ငွေထုတ်",
+      "myDiamonds": "ကျွန်ုပ်၏ Gems",
+      "lossRebate": "ရှုံးငွေပြန်အမ်း ဘောနပ်စ်",
+      "affiliate": "ကော်မရှင်လက်ကျန်",
+      "activePromotion": "လက်ရှိ ပရိုမိုးရှင်း",
+      "greeting": "မင်္ဂလာပါ {name}",
+      "joinedAt": "စာရင်းသွင်းသည့်ရက်- {date}",
+      "playerId": "ကစားသူ ID- {id}",
+      "copyPlayerId": "ကစားသူ ID ကူးယူမည်",
+      "playerIdCopied": "ကစားသူ ID ကူးယူပြီး",
+      "copyPlayerIdFailed": "ID ကူးယူ၍ မရပါ"
+    },
+    "referralInvite": {
+      "title": "သူငယ်ချင်းဖိတ်၍ ဘောနပ်စ်ရယူပါ",
+      "description": "သင့်လင့်ခ်ကို သူငယ်ချင်းများနှင့် မျှဝေပြီး သူတို့ကစားသမျှမှ ဝေစုရယူပါ",
+      "linkLabel": "ဖိတ်ခေါ်လင့်ခ်",
+      "copyLink": "ဖိတ်ခေါ်လင့်ခ် ကူးယူမည်",
+      "linkCopied": "လင့်ခ် ကူးယူပြီး",
+      "copyLinkFailed": "လင့်ခ် ကူးယူ၍ မရပါ"
+    },
+    "summary": {
+      "copyId": "ID ကူးယူ",
+      "idCopied": "ID ကူးယူပြီး",
+      "copyIdFailed": "ID ကူးယူ၍ မရပါ",
+      "phoneVerified": "ဖုန်းအတည်ပြုပြီး"
+    },
+    "dashboard": {
+      "title": "စနစ်အနှစ်ချုပ် / ဒက်ရှ်ဘုတ်",
+      "subtitle": "အဓိကစနစ်ဒေတာများ၏ အချိန်နှင့်တစ်ပြေးညီ အကျဉ်းချုပ်",
+      "dateRange": "2023 ဒီဇင်ဘာ 12 ရက်၊ 00:00 - 23:59",
+      "vsYesterday": "မနေ့နှင့် နှိုင်းယှဉ်",
+      "unitAccounts": "အကောင့်",
+      "period": {
+        "today": "ယနေ့",
+        "week": "အပတ်",
+        "month": "လ",
+        "year": "နှစ်"
+      },
+      "nav": {
+        "overview": "အနှစ်ချုပ်",
+        "betReports": "လောင်းကြေးအစီရင်ခံစာ",
+        "members": "အဖွဲ့ဝင်များ",
+        "marketing": "စျေးကွက်ရှာဖွေရေး",
+        "promotions": "ပရိုမိုးရှင်းများ",
+        "transactions": "ငွေစာရင်း",
+        "reports": "အစီရင်ခံစာများ",
+        "settings": "ဆက်တင်"
+      },
+      "kpi": {
+        "totalDeposit": "ငွေသွင်းစုစုပေါင်း",
+        "totalWithdraw": "ငွေထုတ်စုစုပေါင်း",
+        "netProfit": "အသားတင်အမြတ်",
+        "totalBets": "လောင်းကြေးစုစုပေါင်း",
+        "newMembers": "အဖွဲ့ဝင်အသစ်",
+        "firstDeposit": "ပထမဆုံးငွေသွင်း"
+      },
+      "chart": {
+        "deposit": "ငွေသွင်း (THB)",
+        "withdraw": "ငွေထုတ် (THB)",
+        "transactionCount": "ငွေစာရင်းအရေအတွက်",
+        "accountCount": "အကောင့်အရေအတွက်"
+      },
+      "journey": {
+        "title": "ဖောက်သည်ခရီးစဉ်",
+        "signUp": "စာရင်းသွင်းပြီး",
+        "firstDeposit": "ပထမဆုံးငွေသွင်း",
+        "firstBet": "လှုပ်ရှားသူ (ပထမဆုံးလောင်း)"
+      },
+      "trend": {
+        "title": "ယနေ့ ငွေသွင်း - ငွေထုတ်",
+        "subtitle": "အချိန်အလိုက် ငွေစာရင်းများ (Shadcn Chart)",
+        "net": "အသားတင်"
+      },
+      "banks": {
+        "title": "ဖောက်သည်ဘဏ်အချိုး",
+        "totalAccounts": "အကောင့်စုစုပေါင်း"
+      },
+      "channels": {
+        "title": "ဖောက်သည်များ ကျွန်ုပ်တို့ကို သိရှိပုံ",
+        "channel": "လမ်းကြောင်း",
+        "customers": "ဖောက်သည်များ",
+        "share": "အချိုး"
+      },
+      "activeHours": {
+        "title": "ဖောက်သည် လှုပ်ရှားချိန်များ"
+      },
+      "depositDistribution": {
+        "title": "ဖောက်သည် ငွေသွင်းဖြန့်ဖြူးမှု"
+      },
+      "hourlyMembers": {
+        "title": "နာရီအလိုက် အဖွဲ့ဝင်အသစ်"
+      }
+    }
+  },
+  "vip": {
+    "tabs": {
+      "ariaLabel": "VIP မီနူး",
+      "myLevel": "ကျွန်ုပ်၏အဆင့်",
+      "rank": "အဆင့်များ",
+      "benefits": "အကျိုးကျေးဇူး"
+    },
+    "status": {
+      "loading": "ရယူနေသည်...",
+      "playerLoading": "VIP အချက်အလက် ရယူနေသည်…",
+      "playerError": "VIP အချက်အလက်ကို ရယူ၍ မရပါ",
+      "ranksLoading": "VIP အဆင့်များ ရယူနေသည်…",
+      "ranksError": "VIP အဆင့်များကို ရယူ၍ မရပါ",
+      "benefitsLoading": "အကျိုးကျေးဇူးများ ရယူနေသည်…",
+      "benefitsError": "အကျိုးကျေးဇူးများကို ရယူ၍ မရပါ",
+      "retry": "ထပ်ကြိုးစားမည်"
+    },
+    "level": {
+      "label": "အဆင့်",
+      "next": "နောက်အဆင့်",
+      "currentAriaLabel": "လက်ရှိ VIP အဆင့်",
+      "benefitsAndMaintainAriaLabel": "အကျိုးကျေးဇူးနှင့် အဆင့်ထိန်းသိမ်းမှု"
+    },
+    "rankStatus": {
+      "current": "လက်ရှိအဆင့်",
+      "cleared": "ပြည့်မီပြီး",
+      "locked": "မရောက်သေးပါ"
+    },
+    "carousel": {
+      "previous": "ယခင်အဆင့်",
+      "next": "နောက်အဆင့်",
+      "turnoverTarget": "လောင်းကြေးပမာဏ {amount}"
+    },
+    "progress": {
+      "levelUpTo": "VIP {level} သို့ တက်ရန်",
+      "bothRequired": "လိုအပ်ချက်နှစ်ခုလုံး ပြည့်မီရပါမည်",
+      "overallAriaLabel": "စုစုပေါင်းတိုးတက်မှု {percent} ရာခိုင်နှုန်း",
+      "deposit": "ငွေသွင်း",
+      "turnover": "လောင်းကြေးပမာဏ",
+      "target": "ပန်းတိုင် {amount}",
+      "complete": "ပြီးစီး",
+      "remaining": "{amount} လိုသေးသည်"
+    },
+    "maintain": {
+      "title": "VIP အဆင့် ထိန်းသိမ်းရန်",
+      "subtitleWithDowngrade": "နှစ်ခုလုံးပြည့်မီပါ၊ မဟုတ်ပါက VIP {level} သို့ ကျမည်",
+      "daysRemaining": "ရက်ကျန်"
+    },
+    "benefitsTable": {
+      "title": "အဆင့်အလိုက် အကျိုးကျေးဇူး",
+      "scrollHint": "အဆင့်ပိုကြည့်ရန် ဘေးသို့ဆွဲပါ"
+    },
+    "benefitRows": {
+      "cashback": "ဘောနပ်စ် ငွေပြန်အမ်း",
+      "rolling": "ဘောနပ်စ် Rolling",
+      "diamondDeposit": "ငွေသွင်းမှ Gems",
+      "fastWithdraw": "အမြန်ငွေထုတ်",
+      "vipManager": "VIP မန်နေဂျာ",
+      "upgradeBonus": "အဆင့်တက်ဘောနပ်စ်",
+      "depositCondition": "ငွေသွင်းလိုအပ်ချက်",
+      "turnoverCondition": "လောင်းကြေးပမာဏ လိုအပ်ချက်"
+    },
+    "benefitValues": {
+      "faster": "✓ ပိုမြန်",
+      "max": "✓ အမြင့်ဆုံး",
+      "notRequired": "မလိုပါ"
+    },
+    "myLevelBenefits": {
+      "cashback": "ငွေပြန်အမ်း",
+      "rolling": "Rolling",
+      "diamondDeposit": "ငွေသွင်း Gems"
+    },
+    "missions": {
+      "login": "ဝင်ရောက်ရန်",
+      "deposit": "ငွေသွင်း",
+      "play": "ကစား",
+      "unitDays": "ရက်",
+      "unitTimes": "ကြိမ်"
+    }
+  },
+  "referral": {
+    "pageTitle": "သူငယ်ချင်းဖိတ်ရန်",
+    "tabs": {
+      "ariaLabel": "ဖိတ်ခေါ်မှုမီနူး",
+      "overview": "အနှစ်ချုပ်",
+      "users": "ဖိတ်ထားသူများ",
+      "earning": "ဝင်ငွေ"
+    },
+    "status": {
+      "overviewLoading": "ဖိတ်ခေါ်မှုအချက်အလက် ရယူနေသည်…",
+      "overviewError": "ဖိတ်ခေါ်မှုအချက်အလက်ကို ရယူ၍ မရပါ",
+      "earningsLoading": "ဝင်ငွေ ရယူနေသည်…",
+      "earningsError": "ဝင်ငွေကို ရယူ၍ မရပါ",
+      "usersLoading": "သူငယ်ချင်းစာရင်း ရယူနေသည်…",
+      "usersError": "သူငယ်ချင်းစာရင်းကို ရယူ၍ မရပါ"
+    },
+    "loginPrompt": {
+      "title": "ဖိတ်ခေါ်လင့်ခ်ကြည့်ရန် ဝင်ရောက်ပါ",
+      "description": "ဝင်ရောက်ပြီးနောက် သင့်ဖိတ်ခေါ်လင့်ခ်နှင့် ဝင်ငွေ ပေါ်လာပါမည်"
+    },
+    "promo": {
+      "ariaLabel": "ဖိတ်ခေါ်မှု ပရိုမိုးရှင်း",
+      "title": "သူငယ်ချင်းဖိတ်၍ အဆင့် 2 ဆင့်ဖြင့် ရှာဖွေပါ",
+      "description": "သင့်လင့်ခ်ကို မျှဝေပြီး သူငယ်ချင်းများ ကစားသမျှမှ ဝေစုရယူပါ"
+    },
+    "link": {
+      "title": "သင့်ဖိတ်ခေါ်လင့်ခ်",
+      "copied": "လင့်ခ် ကူးယူပြီး",
+      "copyFailed": "လင့်ခ် ကူးယူ၍ မရပါ"
+    },
+    "stats": {
+      "title": "သင့်စာရင်းအင်း",
+      "friends": "ဝင်ရောက်လာသော သူငယ်ချင်းများ",
+      "totalTurnover": "လောင်းကြေးပမာဏ စုစုပေါင်း",
+      "totalEarnings": "ဝင်ငွေစုစုပေါင်း"
+    },
+    "tiers": {
+      "title": "အဆင့် 2 ဆင့်မှ ရှာဖွေပါ",
+      "description": "သင့်လင့်ခ်ကို မျှဝေပြီး သင့်ကွန်ရက်၏ လောင်းကြေးပမာဏအပေါ် ကော်မရှင်ရယူပါ",
+      "rateHint": "လောင်းကြေးပမာဏမှ",
+      "tier1": {
+        "title": "အဆင့် 1 — တိုက်ရိုက်သူငယ်ချင်း",
+        "subtitle": "သင့်လင့်ခ်ဖြင့် စာရင်းသွင်းသော သူငယ်ချင်းများ"
+      },
+      "tier2": {
+        "title": "အဆင့် 2 — သူငယ်ချင်း၏သူငယ်ချင်း",
+        "subtitle": "သင့်သူငယ်ချင်းများ ဖိတ်ထားသူများ"
+      }
+    },
+    "checks": {
+      "realtime": "အချိန်နှင့်တစ်ပြေးညီ တွက်ချက်",
+      "lifetimeCommission": "တစ်သက်တာ ကော်မရှင်",
+      "minWithdraw": "အနည်းဆုံးငွေထုတ် ฿50.00"
+    },
+    "steps": {
+      "title": "အဆင့် 3 ဆင့်ဖြင့် လွယ်လွယ်စတင်ပါ",
+      "copy": "လင့်ခ်ကူးယူ",
+      "share": "သူငယ်ချင်းများနှင့် မျှဝေ",
+      "earn": "ကော်မရှင်ရယူ"
+    },
+    "periods": {
+      "ariaLabel": "ဝင်ငွေကာလ",
+      "all": "အားလုံး",
+      "today": "ယနေ့",
+      "lastWeek": "ပြီးခဲ့သောရက်သတ္တပတ်",
+      "lastMonth": "ပြီးခဲ့သောလ"
+    },
+    "earning": {
+      "claimableIncome": "ထုတ်ယူနိုင်သော ဝင်ငွေ",
+      "claimableBonus": "ထုတ်ယူနိုင်သော ဘောနပ်စ်",
+      "claim": "ဘောနပ်စ် ထုတ်ယူမည်",
+      "receivedTotal": "စုစုပေါင်း ထုတ်ယူပြီး {amount}",
+      "received": "ထုတ်ယူပြီး {amount}",
+      "periodSummaryAriaLabel": "ရွေးထားသောကာလ၏ ဝင်ငွေအကျဉ်းချုပ်",
+      "networkIncomePeriod": "ကွန်ရက်ဝင်ငွေ (ရွေးထားသောကာလ)",
+      "totalAccumulated": "စုစုပေါင်း {amount}",
+      "detailsTitle": "ဝင်ငွေအသေးစိတ်",
+      "historyTitle": "ဘောနပ်စ်မှတ်တမ်း",
+      "bonusAmount": "ဘောနပ်စ်ပမာဏ",
+      "date": "ရက်စွဲ",
+      "empty": "ဘောနပ်စ်မှတ်တမ်း မရှိသေးပါ",
+      "paginationAriaLabel": "ဘောနပ်စ်မှတ်တမ်း စာမျက်နှာများ"
+    },
+    "users": {
+      "registeredAt": "စာရင်းသွင်းသည့်ရက်",
+      "empty": "သင့်လင့်ခ်ဖြင့် စာရင်းသွင်းသူ မရှိသေးပါ",
+      "paginationAriaLabel": "သူငယ်ချင်းစာရင်း စာမျက်နှာများ"
+    },
+    "pagination": {
+      "showing": "{total} ခုအနက် {start}–{end} ကို ပြထားသည်"
+    }
+  },
+  "cashback": {
+    "pageTitle": "ငွေပြန်အမ်း",
+    "tabs": {
+      "ariaLabel": "ငွေပြန်အမ်းအမျိုးအစား",
+      "play": "ငွေပြန်အမ်း",
+      "loss": "ရှုံးငွေပြန်အမ်း"
+    },
+    "status": {
+      "panelsLoading": "ငွေပြန်အမ်း ရယူနေသည်…",
+      "panelsError": "ငွေပြန်အမ်းကို ရယူ၍ မရပါ",
+      "lossRebateLoading": "ရှုံးငွေပြန်အမ်း ရယူနေသည်…",
+      "lossRebateError": "ရှုံးငွေပြန်အမ်းကို ရယူ၍ မရပါ"
+    },
+    "panel": {
+      "playSubtitle": "သင့်လောင်းကြေးပမာဏအပေါ် ငွေပြန်အမ်း",
+      "lossSubtitle": "သင့်အသားတင်ရှုံးငွေအပေါ် ပြန်အမ်းငွေ",
+      "nothingToClaim": "ထုတ်ယူစရာ မရှိသေးပါ",
+      "claimed": "ထုတ်ယူပြီး",
+      "cycleDaily": "နေ့စဉ် 00:00 တွင်",
+      "claimableAmount": "ထုတ်ယူနိုင်သောပမာဏ",
+      "accumulatedThisCycle": "စုဆောင်းထားသည် (ယခုအပတ်စဉ်)",
+      "refresh": "ပမာဏ ပြန်လည်ရယူမည်"
+    },
+    "periods": {
+      "ariaLabel": "ငွေပြန်အမ်း အကျဉ်းချုပ် ကာလ",
+      "all": "အားလုံး",
+      "today": "ယနေ့",
+      "lastWeek": "ပြီးခဲ့သောရက်သတ္တပတ်",
+      "lastMonth": "ပြီးခဲ့သောလ"
+    },
+    "rules": {
+      "title": "စည်းကမ်းချက် အသေးစိတ်",
+      "item": "ကိစ္စရပ်",
+      "value": "တန်ဖိုး",
+      "rate": "နှုန်း",
+      "min": "အနည်းဆုံး",
+      "maxPerClaim": "တစ်ကြိမ်လျှင် အများဆုံး",
+      "cycle": "တွက်ချက်သည့် အပတ်စဉ်"
+    },
+    "lossRebate": {
+      "statusCalculated": "တွက်ချက်ပြီး",
+      "historyTitle": "ရှုံးငွေပြန်အမ်း မှတ်တမ်း",
+      "selectMonth": "လ ရွေးပါ",
+      "period": "ကာလ",
+      "netLoss": "အသားတင်ရှုံးငွေ",
+      "bonusReceived": "ရရှိသော ဘောနပ်စ်",
+      "receivedDate": "ရရှိသည့်ရက်",
+      "empty": "ရွေးထားသောလအတွက် မှတ်တမ်းမရှိပါ",
+      "paginationAriaLabel": "ရှုံးငွေပြန်အမ်း မှတ်တမ်း စာမျက်နှာများ",
+      "termsTitle": "ရှုံးငွေပြန်အမ်း စည်းကမ်းချက်များ",
+      "terms": {
+        "basis": "ရှုံးငွေပြန်အမ်းကို အပတ်စဉ်တစ်ခုစီအတွင်း အသားတင်ရှုံးငွေအရ တွက်ချက်ပါသည်။",
+        "claimWindow": "ဘောနပ်စ်များကို ထုတ်ယူခွင့်ကာလအတွင်း ထုတ်ယူရပါမည်၊ မဟုတ်ပါက သက်တမ်းကုန်ပါမည်။",
+        "subjectToChange": "နှုန်းထားများနှင့် စည်းကမ်းချက်များကို ဝက်ဘ်ဆိုက်၏ ကြေညာချက်အတိုင်း ပြောင်းလဲနိုင်ပါသည်။",
+        "sampleData": "ဤစာမျက်နှာရှိ ဒေတာများသည် ပြသရန် နမူနာဒေတာ ဖြစ်ပါသည်။"
+      },
+      "formula": {
+        "title": "တွက်ချက်ပုံ အသေးစိတ်",
+        "eligibleNetLoss": "လျှောက်ထားနိုင်သော အသားတင်ရှုံးငွေ",
+        "rate": "ရှုံးငွေပြန်အမ်းနှုန်း",
+        "bonus": "ရှုံးငွေပြန်အမ်း ဘောနပ်စ်",
+        "sampleNote": "ပြထားသော ကိန်းဂဏန်းနှင့် နှုန်းထားများသည် နမူနာများ ဖြစ်ပါသည်။"
+      }
+    },
+    "pagination": {
+      "showing": "{total} ခုအနက် {start}–{end} ကို ပြထားသည်"
+    }
+  },
+  "rewards": {
+    "actions": {
+      "claim": "ထုတ်ယူ",
+      "close": "ပိတ်မည်",
+      "ok": "အိုကေ"
+    },
+    "status": {
+      "claimed": "ထုတ်ယူပြီး"
+    },
+    "hub": {
+      "title": "ဆုလာဘ်များ",
+      "loading": "ဆုလာဘ်များ ရယူနေသည်…",
+      "loadError": "ဆုလာဘ်များကို ရယူ၍ မရပါ",
+      "pointsLoading": "ပွိုင့်များ ရယူနေသည်…",
+      "pointsLoadError": "ဆုလာဘ်ဒေတာကို ရယူ၍ မရပါ",
+      "bannersAria": "ဆုလာဘ်ပရိုမိုးရှင်းများ",
+      "shortcutsAria": "ဆုလာဘ်မီနူး",
+      "summaryAria": "ခရက်ဒစ်နှင့် ပွိုင့်လက်ကျန်",
+      "totalCredits": "ခရက်ဒစ်စုစုပေါင်း",
+      "pointsBalance": "ပွိုင့်လက်ကျန်"
+    },
+    "shortcuts": {
+      "luckyBox": "ကံကောင်းသေတ္တာ",
+      "randomCard": "ကံစမ်းကတ်",
+      "freespins": "Free Spins / ချစ်ပ်များ"
+    },
+    "banners": {
+      "luckyBoxSubtitle": "ပွိုင့်ဖြင့် ကံကောင်းသေတ္တာ လဲယူပါ",
+      "randomCardSubtitle": "ကတ်လှန်၍ ဆုများ ရယူပါ",
+      "termsLabel": "စည်းကမ်းနှင့် သတ်မှတ်ချက်များ"
+    },
+    "redeemBoard": {
+      "subtitle": "ဆုများ ရယူပါ",
+      "pointsLabel": "ပွိုင့်",
+      "drawCost": "တစ်ကြိမ်လျှင် ပွိုင့် {cost}",
+      "startDraw": "စတင်ထုတ်မည်",
+      "history": "လဲယူမှုမှတ်တမ်း"
+    },
+    "luckyBox": {
+      "pageTitle": "ကံကောင်းသေတ္တာ",
+      "loading": "ကံကောင်းသေတ္တာ ရယူနေသည်…",
+      "loadError": "ကံကောင်းသေတ္တာကို ရယူ၍ မရပါ"
+    },
+    "randomCard": {
+      "pageTitle": "ကံစမ်းကတ်",
+      "loading": "ကံစမ်းကတ် ရယူနေသည်…",
+      "loadError": "ကံစမ်းကတ်ကို ရယူ၍ မရပါ"
+    },
+    "freespins": {
+      "title": "Free Spins / ချစ်ပ်များ",
+      "comingSoonDesc": "ဤလုပ်ဆောင်ချက်ကို ပြုလုပ်နေဆဲဖြစ်သည် — မကြာမီ ပွိုင့်ဖြင့် လဲယူနိုင်မည်"
+    },
+    "checkIn": {
+      "title": "နေ့စဉ် Check-in",
+      "loading": "Check-in ရယူနေသည်…",
+      "loadError": "Check-in ကို ရယူ၍ မရပါ",
+      "subtitle": "နေ့တိုင်း Check-in လုပ်၍ ဘောနပ်စ် Gems ရယူပါ",
+      "bonusBefore": "ထပ်",
+      "bonusDays": {
+        "other": "{count} ရက်"
+      },
+      "bonusAfter": "ဝင်ရောက်လျှင် ဘောနပ်စ်",
+      "bonusGems": "{amount} Gems ရမည်",
+      "progressTotal": "/ {total} ရက်",
+      "dayStatus": {
+        "claimed": "ထုတ်ယူပြီး",
+        "today": "ထုတ်ယူ",
+        "locked": "လာမည့်"
+      },
+      "weekdays": {
+        "mon": "တနင်္လာ",
+        "tue": "အင်္ဂါ",
+        "wed": "ဗုဒ္ဓဟူး",
+        "thu": "ကြာသပတေး",
+        "fri": "သောကြာ",
+        "sat": "စနေ",
+        "sun": "တနင်္ဂနွေ"
+      },
+      "cumulativeTitle": "ဆက်တိုက်ဆုလာဘ်",
+      "cumulativeDesc": "Check-in ပန်းတိုင်များ ပြည့်မီ၍ ဘောနပ်စ် Gems အများအပြား ရယူပါ",
+      "milestoneGems": "{amount} Gems",
+      "milestoneDays": "Check-in {days} ရက်",
+      "milestoneDialog": {
+        "title": "{days} ရက်ပြည့် Check-in ဆု",
+        "progress": "Check-in ပြီး {done}/{total} ရက်",
+        "claim": "ဆုထုတ်ယူရန်",
+        "claimed": "ဆုထုတ်ယူပြီး",
+        "daysLeft": "နောက်ထပ် {count} ရက် Check-in လုပ်ပါ"
+      },
+      "claimedToday": "ယနေ့ Check-in လုပ်ပြီး",
+      "claimToday": "ယနေ့ဆု ထုတ်ယူမည်",
+      "success": {
+        "title": "ဆု ထုတ်ယူပြီး",
+        "descBefore": "သင်ရရှိသည်မှာ",
+        "descAfter": "ဖြစ်သည်"
+      },
+      "desktop": {
+        "summaryAria": "Check-in အကျဉ်းချုပ်",
+        "progressAria": "Check-in တိုးတက်မှု",
+        "weekProgress": "ယခုအပတ် တိုးတက်မှု",
+        "daysUnit": "ရက်",
+        "claimTodayAria": "ယနေ့ဆု ထုတ်ယူမည်",
+        "claimToday": "ယနေ့ဆု ထုတ်ယူမည်",
+        "claimedToday": "ဆု ထုတ်ယူပြီး",
+        "streakAria": "7 ရက် တိုးတက်မှု",
+        "streakDay": "ရက် {day}",
+        "listTitle": "Check-in ဆုလာဘ်များ",
+        "dayTitle": "ရက် {day}",
+        "specialReward": "အထူးဆု",
+        "bonusDayDesc": "တစ်ပတ်လုံး Check-in လုပ်၍ ဘောနပ်စ်ခရက်ဒစ် ရယူပါ",
+        "dailyDesc": "နေ့စဉ် Check-in ဆု",
+        "locked": "လော့ခ်ချထား"
+      }
+    },
+    "wheel": {
+      "title": "ကံစမ်းဘီး",
+      "subtitle": "နေ့တိုင်းလှည့်၍ ဆုကြီးများ ရယူပါ",
+      "loading": "ကံစမ်းဘီး ရယူနေသည်…",
+      "loadError": "ကံစမ်းဘီးကို ရယူ၍ မရပါ",
+      "backHome": "ပင်မစာမျက်နှာသို့ ပြန်မည်",
+      "winMessage": "ဂုဏ်ယူပါသည်! သင် {prize} ကံထူးပါသည်",
+      "justNow": "ယခုလေးတင်",
+      "prizeKind": {
+        "gems": "Gems",
+        "credit": "ခရက်ဒစ်"
+      },
+      "gemsBalanceAria": "သင်၏ Gems လက်ကျန်",
+      "ticketsAria": "သင်၏ လက်မှတ်များ",
+      "spinAria": "ဘီးလှည့်မည်",
+      "methodTabsAria": "လှည့်နည်း ရွေးပါ",
+      "methodGems": "Gems ×{cost}",
+      "methodTicket": "လက်မှတ် ×{cost}",
+      "spinning": "လှည့်နေသည်…",
+      "spinNow": "ယခုလှည့်မည်",
+      "useTickets": {
+        "other": "လက်မှတ် {count} ခု သုံးမည်"
+      },
+      "useGems": "Gems {amount} သုံးမည်",
+      "noTickets": "လက်မှတ်မရှိပါ — Gems ဖြင့် လှည့်ကြည့်ပါ",
+      "notEnoughGems": "Gems မလုံလောက်ပါ — Gems ဖြည့်ပါ",
+      "hint": "ပျော်ရွှင်စွာလှည့်ပြီး နေ့တိုင်း ဆုများ ရယူပါ",
+      "sampleNote": "နမူနာဆုများနှင့် ပိုက်ဆံအိတ်လက်ကျန်",
+      "liveWinners": {
+        "title": "မကြာသေးမီ ကံထူးသူများ",
+        "gemsWon": "+{amount} Gems",
+        "received": "ရရှိ",
+        "gemsAmount": "{amount} Gems"
+      },
+      "history": {
+        "title": "ကျွန်ုပ်၏ လှည့်မှတ်တမ်း",
+        "usedGems": "Gems",
+        "usedTicket": "လက်မှတ်",
+        "prevPage": "ယခင်စာမျက်နှာ",
+        "nextPage": "နောက်စာမျက်နှာ"
+      }
+    },
+    "gemsStore": {
+      "title": "Gems ဆိုင်",
+      "loading": "Gems ဆိုင် ရယူနေသည်…",
+      "loadError": "Gems ဆိုင်ကို ရယူ၍ မရပါ",
+      "redeemHeading": "ခရက်ဒစ် လဲယူရန်",
+      "termsTitle": "လဲယူမှု စည်းကမ်းချက်များ",
+      "redeemShort": "လဲယူ",
+      "notEnoughShort": "မလောက်",
+      "redeem": "လဲယူ",
+      "redeemAria": "{credits} လဲယူမည်",
+      "notEnoughGems": "Gems မလုံလောက်ပါ",
+      "summary": {
+        "balanceLabel": "Gems လက်ကျန်",
+        "balanceAria": "Gems လက်ကျန် {amount}",
+        "today": "ယနေ့",
+        "thisWeek": "ယခုအပတ်"
+      },
+      "confirm": {
+        "title": "ခရက်ဒစ် {amount}",
+        "subtitle": "Gems {gems} သုံး၍ ခရက်ဒစ် {credits} လဲယူမည်",
+        "creditsLabel": "ခရက်ဒစ်",
+        "gemsUsed": "သုံးသော Gems",
+        "balanceAfter": "ကျန်လက်ကျန်",
+        "cancel": "ပယ်ဖျက်",
+        "confirm": "အတည်ပြု",
+        "processing": "လုပ်ဆောင်နေသည်…"
+      }
+    },
+    "activities": {
+      "title": "အီဗင့်များ",
+      "loading": "အီဗင့်များ ရယူနေသည်…",
+      "loadError": "အီဗင့်များကို ရယူ၍ မရပါ",
+      "listAria": "အီဗင့်စာရင်း",
+      "closeDetail": "အီဗင့်အသေးစိတ် ပိတ်မည်",
+      "viewDetails": "အသေးစိတ်ကြည့်ရန်",
+      "categoryTabsAria": "အီဗင့်အမျိုးအစားများ",
+      "categories": {
+        "slots": "စလော့",
+        "casino": "ကာစီနို"
+      },
+      "progress": {
+        "title": "သင့်လောင်းကြေးပမာဏ",
+        "current": "လက်ရှိလောင်းကြေးပမာဏ",
+        "rank1Target": "အဆင့် 1 ပန်းတိုင်",
+        "rewardCount": "ဆုများ {earned} / {cap}"
+      },
+      "tiers": {
+        "rank": "အဆင့်",
+        "turn": "လောင်းကြေးပမာဏ",
+        "bonus": "ဘောနပ်စ်",
+        "claim": "ထုတ်ယူ",
+        "notEligible": "မပြည့်မီပါ"
+      },
+      "rulesTitle": "အီဗင့်စည်းကမ်းနှင့် သတ်မှတ်ချက်များ"
+    }
+  },
+  "promotions": {
+    "title": "ပရိုမိုးရှင်းများ",
+    "loading": "ပရိုမိုးရှင်းများ ရယူနေသည်…",
+    "loadError": "ပရိုမိုးရှင်းများကို ရယူ၍ မရပါ",
+    "loadErrorDesc": "အင်တာနက်ကို စစ်ဆေးပြီး ထပ်ကြိုးစားပါ",
+    "retry": "ထပ်ကြိုးစားမည်",
+    "forYou": "သင့်အတွက် ပရိုမိုးရှင်းများ",
+    "filterAria": "ပရိုမိုးရှင်းများကို အမျိုးအစားအလိုက် စစ်ထုတ်ရန်",
+    "categories": {
+      "all": "အားလုံး",
+      "slots": "စလော့",
+      "casino": "ကာစီနို",
+      "sport": "အားကစား",
+      "newMember": "အဖွဲ့ဝင်သစ်",
+      "daily": "နေ့စဉ်",
+      "privilege": "အထူးအခွင့်အရေး"
+    },
+    "empty": {
+      "category": "ဤအမျိုးအစားတွင် ပရိုမိုးရှင်း မရှိသေးပါ",
+      "categoryHint": "ဤအမျိုးအစားတွင် ပရိုမိုးရှင်း မရှိသေးပါ — “အားလုံး” ကို ကြည့်ပါ",
+      "activitiesHint": "ဤအမျိုးအစားတွင် အီဗင့် မရှိသေးပါ — “အားလုံး” ကို ကြည့်ပါ"
+    },
+    "hub": {
+      "promotionsListAria": "ပရိုမိုးရှင်းစာရင်း",
+      "activitiesListAria": "အီဗင့်စာရင်း",
+      "selectedDetailAria": "ရွေးထားသော အသေးစိတ်"
+    },
+    "detail": {
+      "title": "ပရိုမိုးရှင်း အသေးစိတ်",
+      "heading": "အသေးစိတ်",
+      "loading": "အသေးစိတ် ရယူနေသည်…",
+      "close": "ပရိုမိုးရှင်းအသေးစိတ် ပိတ်မည်",
+      "notFound": "ပရိုမိုးရှင်းအသေးစိတ် မတွေ့ပါ",
+      "notFoundDesc": "ဤပရိုမိုးရှင်း ပြီးဆုံးသွားခြင်း သို့မဟုတ် ရယူ၍ မရခြင်း ဖြစ်နိုင်ပါသည်"
+    },
+    "mobile": {
+      "expires": "{date} တွင် ပြီးဆုံး",
+      "readTerms": "စည်းကမ်းချက်ဖတ်ရန်",
+      "readTermsAria": "{title} — စည်းကမ်းချက်ဖတ်ရန်"
+    }
+  }
+}

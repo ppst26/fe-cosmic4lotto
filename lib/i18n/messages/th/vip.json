@@ -1,0 +1,80 @@
+{
+  "tabs": {
+    "ariaLabel": "เมนู VIP",
+    "myLevel": "ระดับของฉัน",
+    "rank": "แร็งค์",
+    "benefits": "สิทธิประโยชน์"
+  },
+  "status": {
+    "loading": "กำลังโหลด...",
+    "playerLoading": "กำลังโหลดข้อมูล VIP…",
+    "playerError": "โหลดข้อมูล VIP ไม่สำเร็จ",
+    "ranksLoading": "กำลังโหลดระดับ VIP…",
+    "ranksError": "โหลดระดับ VIP ไม่สำเร็จ",
+    "benefitsLoading": "กำลังโหลดสิทธิประโยชน์…",
+    "benefitsError": "โหลดสิทธิประโยชน์ไม่สำเร็จ",
+    "retry": "ลองใหม่"
+  },
+  "level": {
+    "label": "ระดับ",
+    "next": "ระดับถัดไป",
+    "currentAriaLabel": "ระดับ VIP ปัจจุบัน",
+    "benefitsAndMaintainAriaLabel": "สิทธิประโยชน์และรักษาระดับ"
+  },
+  "rankStatus": {
+    "current": "ระดับปัจจุบัน",
+    "cleared": "ผ่านแล้ว",
+    "locked": "ยังไม่ถึง"
+  },
+  "carousel": {
+    "previous": "แรงค์ก่อนหน้า",
+    "next": "แรงค์ถัดไป",
+    "turnoverTarget": "เทิร์น {amount}"
+  },
+  "progress": {
+    "levelUpTo": "เลื่อนขึ้นสู่ VIP {level}",
+    "bothRequired": "ต้องครบทั้งสองเงื่อนไข",
+    "overallAriaLabel": "ความคืบหน้ารวม {percent} เปอร์เซ็นต์",
+    "deposit": "ฝาก",
+    "turnover": "เทิร์น",
+    "target": "เป้า {amount}",
+    "complete": "ครบแล้ว",
+    "remaining": "ขาดอีก {amount}"
+  },
+  "maintain": {
+    "title": "รักษาระดับ VIP",
+    "subtitleWithDowngrade": "ต้องครบทั้งคู่ ไม่เช่นนั้นลดเป็น VIP {level}",
+    "daysRemaining": "วันคงเหลือ"
+  },
+  "benefitsTable": {
+    "title": "สิทธิประโยชน์แต่ละระดับ",
+    "scrollHint": "เลื่อนเพื่อดูระดับเพิ่มเติม"
+  },
+  "benefitRows": {
+    "cashback": "Cashback พิเศษ",
+    "rolling": "Rolling พิเศษ",
+    "diamondDeposit": "เพชรจากฝาก",
+    "fastWithdraw": "ถอนด่วน",
+    "vipManager": "VIP Manager",
+    "upgradeBonus": "โบนัสอัปเกรด",
+    "depositCondition": "เงื่อนไขฝาก",
+    "turnoverCondition": "เงื่อนไขเทิร์น"
+  },
+  "benefitValues": {
+    "faster": "✓ เร็วขึ้น",
+    "max": "✓ สูงสุด",
+    "notRequired": "ไม่กำหนด"
+  },
+  "myLevelBenefits": {
+    "cashback": "Cashback",
+    "rolling": "Rolling",
+    "diamondDeposit": "เพชรจากฝาก"
+  },
+  "missions": {
+    "login": "ล็อกอิน",
+    "deposit": "ฝากเงิน",
+    "play": "เข้าเล่น",
+    "unitDays": "วัน",
+    "unitTimes": "ครั้ง"
+  }
+}

@@ -1,0 +1,1639 @@
+{
+  "auth": {
+    "login": "登录",
+    "signUp": "注册",
+    "signUpShort": "注册",
+    "logout": "退出登录",
+    "loginSheet": {
+      "close": "关闭登录",
+      "subtitle": "使用注册时的手机号码和密码登录",
+      "submitting": "登录中...",
+      "noAccount": "还没有账号？",
+      "success": "登录成功",
+      "failed": "登录失败"
+    },
+    "signUpSheet": {
+      "close": "关闭注册",
+      "welcome": "欢迎来到 XGAMBET",
+      "tagline": "开启属于您的精彩玩法",
+      "haveAccount": "已有账号？",
+      "submitting": "注册中...",
+      "success": "注册成功，欢迎加入！",
+      "failed": "注册失败",
+      "pickerClose": "关闭选择",
+      "loadingBanks": "正在加载银行…",
+      "banksFailed": "无法加载银行列表",
+      "loadingChannels": "正在加载渠道…",
+      "channelsFailed": "无法加载渠道列表"
+    },
+    "fields": {
+      "phone": "手机号码",
+      "phonePlaceholder": "请输入手机号码",
+      "password": "密码",
+      "passwordPlaceholder": "请输入密码",
+      "confirmPassword": "确认密码",
+      "confirmPasswordPlaceholder": "请再次输入密码",
+      "showPassword": "显示密码",
+      "hidePassword": "隐藏密码",
+      "firstName": "名",
+      "lastName": "姓",
+      "bankAccount": "银行账号",
+      "bankAccountPlaceholder": "账号",
+      "bank": "银行",
+      "bankPlaceholder": "选择银行",
+      "channel": "您是从哪里得知我们的？",
+      "channelPlaceholder": "选择渠道"
+    },
+    "validation": {
+      "phone": "手机号码须为以 0 开头的 10 位数字",
+      "passwordRequired": "请输入密码",
+      "passwordLength": "密码须为 6–32 个字符",
+      "passwordMismatch": "两次输入的密码不一致",
+      "firstName": "请输入名字（仅限字母）",
+      "lastName": "请输入姓氏（仅限字母）",
+      "bankAccount": "银行账号须为 10–12 位数字",
+      "bankRequired": "请选择银行",
+      "channelRequired": "请选择渠道"
+    },
+    "account": {
+      "title": "账户信息",
+      "profile": "个人资料",
+      "closeProfile": "关闭个人资料",
+      "loadingProfile": "正在加载个人资料…",
+      "profileFailed": "无法加载个人资料",
+      "loading": "正在加载账户信息…",
+      "failed": "无法加载账户信息",
+      "retryHint": "请重试。若仍无法解决，请退出登录后重新登录。"
+    },
+    "loginPrompt": {
+      "title": "登录后查看",
+      "description": "此内容仅限会员"
+    },
+    "logoutConfirm": {
+      "title": "退出登录？",
+      "description": "退出后，需重新登录才能使用此账号存款、取款或游戏",
+      "stay": "留下"
+    }
+  },
+  "cashback": {
+    "pageTitle": "返水",
+    "tabs": {
+      "ariaLabel": "返水类型",
+      "play": "返水",
+      "loss": "亏损返还"
+    },
+    "status": {
+      "panelsLoading": "正在加载返水…",
+      "panelsError": "无法加载返水",
+      "lossRebateLoading": "正在加载亏损返还…",
+      "lossRebateError": "无法加载亏损返还"
+    },
+    "panel": {
+      "playSubtitle": "按您的流水返还",
+      "lossSubtitle": "按您的净亏损返还",
+      "nothingToClaim": "暂无可领取金额",
+      "claimed": "已领取",
+      "cycleDaily": "每日 00:00",
+      "claimableAmount": "可领取金额",
+      "accumulatedThisCycle": "累计金额（本周期）",
+      "refresh": "刷新金额"
+    },
+    "periods": {
+      "ariaLabel": "返水统计周期",
+      "all": "全部",
+      "today": "今日",
+      "lastWeek": "上周",
+      "lastMonth": "上月"
+    },
+    "rules": {
+      "title": "条款详情",
+      "item": "项目",
+      "value": "内容",
+      "rate": "比例",
+      "min": "最低金额",
+      "maxPerClaim": "单次领取上限",
+      "cycle": "结算周期"
+    },
+    "lossRebate": {
+      "statusCalculated": "已结算",
+      "historyTitle": "亏损返还记录",
+      "selectMonth": "选择月份",
+      "period": "周期",
+      "netLoss": "净亏损",
+      "bonusReceived": "已获奖金",
+      "receivedDate": "领取日期",
+      "empty": "所选月份暂无记录",
+      "paginationAriaLabel": "亏损返还记录分页",
+      "termsTitle": "亏损返还条款",
+      "terms": {
+        "basis": "亏损返还根据每个周期内符合条件的净亏损计算。",
+        "claimWindow": "奖金须在领取期限内领取，逾期将失效。",
+        "subjectToChange": "比例及条款可能依网站公告调整。",
+        "sampleData": "本页数据为界面展示用的示例数据。"
+      },
+      "formula": {
+        "title": "计算详情",
+        "eligibleNetLoss": "符合条件的净亏损",
+        "rate": "亏损返还比例",
+        "bonus": "亏损返还奖金",
+        "sampleNote": "所示数字和比例仅为示例。"
+      }
+    },
+    "pagination": {
+      "showing": "显示第 {start}–{end} 条，共 {total} 条"
+    }
+  },
+  "common": {
+    "language": "语言",
+    "languagePicker": {
+      "title": "选择语言",
+      "description": "更改网站显示语言",
+      "close": "关闭语言选择"
+    },
+    "close": "关闭",
+    "retry": "重试",
+    "loading": "加载中…",
+    "confirm": "确认",
+    "cancel": "取消",
+    "processing": "处理中…",
+    "back": "返回",
+    "next": "下一步",
+    "backStep": "返回上一步",
+    "loadFailed": "无法加载数据",
+    "emptyCategory": "该分类暂无内容",
+    "refCode": "参考编号：{code}",
+    "units": {
+      "people": {
+        "other": "{n} 人"
+      },
+      "records": {
+        "other": "{n} 条"
+      },
+      "credits": {
+        "other": "{n} 额度"
+      },
+      "gems": {
+        "other": "{n} Gems"
+      },
+      "million": "{n}M"
+    },
+    "carousel": {
+      "prev": "向后滚动 {title}",
+      "next": "向前滚动 {title}"
+    },
+    "pagination": {
+      "label": "分页",
+      "prev": "上一页",
+      "page": "第 {page} 页",
+      "next": "下一页"
+    },
+    "notifications": {
+      "title": "通知",
+      "close": "关闭通知",
+      "tabsLabel": "通知类型",
+      "tabs": {
+        "all": "全部",
+        "privileges": "专属福利",
+        "messages": "消息"
+      },
+      "empty": "暂无新消息",
+      "contactChannels": "联系渠道"
+    },
+    "coupon": {
+      "title": "兑换优惠券",
+      "close": "关闭优惠券兑换",
+      "description": "输入代码即可兑换免费额度",
+      "codeLabel": "优惠券代码",
+      "codePlaceholder": "请输入优惠券代码",
+      "codeRequired": "请输入优惠券代码",
+      "submit": "兑换免费额度",
+      "submitting": "检查中..."
+    }
+  },
+  "errors": {
+    "notFoundTitle": "找不到页面",
+    "backHome": "返回首页",
+    "notFound": {
+      "metaTitle": "找不到页面 — XGAMBET",
+      "title": "找不到您要的页面",
+      "description": "链接可能有误，或页面已移动",
+      "viewPromotions": "查看优惠活动"
+    },
+    "route": {
+      "title": "出了点问题",
+      "description": "此页面加载失败，请重试。如问题持续，请联系客服。"
+    },
+    "offline": {
+      "title": "网络未连接",
+      "description": "请开启网络后重新打开 XGAMBET"
+    },
+    "api": {
+      "network": "无法连接服务器，请检查网络后重试。",
+      "parse": "无法读取服务器响应",
+      "unauthorized": "请重新登录",
+      "generic": "出了点问题，请重试。"
+    }
+  },
+  "games": {
+    "filters": {
+      "allInOne": "全部游戏",
+      "allProviders": "全部供应商",
+      "allGameProviders": "全部供应商",
+      "dropsAndWins": "Drops & Wins",
+      "chicken": "斗鸡",
+      "buyFeature": "购买免费旋转",
+      "jackpot": "累积奖池",
+      "megaways": "Megaways",
+      "baccarat": "百家乐",
+      "roulette": "轮盘",
+      "blackjack": "二十一点",
+      "gameShows": "游戏秀",
+      "sicbo": "骰宝/龙虎",
+      "football": "足球",
+      "basketball": "篮球",
+      "esports": "电竞",
+      "boxing": "泰拳",
+      "tennis": "网球",
+      "arcade": "街机",
+      "multiplayer": "多人游戏",
+      "hot": "热门"
+    },
+    "subHeader": {
+      "back": "返回"
+    },
+    "breadcrumb": {
+      "ariaLabel": "面包屑导航",
+      "backToCategory": "返回全部{category}"
+    },
+    "slots": {
+      "title": "老虎机",
+      "providerAriaLabel": "{name} — 老虎机",
+      "providerCount": {
+        "other": "（{count} 家供应商）"
+      }
+    },
+    "casino": {
+      "title": "真人娱乐",
+      "count": {
+        "other": "（{count} 个牌桌/供应商）"
+      }
+    },
+    "sport": {
+      "title": "体育",
+      "count": {
+        "other": "（{count} 项/供应商）"
+      }
+    },
+    "providerGames": {
+      "searchPlaceholder": "搜索此供应商的游戏",
+      "backToCategory": "返回全部{category}",
+      "gameCount": {
+        "other": "（{count} 款游戏）"
+      },
+      "notFoundTitle": "未找到游戏",
+      "notFoundHint": "换个关键词试试，或清除搜索查看全部游戏",
+      "favoriteAdd": "加入收藏",
+      "favoriteRemove": "取消收藏"
+    },
+    "play": {
+      "playingAriaLabel": "正在玩 {title}",
+      "fullscreen": "全屏",
+      "exitFullscreen": "退出全屏",
+      "iframePlaceholder": "游戏 iframe 区域（原型）"
+    }
+  },
+  "home": {
+    "categories": {
+      "home": "首页",
+      "casino": "真人",
+      "slots": "老虎机",
+      "fishing": "捕鱼",
+      "sports": "体育",
+      "lottery": "彩票",
+      "cards": "棋牌"
+    },
+    "categoryNav": {
+      "ariaLabel": "游戏分类"
+    },
+    "sections": {
+      "hotGames": "热门游戏",
+      "slots": "老虎机",
+      "casino": "真人娱乐",
+      "fishing": "捕鱼",
+      "sports": "体育",
+      "empty": "该分类暂无游戏"
+    },
+    "intro": {
+      "title": "畅享刺激的世界",
+      "gamesBefore": "超过",
+      "gamesAfter": "款游戏，",
+      "providersBefore": "超过",
+      "providersAfter": "家供应商，",
+      "sports": "以及全球体育赛事"
+    },
+    "featureActions": {
+      "ariaLabel": "特色功能"
+    },
+    "search": {
+      "formAriaLabel": "搜索游戏和供应商",
+      "label": "搜索游戏或供应商",
+      "clear": "清除搜索"
+    },
+    "hallOfFame": {
+      "tabsAriaLabel": "选择顶级表现榜单",
+      "empty": "暂无数据"
+    },
+    "carousel": {
+      "prev": "上一张",
+      "next": "下一张",
+      "scroll": "浏览横幅",
+      "pickSlide": "选择横幅",
+      "goToSlide": "前往第 {index} 张"
+    },
+    "peekCarousel": {
+      "ariaLabel": "优惠活动与活动横幅"
+    },
+    "promoCarousel": {
+      "ariaLabel": "优惠活动与福利横幅",
+      "listAriaLabel": "优惠活动列表"
+    },
+    "welcomeBanner": {
+      "ariaLabel": "欢迎与优惠横幅",
+      "slidesAriaLabel": "欢迎横幅幻灯片"
+    },
+    "auth": {
+      "login": "登录",
+      "signUp": "注册",
+      "loginToSeeEvents": "登录或注册查看活动"
+    },
+    "events": {
+      "title": "活动",
+      "slidesAriaLabel": "{title} 幻灯片",
+      "goTo": "前往{name}"
+    },
+    "announcement": {
+      "ariaLabel": "系统公告",
+      "label": "新闻"
+    },
+    "categoryProviders": {
+      "comingSoon": "该分类的供应商即将上线，目前请先试试真人、老虎机、捕鱼或体育。",
+      "liveCasino": "真人娱乐",
+      "providersFallback": "供应商",
+      "providerCount": {
+        "other": "（{count} 家供应商）"
+      },
+      "gamesByProviderAriaLabel": "所选供应商的{category}游戏",
+      "listAriaLabel": "所选分类的供应商",
+      "searchPlaceholder": {
+        "casino": "搜索真人娱乐 | 供应商",
+        "fishing": "搜索捕鱼 | 供应商",
+        "cards": "搜索棋牌 | 供应商",
+        "sports": "搜索体育 | 供应商",
+        "default": "搜索游戏 | 供应商"
+      }
+    },
+    "quickBanners": {
+      "ariaLabel": "快速精选",
+      "promo": {
+        "title": "特别优惠",
+        "subtitle": "专为您准备的独家优惠"
+      },
+      "event": {
+        "title": "活动",
+        "subtitle": "全天候精彩活动"
+      },
+      "news": {
+        "title": "新闻",
+        "subtitle": "不容错过的资讯"
+      }
+    },
+    "mostOnline": {
+      "title": "当前最热门",
+      "favoriteAdd": "加入收藏",
+      "favoriteRemove": "取消收藏",
+      "playingNow": "{count} 人正在玩"
+    },
+    "popular": {
+      "title": "热门",
+      "empty": "该分类暂无内容"
+    },
+    "providers": {
+      "empty": "暂无供应商",
+      "marqueeAriaLabel": "游戏供应商",
+      "logoAriaLabel": "供应商 {name}"
+    },
+    "a2hs": {
+      "title": "添加到主屏幕",
+      "cardTitle": "今天就添加快捷方式！",
+      "cardSubtitle": "体验更佳，立即添加",
+      "platformsAriaLabel": "选择您的设备",
+      "stepsTitle": "添加快捷方式的方法（{platform}）",
+      "installed": "应用已安装",
+      "steps": {
+        "android1": "点按 Chrome 右上角的 ⋮ 菜单",
+        "android2": "选择“安装应用”或“添加到主屏幕”",
+        "android3": "点按“安装”或“添加”确认",
+        "ios1": "点按 Safari 底部的“分享”按钮",
+        "ios2": "选择“添加到主屏幕”",
+        "ios3": "点按右上角的“添加”确认",
+        "launch": "点击应用图标即可快速打开网站"
+      }
+    },
+    "desktopMenu": {
+      "referral": {
+        "title": "邀请好友",
+        "subtitle": "两级收益",
+        "ariaLabel": "邀请好友，两级收益"
+      },
+      "checkIn": {
+        "title": "签到",
+        "subtitle": "签到",
+        "ariaLabel": "每日签到"
+      },
+      "wheel": {
+        "title": "转盘",
+        "subtitle": "幸运转盘",
+        "ariaLabel": "幸运转盘"
+      },
+      "gems": {
+        "title": "Gems 商店",
+        "subtitle": "Gems 商店",
+        "ariaLabel": "Gems 商店"
+      },
+      "coupon": {
+        "title": "优惠券",
+        "subtitle": "优惠券",
+        "ariaLabel": "兑换优惠券"
+      },
+      "vip": {
+        "title": "VIP 等级",
+        "subtitle": "会员特权",
+        "ariaLabel": "VIP 等级，会员特权"
+      }
+    }
+  },
+  "lottery": {
+    "hub": {
+      "title": "彩票",
+      "subtitle": "选择要投注的彩票",
+      "featuredAria": "精选彩票",
+      "allMarketsAria": "全部彩票",
+      "mySlips": "我的注单",
+      "mySlipsAria": "查看我的注单",
+      "mySlipsPendingAria": "查看我的注单 — 进行中 {count} 张",
+      "daysLeft": {
+        "other": "{count} 天"
+      }
+    },
+    "markets": {
+      "generic": "彩票",
+      "thaiGovernment": "泰国政府彩票",
+      "yiki5": "Yiki 5分钟",
+      "yiki15": "Yiki 15分钟",
+      "yiki30": "Yiki 30分钟",
+      "baac": "BAAC 彩票",
+      "laos": "老挝彩票",
+      "hanoi": "河内彩票",
+      "malaysia": "马来西亚彩票",
+      "dowJones": "道琼斯彩票",
+      "china": "中国股指彩票",
+      "germany": "德国股指彩票",
+      "russia": "俄罗斯股指彩票",
+      "korea": "韩国股指彩票",
+      "nikkei": "日经彩票",
+      "uk": "英国股指彩票",
+      "hongKong": "恒生彩票",
+      "taiwan": "台湾股指彩票",
+      "singapore": "新加坡股指彩票",
+      "india": "印度股指彩票",
+      "egypt": "埃及股指彩票"
+    },
+    "status": {
+      "open": "开放",
+      "closed": "已关闭",
+      "closedAlready": "投注已截止",
+      "closesIn": "距截止",
+      "closesInTime": "{time}后截止",
+      "countdownDays": "{days}天 {time}"
+    },
+    "groups": {
+      "three": "三位数",
+      "two": "两位数",
+      "run": "跑位"
+    },
+    "betTypes": {
+      "threeTop": "三位上",
+      "threeTod": "三位全中",
+      "threeFront": "三位前",
+      "threeBottom": "三位下",
+      "threeTopTod": "三位上全中",
+      "threeTopReverse": "三位上反转",
+      "threeTopComboTod": "三位上+全中",
+      "twoTop": "二位上",
+      "twoBottom": "二位下",
+      "twoTopReverse": "二位上反转",
+      "twoBottomReverse": "二位下反转",
+      "twoTopBottom": "二位上/下",
+      "twoTopBottomReverse": "二位上/下反转",
+      "runTop": "跑上",
+      "runBottom": "跑下"
+    },
+    "round": {
+      "time": "{time} 期",
+      "draw": "{date} 开奖",
+      "market": "{market} {date}",
+      "numbered": "第 {n} 期",
+      "current": "当前期"
+    },
+    "rounds": {
+      "empty": "暂无可投注的期次",
+      "listAria": "期次",
+      "showAll": {
+        "other": "显示全部期次（共 {count} 期）"
+      },
+      "play": "立即投注",
+      "loading": "正在加载期次…",
+      "loadError": "无法加载期次",
+      "openCountPrefix": "可投注期次：",
+      "openCountSuffix": "期"
+    },
+    "market": {
+      "sidebarAria": "彩票类型",
+      "rules": "规则 / 赔率",
+      "notFoundTitle": "找不到该彩票",
+      "notFoundDescription": "该彩票可能已下线，请在彩票页面选择其他彩票。",
+      "viewAll": "查看全部彩票",
+      "marketNotFound": "找不到彩票市场"
+    },
+    "rules": {
+      "payoutHeading": "每 1 泰铢赔率",
+      "limitsHeading": "单项投注额",
+      "minBet": "最低",
+      "maxBet": "最高"
+    },
+    "results": {
+      "title": "最新开奖",
+      "morePage": "全部结果 >>",
+      "tableAria": "最新彩票开奖结果",
+      "colMarket": "彩票",
+      "colDate": "期次 / 日期",
+      "empty": "暂无开奖结果",
+      "today": "今日"
+    },
+    "thaiResult": {
+      "title": "上期开奖结果",
+      "firstPrize": "头奖",
+      "back3": "后三位"
+    },
+    "draw": {
+      "aria": "开奖详情"
+    },
+    "board": {
+      "pickAria": "选择号码",
+      "reverse": "反转",
+      "actionsAria": "下一步操作",
+      "back": "返回",
+      "enterPrice": "设置投注额",
+      "digitGroupAria": "位数",
+      "betTypeAria": "投注类型",
+      "payout": "赔率 {rate}",
+      "loading": "正在加载投注面板…",
+      "roundNotFoundTitle": "找不到该期次",
+      "roundNotFoundNext": "该期次可能已截止，请从列表中选择下一期。",
+      "roundNotFoundOther": "该期次可能已截止，请从列表中选择其他期次。",
+      "viewAllRounds": "查看全部期次"
+    },
+    "inputMode": {
+      "aria": "号码输入方式",
+      "manual": "输入号码",
+      "grid": "网格选号"
+    },
+    "feedback": {
+      "duplicate": "注单中已有 {number}",
+      "added": {
+        "other": "已将 {number} 加入注单（共 {count} 项）"
+      },
+      "undone": "已撤销上一次输入",
+      "closed": "投注已截止",
+      "removed": "已从注单中移除 {number}"
+    },
+    "pad": {
+      "hundreds": "百位",
+      "selectedCount": "已选 {count} 个",
+      "gridAria": "号码网格",
+      "enteredAria": "已输入号码 {value}",
+      "empty": "空",
+      "clear": "清除",
+      "backspace": "删除最后一位"
+    },
+    "slip": {
+      "itemCount": {
+        "other": "{count} 项"
+      },
+      "removeAria": "移除 {label} {number}",
+      "priceAria": "{label} {number} 的投注额",
+      "enterPrice": "设置投注额",
+      "toolbarAria": "注单工具",
+      "undo": "撤销上一次输入",
+      "clearAll": "清空注单",
+      "emptyPickType": "请选择投注类型，然后点按号码加入注单",
+      "emptyEnterNumber": "这里还没有内容，请输入您要投注的号码。"
+    },
+    "price": {
+      "aria": "设置投注额并提交注单",
+      "sameForAll": "全部相同投注额",
+      "edit": "编辑",
+      "total": "合计",
+      "chipsAria": "选择投注额",
+      "backToNumbers": "修改号码",
+      "submitting": "提交中…",
+      "submit": "提交注单"
+    },
+    "submit": {
+      "failedTitle": "无法提交注单",
+      "done": "确定",
+      "close": "关闭",
+      "networkError": "无法连接服务器"
+    },
+    "summary": {
+      "aria": "注单摘要",
+      "drawDate": "开奖日期 {date}",
+      "copyAria": "复制注单编号",
+      "slipId": "注单 #{id}",
+      "purchased": "购买时间 {date}",
+      "submitted": "已提交",
+      "note": "备注：{note}",
+      "noNote": "无备注",
+      "stake": "投注额",
+      "winLoss": "输赢",
+      "allSlips": "全部注单",
+      "continue": "继续投注",
+      "copied": "已复制注单编号",
+      "copyFailed": "无法复制注单编号"
+    },
+    "slips": {
+      "title": "全部注单",
+      "loading": "正在加载注单…",
+      "emptyTitle": "暂无注单",
+      "emptyDescription": "选择一种彩票，提交您的第一张注单吧。",
+      "goPlay": "前往彩票",
+      "stake": "投注额 {amount}",
+      "summaryTitle": "注单摘要",
+      "notFoundTitle": "找不到该注单",
+      "notFoundDescription": "注单可能已被删除，或链接无效。",
+      "viewAll": "查看全部注单",
+      "tabs": {
+        "pending": "进行中",
+        "history": "历史记录",
+        "aria": "注单类型"
+      },
+      "filters": {
+        "aria": "注单筛选",
+        "market": "彩种",
+        "result": "结果",
+        "range": "时间范围",
+        "allMarkets": "全部彩种",
+        "allResults": "全部结果",
+        "today": "今天",
+        "days7": "7 天",
+        "days30": "30 天",
+        "custom": "自定义"
+      },
+      "status": {
+        "waitingDraw": "等待开奖",
+        "waitingSettle": "等待结算",
+        "won": "已中奖",
+        "lost": "未中奖",
+        "void": "已取消（退款）"
+      },
+      "summary": {
+        "count": "{count} 张注单",
+        "stake": "投注合计 {amount}",
+        "net": "净输赢"
+      },
+      "card": {
+        "drawAt": "开奖 {date}",
+        "settledAt": "结算 {date}"
+      },
+      "emptyPending": {
+        "title": "暂无进行中的注单",
+        "description": "已提交但尚未结算的注单会显示在这里。"
+      },
+      "emptyHistory": {
+        "title": "暂无历史注单",
+        "description": "已结算的注单保留 {days} 天。"
+      },
+      "emptyFiltered": "没有符合筛选条件的注单",
+      "clearFilters": "清除筛选",
+      "loadMore": "加载更多",
+      "loadingMore": "加载中…",
+      "loadMoreError": "加载失败，请重试。",
+      "loadError": "注单加载失败",
+      "retentionNote": "历史记录保留 {days} 天"
+    }
+  },
+  "meta": {
+    "title": "XGAMBET — 刺激王国",
+    "description": "XGAMBET 前端游戏大厅"
+  },
+  "nav": {
+    "bottomNav": {
+      "label": "主菜单",
+      "withdraw": "取款",
+      "deposit": "存款",
+      "menu": "菜单",
+      "cashback": "返水",
+      "contact": "联系"
+    },
+    "header": {
+      "openMenu": "打开菜单",
+      "promotions": "优惠活动",
+      "profile": "个人资料",
+      "home": "XGAMBET 首页",
+      "showSidebar": "显示左侧菜单",
+      "hideSidebar": "隐藏左侧菜单",
+      "mainCategories": "主要分类",
+      "searchLabel": "搜索游戏或供应商",
+      "searchPlaceholder": "搜索",
+      "deposit": "存款",
+      "depositAria": "存款",
+      "transactionHistory": "交易记录",
+      "walletDeposit": "存款并查看余额",
+      "walletBalance": "额度余额"
+    },
+    "desktop": {
+      "quickMenu": "快捷菜单",
+      "rightRail": "活动与优惠菜单",
+      "sidebar": "桌面主菜单",
+      "gameCategories": "游戏分类",
+      "games": "游戏",
+      "system": "系统",
+      "contactUs": "联系我们",
+      "topBar": "搜索与账户栏",
+      "searchGames": "搜索游戏",
+      "searchGamesPlaceholder": "搜索游戏、供应商或您喜爱的游戏..."
+    },
+    "drawer": {
+      "title": "菜单",
+      "close": "关闭菜单",
+      "deposit": "存款",
+      "withdraw": "取款",
+      "playBonus": "流水奖金",
+      "lossBonus": "亏损奖金",
+      "referralLink": "邀请链接",
+      "referralLinkLoginHint": "登录后查看您的链接",
+      "copyReferralLink": "复制邀请链接",
+      "linkCopied": "链接已复制",
+      "linkCopyFailed": "无法复制链接",
+      "gameBalance": "游戏余额",
+      "gems": "Gems",
+      "tickets": "抽奖券"
+    },
+    "menuSections": {
+      "personal": "个人",
+      "privileges": "专属特权",
+      "rewards": "奖励"
+    },
+    "menu": {
+      "profile": "个人资料",
+      "transactions": "交易记录",
+      "rank": "等级",
+      "promotions": "优惠活动",
+      "cashback": "返水",
+      "checkIn": "签到",
+      "referral": "邀请好友",
+      "rewardHub": "抽奖",
+      "wheel": "转盘",
+      "gemsShop": "Gems 商店",
+      "activities": "活动",
+      "coupon": "优惠券",
+      "vipRank": "VIP 等级",
+      "referralEarnings": "佣金收益",
+      "referFriend": "邀请好友",
+      "specialBonus": "特别奖金",
+      "history": "记录",
+      "language": "语言"
+    },
+    "hub": {
+      "promotions": "优惠活动",
+      "activities": "活动",
+      "cashback": "返水",
+      "gemsStore": "Gems 商店",
+      "account": "账户信息",
+      "referral": "邀请好友",
+      "transactions": "交易记录",
+      "checkIn": "每日签到",
+      "vip": "VIP"
+    },
+    "footer": {
+      "label": "XGAMBET 网站页脚",
+      "home": "XGAMBET 首页",
+      "certifications": "认证",
+      "auditedBy": "审计机构",
+      "approvedBy": "批准机构",
+      "playResponsibly": "理性游戏",
+      "ageRestriction": "仅限 18 岁以上",
+      "paymentMethods": "支付方式",
+      "community": "社区",
+      "liveChat": "在线客服",
+      "social": "社交媒体",
+      "links": "页脚链接",
+      "disclaimer": "XGAMBET 为您所在地区的合法年龄玩家提供线上娱乐。请理性游戏，并为自己的决定负责。公司及牌照信息仅为界面展示用的示例数据（mock），用于界面测试。",
+      "tagline": "所有游戏与活动，一站尽享",
+      "columns": {
+        "platform": "平台",
+        "sports": "体育",
+        "casino": "真人娱乐",
+        "promotions": "优惠活动",
+        "info": "资讯",
+        "services": "服务"
+      },
+      "link": {
+        "profile": "个人资料",
+        "transactions": "交易记录",
+        "lotterySlips": "彩票注单",
+        "accountSettings": "账户设置",
+        "dailyCheckIn": "每日签到",
+        "gemStore": "Gems 商店",
+        "leaderboard": "排行榜",
+        "predictions": "预测",
+        "liveSports": "滚球体育",
+        "sports": "体育",
+        "esports": "电竞",
+        "tournaments": "锦标赛",
+        "football": "足球",
+        "basketball": "篮球",
+        "tennis": "网球",
+        "cricket": "板球",
+        "lobby": "大厅",
+        "popularGames": "热门游戏",
+        "liveCasino": "真人娱乐",
+        "newGames": "最新游戏",
+        "crashGames": "Crash 游戏",
+        "tableGames": "桌面游戏",
+        "slots": "老虎机",
+        "bonusBuy": "购买奖励",
+        "roulette": "轮盘",
+        "providers": "供应商",
+        "allPromotions": "全部优惠活动",
+        "sportsWelcome": "体育欢迎奖金",
+        "casinoWelcome": "真人欢迎奖金",
+        "weeklyCashback": "每周返水",
+        "sportsClub": "体育俱乐部",
+        "vipClub": "VIP 俱乐部",
+        "referFriends": "邀请好友",
+        "aboutUs": "关于我们",
+        "events": "活动",
+        "careers": "招聘",
+        "contactUs": "联系我们",
+        "brand": "品牌",
+        "responsibleGaming": "理性博彩",
+        "helpCenter": "帮助中心",
+        "guide": "指南",
+        "luckyWheel": "幸运转盘",
+        "lottery": "彩票",
+        "fishing": "捕鱼",
+        "lossRebate": "亏损返还",
+        "casino": "真人娱乐",
+        "promotions": "优惠活动",
+        "vipLevel": "VIP 等级",
+        "privacy": "隐私政策",
+        "terms": "条款与条件",
+        "feedback": "意见反馈",
+        "sitemap": "网站地图"
+      }
+    }
+  },
+  "profile": {
+    "logout": "退出登录",
+    "retry": "重试",
+    "backHome": "返回首页",
+    "field": {
+      "copy": "复制",
+      "edit": "编辑"
+    },
+    "account": {
+      "title": "账户信息",
+      "loading": "正在加载账户信息…",
+      "loadErrorTitle": "无法加载账户信息",
+      "loadErrorDescription": "请重试。若仍无法解决，请退出登录后重新登录。",
+      "tabs": {
+        "personal": "个人信息",
+        "bank": "银行账户"
+      },
+      "gameUser": "游戏用户名",
+      "copyGameUser": "复制游戏用户名",
+      "gameUserCopied": "已复制游戏用户名",
+      "copyFailed": "复制失败",
+      "password": "密码",
+      "changePassword": "修改密码",
+      "transactionHistory": "交易记录",
+      "transactionHistoryHint": "存款 · 取款 · 投注"
+    },
+    "avatar": {
+      "change": "更换头像",
+      "tapToChange": "点按头像即可更换",
+      "pickerTitle": "选择头像",
+      "pickerDescription": "选择一个角色，点按即自动保存",
+      "saveFailed": "保存失败，请重试。",
+      "close": "关闭",
+      "srLabel": "{name} 的头像",
+      "presetName": "角色 {n}"
+    },
+    "hub": {
+      "navAriaLabel": "个人资料菜单",
+      "vipLevel": "VIP 等级",
+      "transactions": "存取款记录",
+      "myDiamonds": "我的 Gems",
+      "lossRebate": "亏损返还奖金",
+      "affiliate": "代理余额",
+      "activePromotion": "进行中的优惠",
+      "greeting": "您好，{name}",
+      "joinedAt": "加入时间：{date}",
+      "playerId": "玩家 ID：{id}",
+      "copyPlayerId": "复制玩家 ID",
+      "playerIdCopied": "已复制玩家 ID",
+      "copyPlayerIdFailed": "复制 ID 失败"
+    },
+    "referralInvite": {
+      "title": "邀请好友，赢取奖金",
+      "description": "将您的链接分享给好友，即可获得他们游戏收益的分成",
+      "linkLabel": "邀请链接",
+      "copyLink": "复制邀请链接",
+      "linkCopied": "链接已复制",
+      "copyLinkFailed": "无法复制链接"
+    },
+    "summary": {
+      "copyId": "复制 ID",
+      "idCopied": "已复制 ID",
+      "copyIdFailed": "复制 ID 失败",
+      "phoneVerified": "手机号码已验证"
+    },
+    "dashboard": {
+      "title": "系统概览 / 仪表板",
+      "subtitle": "实时汇总关键系统数据",
+      "dateRange": "2023年12月12日 00:00 - 23:59",
+      "vsYesterday": "较昨日",
+      "unitAccounts": "个账户",
+      "period": {
+        "today": "今日",
+        "week": "本周",
+        "month": "本月",
+        "year": "本年"
+      },
+      "nav": {
+        "overview": "概览",
+        "betReports": "投注报表",
+        "members": "会员",
+        "marketing": "营销",
+        "promotions": "优惠活动",
+        "transactions": "交易记录",
+        "reports": "报表",
+        "settings": "设置"
+      },
+      "kpi": {
+        "totalDeposit": "存款总额",
+        "totalWithdraw": "取款总额",
+        "netProfit": "净利润",
+        "totalBets": "投注总额",
+        "newMembers": "新增会员",
+        "firstDeposit": "首存"
+      },
+      "chart": {
+        "deposit": "存款（泰铢）",
+        "withdraw": "取款（泰铢）",
+        "transactionCount": "交易笔数",
+        "accountCount": "账户数"
+      },
+      "journey": {
+        "title": "客户旅程",
+        "signUp": "已注册",
+        "firstDeposit": "首次存款",
+        "firstBet": "活跃（首次投注）"
+      },
+      "trend": {
+        "title": "今日存款 - 取款",
+        "subtitle": "交易随时间变化（Shadcn Chart）",
+        "net": "净额"
+      },
+      "banks": {
+        "title": "客户银行占比",
+        "totalAccounts": "账户总数"
+      },
+      "channels": {
+        "title": "客户来源渠道",
+        "channel": "渠道",
+        "customers": "客户数",
+        "share": "占比"
+      },
+      "activeHours": {
+        "title": "客户活跃时段"
+      },
+      "depositDistribution": {
+        "title": "客户存款分布"
+      },
+      "hourlyMembers": {
+        "title": "各时段新增会员"
+      }
+    }
+  },
+  "promotions": {
+    "title": "优惠活动",
+    "loading": "正在加载优惠活动…",
+    "loadError": "无法加载优惠活动",
+    "loadErrorDesc": "请检查网络后重试",
+    "retry": "重试",
+    "forYou": "为您推荐",
+    "filterAria": "按分类筛选优惠活动",
+    "categories": {
+      "all": "全部",
+      "slots": "老虎机",
+      "casino": "真人娱乐",
+      "sport": "体育",
+      "newMember": "新会员",
+      "daily": "每日",
+      "privilege": "特权"
+    },
+    "empty": {
+      "category": "该分类暂无优惠活动",
+      "categoryHint": "该分类暂无优惠活动，试试“全部”",
+      "activitiesHint": "该分类暂无活动，试试“全部”"
+    },
+    "hub": {
+      "promotionsListAria": "优惠活动列表",
+      "activitiesListAria": "活动列表",
+      "selectedDetailAria": "所选详情"
+    },
+    "detail": {
+      "title": "优惠详情",
+      "heading": "详情",
+      "loading": "正在加载详情…",
+      "close": "关闭优惠详情",
+      "notFound": "找不到优惠详情",
+      "notFoundDesc": "该优惠可能已结束或加载失败"
+    },
+    "mobile": {
+      "expires": "截止 {date}",
+      "readTerms": "查看条款",
+      "readTermsAria": "{title} — 查看条款"
+    }
+  },
+  "referral": {
+    "pageTitle": "邀请好友",
+    "tabs": {
+      "ariaLabel": "邀请菜单",
+      "overview": "概览",
+      "users": "已邀请好友",
+      "earning": "收益"
+    },
+    "status": {
+      "overviewLoading": "正在加载邀请信息…",
+      "overviewError": "无法加载邀请信息",
+      "earningsLoading": "正在加载收益…",
+      "earningsError": "无法加载收益",
+      "usersLoading": "正在加载好友列表…",
+      "usersError": "无法加载好友列表"
+    },
+    "loginPrompt": {
+      "title": "登录后查看邀请链接",
+      "description": "登录后即可查看您的邀请链接和收益"
+    },
+    "promo": {
+      "ariaLabel": "邀请优惠",
+      "title": "邀请好友，两级收益",
+      "description": "分享您的链接，即可获得好友游戏收益的分成"
+    },
+    "link": {
+      "title": "您的邀请链接",
+      "copied": "链接已复制",
+      "copyFailed": "无法复制链接"
+    },
+    "stats": {
+      "title": "您的数据",
+      "friends": "已加入好友",
+      "totalTurnover": "总流水",
+      "totalEarnings": "总收益"
+    },
+    "tiers": {
+      "title": "两级收益",
+      "description": "分享您的链接，即可按团队流水获得佣金",
+      "rateHint": "流水",
+      "tier1": {
+        "title": "一级 — 直接好友",
+        "subtitle": "通过您的链接注册的好友"
+      },
+      "tier2": {
+        "title": "二级 — 好友的好友",
+        "subtitle": "由您的好友邀请的好友"
+      }
+    },
+    "checks": {
+      "realtime": "实时计算",
+      "lifetimeCommission": "终身佣金",
+      "minWithdraw": "最低取款 ฿50.00"
+    },
+    "steps": {
+      "title": "三步轻松开始",
+      "copy": "复制链接",
+      "share": "分享给好友",
+      "earn": "赚取佣金"
+    },
+    "periods": {
+      "ariaLabel": "收益统计周期",
+      "all": "全部",
+      "today": "今日",
+      "lastWeek": "上周",
+      "lastMonth": "上月"
+    },
+    "earning": {
+      "claimableIncome": "可领取收益",
+      "claimableBonus": "可领取奖金",
+      "claim": "领取奖金",
+      "receivedTotal": "累计已领取 {amount}",
+      "received": "已领取 {amount}",
+      "periodSummaryAriaLabel": "所选周期收益摘要",
+      "networkIncomePeriod": "团队收益（所选周期）",
+      "totalAccumulated": "累计 {amount}",
+      "detailsTitle": "收益明细",
+      "historyTitle": "奖金记录",
+      "bonusAmount": "奖金金额",
+      "date": "日期",
+      "empty": "暂无奖金记录",
+      "paginationAriaLabel": "奖金记录分页"
+    },
+    "users": {
+      "registeredAt": "注册时间",
+      "empty": "还没有好友通过您的链接注册",
+      "paginationAriaLabel": "好友列表分页"
+    },
+    "pagination": {
+      "showing": "显示第 {start}–{end} 条，共 {total} 条"
+    }
+  },
+  "rewards": {
+    "actions": {
+      "claim": "领取",
+      "close": "关闭",
+      "ok": "确定"
+    },
+    "status": {
+      "claimed": "已领取"
+    },
+    "hub": {
+      "title": "奖励中心",
+      "loading": "正在加载奖励…",
+      "loadError": "无法加载奖励",
+      "pointsLoading": "正在加载积分…",
+      "pointsLoadError": "无法加载奖励数据",
+      "bannersAria": "奖励优惠",
+      "shortcutsAria": "奖励菜单",
+      "summaryAria": "额度与积分余额",
+      "totalCredits": "总额度",
+      "pointsBalance": "积分余额"
+    },
+    "shortcuts": {
+      "luckyBox": "幸运盒",
+      "randomCard": "随机卡",
+      "freespins": "免费旋转 / 筹码"
+    },
+    "banners": {
+      "luckyBoxSubtitle": "用积分兑换幸运盒",
+      "randomCardSubtitle": "翻牌赢大奖",
+      "termsLabel": "条款与条件"
+    },
+    "redeemBoard": {
+      "subtitle": "赢取奖品",
+      "pointsLabel": "积分",
+      "drawCost": "每次抽奖需 {cost} 积分",
+      "startDraw": "开始抽奖",
+      "history": "兑换记录"
+    },
+    "luckyBox": {
+      "pageTitle": "幸运盒",
+      "loading": "正在加载幸运盒…",
+      "loadError": "无法加载幸运盒"
+    },
+    "randomCard": {
+      "pageTitle": "随机卡",
+      "loading": "正在加载随机卡…",
+      "loadError": "无法加载随机卡"
+    },
+    "freespins": {
+      "title": "免费旋转 / 筹码",
+      "comingSoonDesc": "该功能开发中，即将支持积分兑换"
+    },
+    "checkIn": {
+      "title": "每日签到",
+      "loading": "正在加载签到…",
+      "loadError": "无法加载签到",
+      "subtitle": "每天签到，领取额外 Gems",
+      "bonusBefore": "再",
+      "bonusDays": {
+        "other": "{count} 天"
+      },
+      "bonusAfter": "即可获得奖励",
+      "bonusGems": "{amount} Gems",
+      "progressTotal": "/ {total} 天",
+      "dayStatus": {
+        "claimed": "已领取",
+        "today": "领取",
+        "locked": "待解锁"
+      },
+      "weekdays": {
+        "mon": "周一",
+        "tue": "周二",
+        "wed": "周三",
+        "thu": "周四",
+        "fri": "周五",
+        "sat": "周六",
+        "sun": "周日"
+      },
+      "cumulativeTitle": "连续签到奖励",
+      "cumulativeDesc": "达成签到目标，领取丰厚 Gems 奖励",
+      "milestoneGems": "{amount} Gems",
+      "milestoneDays": "签到 {days} 天",
+      "milestoneDialog": {
+        "title": "签到满 {days} 天奖励",
+        "progress": "已签到 {done}/{total} 天",
+        "claim": "领取奖励",
+        "claimed": "已领取",
+        "daysLeft": "再签到 {count} 天"
+      },
+      "claimedToday": "今日已签到",
+      "claimToday": "领取今日奖励",
+      "success": {
+        "title": "领取成功",
+        "descBefore": "您已获得",
+        "descAfter": ""
+      },
+      "desktop": {
+        "summaryAria": "签到摘要",
+        "progressAria": "签到进度",
+        "weekProgress": "本周进度",
+        "daysUnit": "天",
+        "claimTodayAria": "领取今日奖励",
+        "claimToday": "领取今日奖励",
+        "claimedToday": "今日奖励已领取",
+        "streakAria": "7 天进度",
+        "streakDay": "第 {day} 天",
+        "listTitle": "签到奖励",
+        "dayTitle": "第 {day} 天",
+        "specialReward": "特别奖励",
+        "bonusDayDesc": "整周签到可获额外额度",
+        "dailyDesc": "每日签到奖励",
+        "locked": "未解锁"
+      }
+    },
+    "wheel": {
+      "title": "幸运转盘",
+      "subtitle": "每天转一转，赢取大奖",
+      "loading": "正在加载幸运转盘…",
+      "loadError": "无法加载幸运转盘",
+      "backHome": "返回首页",
+      "winMessage": "恭喜！您赢得 {prize}",
+      "justNow": "刚刚",
+      "prizeKind": {
+        "gems": "Gems",
+        "credit": "额度"
+      },
+      "gemsBalanceAria": "您的 Gems 余额",
+      "ticketsAria": "您的抽奖券",
+      "spinAria": "转动转盘",
+      "methodTabsAria": "选择旋转方式",
+      "methodGems": "Gems ×{cost}",
+      "methodTicket": "抽奖券 ×{cost}",
+      "spinning": "旋转中…",
+      "spinNow": "立即旋转",
+      "useTickets": {
+        "other": "使用 {count} 张抽奖券"
+      },
+      "useGems": "使用 {amount} Gems",
+      "noTickets": "没有抽奖券，试试用 Gems 旋转",
+      "notEnoughGems": "Gems 不足，请补充 Gems",
+      "hint": "每天玩一玩，赢取奖品",
+      "sampleNote": "示例奖品和钱包余额",
+      "liveWinners": {
+        "title": "近期中奖",
+        "gemsWon": "+{amount} Gems",
+        "received": "获得",
+        "gemsAmount": "{amount} Gems"
+      },
+      "history": {
+        "title": "我的旋转记录",
+        "usedGems": "Gems",
+        "usedTicket": "抽奖券",
+        "prevPage": "上一页",
+        "nextPage": "下一页"
+      }
+    },
+    "gemsStore": {
+      "title": "Gems 商店",
+      "loading": "正在加载 Gems 商店…",
+      "loadError": "无法加载 Gems 商店",
+      "redeemHeading": "兑换额度",
+      "termsTitle": "兑换条款",
+      "redeemShort": "兑换",
+      "notEnoughShort": "不足",
+      "redeem": "兑换",
+      "redeemAria": "兑换 {credits}",
+      "notEnoughGems": "Gems 不足",
+      "summary": {
+        "balanceLabel": "Gems 余额",
+        "balanceAria": "Gems 余额 {amount}",
+        "today": "今日",
+        "thisWeek": "本周"
+      },
+      "confirm": {
+        "title": "{amount} 额度",
+        "subtitle": "使用 {gems} Gems 兑换 {credits} 额度",
+        "creditsLabel": "额度",
+        "gemsUsed": "已用 Gems",
+        "balanceAfter": "兑换后余额",
+        "cancel": "取消",
+        "confirm": "确认",
+        "processing": "处理中…"
+      }
+    },
+    "activities": {
+      "title": "活动",
+      "loading": "正在加载活动…",
+      "loadError": "无法加载活动",
+      "listAria": "活动列表",
+      "closeDetail": "关闭活动详情",
+      "viewDetails": "查看详情",
+      "categoryTabsAria": "活动分类",
+      "categories": {
+        "slots": "老虎机",
+        "casino": "真人娱乐"
+      },
+      "progress": {
+        "title": "您的流水",
+        "current": "当前流水",
+        "rank1Target": "第 1 档目标",
+        "rewardCount": "奖励 {earned} / {cap}"
+      },
+      "tiers": {
+        "rank": "档位",
+        "turn": "流水",
+        "bonus": "奖金",
+        "claim": "领取",
+        "notEligible": "未达标"
+      },
+      "rulesTitle": "活动规则与条款"
+    }
+  },
+  "transactions": {
+    "title": "交易记录",
+    "pageLoading": "加载中...",
+    "kindTabs": {
+      "aria": "交易类型",
+      "deposit": "存款",
+      "withdraw": "取款",
+      "promotion": "优惠",
+      "bet": "投注"
+    },
+    "filter": {
+      "label": "选择日期",
+      "openCalendar": "打开日期选择器",
+      "clear": "清除",
+      "search": "搜索"
+    },
+    "calendar": {
+      "title": "选择日期范围",
+      "close": "关闭",
+      "cancel": "取消",
+      "confirm": "确认"
+    },
+    "status": {
+      "completed": "成功",
+      "pending": "处理中",
+      "failed": "失败"
+    },
+    "betType": {
+      "bet": "投注",
+      "result": "结果"
+    },
+    "columns": {
+      "amount": "金额",
+      "channel": "方式",
+      "account": "账号",
+      "createdAt": "日期时间",
+      "status": "状态",
+      "detail": "详情",
+      "completedAt": "完成时间",
+      "promotionName": "优惠名称",
+      "playStart": "开始日期",
+      "playEnd": "结束日期",
+      "freeSpins": "免费旋转",
+      "perRound": "每局",
+      "provider": "供应商",
+      "gameName": "游戏名称",
+      "expiresWithin": "剩余有效期",
+      "game": "游戏",
+      "date": "日期",
+      "time": "时间",
+      "type": "类型",
+      "betAmount": "投注额",
+      "openingBalance": "期初余额",
+      "closingBalance": "期末余额"
+    },
+    "empty": "暂无数据",
+    "paginationAria": "投注记录分页",
+    "loginRequired": "请登录后查看交易记录",
+    "loadError": "无法加载交易记录",
+    "retry": "重试",
+    "loading": "正在加载交易记录…",
+    "summary": {
+      "depositTotal": "存款总额：",
+      "withdrawTotal": "取款总额：",
+      "promotionClaims": "已领取优惠：",
+      "winLossTotal": "输赢合计：",
+      "stakeTotal": "投注合计："
+    }
+  },
+  "vip": {
+    "tabs": {
+      "ariaLabel": "VIP 菜单",
+      "myLevel": "我的等级",
+      "rank": "等级榜",
+      "benefits": "特权"
+    },
+    "status": {
+      "loading": "加载中...",
+      "playerLoading": "正在加载 VIP 信息…",
+      "playerError": "无法加载 VIP 信息",
+      "ranksLoading": "正在加载 VIP 等级…",
+      "ranksError": "无法加载 VIP 等级",
+      "benefitsLoading": "正在加载特权…",
+      "benefitsError": "无法加载特权",
+      "retry": "重试"
+    },
+    "level": {
+      "label": "等级",
+      "next": "下一级",
+      "currentAriaLabel": "当前 VIP 等级",
+      "benefitsAndMaintainAriaLabel": "特权与保级"
+    },
+    "rankStatus": {
+      "current": "当前等级",
+      "cleared": "已达成",
+      "locked": "尚未达到"
+    },
+    "carousel": {
+      "previous": "上一等级",
+      "next": "下一等级",
+      "turnoverTarget": "流水 {amount}"
+    },
+    "progress": {
+      "levelUpTo": "升级至 VIP {level}",
+      "bothRequired": "须同时满足两项条件",
+      "overallAriaLabel": "整体进度 {percent}%",
+      "deposit": "存款",
+      "turnover": "流水",
+      "target": "目标 {amount}",
+      "complete": "已完成",
+      "remaining": "还差 {amount}"
+    },
+    "maintain": {
+      "title": "保持 VIP 等级",
+      "subtitleWithDowngrade": "同时达成两项，否则降至 VIP {level}",
+      "daysRemaining": "剩余天数"
+    },
+    "benefitsTable": {
+      "title": "各等级特权",
+      "scrollHint": "左右滑动查看更多等级"
+    },
+    "benefitRows": {
+      "cashback": "奖金返水",
+      "rolling": "奖金流水",
+      "diamondDeposit": "存款 Gems",
+      "fastWithdraw": "极速取款",
+      "vipManager": "VIP 专属经理",
+      "upgradeBonus": "升级奖金",
+      "depositCondition": "存款要求",
+      "turnoverCondition": "流水要求"
+    },
+    "benefitValues": {
+      "faster": "✓ 更快",
+      "max": "✓ 最高",
+      "notRequired": "无"
+    },
+    "myLevelBenefits": {
+      "cashback": "返水",
+      "rolling": "流水",
+      "diamondDeposit": "存款 Gems"
+    },
+    "missions": {
+      "login": "登录",
+      "deposit": "存款",
+      "play": "游戏",
+      "unitDays": "天",
+      "unitTimes": "次"
+    }
+  },
+  "wallet": {
+    "shared": {
+      "submitting": "提交中...",
+      "copied": "已复制",
+      "copyAccountNumber": "复制账号",
+      "currencyUnit": "泰铢"
+    },
+    "deposit": {
+      "title": "存款",
+      "close": "关闭存款",
+      "selectMethod": "选择存款方式",
+      "methodsAria": "存款方式",
+      "methodsLoading": "正在加载存款方式…",
+      "methodsError": "无法加载存款方式",
+      "bankAccountLoading": "正在加载收款账户…",
+      "bankAccountError": "无法加载收款账户",
+      "methods": {
+        "bank": {
+          "title": "银行账户",
+          "subtitle": "通过银行账户转账"
+        },
+        "gateway": {
+          "title": "支付网关",
+          "subtitle": "通过支付网关存款"
+        },
+        "truemoney": {
+          "title": "TrueMoney 钱包",
+          "subtitle": "通过 TrueMoney 钱包存款"
+        }
+      },
+      "bank": {
+        "title": "银行账户存款",
+        "back": "返回存款方式",
+        "bankLabel": "银行",
+        "accountName": "账户名",
+        "accountNumber": "账号",
+        "amountLabel": "存款金额",
+        "quickAmount": "快捷金额",
+        "quickAmountHint": "选择金额或自行输入",
+        "next": "下一步"
+      },
+      "confirm": {
+        "title": "确认存款",
+        "back": "返回修改金额",
+        "step": "第 {current} 步，共 {total} 步",
+        "transferAmount": "转账金额",
+        "accountNameLabel": "账户名：",
+        "accountNumberLabel": "账号：",
+        "sampleNote": "示例账户信息",
+        "slipTitle": "上传转账凭证",
+        "slipPick": "点按上传凭证",
+        "slipChange": "再次点按可更换图片",
+        "slipFromDevice": "从设备选择图片",
+        "slipHint": "转账完成后请上传凭证",
+        "submit": "确认存款"
+      },
+      "finalConfirm": {
+        "title": "确认提交存款申请？",
+        "description": "提交审核前，请核对金额和凭证",
+        "confirm": "提交存款",
+        "amountLabel": "存款金额"
+      }
+    },
+    "withdraw": {
+      "title": "取款",
+      "close": "关闭取款",
+      "accountLoading": "正在加载收款账户…",
+      "accountError": "无法加载收款账户",
+      "changeAccount": "更换收款账户",
+      "transferToYourAccount": "转入您的账户",
+      "amountLabel": "取款金额",
+      "available": "可用 ฿{amount}",
+      "withdrawAll": "全部取出",
+      "quickAmountHint": "点按金额可修改",
+      "submit": "确认取款",
+      "confirm": {
+        "title": "确认提交取款申请？",
+        "description": "转账至 {bank} {account}",
+        "confirm": "确认取款",
+        "amountLabel": "取款金额"
+      }
+    },
+    "pending": {
+      "deposit": {
+        "title": "存款处理中",
+        "subtitle": "等待匹配您的转账"
+      },
+      "withdraw": {
+        "title": "取款处理中",
+        "subtitle": "您的申请正在处理"
+      },
+      "rows": {
+        "channel": "方式",
+        "reference": "参考编号",
+        "transactionAt": "日期",
+        "receivingAccount": "收款账户"
+      },
+      "close": "关闭",
+      "done": "完成",
+      "viewHistory": "查看交易记录",
+      "copyReference": "复制参考编号",
+      "referenceCopied": "已复制参考编号",
+      "referenceCopyFailed": "无法复制参考编号"
+    }
+  }
+}

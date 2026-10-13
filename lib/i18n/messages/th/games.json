@@ -1,0 +1,68 @@
+{
+  "filters": {
+    "allInOne": "ศูนย์รวม",
+    "allProviders": "ค่ายทั้งหมด",
+    "allGameProviders": "ค่ายเกมทั้งหมด",
+    "dropsAndWins": "Drops & Wins",
+    "chicken": "ไก่",
+    "buyFeature": "ซื้อฟรีสปิน",
+    "jackpot": "แจ็คพอต",
+    "megaways": "เมกะเวย์",
+    "baccarat": "บาคาร่า",
+    "roulette": "รูเล็ต",
+    "blackjack": "แบล็คแจ็ค",
+    "gameShows": "เกมโชว์",
+    "sicbo": "ไฮโล/เสือมังกร",
+    "football": "ฟุตบอล",
+    "basketball": "บาสเกตบอล",
+    "esports": "อีสปอร์ต",
+    "boxing": "มวยไทย",
+    "tennis": "เทนนิส",
+    "arcade": "อาร์เคด",
+    "multiplayer": "ห้องรวม",
+    "hot": "มาแรง"
+  },
+  "subHeader": {
+    "back": "ย้อนกลับ"
+  },
+  "breadcrumb": {
+    "ariaLabel": "การนำทางตามลำดับขั้น",
+    "backToCategory": "ย้อนกลับไปหน้ารวม{category}"
+  },
+  "slots": {
+    "title": "สล็อต",
+    "providerAriaLabel": "{name} — สล็อต",
+    "providerCount": {
+      "other": "({count} ค่ายเกม)"
+    }
+  },
+  "casino": {
+    "title": "คาสิโนสด",
+    "count": {
+      "other": "({count} โต๊ะ/ค่ายเกม)"
+    }
+  },
+  "sport": {
+    "title": "กีฬา",
+    "count": {
+      "other": "({count} รายการ/ค่ายเกม)"
+    }
+  },
+  "providerGames": {
+    "searchPlaceholder": "ค้นหาเกมในค่ายนี้",
+    "backToCategory": "กลับไปหน้ารวม{category}",
+    "gameCount": {
+      "other": "({count} เกม)"
+    },
+    "notFoundTitle": "ไม่พบเกมที่ค้นหา",
+    "notFoundHint": "ลองค้นหาด้วยคำค้นอื่น หรือล้างช่องค้นหาเพื่อดูเกมทั้งหมด",
+    "favoriteAdd": "เพิ่มเป็นรายการโปรด",
+    "favoriteRemove": "นำออกจากรายการโปรด"
+  },
+  "play": {
+    "playingAriaLabel": "กำลังเล่น {title}",
+    "fullscreen": "เต็มจอ",
+    "exitFullscreen": "ออกจากโหมดเต็มจอ",
+    "iframePlaceholder": "พื้นที่ iframe เกม (prototype)"
+  }
+}

@@ -1,0 +1,105 @@
+{
+  "shared": {
+    "submitting": "กำลังส่ง...",
+    "copied": "คัดลอกแล้ว",
+    "copyAccountNumber": "คัดลอกเลขบัญชี",
+    "currencyUnit": "บาท"
+  },
+  "deposit": {
+    "title": "ฝากเงิน",
+    "close": "ปิดหน้าฝากเงิน",
+    "selectMethod": "เลือกช่องทางการฝากเงิน",
+    "methodsAria": "ช่องทางฝากเงิน",
+    "methodsLoading": "กำลังโหลดช่องทางฝาก…",
+    "methodsError": "โหลดช่องทางฝากไม่สำเร็จ",
+    "bankAccountLoading": "กำลังโหลดบัญชีรับโอน…",
+    "bankAccountError": "โหลดบัญชีรับโอนไม่สำเร็จ",
+    "methods": {
+      "bank": {
+        "title": "บัญชีธนาคาร",
+        "subtitle": "โอนเงินผ่านบัญชีธนาคาร"
+      },
+      "gateway": {
+        "title": "Payment Gateway",
+        "subtitle": "ฝากเงินผ่านระบบชำระเงิน"
+      },
+      "truemoney": {
+        "title": "ทรูวอลเล็ท",
+        "subtitle": "ฝากเงินผ่าน TrueMoney Wallet"
+      }
+    },
+    "bank": {
+      "title": "ฝากผ่านบัญชีธนาคาร",
+      "back": "กลับเลือกช่องทางฝาก",
+      "bankLabel": "ธนาคาร",
+      "accountName": "ชื่อบัญชี",
+      "accountNumber": "เลขที่บัญชี",
+      "amountLabel": "จำนวนเงินที่ต้องการฝาก",
+      "quickAmount": "เลือกยอดเงินด่วน",
+      "quickAmountHint": "เลือกยอดเงินหรือกรอกจำนวนที่ต้องการ",
+      "next": "ถัดไป"
+    },
+    "confirm": {
+      "title": "ยืนยันการฝากเงิน",
+      "back": "กลับแก้ไขยอดฝาก",
+      "step": "ขั้นตอน {current} จาก {total}",
+      "transferAmount": "ยอดเงินที่ต้องโอน",
+      "accountNameLabel": "ชื่อบัญชี: ",
+      "accountNumberLabel": "เลขบัญชี: ",
+      "sampleNote": "ข้อมูลบัญชีเป็นตัวอย่าง",
+      "slipTitle": "แนบสลิปการโอน",
+      "slipPick": "แตะเพื่อแนบสลิป",
+      "slipChange": "เปลี่ยนรูปได้โดยแตะอีกครั้ง",
+      "slipFromDevice": "เลือกรูปภาพจากอุปกรณ์",
+      "slipHint": "แนบสลิปหลังโอนเงินเรียบร้อยแล้ว",
+      "submit": "ยืนยันการฝากเงิน"
+    },
+    "finalConfirm": {
+      "title": "ยืนยันส่งคำขอฝากเงิน?",
+      "description": "ตรวจสอบยอดและสลิปก่อนส่งคำขอให้ระบบตรวจสอบ",
+      "confirm": "ส่งคำขอฝาก",
+      "amountLabel": "ยอดฝาก"
+    }
+  },
+  "withdraw": {
+    "title": "ถอนเงิน",
+    "close": "ปิดหน้าถอนเงิน",
+    "accountLoading": "กำลังโหลดบัญชีรับเงิน…",
+    "accountError": "โหลดบัญชีรับเงินไม่สำเร็จ",
+    "changeAccount": "เปลี่ยนบัญชีรับเงิน",
+    "transferToYourAccount": "โอนเข้าบัญชีของคุณ",
+    "amountLabel": "จำนวนเงินที่ต้องการถอน",
+    "available": "ถอนได้ ฿{amount}",
+    "withdrawAll": "ถอนทั้งหมด",
+    "quickAmountHint": "แตะยอดเงินเพื่อแก้ไข",
+    "submit": "ยืนยันถอนเงิน",
+    "confirm": {
+      "title": "ยืนยันส่งคำขอถอนเงิน?",
+      "description": "โอนเข้า {bank} {account}",
+      "confirm": "ยืนยันถอน",
+      "amountLabel": "ยอดถอน"
+    }
+  },
+  "pending": {
+    "deposit": {
+      "title": "ฝากเงินรอดำเนินการ",
+      "subtitle": "รอจับคู่ยอดทำรายการ"
+    },
+    "withdraw": {
+      "title": "ถอนเงินรอดำเนินการ",
+      "subtitle": "ระบบกำลังรอทำรายการ"
+    },
+    "rows": {
+      "channel": "ช่องทาง",
+      "reference": "เลขอ้างอิง",
+      "transactionAt": "วันที่ทำรายการ",
+      "receivingAccount": "บัญชีรับเงิน"
+    },
+    "close": "ปิด",
+    "done": "เรียบร้อย",
+    "viewHistory": "ดูประวัติรายการ",
+    "copyReference": "คัดลอกเลขอ้างอิง",
+    "referenceCopied": "คัดลอกเลขอ้างอิงแล้ว",
+    "referenceCopyFailed": "ไม่สามารถคัดลอกเลขอ้างอิงได้"
+  }
+}

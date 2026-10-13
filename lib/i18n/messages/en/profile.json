@@ -1,0 +1,133 @@
+{
+  "logout": "Log Out",
+  "retry": "Try Again",
+  "backHome": "Back to home",
+  "field": {
+    "copy": "Copy",
+    "edit": "Edit"
+  },
+  "account": {
+    "title": "Account Info",
+    "loading": "Loading account info…",
+    "loadErrorTitle": "Couldn't load account info",
+    "loadErrorDescription": "Please try again. If it still fails, log out and log back in.",
+    "tabs": {
+      "personal": "Personal Info",
+      "bank": "Bank Account"
+    },
+    "gameUser": "Game Username",
+    "copyGameUser": "Copy game username",
+    "gameUserCopied": "Game username copied",
+    "copyFailed": "Couldn't copy",
+    "password": "Password",
+    "changePassword": "Change password",
+    "transactionHistory": "Transaction History",
+    "transactionHistoryHint": "Deposit · Withdraw · Bets"
+  },
+  "avatar": {
+    "change": "Change profile picture",
+    "tapToChange": "Tap the picture to change it",
+    "pickerTitle": "Choose Profile Picture",
+    "pickerDescription": "Pick a character — saved as soon as you tap",
+    "saveFailed": "Couldn't save. Please try again.",
+    "close": "Close",
+    "srLabel": "Profile picture of {name}",
+    "presetName": "Character {n}"
+  },
+  "hub": {
+    "navAriaLabel": "Profile menu",
+    "vipLevel": "VIP Level",
+    "transactions": "Deposits & Withdrawals",
+    "myDiamonds": "My Gems",
+    "lossRebate": "Loss Rebate Bonus",
+    "affiliate": "Affiliate Balance",
+    "activePromotion": "Active Promotion",
+    "greeting": "Hi {name}",
+    "joinedAt": "Joined: {date}",
+    "playerId": "Player ID: {id}",
+    "copyPlayerId": "Copy player ID",
+    "playerIdCopied": "Player ID copied",
+    "copyPlayerIdFailed": "Couldn't copy ID"
+  },
+  "referralInvite": {
+    "title": "Invite Friends, Get Bonuses",
+    "description": "Share your link with friends and earn a share of their play",
+    "linkLabel": "Invite Link",
+    "copyLink": "Copy invite link",
+    "linkCopied": "Link copied",
+    "copyLinkFailed": "Couldn't copy link"
+  },
+  "summary": {
+    "copyId": "Copy ID",
+    "idCopied": "ID copied",
+    "copyIdFailed": "Couldn't copy ID",
+    "phoneVerified": "Phone verified"
+  },
+  "dashboard": {
+    "title": "System Overview / Dashboard",
+    "subtitle": "Real-time summary of key system data",
+    "dateRange": "Dec 12, 2023, 00:00 - 23:59",
+    "vsYesterday": "vs. yesterday",
+    "unitAccounts": "accounts",
+    "period": {
+      "today": "Today",
+      "week": "Week",
+      "month": "Month",
+      "year": "Year"
+    },
+    "nav": {
+      "overview": "Overview",
+      "betReports": "Betting Reports",
+      "members": "Members",
+      "marketing": "Marketing",
+      "promotions": "Promotions",
+      "transactions": "Transactions",
+      "reports": "Reports",
+      "settings": "Settings"
+    },
+    "kpi": {
+      "totalDeposit": "Total Deposits",
+      "totalWithdraw": "Total Withdrawals",
+      "netProfit": "Net Profit",
+      "totalBets": "Total Bets",
+      "newMembers": "New Members",
+      "firstDeposit": "First Deposit"
+    },
+    "chart": {
+      "deposit": "Deposits (THB)",
+      "withdraw": "Withdrawals (THB)",
+      "transactionCount": "Transactions",
+      "accountCount": "Accounts"
+    },
+    "journey": {
+      "title": "Customer Journey",
+      "signUp": "Signed Up",
+      "firstDeposit": "First Deposit",
+      "firstBet": "Active (First Bet)"
+    },
+    "trend": {
+      "title": "Deposits - Withdrawals Today",
+      "subtitle": "Transactions over time (Shadcn Chart)",
+      "net": "Net"
+    },
+    "banks": {
+      "title": "Customer Bank Share",
+      "totalAccounts": "Total accounts"
+    },
+    "channels": {
+      "title": "How Customers Found Us",
+      "channel": "Channel",
+      "customers": "Customers",
+      "share": "Share"
+    },
+    "activeHours": {
+      "title": "Customer Active Hours"
+    },
+    "depositDistribution": {
+      "title": "Customer Deposit Distribution"
+    },
+    "hourlyMembers": {
+      "title": "New Members by Hour"
+    }
+  }
+}

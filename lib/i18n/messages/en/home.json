@@ -1,0 +1,171 @@
+{
+  "categories": {
+    "home": "Home",
+    "casino": "Casino",
+    "slots": "Slots",
+    "fishing": "Fishing",
+    "sports": "Sports",
+    "lottery": "Lottery",
+    "cards": "Cards"
+  },
+  "categoryNav": {
+    "ariaLabel": "Game categories"
+  },
+  "sections": {
+    "hotGames": "Hot Games",
+    "slots": "SLOTS",
+    "casino": "Casino",
+    "fishing": "Fishing",
+    "sports": "Sports",
+    "empty": "No games in this category yet"
+  },
+  "intro": {
+    "title": "A Universe of Thrills",
+    "gamesBefore": "Over",
+    "gamesAfter": "games,",
+    "providersBefore": "over",
+    "providersAfter": "providers,",
+    "sports": "and sports events worldwide"
+  },
+  "featureActions": {
+    "ariaLabel": "Special features"
+  },
+  "search": {
+    "formAriaLabel": "Search games and providers",
+    "label": "Search games or providers",
+    "clear": "Clear search"
+  },
+  "hallOfFame": {
+    "tabsAriaLabel": "Choose Top Performance table",
+    "empty": "No entries yet"
+  },
+  "carousel": {
+    "prev": "Previous slide",
+    "next": "Next slide",
+    "scroll": "Browse banners",
+    "pickSlide": "Choose banner slide",
+    "goToSlide": "Go to slide {index}"
+  },
+  "peekCarousel": {
+    "ariaLabel": "Promotion and event banners"
+  },
+  "promoCarousel": {
+    "ariaLabel": "Promotion and perk banners",
+    "listAriaLabel": "Promotions"
+  },
+  "welcomeBanner": {
+    "ariaLabel": "Welcome and promotion banners",
+    "slidesAriaLabel": "Welcome banner slides"
+  },
+  "auth": {
+    "login": "Log In",
+    "signUp": "Sign Up",
+    "loginToSeeEvents": "Log in or sign up to see events"
+  },
+  "events": {
+    "title": "Events",
+    "slidesAriaLabel": "{title} slides",
+    "goTo": "Go to {name}"
+  },
+  "announcement": {
+    "ariaLabel": "System announcements",
+    "label": "News"
+  },
+  "categoryProviders": {
+    "comingSoon": "Providers for this category are coming soon. Try Casino, Slots, Fishing or Sports for now.",
+    "liveCasino": "Live Casino",
+    "providersFallback": "Providers",
+    "providerCount": {
+      "one": "({count} provider)",
+      "other": "({count} providers)"
+    },
+    "gamesByProviderAriaLabel": "{category} games from the selected provider",
+    "listAriaLabel": "Providers in the selected category",
+    "searchPlaceholder": {
+      "casino": "Search live casino | Provider",
+      "fishing": "Search fishing | Provider",
+      "cards": "Search cards | Provider",
+      "sports": "Search sports | Provider",
+      "default": "Search games | Provider"
+    }
+  },
+  "quickBanners": {
+    "ariaLabel": "Quick highlights",
+    "promo": {
+      "title": "Special Promotions",
+      "subtitle": "Exclusive deals just for you"
+    },
+    "event": {
+      "title": "Events",
+      "subtitle": "Events around the clock"
+    },
+    "news": {
+      "title": "News",
+      "subtitle": "News you shouldn't miss"
+    }
+  },
+  "mostOnline": {
+    "title": "Most Played Right Now",
+    "favoriteAdd": "Add to favorites",
+    "favoriteRemove": "Remove from favorites",
+    "playingNow": "{count} playing now"
+  },
+  "popular": {
+    "title": "Popular",
+    "empty": "Nothing in this category yet"
+  },
+  "providers": {
+    "empty": "No providers yet",
+    "marqueeAriaLabel": "Game providers",
+    "logoAriaLabel": "Provider {name}"
+  },
+  "a2hs": {
+    "title": "Add to Home Screen",
+    "cardTitle": "Add the shortcut today!",
+    "cardSubtitle": "Get a better experience. Add it now",
+    "platformsAriaLabel": "Choose your device",
+    "stepsTitle": "How to add the shortcut ({platform})",
+    "installed": "App installed",
+    "steps": {
+      "android1": "Tap the ⋮ menu at the top right of Chrome",
+      "android2": "Choose \"Install app\" or \"Add to Home screen\"",
+      "android3": "Tap \"Install\" or \"Add\" to confirm",
+      "ios1": "Tap the \"Share\" button at the bottom of Safari",
+      "ios2": "Choose \"Add to Home Screen\"",
+      "ios3": "Tap \"Add\" at the top right to confirm",
+      "launch": "Open the site instantly from our app icon"
+    }
+  },
+  "desktopMenu": {
+    "referral": {
+      "title": "Refer Friends",
+      "subtitle": "Earn on 2 tiers",
+      "ariaLabel": "Refer friends, earn on 2 tiers"
+    },
+    "checkIn": {
+      "title": "Check-In",
+      "subtitle": "CHECK-IN",
+      "ariaLabel": "Daily check-in"
+    },
+    "wheel": {
+      "title": "Wheel",
+      "subtitle": "LUCKY WHEEL",
+      "ariaLabel": "Lucky wheel"
+    },
+    "gems": {
+      "title": "Gems Shop",
+      "subtitle": "GEMS SHOP",
+      "ariaLabel": "Gems shop"
+    },
+    "coupon": {
+      "title": "Coupon",
+      "subtitle": "COUPON",
+      "ariaLabel": "Redeem coupon"
+    },
+    "vip": {
+      "title": "VIP Rank",
+      "subtitle": "Member perks",
+      "ariaLabel": "VIP rank, member perks"
+    }
+  }
+}

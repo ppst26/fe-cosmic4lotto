@@ -1,0 +1,80 @@
+{
+  "tabs": {
+    "ariaLabel": "VIP menu",
+    "myLevel": "My Level",
+    "rank": "Rank",
+    "benefits": "Benefits"
+  },
+  "status": {
+    "loading": "Loading...",
+    "playerLoading": "Loading VIP info…",
+    "playerError": "Couldn't load VIP info",
+    "ranksLoading": "Loading VIP levels…",
+    "ranksError": "Couldn't load VIP levels",
+    "benefitsLoading": "Loading benefits…",
+    "benefitsError": "Couldn't load benefits",
+    "retry": "Try Again"
+  },
+  "level": {
+    "label": "Level",
+    "next": "Next level",
+    "currentAriaLabel": "Current VIP Level",
+    "benefitsAndMaintainAriaLabel": "Benefits and level maintenance"
+  },
+  "rankStatus": {
+    "current": "Current level",
+    "cleared": "Cleared",
+    "locked": "Not reached yet"
+  },
+  "carousel": {
+    "previous": "Previous rank",
+    "next": "Next rank",
+    "turnoverTarget": "Turnover {amount}"
+  },
+  "progress": {
+    "levelUpTo": "Level Up to VIP {level}",
+    "bothRequired": "Both requirements must be met",
+    "overallAriaLabel": "Overall progress {percent} percent",
+    "deposit": "Deposit",
+    "turnover": "Turnover",
+    "target": "Target {amount}",
+    "complete": "Completed",
+    "remaining": "{amount} to go"
+  },
+  "maintain": {
+    "title": "Maintain VIP Level",
+    "subtitleWithDowngrade": "Meet both or drop to VIP {level}",
+    "daysRemaining": "days left"
+  },
+  "benefitsTable": {
+    "title": "Benefits by Level",
+    "scrollHint": "Scroll to see more levels"
+  },
+  "benefitRows": {
+    "cashback": "Bonus Cashback",
+    "rolling": "Bonus Rolling",
+    "diamondDeposit": "Gems from Deposits",
+    "fastWithdraw": "Fast Withdrawal",
+    "vipManager": "VIP Manager",
+    "upgradeBonus": "Upgrade Bonus",
+    "depositCondition": "Deposit Requirement",
+    "turnoverCondition": "Turnover Requirement"
+  },
+  "benefitValues": {
+    "faster": "✓ Faster",
+    "max": "✓ Max",
+    "notRequired": "None"
+  },
+  "myLevelBenefits": {
+    "cashback": "Cashback",
+    "rolling": "Rolling",
+    "diamondDeposit": "Deposit Gems"
+  },
+  "missions": {
+    "login": "Log In",
+    "deposit": "Deposit",
+    "play": "Play",
+    "unitDays": "days",
+    "unitTimes": "times"
+  }
+}

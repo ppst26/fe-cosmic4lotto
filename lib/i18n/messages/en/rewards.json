@@ -1,0 +1,214 @@
+{
+  "actions": {
+    "claim": "Claim",
+    "close": "Close",
+    "ok": "OK"
+  },
+  "status": {
+    "claimed": "Claimed"
+  },
+  "hub": {
+    "title": "Rewards",
+    "loading": "Loading rewards…",
+    "loadError": "Couldn't load rewards",
+    "pointsLoading": "Loading points…",
+    "pointsLoadError": "Couldn't load reward data",
+    "bannersAria": "Reward promotions",
+    "shortcutsAria": "Rewards menu",
+    "summaryAria": "Credit and points balance",
+    "totalCredits": "Total credits",
+    "pointsBalance": "Points balance"
+  },
+  "shortcuts": {
+    "luckyBox": "Lucky Box",
+    "randomCard": "Random Card",
+    "freespins": "Free Spins / Chips"
+  },
+  "banners": {
+    "luckyBoxSubtitle": "Redeem a Lucky Box with points",
+    "randomCardSubtitle": "Flip a card to win prizes",
+    "termsLabel": "Terms & conditions"
+  },
+  "redeemBoard": {
+    "subtitle": "Win prizes",
+    "pointsLabel": "Points",
+    "drawCost": "{cost} points per draw",
+    "startDraw": "Start Draw",
+    "history": "Redemption history"
+  },
+  "luckyBox": {
+    "pageTitle": "Lucky Box",
+    "loading": "Loading Lucky Box…",
+    "loadError": "Couldn't load Lucky Box"
+  },
+  "randomCard": {
+    "pageTitle": "Random Card",
+    "loading": "Loading Random Card…",
+    "loadError": "Couldn't load Random Card"
+  },
+  "freespins": {
+    "title": "Free Spins / Chips",
+    "comingSoonDesc": "This feature is in development — redeem with points soon"
+  },
+  "checkIn": {
+    "title": "Daily Check-in",
+    "loading": "Loading check-in…",
+    "loadError": "Couldn't load check-in",
+    "subtitle": "Check in every day for bonus Gems",
+    "bonusBefore": "Only",
+    "bonusDays": {
+      "one": "{count} day",
+      "other": "{count} days"
+    },
+    "bonusAfter": "left for a bonus of",
+    "bonusGems": "{amount} Gems",
+    "progressTotal": "/ {total} days",
+    "dayStatus": {
+      "claimed": "Claimed",
+      "today": "Claim",
+      "locked": "Upcoming"
+    },
+    "weekdays": {
+      "mon": "Mon",
+      "tue": "Tue",
+      "wed": "Wed",
+      "thu": "Thu",
+      "fri": "Fri",
+      "sat": "Sat",
+      "sun": "Sun"
+    },
+    "cumulativeTitle": "Streak Rewards",
+    "cumulativeDesc": "Reach each check-in goal for big bonus Gems",
+    "milestoneGems": "{amount} Gems",
+    "milestoneDays": "{days}-day check-in",
+    "milestoneDialog": {
+      "title": "{days}-day check-in reward",
+      "progress": "Checked in {done}/{total} days",
+      "claim": "Claim reward",
+      "claimed": "Reward claimed",
+      "daysLeft": { "one": "Check in {count} more day", "other": "Check in {count} more days" }
+    },
+    "claimedToday": "Checked in today",
+    "claimToday": "Claim Today's Reward",
+    "success": {
+      "title": "Reward claimed",
+      "descBefore": "You received",
+      "descAfter": ""
+    },
+    "desktop": {
+      "summaryAria": "Check-in summary",
+      "progressAria": "Check-in progress",
+      "weekProgress": "This week's progress",
+      "daysUnit": "days",
+      "claimTodayAria": "Claim today's reward",
+      "claimToday": "Claim Today's Reward",
+      "claimedToday": "Reward Claimed",
+      "streakAria": "7-day progress",
+      "streakDay": "Day {day}",
+      "listTitle": "Check-in Rewards",
+      "dayTitle": "Day {day}",
+      "specialReward": "Special reward",
+      "bonusDayDesc": "Check in all week for bonus credits",
+      "dailyDesc": "Daily check-in reward",
+      "locked": "Locked"
+    }
+  },
+  "wheel": {
+    "title": "Lucky Wheel",
+    "subtitle": "Spin daily for big prizes",
+    "loading": "Loading Lucky Wheel…",
+    "loadError": "Couldn't load Lucky Wheel",
+    "backHome": "Back to home",
+    "winMessage": "Congratulations! You won {prize}",
+    "justNow": "Just now",
+    "prizeKind": {
+      "gems": "Gems",
+      "credit": "Credits"
+    },
+    "gemsBalanceAria": "Your Gems balance",
+    "ticketsAria": "Your tickets",
+    "spinAria": "Spin the wheel",
+    "methodTabsAria": "Choose spin method",
+    "methodGems": "Gems ×{cost}",
+    "methodTicket": "Ticket ×{cost}",
+    "spinning": "Spinning…",
+    "spinNow": "Spin Now",
+    "useTickets": {
+      "one": "Uses {count} ticket",
+      "other": "Uses {count} tickets"
+    },
+    "useGems": "Uses {amount} Gems",
+    "noTickets": "No tickets — try spinning with Gems",
+    "notEnoughGems": "Not enough Gems — top up Gems",
+    "hint": "Spin for fun and win prizes every day",
+    "sampleNote": "Sample prizes and wallet balances",
+    "liveWinners": {
+      "title": "Recent Winners",
+      "gemsWon": "+{amount} Gems",
+      "received": "Won",
+      "gemsAmount": "{amount} Gems"
+    },
+    "history": {
+      "title": "My Spin History",
+      "usedGems": "Gems",
+      "usedTicket": "Ticket",
+      "prevPage": "Previous page",
+      "nextPage": "Next page"
+    }
+  },
+  "gemsStore": {
+    "title": "Gems Store",
+    "loading": "Loading Gems Store…",
+    "loadError": "Couldn't load Gems Store",
+    "redeemHeading": "Redeem Credits",
+    "termsTitle": "Redemption Terms",
+    "redeemShort": "Redeem",
+    "notEnoughShort": "Short",
+    "redeem": "Redeem",
+    "redeemAria": "Redeem {credits}",
+    "notEnoughGems": "Not enough Gems",
+    "summary": {
+      "balanceLabel": "Gems balance",
+      "balanceAria": "Gems balance {amount}",
+      "today": "Today",
+      "thisWeek": "This week"
+    },
+    "confirm": {
+      "title": "{amount} credits",
+      "subtitle": "Use {gems} Gems to redeem {credits} credits",
+      "creditsLabel": "Credits",
+      "gemsUsed": "Gems used",
+      "balanceAfter": "Balance after",
+      "cancel": "Cancel",
+      "confirm": "Confirm",
+      "processing": "Processing…"
+    }
+  },
+  "activities": {
+    "title": "Events",
+    "loading": "Loading events…",
+    "loadError": "Couldn't load events",
+    "listAria": "Events list",
+    "closeDetail": "Close event details",
+    "viewDetails": "View Details",
+    "categoryTabsAria": "Event categories",
+    "categories": {
+      "slots": "Slots",
+      "casino": "Casino"
+    },
+    "progress": {
+      "title": "Your Turnover",
+      "current": "Current turnover",
+      "rank1Target": "Tier 1 target",
+      "rewardCount": "Rewards {earned} / {cap}"
+    },
+    "tiers": {
+      "rank": "Tier",
+      "turn": "Turnover",
+      "bonus": "Bonus",
+      "claim": "Claim",
+      "notEligible": "Not eligible"
+    },
+    "rulesTitle": "Event Rules & Terms"
+  }
+}

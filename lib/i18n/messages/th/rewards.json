@@ -1,0 +1,208 @@
+{
+  "actions": {
+    "claim": "รับรางวัล",
+    "close": "ปิด",
+    "ok": "ตกลง"
+  },
+  "status": {
+    "claimed": "รับแล้ว"
+  },
+  "hub": {
+    "title": "สุ่มของรางวัล",
+    "loading": "กำลังโหลดศูนย์รางวัล…",
+    "loadError": "โหลดศูนย์รางวัลไม่สำเร็จ",
+    "pointsLoading": "กำลังโหลดพอยท์…",
+    "pointsLoadError": "โหลดข้อมูลรางวัลไม่สำเร็จ",
+    "bannersAria": "โปรโมชันรางวัล",
+    "shortcutsAria": "เมนูรางวัล",
+    "summaryAria": "ยอดเครดิตและพอยท์",
+    "totalCredits": "เครดิตทั้งหมด",
+    "pointsBalance": "พอยท์คงเหลือ"
+  },
+  "shortcuts": {
+    "luckyBox": "แลกกล่องสุ่ม",
+    "randomCard": "แลกการ์ดสุ่ม",
+    "freespins": "แลกรับฟรีสปิน/ชิป"
+  },
+  "banners": {
+    "luckyBoxSubtitle": "แลกกล่องสุ่มด้วยพอยท์",
+    "randomCardSubtitle": "เปิดการ์ดลุ้นรางวัล",
+    "termsLabel": "เงื่อนไขเพิ่มเติม"
+  },
+  "redeemBoard": {
+    "subtitle": "สุ่มของรางวัล",
+    "pointsLabel": "พอยท์สะสม",
+    "drawCost": "สุ่มรางวัลครั้งละ {cost} พอยท์",
+    "startDraw": "เริ่มการสุ่ม",
+    "history": "ประวัติการแลกของรางวัล"
+  },
+  "luckyBox": {
+    "pageTitle": "แลกกล่องสุ่ม",
+    "loading": "กำลังโหลด Lucky Box…",
+    "loadError": "โหลด Lucky Box ไม่สำเร็จ"
+  },
+  "randomCard": {
+    "pageTitle": "แลกการ์ดสุ่ม",
+    "loading": "กำลังโหลดการ์ดสุ่ม…",
+    "loadError": "โหลดการ์ดสุ่มไม่สำเร็จ"
+  },
+  "freespins": {
+    "title": "ฟรีสปิน / ชิป",
+    "comingSoonDesc": "ฟีเจอร์นี้กำลังพัฒนา — จะเปิดให้แลกด้วยพอยท์เร็วๆ นี้"
+  },
+  "checkIn": {
+    "title": "เช็คอินรายวัน",
+    "loading": "กำลังโหลดเช็คอิน…",
+    "loadError": "โหลดข้อมูลเช็คอินไม่สำเร็จ",
+    "subtitle": "เช็คอินต่อเนื่องรับเพชรโบนัสพิเศษ",
+    "bonusBefore": "อีก",
+    "bonusDays": "{count} วัน",
+    "bonusAfter": "ได้โบนัส",
+    "bonusGems": "เพชร {amount}",
+    "progressTotal": "/ {total} วัน",
+    "dayStatus": {
+      "claimed": "รับแล้ว",
+      "today": "กดรับ",
+      "locked": "รอรับ"
+    },
+    "weekdays": {
+      "mon": "จ.",
+      "tue": "อ.",
+      "wed": "พ.",
+      "thu": "พฤ.",
+      "fri": "ศ.",
+      "sat": "ส.",
+      "sun": "อา."
+    },
+    "cumulativeTitle": "รางวัลเช็คอินสะสม",
+    "cumulativeDesc": "เช็คอินครบตามกำหนด รับเพชรโบนัสใหญ่",
+    "milestoneGems": "เพชร {amount}",
+    "milestoneDays": "เช็คอิน {days} วัน",
+    "milestoneDialog": {
+      "title": "รางวัลเช็คอินครบ {days} วัน",
+      "progress": "เช็คอินแล้ว {done}/{total} วัน",
+      "claim": "รับรางวัล",
+      "claimed": "รับรางวัลแล้ว",
+      "daysLeft": "เช็คอินอีก {count} วัน"
+    },
+    "claimedToday": "เช็คอินแล้ววันนี้",
+    "claimToday": "กดรับรางวัลวันนี้",
+    "success": {
+      "title": "รับรางวัลเรียบร้อยแล้ว",
+      "descBefore": "คุณได้รับ",
+      "descAfter": "แล้ว"
+    },
+    "desktop": {
+      "summaryAria": "สรุปเช็คอิน",
+      "progressAria": "ความคืบหน้าเช็คอิน",
+      "weekProgress": "ความคืบหน้าสัปดาห์นี้",
+      "daysUnit": "วัน",
+      "claimTodayAria": "รับรางวัลวันนี้",
+      "claimToday": "รับรางวัลวันนี้",
+      "claimedToday": "รับรางวัลแล้ว",
+      "streakAria": "ความคืบหน้า 7 วัน",
+      "streakDay": "วัน {day}",
+      "listTitle": "รายการเช็คอิน",
+      "dayTitle": "วันที่ {day}",
+      "specialReward": "รางวัลพิเศษ",
+      "bonusDayDesc": "เช็คอินครบสัปดาห์ รับเครดิตโบนัส",
+      "dailyDesc": "รางวัลเช็คอินประจำวัน",
+      "locked": "ล็อค"
+    }
+  },
+  "wheel": {
+    "title": "วงล้อพารวย",
+    "subtitle": "หมุนลุ้นรับรางวัลใหญ่ทุกวัน",
+    "loading": "กำลังโหลดวงล้อ…",
+    "loadError": "โหลดวงล้อไม่สำเร็จ",
+    "backHome": "ย้อนกลับไปหน้าแรก",
+    "winMessage": "ยินดีด้วย! คุณได้รับ {prize}",
+    "justNow": "เมื่อสักครู่",
+    "prizeKind": {
+      "gems": "เพชร",
+      "credit": "เครดิต"
+    },
+    "gemsBalanceAria": "ยอดเพชรของคุณ",
+    "ticketsAria": "จำนวนตั๋วของคุณ",
+    "spinAria": "หมุนวงล้อ",
+    "methodTabsAria": "เลือกวิธีหมุนวงล้อ",
+    "methodGems": "เพชร ×{cost}",
+    "methodTicket": "ตั๋ว ×{cost}",
+    "spinning": "กำลังหมุน…",
+    "spinNow": "หมุนเลย",
+    "useTickets": "ใช้ตั๋ว {count} ใบ",
+    "useGems": "ใช้ {amount} เพชร",
+    "noTickets": "ไม่มีตั๋ว ลองหมุนด้วยเพชร",
+    "notEnoughGems": "เพชรไม่เพียงพอ ลองเติมเพชร",
+    "hint": "หมุนสนุก ลุ้นรับของรางวัลได้ทุกวัน",
+    "sampleNote": "ตัวอย่างรางวัลและยอดกระเป๋า",
+    "liveWinners": {
+      "title": "ผู้เล่นคนอื่นได้รับรางวัล",
+      "gemsWon": "+{amount} เพชร",
+      "received": "ได้รับ",
+      "gemsAmount": "{amount} เพชร"
+    },
+    "history": {
+      "title": "ประวัติการหมุนของฉัน",
+      "usedGems": "ใช้เพชร",
+      "usedTicket": "ใช้ตั๋ว",
+      "prevPage": "หน้าก่อน",
+      "nextPage": "หน้าถัดไป"
+    }
+  },
+  "gemsStore": {
+    "title": "ร้านค้า Gems",
+    "loading": "กำลังโหลดร้านค้าเพชร…",
+    "loadError": "โหลดร้านค้าเพชรไม่สำเร็จ",
+    "redeemHeading": "แลกเครดิต",
+    "termsTitle": "เงื่อนไขการแลกรางวัล",
+    "redeemShort": "แลก",
+    "notEnoughShort": "ไม่พอ",
+    "redeem": "แลกรางวัล",
+    "redeemAria": "แลกรางวัล {credits}",
+    "notEnoughGems": "Gems ไม่เพียงพอ",
+    "summary": {
+      "balanceLabel": "เพชรคงเหลือ",
+      "balanceAria": "เพชรคงเหลือ {amount}",
+      "today": "วันนี้",
+      "thisWeek": "สัปดาห์นี้"
+    },
+    "confirm": {
+      "title": "เครดิต {amount}",
+      "subtitle": "ใช้ {gems} เพชร แลกเป็น เครดิต {credits}",
+      "creditsLabel": "เครดิต",
+      "gemsUsed": "เพชรที่ใช้",
+      "balanceAfter": "คงเหลือหลังแลก",
+      "cancel": "ยกเลิก",
+      "confirm": "ยืนยัน",
+      "processing": "กำลังดำเนินการ…"
+    }
+  },
+  "activities": {
+    "title": "กิจกรรม",
+    "loading": "กำลังโหลดกิจกรรม…",
+    "loadError": "โหลดกิจกรรมไม่สำเร็จ",
+    "listAria": "รายการกิจกรรม",
+    "closeDetail": "ปิดรายละเอียดกิจกรรม",
+    "viewDetails": "ดูรายละเอียด",
+    "categoryTabsAria": "หมวดกิจกรรม",
+    "categories": {
+      "slots": "สล็อต",
+      "casino": "คาสิโน"
+    },
+    "progress": {
+      "title": "ยอดเทิร์นของคุณ",
+      "current": "ยอดเทิร์นปัจจุบัน",
+      "rank1Target": "เป้าหมายลำดับที่ 1",
+      "rewardCount": "จำนวนรางวัล {earned} / {cap}"
+    },
+    "tiers": {
+      "rank": "ลำดับ",
+      "turn": "เทิร์น",
+      "bonus": "โบนัส",
+      "claim": "รับรางวัล",
+      "notEligible": "ไม่ผ่านเงื่อนไข"
+    },
+    "rulesTitle": "กติกาและเงื่อนไขกิจกรรม"
+  }
+}

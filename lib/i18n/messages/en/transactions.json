@@ -1,0 +1,69 @@
+{
+  "title": "Transaction History",
+  "pageLoading": "Loading...",
+  "kindTabs": {
+    "aria": "Transaction type",
+    "deposit": "Deposit",
+    "withdraw": "Withdraw",
+    "promotion": "Promotion",
+    "bet": "Bets"
+  },
+  "filter": {
+    "label": "Select date",
+    "openCalendar": "Open date picker",
+    "clear": "Clear",
+    "search": "Search"
+  },
+  "calendar": {
+    "title": "Select Date Range",
+    "close": "Close",
+    "cancel": "Cancel",
+    "confirm": "Confirm"
+  },
+  "status": {
+    "completed": "Successful",
+    "pending": "Pending",
+    "failed": "Failed"
+  },
+  "betType": {
+    "bet": "Bet",
+    "result": "Result"
+  },
+  "columns": {
+    "amount": "Amount",
+    "channel": "Method",
+    "account": "Account",
+    "createdAt": "Date & Time",
+    "status": "Status",
+    "detail": "Details",
+    "completedAt": "Completed At",
+    "promotionName": "Promotion",
+    "playStart": "Start Date",
+    "playEnd": "End Date",
+    "freeSpins": "Free Spins",
+    "perRound": "Per Round",
+    "provider": "Provider",
+    "gameName": "Game",
+    "expiresWithin": "Expires In",
+    "game": "Game",
+    "date": "Date",
+    "time": "Time",
+    "type": "Type",
+    "betAmount": "Amount",
+    "openingBalance": "Opening Balance",
+    "closingBalance": "Closing Balance"
+  },
+  "empty": "No data found",
+  "paginationAria": "Bet history pages",
+  "loginRequired": "Please log in to view your transactions",
+  "loadError": "Couldn't load transactions",
+  "retry": "Try again",
+  "loading": "Loading transactions…",
+  "summary": {
+    "depositTotal": "Total deposits:",
+    "withdrawTotal": "Total withdrawals:",
+    "promotionClaims": "Promotions claimed:",
+    "winLossTotal": "Total win/loss:",
+    "stakeTotal": "Total bets:"
+  }
+}

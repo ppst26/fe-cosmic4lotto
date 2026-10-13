@@ -1,0 +1,24 @@
+{
+  "notFoundTitle": "Page not found",
+  "backHome": "Back to home",
+  "notFound": {
+    "metaTitle": "Page Not Found — XGAMBET",
+    "title": "We couldn't find that page",
+    "description": "The link may be wrong or the page may have moved",
+    "viewPromotions": "View Promotions"
+  },
+  "route": {
+    "title": "Something went wrong",
+    "description": "This page failed to load. Please try again. If the problem persists, contact customer support."
+  },
+  "offline": {
+    "title": "No internet connection",
+    "description": "Turn on your connection and reopen XGAMBET"
+  },
+  "api": {
+    "network": "Can't reach the server. Check your internet connection and try again.",
+    "parse": "Couldn't read the server response",
+    "unauthorized": "Please log in again",
+    "generic": "Something went wrong. Please try again."
+  }
+}

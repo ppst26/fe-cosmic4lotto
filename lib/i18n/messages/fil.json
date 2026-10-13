@@ -1,0 +1,1654 @@
+{
+  "auth": {
+    "login": "Mag-log in",
+    "signUp": "Mag-sign up",
+    "signUpShort": "Mag-sign up",
+    "logout": "Mag-log out",
+    "loginSheet": {
+      "close": "Isara ang login",
+      "subtitle": "Gamitin ang numero ng telepono at password na ginamit mo sa pag-sign up",
+      "submitting": "Nagla-log in...",
+      "noAccount": "Wala ka pang account?",
+      "success": "Matagumpay na naka-log in",
+      "failed": "Hindi nakapag-log in"
+    },
+    "signUpSheet": {
+      "close": "Isara ang sign-up",
+      "welcome": "Maligayang pagdating sa XGAMBET",
+      "tagline": "Simulan ang saya sa sarili mong paraan",
+      "haveAccount": "May account ka na?",
+      "submitting": "Nagsa-sign up...",
+      "success": "Tapos na ang sign-up. Welcome!",
+      "failed": "Hindi nakapag-sign up",
+      "pickerClose": "Isara ang pagpili",
+      "loadingBanks": "Nilo-load ang mga bangko…",
+      "banksFailed": "Hindi ma-load ang mga bangko",
+      "loadingChannels": "Nilo-load ang mga channel…",
+      "channelsFailed": "Hindi ma-load ang mga channel"
+    },
+    "fields": {
+      "phone": "Numero ng telepono",
+      "phonePlaceholder": "Ilagay ang numero ng telepono",
+      "password": "Password",
+      "passwordPlaceholder": "Ilagay ang password",
+      "confirmPassword": "Kumpirmahin ang password",
+      "confirmPasswordPlaceholder": "Ilagay muli ang password",
+      "showPassword": "Ipakita ang password",
+      "hidePassword": "Itago ang password",
+      "firstName": "Pangalan",
+      "lastName": "Apelyido",
+      "bankAccount": "Numero ng bank account",
+      "bankAccountPlaceholder": "Numero ng account",
+      "bank": "Bangko",
+      "bankPlaceholder": "Pumili ng bangko",
+      "channel": "Paano mo kami nalaman?",
+      "channelPlaceholder": "Pumili ng channel"
+    },
+    "validation": {
+      "phone": "Dapat 10 digit ang numero ng telepono at nagsisimula sa 0",
+      "passwordRequired": "Pakilagay ang iyong password",
+      "passwordLength": "Dapat 6–32 character ang password",
+      "passwordMismatch": "Hindi magkatugma ang mga password",
+      "firstName": "Pakilagay ang pangalan gamit ang mga letra lamang",
+      "lastName": "Pakilagay ang apelyido gamit ang mga letra lamang",
+      "bankAccount": "Dapat 10–12 digit ang numero ng account",
+      "bankRequired": "Pumili ng bangko",
+      "channelRequired": "Pumili ng channel"
+    },
+    "account": {
+      "title": "Impormasyon ng Account",
+      "profile": "Profile",
+      "closeProfile": "Isara ang profile",
+      "loadingProfile": "Nilo-load ang profile…",
+      "profileFailed": "Hindi ma-load ang profile",
+      "loading": "Nilo-load ang impormasyon ng account…",
+      "failed": "Hindi ma-load ang impormasyon ng account",
+      "retryHint": "Subukan muli. Kung hindi pa rin gumana, mag-log out at mag-log in ulit."
+    },
+    "loginPrompt": {
+      "title": "Mag-log in para makita ito",
+      "description": "Para lang sa mga miyembro ang seksyong ito"
+    },
+    "logoutConfirm": {
+      "title": "Mag-log out?",
+      "description": "Kailangan mong mag-log in ulit para mag-deposit, mag-withdraw o maglaro gamit ang account na ito",
+      "stay": "Manatili"
+    }
+  },
+  "cashback": {
+    "pageTitle": "Cashback",
+    "tabs": {
+      "ariaLabel": "Uri ng cashback",
+      "play": "Cashback",
+      "loss": "Loss Rebate"
+    },
+    "status": {
+      "panelsLoading": "Nilo-load ang cashback…",
+      "panelsError": "Hindi ma-load ang cashback",
+      "lossRebateLoading": "Nilo-load ang loss rebate…",
+      "lossRebateError": "Hindi ma-load ang loss rebate"
+    },
+    "panel": {
+      "playSubtitle": "Cashback mula sa iyong turnover",
+      "lossSubtitle": "Rebate sa iyong net na talo",
+      "nothingToClaim": "Wala pang ma-claim",
+      "claimed": "Na-claim na",
+      "cycleDaily": "Araw-araw ng 00:00",
+      "claimableAmount": "Halagang Maaaring I-claim",
+      "accumulatedThisCycle": "Naipon (sa cycle na ito)",
+      "refresh": "I-refresh ang halaga"
+    },
+    "periods": {
+      "ariaLabel": "Panahon ng buod ng cashback",
+      "all": "Lahat",
+      "today": "Ngayon",
+      "lastWeek": "Nakaraang Linggo",
+      "lastMonth": "Nakaraang Buwan"
+    },
+    "rules": {
+      "title": "Detalye ng mga Tuntunin",
+      "item": "Aytem",
+      "value": "Halaga",
+      "rate": "Rate",
+      "min": "Minimum",
+      "maxPerClaim": "Maximum bawat claim",
+      "cycle": "Cycle ng kalkulasyon"
+    },
+    "lossRebate": {
+      "statusCalculated": "Nakalkula na",
+      "historyTitle": "Kasaysayan ng Loss Rebate",
+      "selectMonth": "Pumili ng buwan",
+      "period": "Panahon",
+      "netLoss": "Net na Talo",
+      "bonusReceived": "Natanggap na Bonus",
+      "receivedDate": "Petsa ng Pagtanggap",
+      "empty": "Walang kasaysayan para sa napiling buwan",
+      "paginationAriaLabel": "Mga pahina ng kasaysayan ng loss rebate",
+      "termsTitle": "Mga Tuntunin ng Loss Rebate",
+      "terms": {
+        "basis": "Kinakalkula ang loss rebate mula sa kwalipikadong net na talo sa bawat cycle.",
+        "claimWindow": "Dapat i-claim ang mga bonus habang bukas ang claim window, kung hindi ay mawawalan ito ng bisa.",
+        "subjectToChange": "Maaaring magbago ang mga rate at tuntunin ayon sa anunsyo ng website.",
+        "sampleData": "Sample data lamang para sa display ng UI ang datos sa pahinang ito."
+      },
+      "formula": {
+        "title": "Detalye ng Kalkulasyon",
+        "eligibleNetLoss": "Kwalipikadong net na talo",
+        "rate": "Rate ng loss rebate",
+        "bonus": "Bonus ng loss rebate",
+        "sampleNote": "Mga halimbawa lamang ang ipinapakitang bilang at rate."
+      }
+    },
+    "pagination": {
+      "showing": "Ipinapakita ang {start}–{end} sa {total}"
+    }
+  },
+  "common": {
+    "language": "Wika",
+    "languagePicker": {
+      "title": "Pumili ng wika",
+      "description": "Palitan ang wikang ipinapakita sa site",
+      "close": "Isara ang pagpili ng wika"
+    },
+    "close": "Isara",
+    "retry": "Subukan muli",
+    "loading": "Naglo-load…",
+    "confirm": "Kumpirmahin",
+    "cancel": "Kanselahin",
+    "processing": "Pinoproseso…",
+    "back": "Bumalik",
+    "next": "Susunod",
+    "backStep": "Bumalik sa nakaraang hakbang",
+    "loadFailed": "Hindi ma-load ang datos",
+    "emptyCategory": "Wala pang laman ang kategoryang ito",
+    "refCode": "Reference: {code}",
+    "units": {
+      "people": {
+        "one": "{n} tao",
+        "other": "{n} tao"
+      },
+      "records": {
+        "one": "{n} aytem",
+        "other": "{n} aytem"
+      },
+      "credits": {
+        "one": "{n} credit",
+        "other": "{n} credit"
+      },
+      "gems": {
+        "one": "{n} gem",
+        "other": "{n} gem"
+      },
+      "million": "{n}M"
+    },
+    "carousel": {
+      "prev": "I-scroll pabalik ang {title}",
+      "next": "I-scroll pasulong ang {title}"
+    },
+    "pagination": {
+      "label": "Nabigasyon ng pahina",
+      "prev": "Nakaraang pahina",
+      "page": "Pahina {page}",
+      "next": "Susunod na pahina"
+    },
+    "notifications": {
+      "title": "Mga Notification",
+      "close": "Isara ang mga notification",
+      "tabsLabel": "Mga uri ng notification",
+      "tabs": {
+        "all": "Lahat",
+        "privileges": "Mga Perk",
+        "messages": "Mga Mensahe"
+      },
+      "empty": "Walang bagong mensahe",
+      "contactChannels": "Mga channel ng contact"
+    },
+    "coupon": {
+      "title": "I-redeem ang Kupon",
+      "close": "Isara ang pag-redeem ng kupon",
+      "description": "Maglagay ng code para i-redeem ang libreng credit",
+      "codeLabel": "Code ng kupon",
+      "codePlaceholder": "Ilagay ang code ng kupon",
+      "codeRequired": "Pakilagay ang code ng kupon",
+      "submit": "I-redeem ang Libreng Credit",
+      "submitting": "Sinusuri..."
+    }
+  },
+  "errors": {
+    "notFoundTitle": "Hindi nahanap ang pahina",
+    "backHome": "Bumalik sa home",
+    "notFound": {
+      "metaTitle": "Hindi Nahanap ang Pahina — XGAMBET",
+      "title": "Hindi namin nahanap ang pahinang iyon",
+      "description": "Maaaring mali ang link o inilipat na ang pahina",
+      "viewPromotions": "Tingnan ang mga Promo"
+    },
+    "route": {
+      "title": "May nangyaring mali",
+      "description": "Hindi na-load ang pahinang ito. Pakisubukan muli. Kung magpatuloy ang problema, makipag-ugnayan sa customer support."
+    },
+    "offline": {
+      "title": "Walang koneksyon sa internet",
+      "description": "I-on ang iyong koneksyon at buksan muli ang XGAMBET"
+    },
+    "api": {
+      "network": "Hindi makakonekta sa server. Suriin ang iyong internet at subukan muli.",
+      "parse": "Hindi mabasa ang tugon ng server",
+      "unauthorized": "Mag-log in muli",
+      "generic": "May nangyaring mali. Pakisubukan muli."
+    }
+  },
+  "games": {
+    "filters": {
+      "allInOne": "Lahat-sa-Isa",
+      "allProviders": "Lahat ng Provider",
+      "allGameProviders": "Lahat ng Provider",
+      "dropsAndWins": "Drops & Wins",
+      "chicken": "Sabong",
+      "buyFeature": "Bumili ng Free Spins",
+      "jackpot": "Jackpot",
+      "megaways": "Megaways",
+      "baccarat": "Baccarat",
+      "roulette": "Roulette",
+      "blackjack": "Blackjack",
+      "gameShows": "Game Shows",
+      "sicbo": "Sic Bo/Dragon Tiger",
+      "football": "Football",
+      "basketball": "Basketball",
+      "esports": "Esports",
+      "boxing": "Muay Thai",
+      "tennis": "Tennis",
+      "arcade": "Arcade",
+      "multiplayer": "Multiplayer",
+      "hot": "Trending"
+    },
+    "subHeader": {
+      "back": "Bumalik"
+    },
+    "breadcrumb": {
+      "ariaLabel": "Landas ng nabigasyon",
+      "backToCategory": "Bumalik sa lahat ng {category}"
+    },
+    "slots": {
+      "title": "Slots",
+      "providerAriaLabel": "{name} — Slots",
+      "providerCount": {
+        "one": "({count} provider)",
+        "other": "({count} provider)"
+      }
+    },
+    "casino": {
+      "title": "Live Casino",
+      "count": {
+        "one": "({count} table/provider)",
+        "other": "({count} table/provider)"
+      }
+    },
+    "sport": {
+      "title": "Sports",
+      "count": {
+        "one": "({count} aytem/provider)",
+        "other": "({count} aytem/provider)"
+      }
+    },
+    "providerGames": {
+      "searchPlaceholder": "Maghanap ng laro mula sa provider na ito",
+      "backToCategory": "Bumalik sa lahat ng {category}",
+      "gameCount": {
+        "one": "({count} laro)",
+        "other": "({count} laro)"
+      },
+      "notFoundTitle": "Walang nahanap na laro",
+      "notFoundHint": "Subukan ang ibang hahanapin, o burahin ang paghahanap para makita ang lahat ng laro",
+      "favoriteAdd": "Idagdag sa mga paborito",
+      "favoriteRemove": "Alisin sa mga paborito"
+    },
+    "play": {
+      "playingAriaLabel": "Nilalaro ang {title}",
+      "fullscreen": "Fullscreen",
+      "exitFullscreen": "Lumabas sa fullscreen",
+      "iframePlaceholder": "Lugar ng game iframe (prototype)"
+    }
+  },
+  "home": {
+    "categories": {
+      "home": "Home",
+      "casino": "Casino",
+      "slots": "Slots",
+      "fishing": "Fishing",
+      "sports": "Sports",
+      "lottery": "Lotto",
+      "cards": "Cards"
+    },
+    "categoryNav": {
+      "ariaLabel": "Mga kategorya ng laro"
+    },
+    "sections": {
+      "hotGames": "Mga Hot na Laro",
+      "slots": "SLOTS",
+      "casino": "Casino",
+      "fishing": "Fishing",
+      "sports": "Sports",
+      "empty": "Wala pang laro sa kategoryang ito"
+    },
+    "intro": {
+      "title": "Isang Uniberso ng Saya",
+      "gamesBefore": "Mahigit",
+      "gamesAfter": "laro,",
+      "providersBefore": "mahigit",
+      "providersAfter": "provider,",
+      "sports": "at mga sports event sa buong mundo"
+    },
+    "featureActions": {
+      "ariaLabel": "Mga espesyal na feature"
+    },
+    "search": {
+      "formAriaLabel": "Maghanap ng laro at provider",
+      "label": "Maghanap ng laro o provider",
+      "clear": "Burahin ang paghahanap"
+    },
+    "hallOfFame": {
+      "tabsAriaLabel": "Piliin ang talahanayan ng Top Performance",
+      "empty": "Wala pang entry"
+    },
+    "carousel": {
+      "prev": "Nakaraang slide",
+      "next": "Susunod na slide",
+      "scroll": "Mag-browse ng mga banner",
+      "pickSlide": "Pumili ng slide ng banner",
+      "goToSlide": "Pumunta sa slide {index}"
+    },
+    "peekCarousel": {
+      "ariaLabel": "Mga banner ng promo at event"
+    },
+    "promoCarousel": {
+      "ariaLabel": "Mga banner ng promo at perk",
+      "listAriaLabel": "Mga Promo"
+    },
+    "welcomeBanner": {
+      "ariaLabel": "Mga banner ng welcome at promo",
+      "slidesAriaLabel": "Mga slide ng welcome banner"
+    },
+    "auth": {
+      "login": "Mag-log in",
+      "signUp": "Mag-sign up",
+      "loginToSeeEvents": "Mag-log in o mag-sign up para makita ang mga event"
+    },
+    "events": {
+      "title": "Mga Event",
+      "slidesAriaLabel": "Mga slide ng {title}",
+      "goTo": "Pumunta sa {name}"
+    },
+    "announcement": {
+      "ariaLabel": "Mga anunsyo ng sistema",
+      "label": "Balita"
+    },
+    "categoryProviders": {
+      "comingSoon": "Parating na ang mga provider para sa kategoryang ito. Subukan muna ang Casino, Slots, Fishing o Sports.",
+      "liveCasino": "Live Casino",
+      "providersFallback": "Mga Provider",
+      "providerCount": {
+        "one": "({count} provider)",
+        "other": "({count} provider)"
+      },
+      "gamesByProviderAriaLabel": "Mga laro ng {category} mula sa napiling provider",
+      "listAriaLabel": "Mga provider sa napiling kategorya",
+      "searchPlaceholder": {
+        "casino": "Maghanap ng live casino | Provider",
+        "fishing": "Maghanap ng fishing | Provider",
+        "cards": "Maghanap ng cards | Provider",
+        "sports": "Maghanap ng sports | Provider",
+        "default": "Maghanap ng laro | Provider"
+      }
+    },
+    "quickBanners": {
+      "ariaLabel": "Mabilisang highlight",
+      "promo": {
+        "title": "Mga Espesyal na Promo",
+        "subtitle": "Eksklusibong deals para sa iyo"
+      },
+      "event": {
+        "title": "Mga Event",
+        "subtitle": "Mga event buong araw"
+      },
+      "news": {
+        "title": "Balita",
+        "subtitle": "Balitang hindi dapat palampasin"
+      }
+    },
+    "mostOnline": {
+      "title": "Pinakamaraming Naglalaro Ngayon",
+      "favoriteAdd": "Idagdag sa mga paborito",
+      "favoriteRemove": "Alisin sa mga paborito",
+      "playingNow": "{count} ang naglalaro ngayon"
+    },
+    "popular": {
+      "title": "Sikat",
+      "empty": "Wala pang laman ang kategoryang ito"
+    },
+    "providers": {
+      "empty": "Wala pang provider",
+      "marqueeAriaLabel": "Mga provider ng laro",
+      "logoAriaLabel": "Provider na {name}"
+    },
+    "a2hs": {
+      "title": "Idagdag sa Home Screen",
+      "cardTitle": "Idagdag na ang shortcut ngayon!",
+      "cardSubtitle": "Mas maganda ang karanasan. Idagdag na ngayon",
+      "platformsAriaLabel": "Piliin ang iyong device",
+      "stepsTitle": "Paano idagdag ang shortcut ({platform})",
+      "installed": "Na-install na ang app",
+      "steps": {
+        "android1": "I-tap ang ⋮ menu sa kanang itaas ng Chrome",
+        "android2": "Piliin ang \"Install app\" o \"Add to Home screen\"",
+        "android3": "I-tap ang \"Install\" o \"Add\" para kumpirmahin",
+        "ios1": "I-tap ang \"Share\" button sa ibaba ng Safari",
+        "ios2": "Piliin ang \"Add to Home Screen\"",
+        "ios3": "I-tap ang \"Add\" sa kanang itaas para kumpirmahin",
+        "launch": "Buksan agad ang site mula sa icon ng aming app"
+      }
+    },
+    "desktopMenu": {
+      "referral": {
+        "title": "Mag-refer ng Kaibigan",
+        "subtitle": "Kumita sa 2 tier",
+        "ariaLabel": "Mag-refer ng kaibigan, kumita sa 2 tier"
+      },
+      "checkIn": {
+        "title": "Check-in",
+        "subtitle": "CHECK-IN",
+        "ariaLabel": "Pang-araw-araw na check-in"
+      },
+      "wheel": {
+        "title": "Wheel",
+        "subtitle": "LUCKY WHEEL",
+        "ariaLabel": "Lucky Wheel"
+      },
+      "gems": {
+        "title": "Gems Shop",
+        "subtitle": "GEMS SHOP",
+        "ariaLabel": "Gems Shop"
+      },
+      "coupon": {
+        "title": "Kupon",
+        "subtitle": "KUPON",
+        "ariaLabel": "I-redeem ang kupon"
+      },
+      "vip": {
+        "title": "VIP Rank",
+        "subtitle": "Mga perk ng miyembro",
+        "ariaLabel": "VIP rank, mga perk ng miyembro"
+      }
+    }
+  },
+  "lottery": {
+    "hub": {
+      "title": "Lotto",
+      "subtitle": "Pumili ng lotto na tataya-an",
+      "featuredAria": "Mga tampok na lotto",
+      "allMarketsAria": "Lahat ng lotto",
+      "mySlips": "Aking mga slip",
+      "mySlipsAria": "Tingnan ang aking mga slip",
+      "mySlipsPendingAria": "Tingnan ang aking mga slip — {count} ongoing",
+      "daysLeft": {
+        "one": "{count} araw",
+        "other": "{count} araw"
+      }
+    },
+    "markets": {
+      "generic": "Lotto",
+      "thaiGovernment": "Lotto ng Thai Government",
+      "yiki5": "Yiki 5 Min",
+      "yiki15": "Yiki 15 Min",
+      "yiki30": "Yiki 30 Min",
+      "baac": "BAAC Lotto",
+      "laos": "Lao Lotto",
+      "hanoi": "Hanoi Lotto",
+      "malaysia": "Malaysia Lotto",
+      "dowJones": "Dow Jones Lotto",
+      "china": "China Stock Lotto",
+      "germany": "Germany Stock Lotto",
+      "russia": "Russia Stock Lotto",
+      "korea": "Korea Stock Lotto",
+      "nikkei": "Nikkei Lotto",
+      "uk": "UK Stock Lotto",
+      "hongKong": "Hang Seng Lotto",
+      "taiwan": "Taiwan Stock Lotto",
+      "singapore": "Singapore Stock Lotto",
+      "india": "India Stock Lotto",
+      "egypt": "Egypt Stock Lotto"
+    },
+    "status": {
+      "open": "Bukas",
+      "closed": "Sarado",
+      "closedAlready": "Sarado na ang pagtaya",
+      "closesIn": "Magsasara sa",
+      "closesInTime": "Magsasara sa {time}",
+      "countdownDays": "{days}d {time}"
+    },
+    "groups": {
+      "three": "3 Digit",
+      "two": "2 Digit",
+      "run": "Run"
+    },
+    "betTypes": {
+      "threeTop": "3 Top (Straight)",
+      "threeTod": "3 Tod (Rambolito)",
+      "threeFront": "3 Una",
+      "threeBottom": "3 Huli",
+      "threeTopTod": "3 Top Tod",
+      "threeTopReverse": "3 Top Baliktad",
+      "threeTopComboTod": "3 Top + Tod",
+      "twoTop": "2 Top",
+      "twoBottom": "2 Bottom",
+      "twoTopReverse": "2 Top Baliktad",
+      "twoBottomReverse": "2 Bottom Baliktad",
+      "twoTopBottom": "2 Top/Bottom",
+      "twoTopBottomReverse": "2 Top/Bottom Baliktad",
+      "runTop": "Run Top",
+      "runBottom": "Run Bottom"
+    },
+    "round": {
+      "time": "Round {time}",
+      "draw": "Draw {date}",
+      "market": "{market} {date}",
+      "numbered": "Round {n}",
+      "current": "Kasalukuyang draw"
+    },
+    "rounds": {
+      "empty": "Wala pang bukas na round para sa pagtaya",
+      "listAria": "Mga round",
+      "showAll": {
+        "one": "Ipakita ang lahat ng round ({count} round)",
+        "other": "Ipakita ang lahat ng round ({count} round)"
+      },
+      "play": "Tumaya Na",
+      "loading": "Nilo-load ang mga round…",
+      "loadError": "Hindi ma-load ang mga round",
+      "openCountPrefix": "Mga bukas na round:",
+      "openCountSuffix": ""
+    },
+    "market": {
+      "sidebarAria": "Mga uri ng lotto",
+      "rules": "Mga Patakaran / Payout rate",
+      "notFoundTitle": "Hindi nahanap ang lotto",
+      "notFoundDescription": "Maaaring hindi na available ang lotto na ito. Pumili ng iba sa pahina ng lotto.",
+      "viewAll": "Tingnan ang Lahat ng Lotto",
+      "marketNotFound": "Hindi nahanap ang lotto market"
+    },
+    "rules": {
+      "payoutHeading": "Payout kada 1 baht",
+      "limitsHeading": "Taya kada entry",
+      "minBet": "Minimum",
+      "maxBet": "Maximum"
+    },
+    "results": {
+      "title": "Pinakabagong mga Resulta",
+      "morePage": "Lahat ng resulta >>",
+      "tableAria": "Pinakabagong resulta ng lotto",
+      "colMarket": "Lotto",
+      "colDate": "Draw / Petsa",
+      "empty": "Wala pang resulta",
+      "today": "Ngayon"
+    },
+    "thaiResult": {
+      "title": "Resulta ng Nakaraang Draw",
+      "firstPrize": "1st Prize",
+      "back3": "Huling 3"
+    },
+    "draw": {
+      "aria": "Detalye ng draw"
+    },
+    "board": {
+      "pickAria": "Pumili ng mga numero",
+      "reverse": "Baliktad",
+      "actionsAria": "Mga susunod na hakbang",
+      "back": "Bumalik",
+      "enterPrice": "Itakda ang Taya",
+      "digitGroupAria": "Bilang ng digit",
+      "betTypeAria": "Uri ng taya",
+      "payout": "Payout {rate}",
+      "loading": "Nilo-load ang bet board…",
+      "roundNotFoundTitle": "Hindi nahanap ang round",
+      "roundNotFoundNext": "Maaaring sarado na ang round na ito. Pumili ng susunod na round sa listahan.",
+      "roundNotFoundOther": "Maaaring sarado na ang round na ito. Pumili ng ibang round sa listahan.",
+      "viewAllRounds": "Tingnan ang Lahat ng Round"
+    },
+    "inputMode": {
+      "aria": "Paraan ng paglagay ng numero",
+      "manual": "Mag-type ng Numero",
+      "grid": "Pumili sa Grid"
+    },
+    "feedback": {
+      "duplicate": "Nasa slip na ang {number}",
+      "added": {
+        "one": "Naidagdag ang {number} sa slip ({count} aytem)",
+        "other": "Naidagdag ang {number} sa slip ({count} aytem)"
+      },
+      "undone": "Na-undo ang huling entry",
+      "closed": "Sarado na ang pagtaya",
+      "removed": "Naalis ang {number} sa slip"
+    },
+    "pad": {
+      "hundreds": "Daan-daan",
+      "selectedCount": "{count} ang napili",
+      "gridAria": "Grid ng numero",
+      "enteredAria": "Inilagay na numero {value}",
+      "empty": "walang laman",
+      "clear": "Burahin",
+      "backspace": "Burahin ang huling digit"
+    },
+    "slip": {
+      "itemCount": {
+        "one": "{count} aytem",
+        "other": "{count} aytem"
+      },
+      "removeAria": "Alisin ang {label} {number}",
+      "priceAria": "Taya para sa {label} {number}",
+      "enterPrice": "Itakda ang taya",
+      "toolbarAria": "Mga tool ng slip",
+      "undo": "I-undo ang huling entry",
+      "clearAll": "Burahin ang slip",
+      "emptyPickType": "Pumili ng uri ng taya, pagkatapos ay i-tap ang mga numero para idagdag sa slip",
+      "emptyEnterNumber": "Wala pang laman. Ilagay ang mga numerong gusto mong tayaan."
+    },
+    "price": {
+      "aria": "Itakda ang taya at isumite ang slip",
+      "sameForAll": "Parehong taya para sa lahat",
+      "edit": "I-edit",
+      "total": "Kabuuan",
+      "chipsAria": "Piliin ang taya",
+      "backToNumbers": "I-edit ang Numero",
+      "submitting": "Isinusumite…",
+      "submit": "Isumite ang Slip"
+    },
+    "submit": {
+      "failedTitle": "Hindi naisumite ang slip",
+      "done": "OK",
+      "close": "Isara",
+      "networkError": "Hindi makakonekta sa server"
+    },
+    "summary": {
+      "aria": "Buod ng slip",
+      "drawDate": "Petsa ng draw {date}",
+      "copyAria": "Kopyahin ang numero ng slip",
+      "slipId": "Slip #{id}",
+      "purchased": "Binili noong {date}",
+      "submitted": "Naisumite na",
+      "note": "Tala: {note}",
+      "noNote": "Walang tala",
+      "stake": "Taya",
+      "winLoss": "Panalo/Talo",
+      "allSlips": "Lahat ng Slip",
+      "continue": "Tumaya Pa",
+      "copied": "Nakopya ang numero ng slip",
+      "copyFailed": "Hindi makopya ang numero ng slip"
+    },
+    "slips": {
+      "title": "Lahat ng Slip",
+      "loading": "Nilo-load ang mga slip…",
+      "emptyTitle": "Wala pang slip",
+      "emptyDescription": "Pumili ng lotto at isumite ang una mong slip.",
+      "goPlay": "Pumunta sa Lotto",
+      "stake": "Taya {amount}",
+      "summaryTitle": "Buod ng Slip",
+      "notFoundTitle": "Hindi nahanap ang slip",
+      "notFoundDescription": "Maaaring natanggal na ang slip o hindi wasto ang link.",
+      "viewAll": "Tingnan ang Lahat ng Slip",
+      "tabs": {
+        "pending": "Ongoing",
+        "history": "Kasaysayan",
+        "aria": "Uri ng slip"
+      },
+      "filters": {
+        "aria": "Mga filter ng slip",
+        "market": "Lotto",
+        "result": "Resulta",
+        "range": "Saklaw ng petsa",
+        "allMarkets": "Lahat ng lotto",
+        "allResults": "Lahat ng resulta",
+        "today": "Ngayon",
+        "days7": "7 araw",
+        "days30": "30 araw",
+        "custom": "Custom"
+      },
+      "status": {
+        "waitingDraw": "Naghihintay ng draw",
+        "waitingSettle": "Naghihintay ng resulta",
+        "won": "Panalo",
+        "lost": "Talo",
+        "void": "Kinansela (na-refund)"
+      },
+      "summary": {
+        "count": "{count} slip",
+        "stake": "Kabuuang taya {amount}",
+        "net": "Netong panalo/talo"
+      },
+      "card": {
+        "drawAt": "Draw {date}",
+        "settledAt": "Na-settle {date}"
+      },
+      "emptyPending": {
+        "title": "Walang ongoing na slip",
+        "description": "Lalabas dito ang mga naipadalang slip na hindi pa na-settle."
+      },
+      "emptyHistory": {
+        "title": "Wala pang kasaysayan ng slip",
+        "description": "Itinatago ang mga na-settle na slip nang {days} araw."
+      },
+      "emptyFiltered": "Walang slip na tumutugma sa mga filter",
+      "clearFilters": "I-clear ang mga filter",
+      "loadMore": "Mag-load pa",
+      "loadingMore": "Nilo-load…",
+      "loadMoreError": "Hindi na-load. Subukan muli.",
+      "loadError": "Hindi na-load ang mga slip",
+      "retentionNote": "Itinatago ang kasaysayan nang {days} araw"
+    }
+  },
+  "meta": {
+    "title": "XGAMBET — Ang Kaharian ng Saya",
+    "description": "XGAMBET Front-end Gaming Lobby"
+  },
+  "nav": {
+    "bottomNav": {
+      "label": "Pangunahing menu",
+      "withdraw": "Withdraw",
+      "deposit": "Deposit",
+      "menu": "Menu",
+      "cashback": "Cashback",
+      "contact": "Contact"
+    },
+    "header": {
+      "openMenu": "Buksan ang menu",
+      "promotions": "Mga Promo",
+      "profile": "Profile",
+      "home": "XGAMBET home",
+      "showSidebar": "Ipakita ang menu sa kaliwa",
+      "hideSidebar": "Itago ang menu sa kaliwa",
+      "mainCategories": "Mga pangunahing kategorya",
+      "searchLabel": "Maghanap ng laro o provider",
+      "searchPlaceholder": "Maghanap",
+      "deposit": "Deposit",
+      "depositAria": "Deposit",
+      "transactionHistory": "Kasaysayan ng transaksyon",
+      "walletDeposit": "Mag-deposit at tingnan ang balanse",
+      "walletBalance": "Balanse ng credit"
+    },
+    "desktop": {
+      "quickMenu": "Mabilisang menu",
+      "rightRail": "Menu ng mga event at promo",
+      "sidebar": "Pangunahing menu ng desktop",
+      "gameCategories": "Mga kategorya ng laro",
+      "games": "Mga Laro",
+      "system": "Sistema",
+      "contactUs": "Makipag-ugnayan",
+      "topBar": "Search at account bar",
+      "searchGames": "Maghanap ng laro",
+      "searchGamesPlaceholder": "Maghanap ng laro, provider o paborito mong titulo..."
+    },
+    "drawer": {
+      "title": "Menu",
+      "close": "Isara ang menu",
+      "deposit": "Deposit",
+      "withdraw": "Withdraw",
+      "playBonus": "Turnover Bonus",
+      "lossBonus": "Loss Bonus",
+      "referralLink": "Referral link",
+      "referralLinkLoginHint": "Mag-log in para makita ang iyong link",
+      "copyReferralLink": "Kopyahin ang referral link",
+      "linkCopied": "Nakopya ang link",
+      "linkCopyFailed": "Hindi makopya ang link",
+      "gameBalance": "Balanse ng Laro",
+      "gems": "Gems",
+      "tickets": "Tickets"
+    },
+    "menuSections": {
+      "personal": "Personal",
+      "privileges": "Mga Perk",
+      "rewards": "Mga Reward"
+    },
+    "menu": {
+      "profile": "Profile",
+      "transactions": "Mga Transaksyon",
+      "rank": "Ranggo",
+      "promotions": "Mga Promo",
+      "cashback": "Cashback",
+      "checkIn": "Check-in",
+      "referral": "Mag-refer ng Kaibigan",
+      "rewardHub": "Prize Draw",
+      "wheel": "Wheel",
+      "gemsShop": "Gems Store",
+      "activities": "Mga Event",
+      "coupon": "Kupon",
+      "vipRank": "VIP Level",
+      "referralEarnings": "Kita sa Komisyon",
+      "referFriend": "Mag-refer ng Kaibigan",
+      "specialBonus": "Espesyal na Bonus",
+      "history": "Kasaysayan",
+      "language": "Wika"
+    },
+    "hub": {
+      "promotions": "Mga Promo",
+      "activities": "Mga Event",
+      "cashback": "Cashback",
+      "gemsStore": "Gems Store",
+      "account": "Impormasyon ng Account",
+      "referral": "Mag-refer ng Kaibigan",
+      "transactions": "Mga Transaksyon",
+      "checkIn": "Pang-araw-araw na Check-in",
+      "vip": "VIP"
+    },
+    "footer": {
+      "label": "Footer ng site ng XGAMBET",
+      "home": "XGAMBET home",
+      "certifications": "Mga Sertipikasyon",
+      "auditedBy": "Na-audit ng",
+      "approvedBy": "Aprubado ng",
+      "playResponsibly": "Maglaro nang Responsable",
+      "ageRestriction": "18 taong gulang pataas lamang",
+      "paymentMethods": "Mga Paraan ng Pagbabayad",
+      "community": "Komunidad",
+      "liveChat": "Live Chat",
+      "social": "Social Media",
+      "links": "Mga link sa footer",
+      "disclaimer": "Ang XGAMBET ay nagbibigay ng online na libangan para sa mga manlalarong nasa hustong gulang ayon sa batas ng inyong nasasakupan. Mangyaring maglaro nang responsable at managot sa sarili ninyong mga desisyon. Ang detalye ng kumpanya at lisensya ay sample data lamang para sa display (mock), na ginagamit sa pagsubok ng UI.",
+      "tagline": "Lahat ng laro at event mo, nasa iisang lugar",
+      "columns": {
+        "platform": "Platform",
+        "sports": "Sports",
+        "casino": "Casino",
+        "promotions": "Mga Promo",
+        "info": "Impormasyon",
+        "services": "Mga Serbisyo"
+      },
+      "link": {
+        "profile": "Profile",
+        "transactions": "Mga Transaksyon",
+        "lotterySlips": "Mga Slip ng Lotto",
+        "accountSettings": "Mga Setting ng Account",
+        "dailyCheckIn": "Pang-araw-araw na Check-in",
+        "gemStore": "Gem Store",
+        "leaderboard": "Leaderboard",
+        "predictions": "Mga Hula",
+        "liveSports": "Live Sports",
+        "sports": "Sports",
+        "esports": "Esports",
+        "tournaments": "Mga Torneo",
+        "football": "Football",
+        "basketball": "Basketball",
+        "tennis": "Tennis",
+        "cricket": "Cricket",
+        "lobby": "Lobby",
+        "popularGames": "Mga Sikat na Laro",
+        "liveCasino": "Live Casino",
+        "newGames": "Mga Bagong Laro",
+        "crashGames": "Crash Games",
+        "tableGames": "Table Games",
+        "slots": "Slots",
+        "bonusBuy": "Bonus Buy",
+        "roulette": "Roulette",
+        "providers": "Mga Provider",
+        "allPromotions": "Lahat ng Promo",
+        "sportsWelcome": "Welcome Bonus sa Sports",
+        "casinoWelcome": "Welcome Bonus sa Casino",
+        "weeklyCashback": "Lingguhang Cashback",
+        "sportsClub": "Sports Club",
+        "vipClub": "VIP Club",
+        "referFriends": "Mag-refer ng Kaibigan",
+        "aboutUs": "Tungkol sa Amin",
+        "events": "Mga Event",
+        "careers": "Mga Trabaho",
+        "contactUs": "Makipag-ugnayan",
+        "brand": "Brand",
+        "responsibleGaming": "Responsableng Paglalaro",
+        "helpCenter": "Help Center",
+        "guide": "Gabay",
+        "luckyWheel": "Lucky Wheel",
+        "lottery": "Lotto",
+        "fishing": "Fishing",
+        "lossRebate": "Loss Rebate",
+        "casino": "Casino",
+        "promotions": "Mga Promo",
+        "vipLevel": "VIP Level",
+        "privacy": "Patakaran sa Privacy",
+        "terms": "Mga Tuntunin at Kundisyon",
+        "feedback": "Magbigay ng Feedback",
+        "sitemap": "Sitemap"
+      }
+    }
+  },
+  "profile": {
+    "logout": "Mag-log out",
+    "retry": "Subukan Muli",
+    "backHome": "Bumalik sa home",
+    "field": {
+      "copy": "Kopyahin",
+      "edit": "I-edit"
+    },
+    "account": {
+      "title": "Impormasyon ng Account",
+      "loading": "Nilo-load ang impormasyon ng account…",
+      "loadErrorTitle": "Hindi ma-load ang impormasyon ng account",
+      "loadErrorDescription": "Pakisubukan muli. Kung hindi pa rin gumana, mag-log out at mag-log in ulit.",
+      "tabs": {
+        "personal": "Personal na Impormasyon",
+        "bank": "Bank Account"
+      },
+      "gameUser": "Game Username",
+      "copyGameUser": "Kopyahin ang game username",
+      "gameUserCopied": "Nakopya ang game username",
+      "copyFailed": "Hindi makopya",
+      "password": "Password",
+      "changePassword": "Palitan ang password",
+      "transactionHistory": "Kasaysayan ng Transaksyon",
+      "transactionHistoryHint": "Deposit · Withdraw · Mga Taya"
+    },
+    "avatar": {
+      "change": "Palitan ang profile picture",
+      "tapToChange": "I-tap ang larawan para palitan",
+      "pickerTitle": "Pumili ng Profile Picture",
+      "pickerDescription": "Pumili ng karakter — awtomatikong nase-save pag na-tap",
+      "saveFailed": "Hindi na-save. Pakisubukan muli.",
+      "close": "Isara",
+      "srLabel": "Profile picture ni {name}",
+      "presetName": "Karakter {n}"
+    },
+    "hub": {
+      "navAriaLabel": "Menu ng profile",
+      "vipLevel": "VIP Level",
+      "transactions": "Mga Deposit at Withdrawal",
+      "myDiamonds": "Aking Gems",
+      "lossRebate": "Loss Rebate Bonus",
+      "affiliate": "Balanse ng Affiliate",
+      "activePromotion": "Aktibong Promo",
+      "greeting": "Kumusta, {name}",
+      "joinedAt": "Sumali: {date}",
+      "playerId": "Player ID: {id}",
+      "copyPlayerId": "Kopyahin ang player ID",
+      "playerIdCopied": "Nakopya ang player ID",
+      "copyPlayerIdFailed": "Hindi makopya ang ID"
+    },
+    "referralInvite": {
+      "title": "Mag-imbita ng Kaibigan, Kumuha ng Bonus",
+      "description": "I-share ang link mo sa mga kaibigan at kumita ng bahagi sa kanilang laro",
+      "linkLabel": "Invite Link",
+      "copyLink": "Kopyahin ang invite link",
+      "linkCopied": "Nakopya ang link",
+      "copyLinkFailed": "Hindi makopya ang link"
+    },
+    "summary": {
+      "copyId": "Kopyahin ang ID",
+      "idCopied": "Nakopya ang ID",
+      "copyIdFailed": "Hindi makopya ang ID",
+      "phoneVerified": "Na-verify ang telepono"
+    },
+    "dashboard": {
+      "title": "Pangkalahatang-ideya ng Sistema / Dashboard",
+      "subtitle": "Real-time na buod ng mahahalagang datos ng sistema",
+      "dateRange": "Dis 12, 2023, 00:00 - 23:59",
+      "vsYesterday": "kumpara kahapon",
+      "unitAccounts": "account",
+      "period": {
+        "today": "Ngayon",
+        "week": "Linggo",
+        "month": "Buwan",
+        "year": "Taon"
+      },
+      "nav": {
+        "overview": "Pangkalahatang-ideya",
+        "betReports": "Mga Ulat ng Taya",
+        "members": "Mga Miyembro",
+        "marketing": "Marketing",
+        "promotions": "Mga Promo",
+        "transactions": "Mga Transaksyon",
+        "reports": "Mga Ulat",
+        "settings": "Mga Setting"
+      },
+      "kpi": {
+        "totalDeposit": "Kabuuang Deposit",
+        "totalWithdraw": "Kabuuang Withdrawal",
+        "netProfit": "Net na Kita",
+        "totalBets": "Kabuuang Taya",
+        "newMembers": "Mga Bagong Miyembro",
+        "firstDeposit": "Unang Deposit"
+      },
+      "chart": {
+        "deposit": "Mga Deposit (THB)",
+        "withdraw": "Mga Withdrawal (THB)",
+        "transactionCount": "Mga Transaksyon",
+        "accountCount": "Mga Account"
+      },
+      "journey": {
+        "title": "Biyahe ng Customer",
+        "signUp": "Nag-sign up",
+        "firstDeposit": "Unang Deposit",
+        "firstBet": "Aktibo (Unang Taya)"
+      },
+      "trend": {
+        "title": "Mga Deposit - Withdrawal Ngayon",
+        "subtitle": "Mga transaksyon sa paglipas ng oras (Shadcn Chart)",
+        "net": "Net"
+      },
+      "banks": {
+        "title": "Bahagi ng Bangko ng mga Customer",
+        "totalAccounts": "Kabuuang account"
+      },
+      "channels": {
+        "title": "Paano Kami Nalaman ng mga Customer",
+        "channel": "Channel",
+        "customers": "Mga Customer",
+        "share": "Bahagi"
+      },
+      "activeHours": {
+        "title": "Oras ng Pagiging Aktibo ng mga Customer"
+      },
+      "depositDistribution": {
+        "title": "Distribusyon ng Deposit ng mga Customer"
+      },
+      "hourlyMembers": {
+        "title": "Mga Bagong Miyembro kada Oras"
+      }
+    }
+  },
+  "promotions": {
+    "title": "Mga Promo",
+    "loading": "Nilo-load ang mga promo…",
+    "loadError": "Hindi ma-load ang mga promo",
+    "loadErrorDesc": "Suriin ang iyong internet at subukan muli",
+    "retry": "Subukan Muli",
+    "forYou": "Mga Promo para sa Iyo",
+    "filterAria": "I-filter ang mga promo ayon sa kategorya",
+    "categories": {
+      "all": "Lahat",
+      "slots": "Slots",
+      "casino": "Casino",
+      "sport": "Sports",
+      "newMember": "Bagong Miyembro",
+      "daily": "Araw-araw",
+      "privilege": "Mga Perk"
+    },
+    "empty": {
+      "category": "Wala pang promo sa kategoryang ito",
+      "categoryHint": "Wala pang promo sa kategoryang ito — subukan ang Lahat",
+      "activitiesHint": "Wala pang event sa kategoryang ito — subukan ang Lahat"
+    },
+    "hub": {
+      "promotionsListAria": "Listahan ng mga promo",
+      "activitiesListAria": "Listahan ng mga event",
+      "selectedDetailAria": "Mga detalye ng napili"
+    },
+    "detail": {
+      "title": "Detalye ng Promo",
+      "heading": "Mga Detalye",
+      "loading": "Nilo-load ang mga detalye…",
+      "close": "Isara ang detalye ng promo",
+      "notFound": "Hindi nahanap ang detalye ng promo",
+      "notFoundDesc": "Maaaring tapos na ang promo na ito o hindi ito na-load"
+    },
+    "mobile": {
+      "expires": "Magtatapos sa {date}",
+      "readTerms": "Basahin ang mga Tuntunin",
+      "readTermsAria": "{title} — Basahin ang mga tuntunin"
+    }
+  },
+  "referral": {
+    "pageTitle": "Mag-imbita ng Kaibigan",
+    "tabs": {
+      "ariaLabel": "Menu ng referral",
+      "overview": "Pangkalahatan",
+      "users": "Mga Na-refer",
+      "earning": "Kita"
+    },
+    "status": {
+      "overviewLoading": "Nilo-load ang impormasyon ng referral…",
+      "overviewError": "Hindi ma-load ang impormasyon ng referral",
+      "earningsLoading": "Nilo-load ang kita…",
+      "earningsError": "Hindi ma-load ang kita",
+      "usersLoading": "Nilo-load ang listahan ng mga kaibigan…",
+      "usersError": "Hindi ma-load ang listahan ng mga kaibigan"
+    },
+    "loginPrompt": {
+      "title": "Mag-log in para makita ang referral link mo",
+      "description": "Lalabas ang iyong referral link at kita pagkatapos mong mag-log in"
+    },
+    "promo": {
+      "ariaLabel": "Promo ng referral",
+      "title": "Mag-imbita ng Kaibigan, Kumita sa 2 Tier",
+      "description": "I-share ang link mo at kumita ng bahagi sa laro ng mga kaibigan mo"
+    },
+    "link": {
+      "title": "Iyong Referral Link",
+      "copied": "Nakopya ang link",
+      "copyFailed": "Hindi makopya ang link"
+    },
+    "stats": {
+      "title": "Iyong Stats",
+      "friends": "Mga Sumaling Kaibigan",
+      "totalTurnover": "Kabuuang Turnover",
+      "totalEarnings": "Kabuuang Kita"
+    },
+    "tiers": {
+      "title": "Kumita sa 2 Tier",
+      "description": "I-share ang link mo at kumita ng komisyon mula sa turnover ng iyong network",
+      "rateHint": "ng turnover",
+      "tier1": {
+        "title": "Tier 1 — Direktang Kaibigan",
+        "subtitle": "Mga kaibigang nag-sign up gamit ang link mo"
+      },
+      "tier2": {
+        "title": "Tier 2 — Kaibigan ng Kaibigan",
+        "subtitle": "Mga kaibigang inimbitahan ng mga kaibigan mo"
+      }
+    },
+    "checks": {
+      "realtime": "Real-time na kalkulasyon",
+      "lifetimeCommission": "Habambuhay na komisyon",
+      "minWithdraw": "Minimum na withdrawal ฿50.00"
+    },
+    "steps": {
+      "title": "Magsimula sa 3 Madaling Hakbang",
+      "copy": "Kopyahin ang Link",
+      "share": "I-share sa mga Kaibigan",
+      "earn": "Kumita ng Komisyon"
+    },
+    "periods": {
+      "ariaLabel": "Panahon ng kita",
+      "all": "Lahat",
+      "today": "Ngayon",
+      "lastWeek": "Nakaraang Linggo",
+      "lastMonth": "Nakaraang Buwan"
+    },
+    "earning": {
+      "claimableIncome": "Kitang Maaaring I-claim",
+      "claimableBonus": "Bonus na Maaaring I-claim",
+      "claim": "I-claim ang Bonus",
+      "receivedTotal": "Kabuuang na-claim {amount}",
+      "received": "Na-claim {amount}",
+      "periodSummaryAriaLabel": "Buod ng kita para sa napiling panahon",
+      "networkIncomePeriod": "Kita ng network (napiling panahon)",
+      "totalAccumulated": "Sa kabuuan {amount}",
+      "detailsTitle": "Detalye ng Kita",
+      "historyTitle": "Kasaysayan ng Bonus",
+      "bonusAmount": "Halaga ng Bonus",
+      "date": "Petsa",
+      "empty": "Wala pang kasaysayan ng bonus",
+      "paginationAriaLabel": "Mga pahina ng kasaysayan ng bonus"
+    },
+    "users": {
+      "registeredAt": "Sumali",
+      "empty": "Wala pang kaibigang nag-sign up gamit ang link mo",
+      "paginationAriaLabel": "Mga pahina ng listahan ng kaibigan"
+    },
+    "pagination": {
+      "showing": "Ipinapakita ang {start}–{end} sa {total}"
+    }
+  },
+  "rewards": {
+    "actions": {
+      "claim": "I-claim",
+      "close": "Isara",
+      "ok": "OK"
+    },
+    "status": {
+      "claimed": "Na-claim na"
+    },
+    "hub": {
+      "title": "Mga Reward",
+      "loading": "Nilo-load ang mga reward…",
+      "loadError": "Hindi ma-load ang mga reward",
+      "pointsLoading": "Nilo-load ang mga puntos…",
+      "pointsLoadError": "Hindi ma-load ang datos ng reward",
+      "bannersAria": "Mga promo ng reward",
+      "shortcutsAria": "Menu ng mga reward",
+      "summaryAria": "Balanse ng credit at puntos",
+      "totalCredits": "Kabuuang credit",
+      "pointsBalance": "Balanse ng puntos"
+    },
+    "shortcuts": {
+      "luckyBox": "Lucky Box",
+      "randomCard": "Random Card",
+      "freespins": "Free Spins / Chips"
+    },
+    "banners": {
+      "luckyBoxSubtitle": "I-redeem ang Lucky Box gamit ang puntos",
+      "randomCardSubtitle": "Magbukas ng card para manalo ng premyo",
+      "termsLabel": "Mga Tuntunin at Kundisyon"
+    },
+    "redeemBoard": {
+      "subtitle": "Manalo ng mga premyo",
+      "pointsLabel": "Puntos",
+      "drawCost": "{cost} puntos bawat draw",
+      "startDraw": "Simulan ang Draw",
+      "history": "Kasaysayan ng pag-redeem"
+    },
+    "luckyBox": {
+      "pageTitle": "Lucky Box",
+      "loading": "Nilo-load ang Lucky Box…",
+      "loadError": "Hindi ma-load ang Lucky Box"
+    },
+    "randomCard": {
+      "pageTitle": "Random Card",
+      "loading": "Nilo-load ang Random Card…",
+      "loadError": "Hindi ma-load ang Random Card"
+    },
+    "freespins": {
+      "title": "Free Spins / Chips",
+      "comingSoonDesc": "Ginagawa pa ang feature na ito — malapit nang ma-redeem gamit ang puntos"
+    },
+    "checkIn": {
+      "title": "Pang-araw-araw na Check-in",
+      "loading": "Nilo-load ang check-in…",
+      "loadError": "Hindi ma-load ang check-in",
+      "subtitle": "Mag-check in araw-araw para sa bonus na Gems",
+      "bonusBefore": "Kulang na lang ng",
+      "bonusDays": {
+        "one": "{count} araw",
+        "other": "{count} araw"
+      },
+      "bonusAfter": "para sa bonus na",
+      "bonusGems": "{amount} Gems",
+      "progressTotal": "/ {total} araw",
+      "dayStatus": {
+        "claimed": "Na-claim na",
+        "today": "I-claim",
+        "locked": "Susunod"
+      },
+      "weekdays": {
+        "mon": "Lun",
+        "tue": "Mar",
+        "wed": "Miy",
+        "thu": "Huw",
+        "fri": "Biy",
+        "sat": "Sab",
+        "sun": "Lin"
+      },
+      "cumulativeTitle": "Mga Reward sa Streak",
+      "cumulativeDesc": "Abutin ang bawat check-in goal para sa malalaking bonus na Gems",
+      "milestoneGems": "{amount} Gems",
+      "milestoneDays": "{days}-araw na check-in",
+      "milestoneDialog": {
+        "title": "Reward sa {days}-araw na check-in",
+        "progress": "Nag-check in na {done}/{total} araw",
+        "claim": "I-claim ang reward",
+        "claimed": "Na-claim na",
+        "daysLeft": "Mag-check in pa ng {count} araw"
+      },
+      "claimedToday": "Nakapag-check in na ngayon",
+      "claimToday": "I-claim ang Reward Ngayon",
+      "success": {
+        "title": "Na-claim na ang reward",
+        "descBefore": "Natanggap mo ang",
+        "descAfter": ""
+      },
+      "desktop": {
+        "summaryAria": "Buod ng check-in",
+        "progressAria": "Progreso ng check-in",
+        "weekProgress": "Progreso ngayong linggo",
+        "daysUnit": "araw",
+        "claimTodayAria": "I-claim ang reward ngayon",
+        "claimToday": "I-claim ang Reward Ngayon",
+        "claimedToday": "Na-claim na ang Reward",
+        "streakAria": "Progreso sa 7 araw",
+        "streakDay": "Araw {day}",
+        "listTitle": "Mga Reward sa Check-in",
+        "dayTitle": "Araw {day}",
+        "specialReward": "Espesyal na reward",
+        "bonusDayDesc": "Mag-check in buong linggo para sa bonus na credit",
+        "dailyDesc": "Pang-araw-araw na reward sa check-in",
+        "locked": "Naka-lock"
+      }
+    },
+    "wheel": {
+      "title": "Lucky Wheel",
+      "subtitle": "Mag-spin araw-araw para sa malalaking premyo",
+      "loading": "Nilo-load ang Lucky Wheel…",
+      "loadError": "Hindi ma-load ang Lucky Wheel",
+      "backHome": "Bumalik sa home",
+      "winMessage": "Congratulations! Nanalo ka ng {prize}",
+      "justNow": "Ngayon lang",
+      "prizeKind": {
+        "gems": "Gems",
+        "credit": "Credit"
+      },
+      "gemsBalanceAria": "Balanse ng iyong Gems",
+      "ticketsAria": "Iyong mga ticket",
+      "spinAria": "I-spin ang wheel",
+      "methodTabsAria": "Piliin ang paraan ng pag-spin",
+      "methodGems": "Gems ×{cost}",
+      "methodTicket": "Ticket ×{cost}",
+      "spinning": "Umiikot…",
+      "spinNow": "I-spin Na",
+      "useTickets": {
+        "one": "Gagamit ng {count} ticket",
+        "other": "Gagamit ng {count} ticket"
+      },
+      "useGems": "Gagamit ng {amount} Gems",
+      "noTickets": "Walang ticket — subukang mag-spin gamit ang Gems",
+      "notEnoughGems": "Kulang ang Gems — mag-top up ng Gems",
+      "hint": "Mag-spin para sa saya at manalo ng premyo araw-araw",
+      "sampleNote": "Mga sample na premyo at balanse ng wallet",
+      "liveWinners": {
+        "title": "Mga Kamakailang Nanalo",
+        "gemsWon": "+{amount} Gems",
+        "received": "Nanalo",
+        "gemsAmount": "{amount} Gems"
+      },
+      "history": {
+        "title": "Aking Kasaysayan ng Spin",
+        "usedGems": "Gems",
+        "usedTicket": "Ticket",
+        "prevPage": "Nakaraang pahina",
+        "nextPage": "Susunod na pahina"
+      }
+    },
+    "gemsStore": {
+      "title": "Gems Store",
+      "loading": "Nilo-load ang Gems Store…",
+      "loadError": "Hindi ma-load ang Gems Store",
+      "redeemHeading": "I-redeem ang Credit",
+      "termsTitle": "Mga Tuntunin sa Pag-redeem",
+      "redeemShort": "I-redeem",
+      "notEnoughShort": "Kulang",
+      "redeem": "I-redeem",
+      "redeemAria": "I-redeem ang {credits}",
+      "notEnoughGems": "Kulang ang Gems",
+      "summary": {
+        "balanceLabel": "Balanse ng Gems",
+        "balanceAria": "Balanse ng Gems {amount}",
+        "today": "Ngayon",
+        "thisWeek": "Ngayong linggo"
+      },
+      "confirm": {
+        "title": "{amount} credit",
+        "subtitle": "Gamitin ang {gems} Gems para i-redeem ang {credits} credit",
+        "creditsLabel": "Credit",
+        "gemsUsed": "Gems na gagamitin",
+        "balanceAfter": "Balanse pagkatapos",
+        "cancel": "Kanselahin",
+        "confirm": "Kumpirmahin",
+        "processing": "Pinoproseso…"
+      }
+    },
+    "activities": {
+      "title": "Mga Event",
+      "loading": "Nilo-load ang mga event…",
+      "loadError": "Hindi ma-load ang mga event",
+      "listAria": "Listahan ng mga event",
+      "closeDetail": "Isara ang detalye ng event",
+      "viewDetails": "Tingnan ang Detalye",
+      "categoryTabsAria": "Mga kategorya ng event",
+      "categories": {
+        "slots": "Slots",
+        "casino": "Casino"
+      },
+      "progress": {
+        "title": "Iyong Turnover",
+        "current": "Kasalukuyang turnover",
+        "rank1Target": "Target ng Tier 1",
+        "rewardCount": "Mga reward {earned} / {cap}"
+      },
+      "tiers": {
+        "rank": "Tier",
+        "turn": "Turnover",
+        "bonus": "Bonus",
+        "claim": "I-claim",
+        "notEligible": "Hindi kwalipikado"
+      },
+      "rulesTitle": "Mga Patakaran at Tuntunin ng Event"
+    }
+  },
+  "transactions": {
+    "title": "Kasaysayan ng Transaksyon",
+    "pageLoading": "Naglo-load...",
+    "kindTabs": {
+      "aria": "Uri ng transaksyon",
+      "deposit": "Deposit",
+      "withdraw": "Withdraw",
+      "promotion": "Promo",
+      "bet": "Mga Taya"
+    },
+    "filter": {
+      "label": "Pumili ng petsa",
+      "openCalendar": "Buksan ang date picker",
+      "clear": "Burahin",
+      "search": "Hanapin"
+    },
+    "calendar": {
+      "title": "Pumili ng Saklaw ng Petsa",
+      "close": "Isara",
+      "cancel": "Kanselahin",
+      "confirm": "Kumpirmahin"
+    },
+    "status": {
+      "completed": "Matagumpay",
+      "pending": "Naghihintay",
+      "failed": "Nabigo"
+    },
+    "betType": {
+      "bet": "Taya",
+      "result": "Resulta"
+    },
+    "columns": {
+      "amount": "Halaga",
+      "channel": "Paraan",
+      "account": "Account",
+      "createdAt": "Petsa at Oras",
+      "status": "Status",
+      "detail": "Detalye",
+      "completedAt": "Natapos Noong",
+      "promotionName": "Promo",
+      "playStart": "Petsa ng Simula",
+      "playEnd": "Petsa ng Pagtatapos",
+      "freeSpins": "Free Spins",
+      "perRound": "Bawat Round",
+      "provider": "Provider",
+      "gameName": "Laro",
+      "expiresWithin": "Mag-e-expire sa",
+      "game": "Laro",
+      "date": "Petsa",
+      "time": "Oras",
+      "type": "Uri",
+      "betAmount": "Halaga",
+      "openingBalance": "Panimulang Balanse",
+      "closingBalance": "Pangwakas na Balanse"
+    },
+    "empty": "Walang nahanap na datos",
+    "paginationAria": "Mga pahina ng kasaysayan ng taya",
+    "loginRequired": "Mag-log in para makita ang iyong mga transaksyon",
+    "loadError": "Hindi ma-load ang mga transaksyon",
+    "retry": "Subukan muli",
+    "loading": "Nilo-load ang mga transaksyon…",
+    "summary": {
+      "depositTotal": "Kabuuang deposit:",
+      "withdrawTotal": "Kabuuang withdrawal:",
+      "promotionClaims": "Mga na-claim na promo:",
+      "winLossTotal": "Kabuuang panalo/talo:",
+      "stakeTotal": "Kabuuang taya:"
+    }
+  },
+  "vip": {
+    "tabs": {
+      "ariaLabel": "Menu ng VIP",
+      "myLevel": "Aking Level",
+      "rank": "Ranggo",
+      "benefits": "Mga Benepisyo"
+    },
+    "status": {
+      "loading": "Naglo-load...",
+      "playerLoading": "Nilo-load ang impormasyon ng VIP…",
+      "playerError": "Hindi ma-load ang impormasyon ng VIP",
+      "ranksLoading": "Nilo-load ang mga VIP level…",
+      "ranksError": "Hindi ma-load ang mga VIP level",
+      "benefitsLoading": "Nilo-load ang mga benepisyo…",
+      "benefitsError": "Hindi ma-load ang mga benepisyo",
+      "retry": "Subukan Muli"
+    },
+    "level": {
+      "label": "Level",
+      "next": "Susunod na level",
+      "currentAriaLabel": "Kasalukuyang VIP Level",
+      "benefitsAndMaintainAriaLabel": "Mga benepisyo at pagpapanatili ng level"
+    },
+    "rankStatus": {
+      "current": "Kasalukuyang level",
+      "cleared": "Natapos na",
+      "locked": "Hindi pa naaabot"
+    },
+    "carousel": {
+      "previous": "Nakaraang ranggo",
+      "next": "Susunod na ranggo",
+      "turnoverTarget": "Turnover {amount}"
+    },
+    "progress": {
+      "levelUpTo": "Mag-level Up sa VIP {level}",
+      "bothRequired": "Kailangang matugunan ang dalawang kundisyon",
+      "overallAriaLabel": "Kabuuang progreso {percent} porsyento",
+      "deposit": "Deposit",
+      "turnover": "Turnover",
+      "target": "Target {amount}",
+      "complete": "Tapos na",
+      "remaining": "{amount} pa"
+    },
+    "maintain": {
+      "title": "Panatilihin ang VIP Level",
+      "subtitleWithDowngrade": "Tugunan ang dalawa o bababa sa VIP {level}",
+      "daysRemaining": "araw na lang"
+    },
+    "benefitsTable": {
+      "title": "Mga Benepisyo ayon sa Level",
+      "scrollHint": "Mag-scroll para makita ang iba pang level"
+    },
+    "benefitRows": {
+      "cashback": "Bonus Cashback",
+      "rolling": "Bonus Rolling",
+      "diamondDeposit": "Gems mula sa Deposit",
+      "fastWithdraw": "Mabilis na Withdrawal",
+      "vipManager": "VIP Manager",
+      "upgradeBonus": "Bonus sa Pag-upgrade",
+      "depositCondition": "Kailangang Deposit",
+      "turnoverCondition": "Kailangang Turnover"
+    },
+    "benefitValues": {
+      "faster": "✓ Mas Mabilis",
+      "max": "✓ Max",
+      "notRequired": "Wala"
+    },
+    "myLevelBenefits": {
+      "cashback": "Cashback",
+      "rolling": "Rolling",
+      "diamondDeposit": "Gems sa Deposit"
+    },
+    "missions": {
+      "login": "Mag-log in",
+      "deposit": "Deposit",
+      "play": "Maglaro",
+      "unitDays": "araw",
+      "unitTimes": "beses"
+    }
+  },
+  "wallet": {
+    "shared": {
+      "submitting": "Isinusumite...",
+      "copied": "Nakopya",
+      "copyAccountNumber": "Kopyahin ang numero ng account",
+      "currencyUnit": "THB"
+    },
+    "deposit": {
+      "title": "Deposit",
+      "close": "Isara ang deposit",
+      "selectMethod": "Pumili ng paraan ng deposit",
+      "methodsAria": "Mga paraan ng deposit",
+      "methodsLoading": "Nilo-load ang mga paraan ng deposit…",
+      "methodsError": "Hindi ma-load ang mga paraan ng deposit",
+      "bankAccountLoading": "Nilo-load ang account na tatanggap…",
+      "bankAccountError": "Hindi ma-load ang account na tatanggap",
+      "methods": {
+        "bank": {
+          "title": "Bank account",
+          "subtitle": "Mag-transfer gamit ang bank account"
+        },
+        "gateway": {
+          "title": "Payment Gateway",
+          "subtitle": "Mag-deposit gamit ang payment gateway"
+        },
+        "truemoney": {
+          "title": "TrueMoney Wallet",
+          "subtitle": "Mag-deposit gamit ang TrueMoney Wallet"
+        }
+      },
+      "bank": {
+        "title": "Mag-deposit gamit ang Bank Account",
+        "back": "Bumalik sa mga paraan ng deposit",
+        "bankLabel": "Bangko",
+        "accountName": "Pangalan ng account",
+        "accountNumber": "Numero ng account",
+        "amountLabel": "Halaga ng deposit",
+        "quickAmount": "Mabilisang halaga",
+        "quickAmountHint": "Pumili ng halaga o maglagay ng sarili mo",
+        "next": "Susunod"
+      },
+      "confirm": {
+        "title": "Kumpirmahin ang Deposit",
+        "back": "Bumalik para baguhin ang halaga",
+        "step": "Hakbang {current} ng {total}",
+        "transferAmount": "Halagang ita-transfer",
+        "accountNameLabel": "Pangalan ng account:",
+        "accountNumberLabel": "Numero ng account:",
+        "sampleNote": "Sample na detalye ng account",
+        "slipTitle": "Ilakip ang slip ng transfer",
+        "slipPick": "I-tap para maglakip ng slip",
+        "slipChange": "I-tap muli para palitan ang larawan",
+        "slipFromDevice": "Pumili ng larawan mula sa iyong device",
+        "slipHint": "Ilakip ang slip pagkatapos mong mag-transfer",
+        "submit": "Kumpirmahin ang Deposit"
+      },
+      "finalConfirm": {
+        "title": "Isumite ang kahilingan sa deposit?",
+        "description": "Suriin ang halaga at slip bago isumite para sa review",
+        "confirm": "Isumite ang Deposit",
+        "amountLabel": "Halaga ng deposit"
+      }
+    },
+    "withdraw": {
+      "title": "Withdraw",
+      "close": "Isara ang withdraw",
+      "accountLoading": "Nilo-load ang account na tatanggap…",
+      "accountError": "Hindi ma-load ang account na tatanggap",
+      "changeAccount": "Palitan ang account na tatanggap",
+      "transferToYourAccount": "I-transfer sa iyong account",
+      "amountLabel": "Halaga ng withdrawal",
+      "available": "Magagamit ฿{amount}",
+      "withdrawAll": "I-withdraw lahat",
+      "quickAmountHint": "I-tap ang halaga para i-edit",
+      "submit": "Kumpirmahin ang Withdrawal",
+      "confirm": {
+        "title": "Isumite ang kahilingan sa withdrawal?",
+        "description": "I-transfer sa {bank} {account}",
+        "confirm": "Kumpirmahin ang Withdrawal",
+        "amountLabel": "Halaga ng withdrawal"
+      }
+    },
+    "pending": {
+      "deposit": {
+        "title": "Naghihintay ang Deposit",
+        "subtitle": "Hinihintay na maitugma ang iyong transfer"
+      },
+      "withdraw": {
+        "title": "Naghihintay ang Withdrawal",
+        "subtitle": "Pinoproseso ang iyong kahilingan"
+      },
+      "rows": {
+        "channel": "Paraan",
+        "reference": "Numero ng reference",
+        "transactionAt": "Petsa",
+        "receivingAccount": "Account na tatanggap"
+      },
+      "close": "Isara",
+      "done": "Tapos na",
+      "viewHistory": "Tingnan ang kasaysayan ng transaksyon",
+      "copyReference": "Kopyahin ang reference number",
+      "referenceCopied": "Nakopya ang reference number",
+      "referenceCopyFailed": "Hindi makopya ang reference number"
+    }
+  }
+}
