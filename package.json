@@ -6,7 +6,11 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "link-dump": "node scripts/link-dump-public.mjs",
+    "sync-nuxt": "node scripts/sync-nuxt-chunks.mjs",
+    "dump-full": "node ../dump/dump-full.mjs",
+    "predev": "node scripts/link-dump-public.mjs"
   },
   "dependencies": {
     "next": "16.3.8",
@@ -22,5 +26,6 @@
     "eslint-config-next": "16.3.8",
     "tailwindcss": "^4",
     "typescript": "^5"
-  }
+  },
+  "packageManager": "pnpm@10.11.0+sha512.6540583f41cc5f628eb3d9773ecee802f4f9ef9923cc45b69890fb47991d4b092964694ec3a4f738a420c918a333062c8b925d312f42e4f0c263eb603551f977"
 }

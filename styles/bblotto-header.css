@@ -1,0 +1,248 @@
+/* Port จาก dump header (default chunk + entry) — ไม่ใช้ Vue scoped */
+
+.lotto-site-header {
+  position: sticky;
+  top: 0;
+  z-index: 40;
+  width: 100%;
+}
+
+.lotto-site-header .header-shell {
+  width: 100%;
+  border-radius: 0 0 40px 40px;
+  background: linear-gradient(
+    180deg,
+    var(--BG-Surface-Lighter) 0%,
+    var(--BG-Surface-Darker) 100%
+  );
+  box-shadow: 0 2px 0 0 var(--Main-Secondary);
+}
+
+.lotto-site-header .header-inner {
+  margin: 0 auto;
+  max-width: 1240px;
+  padding: 10px 16px 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.lotto-site-header .header-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  width: 100%;
+}
+
+.lotto-site-header .header-logo {
+  cursor: pointer;
+  object-fit: contain;
+  height: auto;
+  max-height: 60px;
+  max-width: 100px;
+  padding: 4px;
+}
+
+.lotto-site-header .header-actions {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 8px;
+  flex: 1;
+  min-width: 0;
+}
+
+.lotto-site-header .wallet-wrapper {
+  display: flex;
+  align-items: center;
+  padding: 8px 12px;
+  font-size: 12px;
+  cursor: pointer;
+  border-radius: 10px;
+  background: linear-gradient(
+    90deg,
+    var(--balance-wrapper1) 0%,
+    var(--balance-wrapper2) 53.75%
+  );
+  box-shadow: inset -1px 1px 0 var(--balance-wrapper-stroke);
+}
+
+.lotto-site-header .wallet-lines {
+  flex: 1;
+  min-width: 0;
+}
+
+.lotto-site-header .wallet-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 8px;
+  color: var(--Main-Secondary);
+}
+
+.lotto-site-header .wallet-row--credit {
+  color: var(--Text-Icon-Body);
+}
+
+.lotto-site-header .wallet-value {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 4px;
+  min-width: 50px;
+  text-align: right;
+  color: #fff;
+}
+
+.lotto-site-header .gold-line {
+  height: 0.5px;
+  margin: 4px 0;
+  background: linear-gradient(
+    90deg,
+    var(--Main-Primary-Dark, #9b7a24) 0%,
+    var(--Main-Primary-Light, #f6db96) 50%,
+    var(--Main-Primary-Dark, #9b7a24) 100%
+  );
+}
+
+.lotto-site-header .transfer-icon {
+  display: grid;
+  place-content: center;
+  width: 20px;
+  height: 20px;
+  margin-left: 8px;
+  border-radius: 9999px;
+  background: var(--primary);
+  flex-shrink: 0;
+}
+
+.lotto-site-header .auth-buttons {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex: 1;
+  justify-content: flex-end;
+  min-width: 0;
+  padding-right: 2px;
+}
+
+.lotto-site-header .auth-buttons .bb-btn {
+  font-size: 12px;
+  height: 36px;
+  min-height: 36px;
+  padding: 0 10px;
+  white-space: nowrap;
+}
+
+@media (min-width: 380px) {
+  .lotto-site-header .auth-buttons .bb-btn {
+    font-size: 13px;
+    padding: 0 14px;
+  }
+}
+
+.lotto-site-header .deposit-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+  width: 100%;
+  padding: 0 4px 4px;
+}
+
+.lotto-site-header .bb-btn {
+  align-items: center;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  display: inline-flex;
+  font-weight: 700;
+  justify-content: center;
+  font-size: 14px;
+  height: 42px;
+  min-height: 42px;
+  padding: 0 16px;
+  width: 100%;
+  transition: all 0.15s ease;
+}
+
+.lotto-site-header .bb-btn-primary {
+  background: linear-gradient(
+    180deg,
+    var(--Main-Primary-Light, #f6db96) 0%,
+    var(--Main-Primary-Dark, #9b7a24) 100%
+  );
+  box-shadow: 0 0 4px rgba(0, 0, 0, 0.25);
+  color: var(--Text-Icon-Title, #1a1a1d);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+}
+
+.lotto-site-header .bb-btn-secondary {
+  background: linear-gradient(
+    180deg,
+    var(--Card-Normal, #34353a) 0%,
+    var(--BG-Surface-Darker, #171719) 100%
+  );
+  border: 1px solid var(--balance-wrapper-stroke);
+  box-shadow: 0 0 4px rgba(0, 0, 0, 0.25);
+  color: var(--Text-Icon-Title, #fff);
+}
+
+.lotto-site-header .hamburger-template-1 label {
+  align-items: flex-end;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  width: 30px;
+}
+
+.lotto-site-header .hamburger-template-1 label span {
+  background: var(--main-icon-1, var(--Main-Secondary));
+  border-radius: 100px;
+  height: 3px;
+  margin: 3px 0;
+  transition: all 0.4s ease-in-out;
+}
+
+.lotto-site-header .hamburger-template-1 span:nth-of-type(1) {
+  width: 100%;
+}
+
+.lotto-site-header .hamburger-template-1 span:nth-of-type(2) {
+  width: 75%;
+}
+
+.lotto-site-header .hamburger-template-1 span:nth-of-type(3) {
+  width: 100%;
+}
+
+/* บน desktop ที่มี sidebar — wallet/ฝาก-ถอนอยู่ sidebar (ตาม dump lg:hidden) */
+@media (min-width: 1024px) {
+  .lotto-site-header .header-inner {
+    max-width: calc(248px + 1280px + 40px);
+    width: 100%;
+    margin: 0 auto;
+    padding: 12px 24px 14px 12px;
+    box-sizing: border-box;
+  }
+
+  .lotto-site-header .header-logo {
+    max-height: 60px;
+    max-width: 120px;
+  }
+
+  .lotto-site-header .header-hide-with-sidebar {
+    display: none !important;
+  }
+
+  .lotto-site-header .auth-buttons .bb-btn {
+    font-size: 14px;
+    height: 42px;
+    min-height: 42px;
+    padding: 0 22px;
+  }
+
+  .lotto-site-header .header-row--desktop-logged-in .header-actions {
+    flex: 0 0 auto;
+  }
+}

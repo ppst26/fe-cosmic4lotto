@@ -1,0 +1,65 @@
+.row {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 4px;
+}
+
+.menuGroup {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.menuItem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  font-size: 11px;
+  color: var(--Text-Icon-Body);
+  padding: 6px 8px;
+  border-radius: 10px;
+  border: 1px solid transparent;
+}
+
+.menuActive {
+  border-color: rgba(255, 209, 92, 0.45);
+}
+
+.textGold {
+  color: var(--Main-Secondary);
+  font-weight: 600;
+}
+
+.depositCol {
+  display: flex;
+  flex: 1;
+  max-width: 120px;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.btnPrimary {
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  background: linear-gradient(180deg, #ffe082 0%, #ffd15c 45%, #c9a227 100%);
+  color: #2a0607;
+  font-weight: 700;
+  font-size: 12px;
+  padding: 8px 6px;
+}
+
+.btnSecondary {
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  background: rgba(0, 0, 0, 0.4);
+  color: #fff;
+  font-weight: 700;
+  font-size: 12px;
+  padding: 8px 6px;
+}

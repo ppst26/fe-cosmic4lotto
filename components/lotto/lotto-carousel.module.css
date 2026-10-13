@@ -1,0 +1,172 @@
+.stack {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 100%;
+}
+
+.stackCompact {
+  gap: 8px;
+}
+
+.section {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  border-radius: 12px;
+  background: var(--BG-Surface-Darker);
+  padding: 10px 8px;
+}
+
+.sectionCompact {
+  padding: 8px 6px;
+  border-radius: 10px;
+}
+
+.sectionCompact .sectionTitle {
+  font-size: 13px;
+}
+
+.sectionHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  padding: 0 4px;
+}
+
+.sectionTitle {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--Text-Icon-Title);
+}
+
+.carouselWrap {
+  position: relative;
+}
+
+.track {
+  --carousel-gap: 8px;
+  --carousel-visible: 4;
+  --carousel-peek: 1;
+  display: flex;
+  gap: var(--carousel-gap);
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-padding-inline: 4px;
+  padding: 2px 4px 6px;
+  scrollbar-width: thin;
+  -webkit-overflow-scrolling: touch;
+}
+
+@media (max-width: 767px) {
+  .track {
+    --carousel-visible: 1.15;
+    --carousel-peek: 0.35;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  .track {
+    --carousel-visible: 2.25;
+    --carousel-peek: 0.65;
+  }
+}
+
+.trackCompact {
+  --carousel-visible: 1.15;
+  --carousel-peek: 0.35;
+}
+
+@media (min-width: 1024px) {
+  .track {
+    --carousel-visible: 4;
+    --carousel-peek: 1;
+  }
+
+  .trackMode2Peek {
+    --carousel-visible: 2;
+    /* 2 การ์ดเต็ม + โผล่ครึ่งการ์ดที่ 3 */
+    --carousel-peek: 0.5;
+    --carousel-peek-gaps: 2;
+  }
+
+  .trackMode7Grid {
+    --carousel-visible: 7;
+    --carousel-peek: 0;
+    --carousel-peek-gaps: 6;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  .trackMode7Grid {
+    --carousel-visible: 4;
+    --carousel-peek: 0.35;
+    --carousel-peek-gaps: 4;
+  }
+}
+
+@media (max-width: 767px) {
+  .trackMode7Grid {
+    --carousel-visible: 2.15;
+    --carousel-peek: 0.35;
+    --carousel-peek-gaps: 2;
+  }
+}
+
+.slide {
+  flex: 0 0
+    calc(
+      (
+          100% -
+            var(
+              --carousel-peek-gaps,
+              calc(var(--carousel-visible) - 1)
+            ) *
+            var(--carousel-gap)
+        ) /
+        (var(--carousel-visible) + var(--carousel-peek))
+    );
+  scroll-snap-align: start;
+  min-width: 0;
+}
+
+.slideThai {
+  align-self: stretch;
+}
+
+.navBtn {
+  position: absolute;
+  top: 50%;
+  z-index: 2;
+  transform: translateY(-50%);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  background: rgba(0, 0, 0, 0.65);
+  color: var(--Main-Secondary);
+  cursor: pointer;
+}
+
+@media (min-width: 768px) {
+  .navBtn {
+    display: flex;
+  }
+}
+
+.navPrev {
+  left: 0;
+}
+
+.navNext {
+  right: 0;
+}
+
+.navBtn:disabled {
+  opacity: 0.35;
+  cursor: default;
+}

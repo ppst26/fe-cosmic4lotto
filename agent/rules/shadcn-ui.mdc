@@ -1,0 +1,62 @@
+---
+description: แนวทางการใช้งาน UI Primitives และ Component ร่วมกับ CM Theme Legend Pro 
+globs: "**/*.{ts,tsx,css}"
+alwaysApply: false
+---
+
+# UI Primitives & Components Guide — CM Theme Legend Pro 
+
+แนวทางการใช้งาน UI Primitives (Radix / shadcn) ร่วมกับระบบดีไซน์ของ **CM Theme Legend Pro ** โดยปรับแต่งสไตล์ให้เข้ากับธีมดำ-ม่วงลักชัวรี่อย่างกลมกลืน
+
+---
+
+## 1. หลักการเลือกใช้ UI Primitives
+1. **ใช้ Primitive สำหรับพฤติกรรมที่ซับซ้อน:**
+   - การจัดการ Accessibility (a11y), Keyboard Navigation, Focus Trapping, ARIA Attributes
+   - คอมโพเนนต์ที่ควรใช้: `Dialog` / `Modal`, `DropdownMenu`, `Tabs`, `Accordion`, `Tooltip`, `Popover`
+2. **ใช้ Tailwind CSS ควบคุม Visual ทั้งหมด:**
+   - ห้ามใช้คลาสสีดีฟอลต์ของ shadcn ที่เป็นสีเทา-ขาวสว่าง
+   - เชื่อมโยงสีเข้ากับ Design Tokens ของธีม **Black-Purple** ใน `design.md` เสมอ
+3. **การติดตั้งผ่าน CLI:**
+   - ติดตั้ง Primitive ผ่านคำสั่ง `pnpm dlx shadcn@latest add <component>` เพื่อป้องกันปัญหารุ่นไม่ตรงกัน
+
+---
+
+## 2. การปรับแต่งคอมโพเนนต์หลักให้ตรงกับสเปก Black-Purple
+
+### 2.1 Dialog & Modal (หน้าต่างป๊อปอัป / เข้าสู่ระบบ)
+- **Overlay:** `bg-black/80 backdrop-blur-md`
+- **Content Container:**
+  - พื้นหลัง: `bg-[#130c1c]` (หรือ `var(--card-primary)`)
+  - เส้นขอบ: `border border-purple-500/20`
+  - ความโค้งมน: `rounded-[20px]` (ตามสเปก CTMX Legend Pro)
+  - เงา: `shadow-[0_20px_50px_rgba(0,0,0,0.8),0_0_20px_rgba(168,85,247,0.15)]`
+  - การปิด: ปุ่ม Close กากบาท (X) สีขาว/เทาอ่อนมุมขวาบน
+
+```tsx
+// ตัวอย่าง DialogContent สำหรับ Black-Purple Theme
+<DialogContent className="sm:max-w-[460px] bg-[#130c1c] border border-purple-500/20 rounded-[20px] p-6 text-white shadow-2xl">
+  <DialogHeader className="text-center">
+    <DialogTitle className="text-xl font-bold text-white">เข้าสู่ระบบ</DialogTitle>
+  </DialogHeader>
+  {/* ฟอร์มและปุ่มแอ็กชัน */}
+</DialogContent>
+```
+
+---
+
+---
+
+### 2.2 Input Fields (ช่องกรอกข้อมูล & ค้นหา)
+- **Container:**
+  - พื้นหลัง: `bg-[#0b0711]` (หลุมมืดระดับ 2)
+  - เส้นขอบ: `border border-purple-500/20 focus-within:border-purple-400`
+  - ความโค้งมน: `rounded-[10px]`
+  - Focus Ring: `focus-within:ring-2 focus-within:ring-purple-500/30`
+  - Placeholder: `text-zinc-500`
+
+---
+
+## 3. ไอคอนและสื่อ (Iconography & Media)
+- ใช้ไอคอน SVG สไตล์โมเดิร์นที่คมชัด ขนาดสม่ำเสมอ (`h-4 w-4`, `h-5 w-5`, หรือ `h-6 w-6`)
+- ไอคอนในปุ่ม หรือแถบหมวดหมู่ต้องใช้สีที่แมตช์กับสถานะ (Active: สีทอง/ม่วงสว่าง, Inactive: สีเทา)

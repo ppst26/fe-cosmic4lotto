@@ -1,0 +1,88 @@
+/* Design tokens reverse‑engineered from dump/_nuxt (BB Lotto dark/gold) */
+:root {
+  --Main-Primary: #ffd15c;
+  --Main-Secondary: #ffd15c;
+  --Main-Primary-Light: #f6db96;
+  --Main-Primary-Dark: #9b7a24;
+  --main-icon-1: #ffd15c;
+  --balance-wrapper1: rgba(97, 0, 0, 0.55);
+  --balance-wrapper2: #171719;
+  --balance-wrapper-stroke: rgba(255, 209, 92, 0.35);
+  --body: #141416;
+  --Main-Disable: rgba(255, 255, 255, 0.12);
+  --Text-Icon-Title: #ffffff;
+  --Text-Icon-Body: #b8b8bc;
+  --Text-Icon-Highlight: #ffd15c;
+  --BG-Surface-Darker: #1a1a1d;
+  --BG-Surface-Lighter: #610000;
+  --BG-Surface-Normal: #28282b;
+  --Card-Normal: #2e2e32;
+  --primary: #347fd3;
+  --btn-gradient1: #ffd15c;
+  --btn-gradient2: #c9a227;
+  --btn-text: #1a1a1d;
+  --card-primary: #2a2a2e;
+  --card-secondary: #1f1f23;
+  --text-primary: #f5f5f5;
+  --text-title: #ffffff;
+  --input-bg: #1f1f23;
+}
+
+html.dark,
+html {
+  color-scheme: dark;
+}
+
+body {
+  background: #0d0d0f;
+  color: var(--Text-Icon-Title);
+  font-family: var(--font-kanit), Kanit, system-ui, sans-serif;
+}
+
+.lotto-page {
+  min-height: 100dvh;
+  padding-bottom: calc(100px + env(safe-area-inset-bottom, 0px));
+  background: radial-gradient(
+      120% 80% at 50% -20%,
+      rgba(97, 0, 0, 0.45),
+      transparent 55%
+    ),
+    #0d0d0f;
+}
+
+@media (min-width: 1024px) {
+  .lotto-page {
+    padding-bottom: 24px;
+    background: #141416;
+    width: 100%;
+    max-width: none;
+    overflow-x: clip;
+  }
+}
+
+.lotto-container {
+  margin: 0 auto;
+  max-width: 638px;
+  width: 100%;
+  padding: 0 12px 16px;
+}
+
+.btn-gold {
+  background: linear-gradient(180deg, #ffe082 0%, #ffd15c 45%, #c9a227 100%);
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  border-radius: 9999px;
+  color: #2a0607;
+  font-weight: 600;
+  padding: 8px 18px;
+  font-size: 14px;
+}
+
+.btn-outline-gold {
+  background: rgba(0, 0, 0, 0.35);
+  border: 1px solid var(--Main-Secondary);
+  border-radius: 9999px;
+  color: var(--Main-Secondary);
+  font-weight: 600;
+  padding: 8px 18px;
+  font-size: 14px;
+}

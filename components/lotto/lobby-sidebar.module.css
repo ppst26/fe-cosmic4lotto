@@ -1,0 +1,128 @@
+.aside {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 16px 12px;
+  border-radius: 0 16px 16px 0;
+  background: #222226;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-left: none;
+}
+
+.wallet {
+  border-radius: 12px;
+  background: rgba(0, 0, 0, 0.35);
+  padding: 12px;
+  font-size: 12px;
+}
+
+.walletRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  color: var(--Text-Icon-Body);
+}
+
+.walletLabel {
+  color: var(--Main-Secondary);
+}
+
+.walletValue {
+  color: #fff;
+  font-weight: 600;
+}
+
+.coin {
+  color: var(--Main-Secondary);
+}
+
+.divider {
+  height: 1px;
+  margin: 8px 0;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 209, 92, 0.45),
+    transparent
+  );
+}
+
+.actions {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+}
+
+.btnPrimary {
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  background: linear-gradient(180deg, #ffe082 0%, #ffd15c 45%, #c9a227 100%);
+  color: #2a0607;
+  font-weight: 700;
+  font-size: 14px;
+  padding: 10px 8px;
+}
+
+.btnSecondary {
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  background: rgba(0, 0, 0, 0.4);
+  color: #fff;
+  font-weight: 700;
+  font-size: 14px;
+  padding: 10px 8px;
+}
+
+.quick {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 6px;
+}
+
+.quickItem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  border-radius: 10px;
+  border: 1px solid transparent;
+  background: rgba(0, 0, 0, 0.25);
+  padding: 8px 4px;
+  font-size: 10px;
+  color: var(--Text-Icon-Body);
+}
+
+.quickActive {
+  border-color: rgba(255, 209, 92, 0.5);
+  color: var(--Main-Secondary);
+}
+
+.nav {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-top: 4px;
+}
+
+.navItem {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  border-radius: 12px;
+  padding: 10px 12px;
+  font-size: 14px;
+  color: var(--Text-Icon-Body);
+}
+
+.navActive {
+  border: 1px solid rgba(255, 209, 92, 0.55);
+  color: var(--Main-Secondary);
+  background: rgba(255, 209, 92, 0.08);
+}
+
+.navIcon {
+  font-size: 18px;
+}

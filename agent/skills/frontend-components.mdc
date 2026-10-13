@@ -1,0 +1,55 @@
+---
+description: โครงสร้าง Component และสถาปัตยกรรม UI สำหรับ CM Theme Legend Pro 
+globs: "**/*.{ts,tsx}"
+alwaysApply: false
+---
+
+# Frontend Components — CM Theme Legend Pro
+
+แยก reusable components ให้ตรงกับโครงสร้างจริงของ Legend Pro ตามที่ระบุใน `design.md`:
+
+## 1. โครงสร้างโฟลเดอร์และคอมโพเนนต์หลัก
+
+### 1.1 โฟลเดอร์ Layout (`components/layout/`)
+- `components/layout/HeaderBar.tsx`: แถบส่วนหัวด้านบน (Search Input ทางซ้าย, Brand Logo กึ่งกลาง, ปุ่มเข้าสู่ระบบ/สมัครสมาชิก และตัวเลือกภาษาทางขวา)
+- `components/layout/CategoryNav.tsx`: แถบเลือกหมวดหมู่เกมแนวนอน (13 หมวด: หน้าหลัก, สล็อต, คาสิโน, กีฬา, หวย ฯลฯ) พร้อม Active State สไตล์ Gradient นูน
+- `components/layout/JackpotSidebar.tsx`: แถบด้านข้างขวา (แนะนำเกมแตกดี, กิจกรรมที่น่าสนใจ, โปรโมชั่นที่น่าสนใจ)
+- `components/layout/FloatingControls.tsx`: ปุ่มลอยควบคุมทั่วทั้งหน้าจอ (จานสีเลือกธีม, ปุ่มติดต่อฝ่ายบริการลูกค้า, ปุ่มสลับสถานะสมาชิก)
+- `components/layout/Footer.tsx`: แถบส่วนท้ายเว็บไซต์ (ข้อมูลแบรนด์, ลิงก์หมวดหมู่, ธนาคารที่รองรับ, ใบรับรองสากล)
+- `components/layout/index.ts`: รวมศูนย์ Barrel Export สะดวกต่อการเรียกใช้งาน
+
+### 1.2 คอมโพเนนต์ฟีดและเนื้อหา (`components/`)
+- **Hero & Promotions:**
+  - `HeroBanner.tsx`: แบนเนอร์สไลเดอร์ขนาดใหญ่ อัตราส่วน ~3.5:1 ขอบมนสมูท
+  - `MarqueeTicker.tsx`: แถบข้อความแจ้งเตือนวิ่ง พร้อมไอคอนลำโพงกระจายเสียง
+  - `QuickActionCards.tsx`: การ์ดทางลัด 3D ("ดูโปรโมชั่น", "ดูกิจกรรม", "ชวนเพื่อนรับรายได้")
+- **Game & Provider Grids:**
+  - `GameCard.tsx`: การ์ดเกมสล็อต สัดส่วน 3:4 ขอบมนสูง `16px` (`rounded-2xl`), สไตล์ **Borderless 100%** ไร้เส้นขอบตัดกรอบ, พื้นผิวสีทึบ Solid Dark Charcoal (`bg-[#151320]`), แท็ก HOT (`#e10000`) / NEW (`#34a200`), ปุ่มหัวใจกลม และตัวเลขคนดูสด
+  - `ProviderCard.tsx`: การ์ดค่ายเกม ขอบมน `20px - 24px` (`rounded-3xl` / `rounded-[20px]`), สไตล์ **Borderless 100%**, สัดส่วน 1:1, พื้นผิวสีทึบ Solid Dark Charcoal (`bg-[#151320]`), เงาดำบังล่าง 80px
+  - `LiveCasinoSection.tsx`: การ์ดห้องถ่ายทอดสดคาสิโน ขอบมน `16px` สไตล์ Borderless พร้อมตัวนับคนดูและตารางเค้าไพ่
+- **Modals & Overlays:**
+  - `LoginModal.tsx`: หน้าต่างเข้าสู่ระบบ Solid Dark Surface ขอบมน `24px - 28px` พร้อมปุ่มเข้าสู่ระบบด้วย LINE (`#06C755`) และปุ่ม Demo 1-Click
+  - `ThemeCustomizerModal.tsx`: หน้าต่างเลือกเปลี่ยนธีม Legend Pro (Light & Dark Palettes)
+
+## 2. กฎการเขียน Component 
+- **สถาปัตยกรรม Borderless + Solid Surface + High-Radius (Thrill Style):**
+  - **Borderless 100% (ไร้เส้นขอบ):** การ์ดเกม, การ์ดค่ายเกม, กล่องเนื้อหา ไม่ใส่เส้นขอบแข็ง (`border: none` / `border-0`) เพื่อให้ภาพและเลย์เอาต์เนียนตา
+  - **High Rounded Corners (โค้งมนสูง):** การ์ดเกมใช้ `rounded-md` , การ์ดค่ายเกมและคอนเทนเนอร์ใช้ `rounded-lg` 
+  - **Solid Style Component BG Surface:** พื้นผิวของการ์ดและส่วนประกอบเป็นสีทึบ Charcoal Black  สำหรับ Inputไม่ใช้การไล่เฉดเกรเดียนต์บนผิวการ์ดที่รบกวนสายตา
+  - เพื่อสร้าง Contrast ที่คมชัดบนพื้นผิวสีทึบ
+- **Mobile-First Priority:** ทุก Component ต้องเริ่มเขียนจากมุมมองของหน้าจอมือถือ (`w-full`, `flex-col`, `grid-cols-1` หรือ `grid-cols-2`) แล้วค่อยใช้ Breakpoint `sm:`, `md:`, `lg:`, `xl:` ในการขยาย Layout สำหรับหน้าจอขนาดใหญ่
+- **Responsive Header & Search:**
+  - บน Mobile (< 640px): ซ่อนข้อความยาว แสดงเฉพาะไอคอนและชื่อแบรนด์ ปรับ Search Bar ให้กะทัดรัด
+  - บน Desktop (≥ 640px): แสดงกล่องค้นหาแบบขยายกว้างและปุ่มสลับธีม
+- **Category Navigation (แนวนอน):**
+  - บน Mobile: ต้องรองรับการปัดเลื่อนด้วยนิ้วมือสัมผัส (`overflow-x-auto scrollbar-none snap-x`) พร้อมพื้นที่กดที่พอเหมาะ
+- **Grids สัดส่วนเกมและการ์ด:**
+  - `GameCard`: Mobile ใช้ `grid-cols-2`, Tablet ใช้ `sm:grid-cols-3 md:grid-cols-4`, Desktop ใช้ `xl:grid-cols-5`
+  - `ProviderCard`: Mobile ใช้ `grid-cols-2`, Tablet ใช้ `sm:grid-cols-3 md:grid-cols-4`, Desktop ใช้ `lg:grid-cols-6`
+  - `QuickActionCards`: Mobile เรียงซ้อนลงมาแบบ Vertical Stack (`col-span-1`) ➔ Desktop ขยายเป็น 12 Columns Grid
+- **Modals (เช่น LoginModal, RegisterModal):**
+  - บน Mobile: ความกว้างต้องปรับให้รับกับหน้าจอ (`w-full max-w-[92vw] sm:max-w-[440px]`) ปุ่มกดเต็มความกว้าง (`w-full`) เพื่อให้กดง่ายด้วยนิ้วโป้ง พื้นหลังสีดำเข้ม `#141414` ขอบม่วงนีออน
+- **Layout & Styling:** ใช้ **Tailwind CSS ใน TSX** เป็นหลัก (`flex`, `grid`, `gap`, `rounded-[...]`, `transition`)
+- **Render จาก Data Arrays:** รายการเกม, ค่ายเกม, เมนูหมวดหมู่ ต้อง render ผ่าน data array ที่มี `id` ชัดเจน
+- **Semantic HTML:** ใช้ `<a>` หรือ Next `Link` สำหรับการนำทาง และ `<button>` สำหรับ action ห้ามซ้อน interactive elements
+- **Asset Handling:** ใช้รูปภาพ WebP คุณภาพสูงจาก `public/` หรือ CDN พร้อมกำหนด `aspect-ratio` เพื่อป้องกัน Layout Shift (CLS)

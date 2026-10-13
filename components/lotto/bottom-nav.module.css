@@ -1,0 +1,111 @@
+/* Ported from dump/_nuxt/css/FooterLotto.Cg5GnUJ7.css */
+
+.wrapper {
+  bottom: 0;
+  left: 0;
+  margin: 0 auto;
+  max-width: 638px;
+  position: fixed;
+  right: 0;
+  width: 100%;
+  z-index: 40;
+}
+
+.footer {
+  height: 100px;
+  position: relative;
+}
+
+.menu {
+  align-items: end;
+  background: linear-gradient(
+    180deg,
+    var(--BG-Surface-Lighter, #610000) 0%,
+    var(--BG-Surface-Darker, #2a0607) 100%
+  );
+  border-radius: 20px 20px 0 0;
+  bottom: 0;
+  box-shadow: 0 -1px 6px rgba(0, 0, 0, 0.16);
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  height: 80px;
+  left: 0;
+  overflow: visible;
+  padding: 10px 10px calc(10px + env(safe-area-inset-bottom, 0px));
+  position: absolute;
+  right: 0;
+  z-index: 1;
+}
+
+.menu::before {
+  background: linear-gradient(
+    358deg,
+    var(--BG-Surface-Lighter, #610000) 0%,
+    var(--BG-Surface-Darker, #2a0607) 100%
+  );
+  border-radius: 10rem 10rem 0 0;
+  content: "";
+  height: 45px;
+  left: 50%;
+  position: absolute;
+  top: -36px;
+  transform: translate(-50%, -12%);
+  width: 90px;
+  z-index: -100;
+}
+
+.item {
+  align-items: center;
+  color: inherit;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  justify-content: flex-end;
+  text-decoration: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
+
+.icon {
+  font-size: 22px;
+  line-height: 1;
+  opacity: 0.85;
+}
+
+.label {
+  color: var(--Text-Icon-Body);
+  font-size: 11px;
+  font-weight: 600;
+}
+
+.active .label,
+.active .icon {
+  color: var(--Text-Icon-Highlight);
+}
+
+.center {
+  position: relative;
+  z-index: 2;
+}
+
+.badge {
+  align-items: center;
+  display: flex;
+  height: 80px;
+  justify-content: center;
+  left: 50%;
+  position: absolute;
+  top: -50px;
+  transform: translate(-50%, -50%);
+  width: 70px;
+  z-index: 3;
+}
+
+.badgeImg {
+  border-radius: 9999px;
+  height: 100%;
+  object-fit: contain;
+  width: 100%;
+}
