@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "@/lib/i18n/navigation";
 import type { LobbyGameItem } from "@/lib/lotto/load-lobby-games";
 import { LobbyGameCard } from "./LobbyGameCard";
 import {
@@ -16,6 +17,14 @@ type Props = {
   /** carousel 7 ใบ + เลื่อนดูเพิ่ม */
   carousel?: boolean;
   showViewAll?: boolean;
+  /** ปลายทางปุ่ม «ดูทั้งหมด» */
+  viewAllHref?: string;
+};
+
+/** ปลายทางปุ่ม «ดูทั้งหมด» เริ่มต้นตามหัวข้อ section (LottoHomeContent ไม่ส่ง viewAllHref) */
+const DEFAULT_VIEW_ALL_HREF: Record<string, string> = {
+  "คาสิโนออนไลน์": "/casino",
+  "สล็อตออนไลน์": "/slots",
 };
 
 export function GameShowcaseSection({
@@ -26,8 +35,10 @@ export function GameShowcaseSection({
   cardWidth,
   carousel = false,
   showViewAll,
+  viewAllHref,
 }: Props) {
   if (items.length === 0) return null;
+  const allHref = viewAllHref ?? DEFAULT_VIEW_ALL_HREF[title];
 
   const cards = items.map((item) => (
     <LottoCarouselSlide key={item.id}>
@@ -53,9 +64,15 @@ export function GameShowcaseSection({
           <h2 className={styles.title}>{title}</h2>
         </div>
         {showViewAll ? (
-          <button type="button" className={styles.viewAll}>
-            ดูทั้งหมด
-          </button>
+          allHref ? (
+            <Link href={allHref} className={styles.viewAll} style={{ textDecoration: "none" }}>
+              ดูทั้งหมด
+            </Link>
+          ) : (
+            <button type="button" className={styles.viewAll}>
+              ดูทั้งหมด
+            </button>
+          )
         ) : null}
       </div>
       {carousel ? (

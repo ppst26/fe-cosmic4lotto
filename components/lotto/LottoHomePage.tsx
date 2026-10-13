@@ -24,14 +24,14 @@ import layout from "./lobby-layout.module.css";
 type Props = { loggedIn?: boolean };
 
 /** หน้าแรก — component ชุดเดียวกันทุก viewport; ต่างแค่ shell (sidebar / header / bottom nav) */
-export function LottoHomePage({ loggedIn = true }: Props) {
-  const thai = loadThaiLottoFromDump() ?? thaiLottoMock;
-  const bankLotto = loadBankLottoFromDump();
-  const dashboardLotto = loadDashboardLottoFromDump();
-  const wallet = loadWalletFromDump();
-  const casino = loadCasinoShowcase();
-  const slots = loadSlotShowcase();
-  const sports = loadSportsShowcase();
+export async function LottoHomePage({ loggedIn = true }: Props) {
+  const thai = (await loadThaiLottoFromDump()) ?? thaiLottoMock;
+  const bankLotto = await loadBankLottoFromDump();
+  const dashboardLotto = await loadDashboardLottoFromDump();
+  const wallet = await loadWalletFromDump();
+  const casino = await loadCasinoShowcase();
+  const slots = await loadSlotShowcase();
+  const sports = await loadSportsShowcase();
 
   const contentProps = {
     thai,

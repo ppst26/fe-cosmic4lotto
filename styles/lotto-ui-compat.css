@@ -1,0 +1,124 @@
+/*
+ * ชั้น alias token สำหรับ UI ใหม่ที่พอร์ตมาจาก sport (ใช้ชื่อ --soft-* / soft-panel ฯลฯ)
+ * map เข้ากับ token ธีมมืด-ทองของ lotto (styles/lotto-theme.css) — หน้าตาจึงเป็นของ lotto
+ * ไม่ใช้กับ component หน้าแรกเดิม (components/lotto/*) ซึ่งใช้ token ของตัวเอง
+ */
+:root {
+  --soft-canvas: var(--body);
+  --soft-surface: var(--BG-Surface-Darker);
+  --soft-card: var(--BG-Surface-Normal);
+  --soft-card-elevated: var(--Card-Normal);
+  --soft-chrome: #0d0d0f;
+
+  --brand: var(--Main-Primary);
+  --brand-strong: var(--Main-Primary);
+  --brand-soft: rgba(255, 209, 92, 0.14);
+  --text-on-light: var(--Text-Icon-Title);
+  --text-on-dark: #ffffff;
+  --text-muted: var(--Text-Icon-Body);
+  --tab-inactive: #8b8b90;
+  --icon-muted: #8b8b90;
+  --input: var(--input-bg);
+
+  --radius-soft-sm: 14px;
+  --radius-soft-md: 18px;
+  --radius-soft-lg: 22px;
+  --radius-soft-xl: 28px;
+
+  --shadow-soft: 0 6px 18px rgba(0, 0, 0, 0.4);
+  --shadow-soft-sm: 0 2px 10px rgba(0, 0, 0, 0.35);
+}
+
+@utility soft-panel {
+  background-color: var(--soft-card);
+  border-radius: var(--radius-soft-lg);
+  box-shadow: var(--shadow-soft-sm);
+  color: var(--text-on-light);
+}
+
+@utility soft-card {
+  background-color: var(--soft-card-elevated);
+  border-radius: var(--radius-soft-md);
+  box-shadow: var(--shadow-soft-sm);
+  color: var(--text-on-light);
+}
+
+@utility soft-btn-primary {
+  background: linear-gradient(180deg, #ffe082 0%, #ffd15c 45%, #c9a227 100%);
+  color: #2a0607;
+  font-weight: 600;
+  border-radius: 9999px;
+  border: 1px solid rgba(255, 255, 255, 0.35);
+}
+
+@utility soft-btn-outline {
+  background-color: rgba(0, 0, 0, 0.35);
+  color: var(--Main-Secondary);
+  font-weight: 600;
+  border: 1px solid var(--Main-Secondary);
+  border-radius: 9999px;
+}
+
+@utility scrollbar-none {
+  scrollbar-width: none;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes scale-up {
+  from {
+    opacity: 0;
+    transform: scale(0.96);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.animate-fade-in {
+  animation: fade-in 0.2s ease-out;
+}
+
+.animate-scale-up {
+  animation: scale-up 0.22s ease-out;
+}
+
+/* พื้นผิว modal / bottom sheet — ทึบ ใช้ token ของ lotto */
+@utility modal-surface {
+  background: var(--BG-Surface-Darker);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: var(--radius-soft-md);
+  box-shadow: var(--shadow-soft-sm);
+  color: var(--text-on-light);
+}
+
+@utility modal-surface-bg {
+  background: var(--BG-Surface-Darker);
+}
+
+@utility soft-card-dark {
+  background: var(--BG-Surface-Darker);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: var(--radius-soft-md);
+  box-shadow: var(--shadow-soft-sm);
+  color: var(--text-on-light);
+}
+
+@utility soft-panel-bg {
+  background: var(--BG-Surface-Normal);
+}
+
+@utility soft-card-bg {
+  background: var(--Card-Normal);
+}

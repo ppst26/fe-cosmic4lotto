@@ -1,0 +1,200 @@
+/*
+ * วงล้อพารวย (/wheel) — ธีมมืด-ทองของ lotto
+ * ธีมจาก API ตั้งตัวแปร --wheel-* บน .lucky-wheel__stage (lib/domain/wheelTheme.ts) · ไม่ตั้ง = ค่า fallback ด้านล่าง
+ */
+.lucky-wheel__stage {
+  position: relative;
+  margin-inline: auto;
+  width: min(100%, 350px);
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: var(--wheel-stage-image, none) center / cover no-repeat, var(--wheel-stage-bg, transparent);
+}
+
+@media (width >= 1024px) {
+  .lucky-wheel__stage {
+    width: 100%;
+    max-width: 420px;
+    max-height: 420px;
+  }
+}
+
+.lucky-wheel__pointer {
+  position: absolute;
+  top: 6px;
+  left: 50%;
+  z-index: 4;
+  width: 0;
+  height: 0;
+  transform: translateX(-50%);
+  border-left: 11px solid transparent;
+  border-right: 11px solid transparent;
+  border-top: 18px solid var(--wheel-pointer-color, var(--brand-strong, #ffd15c));
+  filter: drop-shadow(0 0 6px var(--wheel-pointer-glow, rgba(255, 209, 92, 0.5)));
+}
+
+.lucky-wheel__pointer-img {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  z-index: 4;
+  width: var(--wheel-pointer-size, 9%);
+  height: auto;
+  transform: translateX(-50%);
+  pointer-events: none;
+  filter: drop-shadow(0 0 8px var(--wheel-pointer-glow, transparent));
+}
+
+.lucky-wheel__frame-img {
+  position: absolute;
+  inset: 0;
+  z-index: 3;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  pointer-events: none;
+}
+
+.lucky-wheel__hub-logo {
+  width: 72%;
+  height: 72%;
+  object-fit: contain;
+  pointer-events: none;
+}
+
+.lucky-wheel__disc {
+  width: 100%;
+  height: 100%;
+  transform-origin: center center;
+  will-change: transform;
+}
+
+.lucky-wheel__svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.lucky-wheel__rim {
+  stroke: var(--wheel-rim-color, var(--brand, #ffd15c));
+  filter: drop-shadow(0 0 6px var(--wheel-rim-glow, transparent));
+}
+
+.lucky-wheel__rim-band {
+  stroke: var(--wheel-rim-band, transparent);
+}
+
+.lucky-wheel__rim-dot {
+  fill: var(--wheel-light-color, #6b5a2a);
+}
+
+.lucky-wheel__stage--lights-blink .lucky-wheel__rim-dot {
+  animation: wheel-light-blink 1.2s steps(1, end) infinite;
+}
+
+.lucky-wheel__stage--lights-blink .lucky-wheel__rim-dot--odd {
+  animation-delay: -0.6s;
+}
+
+.lucky-wheel__stage--lights-chase .lucky-wheel__rim-dot {
+  animation: wheel-light-chase 1.6s linear infinite;
+  animation-delay: calc(var(--wheel-light-index, 0) * 1.6s / var(--wheel-light-count, 24));
+}
+
+.lucky-wheel__stage--lights-fast .lucky-wheel__rim-dot {
+  animation-duration: 0.5s;
+}
+
+.lucky-wheel__stage--lights-chase.lucky-wheel__stage--lights-fast .lucky-wheel__rim-dot {
+  animation-delay: calc(var(--wheel-light-index, 0) * 0.5s / var(--wheel-light-count, 24));
+}
+
+@keyframes wheel-light-blink {
+  0% {
+    fill: var(--wheel-light-active, #ffd15c);
+  }
+  50% {
+    fill: var(--wheel-light-color, #6b5a2a);
+  }
+}
+
+@keyframes wheel-light-chase {
+  0%,
+  12% {
+    fill: var(--wheel-light-active, #ffd15c);
+  }
+  20%,
+  100% {
+    fill: var(--wheel-light-color, #6b5a2a);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .lucky-wheel__stage--lights-blink .lucky-wheel__rim-dot,
+  .lucky-wheel__stage--lights-chase .lucky-wheel__rim-dot {
+    animation: none;
+  }
+}
+
+.lucky-wheel__slice {
+  stroke: var(--wheel-slice-border, rgba(255, 209, 92, 0.35));
+  stroke-width: 0.75;
+}
+
+.lucky-wheel__slice-icon {
+  pointer-events: none;
+}
+
+.lucky-wheel__slice--a {
+  fill: #2e2e32;
+}
+
+.lucky-wheel__slice--b {
+  fill: #3d3a2c;
+}
+
+.lucky-wheel__slice-label {
+  font-family: var(--font-sans);
+  font-weight: 600;
+  fill: var(--wheel-label-color, #ffffff);
+}
+
+.lucky-wheel__hub-ring {
+  stroke: var(--wheel-hub-ring, #ffd15c);
+  stroke-width: 1.5;
+}
+
+.lucky-wheel__hub-btn {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 5;
+  display: flex;
+  height: var(--wheel-hub-size, 4rem);
+  width: var(--wheel-hub-size, 4rem);
+  align-items: center;
+  justify-content: center;
+  transform: translate(-50%, -50%);
+  border: 0;
+  border-radius: 9999px;
+  background: var(--wheel-hub-bg, linear-gradient(180deg, #ffe082 0%, #ffd15c 50%, #c9a227 100%));
+  box-shadow:
+    0 2px 14px var(--wheel-hub-glow, rgba(255, 209, 92, 0.45)),
+    0 0 0 2px var(--wheel-hub-ring, #1a1a1d);
+  letter-spacing: 0.12em;
+  color: var(--wheel-hub-text, #2a0607);
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.lucky-wheel__hub-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+@media (width >= 1024px) {
+  .lucky-wheel__hub-btn {
+    width: var(--wheel-hub-size, clamp(3.5rem, 13.5%, 5.25rem));
+    height: var(--wheel-hub-size, clamp(3.5rem, 13.5%, 5.25rem));
+  }
+}

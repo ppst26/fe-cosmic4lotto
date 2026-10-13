@@ -1,3 +1,6 @@
 @import "tailwindcss";
 @import "../styles/lotto-theme.css";
 @import "../styles/bblotto-header.css";
+@import "../styles/lotto-ui-compat.css";
+@import "../styles/lottery-hub.css";
+@import "../styles/lottery-thai.css";

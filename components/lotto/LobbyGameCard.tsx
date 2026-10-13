@@ -1,4 +1,6 @@
 import Image from "next/image";
+import Link from "@/lib/i18n/navigation";
+import { buildGamePlayHref } from "@/lib/gamePlayPaths";
 import type { LobbyGameItem } from "@/lib/lotto/load-lobby-games";
 import styles from "./game-card.module.css";
 
@@ -15,6 +17,7 @@ export function LobbyGameCard({
   width,
   layout = "fixed",
 }: Props) {
+  const href = item.href ?? buildGamePlayHref({ id: item.id, title: item.title });
   const style = width
     ? ({ "--card-width": width } as React.CSSProperties)
     : undefined;
@@ -24,6 +27,7 @@ export function LobbyGameCard({
       className={`${styles.card} ${variant === "wide" ? styles.cardWide : ""} ${layout === "carousel" ? styles.cardCarousel : ""}`}
       style={style}
     >
+      <Link href={href} aria-label={item.title} style={{ display: "block", color: "inherit", textDecoration: "none" }}>
       <div
         className={`${styles.wrapper} ${variant === "wide" ? styles.wrapperWide : ""}`}
       >
@@ -48,6 +52,7 @@ export function LobbyGameCard({
           <span>{item.players.toLocaleString("en-US")}</span>
         </div>
       </div>
+      </Link>
     </article>
   );
 }

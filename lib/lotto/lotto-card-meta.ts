@@ -1,17 +1,17 @@
-/** ชื่อ/ธงสำหรับ map ผลหวยจาก dump API */
+/** ธงของการ์ดผลหวยหน้าแรก + แถวผลหวยของ glass (LOTTERY_LATEST_RESULTS) ที่ใช้เป็นแหล่งข้อมูล */
 export type LottoCardMeta = {
-  name: string;
+  /** id แถวใน app/data/lotteryHubMockData.ts → LOTTERY_LATEST_RESULTS */
+  rowId: string;
   flagEmoji: string;
 };
 
 export const LOTTO_CARD_META: Record<string, LottoCardMeta> = {
-  thailotto: { name: "หวยรัฐบาลไทย", flagEmoji: "🇹🇭" },
-  gsblotto: { name: "หวย ออมสิน", flagEmoji: "🏦" },
-  baaclotto: { name: "หวย ธกส.", flagEmoji: "🏦" },
-  laoslotto: { name: "หวยลาว", flagEmoji: "🇱🇦" },
-  hanoylotto: { name: "ฮานอย", flagEmoji: "🇻🇳" },
-  laoslottoextra: { name: "หวยลาว Extra", flagEmoji: "🇱🇦" },
-  laoslottotv: { name: "หวยลาว TV", flagEmoji: "🇱🇦" },
-  laoslottohd: { name: "หวยลาว HD", flagEmoji: "🇱🇦" },
-  hanoylottostar: { name: "ฮานอย Star", flagEmoji: "🇻🇳" },
+  laoslotto: { rowId: "res-la", flagEmoji: "🇱🇦" },
+  hanoylotto: { rowId: "res-hn", flagEmoji: "🇻🇳" },
+  malaylotto: { rowId: "res-my", flagEmoji: "🇲🇾" },
+  chinalotto: { rowId: "res-cn", flagEmoji: "🇨🇳" },
+  nikkeilotto: { rowId: "res-jp", flagEmoji: "🇯🇵" },
+  korealotto: { rowId: "res-kr", flagEmoji: "🇰🇷" },
+  dowjoneslotto: { rowId: "res-us", flagEmoji: "🇺🇸" },
+  thailotto: { rowId: "res-th", flagEmoji: "🇹🇭" },
 };

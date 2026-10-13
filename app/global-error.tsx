@@ -22,7 +22,7 @@ export default function GlobalError({
 
   return (
     <html lang="th" className="dark h-full antialiased">
-      <body className="flex min-h-dvh items-center justify-center app-bg px-4">
+      <body className="flex min-h-dvh items-center justify-center bg-[var(--body)] px-4">
         <title>เกิดข้อผิดพลาด — XGAMBET</title>
         <StatusState
           title="ระบบขัดข้องชั่วคราว"

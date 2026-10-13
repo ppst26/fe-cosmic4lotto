@@ -1,0 +1,252 @@
+/**
+ * Lottery Hub — เฟส 1 (lotto dark-gold theme)
+ * ใช้ token ของ lotto ผ่าน styles/lotto-ui-compat.css (--soft-*, --brand)
+ */
+
+.lottery-hub-theme {
+  --lottery-results-board-cols: minmax(0, 1fr) 3.75rem 3.75rem minmax(4.25rem, 5rem);
+}
+
+.lottery-soft-card {
+  background-color: var(--soft-card-elevated);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: var(--radius-soft-md);
+  box-shadow: var(--shadow-soft-sm);
+  text-decoration: none;
+  color: inherit;
+  transition:
+    transform 0.15s ease,
+    box-shadow 0.15s ease;
+}
+
+.lottery-soft-card:hover {
+  box-shadow: var(--shadow-soft);
+  transform: translateY(-1px);
+}
+
+.lottery-countdown {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--brand);
+}
+
+.lottery-feature-card__title {
+  line-height: 1.25;
+  color: var(--text-on-light);
+}
+
+.lottery-feature-card__yiki-ball {
+  color: var(--btn-text);
+  background: radial-gradient(
+    circle at 30% 25%,
+    var(--brand-soft),
+    var(--brand) 55%,
+    var(--brand-strong)
+  );
+  box-shadow: inset 0 -3px 6px color-mix(in srgb, var(--brand-strong) 40%, transparent);
+}
+
+.lottery-feature-card__yiki-coin {
+  background: var(--brand-soft);
+  border: 2px solid color-mix(in srgb, var(--brand) 55%, transparent);
+}
+
+.lottery-flag__sphere {
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: rgb(255 255 255 / 92%);
+  text-shadow: 0 1px 2px rgb(0 0 0 / 35%);
+  box-shadow: inset 0 -3px 6px rgb(0 0 0 / 22%);
+}
+
+.lottery-flag--sm .lottery-flag__sphere {
+  font-size: 0.55rem;
+}
+
+.lottery-flag__coin {
+  background: var(--brand-soft);
+  border: 1.5px solid color-mix(in srgb, var(--brand) 50%, transparent);
+}
+
+/* ธงตลาด — สีตัวแทนประเทศ (ไม่ใช่ chrome หลักของธีม) */
+.lottery-flag--th .lottery-flag__sphere {
+  background: radial-gradient(circle at 35% 30%, #3b82f6, #1d4ed8 48%, #dc2626 49%);
+}
+
+.lottery-flag--la .lottery-flag__sphere {
+  background: radial-gradient(circle at 50% 35%, #dc2626, #1e3a8a);
+}
+
+.lottery-flag--vn .lottery-flag__sphere {
+  background: radial-gradient(circle at 50% 40%, #dc2626, #b91c1c);
+}
+
+.lottery-flag--my .lottery-flag__sphere {
+  background: radial-gradient(circle at 50% 35%, #1d4ed8, #dc2626);
+}
+
+.lottery-flag--us .lottery-flag__sphere {
+  background: radial-gradient(circle at 35% 30%, #3b82f6, #1e3a8a);
+}
+
+.lottery-flag--cn .lottery-flag__sphere {
+  background: radial-gradient(circle at 50% 40%, #dc2626, #991b1b);
+}
+
+.lottery-flag--de .lottery-flag__sphere {
+  background: linear-gradient(180deg, #1f2937 33%, #dc2626 33% 66%, #fbbf24 66%);
+}
+
+.lottery-flag--ru .lottery-flag__sphere {
+  background: linear-gradient(180deg, #fff 33%, #3b82f6 33% 66%, #dc2626 66%);
+}
+
+.lottery-flag--kr .lottery-flag__sphere {
+  background: radial-gradient(circle at 50% 40%, #fff, #dc2626);
+  color: #1e3a8a;
+}
+
+.lottery-flag--jp .lottery-flag__sphere {
+  background: radial-gradient(circle at 50% 45%, #fff, #dc2626);
+  color: #dc2626;
+}
+
+.lottery-flag--gb .lottery-flag__sphere {
+  background: radial-gradient(circle at 50% 40%, #1e3a8a, #312e81);
+}
+
+.lottery-flag--hk .lottery-flag__sphere {
+  background: radial-gradient(circle at 50% 40%, #dc2626, #991b1b);
+}
+
+.lottery-flag--tw .lottery-flag__sphere {
+  background: radial-gradient(circle at 50% 40%, #1d4ed8, #dc2626);
+}
+
+.lottery-flag--sg .lottery-flag__sphere {
+  background: radial-gradient(circle at 50% 40%, #dc2626, #fff);
+  color: #dc2626;
+}
+
+.lottery-flag--in .lottery-flag__sphere {
+  background: radial-gradient(circle at 50% 35%, #f97316, #059669);
+}
+
+.lottery-flag--eg .lottery-flag__sphere {
+  background: radial-gradient(circle at 50% 40%, #dc2626, #1f2937);
+}
+
+.lottery-flag--gold .lottery-flag__sphere {
+  background: radial-gradient(
+    circle at 30% 25%,
+    var(--brand-soft),
+    var(--brand) 55%,
+    var(--brand-strong)
+  );
+  color: var(--btn-text);
+}
+
+.lottery-type-card__title {
+  color: var(--text-on-light);
+}
+
+.lottery-type-card__closed {
+  color: var(--text-muted);
+}
+
+.lottery-results-board__header-cell {
+  font-size: 0.7rem;
+  font-weight: 600;
+  line-height: 1.3;
+  color: var(--text-muted);
+}
+
+.lottery-results-board__market-name {
+  font-size: 0.8rem;
+  font-weight: 600;
+  line-height: 1.2;
+  color: var(--text-on-light);
+}
+
+.lottery-results-board__prize-label {
+  font-size: 0.65rem;
+  line-height: 1;
+  color: var(--text-muted);
+}
+
+.lottery-results-board__prize-value {
+  font-size: 0.85rem;
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: 0.03em;
+  color: var(--brand);
+}
+
+.lottery-results-board__date-text {
+  font-size: 0.7rem;
+  line-height: 1.2;
+  color: var(--text-muted);
+}
+
+.lottery-results-board__empty {
+  padding: 2rem 1rem;
+  border-radius: var(--radius-soft-md);
+  text-align: center;
+  font-size: 0.875rem;
+  color: var(--text-muted);
+  background: var(--soft-card);
+}
+
+.lottery-results-board__more-link {
+  text-decoration: none;
+}
+
+.lottery-results-board__more-link:hover {
+  color: var(--text-primary);
+}
+
+.lottery-market-scroll {
+  overscroll-behavior: contain;
+}
+
+.lottery-play-round-grid__cell.is-open {
+  box-shadow: var(--shadow-soft);
+}
+
+.lottery-play-round-grid__cell:not(.is-playable) {
+  opacity: 0.55;
+}
+
+.lottery-market-sidebar__item--active {
+  background-color: var(--brand-soft);
+}
+
+@media (min-width: 640px) {
+  .lottery-hub-theme {
+    --lottery-results-board-cols: minmax(0, 1fr) 4.25rem 4.25rem minmax(5rem, 6.25rem);
+  }
+
+  .lottery-results-board__prize-label {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+  }
+}
+
+
+.lottery-soft-panel {
+  background-color: var(--soft-card);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: var(--radius-soft-lg);
+  box-shadow: var(--shadow-soft-sm);
+}

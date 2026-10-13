@@ -1,22 +1,16 @@
-import fs from "fs";
-import path from "path";
+import { fetchWalletBalance } from "@/lib/api/profile";
+import { getSessionUserId } from "@/lib/auth/session";
 
 export type WalletSnapshot = { money: string; credit: string };
 
-export function loadWalletFromDump(): WalletSnapshot {
-  const file = path.join(
-    process.cwd(),
-    "../dump/bblotto.iltx.cc/_api/api-0028.json",
-  );
-  if (!fs.existsSync(file)) {
-    return { money: "0.00", credit: "0.00" };
-  }
-  const raw = JSON.parse(fs.readFileSync(file, "utf8")) as { body: string };
-  const body = JSON.parse(raw.body) as {
-    data?: { money?: number; credit?: number; score?: number };
-  };
-  const d = body.data;
-  const money = Number(d?.money ?? 0).toFixed(2);
-  const credit = Number(d?.credit ?? d?.score ?? 0).toFixed(2);
-  return { money, credit };
+/** ยอดกระเป๋าของผู้ใช้ใน session (ฝั่ง server) — guest = 0.00 · glass มียอดเดียว จึง credit = 0.00 */
+export async function loadSessionWallet(): Promise<WalletSnapshot> {
+  const userId = await getSessionUserId();
+  if (!userId) return { money: "0.00", credit: "0.00" };
+  const res = await fetchWalletBalance();
+  const amount = res.ok ? res.data.amount : 0;
+  return { money: Number(amount).toFixed(2), credit: "0.00" };
 }
+
+/** ชื่อเดิมที่ LottoHomePage import — เหมือน loadSessionWallet */
+export const loadWalletFromDump = loadSessionWallet;
