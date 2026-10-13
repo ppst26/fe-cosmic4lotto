@@ -16,7 +16,7 @@ export function PromotionsMobileFeed() {
   const { catalog } = usePromotionsCatalog();
   const [categoryFilter, setCategoryFilter] = useState<PromoHubMobileCategoryFilterId>("all");
 
-  const mobileList = catalog?.mobileList ?? [];
+  const mobileList = useMemo(() => catalog?.mobileList ?? [], [catalog]);
   const mobileTabs = catalog?.mobileCategoryTabs ?? [];
 
   const items = useMemo(

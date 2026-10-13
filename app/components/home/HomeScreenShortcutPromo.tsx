@@ -18,11 +18,11 @@ const INSTALL_STEPS: Record<InstallPlatform, MessageKey<"home">[]> = {
   ios: ["a2hs.steps.ios1", "a2hs.steps.ios2", "a2hs.steps.ios3", INSTALL_STEP_LAUNCH],
 };
 
-/** โลโก้ตัวอักษร XGAMBET (ไม่พึ่งไฟล์รูป) */
+/** โลโก้ตัวอักษร CM-SaturnLotto (ไม่พึ่งไฟล์รูป) */
 function BrandLogo({ className }: { className?: string }) {
   return (
     <span className={cn("inline-block text-lg font-black leading-none tracking-wide text-[var(--brand)]", className)}>
-      XGAMBET
+      CM-SaturnLotto
     </span>
   );
 }
@@ -79,7 +79,9 @@ export function HomeScreenShortcutPromo({ className }: { className?: string }) {
   const [installing, setInstalling] = useState(false);
 
   useEffect(() => {
+    // ตรวจแพลตฟอร์มได้เฉพาะฝั่ง client หลัง hydrate (กัน SSR ไม่ตรงกัน)
     const android = /android/i.test(window.navigator.userAgent);
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     setPlatform(android ? "android" : "ios");
   }, []);
 

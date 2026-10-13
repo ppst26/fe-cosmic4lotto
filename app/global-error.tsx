@@ -23,7 +23,7 @@ export default function GlobalError({
   return (
     <html lang="th" className="dark h-full antialiased">
       <body className="flex min-h-dvh items-center justify-center bg-[var(--body)] px-4">
-        <title>เกิดข้อผิดพลาด — XGAMBET</title>
+        <title>เกิดข้อผิดพลาด — CM-SaturnLotto</title>
         <StatusState
           title="ระบบขัดข้องชั่วคราว"
           description="ขออภัย เว็บไซต์โหลดไม่สำเร็จ ลองใหม่อีกครั้งในอีกสักครู่"

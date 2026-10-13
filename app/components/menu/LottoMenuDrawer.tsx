@@ -42,6 +42,8 @@ export function LottoMenuDrawer() {
   const [visible, setVisible] = useState(false);
 
   useEffect(() => {
+    // mount/unmount ตามแอนิเมชันเข้า-ออก (ต้องตั้ง state ใน effect เพื่อรอ frame / timer)
+    /* eslint-disable react-hooks/set-state-in-effect */
     if (isMobileMenuOpen) {
       setMounted(true);
       const raf = requestAnimationFrame(() => setVisible(true));
@@ -50,6 +52,7 @@ export function LottoMenuDrawer() {
     setVisible(false);
     const timer = window.setTimeout(() => setMounted(false), EXIT_MS);
     return () => window.clearTimeout(timer);
+    /* eslint-enable react-hooks/set-state-in-effect */
   }, [isMobileMenuOpen]);
 
   if (!mounted) return null;

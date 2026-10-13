@@ -1,14 +1,14 @@
 import type { MetadataRoute } from "next";
 
 /**
- * Web App Manifest — ให้มือถือติดตั้ง XGAMBET เป็นแอป (Add to Home Screen)
+ * Web App Manifest — ให้มือถือติดตั้ง CM-SaturnLotto เป็นแอป (Add to Home Screen)
  * ไอคอนอยู่ที่ public/pwa · ใช้คู่กับ service worker ใน app/sw.ts
  */
 export default function manifest(): MetadataRoute.Manifest {
   return {
-    name: "XGAMBET",
-    short_name: "XGAMBET",
-    description: "XGAMBET หวยออนไลน์",
+    name: "CM-SaturnLotto",
+    short_name: "CM-SaturnLotto",
+    description: "CM-SaturnLotto หวยออนไลน์",
     start_url: "/",
     scope: "/",
     display: "standalone",

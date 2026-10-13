@@ -7,8 +7,6 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint",
-    "link-dump": "node scripts/link-dump-public.mjs",
-    "sync-nuxt": "node scripts/sync-nuxt-chunks.mjs",
     "typecheck": "tsc --noEmit",
     "test": "tsx --test \"lib/**/*.test.ts\" \"app/**/*.test.ts\" \"scripts/**/*.test.ts\""
   },

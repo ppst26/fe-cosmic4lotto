@@ -24,10 +24,10 @@ export function generateStaticParams() {
 export async function generateMetadata(): Promise<Metadata> {
   const t = await getT("meta");
   return {
-    applicationName: "XGAMBET",
+    applicationName: "CM-SaturnLotto",
     title: t("title"),
     description: t("description"),
-    appleWebApp: { capable: true, title: "XGAMBET", statusBarStyle: "black-translucent" },
+    appleWebApp: { capable: true, title: "CM-SaturnLotto", statusBarStyle: "black-translucent" },
     icons: { apple: "/pwa/apple-touch-icon.png" },
   };
 }

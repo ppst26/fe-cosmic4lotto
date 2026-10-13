@@ -14,7 +14,7 @@
     },
     "signUpSheet": {
       "close": "关闭注册",
-      "welcome": "欢迎来到 XGAMBET",
+      "welcome": "欢迎来到 CM-SaturnLotto",
       "tagline": "开启属于您的精彩玩法",
       "haveAccount": "已有账号？",
       "submitting": "注册中...",
@@ -214,7 +214,7 @@
     "notFoundTitle": "找不到页面",
     "backHome": "返回首页",
     "notFound": {
-      "metaTitle": "找不到页面 — XGAMBET",
+      "metaTitle": "找不到页面 — CM-SaturnLotto",
       "title": "找不到您要的页面",
       "description": "链接可能有误，或页面已移动",
       "viewPromotions": "查看优惠活动"
@@ -225,7 +225,7 @@
     },
     "offline": {
       "title": "网络未连接",
-      "description": "请开启网络后重新打开 XGAMBET"
+      "description": "请开启网络后重新打开 CM-SaturnLotto"
     },
     "api": {
       "network": "无法连接服务器，请检查网络后重试。",
@@ -733,8 +733,8 @@
     }
   },
   "meta": {
-    "title": "XGAMBET — 刺激王国",
-    "description": "XGAMBET 前端游戏大厅"
+    "title": "CM-SaturnLotto — 刺激王国",
+    "description": "CM-SaturnLotto 前端游戏大厅"
   },
   "nav": {
     "bottomNav": {
@@ -749,7 +749,7 @@
       "openMenu": "打开菜单",
       "promotions": "优惠活动",
       "profile": "个人资料",
-      "home": "XGAMBET 首页",
+      "home": "CM-SaturnLotto 首页",
       "showSidebar": "显示左侧菜单",
       "hideSidebar": "隐藏左侧菜单",
       "mainCategories": "主要分类",
@@ -826,8 +826,8 @@
       "vip": "VIP"
     },
     "footer": {
-      "label": "XGAMBET 网站页脚",
-      "home": "XGAMBET 首页",
+      "label": "CM-SaturnLotto 网站页脚",
+      "home": "CM-SaturnLotto 首页",
       "certifications": "认证",
       "auditedBy": "审计机构",
       "approvedBy": "批准机构",
@@ -838,7 +838,7 @@
       "liveChat": "在线客服",
       "social": "社交媒体",
       "links": "页脚链接",
-      "disclaimer": "XGAMBET 为您所在地区的合法年龄玩家提供线上娱乐。请理性游戏，并为自己的决定负责。公司及牌照信息仅为界面展示用的示例数据（mock），用于界面测试。",
+      "disclaimer": "CM-SaturnLotto 为您所在地区的合法年龄玩家提供线上娱乐。请理性游戏，并为自己的决定负责。公司及牌照信息仅为界面展示用的示例数据（mock），用于界面测试。",
       "tagline": "所有游戏与活动，一站尽享",
       "columns": {
         "platform": "平台",

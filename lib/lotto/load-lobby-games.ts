@@ -67,8 +67,8 @@ export function loadSlotShowcase(limit = 24): Promise<LobbyGameItem[]> {
   return loadSection("section-slots", limit);
 }
 
-/** ไม่มีหน้ากีฬาใน XGAMBET — คืนว่างเสมอ (GameShowcaseSection คืน null เมื่อว่าง) */
-export async function loadSportsShowcase(_limit = 24): Promise<LobbyGameItem[]> {
+/** ไม่มีหน้ากีฬาใน CM-SaturnLotto — คืนว่างเสมอ (GameShowcaseSection คืน null เมื่อว่าง) */
+export async function loadSportsShowcase(): Promise<LobbyGameItem[]> {
   return [];
 }
 

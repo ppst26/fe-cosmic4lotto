@@ -1,7 +1,7 @@
 {
   "meta": {
-    "title": "XGAMBET — Vương quốc giải trí",
-    "description": "Sảnh game giải trí XGAMBET"
+    "title": "CM-SaturnLotto — Vương quốc giải trí",
+    "description": "Sảnh game giải trí CM-SaturnLotto"
   },
   "common": {
     "language": "Ngôn ngữ",
@@ -83,7 +83,7 @@
       "openMenu": "Mở menu",
       "promotions": "Khuyến mãi",
       "profile": "Hồ sơ",
-      "home": "Trang chủ XGAMBET",
+      "home": "Trang chủ CM-SaturnLotto",
       "showSidebar": "Hiện menu bên trái",
       "hideSidebar": "Ẩn menu bên trái",
       "mainCategories": "Danh mục chính",
@@ -160,8 +160,8 @@
       "vip": "VIP"
     },
     "footer": {
-      "label": "Chân trang XGAMBET",
-      "home": "Trang chủ XGAMBET",
+      "label": "Chân trang CM-SaturnLotto",
+      "home": "Trang chủ CM-SaturnLotto",
       "certifications": "Chứng nhận",
       "auditedBy": "Kiểm toán bởi",
       "approvedBy": "Được phê duyệt bởi",
@@ -172,7 +172,7 @@
       "liveChat": "Chat trực tuyến",
       "social": "Mạng xã hội",
       "links": "Liên kết chân trang",
-      "disclaimer": "XGAMBET cung cấp dịch vụ giải trí trực tuyến cho người chơi đủ tuổi theo quy định pháp luật tại nơi bạn sinh sống. Vui lòng chơi có trách nhiệm và tự chịu trách nhiệm về quyết định của mình. Thông tin công ty và giấy phép chỉ là dữ liệu mẫu để hiển thị (mock), dùng để thử nghiệm giao diện.",
+      "disclaimer": "CM-SaturnLotto cung cấp dịch vụ giải trí trực tuyến cho người chơi đủ tuổi theo quy định pháp luật tại nơi bạn sinh sống. Vui lòng chơi có trách nhiệm và tự chịu trách nhiệm về quyết định của mình. Thông tin công ty và giấy phép chỉ là dữ liệu mẫu để hiển thị (mock), dùng để thử nghiệm giao diện.",
       "tagline": "Mọi trò chơi và sự kiện trong một nơi",
       "columns": {
         "platform": "Nền tảng",
@@ -253,7 +253,7 @@
     },
     "signUpSheet": {
       "close": "Đóng đăng ký",
-      "welcome": "Chào mừng đến với XGAMBET",
+      "welcome": "Chào mừng đến với CM-SaturnLotto",
       "tagline": "Bắt đầu cuộc vui theo cách của bạn",
       "haveAccount": "Đã có tài khoản?",
       "submitting": "Đang đăng ký...",
@@ -318,7 +318,7 @@
     "notFoundTitle": "Không tìm thấy trang",
     "backHome": "Về trang chủ",
     "notFound": {
-      "metaTitle": "Không tìm thấy trang — XGAMBET",
+      "metaTitle": "Không tìm thấy trang — CM-SaturnLotto",
       "title": "Chúng tôi không tìm thấy trang này",
       "description": "Liên kết có thể bị sai hoặc trang đã được chuyển đi",
       "viewPromotions": "Xem khuyến mãi"
@@ -329,7 +329,7 @@
     },
     "offline": {
       "title": "Không có kết nối internet",
-      "description": "Hãy bật kết nối rồi mở lại XGAMBET"
+      "description": "Hãy bật kết nối rồi mở lại CM-SaturnLotto"
     },
     "api": {
       "network": "Không thể kết nối đến máy chủ. Hãy kiểm tra internet và thử lại.",

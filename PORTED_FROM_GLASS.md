@@ -4,7 +4,7 @@
 
 - glass HEAD ที่ใช้เป็นต้นฉบับ: `132f1b4cd803d00a89d68a1ac6ac8c2932e49c83`
 - ไฟล์ที่ copy ใช้ path และเนื้อหาเดียวกับ glass (ไม่ refactor); ถ้ามีการปรับต้องระบุในคอลัมน์หมายเหตุ
-- ข้อความ `lib/i18n/messages/**`: แทนชื่อแบรนด์ "Cosmicbet" เป็น "XGAMBET" (ชื่อที่ใช้อยู่ในหน้าแรกของ lotto) และตั้ง `meta.title`/`meta.description` (th, en)
+- ข้อความ `lib/i18n/messages/**`: แทนชื่อแบรนด์ "Cosmicbet" เป็น "CM-SaturnLotto" (ตามผู้ใช้สั่ง) และตั้ง `meta.title`/`meta.description` (th, en)
 - `lib/utils.ts` ใช้ `cn` แบบไม่มี dependency (ของ sport) แทน `export { cn } from "cn"` ของ glass
 
 | ขั้น | path (เหมือนใน glass) | glass commit | commit ใน lotto | หมายเหตุ |

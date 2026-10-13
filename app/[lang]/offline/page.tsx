@@ -12,7 +12,6 @@ export default async function OfflinePage() {
     <main className="flex min-h-dvh flex-col items-center justify-center gap-3 bg-[var(--body)] px-6 text-center">
       <h1 className="text-xl font-semibold text-[var(--text-on-light)]">{t("offline.title")}</h1>
       <p className="max-w-xs text-sm text-[var(--text-muted)]">{t("offline.description")}</p>
-      {/* eslint-disable-next-line @next/next/no-html-link-for-pages -- ตั้งใจโหลดใหม่ทั้งหน้า ไม่ใช้ client navigation ตอนออฟไลน์ */}
       <a href={withLocale("/", locale)} className="soft-btn-primary mt-2 inline-flex min-h-11 items-center justify-center px-5 text-sm font-semibold">
         {t("backHome")}
       </a>

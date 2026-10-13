@@ -1,3 +1,5 @@
+// ใช้ใน global-error / global-not-found ซึ่งอยู่นอก [lang] (ไม่รู้ภาษา) — ลิงก์ "/" ให้ proxy เลือกภาษาเอง
+// eslint-disable-next-line @typescript-eslint/no-restricted-imports
 import Link from "next/link";
 import type { ReactNode } from "react";
 

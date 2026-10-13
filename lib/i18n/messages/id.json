@@ -14,7 +14,7 @@
     },
     "signUpSheet": {
       "close": "Tutup halaman pendaftaran",
-      "welcome": "Selamat datang di XGAMBET",
+      "welcome": "Selamat datang di CM-SaturnLotto",
       "tagline": "Mulai keseruan dengan gayamu",
       "haveAccount": "Sudah punya akun?",
       "submitting": "Sedang mendaftar...",
@@ -214,7 +214,7 @@
     "notFoundTitle": "Halaman tidak ditemukan",
     "backHome": "Kembali ke beranda",
     "notFound": {
-      "metaTitle": "Halaman Tidak Ditemukan — XGAMBET",
+      "metaTitle": "Halaman Tidak Ditemukan — CM-SaturnLotto",
       "title": "Halaman tidak ditemukan",
       "description": "Tautan mungkin salah atau halaman sudah dipindahkan",
       "viewPromotions": "Lihat Promo"
@@ -225,7 +225,7 @@
     },
     "offline": {
       "title": "Tidak ada koneksi internet",
-      "description": "Aktifkan koneksi Anda lalu buka kembali XGAMBET"
+      "description": "Aktifkan koneksi Anda lalu buka kembali CM-SaturnLotto"
     },
     "api": {
       "network": "Tidak dapat terhubung ke server. Periksa koneksi internet Anda lalu coba lagi.",
@@ -733,8 +733,8 @@
     }
   },
   "meta": {
-    "title": "XGAMBET — Kerajaan Keseruan",
-    "description": "Lobi game XGAMBET (Front-end)"
+    "title": "CM-SaturnLotto — Kerajaan Keseruan",
+    "description": "Lobi game CM-SaturnLotto (Front-end)"
   },
   "nav": {
     "bottomNav": {
@@ -749,7 +749,7 @@
       "openMenu": "Buka menu",
       "promotions": "Promo",
       "profile": "Profil",
-      "home": "Beranda XGAMBET",
+      "home": "Beranda CM-SaturnLotto",
       "showSidebar": "Tampilkan menu kiri",
       "hideSidebar": "Sembunyikan menu kiri",
       "mainCategories": "Kategori utama",
@@ -826,8 +826,8 @@
       "vip": "VIP"
     },
     "footer": {
-      "label": "Footer situs XGAMBET",
-      "home": "Beranda XGAMBET",
+      "label": "Footer situs CM-SaturnLotto",
+      "home": "Beranda CM-SaturnLotto",
       "certifications": "Sertifikasi",
       "auditedBy": "Diaudit oleh",
       "approvedBy": "Disetujui oleh",
@@ -838,7 +838,7 @@
       "liveChat": "Live Chat",
       "social": "Media Sosial",
       "links": "Tautan footer",
-      "disclaimer": "XGAMBET menyediakan hiburan online bagi pemain yang telah cukup umur menurut hukum di wilayah Anda. Bermainlah dengan bijak dan bertanggung jawablah atas keputusan Anda sendiri. Detail perusahaan dan lisensi hanyalah data contoh untuk tampilan (mock) yang digunakan untuk pengujian UI.",
+      "disclaimer": "CM-SaturnLotto menyediakan hiburan online bagi pemain yang telah cukup umur menurut hukum di wilayah Anda. Bermainlah dengan bijak dan bertanggung jawablah atas keputusan Anda sendiri. Detail perusahaan dan lisensi hanyalah data contoh untuk tampilan (mock) yang digunakan untuk pengujian UI.",
       "tagline": "Semua game dan event dalam satu tempat",
       "columns": {
         "platform": "Platform",

@@ -10,7 +10,7 @@ const kanit = Kanit({
 });
 
 export const metadata: Metadata = {
-  title: "ไม่พบหน้านี้ · Page not found — XGAMBET",
+  title: "ไม่พบหน้านี้ · Page not found — CM-SaturnLotto",
 };
 
 /**

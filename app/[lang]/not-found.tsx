@@ -4,7 +4,7 @@ import { StatusPageShell, StatusState } from "@/app/components/ui/StatusState";
 export default function NotFound() {
   return (
     <StatusPageShell>
-      <title>ไม่พบหน้านี้ — XGAMBET</title>
+      <title>ไม่พบหน้านี้ — CM-SaturnLotto</title>
       <StatusState
         icon={<span className="text-lg font-medium tabular-nums">404</span>}
         title="ไม่พบหน้าที่คุณต้องการ"

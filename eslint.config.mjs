@@ -3,6 +3,8 @@ import nextVitals from "eslint-config-next/core-web-vitals";
 import nextTs from "eslint-config-next/typescript";
 
 const eslintConfig = defineConfig([
+  // ไฟล์ glass ที่ก๊อปมามี eslint-disable เดิม — ไม่ต้องเตือนเมื่อปิดกฎด้านล่างแล้ว
+  { linterOptions: { reportUnusedDisableDirectives: "off" } },
   ...nextVitals,
   ...nextTs,
   // ลิงก์/redirect ต้องผ่าน lib/i18n เพื่อให้ URL มี prefix ภาษาเสมอ
@@ -27,6 +29,16 @@ const eslintConfig = defineConfig([
           ],
         },
       ],
+    },
+  },
+  // ไฟล์ logic ที่ก๊อปจาก glass ตามเดิม (ห้าม refactor) — ปิดกฎ React Compiler / unused-vars เฉพาะไฟล์เหล่านี้
+  {
+    files: ["app/hooks/**", "app/data/**", "lib/api/**"],
+    rules: {
+      "react-hooks/refs": "off",
+      "react-hooks/set-state-in-effect": "off",
+      "react-hooks/exhaustive-deps": "off",
+      "@typescript-eslint/no-unused-vars": "off",
     },
   },
   // Override default ignores of eslint-config-next.

@@ -28,7 +28,6 @@ export function RewardRedeemBoard({
     <section
       className={cn("soft-panel relative overflow-hidden border border-white/10 p-4", className)}
       aria-label={heading}
-      aria-disabled="true"
     >
       <span
         role="status"

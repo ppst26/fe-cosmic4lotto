@@ -14,7 +14,7 @@
     },
     "signUpSheet": {
       "close": "Isara ang sign-up",
-      "welcome": "Maligayang pagdating sa XGAMBET",
+      "welcome": "Maligayang pagdating sa CM-SaturnLotto",
       "tagline": "Simulan ang saya sa sarili mong paraan",
       "haveAccount": "May account ka na?",
       "submitting": "Nagsa-sign up...",
@@ -218,7 +218,7 @@
     "notFoundTitle": "Hindi nahanap ang pahina",
     "backHome": "Bumalik sa home",
     "notFound": {
-      "metaTitle": "Hindi Nahanap ang Pahina — XGAMBET",
+      "metaTitle": "Hindi Nahanap ang Pahina — CM-SaturnLotto",
       "title": "Hindi namin nahanap ang pahinang iyon",
       "description": "Maaaring mali ang link o inilipat na ang pahina",
       "viewPromotions": "Tingnan ang mga Promo"
@@ -229,7 +229,7 @@
     },
     "offline": {
       "title": "Walang koneksyon sa internet",
-      "description": "I-on ang iyong koneksyon at buksan muli ang XGAMBET"
+      "description": "I-on ang iyong koneksyon at buksan muli ang CM-SaturnLotto"
     },
     "api": {
       "network": "Hindi makakonekta sa server. Suriin ang iyong internet at subukan muli.",
@@ -746,8 +746,8 @@
     }
   },
   "meta": {
-    "title": "XGAMBET — Ang Kaharian ng Saya",
-    "description": "XGAMBET Front-end Gaming Lobby"
+    "title": "CM-SaturnLotto — Ang Kaharian ng Saya",
+    "description": "CM-SaturnLotto Front-end Gaming Lobby"
   },
   "nav": {
     "bottomNav": {
@@ -762,7 +762,7 @@
       "openMenu": "Buksan ang menu",
       "promotions": "Mga Promo",
       "profile": "Profile",
-      "home": "XGAMBET home",
+      "home": "CM-SaturnLotto home",
       "showSidebar": "Ipakita ang menu sa kaliwa",
       "hideSidebar": "Itago ang menu sa kaliwa",
       "mainCategories": "Mga pangunahing kategorya",
@@ -839,8 +839,8 @@
       "vip": "VIP"
     },
     "footer": {
-      "label": "Footer ng site ng XGAMBET",
-      "home": "XGAMBET home",
+      "label": "Footer ng site ng CM-SaturnLotto",
+      "home": "CM-SaturnLotto home",
       "certifications": "Mga Sertipikasyon",
       "auditedBy": "Na-audit ng",
       "approvedBy": "Aprubado ng",
@@ -851,7 +851,7 @@
       "liveChat": "Live Chat",
       "social": "Social Media",
       "links": "Mga link sa footer",
-      "disclaimer": "Ang XGAMBET ay nagbibigay ng online na libangan para sa mga manlalarong nasa hustong gulang ayon sa batas ng inyong nasasakupan. Mangyaring maglaro nang responsable at managot sa sarili ninyong mga desisyon. Ang detalye ng kumpanya at lisensya ay sample data lamang para sa display (mock), na ginagamit sa pagsubok ng UI.",
+      "disclaimer": "Ang CM-SaturnLotto ay nagbibigay ng online na libangan para sa mga manlalarong nasa hustong gulang ayon sa batas ng inyong nasasakupan. Mangyaring maglaro nang responsable at managot sa sarili ninyong mga desisyon. Ang detalye ng kumpanya at lisensya ay sample data lamang para sa display (mock), na ginagamit sa pagsubok ng UI.",
       "tagline": "Lahat ng laro at event mo, nasa iisang lugar",
       "columns": {
         "platform": "Platform",
