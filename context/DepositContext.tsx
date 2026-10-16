@@ -1,7 +1,8 @@
 "use client";
 
 import React, { createContext, useCallback, useContext, useEffect, useMemo } from "react";
-import { WalletModal, type WalletActionTab } from "@/components/WalletModal";
+import { DepositSheet } from "@/components/wallet/DepositSheet";
+import { WithdrawSheet } from "@/components/wallet/WithdrawSheet";
 import { useAuth } from "@/app/components/auth/AuthProvider";
 import { useOverlayLayer } from "@/app/hooks/useOverlayLayer";
 import { useAuthUI } from "@/context/AuthUIContext";
@@ -63,7 +64,6 @@ export function DepositProvider({ children }: { children: React.ReactNode }) {
   }, [deposit.isOpen, withdraw.isOpen, closeDepositLayer, closeWithdrawLayer]);
 
   const modalOpen = requested && isAuthenticated;
-  const tab: WalletActionTab = withdraw.isOpen ? "withdraw" : "deposit";
 
   const value = useMemo(
     () => ({
@@ -79,14 +79,13 @@ export function DepositProvider({ children }: { children: React.ReactNode }) {
   return (
     <DepositContext.Provider value={value}>
       {children}
-      <WalletModal
-        isOpen={modalOpen}
-        onClose={closeDeposit}
-        tab={tab}
-        onTabChange={(next) => (next === "withdraw" ? openWithdraw() : openDeposit())}
-        onDepositCompleted={showPendingDeposit}
-        onWithdrawCompleted={showPendingWithdraw}
-      />
+      {modalOpen && deposit.isOpen ? (
+        <DepositSheet onClose={closeDepositLayer} onCompleted={showPendingDeposit} />
+      ) : null}
+      {modalOpen && withdraw.isOpen ? (
+        <WithdrawSheet onClose={closeWithdrawLayer} onCompleted={showPendingWithdraw} />
+      ) : null}
+
     </DepositContext.Provider>
   );
 }

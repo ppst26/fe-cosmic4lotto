@@ -272,3 +272,10 @@
 | `app/[lang]/layout.tsx` | 6961fc6 | เพิ่ม THEME_INIT_SCRIPT + suppressHydrationWarning ตาม glass |
 
 ไฟล์ที่เขียนเองสไตล์ lotto (ไม่ใช่ logic ของ glass): `app/components/layout/FloatingActions.tsx`, `app/components/theme/ThemePickerSheet.tsx`, `styles/lotto-themes-bridge.css` (map บทบาทสี --t-* / --surface-* ของ glass → token lotto; ธีม cosmic = ดำ-ทองเดิม), `styles/lotto-floating-actions.css`
+
+## Wallet flow (deposit / withdraw) — UI re-laid-out to glass structure
+
+Logic (`lib/api/deposit.ts`, `lib/api/withdraw.ts`, `app/data/{deposit,withdraw,wallet}MockData.ts`, `app/types/wallet.ts`, `wallet.json`) was already byte-identical to glass.
+Glass `DepositBottomSheet` / `WithdrawBottomSheet` flow reproduced in lotto style (`components/wallet/*`):
+deposit = methods → bank + amount → confirm + slip → final confirm; withdraw = account + amount → confirm.
+Replaces the single tabbed `components/WalletModal.tsx` (removed); `context/DepositContext.tsx` now mounts the two sheets by `?layer=deposit|withdraw`.
