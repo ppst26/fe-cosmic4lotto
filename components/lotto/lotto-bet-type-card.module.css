@@ -11,6 +11,54 @@
   min-height: 120px;
 }
 
+.card {
+  position: relative;
+  overflow: hidden;
+}
+
+/* รูปประเภทหวยเป็นพื้นหลังล้นขวาของการ์ด — ข้อความ/ปุ่มอยู่ชั้นบน */
+.art {
+  position: absolute;
+  z-index: 0;
+  top: -6%;
+  right: -3%;
+  width: 55%;
+  height: 112%;
+  pointer-events: none;
+}
+
+.artImg {
+  object-fit: contain;
+  object-position: right center;
+  filter: drop-shadow(0 3px 10px rgba(0, 0, 0, 0.35));
+}
+
+.cardArt::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background: linear-gradient(
+    270deg,
+    rgba(0, 0, 0, 0.1) 0%,
+    transparent 45%,
+    var(--BG-Surface-Normal) 85%
+  );
+}
+
+.top,
+.status,
+.btnBet,
+.btnDisabled {
+  position: relative;
+  z-index: 1;
+}
+
+.cardArt .name {
+  max-width: 58%;
+}
+
 .cardClosed {
   opacity: 0.75;
 }
