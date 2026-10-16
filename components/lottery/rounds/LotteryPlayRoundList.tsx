@@ -70,19 +70,19 @@ export function LotteryPlayRoundList({ rounds, marketSlug, basePath }: LotteryPl
               nowMs === null
                 ? "--:--"
                 : formatCountdown(new Date(round.closeAt).getTime() - nowMs);
-            const className = `lottery-play-round-grid__cell lottery-soft-card flex min-h-[5.5rem] flex-col items-center justify-center gap-1 px-1 py-2 text-center${
+            const className = `lottery-play-round-grid__cell flex min-h-[5.5rem] flex-col items-center justify-center gap-1 px-1 py-2 text-center${
               playable ? " is-playable" : ""
             }${round.status === "open" ? " is-open" : ""}`;
 
             const inner = (
               <>
-                <span className="lottery-play-round-grid__round text-xs font-semibold text-[var(--text-on-light)]">
+                <span className="lottery-play-round-grid__round text-xs text-[var(--text-muted)]">
                   {roundLabel(round.drawLabel) || t("round.numbered", { n: index + 1 })}
                 </span>
-                <span className="lottery-play-round-grid__time text-[11px] text-[var(--text-muted)]">
+                <span className="lottery-play-round-grid__time text-lg font-bold leading-tight text-[var(--text-on-light)]">
                   {formatBangkokTimeHHmm(round.closeAt)}
                 </span>
-                <span className="lottery-play-round-grid__countdown lottery-countdown inline-flex min-w-[4.5rem] justify-center rounded-full bg-[var(--brand-soft)] px-2 py-0.5 tabular-nums">
+                <span className="lottery-play-round-grid__countdown lottery-countdown inline-flex min-w-[4.5rem] justify-center px-[0.45rem] py-[0.2rem] tabular-nums">
                   {countdown}
                 </span>
               </>
@@ -128,7 +128,7 @@ export function LotteryPlayRoundList({ rounds, marketSlug, basePath }: LotteryPl
       {openRounds.map((round) => (
         <article
           key={round.id}
-          className="lottery-play-round-card lottery-soft-card flex flex-col items-center gap-3 p-3 text-center sm:flex-row sm:items-center sm:justify-between sm:text-left"
+          className="lottery-play-round-card lottery-play-round-card--open flex flex-col items-center gap-3 p-3 text-center sm:flex-row sm:items-center sm:justify-between sm:text-left"
         >
           <div className="flex w-full flex-col items-center gap-1 sm:items-start">
             <p className="m-0 text-sm font-bold text-[var(--text-on-light)]">{roundLabel(round.drawLabel)}</p>

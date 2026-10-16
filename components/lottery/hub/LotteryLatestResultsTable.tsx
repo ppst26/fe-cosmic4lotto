@@ -3,7 +3,8 @@
 import Link from "@/lib/i18n/navigation";
 import type { LotteryResultRow } from "@/app/types/lottery";
 import { useLotteryI18n } from "@/app/components/lottery/useLotteryI18n";
-import { LotteryFlagOrb } from "./LotteryFlagOrb";
+import { LOTTERY_RESULT_ROW_ICON_SLUG } from "@/app/data/lotteryIconAssets";
+import { LotteryMarketIcon } from "./LotteryMarketIcon";
 
 function MegaphoneMiniIcon() {
   return (
@@ -102,7 +103,12 @@ export function LotteryLatestResultsTable({
                   className="lottery-results-board__market flex min-w-0 items-center gap-2"
                   role="cell"
                 >
-                  <LotteryFlagOrb label={row.flagLabel} tone={row.flagTone} size="sm" />
+                  <LotteryMarketIcon
+                    marketSlug={LOTTERY_RESULT_ROW_ICON_SLUG[row.id]}
+                    size="sm"
+                    fallbackLabel={row.flagLabel}
+                    fallbackTone={row.flagTone}
+                  />
                   <span className="lottery-results-board__market-name truncate">{t(row.titleKey)}</span>
                 </div>
 

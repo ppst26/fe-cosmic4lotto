@@ -2,7 +2,8 @@
 
 import Link from "@/lib/i18n/navigation";
 import type { LotteryFlagTone } from "@/app/types/lottery";
-import { LotteryCountdown, LotteryFlagOrb } from "@/components/lottery/hub/LotteryFlagOrb";
+import { LotteryCountdown } from "@/components/lottery/hub/LotteryFlagOrb";
+import { LotteryMarketIcon } from "@/components/lottery/hub/LotteryMarketIcon";
 import { useLotteryI18n } from "@/app/components/lottery/useLotteryI18n";
 import { lotteryRulesHref } from "@/lib/lottery/rules";
 
@@ -28,7 +29,12 @@ export function LotteryDrawCard({
   const className = "thai-lotto-draw lottery-soft-card flex flex-wrap items-center gap-3 p-3 sm:p-4";
   const content = (
     <>
-      <LotteryFlagOrb label={flagLabel} tone={flagTone} size="lg" />
+      <LotteryMarketIcon
+        marketSlug={marketSlug}
+        size="lg"
+        fallbackLabel={flagLabel}
+        fallbackTone={flagTone}
+      />
       <div className="min-w-0 flex-1">
         <h2 className="m-0 text-sm font-bold text-[var(--text-on-light)] sm:text-base">{title}</h2>
         <p className="m-0 text-xs text-[var(--text-muted)]">{drawLabel}</p>

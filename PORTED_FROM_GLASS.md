@@ -287,3 +287,11 @@ Copied byte-for-byte from glass: `lib/promotions/myPromotions.ts`, `lib/i18n/mes
 Lotto-styled UI: `app/components/promotions/PromotionClaimFlow.tsx` (login → confirm → success), `MyPromotionsPanel.tsx` (progress, conditions);
 `PromotionsHubPageContent` gets the "all / mine" tabs and `?tab=mine`; `PromotionDetailPanel` ends with the claim button.
 Catalog/detail JSON, API routes and hooks were already identical to glass.
+
+## Lottery (หน้าหวย) — UI parity with glass
+
+Logic/data/i18n for lottery were already identical to glass. UI re-laid-out to glass structure, in lotto tokens:
+market art backgrounds (`public/lottery/*.webp`) on hub cards, market sidebar and mobile banner (`LotteryHubMarketLink`, `LotteryMarketIcon`, `LotteryMarketShell`, `styles/lottery-art.css`);
+hub grid 3-col features / 6-col types with reserved height while loading and the "my slips" button in the header;
+round cells (round label / big close time / countdown pill); market icon in draw card, rules header, slip cards and results table;
+play page title = market name only (draw label stays in the draw card).

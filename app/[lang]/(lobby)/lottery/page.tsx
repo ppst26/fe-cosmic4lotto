@@ -8,7 +8,7 @@ export default function LotteryPage() {
   const t = useT("lottery");
   return (
     <SubPageShell title={t("hub.title")}>
-      <LotteryHubContent showPageHeading={false} />
+      <LotteryHubContent showTitle={false} />
     </SubPageShell>
   );
 }

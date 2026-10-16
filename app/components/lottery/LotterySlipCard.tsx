@@ -6,7 +6,7 @@ import { slipPendingState } from "@/lib/lottery/slipFilters";
 import { lotteryPlayMarketMeta } from "@/lib/lottery/resolvePlayRound";
 import { moneyDeltaRole, type ValueRole } from "@/lib/semanticValue";
 import { toneClass } from "@/app/components/ui/valueTone";
-import { LotteryFlagOrb } from "@/components/lottery/hub/LotteryFlagOrb";
+import { LotteryMarketIcon } from "@/components/lottery/hub/LotteryMarketIcon";
 import { formatBaht } from "./lotteryUtils";
 import { useLotteryI18n } from "./useLotteryI18n";
 
@@ -52,10 +52,11 @@ export function LotterySlipCard({ slip, now }: { slip: LotterySubmittedSlip; now
       className="lottery-slips-list__card lottery-soft-card flex flex-col gap-2 px-4 py-3"
     >
       <div className="flex items-center gap-2.5">
-        <LotteryFlagOrb
-          label={meta.flagLabel}
-          tone={meta.flagTone}
+        <LotteryMarketIcon
+          marketSlug={slip.market}
           size="sm"
+          fallbackLabel={meta.flagLabel}
+          fallbackTone={meta.flagTone}
           className="!h-9 !w-9"
         />
         <div className="min-w-0 flex-1">

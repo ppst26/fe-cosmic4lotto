@@ -3,7 +3,7 @@
 import { useMemo } from "react";
 import { EmptyState } from "@/app/components/ui/StatusState";
 import { getLotteryRules } from "@/lib/lottery/rules";
-import { LotteryFlagOrb } from "@/components/lottery/hub/LotteryFlagOrb";
+import { LotteryMarketIcon } from "@/components/lottery/hub/LotteryMarketIcon";
 import { formatBaht } from "./lotteryUtils";
 import { useLotteryI18n } from "./useLotteryI18n";
 
@@ -32,7 +32,12 @@ export function LotteryRulesContent({ marketSlug }: { marketSlug: string }) {
         className="thai-lotto-draw lottery-soft-card flex items-center gap-3 p-3 sm:p-4"
         aria-label={t(rules.titleKey)}
       >
-        <LotteryFlagOrb label={rules.flagLabel} tone={rules.flagTone} size="lg" />
+        <LotteryMarketIcon
+          marketSlug={rules.slug}
+          size="lg"
+          fallbackLabel={rules.flagLabel}
+          fallbackTone={rules.flagTone}
+        />
         <h2 className="m-0 min-w-0 flex-1 text-base font-bold text-[var(--text-on-light)]">{t(rules.titleKey)}</h2>
       </section>
 
