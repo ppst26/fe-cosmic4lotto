@@ -295,3 +295,10 @@ market art backgrounds (`public/lottery/*.webp`) on hub cards, market sidebar an
 hub grid 3-col features / 6-col types with reserved height while loading and the "my slips" button in the header;
 round cells (round label / big close time / countdown pill); market icon in draw card, rules header, slip cards and results table;
 play page title = market name only (draw label stays in the draw card).
+
+## Menu drawer — layout parity with glass RightMenuDrawer
+
+`app/components/menu/LottoMenuDrawer.tsx` rebuilt on glass's structure (data in `menuMockData.ts` is glass's):
+mobile full-screen = avatar/logo · deposit+withdraw · play/loss bonus cards · referral link bar · list card · 3-col grid · logout / sign-up+login;
+desktop = right panel with the glass sections (personal / privileges / rewards).
+Lotto-only: notification bell kept top-left (lotto's frozen header has no bell), text logo instead of the Cosmicbet image logo.
