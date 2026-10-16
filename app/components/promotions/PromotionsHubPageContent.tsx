@@ -120,7 +120,7 @@ function PromoHubHeroBanner({ hero }: { hero: PromoHubHero }) {
         className="pointer-events-none absolute inset-0"
         style={{
           background:
-            "radial-gradient(ellipse 90% 80% at 75% 35%, rgba(255,209,92,0.28) 0%, rgba(46,46,50,0.95) 50%, rgba(26,26,29,1) 100%)",
+            "radial-gradient(ellipse 90% 80% at 75% 35%, color-mix(in srgb, var(--Main-Primary) 28%, transparent) 0%, var(--Card-Normal) 50%, var(--BG-Surface-Darker) 100%)",
         }}
       />
       <div className="relative z-[1] flex h-full min-h-[168px] items-stretch sm:min-h-[188px]">

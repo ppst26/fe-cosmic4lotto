@@ -14,6 +14,7 @@ import { ToastProvider } from "@/context/ToastContext";
 import { PendingTransactionProvider } from "@/context/PendingTransactionContext";
 import { GlobalAuthOverlays } from "@/components/GlobalAuthOverlays";
 import { GlobalCouponOverlay } from "@/components/GlobalCouponOverlay";
+import { FloatingActions } from "@/app/components/layout/FloatingActions";
 import { HomeActionBridge } from "@/components/layout/HomeActionBridge";
 import { LottoMenuDrawer } from "@/app/components/menu/LottoMenuDrawer";
 import { DesktopHubModalProvider } from "@/app/components/hub/DesktopHubModalProvider";
@@ -60,6 +61,7 @@ export function AppProviders({ children }: { children: React.ReactNode }) {
                                 <GlobalAuthOverlays />
                                 <GlobalCouponOverlay />
                                 <HomeActionBridge />
+                                <FloatingActions />
                                 <LottoMenuDrawer />
                               </DepositProvider>
                             </PendingTransactionProvider>

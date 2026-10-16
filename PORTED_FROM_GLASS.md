@@ -258,3 +258,17 @@
 | 8-14 | `app/sw.ts` | 132f1b4 | 95e4c5e | ลอกตามเดิม (manifest: ชื่อแบรนด์/สี) |
 | 8-14 | `lib/vipRoutes.ts` | 132f1b4 | 95e4c5e | ลอกตามเดิม (manifest: ชื่อแบรนด์/สี) |
 | 8-14 | `next.config.ts` | 132f1b4 | 95e4c5e | ลอกตามเดิม (manifest: ชื่อแบรนด์/สี) |
+
+## ระบบธีมหลายสี (glass `6961fc6`)
+
+| path (เหมือนใน glass) | glass commit | หมายเหตุ |
+|---|---|---|
+| `lib/theme.ts` | 6961fc6 | ลอกตามเดิม |
+| `lib/themes.ts` | 6961fc6 | ลอกตามเดิม (รัน `node scripts/themes/gen-themes.js` ได้ผลเหมือนเดิม) |
+| `app/styles/themes.css` | 6961fc6 | ลอกตามเดิม (ส่วนท้ายเป็นกฎของ glass ที่ lotto ไม่ได้ใช้) |
+| `scripts/themes/gen-themes.js`, `scripts/themes/themes-static.css` | 6961fc6 | ลอกตามเดิม · eslint ignore `scripts/themes/**` |
+| `docs/THEME-SWITCH-GUIDE.md` | 6961fc6 | ลอกตามเดิม |
+| `lib/i18n/messages/{th,en}/common.json` | 6961fc6 | ทับทั้งไฟล์ (เพิ่ม `theme.*`, `logoutConfirm.success`) |
+| `app/[lang]/layout.tsx` | 6961fc6 | เพิ่ม THEME_INIT_SCRIPT + suppressHydrationWarning ตาม glass |
+
+ไฟล์ที่เขียนเองสไตล์ lotto (ไม่ใช่ logic ของ glass): `app/components/layout/FloatingActions.tsx`, `app/components/theme/ThemePickerSheet.tsx`, `styles/lotto-themes-bridge.css` (map บทบาทสี --t-* / --surface-* ของ glass → token lotto; ธีม cosmic = ดำ-ทองเดิม), `styles/lotto-floating-actions.css`

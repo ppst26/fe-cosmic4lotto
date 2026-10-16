@@ -1,0 +1,74 @@
+/*
+ * สะพานระหว่างระบบธีมของ glass (app/styles/themes.css → <html data-theme data-mode>) กับ token ของ lotto
+ * ธีมเริ่มต้น "cosmic" = ดำ-ทองเดิมของ lotto (ไม่แตะอะไรเลย) · ธีมอื่นเขียนทับ token ใน lotto-theme.css
+ * ด้วยบทบาทสีของ glass: --t-ga/--t-gb (chrome) · --t-icon (ไอคอน/ตัวเน้น) · --t-action (ปุ่มหลัก) และพื้นผิว --surface-*
+ * ข้อจำกัด: ปุ่มทองที่ hard-code สีใน CSS module ของ components/lotto/** (frozen) ยังเป็นทองทุกธีม
+ */
+html[data-mode="light"] {
+  color-scheme: light;
+}
+
+html[data-theme]:not([data-theme="cosmic"]) {
+  --body: var(--cosmic-page-base);
+  --BG-Surface-Darker: var(--surface-mid);
+  --BG-Surface-Normal: var(--surface-start);
+  --Card-Normal: var(--surface-solid-inner);
+  --BG-Surface-Lighter: var(--t-ga);
+  --card-primary: var(--surface-solid-inner);
+  --card-secondary: var(--surface-mid);
+  --input-bg: var(--sheet-field-fill);
+  --soft-chrome: var(--cosmic-chrome-surface-bg);
+
+  --Main-Primary: var(--t-icon);
+  --Main-Secondary: var(--t-icon);
+  --main-icon-1: var(--t-icon);
+  --Text-Icon-Highlight: var(--t-icon);
+  --Main-Primary-Light: color-mix(in srgb, var(--t-icon) 70%, white);
+  --Main-Primary-Dark: color-mix(in srgb, var(--t-icon) 65%, black);
+  --brand-soft: color-mix(in srgb, var(--t-icon) 14%, transparent);
+  --btn-gradient1: var(--t-action);
+  --btn-gradient2: color-mix(in srgb, var(--t-action) 78%, black);
+  --btn-text: var(--t-action-text);
+
+  --balance-wrapper1: color-mix(in srgb, var(--t-ga) 55%, transparent);
+  --balance-wrapper2: var(--surface-mid);
+  --balance-wrapper-stroke: color-mix(in srgb, var(--t-icon) 35%, transparent);
+  --Main-Disable: color-mix(in srgb, var(--text-primary) 12%, transparent);
+}
+
+/* ธีมสว่าง: ตัวอักษรกลับเป็นสเกลเข้มตามที่ themes.css กำหนด (--text-primary / --text-secondary) */
+html[data-mode="light"] {
+  --Text-Icon-Title: var(--text-primary);
+  --text-title: var(--text-primary);
+  --Text-Icon-Body: var(--text-secondary);
+  --tab-inactive: var(--text-muted);
+  --icon-muted: var(--text-muted);
+  --text-on-dark: var(--text-primary);
+}
+
+html[data-theme]:not([data-theme="cosmic"]) body {
+  background: var(--cosmic-page-base);
+}
+
+html[data-theme]:not([data-theme="cosmic"]) .lotto-page {
+  background: radial-gradient(120% 80% at 50% -20%, color-mix(in srgb, var(--t-ga) 45%, transparent), transparent 55%),
+    var(--cosmic-page-base);
+}
+
+@media (min-width: 1024px) {
+  html[data-theme]:not([data-theme="cosmic"]) .lotto-page {
+    background: var(--cosmic-page-base);
+  }
+}
+
+/* ปุ่มหลักที่ hard-code ทองใน lotto-theme.css / lotto-ui-compat.css → ใช้สีปุ่มของธีม */
+html[data-theme]:not([data-theme="cosmic"]) :is(.btn-gold, .soft-btn-primary) {
+  background: var(--action-gradient);
+  color: var(--t-action-text);
+}
+
+html[data-theme]:not([data-theme="cosmic"]) :is(.btn-outline-gold, .soft-btn-outline) {
+  background: transparent;
+  color: var(--t-icon);
+  border-color: var(--t-icon);
+}

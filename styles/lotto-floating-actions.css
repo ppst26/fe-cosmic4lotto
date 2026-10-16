@@ -1,0 +1,65 @@
+/*
+ * ปุ่มลอยมุมล่างขวา — ธีมสี + live chat (app/components/layout/FloatingActions.tsx)
+ * mobile: เหนือ bottom nav (100px) · desktop: ชิดล่างขวา · พื้นทึบ + ขอบทองตาม token ของ lotto
+ */
+.lotto-fab {
+  position: fixed;
+  z-index: 40;
+  right: max(0.75rem, env(safe-area-inset-right, 0px));
+  bottom: calc(100px + env(safe-area-inset-bottom, 0px) + 0.875rem);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+@media (min-width: 1024px) {
+  .lotto-fab {
+    right: 1.5rem;
+    bottom: 1.5rem;
+  }
+}
+
+.lotto-fab__btn {
+  position: relative;
+  display: grid;
+  width: 3rem;
+  height: 3rem;
+  place-items: center;
+  border: 1px solid var(--Main-Secondary);
+  border-radius: 9999px;
+  background: var(--Card-Normal);
+  color: var(--Main-Secondary);
+  box-shadow: var(--shadow-soft-sm);
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
+  transition:
+    background 0.15s ease,
+    transform 0.15s ease;
+}
+
+.lotto-fab__btn:hover {
+  background: var(--BG-Surface-Normal);
+  transform: scale(1.06);
+}
+
+.lotto-fab__btn:active {
+  transform: scale(0.95);
+}
+
+.lotto-fab__btn:focus-visible {
+  outline: 2px solid var(--Main-Secondary);
+  outline-offset: 2px;
+}
+
+.lotto-fab__dot {
+  position: absolute;
+  top: -0.125rem;
+  right: -0.125rem;
+  width: 0.875rem;
+  height: 0.875rem;
+  border: 2px solid var(--Card-Normal);
+  border-radius: 9999px;
+  background: #22c55e;
+}

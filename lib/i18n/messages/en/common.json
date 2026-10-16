@@ -5,6 +5,19 @@
     "description": "Change the language shown on the site",
     "close": "Close language picker"
   },
+  "theme": {
+    "fab": "Choose color theme",
+    "floatingLabel": "Quick actions",
+    "title": "Color theme",
+    "description": "Change the site's colors instantly",
+    "close": "Close theme picker",
+    "dark": "Dark themes",
+    "light": "Light themes",
+    "darkLabel": "Dark theme",
+    "lightLabel": "Light theme",
+    "chat": "Live chat",
+    "chatUnavailable": "Live chat isn't connected yet — coming soon"
+  },
   "close": "Close",
   "retry": "Try again",
   "loading": "Loading…",

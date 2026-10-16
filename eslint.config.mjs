@@ -51,6 +51,8 @@ const eslintConfig = defineConfig([
     // build output ของ lottery kit และไฟล์ dump ชั่วคราว
     "exports/**",
     ".tmp-*",
+    // สคริปต์สร้างธีมที่ copy จาก glass (CommonJS)
+    "scripts/themes/**",
   ]),
 ]);
 

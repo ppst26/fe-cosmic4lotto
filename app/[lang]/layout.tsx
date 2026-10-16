@@ -10,6 +10,10 @@ import { localeFontClass } from "@/lib/i18n/fonts";
 import { MessagesBoundary } from "@/lib/i18n/MessagesBoundary";
 import { NAMESPACES } from "@/lib/i18n/messages";
 import { getT } from "@/lib/i18n/server";
+import { DEFAULT_THEME, LIGHT_THEME_KEYS, THEME_KEYS, THEME_STORAGE_KEY } from "@/lib/themes";
+
+/** ตั้ง data-theme / data-mode / class dark ก่อน paint ครั้งแรก — สคริปต์เดียวกับ glass */
+const THEME_INIT_SCRIPT = `try{var k=localStorage.getItem(${JSON.stringify(THEME_STORAGE_KEY)});var d=document.documentElement;if(!(k&&${JSON.stringify(THEME_KEYS)}.indexOf(k)>-1))k=${JSON.stringify(DEFAULT_THEME)};var l=${JSON.stringify(LIGHT_THEME_KEYS)}.indexOf(k)>-1;d.dataset.theme=k;d.dataset.mode=l?"light":"dark";d.classList.toggle("dark",!l)}catch(e){}`;
 
 const kanit = Kanit({
   subsets: ["thai", "latin"],
@@ -45,7 +49,14 @@ export default async function RootLayout({ children }: { children: React.ReactNo
   if (!hasLocale(locale)) notFound();
 
   return (
-    <html lang={locale} className={`dark ${kanit.variable} ${localeFontClass(locale)}`}>
+    <html
+      lang={locale}
+      suppressHydrationWarning
+      className={`dark ${kanit.variable} ${localeFontClass(locale)}`}
+    >
+      <head>
+        <script dangerouslySetInnerHTML={{ __html: THEME_INIT_SCRIPT }} />
+      </head>
       <body>
         <MessagesBoundary namespaces={NAMESPACES}>
           <AppProviders>{children}</AppProviders>
