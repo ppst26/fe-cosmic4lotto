@@ -279,3 +279,11 @@ Logic (`lib/api/deposit.ts`, `lib/api/withdraw.ts`, `app/data/{deposit,withdraw,
 Glass `DepositBottomSheet` / `WithdrawBottomSheet` flow reproduced in lotto style (`components/wallet/*`):
 deposit = methods → bank + amount → confirm + slip → final confirm; withdraw = account + amount → confirm.
 Replaces the single tabbed `components/WalletModal.tsx` (removed); `context/DepositContext.tsx` now mounts the two sheets by `?layer=deposit|withdraw`.
+
+## Promotions — My Promotions + claim flow
+
+Copied byte-for-byte from glass: `lib/promotions/myPromotions.ts`, `lib/i18n/messages/{th,en}/promotions.json`, `app/data/menuMockData.ts` (adds `my-promotions` tile → `/promotions?tab=mine`).
+`nav.json` (th/en): only the `menu.myPromotions` key added (brand strings stay lotto's).
+Lotto-styled UI: `app/components/promotions/PromotionClaimFlow.tsx` (login → confirm → success), `MyPromotionsPanel.tsx` (progress, conditions);
+`PromotionsHubPageContent` gets the "all / mine" tabs and `?tab=mine`; `PromotionDetailPanel` ends with the claim button.
+Catalog/detail JSON, API routes and hooks were already identical to glass.

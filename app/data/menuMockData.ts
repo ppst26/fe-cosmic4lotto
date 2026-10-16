@@ -105,6 +105,13 @@ export const MENU_DIALOG_MOBILE_LIST_ITEMS: MenuDialogTile[] = [
     requiresAuth: true,
   },
   { id: "referral", labelKey: "menu.referFriend", href: "/referral", iconId: "referral", requiresAuth: true },
+  {
+    id: "my-promotions",
+    labelKey: "menu.myPromotions",
+    href: "/promotions?tab=mine",
+    iconId: "promotions",
+    requiresAuth: true,
+  },
   { id: "coupon", labelKey: "menu.coupon", action: "coupon", iconId: "coupon", requiresAuth: true },
   {
     id: "reward-hub",

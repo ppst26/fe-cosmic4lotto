@@ -1,6 +1,7 @@
 "use client";
 
-import React, { useMemo, useState } from "react";
+import React, { useEffect, useMemo, useState } from "react";
+import dynamic from "next/dynamic";
 import Link from "@/lib/i18n/navigation";
 import { matchesPromoHubCategory } from "@/lib/promotions/promotionFilters";
 import type {
@@ -10,6 +11,7 @@ import type {
   PromotionDetailId,
 } from "@/app/types/promotions";
 import { ErrorState, LoadingState } from "@/app/components/ui/StatusState";
+import { HubTabs } from "./HubTabs";
 import { PromotionsCategoryTabs } from "./PromotionsCategoryTabs";
 import { PromotionsMobileFeed } from "./PromotionsMobileFeed";
 import { PromoHubDesktopMasterDetail } from "./PromoHubDesktopMasterDetail";
@@ -17,6 +19,10 @@ import { PromotionsCatalogProvider, usePromotionsCatalog } from "./PromotionsCat
 import { PromoHubPillLabel, promoCardButtonClass } from "./promoHubCardPrimitives";
 import { promotionDetailHref } from "./promotionDetailHref";
 import { useT } from "@/lib/i18n/I18nProvider";
+
+const MyPromotionsPanel = dynamic(() => import("./MyPromotionsPanel").then((m) => m.MyPromotionsPanel), { ssr: false });
+
+type PromoViewId = "all" | "mine";
 
 /** เนื้อหาหน้าโปรโมชั่น (/promotions) — กดโปรเปิดหน้ารายละเอียด /promotions/[id] */
 export function PromotionsHubPageContent({ embedded = false }: { embedded?: boolean }) {
@@ -31,6 +37,13 @@ function PromotionsHubPageContentInner({ embedded }: { embedded: boolean }) {
   const t = useT("promotions");
   const { catalog, loading, error: loadError, reload } = usePromotionsCatalog();
   const [categoryFilter, setCategoryFilter] = useState<PromoHubCategoryFilterId>("all");
+  const [view, setView] = useState<PromoViewId>("all");
+  /** ?tab=mine จากเมนูโปรไฟล์ — อ่านหลัง mount (เหมือน glass ไม่ใช้ useSearchParams) */
+  useEffect(() => {
+    // อ่าน URL หลัง mount (SSR ไม่มี window) จึงต้อง setState ใน effect
+    // eslint-disable-next-line react-hooks/set-state-in-effect
+    if (new URLSearchParams(window.location.search).get("tab") === "mine") setView("mine");
+  }, []);
 
   const hero = catalog?.hero;
   const featured = catalog?.featured;
@@ -45,8 +58,31 @@ function PromotionsHubPageContentInner({ embedded }: { embedded: boolean }) {
   );
   const hasAnyPromo = showHero || featuredItems.length > 0;
 
+  const viewTabs = (
+    <HubTabs
+      tabs={[
+        { id: "all" as const, label: t("my.all") },
+        { id: "mine" as const, label: t("my.tab") },
+      ]}
+      activeId={view}
+      onSelect={setView}
+      ariaLabel={t("my.tabsAria")}
+      className="mb-3"
+    />
+  );
+
+  if (view === "mine") {
+    return (
+      <>
+        {viewTabs}
+        <MyPromotionsPanel />
+      </>
+    );
+  }
+
   return (
     <>
+      {viewTabs}
       {loading ? <LoadingState label={t("loading")} /> : null}
       {!loading && loadError && !catalog ? (
         <div className="flex justify-center">

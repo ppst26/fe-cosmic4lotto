@@ -31,11 +31,45 @@
     "loading": "Loading details…",
     "close": "Close promotion details",
     "notFound": "Promotion details not found",
-    "notFoundDesc": "This promotion may have ended or failed to load"
+    "notFoundDesc": "This promotion may have ended or failed to load",
+    "claim": {
+      "button": "Claim promotion",
+      "claimed": "Promotion claimed",
+      "confirm": {
+        "title": "Confirm claim",
+        "description": "Do you want to claim “{title}”?"
+      },
+      "success": {
+        "title": "Promotion claimed",
+        "description": "“{title}” has been added to your account.",
+        "ok": "OK"
+      }
+    }
   },
   "mobile": {
     "expires": "Ends {date}",
     "readTerms": "Read Terms",
     "readTermsAria": "{title} — Read terms"
+  },
+  "my": {
+    "tab": "My Promotions",
+    "all": "All Promotions",
+    "tabsAria": "Promotion views",
+    "title": "My promotions",
+    "empty": "No claimed promotions yet",
+    "emptyDesc": "Pick a promotion and claim it from its details page.",
+    "browse": "Browse promotions",
+    "active": "In progress",
+    "completed": "Completed",
+    "claimedAt": "Claimed {date}",
+    "expiresAt": "Expires {date}",
+    "deposit": "Deposit",
+    "turnover": "Turnover",
+    "remaining": "{amount} to go",
+    "conditions": "Conditions",
+    "showConditions": "View conditions",
+    "hideConditions": "Hide conditions",
+    "viewDetail": "View promotion details",
+    "count": "{n} items"
   }
 }

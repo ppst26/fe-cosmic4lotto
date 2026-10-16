@@ -7,6 +7,7 @@ import type {
   PromotionDetailContent,
 } from "@/app/types/promotions";
 import { useT } from "@/lib/i18n/I18nProvider";
+import { PromotionClaimFlow } from "./PromotionClaimFlow";
 
 export type PromotionDetailPanelVariant = "page" | "hub";
 
@@ -28,6 +29,9 @@ export function PromotionDetailPanel({
     <article className="overflow-hidden rounded-2xl border border-white/10 bg-[var(--BG-Surface-Normal)]">
       <PromotionDetailBanner content={content} isHub={isHub} />
       <PromotionDetailBody body={content} isHub={isHub} />
+      <div className="px-4 pb-4">
+        <PromotionClaimFlow content={content} />
+      </div>
     </article>
   );
 }
