@@ -1,34 +1,11 @@
 import Image from "next/image";
 import Link from "next/link";
 import type { LottoBetTypeItem } from "@/lib/lotto/lotto-bet-types";
+import { getLotteryArtSrc } from "./lottery-art";
 import styles from "./lotto-bet-type-card.module.css";
 
-/** id ประเภทหวย (lotto-bet-types) → รูปใน public/lottery — ไม่มีรูป (เช่น สลากออมสิน) ใช้ธง emoji เดิม */
-const LOTTERY_ART: Record<string, string> = {
-  thailotto: "ic-government-effect",
-  baaclotto: "ic-baac-effect",
-  yeekee5: "ic-stock_yk5-effect",
-  yeekee15: "ic-stock_yk15-effect",
-  yeekee30: "ic-stock_yk15-effect",
-  laoslotto: "ic-laos-effect",
-  hanoylotto: "ic-hanoi-effect",
-  malaylotto: "ic-malay-effect",
-  dowjoneslotto: "ic-stock_dow_jones-effect",
-  chinalotto: "ic-stock_china-effect",
-  germanlotto: "ic-stock_germany-effect",
-  russialotto: "ic-stock_russia-effect",
-  korealotto: "ic-stock_korea-effect",
-  nikkeilotto: "ic-stock_japan-effect",
-  englandlotto: "ic-stock_england-effect",
-  hangsenlotto: "ic-stock_hongkong-effect",
-  taiwanlotto: "ic-stock_taiwan-effect",
-  singaporelotto: "ic-stock_singapore-effect",
-  indialotto: "ic-stock_india-effect",
-  egyptlotto: "ic-stock_egypt-effect",
-};
-
 export function LottoBetTypeCard({ item }: { item: LottoBetTypeItem }) {
-  const art = LOTTERY_ART[item.id];
+  const art = getLotteryArtSrc(item.id);
   return (
     <article
       className={`${styles.card} ${item.closed ? styles.cardClosed : ""} ${art ? styles.cardArt : ""}`}
@@ -36,7 +13,7 @@ export function LottoBetTypeCard({ item }: { item: LottoBetTypeItem }) {
       {art ? (
         <span className={styles.art} aria-hidden>
           <Image
-            src={`/lottery/${art}.webp`}
+            src={art}
             alt=""
             fill
             sizes="160px"

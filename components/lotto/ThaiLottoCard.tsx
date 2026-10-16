@@ -1,5 +1,6 @@
 import Image from "next/image";
 import type { ThaiLottoResults } from "@/lib/lotto/mock-home-data";
+import { getLotteryArtSrc } from "./lottery-art";
 import styles from "./lotto-cards.module.css";
 
 type Props = { data: ThaiLottoResults };
@@ -11,6 +12,14 @@ export function ThaiLottoCard({ data }: Props) {
         <div className={styles.headerLeft}>
           <span aria-hidden>🇹🇭</span>
           <h2 className={styles.title}>หวยรัฐบาลไทย</h2>
+          <Image
+            src={getLotteryArtSrc("thailotto")!}
+            alt=""
+            width={40}
+            height={40}
+            className={styles.titleArt}
+            aria-hidden
+          />
         </div>
         <p className={styles.date}>({data.dateLabel})</p>
       </div>
