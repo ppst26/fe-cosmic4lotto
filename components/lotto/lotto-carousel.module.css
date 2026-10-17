@@ -156,6 +156,11 @@
   .navBtn {
     display: flex;
   }
+
+  /* เว้นช่องซ้าย-ขวาให้ปุ่มลูกศร — ไม่ทับการ์ด */
+  .carouselWrap {
+    padding: 0 40px;
+  }
 }
 
 .navPrev {

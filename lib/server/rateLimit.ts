@@ -23,7 +23,7 @@ export interface RateLimitResult {
 
 /**
  * นับครั้งต่อ key ภายในช่วงเวลา — เกิน limit คืน ok:false
- * ใช้ใน POST /api/auth/login · /api/auth/register
+ * ใช้ใน POST /api/auth/register
  */
 export function rateLimit(key: string, limit: number, windowMs: number, now = Date.now()): RateLimitResult {
   const buckets = store();

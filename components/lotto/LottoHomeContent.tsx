@@ -1,5 +1,6 @@
 import type { LottoCardData, ThaiLottoResults } from "@/lib/lotto/mock-home-data";
 import type { LobbyGameItem } from "@/lib/lotto/load-lobby-games";
+import { DesktopFeatureCards } from "./DesktopFeatureCards";
 import { GameShowcaseSection } from "./GameShowcaseSection";
 import { HeroBanner } from "./HeroBanner";
 import { LottoBettingCarousels } from "./LottoBettingCarousels";
@@ -31,6 +32,7 @@ export function LottoHomeContent({
   return (
     <div className="flex flex-col gap-3">
       <HeroBanner />
+      <DesktopFeatureCards />
       <LottoMobileQuickMenu />
       <div className={styles.lottoResultsWrap}>
         <div className={styles.betCarouselFull}>

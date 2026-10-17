@@ -61,6 +61,15 @@ html[data-theme]:not([data-theme="cosmic"]) .lotto-page {
   }
 }
 
+/* header + bottom nav = พื้นเข้มไล่เฉดสีที่ 1→2 ของธีม (--t-ga → --t-gb) ทั้งโหมดมืดและสว่าง
+ * ตั้ง token เฉพาะใน scope นี้ เพื่อไม่กระทบการ์ด/พื้นผิวอื่นที่ใช้ --BG-Surface-* */
+html[data-theme]:not([data-theme="cosmic"]) :is(.lotto-site-header .header-shell, nav[aria-label="เมนูหลัก"]) {
+  --BG-Surface-Lighter: var(--t-ga);
+  --BG-Surface-Darker: var(--t-gb);
+  --Text-Icon-Body: #ffffff;
+  --main-icon-1: #ffffff;
+}
+
 /* ปุ่มหลักที่ hard-code ทองใน lotto-theme.css / lotto-ui-compat.css → ใช้สีปุ่มของธีม */
 html[data-theme]:not([data-theme="cosmic"]) :is(.btn-gold, .soft-btn-primary) {
   background: var(--action-gradient);

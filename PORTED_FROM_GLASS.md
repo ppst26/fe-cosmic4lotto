@@ -302,3 +302,9 @@ play page title = market name only (draw label stays in the draw card).
 mobile full-screen = avatar/logo · deposit+withdraw · play/loss bonus cards · referral link bar · list card · 3-col grid · logout / sign-up+login;
 desktop = right panel with the glass sections (personal / privileges / rewards).
 Lotto-only: notification bell kept top-left (lotto's frozen header has no bell), text logo instead of the Cosmicbet image logo.
+
+## Desktop sidebar + hub menu (glass LobbyDesktopSidebar / LobbyDesktopHubMenuStack)
+
+`components/lotto/LobbySidebar.tsx` (+ css module): wallet + deposit/withdraw kept (lotto has no header wallet on desktop), then glass-style menu panel with 3D icons
+(home / lottery / casino / slots / promotions / activities, active row by pathname), then the glass hub-card stack from `DESKTOP_RIGHT_MENU_TILES`
+(referral, check-in, wheel, gems, coupon, VIP — auth-guarded, coupon/VIP via lotto contexts). Deposit/withdraw buttons are now wired to the wallet sheets.
