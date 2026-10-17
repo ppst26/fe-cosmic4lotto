@@ -219,7 +219,7 @@
 /* บน desktop ที่มี sidebar — wallet/ฝาก-ถอนอยู่ sidebar (ตาม dump lg:hidden) */
 @media (min-width: 1024px) {
   .lotto-site-header .header-inner {
-    max-width: calc(248px + 1280px + 40px);
+    max-width: none;
     width: 100%;
     margin: 0 auto;
     padding: 12px 24px 14px 12px;
@@ -267,7 +267,7 @@
     align-items: stretch;
     justify-content: space-between;
     min-height: 76px;
-    max-width: calc(248px + 1280px + 40px);
+    max-width: none;
     margin: 0 auto;
     padding: 0 0 0 24px;
     box-sizing: border-box;
@@ -517,5 +517,48 @@
   .lotto-site-header .dh-auth--dev:disabled {
     opacity: 0.6;
     cursor: wait;
+  }
+}
+
+@media (min-width: 1280px) {
+  .lotto-site-header .header-desktop {
+    max-width: none;
+  }
+}
+
+/* header desktop: ไม่มีพื้นหลัง/เส้นขอบ — โปร่งเห็นพื้นหน้าเว็บ */
+@media (min-width: 1024px) {
+  .lotto-site-header .header-shell {
+    background: none;
+    box-shadow: none;
+    border-radius: 0;
+  }
+
+  .lotto-site-header .dh-ticket {
+    background: none;
+    border-left: 0;
+  }
+}
+
+/* desktop: เลื่อนหน้าแล้ว → พื้นสีเดียว = สีที่ 1 ของธีมค่อยๆ ปรากฏ (ก่อนเลื่อน = โปร่ง) */
+@media (min-width: 1024px) {
+  .lotto-site-header .header-shell {
+    position: relative;
+    isolation: isolate;
+  }
+
+  .lotto-site-header .header-shell::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    background: var(--t-ga, var(--BG-Surface-Lighter));
+    opacity: 0;
+    transition: opacity 0.25s ease;
+    pointer-events: none;
+  }
+
+  .lotto-site-header[data-scrolled="true"] .header-shell::before {
+    opacity: 1;
   }
 }

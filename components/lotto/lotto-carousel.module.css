@@ -157,10 +157,6 @@
     display: flex;
   }
 
-  /* เว้นช่องซ้าย-ขวาให้ปุ่มลูกศร — ไม่ทับการ์ด */
-  .carouselWrap {
-    padding: 0 40px;
-  }
 }
 
 .navPrev {
@@ -171,7 +167,25 @@
   right: 0;
 }
 
+/* PC: ลูกศรคร่อมขอบ container (section padding 8px → ถอยออก 24px ให้กึ่งกลางปุ่มอยู่บนขอบ) */
+@media (min-width: 1024px) {
+  .navPrev {
+    left: -24px;
+  }
+
+  .navNext {
+    right: -24px;
+  }
+}
+
 .navBtn:disabled {
   opacity: 0.35;
   cursor: default;
+}
+
+/* PC: ซ่อน scrollbar ของแถวการ์ด (เลื่อนด้วยปุ่มลูกศร/ล้อเมาส์/ลาก) */
+@media (min-width: 1024px) {
+  .track {
+    scrollbar-width: none;
+  }
 }

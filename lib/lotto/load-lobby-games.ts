@@ -67,9 +67,21 @@ export function loadSlotShowcase(limit = 24): Promise<LobbyGameItem[]> {
   return loadSection("section-slots", limit);
 }
 
-/** ไม่มีหน้ากีฬาใน CM-SaturnLotto — คืนว่างเสมอ (GameShowcaseSection คืน null เมื่อว่าง) */
+/** mock — CM-SaturnLotto ยังไม่มีหน้ากีฬา ใช้ภาพใน public/ และลิงก์ไป /events (ทายผล) จนกว่าจะมีข้อมูลจริง */
+const SPORTS_MOCK: ReadonlyArray<{ id: string; title: string; image: string }> = [
+  { id: "sports-live", title: "กีฬาสด", image: "/tournament/sport-win.avif" },
+  { id: "sports-football", title: "ทายผลฟุตบอล", image: encodeURI("/event/ทายผลหบอล.avif") },
+  { id: "sports-boxing", title: "ทายผลมวย", image: encodeURI("/event/ทายผลมวย.avif") },
+  { id: "sports-esport", title: "อีสปอร์ต", image: "/tournament/esport.webp" },
+  { id: "sports-esport-2", title: "อีสปอร์ต ทัวร์นาเมนต์", image: "/tournament/esport2.webp" },
+];
+
 export async function loadSportsShowcase(): Promise<LobbyGameItem[]> {
-  return [];
+  return SPORTS_MOCK.map((item) => ({
+    ...item,
+    players: stablePlayers(item.id),
+    href: "/events",
+  }));
 }
 
 /** ค่ายหวยสุดปัง — 4 ตลาดเด่นของ glass (LOTTERY_FEATURED_ITEMS) ลิงก์ไป /lottery/<slug> */

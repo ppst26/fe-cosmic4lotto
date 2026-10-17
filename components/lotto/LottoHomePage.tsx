@@ -19,6 +19,7 @@ import { BottomNavLotto } from "./BottomNavLotto";
 import { LobbySidebar } from "./LobbySidebar";
 import { LottoHomeContent } from "./LottoHomeContent";
 import { LottoSiteHeader } from "./LottoSiteHeader";
+import { ResultsRail } from "./ResultsRail";
 import layout from "./lobby-layout.module.css";
 
 type Props = { loggedIn?: boolean };
@@ -63,6 +64,14 @@ export async function LottoHomePage({ loggedIn = true }: Props) {
             <LottoHomeContent {...contentProps} />
           </div>
         </div>
+
+        <aside className={layout.railSlot}>
+          <ResultsRail
+            thai={contentProps.thai}
+            bank={contentProps.bankLotto}
+            dashboard={contentProps.dashboardLotto}
+          />
+        </aside>
       </div>
 
       <div className={layout.bottomNavSlot}>

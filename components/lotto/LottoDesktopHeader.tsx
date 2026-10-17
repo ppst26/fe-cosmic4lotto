@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import dynamic from "next/dynamic";
 import Image from "next/image";
 import { ChevronDown, Gift, Megaphone, Palette, Plus, RotateCcw } from "lucide-react";
@@ -139,9 +139,20 @@ export function LottoDesktopHeader({ logoSrc, loggedIn, wallet }: Props) {
   const themeMounted = useLazyOverlayMount(themeOpen);
   const langMounted = useLazyOverlayMount(langOpen);
   const openTheme = () => setThemeOpen(true);
+  const rootRef = useRef<HTMLDivElement>(null);
+
+  /** เริ่มเลื่อนหน้า → ตั้ง data-scrolled บน <header> เพื่อให้ CSS ใส่พื้นไล่เฉดสีธีม */
+  useEffect(() => {
+    const header = rootRef.current?.closest<HTMLElement>(".lotto-site-header");
+    if (!header) return;
+    const update = () => header.setAttribute("data-scrolled", String(window.scrollY > 8));
+    update();
+    window.addEventListener("scroll", update, { passive: true });
+    return () => window.removeEventListener("scroll", update);
+  }, []);
 
   return (
-    <div className="header-desktop">
+    <div className="header-desktop" ref={rootRef}>
       <div className="dh-left">
         <Link href="/" className="dh-logo">
           <Image src={logoSrc} alt="" width={100} height={60} className="dh-logo__img" priority unoptimized />

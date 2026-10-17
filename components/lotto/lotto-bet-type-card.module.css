@@ -3,7 +3,10 @@
   flex-direction: column;
   align-items: stretch;
   gap: 10px;
-  background: var(--BG-Surface-Normal);
+  /* การ์ดใช้สีพื้นผิวมืดของธีม (--surface-start) + ขาวนิดเดียว ไล่เฉดซ้าย→ขวา — ไม่ใช้ --t-ga เพราะบางธีมเป็นสีสด (ชมพู ฯลฯ) */
+  --card-from: color-mix(in srgb, var(--surface-start, var(--BG-Surface-Normal)) 94%, #fff);
+  --card-to: color-mix(in srgb, var(--surface-start, var(--BG-Surface-Normal)) 97%, #fff);
+  background: linear-gradient(90deg, var(--card-from), var(--card-to));
   border-radius: 10px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
   padding: 14px 12px;
@@ -21,15 +24,17 @@
   position: absolute;
   z-index: 0;
   top: -6%;
-  right: -14%;
-  width: 55%;
+  right: 0;
+  /* กล่องรูปเป็นสี่เหลี่ยมจัตุรัสสูง 112% ของการ์ด แล้วเลื่อนออกนอกการ์ด 25% ของรูป → เห็นรูป 75% */
   height: 112%;
+  aspect-ratio: 1 / 1;
+  transform: translateX(25%);
   pointer-events: none;
 }
 
 .artImg {
   object-fit: contain;
-  object-position: right center;
+  object-position: center;
   filter: drop-shadow(0 3px 10px rgba(0, 0, 0, 0.35));
 }
 
@@ -43,7 +48,7 @@
     270deg,
     rgba(0, 0, 0, 0.1) 0%,
     transparent 45%,
-    var(--BG-Surface-Normal) 85%
+    var(--card-from) 85%
   );
 }
 
@@ -106,7 +111,12 @@
 }
 
 .btnBet {
-  background: var(--action-gradient, var(--Main-Primary));
+  /* ไล่เฉดซ้าย→ขวา สีปุ่มของธีม ปลายขวาเข้มชัด */
+  background: linear-gradient(
+    to right,
+    var(--t-action, var(--Main-Primary)),
+    color-mix(in srgb, var(--t-action, var(--Main-Primary)) 52%, #000)
+  );
   color: var(--t-action-text, #000);
   text-decoration: none;
   box-shadow: 0 0 4px rgba(0, 0, 0, 0.2);

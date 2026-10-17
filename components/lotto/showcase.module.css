@@ -47,3 +47,9 @@
   padding-bottom: 4px;
   scrollbar-width: thin;
 }
+
+@media (min-width: 1024px) {
+  .track {
+    scrollbar-width: none;
+  }
+}

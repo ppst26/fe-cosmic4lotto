@@ -12,13 +12,51 @@
   .pageShell {
     --lobby-sidebar-width: 248px;
     --lobby-content-max-width: 1280px;
+    --lobby-rail-width: 320px;
+    /* full width — sidebar ชิดซ้าย · main ยืดเต็ม · แถบผลหวยชิดขวา */
     max-width: none;
     width: 100%;
-    margin: 0;
+    margin: 0 auto;
     padding: 0;
     flex-direction: row;
     align-items: flex-start;
     gap: 0;
+  }
+}
+
+/* แถบผลหวยขวา — แสดงเฉพาะจอกว้าง ≥1280 (ต่ำกว่านั้นผลหวยอยู่ใน main เหมือนเดิม) */
+.railSlot {
+  display: none;
+}
+
+.resultsInline {
+  display: contents;
+}
+
+@media (min-width: 1280px) {
+  .pageShell {
+    max-width: none;
+  }
+
+  .railSlot {
+    display: block;
+    flex: 0 0 var(--lobby-rail-width);
+    width: var(--lobby-rail-width);
+    position: sticky;
+    top: 72px;
+    align-self: flex-start;
+    max-height: calc(100dvh - 72px);
+    overflow-y: auto;
+    padding: 16px 12px 24px 0;
+    box-sizing: border-box;
+  }
+
+  .mainColumn {
+    padding-right: 16px;
+  }
+
+  .resultsInline {
+    display: none;
   }
 }
 
@@ -68,8 +106,8 @@
 
 @media (min-width: 1024px) {
   .mainStack {
-    max-width: var(--lobby-content-max-width, 1280px);
-    margin: 0 auto;
+    max-width: none;
+    margin: 0;
   }
 }
 

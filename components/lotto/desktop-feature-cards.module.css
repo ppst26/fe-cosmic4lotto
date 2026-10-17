@@ -1,6 +1,8 @@
 /* การ์ดฟีเจอร์ desktop — ตามภาพอ้างอิง (design.md §2.2–2.3) · ซ่อนต่ำกว่า 1024 */
 .root {
   display: none;
+  /* ขอบการ์ด = สี surface ที่อ่อนลง */
+  --card-border: color-mix(in srgb, var(--BG-Surface-Normal) 82%, #fff);
 }
 
 @media (min-width: 1024px) {
@@ -32,7 +34,7 @@
   min-height: 150px;
   overflow: hidden;
   border-radius: 18px;
-  border: 1px solid color-mix(in srgb, var(--tone) 45%, transparent);
+  border: 1px solid var(--card-border);
   background:
     radial-gradient(90% 120% at 85% 40%, color-mix(in srgb, var(--tone) 38%, transparent) 0%, transparent 70%),
     linear-gradient(135deg, var(--BG-Surface-Normal), var(--BG-Surface-Darker));
@@ -140,7 +142,7 @@
   padding: 12px 18px;
   overflow: hidden;
   border-radius: 14px;
-  border: 1px solid color-mix(in srgb, #fff 8%, transparent);
+  border: 1px solid var(--card-border);
   background: linear-gradient(135deg, var(--BG-Surface-Normal), var(--BG-Surface-Darker));
   color: #fff;
   text-decoration: none;
@@ -152,7 +154,6 @@
 }
 
 .stripEvent {
-  border-color: color-mix(in srgb, #22d36b 40%, transparent);
   background:
     radial-gradient(70% 160% at 100% 100%, color-mix(in srgb, #22d36b 26%, transparent) 0%, transparent 70%),
     linear-gradient(135deg, var(--BG-Surface-Normal), var(--BG-Surface-Darker));

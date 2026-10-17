@@ -7,6 +7,7 @@ import { LottoBettingCarousels } from "./LottoBettingCarousels";
 import { LottoForeignResults } from "./LottoForeignResults";
 import { LottoMobileQuickMenu } from "./LottoMobileQuickMenu";
 import styles from "./lotto-cards.module.css";
+import layout from "./lobby-layout.module.css";
 import { ThaiLottoCard } from "./ThaiLottoCard";
 import { TicketCheckBar } from "./TicketCheckBar";
 
@@ -27,7 +28,6 @@ export function LottoHomeContent({
   casino,
   slots,
   sports,
-  lottoShowcase,
 }: LottoHomeContentProps) {
   return (
     <div className="flex flex-col gap-3">
@@ -38,17 +38,12 @@ export function LottoHomeContent({
         <div className={styles.betCarouselFull}>
           <LottoBettingCarousels />
         </div>
-        <ThaiLottoCard data={thai} />
-        <LottoForeignResults bank={bankLotto} dashboard={dashboardLotto} />
+        <div className={layout.resultsInline}>
+          <ThaiLottoCard data={thai} />
+          <LottoForeignResults bank={bankLotto} dashboard={dashboardLotto} />
+        </div>
       </div>
       <TicketCheckBar />
-      <GameShowcaseSection
-        title="ค่ายหวยสุดปัง"
-        iconSrc="/_nuxt/png/lottoSwiper.DzDKFnRj.png"
-        items={lottoShowcase}
-        cardVariant="tall"
-        cardWidth="22%"
-      />
       <GameShowcaseSection
         title="คาสิโนออนไลน์"
         iconSrc="/_nuxt/png/casino-icon.DHi208DR.png"

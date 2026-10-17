@@ -86,3 +86,32 @@ body {
   padding: 8px 18px;
   font-size: 14px;
 }
+
+/* PC: ซ่อน scrollbar ทั้งหน้าและ carousel (ยังเลื่อนได้ด้วยล้อเมาส์/ลาก/ปุ่มลูกศร) */
+@media (min-width: 1024px) {
+  * {
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+
+  *::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+/* ปุ่มสีธีมไล่เฉดบน→ล่าง ไม่มีขอบ — reuse ได้ทั้งคลาส .btn-theme-gradient และ var(--btn-theme-gradient) ใน CSS module
+ * สีมาจาก --t-action ของธีม (cosmic ไม่มีตัวแปรนี้ → ทอง #ffd15c) */
+:root {
+  --btn-theme-gradient: linear-gradient(
+    to bottom,
+    color-mix(in srgb, var(--t-action, #ffd15c) 86%, #fff),
+    color-mix(in srgb, var(--t-action, #ffd15c) 58%, #000)
+  );
+  --btn-theme-fg: var(--t-action-text, #2a0607);
+}
+
+.btn-theme-gradient {
+  border: 0;
+  background: var(--btn-theme-gradient);
+  color: var(--btn-theme-fg);
+}
