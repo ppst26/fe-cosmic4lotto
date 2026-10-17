@@ -1,8 +1,16 @@
 .section {
+  /* มือถือ: เว้นระยะจาก header ด้านบน (desktop ไม่ต้องเว้น) */
+  margin-top: 12px;
   position: relative;
   overflow: hidden;
   border-radius: 12px;
   background: var(--BG-Surface-Darker);
+}
+
+@media (min-width: 1024px) {
+  .section {
+    margin-top: 0;
+  }
 }
 
 .track {
@@ -28,7 +36,7 @@
   aspect-ratio: 1916 / 821;
   scroll-snap-align: start;
   scroll-snap-stop: always;
-  background: #141416;
+  background: #110c18;
 }
 
 .image {

@@ -1,34 +1,44 @@
-.row {
+.root {
   display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
+  flex-direction: column;
+  gap: 18px;
   margin-top: 4px;
 }
 
-.menuGroup {
+/* หมวดเกม 6 ช่อง — เลื่อนข้างได้เมื่อจอแคบ (ซ่อน scrollbar) */
+.categories {
   display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
   gap: 8px;
+  overflow-x: auto;
+  padding: 2px 2px 4px;
+  scroll-snap-type: x proximity;
+  scrollbar-width: none;
+}
+
+.categories::-webkit-scrollbar {
+  display: none;
 }
 
 .menuItem {
+  flex: 1 0 0;
+  min-width: 56px;
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 4px;
   font-size: 11px;
   color: var(--Text-Icon-Body);
-  padding: 6px 8px;
-  border-radius: 10px;
+  padding: 8px 4px;
+  border-radius: 12px;
   border: 1px solid transparent;
+  text-decoration: none;
+  scroll-snap-align: start;
 }
 
 .menuActive {
-  border-color: rgba(255, 209, 92, 0.45);
+  /* ไม่มีเส้นขอบ — พื้นอ่อนกว่าฉากหลังเล็กน้อย */
+  border-color: transparent;
+  background: color-mix(in srgb, #fff 10%, transparent);
 }
 
 .textGold {
@@ -36,30 +46,35 @@
   font-weight: 600;
 }
 
-.depositCol {
-  display: flex;
-  flex: 1;
-  max-width: 120px;
-  flex-direction: column;
-  gap: 6px;
+/* ฝาก - ถอน เป็นแถวปุ่มคู่ใต้หมวดเกม */
+.actions {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
 }
 
 .btnPrimary {
-  border-radius: 10px;
-  border: 1px solid rgba(255, 255, 255, 0.35);
-  background: linear-gradient(180deg, #ffe082 0%, #ffd15c 45%, #c9a227 100%);
-  color: #2a0607;
+  border-radius: 12px;
+  border: 0;
+  background: var(--btn-theme-gradient, linear-gradient(180deg, #ffe082 0%, #ffd15c 45%, #c9a227 100%));
+  color: var(--btn-theme-fg, #2a0607);
   font-weight: 700;
-  font-size: 12px;
-  padding: 8px 6px;
+  font-size: 14px;
+  padding: 11px 8px;
 }
 
 .btnSecondary {
-  border-radius: 10px;
-  border: 1px solid rgba(255, 255, 255, 0.25);
-  background: rgba(0, 0, 0, 0.4);
-  color: #fff;
+  border-radius: 12px;
+  border: 1px solid var(--t-action, rgba(255, 255, 255, 0.25));
+  background: var(--shade-mid);
+  color: var(--t-action, #fff);
   font-weight: 700;
-  font-size: 12px;
-  padding: 8px 6px;
+  font-size: 14px;
+  padding: 11px 8px;
+}
+
+/* ธีมสว่าง: ปุ่มถอนใช้สีตัวหนังสือของธีม (สีปุ่มอ่อนเกินไปบนพื้นขาว) */
+:global(html[data-mode="light"]) .btnSecondary {
+  color: var(--ink);
+  border-color: color-mix(in srgb, var(--ink) 30%, transparent);
 }

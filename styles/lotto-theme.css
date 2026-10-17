@@ -1,31 +1,31 @@
 /* Design tokens reverse‑engineered from dump/_nuxt (BB Lotto dark/gold) */
 :root {
-  --Main-Primary: #ffd15c;
-  --Main-Secondary: #ffd15c;
-  --Main-Primary-Light: #f6db96;
-  --Main-Primary-Dark: #9b7a24;
-  --main-icon-1: #ffd15c;
-  --balance-wrapper1: rgba(97, 0, 0, 0.55);
-  --balance-wrapper2: #171719;
-  --balance-wrapper-stroke: rgba(255, 209, 92, 0.35);
-  --body: #141416;
+  --Main-Primary: #f7edd2;
+  --Main-Secondary: #f7edd2;
+  --Main-Primary-Light: #fffaea;
+  --Main-Primary-Dark: #b8aa82;
+  --main-icon-1: #f7edd2;
+  --balance-wrapper1: rgba(12, 9, 15, 0.7);
+  --balance-wrapper2: #100b17;
+  --balance-wrapper-stroke: rgba(247, 237, 210, 0.35);
+  --body: #08060b;
   --Main-Disable: rgba(255, 255, 255, 0.12);
   --Text-Icon-Title: #ffffff;
   --Text-Icon-Body: #b8b8bc;
-  --Text-Icon-Highlight: #ffd15c;
-  --BG-Surface-Darker: #1a1a1d;
-  --BG-Surface-Lighter: #610000;
-  --BG-Surface-Normal: #28282b;
-  --Card-Normal: #2e2e32;
+  --Text-Icon-Highlight: #f7edd2;
+  --BG-Surface-Darker: #110c18;
+  --BG-Surface-Lighter: #0c090f;
+  --BG-Surface-Normal: #16101e;
+  --Card-Normal: #1c1526;
   --primary: #347fd3;
-  --btn-gradient1: #ffd15c;
-  --btn-gradient2: #c9a227;
-  --btn-text: #1a1a1d;
-  --card-primary: #2a2a2e;
-  --card-secondary: #1f1f23;
+  --btn-gradient1: #f7edd2;
+  --btn-gradient2: #cdbf94;
+  --btn-text: #0c090f;
+  --card-primary: #1a1423;
+  --card-secondary: #120d19;
   --text-primary: #f5f5f5;
   --text-title: #ffffff;
-  --input-bg: #1f1f23;
+  --input-bg: #120d19;
 }
 
 html.dark,
@@ -34,7 +34,7 @@ html {
 }
 
 body {
-  background: #0d0d0f;
+  background: #060409;
   color: var(--Text-Icon-Title);
   font-family: var(--font-kanit), Kanit, system-ui, sans-serif;
 }
@@ -44,16 +44,16 @@ body {
   padding-bottom: calc(100px + env(safe-area-inset-bottom, 0px));
   background: radial-gradient(
       120% 80% at 50% -20%,
-      rgba(97, 0, 0, 0.45),
+      rgba(12, 9, 15, 0.7),
       transparent 55%
     ),
-    #0d0d0f;
+    #060409;
 }
 
 @media (min-width: 1024px) {
   .lotto-page {
     padding-bottom: 24px;
-    background: #141416;
+    background: #110c18;
     width: 100%;
     max-width: none;
     overflow-x: clip;
@@ -68,10 +68,10 @@ body {
 }
 
 .btn-gold {
-  background: linear-gradient(180deg, #ffe082 0%, #ffd15c 45%, #c9a227 100%);
+  background: linear-gradient(180deg, #fffaea 0%, #f7edd2 45%, #cdbf94 100%);
   border: 1px solid rgba(255, 255, 255, 0.35);
   border-radius: 9999px;
-  color: #2a0607;
+  color: #0c090f;
   font-weight: 600;
   padding: 8px 18px;
   font-size: 14px;
@@ -99,19 +99,50 @@ body {
   }
 }
 
+/* ธีมเริ่มต้น (cosmic = CM-SaturnLotto): สีที่ 1 navy · 2 darkblue · 3 ครีม — ตัวแปรชุดเดียวกับธีมอื่น (--t-*) เพื่อให้คอมโพเนนต์ใช้ร่วมกันได้ */
+:root {
+  --t-ga: #0c090f;
+  --t-gb: #140c1f;
+  --t-icon: #f7edd2;
+  --t-action: #f7edd2;
+  --t-action-text: #0c090f;
+  --t-accent: #f7edd2;
+  --surface-start: #16101e;
+}
+
 /* ปุ่มสีธีมไล่เฉดบน→ล่าง ไม่มีขอบ — reuse ได้ทั้งคลาส .btn-theme-gradient และ var(--btn-theme-gradient) ใน CSS module
- * สีมาจาก --t-action ของธีม (cosmic ไม่มีตัวแปรนี้ → ทอง #ffd15c) */
+ * สีมาจาก --t-action ของธีม (ธีมเริ่มต้นกำหนดไว้ใน :root ด้านบน) */
 :root {
   --btn-theme-gradient: linear-gradient(
     to bottom,
-    color-mix(in srgb, var(--t-action, #ffd15c) 86%, #fff),
-    color-mix(in srgb, var(--t-action, #ffd15c) 58%, #000)
+    color-mix(in srgb, var(--t-action, #f7edd2) 86%, #fff),
+    color-mix(in srgb, var(--t-action, #f7edd2) 58%, #000)
   );
-  --btn-theme-fg: var(--t-action-text, #2a0607);
+  --btn-theme-fg: var(--t-action-text, #0c090f);
 }
 
 .btn-theme-gradient {
   border: 0;
   background: var(--btn-theme-gradient);
   color: var(--btn-theme-fg);
+}
+
+/* สีตัวหนังสือ/เส้นบนการ์ด — ขาวในธีมมืด · สีเข้มของธีมในธีมสว่าง (ใช้แทน #fff ตายตัวในการ์ด) */
+:root {
+  --ink: #fff;
+}
+
+html[data-mode="light"] {
+  --ink: var(--text-primary, #1b2230);
+}
+
+/* พื้นโปร่งเข้มบนการ์ด — ดำโปร่งในธีมมืด · เทาจางของสีตัวหนังสือในธีมสว่าง */
+:root {
+  --shade-soft: rgba(0, 0, 0, 0.28);
+  --shade-mid: rgba(0, 0, 0, 0.4);
+}
+
+html[data-mode="light"] {
+  --shade-soft: color-mix(in srgb, var(--ink) 6%, transparent);
+  --shade-mid: color-mix(in srgb, var(--ink) 8%, transparent);
 }

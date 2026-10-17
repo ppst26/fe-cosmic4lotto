@@ -8,11 +8,11 @@
   --soft-surface: var(--BG-Surface-Darker);
   --soft-card: var(--BG-Surface-Normal);
   --soft-card-elevated: var(--Card-Normal);
-  --soft-chrome: #0d0d0f;
+  --soft-chrome: #060409;
 
   --brand: var(--Main-Primary);
   --brand-strong: var(--Main-Primary);
-  --brand-soft: rgba(255, 209, 92, 0.14);
+  --brand-soft: rgba(247, 237, 210, 0.14);
   --text-on-light: var(--Text-Icon-Title);
   --text-on-dark: #ffffff;
   --text-muted: var(--Text-Icon-Body);
@@ -44,7 +44,7 @@
 }
 
 @utility soft-btn-primary {
-  background: linear-gradient(180deg, #ffe082 0%, #ffd15c 45%, #c9a227 100%);
+  background: linear-gradient(180deg, #fffaea 0%, #f7edd2 45%, #cdbf94 100%);
   color: #2a0607;
   font-weight: 600;
   border-radius: 9999px;

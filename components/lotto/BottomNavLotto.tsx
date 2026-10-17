@@ -1,70 +1,67 @@
+"use client";
+
 import Image from "next/image";
-import Link from "next/link";
-import { bottomNavItems } from "@/lib/lotto/mock-home-data";
+import { Banknote, MessageCircle, RotateCcw, Wallet, type LucideIcon } from "lucide-react";
+import Link from "@/lib/i18n/navigation";
+import { useDeposit } from "@/context/DepositContext";
+import { useToast } from "@/context/ToastContext";
+import { useT } from "@/lib/i18n/I18nProvider";
 import styles from "./bottom-nav.module.css";
 
-const icons: Record<string, string> = {
-  home: "🏠",
-  promo: "📣",
-  bet: "🎱",
-  activity: "🎁",
-  deposit: "💰",
-};
-
+/**
+ * เมนูล่างมือถือ: ฝาก · ถอน · [แทงหวย กลาง] · คืนยอด · ติดต่อ
+ * ฝาก/ถอน เปิดหน้าต่างเดียวกับ sidebar (ถ้ายังไม่ล็อกอิน DepositProvider เปิดหน้าล็อกอินให้) · ติดต่อ = live chat ยังไม่เชื่อมต่อ → toast
+ */
 export function BottomNavLotto({ loggedIn }: { loggedIn?: boolean }) {
+  void loggedIn;
+  const t = useT("nav");
+  const tCommon = useT("common");
+  const { openDeposit, openWithdraw } = useDeposit();
+  const { showToast } = useToast();
+
+  const sideItem = (Icon: LucideIcon, label: string) => (
+    <>
+      <span className={styles.icon} aria-hidden>
+        <Icon size={24} strokeWidth={1.75} />
+      </span>
+      <span className={styles.label}>{label}</span>
+    </>
+  );
+
   return (
-    <nav className={styles.wrapper} aria-label="เมนูหลัก">
+    <nav className={styles.wrapper} aria-label={t("bottomNav.label")}>
       <div className={styles.footer}>
         <div className={styles.menu}>
-          {(loggedIn
-            ? bottomNavItems.map((i) =>
-                i.id === "deposit"
-                  ? { ...i, label: "ฝาก/ถอน" }
-                  : i,
-              )
-            : bottomNavItems
-          ).map((item) => {
-            const content = (
-              <>
-                {item.center ? (
-                  <div className={styles.badge}>
-                    <Image
-                      src="/_nuxt/png/lottoFooter.D-kpI84T.png"
-                      alt=""
-                      width={70}
-                      height={80}
-                      className={styles.badgeImg}
-                    />
-                  </div>
-                ) : (
-                  <span className={styles.icon}>{icons[item.id]}</span>
-                )}
-                <span className={styles.label}>{item.label}</span>
-              </>
-            );
+          <button type="button" className={styles.item} onClick={openDeposit}>
+            {sideItem(Wallet, t("bottomNav.deposit"))}
+          </button>
+          <button type="button" className={styles.item} onClick={openWithdraw}>
+            {sideItem(Banknote, t("bottomNav.withdraw"))}
+          </button>
 
-            const className = [
-              styles.item,
-              item.center ? styles.center : "",
-              item.active ? styles.active : "",
-            ]
-              .filter(Boolean)
-              .join(" ");
+          <Link href="/enterlotto" className={`${styles.item} ${styles.center}`}>
+            <div className={styles.badge}>
+              <Image
+                src="/_nuxt/png/lottoFooter.D-kpI84T.png"
+                alt=""
+                width={70}
+                height={80}
+                className={styles.badgeImg}
+              />
+            </div>
+            <span className={styles.label}>แทงหวย</span>
+          </Link>
 
-            if (item.center) {
-              return (
-                <Link key={item.id} href={item.href} className={className}>
-                  {content}
-                </Link>
-              );
-            }
-
-            return (
-              <Link key={item.id} href={item.href} className={className}>
-                {content}
-              </Link>
-            );
-          })}
+          <Link href="/cashback" className={styles.item}>
+            {sideItem(RotateCcw, t("bottomNav.cashback"))}
+          </Link>
+          <button
+            type="button"
+            className={styles.item}
+            onClick={() => showToast(tCommon("theme.chatUnavailable"), "info")}
+          >
+            {sideItem(MessageCircle, t("bottomNav.contact"))}
+          </button>
         </div>
       </div>
     </nav>

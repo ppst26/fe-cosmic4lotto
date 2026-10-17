@@ -1,11 +1,12 @@
 import Image from "next/image";
 import Link from "next/link";
 import { BahtIcon } from "./BahtIcon";
+import { HeaderAvatar } from "./HeaderAvatar";
 import { LottoDesktopHeader } from "./LottoDesktopHeader";
 import type { WalletSnapshot } from "@/lib/lotto/load-wallet-snapshot";
 
-const LOGO_SRC =
-  "/_cdn/d29xpgmn3rqne6.cloudfront.net/bblotto/setting/1766505922869";
+/** โลโก้หลัก — public/cosmic-dark.png (1123×217) */
+const LOGO_SRC = "/cosmic-dark.png";
 
 type Props = {
   loggedIn?: boolean;
@@ -66,9 +67,9 @@ export function LottoSiteHeader({
             <Link href="/">
               <Image
                 src={LOGO_SRC}
-                alt="XGAMBET"
-                width={100}
-                height={60}
+                alt="CM-SaturnLotto"
+                width={1123}
+                height={217}
                 className="header-logo"
                 priority
                 unoptimized
@@ -105,19 +106,10 @@ export function LottoSiteHeader({
                   </button>
                 </div>
               )}
+              {loggedIn ? <HeaderAvatar /> : null}
               <HeaderMenu />
             </div>
           </div>
-          {loggedIn ? (
-            <div className={`deposit-row ${walletDesktopClass}`}>
-              <button type="button" className="bb-btn bb-btn-primary">
-                ฝากเงิน
-              </button>
-              <button type="button" className="bb-btn bb-btn-secondary">
-                ถอนเงิน
-              </button>
-            </div>
-          ) : null}
         </div>
       </div>
     </header>

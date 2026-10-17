@@ -14,13 +14,13 @@ interface ThemePickerSheetProps {
 }
 
 /**
- * ธีมเริ่มต้น ("cosmic" ในตาราง glass) = หน้าตาดำ-ทองเดิมของ lotto ไม่มี block ใน themes.css
+ * ธีมเริ่มต้น ("cosmic" ในตาราง glass) = ธีมดำ-ครีมของ lotto ไม่มี block ใน themes.css
  * จึงวาดการ์ดตัวอย่างและชื่อด้วยสีของ lotto แทนสีม่วงของ glass
  */
 const LOTTO_DEFAULT_PREVIEW: Pick<ThemeOption, "name" | "colors" | "bgColor"> = {
   name: "CM-SaturnLotto",
-  colors: ["#610000", "#1a1a1d", "#ffd15c"],
-  bgColor: "#0d0d0f",
+  colors: ["#0c090f", "#140c1f", "#f7edd2"],
+  bgColor: "#060409",
 };
 
 function ThemeGrid({

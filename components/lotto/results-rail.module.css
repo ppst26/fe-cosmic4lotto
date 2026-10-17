@@ -1,9 +1,9 @@
 /* แถบผลหวยขวา — minimal ตาม design.md (การ์ดเดียว แถวคั่นด้วยเส้นบาง) */
 .root {
   border-radius: 16px;
-  border: 1px solid color-mix(in srgb, #fff 7%, transparent);
+  border: 1px solid color-mix(in srgb, var(--ink) 7%, transparent);
   background: linear-gradient(180deg, var(--BG-Surface-Normal), var(--BG-Surface-Darker));
-  color: #fff;
+  color: var(--ink);
   overflow: hidden;
 }
 
@@ -26,7 +26,7 @@
   flex-direction: column;
   gap: 8px;
   padding: 12px 16px;
-  border-top: 1px solid color-mix(in srgb, #fff 7%, transparent);
+  border-top: 1px solid color-mix(in srgb, var(--ink) 7%, transparent);
 }
 
 .head {
@@ -69,12 +69,12 @@
   text-overflow: ellipsis;
   white-space: nowrap;
   font-size: 10px;
-  color: color-mix(in srgb, #fff 50%, transparent);
+  color: color-mix(in srgb, var(--ink) 50%, transparent);
 }
 
 .label {
   font-size: 10px;
-  color: color-mix(in srgb, #fff 50%, transparent);
+  color: color-mix(in srgb, var(--ink) 50%, transparent);
 }
 
 /* หวยรัฐบาล: รางวัลที่ 1 เด่น แล้วรายการเลขเป็นบรรทัด label — value */
@@ -107,7 +107,7 @@
 }
 
 .lines dt {
-  color: color-mix(in srgb, #fff 50%, transparent);
+  color: color-mix(in srgb, var(--ink) 50%, transparent);
 }
 
 .lines dd {
@@ -131,11 +131,32 @@
   gap: 1px;
   padding: 6px 4px;
   border-radius: 10px;
-  background: color-mix(in srgb, #000 28%, transparent);
+  background: var(--shade-soft);
+  color: var(--ink);
 }
 
 .number {
+  color: var(--ink);
   font-size: 17px;
   font-weight: 800;
   font-variant-numeric: tabular-nums;
+}
+
+/* ธีมสว่าง: แถบผลหวยใช้สีที่ 1 ของธีมที่เข้มลง + ตัวหนังสืออ่อน */
+:global(html[data-mode="light"]) .root {
+  --ink: #fff;
+  --BG-Surface-Normal: color-mix(in srgb, var(--t-ga) 58%, #000);
+  --BG-Surface-Darker: color-mix(in srgb, var(--t-ga) 42%, #000);
+  --shade-soft: rgba(0, 0, 0, 0.28);
+}
+
+/* ตัวเลขรางวัลที่ 1 ใช้สีขาวบนพื้นเข้ม (สีเน้นของธีมสว่างกลืนกับพื้น) */
+:global(html[data-mode="light"]) .firstNumber {
+  color: var(--ink);
+}
+
+/* ธีมสว่าง: ช่องผลหวยย่อยเป็นเทาอ่อน และตัวหนังสือเข้ม */
+:global(html[data-mode="light"]) .cell {
+  --ink: #1b2230;
+  background: #eceef2;
 }

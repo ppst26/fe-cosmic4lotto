@@ -1,6 +1,6 @@
 /**
  * Themes — สลับด้วย <html data-theme="key"> (ดู lib/theme.ts)
- * ไฟล์นี้สร้างจาก scripts/themes/gen-themes.js (อย่าแก้มือ) — ธีมเริ่มต้น (cosmic) อยู่ใน tokens.css
+ * ไฟล์นี้สร้างจาก scripts/themes/gen-themes.js (อย่าแก้มือ — รันสคริปต์ใหม่เมื่อเพิ่มธีม) — ธีมเริ่มต้น (cosmic) อยู่ใน tokens.css
  * มืด: เปลี่ยนพื้นผิว + สีปุ่มหลัก · สว่าง: กลับสเกลตัวอักษร/เส้น และกลับสเกล --color-white/zinc ของ Tailwind
  */
 [data-theme="thunder-x"] {
@@ -389,6 +389,94 @@
   --t-active: #fef1cf;
   --t-active-text: #1a1405;
   --t-accent: #fef1cf;
+  --t-chrome-bg: linear-gradient(180deg, var(--t-ga) 0%, var(--t-gb) 100%);
+  --header-desktop-chrome-start: var(--t-ga);
+  --header-desktop-chrome-end: var(--t-gb);
+  --header-desktop-chrome-bg: var(--t-gb);
+  --header-desktop-chrome-gradient: var(--t-chrome-bg);
+  --bottom-nav-bg: var(--t-gb);
+  --bottom-nav-radial: radial-gradient(ellipse 92% 150% at 50% 100%, color-mix(in srgb, var(--t-ga) 55%, var(--t-gb)) 0%, var(--t-gb) 70%);
+  --nav-top-line: rgba(255, 255, 255, 0.14);
+  --cosmic-chrome-border: rgba(255, 255, 255, 0.12);
+  --lobby-announcement-mobile-lead-fill: var(--t-gb);
+  --lobby-announcement-mobile-marquee-fill: var(--t-ga);
+  --lobby-announcement-mobile-fade-edge: var(--t-ga);
+  --lobby-section-title-band-start: color-mix(in srgb, var(--t-ga) 94%, transparent);
+  --lobby-section-title-band-mid: color-mix(in srgb, var(--t-ga) 70%, var(--t-gb));
+  --lobby-section-title-band-fade: color-mix(in srgb, var(--t-gb) 38%, transparent);
+  --lobby-section-title-band-tail: color-mix(in srgb, var(--t-gb) 10%, transparent);
+  --menu-drawer-scrim: radial-gradient(ellipse 110% 56% at 50% -4%, color-mix(in srgb, var(--t-ga) 60%, var(--t-gb)) 0%, transparent 74%), linear-gradient(180deg, var(--t-gb) 0%, color-mix(in srgb, var(--t-gb) 55%, black) 100%);
+  --menu-bottom: color-mix(in srgb, var(--t-gb) 60%, black);
+  --menu-border: color-mix(in srgb, var(--t-action) 80%, white);
+  --accent-primary: var(--t-accent);
+  --accent-highlight: var(--focus-ring);
+  --focus-ring: color-mix(in srgb, var(--t-accent) 70%, white);
+  --border-active: color-mix(in srgb, var(--t-accent) 55%, var(--border-subtle));
+  --line-tab-neon-gradient: linear-gradient(90deg, var(--t-active) 0%, color-mix(in srgb, var(--t-active) 78%, white) 100%);
+  --line-tab-neon-glow: 0 0 8px color-mix(in srgb, var(--t-active) 70%, transparent), 0 0 16px color-mix(in srgb, var(--t-active) 38%, transparent);
+  --category-active-gradient: linear-gradient(110deg, var(--t-active), color-mix(in srgb, var(--t-active) 78%, black));
+  --action-solid: var(--t-action);
+  --action-solid-hover: color-mix(in srgb, var(--t-action) 86%, white);
+  --action-gradient: linear-gradient(90deg, var(--t-action), color-mix(in srgb, var(--t-action) 78%, black));
+  --cta-primary-gradient: var(--action-gradient);
+  --cta-primary-fg: var(--t-action-text);
+  --btn-primary-gradient: var(--action-gradient);
+  --btn-primary-fg: var(--t-action-text);
+  --confirm-btn-gradient: linear-gradient(135deg, var(--t-action) 0%, color-mix(in srgb, var(--t-action) 78%, black) 100%);
+  --confirm-btn-fg: var(--t-action-text);
+  --confirm-btn-shadow: 0 6px 18px color-mix(in srgb, var(--t-action) 35%, transparent);
+  --auth-register-gradient: linear-gradient(180deg, color-mix(in srgb, var(--t-action) 100%, white) 0%, var(--t-action) 34%, color-mix(in srgb, var(--t-action) 78%, black) 100%);
+  --auth-register-border: color-mix(in srgb, var(--t-action) 80%, white);
+  --primary: var(--t-action);
+  --primary-foreground: var(--t-action-text);
+  --sidebar-primary: var(--t-action);
+  --chart-1: var(--t-action);
+  --chart-2: var(--t-accent);
+  --value-accent: var(--t-accent);
+  --toast-icon-info: var(--t-accent);
+  --glass-fill: linear-gradient(135deg, rgb(255 255 255 / 0.1), color-mix(in srgb, var(--t-accent) 16%, transparent));
+  --glass-fill-subtle: linear-gradient(135deg, rgb(255 255 255 / 0.07), color-mix(in srgb, var(--t-accent) 10%, transparent));
+  --chip-accent-start: color-mix(in srgb, var(--t-accent) 28%, transparent);
+  --chip-accent-end: color-mix(in srgb, var(--t-ga) 18%, transparent);
+  --nebula-violet: color-mix(in srgb, var(--t-accent) 30%, transparent);
+  --nebula-blue: color-mix(in srgb, var(--t-ga) 28%, transparent);
+  --cosmic-nebula-bg-image: radial-gradient(ellipse 55% 38% at 42% 0%, color-mix(in srgb, var(--t-accent) 20%, transparent), transparent 75%), radial-gradient(ellipse 42% 32% at 75% 0%, color-mix(in srgb, var(--t-ga) 18%, transparent), transparent 78%), radial-gradient(ellipse 30% 32% at 29% 55%, color-mix(in srgb, var(--t-gb) 26%, transparent), transparent 78%), radial-gradient(ellipse 32% 34% at 65% 54%, color-mix(in srgb, var(--t-accent) 12%, transparent), transparent 80%);
+}
+
+[data-theme="navy"] {
+  color-scheme: dark;
+  --cosmic-page-base: #06080b;
+  --surface-start: #0f1520;
+  --surface-mid: #0b1019;
+  --surface-end: #06080b;
+  --surface-hover: color-mix(in srgb, #0b1019 88%, white);
+  --surface-selected: color-mix(in srgb, #0b1019 78%, #f7edd2);
+  --surface-solid-outer: #0b1019;
+  --surface-solid-inner: #131c2b;
+  --sheet-row-fill: color-mix(in srgb, #131c2b 94%, white);
+  --sheet-row-fill-hover: color-mix(in srgb, #131c2b 88%, white);
+  --sheet-icon-well-fill: color-mix(in srgb, #131c2b 90%, white);
+  --sheet-field-fill: color-mix(in srgb, #131c2b 92%, white);
+  --sheet-field-fill-focus: color-mix(in srgb, #131c2b 86%, white);
+  --sheet-field-addon-bg: color-mix(in srgb, #131c2b 90%, black);
+  --cosmic-chrome-surface-bg: #0a0e14;
+  --cosmic-dialog-shell-bg: linear-gradient(168deg, #0f1520 0%, #0b1019 52%, #06080b 100%);
+  --cosmic-mobile-sheet-bg: linear-gradient(168deg, color-mix(in srgb, #0f1520 92%, white) 0%, #0f1520 46%, #0b1019 100%);
+  --cosmic-sheet-title-notch-bg: linear-gradient(180deg, color-mix(in srgb, #0f1520 90%, white) 0%, #0b1019 100%);
+  --cosmic-sheet-title-capsule-deep-bg: linear-gradient(to bottom, #0f1520, #06080b);
+  --hub-lobby-shell-bg: #0b1019;
+  --hub-lobby-chrome: #131c2b;
+  --hub-dialog-card-bg: color-mix(in srgb, #0f1520 78%, transparent);
+  --vip-panel-bg: #0f1520;
+  --border-subtle: color-mix(in srgb, #0f1520 82%, white);
+  --t-ga: #090c0f;
+  --t-gb: #0c121f;
+  --t-icon: #f7edd2;
+  --t-action: #f7edd2;
+  --t-action-text: #090c0f;
+  --t-active: #f7edd2;
+  --t-active-text: #090c0f;
+  --t-accent: #f7edd2;
   --t-chrome-bg: linear-gradient(180deg, var(--t-ga) 0%, var(--t-gb) 100%);
   --header-desktop-chrome-start: var(--t-ga);
   --header-desktop-chrome-end: var(--t-gb);

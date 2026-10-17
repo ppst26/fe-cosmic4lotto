@@ -155,7 +155,7 @@ export function LottoDesktopHeader({ logoSrc, loggedIn, wallet }: Props) {
     <div className="header-desktop" ref={rootRef}>
       <div className="dh-left">
         <Link href="/" className="dh-logo">
-          <Image src={logoSrc} alt="" width={100} height={60} className="dh-logo__img" priority unoptimized />
+          <Image src={logoSrc} alt="CM-SaturnLotto" width={1123} height={217} className="dh-logo__img" priority unoptimized />
         </Link>
 
         <button

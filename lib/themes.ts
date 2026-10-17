@@ -81,6 +81,17 @@ export const THEMES: ThemeOption[] = [
     "bgColor": "#000000"
   },
   {
+    "key": "navy",
+    "name": "Navy",
+    "isDark": true,
+    "colors": [
+      "#090c0f",
+      "#0c121f",
+      "#f7edd2"
+    ],
+    "bgColor": "#05070a"
+  },
+  {
     "key": "wisdom",
     "name": "Wisdom",
     "isDark": true,

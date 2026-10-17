@@ -69,9 +69,10 @@
 }
 
 .icon {
-  font-size: 22px;
+  display: grid;
+  place-content: center;
   line-height: 1;
-  opacity: 0.85;
+  color: var(--Text-Icon-Body);
 }
 
 .label {

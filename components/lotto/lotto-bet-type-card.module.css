@@ -131,3 +131,17 @@
   color: var(--Text-Icon-Body);
   cursor: not-allowed;
 }
+
+/* ธีมสว่าง: การ์ดใช้สีที่ 1 ของธีม (เข้ม) + ชื่อสีอ่อนให้อ่านออก */
+:global(html[data-mode="light"]) .card {
+  --card-from: color-mix(in srgb, var(--t-ga) 62%, #000);
+  --card-to: color-mix(in srgb, var(--t-ga) 50%, #000);
+}
+
+:global(html[data-mode="light"]) .name {
+  color: #fff;
+}
+
+:global(html[data-mode="light"]) .status {
+  color: #ffd0d0;
+}

@@ -39,7 +39,7 @@
     radial-gradient(90% 120% at 85% 40%, color-mix(in srgb, var(--tone) 38%, transparent) 0%, transparent 70%),
     linear-gradient(135deg, var(--BG-Surface-Normal), var(--BG-Surface-Darker));
   box-shadow: 0 6px 20px color-mix(in srgb, var(--tone) 18%, transparent);
-  color: #fff;
+  color: var(--ink);
   text-decoration: none;
   transition: transform 0.18s ease, box-shadow 0.18s ease;
 }
@@ -122,7 +122,7 @@
   font-size: 10px;
   line-height: 1.35;
   white-space: pre-line;
-  color: color-mix(in srgb, #fff 62%, transparent);
+  color: color-mix(in srgb, var(--ink) 62%, transparent);
 }
 
 .linkText b {
@@ -144,7 +144,7 @@
   border-radius: 14px;
   border: 1px solid var(--card-border);
   background: linear-gradient(135deg, var(--BG-Surface-Normal), var(--BG-Surface-Darker));
-  color: #fff;
+  color: var(--ink);
   text-decoration: none;
   transition: transform 0.18s ease;
 }
@@ -187,7 +187,7 @@
 .stripDesc {
   font-size: 10.5px;
   line-height: 1.4;
-  color: color-mix(in srgb, #fff 58%, transparent);
+  color: color-mix(in srgb, var(--ink) 58%, transparent);
 }
 
 .stripDescGrow {
@@ -199,7 +199,7 @@
   align-self: stretch;
   width: 1px;
   margin: 6px 0;
-  background: color-mix(in srgb, #fff 14%, transparent);
+  background: color-mix(in srgb, var(--ink) 14%, transparent);
 }
 
 .hex {
@@ -211,7 +211,7 @@
   margin-left: auto;
   clip-path: polygon(50% 0, 100% 25%, 100% 75%, 50% 100%, 0 75%, 0 25%);
   background: linear-gradient(160deg, #4d8dff, #2456d6);
-  color: #fff;
+  color: var(--ink);
 }
 
 .hexGold {
@@ -233,8 +233,15 @@
   height: 30px;
   padding: 0 8px;
   border-radius: 7px;
-  background: color-mix(in srgb, #fff 10%, var(--BG-Surface-Darker));
-  box-shadow: inset 0 1px 0 color-mix(in srgb, #fff 12%, transparent);
+  background: color-mix(in srgb, var(--ink) 10%, var(--BG-Surface-Darker));
+  box-shadow: inset 0 1px 0 color-mix(in srgb, var(--ink) 12%, transparent);
   font-size: 11px;
   font-weight: 700;
+}
+
+/* ธีมสว่าง: การ์ดใช้สีที่ 1 ของธีมที่เข้มลง + ตัวหนังสืออ่อน */
+:global(html[data-mode="light"]) .root {
+  --ink: #fff;
+  --BG-Surface-Normal: color-mix(in srgb, var(--t-ga) 58%, #000);
+  --BG-Surface-Darker: color-mix(in srgb, var(--t-ga) 42%, #000);
 }

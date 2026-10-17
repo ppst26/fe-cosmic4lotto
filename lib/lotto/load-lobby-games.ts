@@ -67,13 +67,16 @@ export function loadSlotShowcase(limit = 24): Promise<LobbyGameItem[]> {
   return loadSection("section-slots", limit);
 }
 
-/** mock — CM-SaturnLotto ยังไม่มีหน้ากีฬา ใช้ภาพใน public/ และลิงก์ไป /events (ทายผล) จนกว่าจะมีข้อมูลจริง */
+/** ค่ายกีฬา — ใช้ภาพใน public/sport · mock ลิงก์ไป /events จนกว่าจะมีหน้ากีฬาจริง */
 const SPORTS_MOCK: ReadonlyArray<{ id: string; title: string; image: string }> = [
-  { id: "sports-live", title: "กีฬาสด", image: "/tournament/sport-win.avif" },
-  { id: "sports-football", title: "ทายผลฟุตบอล", image: encodeURI("/event/ทายผลหบอล.avif") },
-  { id: "sports-boxing", title: "ทายผลมวย", image: encodeURI("/event/ทายผลมวย.avif") },
-  { id: "sports-esport", title: "อีสปอร์ต", image: "/tournament/esport.webp" },
-  { id: "sports-esport-2", title: "อีสปอร์ต ทัวร์นาเมนต์", image: "/tournament/esport2.webp" },
+  { id: "sport-afb88", title: "AFB88", image: "/sport/afb88.avif" },
+  { id: "sport-amb", title: "AMB Sportsbook", image: "/sport/amb.avif" },
+  { id: "sport-fb", title: "FB Sports", image: "/sport/fb.avif" },
+  { id: "sport-laliga", title: "La Liga", image: "/sport/laliga.avif" },
+  { id: "sport-lim", title: "LIM Sports", image: "/sport/lim.avif" },
+  { id: "sport-saba", title: "SABA Sports", image: "/sport/saba.avif" },
+  { id: "sport-sbobet", title: "SBOBET", image: "/sport/sbobet.avif" },
+  { id: "sport-ufabet", title: "UFABET", image: "/sport/ufabet.avif" },
 ];
 
 export async function loadSportsShowcase(): Promise<LobbyGameItem[]> {
