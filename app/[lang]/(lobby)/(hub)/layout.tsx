@@ -13,8 +13,15 @@ export default async function LobbyHubLayout({ children }: { children: ReactNode
   return (
     <>
       <LottoHomePage loggedIn={loggedIn} />
-      <div className="mx-auto w-full max-w-[1240px] px-4 pb-24 lg:hidden">
-        <HomeScreenShortcutPromo className="mt-6 lg:hidden" />
+      {/* .lotto-page เว้นล่าง 100px สำหรับ bottom nav — ดึงส่วนนี้ขึ้นมาชดเชย แล้วเว้นล่างเองเท่ากัน */}
+      <div
+        className="mx-auto w-full max-w-[1240px] px-3 lg:hidden"
+        style={{
+          marginTop: "calc(12px - 100px - env(safe-area-inset-bottom, 0px))",
+          paddingBottom: "calc(100px + env(safe-area-inset-bottom, 0px))",
+        }}
+      >
+        <HomeScreenShortcutPromo className="lg:hidden" />
       </div>
     </>
   );

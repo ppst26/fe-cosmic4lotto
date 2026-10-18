@@ -2,14 +2,16 @@ import type { LottoCardData, ThaiLottoResults } from "@/lib/lotto/mock-home-data
 import type { LobbyGameItem } from "@/lib/lotto/load-lobby-games";
 import { DesktopFeatureCards } from "./DesktopFeatureCards";
 import { GameShowcaseSection } from "./GameShowcaseSection";
+import { HallOfFameSection } from "./HallOfFameSection";
 import { HeroBanner } from "./HeroBanner";
 import { LottoBettingCarousels } from "./LottoBettingCarousels";
 import { LottoForeignResults } from "./LottoForeignResults";
-import { LottoMobileQuickMenu } from "./LottoMobileQuickMenu";
+import { LottoMobileHeroPanel, LottoMobileQuickMenu } from "./LottoMobileQuickMenu";
 import styles from "./lotto-cards.module.css";
 import layout from "./lobby-layout.module.css";
 import { ThaiLottoCard } from "./ThaiLottoCard";
 import { TicketCheckBar } from "./TicketCheckBar";
+import { TopLeadersSection } from "./TopLeadersSection";
 
 export type LottoHomeContentProps = {
   thai: ThaiLottoResults;
@@ -31,7 +33,9 @@ export function LottoHomeContent({
 }: LottoHomeContentProps) {
   return (
     <div className="flex flex-col gap-1 lg:gap-3">
-      <HeroBanner />
+      <LottoMobileHeroPanel>
+        <HeroBanner />
+      </LottoMobileHeroPanel>
       <DesktopFeatureCards />
       <LottoMobileQuickMenu />
       <div className={styles.lottoResultsWrap}>
@@ -44,6 +48,8 @@ export function LottoHomeContent({
         </div>
       </div>
       <TicketCheckBar />
+      <TopLeadersSection />
+      <HallOfFameSection />
       <GameShowcaseSection
         title="คาสิโนออนไลน์"
         iconSrc="/_nuxt/png/casino-icon.DHi208DR.png"

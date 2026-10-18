@@ -117,7 +117,7 @@ export function HomeScreenShortcutPromo({ className }: { className?: string }) {
 
   return (
     <section
-      className={cn("mt-4 px-3 pb-6 md:px-6 lg:hidden", className)}
+      className={cn("mt-1 lg:hidden", className)}
       aria-labelledby="home-shortcut-title"
     >
       <h2 id="home-shortcut-title" className="mb-2 text-sm font-bold text-[var(--text-on-light)]">

@@ -89,3 +89,24 @@
   );
   color: #fff;
 }
+
+/* กล่องครอบแบนเนอร์ + ปุ่มฝาก/ถอน (มือถือ): พื้นทึบอ่อนกว่าพื้นหลัก มุม 2xl · desktop ไม่มีกล่อง */
+.panel {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+@media (max-width: 1023px) {
+  .panel {
+    padding: 8px;
+    border-radius: 16px;
+    background: color-mix(in srgb, #fff 8%, var(--surface-start, #16101e));
+  }
+
+  /* หมวดเกมขยับลงจากกล่อง */
+  .panel + .root,
+  .panel ~ .root {
+    margin-top: 8px;
+  }
+}

@@ -1,6 +1,5 @@
 import Image from "next/image";
 import Link from "next/link";
-import { BahtIcon } from "./BahtIcon";
 import { HeaderAvatar } from "./HeaderAvatar";
 import { LottoDesktopHeader } from "./LottoDesktopHeader";
 import type { WalletSnapshot } from "@/lib/lotto/load-wallet-snapshot";
@@ -82,7 +81,6 @@ export function LottoSiteHeader({
                     <div className="wallet-row">
                       <span>เครดิต</span>
                       <span className="wallet-value">
-                        <BahtIcon />
                         {wallet.money}
                       </span>
                     </div>

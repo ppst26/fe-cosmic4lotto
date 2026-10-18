@@ -3,7 +3,8 @@
 import Image from "next/image";
 import Link from "@/lib/i18n/navigation";
 import { LottoShellFrame } from "@/components/layout/LottoShellChrome";
-import { LottoMobileQuickMenu } from "@/components/lotto/LottoMobileQuickMenu";
+import { HeroBanner } from "@/components/lotto/HeroBanner";
+import { LottoMobileHeroPanel, LottoMobileQuickMenu } from "@/components/lotto/LottoMobileQuickMenu";
 import { GamingFilterSidebar } from "./GamingFilterSidebar";
 import { GAMING_CATEGORIES, getGamingProviders, type GamingCategoryId } from "./gaming-category";
 
@@ -25,9 +26,15 @@ export function GamingCategoryPage({ categoryId }: { categoryId: GamingCategoryI
         </h1>
       </div>
 
+      <div className="lg:hidden">
+        <LottoMobileHeroPanel>
+          <HeroBanner />
+        </LottoMobileHeroPanel>
+      </div>
+
       <LottoMobileQuickMenu />
 
-      <div className="gaming-games-layout mx-auto w-full max-w-[1240px] px-4 py-3 lg:py-5">
+      <div className="gaming-games-layout w-full px-4 py-3 lg:py-5">
         <GamingFilterSidebar meta={meta} providers={providers} resultCount={providers.length} resultUnit="ค่าย" />
 
         <div className="flex min-w-0 flex-1 flex-col gap-3">
@@ -35,7 +42,7 @@ export function GamingCategoryPage({ categoryId }: { categoryId: GamingCategoryI
             {meta.th} <span className="text-[var(--text-muted)]">({providers.length.toLocaleString("en-US")} ค่าย)</span>
           </h2>
 
-          <div className="grid grid-cols-3 gap-2 sm:gap-3 lg:grid-cols-4 xl:grid-cols-5">
+          <div className="grid grid-cols-3 gap-2 sm:gap-3 lg:grid-cols-4 xl:grid-cols-6">
             {providers.map((entry, index) => (
               <Link key={entry.key} href={entry.href} aria-label={entry.title} className="group block min-w-0 no-underline">
                 <div className="gaming-provider-thumb relative grid aspect-square w-full place-items-center overflow-hidden transition duration-300 group-hover:-translate-y-1">
@@ -44,7 +51,7 @@ export function GamingCategoryPage({ categoryId }: { categoryId: GamingCategoryI
                       src={entry.image}
                       alt=""
                       fill
-                      sizes="(min-width: 1280px) 16vw, (min-width: 1024px) 20vw, 33vw"
+                      sizes="(min-width: 1280px) 14vw, (min-width: 1024px) 20vw, 33vw"
                       className="object-cover transition group-hover:scale-[1.04]"
                       priority={index < 6}
                     />

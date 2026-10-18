@@ -21,6 +21,9 @@ const SIDEBAR_ITEMS = [
   { id: "lottery", href: "/lottery", icon: "lotto", ns: "home", key: "categories.lottery" },
   { id: "casino", href: "/casino", icon: "casino", ns: "home", key: "categories.casino" },
   { id: "slots", href: "/slots", icon: "slot", ns: "home", key: "categories.slots" },
+  { id: "sports", href: "/sport", icon: "sport", ns: "home", key: "categories.sports" },
+  { id: "fishing", href: "/fishing", icon: "fish", ns: "home", key: "categories.fishing" },
+  { id: "cards", href: "/cards", icon: "card", ns: "home", key: "categories.cards" },
   { id: "promotions", href: "/promotions", icon: "promotion", ns: "nav", key: "menu.promotions" },
   { id: "activities", href: "/event", icon: "event", ns: "nav", key: "menu.activities" },
 ] as const;

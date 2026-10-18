@@ -1,0 +1,135 @@
+.subtitle {
+  margin: 0;
+  font-size: 11px;
+  color: var(--Text-Icon-Body);
+  opacity: 0.8;
+}
+
+.table {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+/* มือถือ: ผู้เล่น/ประเภท/รอบ ซ้อน 3 บรรทัด + เลขชิดขวา · desktop: 4 คอลัมน์ */
+.row {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  grid-template-areas:
+    "player numbers"
+    "type numbers"
+    "round numbers";
+  align-items: center;
+  column-gap: 8px;
+  row-gap: 2px;
+  padding: 8px 10px;
+  border-radius: 10px;
+  background: color-mix(in srgb, #fff 4%, var(--BG-Surface-Normal));
+}
+
+.headRow {
+  display: none;
+  background: transparent;
+  padding-top: 0;
+  padding-bottom: 0;
+  font-size: 11px;
+  color: var(--Text-Icon-Body);
+  opacity: 0.7;
+}
+
+.player {
+  grid-area: player;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-width: 0;
+}
+
+.avatar {
+  width: 32px;
+  height: 32px;
+  flex-shrink: 0;
+  border-radius: 50%;
+  object-fit: cover;
+  background: var(--BG-Surface-Darker);
+}
+
+.name {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--Text-Icon-Title);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.cell {
+  font-size: 12px;
+  color: var(--Text-Icon-Body);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.colType {
+  grid-area: type;
+}
+
+.colRound {
+  grid-area: round;
+  font-size: 11px;
+  opacity: 0.75;
+}
+
+.numbers {
+  grid-area: numbers;
+  display: flex;
+  gap: 4px;
+  justify-content: flex-end;
+}
+
+.digit {
+  display: grid;
+  place-items: center;
+  width: 22px;
+  height: 26px;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 800;
+  color: var(--Main-Secondary);
+  background: color-mix(in srgb, var(--Main-Secondary) 14%, transparent);
+}
+
+@media (min-width: 1024px) {
+  .row {
+    grid-template-columns: minmax(150px, 1.1fr) minmax(120px, 1fr) minmax(110px, 0.9fr) minmax(150px, 1.2fr);
+    grid-template-areas: "player type round numbers";
+    padding: 8px 14px;
+  }
+
+  .headRow {
+    display: grid;
+  }
+
+  .colRound {
+    font-size: 12px;
+    opacity: 1;
+  }
+
+  .headRow .colNumbers {
+    text-align: right;
+  }
+
+  .digit {
+    width: 26px;
+    height: 30px;
+    font-size: 15px;
+  }
+}
+
+.headIcon {
+  width: 32px;
+  height: 32px;
+  flex-shrink: 0;
+  color: var(--Main-Secondary);
+}

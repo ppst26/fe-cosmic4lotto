@@ -1,15 +1,37 @@
 "use client";
 
 import Image from "next/image";
+import type { ReactNode } from "react";
 import Link, { usePathname } from "@/lib/i18n/navigation";
 import { useDeposit } from "@/context/DepositContext";
 import { LOBBY_CATEGORIES, resolveLobbyCategory } from "./lobby-category";
 import layout from "./lobby-layout.module.css";
 import styles from "./lotto-mobile-quick.module.css";
 
-/** หมวดเกม + ปุ่มฝาก/ถอน — มือถือเท่านั้น (desktop ใช้ sidebar) · หมวด active ตาม route */
-export function LottoMobileQuickMenu() {
+/**
+ * มือถือ: กล่องพื้นทึบมนครอบ แบนเนอร์ (children) + ปุ่มฝาก/ถอน
+ * desktop: ไม่มีกล่อง/ปุ่ม (ใช้ sidebar) — แสดงเฉพาะ children
+ */
+export function LottoMobileHeroPanel({ children }: { children?: ReactNode }) {
   const { openDeposit, openWithdraw } = useDeposit();
+
+  return (
+    <div className={styles.panel}>
+      {children}
+      <div className={`${layout.hideDesktop} ${styles.actions}`}>
+        <button type="button" className={styles.btnPrimary} onClick={openDeposit}>
+          ฝากเงิน
+        </button>
+        <button type="button" className={styles.btnSecondary} onClick={openWithdraw}>
+          ถอนเงิน
+        </button>
+      </div>
+    </div>
+  );
+}
+
+/** หมวดเกม — มือถือเท่านั้น (desktop ใช้ sidebar) · หมวด active ตาม route */
+export function LottoMobileQuickMenu() {
   const active = resolveLobbyCategory(usePathname());
 
   return (
@@ -30,14 +52,6 @@ export function LottoMobileQuickMenu() {
           );
         })}
       </nav>
-      <div className={styles.actions}>
-        <button type="button" className={styles.btnPrimary} onClick={openDeposit}>
-          ฝากเงิน
-        </button>
-        <button type="button" className={styles.btnSecondary} onClick={openWithdraw}>
-          ถอนเงิน
-        </button>
-      </div>
     </div>
   );
 }

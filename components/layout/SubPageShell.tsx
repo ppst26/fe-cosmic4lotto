@@ -48,11 +48,12 @@ export function SubPageShell({ title, children, breadcrumbLabel, backHref = "/",
             <span className="lotto-fit__title">{title}</span>
           </div>
         ) : null}
-        <div className={`${desktopOnly}relative z-[1] mb-3 flex items-center gap-3 text-xs text-[var(--text-muted)]`}>
+        {/* breadcrumb แสดงเฉพาะมือถือ (PC ไม่ใช้) — พื้นอ่อนกว่าพื้นหลักเล็กน้อย ปุ่มย้อนกลับไม่มีพื้น */}
+        <div className={`${desktopOnly}relative z-[1] -mx-3 mb-3 flex items-center gap-2 bg-white/[0.06] px-4 py-1.5 text-xs text-[var(--text-muted)] lg:hidden`}>
           <Link
             href={backHref}
             aria-label="back"
-            className="inline-flex shrink-0 items-center gap-1.5 rounded-full border border-white/10 bg-[var(--soft-card)] px-3 py-1.5 font-semibold text-[var(--text-on-light)] no-underline hover:bg-[var(--soft-card-elevated)]"
+            className="inline-flex shrink-0 items-center gap-1.5 py-1.5 pr-1 font-semibold text-[var(--text-on-light)] no-underline"
           >
             <ArrowLeft className="h-3.5 w-3.5" />
           </Link>

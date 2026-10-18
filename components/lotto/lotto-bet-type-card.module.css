@@ -2,16 +2,16 @@
   display: flex;
   flex-direction: column;
   align-items: stretch;
-  gap: 10px;
+  gap: 8px;
   /* การ์ดใช้สีพื้นผิวมืดของธีม (--surface-start) + ขาวนิดเดียว ไล่เฉดซ้าย→ขวา — ไม่ใช้ --t-ga เพราะบางธีมเป็นสีสด (ชมพู ฯลฯ) */
   --card-from: color-mix(in srgb, var(--surface-start, var(--BG-Surface-Normal)) 94%, #fff);
   --card-to: color-mix(in srgb, var(--surface-start, var(--BG-Surface-Normal)) 97%, #fff);
   background: linear-gradient(90deg, var(--card-from), var(--card-to));
   border-radius: 10px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
-  padding: 14px 12px;
+  padding: 10px 12px;
   height: 100%;
-  min-height: 120px;
+  min-height: 92px;
 }
 
 .card {
@@ -106,20 +106,20 @@
   border-radius: 8px;
   font-size: 14px;
   font-weight: 600;
-  padding: 8px 12px;
+  padding: 6px 12px;
   text-align: center;
 }
 
 .btnBet {
-  /* ไล่เฉดซ้าย→ขวา สีปุ่มของธีม ปลายขวาเข้มชัด */
+  /* ธีมมืด: ไล่เฉดซ้าย→ขวา สีที่ 1 → สีที่ 2 ของธีมแบบเข้ม (ไม่ผสมขาว) ตัวหนังสือขาว */
   background: linear-gradient(
     to right,
-    var(--t-action, var(--Main-Primary)),
-    color-mix(in srgb, var(--t-action, var(--Main-Primary)) 52%, #000)
+    color-mix(in srgb, var(--t-ga) 84%, #fff),
+    color-mix(in srgb, var(--t-gb) 62%, #a78bfa)
   );
-  color: var(--t-action-text, #000);
+  color: #fff;
   text-decoration: none;
-  box-shadow: 0 0 4px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 0 4px rgba(0, 0, 0, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.12);
 }
 
 .btnBet:hover {
