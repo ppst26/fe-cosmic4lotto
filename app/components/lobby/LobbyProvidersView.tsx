@@ -2,14 +2,25 @@
 
 import { useMemo, useState } from "react";
 import { useT } from "@/lib/i18n/I18nProvider";
+import { CARDS_ITEMS } from "@/app/data/cardsProvidersData";
 import { CASINO_ITEMS } from "@/app/data/casinoProvidersData";
+import { FISHING_ITEMS } from "@/app/data/fishingProvidersData";
+import { SPORT_ITEMS } from "@/app/data/sportProvidersData";
 import { FEATURED_SLOT_PROVIDERS, GRID_SLOT_PROVIDERS } from "@/app/data/slotProvidersData";
 import { LobbyProviderCard } from "./LobbyProviderCard";
 import { LobbySearchBar } from "./LobbySearchBar";
 
 type LobbyProvidersViewProps = {
-  categoryId: "slots" | "casino";
+  categoryId: "slots" | "casino" | "fishing" | "sports" | "cards";
 };
+
+const TITLE_KEY = {
+  slots: "slots",
+  casino: "liveCasino",
+  fishing: "fishing",
+  sports: "sports",
+  cards: "cards",
+} as const;
 
 /**
  * รายการค่ายเกมของหมวดสล็อต/คาสิโน — ข้อมูลและตรรกะค้นหาเดียวกับ LobbyCategoryProviders ของ glass
@@ -28,15 +39,25 @@ export function LobbyProvidersView({ categoryId }: LobbyProvidersViewProps) {
     };
   }, [q]);
 
-  const casino = useMemo(() => {
-    if (!q) return CASINO_ITEMS;
-    return CASINO_ITEMS.filter(
+  const list = useMemo(() => {
+    const source =
+      categoryId === "casino"
+        ? CASINO_ITEMS
+        : categoryId === "fishing"
+          ? FISHING_ITEMS
+          : categoryId === "sports"
+            ? SPORT_ITEMS
+            : categoryId === "cards"
+              ? CARDS_ITEMS
+              : [];
+    if (!q) return source;
+    return source.filter(
       (item) => item.title.toLowerCase().includes(q) || item.provider.toLowerCase().includes(q),
     );
-  }, [q]);
+  }, [categoryId, q]);
 
   const total =
-    categoryId === "slots" ? (q ? slots.featured.length + slots.grid.length : 42) : casino.length;
+    categoryId === "slots" ? (q ? slots.featured.length + slots.grid.length : 42) : list.length;
 
   return (
     <section className="flex min-w-0 flex-col gap-4" aria-label={t("categoryProviders.listAriaLabel")}>
@@ -44,15 +65,15 @@ export function LobbyProvidersView({ categoryId }: LobbyProvidersViewProps) {
         value={query}
         onChange={setQuery}
         placeholder={
-          categoryId === "casino"
-            ? t("categoryProviders.searchPlaceholder.casino")
-            : t("categoryProviders.searchPlaceholder.default")
+          categoryId === "slots"
+            ? t("categoryProviders.searchPlaceholder.default")
+            : t(`categoryProviders.searchPlaceholder.${categoryId}` as "categoryProviders.searchPlaceholder.casino")
         }
       />
 
       <div className="flex items-baseline justify-between gap-3">
         <h2 className="text-base font-semibold text-[var(--text-on-light)] sm:text-lg">
-          {categoryId === "casino" ? t("categoryProviders.liveCasino") : t("categories.slots")}
+          {TITLE_KEY[categoryId] === "liveCasino" ? t("categoryProviders.liveCasino") : t(`categories.${TITLE_KEY[categoryId]}` as "categories.slots")}
         </h2>
         <span className="text-xs font-medium text-[var(--text-muted)] sm:text-sm">
           {t("categoryProviders.providerCount", { count: total })}
@@ -89,7 +110,7 @@ export function LobbyProvidersView({ categoryId }: LobbyProvidersViewProps) {
         </>
       ) : (
         <div className="grid grid-cols-3 gap-2.5 sm:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6">
-          {casino.map((item) => (
+          {list.map((item) => (
             <LobbyProviderCard
               key={item.id}
               href={item.href}
