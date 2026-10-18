@@ -3,12 +3,11 @@
 import React from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import type { VipRankId, VipRankTier } from "@/app/types/vip";
-import { getVipRankViewStatus, getVipTurnoverTarget } from "@/app/data/vipMockData";
+import { getVipRankViewStatus } from "@/app/data/vipMockData";
 import { VipRankEmblem } from "./VipRankEmblem";
-import { formatVipAmount } from "@/lib/format";
-import { toneClass } from "../ui/valueTone";
 import { cn } from "@/lib/utils";
 import { useT } from "@/lib/i18n/I18nProvider";
+import s from "./vip-page.module.css";
 
 interface VipRankCarouselProps {
   focusIndex: number;
@@ -18,35 +17,49 @@ interface VipRankCarouselProps {
   vipRankTiers: VipRankTier[];
 }
 
-const arrowClass =
-  "absolute top-[42%] z-20 flex h-9 w-9 -translate-y-1/2 cursor-pointer items-center justify-center rounded-full border-0 bg-[var(--soft-card-elevated)] text-[var(--text-on-light)] shadow-[var(--shadow-soft-sm)] transition-colors hover:bg-[var(--brand-soft)] disabled:pointer-events-none disabled:opacity-0";
-
-/** แรงค์กลาง + ปุ่มเลื่อน — แท็บแร็งค์ */
+/** เวทีแรงค์ — ตรากลางใหญ่ ข้างละ 1–2 ตราจาง (กดเลื่อนได้) + ปุ่มลูกศร — แท็บแร็งค์ */
 export function VipRankCarousel({ focusIndex, onFocusChange, playerRankId, vipRankTiers }: VipRankCarouselProps) {
   const t = useT("vip");
   const safeIndex = Math.max(0, Math.min(focusIndex, vipRankTiers.length - 1));
   const focused = vipRankTiers[safeIndex];
   const focusStatus = getVipRankViewStatus(focused.id, playerRankId);
   const isLocked = focusStatus === "locked";
-  const isCleared = focusStatus === "cleared";
-  const isActive = focusStatus === "active";
 
-  const statusLabel = isActive
-    ? t("rankStatus.current")
-    : isCleared
-      ? t("rankStatus.cleared")
-      : t("rankStatus.locked");
+  const statusLabel =
+    focusStatus === "active"
+      ? t("rankStatus.current")
+      : focusStatus === "cleared"
+        ? t("rankStatus.cleared")
+        : t("rankStatus.locked");
 
   const canPrev = safeIndex > 0;
   const canNext = safeIndex < vipRankTiers.length - 1;
 
+  /** ตราข้าง: offset -2,-1 ซ้าย · +1,+2 ขวา (ตัวไกลซ่อนบนจอแคบ) */
+  const side = (offset: number) => {
+    const tier = vipRankTiers[safeIndex + offset];
+    if (!tier) return <span className={cn(s.rankSide, Math.abs(offset) === 2 && s.rankSideFar)} aria-hidden />;
+    const locked = getVipRankViewStatus(tier.id, playerRankId) === "locked";
+    return (
+      <button
+        type="button"
+        className={cn(s.rankSide, Math.abs(offset) === 2 && s.rankSideFar)}
+        onClick={() => onFocusChange(safeIndex + offset)}
+        aria-label={tier.label}
+      >
+        <VipRankEmblem rankId={tier.id} size={Math.abs(offset) === 2 ? "sm" : "lg"} inactive={locked} playing={false} />
+        {tier.label}
+      </button>
+    );
+  };
+
   return (
-    <div className="relative mx-auto w-full max-w-[280px] sm:max-w-xs">
+    <div className={s.rankStage}>
       <button
         type="button"
         onClick={() => canPrev && onFocusChange(safeIndex - 1)}
         disabled={!canPrev}
-        className={cn(arrowClass, "left-0")}
+        className={cn(s.rankArrow, s.arrowL)}
         aria-label={t("carousel.previous")}
       >
         <ChevronLeft className="h-5 w-5" aria-hidden />
@@ -55,38 +68,23 @@ export function VipRankCarousel({ focusIndex, onFocusChange, playerRankId, vipRa
         type="button"
         onClick={() => canNext && onFocusChange(safeIndex + 1)}
         disabled={!canNext}
-        className={cn(arrowClass, "right-0")}
+        className={cn(s.rankArrow, s.arrowR)}
         aria-label={t("carousel.next")}
       >
         <ChevronRight className="h-5 w-5" aria-hidden />
       </button>
 
-      <div className="flex flex-col items-center gap-2 px-11 py-2 text-center">
+      {side(-2)}
+      {side(-1)}
+      <div className={s.rankMain}>
         <VipRankEmblem rankId={focused.id} size="xl" inactive={isLocked} playing={!isLocked} />
-        <p
-          className={`text-2xl font-semibold tracking-[0.15em] sm:text-[1.65rem] ${isLocked ? "text-[var(--text-muted)]" : ""}`}
-          style={isLocked ? undefined : { color: focused.accent }}
-        >
+        <p className={s.rankName} style={isLocked ? undefined : { color: focused.accent }}>
           {focused.label}
         </p>
-        <p
-          className={cn(
-            "text-xs font-semibold sm:text-sm",
-            isActive
-              ? "text-[var(--text-on-light)]"
-              : isCleared
-                ? toneClass("success")
-                : "text-[var(--text-muted)]",
-          )}
-        >
-          {statusLabel}
-        </p>
-        {!isActive && focused.id !== "silver" && (
-          <p className="text-xs text-[var(--text-muted)]">
-            {t("carousel.turnoverTarget", { amount: formatVipAmount(getVipTurnoverTarget(focused.id)) })}
-          </p>
-        )}
+        <p className={s.rankStatus}>{statusLabel}</p>
       </div>
+      {side(1)}
+      {side(2)}
     </div>
   );
 }

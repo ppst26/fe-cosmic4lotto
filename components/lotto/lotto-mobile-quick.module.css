@@ -1,8 +1,8 @@
 .root {
   display: flex;
   flex-direction: column;
-  gap: 18px;
-  margin-top: 4px;
+  gap: 8px;
+  margin-top: 0;
 }
 
 /* หมวดเกม 6 ช่อง — เลื่อนข้างได้เมื่อจอแคบ (ซ่อน scrollbar) */
@@ -10,7 +10,7 @@
   display: flex;
   gap: 8px;
   overflow-x: auto;
-  padding: 2px 2px 4px;
+  padding: 0 2px;
   scroll-snap-type: x proximity;
   scrollbar-width: none;
 }
@@ -28,7 +28,7 @@
   gap: 4px;
   font-size: 11px;
   color: var(--Text-Icon-Body);
-  padding: 8px 4px;
+  padding: 4px 4px;
   border-radius: 12px;
   border: 1px solid transparent;
   text-decoration: none;
@@ -46,7 +46,7 @@
   font-weight: 600;
 }
 
-/* ฝาก - ถอน เป็นแถวปุ่มคู่ใต้หมวดเกม */
+/* ฝาก - ถอน เป็นแถวปุ่มคู่ใต้หมวดเกม (เตี้ย ตัวหนังสือใหญ่) */
 .actions {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -59,8 +59,8 @@
   background: var(--btn-theme-gradient, linear-gradient(180deg, #ffe082 0%, #ffd15c 45%, #c9a227 100%));
   color: var(--btn-theme-fg, #2a0607);
   font-weight: 700;
-  font-size: 14px;
-  padding: 11px 8px;
+  font-size: 16px;
+  padding: 5px 8px;
 }
 
 .btnSecondary {
@@ -69,12 +69,23 @@
   background: var(--shade-mid);
   color: var(--t-action, #fff);
   font-weight: 700;
-  font-size: 14px;
-  padding: 11px 8px;
+  font-size: 16px;
+  padding: 5px 8px;
 }
 
 /* ธีมสว่าง: ปุ่มถอนใช้สีตัวหนังสือของธีม (สีปุ่มอ่อนเกินไปบนพื้นขาว) */
 :global(html[data-mode="light"]) .btnSecondary {
   color: var(--ink);
   border-color: color-mix(in srgb, var(--ink) 30%, transparent);
+}
+
+/* ธีมสว่าง: ปุ่มถอนเงินใช้สีที่ 1 ของธีม (ไล่เฉดบน→ล่าง) ตัวหนังสือสีขาว · ปุ่มฝากเงินคงสีเดิม */
+:global(html[data-mode="light"]) .btnSecondary {
+  border-color: transparent;
+  background: linear-gradient(
+    to bottom,
+    color-mix(in srgb, var(--t-ga) 88%, #fff),
+    color-mix(in srgb, var(--t-ga) 70%, #000)
+  );
+  color: #fff;
 }

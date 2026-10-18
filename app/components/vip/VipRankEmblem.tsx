@@ -49,7 +49,7 @@ export function VipRankEmblem({
   playing = true,
 }: {
   rankId: VipRankId;
-  size?: "xs" | "sm" | "lg" | "xl";
+  size?: "xs" | "sm" | "lg" | "xl" | "2xl";
   inactive?: boolean;
   playing?: boolean;
 }) {
@@ -64,7 +64,9 @@ export function VipRankEmblem({
   const [useStacked, setUseStacked] = useState(false);
 
   const dim =
-    size === "xl"
+    size === "2xl"
+      ? "h-40 w-40 sm:h-52 sm:w-52"
+      : size === "xl"
       ? "h-32 w-32 sm:h-36 sm:w-36"
       : size === "lg"
         ? "h-[88px] w-[88px]"
@@ -72,7 +74,7 @@ export function VipRankEmblem({
           ? "h-12 w-12"
           : "h-8 w-8";
   const gem =
-    size === "xl"
+    size === "xl" || size === "2xl"
       ? "h-10 w-10"
       : size === "lg"
         ? "h-7 w-7"

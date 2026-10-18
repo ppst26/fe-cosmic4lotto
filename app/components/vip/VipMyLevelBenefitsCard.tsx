@@ -1,51 +1,47 @@
 "use client";
 
 import React from "react";
+import Image from "next/image";
+import { ChevronRight } from "lucide-react";
 import type { VipPlayerState } from "@/app/types/vip";
 import { getVipBenefitCellValue, VIP_BENEFIT_COMPARISON_VALUES } from "@/app/data/vipMockData";
-import { vipBenefitDisplayRole } from "@/lib/semanticValue";
-import { toneClass } from "../ui/valueTone";
-import { cn } from "@/lib/utils";
 import { useT } from "@/lib/i18n/I18nProvider";
 import type { MessageKey } from "@/lib/i18n/messages";
+import s from "./vip-page.module.css";
 
-/** สิทธิ์ในแท็บระดับของฉัน — ตรงตารางสิทธิประโยชน์ */
-const MY_LEVEL_BENEFIT_ROWS: { id: string; labelKey: MessageKey<"vip"> }[] = [
+/** 4 สิทธิเด่นของแรงค์ปัจจุบัน — ตรงตารางสิทธิประโยชน์ */
+const TILES: { id: string; labelKey: MessageKey<"vip">; valueKey?: MessageKey<"vip"> }[] = [
   { id: "cashback", labelKey: "myLevelBenefits.cashback" },
   { id: "rolling", labelKey: "myLevelBenefits.rolling" },
-  { id: "diamond-deposit", labelKey: "myLevelBenefits.diamondDeposit" },
-  { id: "fast-withdraw", labelKey: "benefitRows.fastWithdraw" },
-  { id: "vip-manager", labelKey: "benefitRows.vipManager" },
+  { id: "diamond-deposit", labelKey: "tiles.depositGems" },
+  { id: "fast-withdraw", labelKey: "tiles.fastWithdraw", valueKey: "tiles.instant" },
 ];
 
 /** บล็อกสิทธิประโยชน์ของแรงค์ปัจจุบัน */
-export function VipMyLevelBenefitsCard({ player }: { player: VipPlayerState }) {
+export function VipMyLevelBenefitsCard({ player, onViewAll }: { player: VipPlayerState; onViewAll?: () => void }) {
   const t = useT("vip");
 
   return (
-    <section className="soft-panel w-full min-w-0 p-4">
-      <h3 className="mb-2.5 text-left text-base font-bold text-[var(--text-on-light)] sm:text-lg">
-        {t("tabs.benefits")}
-      </h3>
-      <ul className="grid grid-cols-1 gap-1.5 sm:grid-cols-2">
-        {MY_LEVEL_BENEFIT_ROWS.map((row) => {
-          const cell = getVipBenefitCellValue(row.id, player.currentRankId, VIP_BENEFIT_COMPARISON_VALUES);
-          const value = typeof cell === "string" ? cell : t(cell.labelKey);
+    <section className={s.panel}>
+      <div className={s.benHead}>
+        <h3 className={s.panelTitle}>{t("tabs.benefits")}</h3>
+        {onViewAll ? (
+          <button type="button" className={s.viewAll} onClick={onViewAll}>
+            {t("viewAll")}
+            <ChevronRight size={16} aria-hidden />
+          </button>
+        ) : null}
+      </div>
+      <ul className={s.tiles}>
+        {TILES.map((tile) => {
+          const cell = getVipBenefitCellValue(tile.id, player.currentRankId, VIP_BENEFIT_COMPARISON_VALUES);
+          const raw = typeof cell === "string" ? cell : t(cell.labelKey);
+          const value = tile.valueKey ? t(tile.valueKey) : raw;
           return (
-            <li
-              key={row.id}
-              className="flex min-w-0 items-center gap-1.5 rounded-[var(--radius-soft-sm)] bg-[var(--soft-card-elevated)] px-2.5 py-2"
-            >
-              <BenefitRowIcon rowId={row.id} />
-              <span className="min-w-0 flex-1 truncate text-sm text-[var(--text-muted)]">{t(row.labelKey)}</span>
-              <p
-                className={toneClass(
-                  vipBenefitDisplayRole(row.id, value),
-                  "shrink-0 text-right text-base leading-none sm:text-lg",
-                )}
-              >
-                {value}
-              </p>
+            <li key={tile.id} className={s.tile}>
+              <TileIcon id={tile.id} />
+              <span className={s.tileValue}>{value}</span>
+              <span className={s.tileLabel}>{t(tile.labelKey)}</span>
             </li>
           );
         })}
@@ -54,26 +50,46 @@ export function VipMyLevelBenefitsCard({ player }: { player: VipPlayerState }) {
   );
 }
 
-function BenefitRowIcon({ rowId }: { rowId: string }) {
-  const className = cn("h-5 w-5 shrink-0 text-[var(--brand-strong)]");
-  switch (rowId) {
+/** ภาพ 3D จาก public/assets (ต้นฉบับสีขาว ย้อมสีด้วย CSS) · ที่เหลือเป็น SVG เส้น */
+function TileIcon({ id }: { id: string }) {
+  const common = { viewBox: "0 0 48 48", fill: "none", stroke: "currentColor", strokeWidth: 2.2, className: s.tileIcon, "aria-hidden": true } as const;
+  switch (id) {
     case "cashback":
       return (
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" className={className} aria-hidden="true">
-          <path d="M7 7h10M7 12h6M7 17h4" strokeLinecap="round" />
-          <circle cx="17" cy="17" r="3" />
-        </svg>
+        <Image
+          src="/assets/coins/coins1.webp"
+          alt=""
+          width={56}
+          height={56}
+          className={`${s.tileImg} ${s.tintGold}`}
+          aria-hidden
+        />
+      );
+    case "diamond-deposit":
+      return (
+        <Image
+          src="/assets/gems/diamond.avif"
+          alt=""
+          width={56}
+          height={56}
+          className={`${s.tileImg}`}
+          aria-hidden
+        />
       );
     case "rolling":
       return (
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" className={className} aria-hidden="true">
-          <path d="M4 18V6M4 18h16M20 6v12" strokeLinecap="round" />
+        <svg {...common} stroke="currentColor">
+          <rect x="8" y="12" width="24" height="24" rx="5" transform="rotate(-12 20 24)" />
+          <rect x="22" y="18" width="18" height="18" rx="4" />
+          <circle cx="27" cy="23" r="1.4" fill="currentColor" />
+          <circle cx="35" cy="31" r="1.4" fill="currentColor" />
+          <circle cx="31" cy="27" r="1.4" fill="currentColor" />
         </svg>
       );
     default:
       return (
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" className={className} aria-hidden="true">
-          <path d="M12 3l2.2 6.8H21l-5.5 4 2.1 6.7L12 16.5 6.4 20.5l2.1-6.7L3 9.8h6.8L12 3z" strokeLinejoin="round" />
+        <svg {...common} stroke="currentColor">
+          <path d="M28 4 12 26h11l-3 18 16-23H25l3-17Z" strokeLinejoin="round" />
         </svg>
       );
   }

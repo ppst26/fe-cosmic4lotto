@@ -24,12 +24,14 @@ type SubPageShellProps = {
   hideBottomNav?: boolean;
   /** มือถือ: ใช้แถบหัวกะทัดรัด (ลูกศร + ชื่อ) แทน breadcrumb/h1 โดยไม่ล็อกความสูง */
   compactBar?: boolean;
+  /** ซ่อน h1 ใต้ breadcrumb (หน้าที่มี hero ของตัวเอง) */
+  hideTitle?: boolean;
 };
 
 /**
  * เปลือกหน้าย่อย (ธีมมืด-ทองของ lotto) — ใช้ header / sidebar / bottom nav ชุดเดียวกับหน้าแรก
  */
-export function SubPageShell({ title, children, breadcrumbLabel, backHref = "/", fit = false, hideBottomNav = false, compactBar = false }: SubPageShellProps) {
+export function SubPageShell({ title, children, breadcrumbLabel, backHref = "/", fit = false, hideBottomNav = false, compactBar = false, hideTitle = false }: SubPageShellProps) {
   const t = useT("nav");
   const crumb = breadcrumbLabel ?? title;
   /** fit: มือถือซ่อน breadcrumb + h1 ใช้แถบหัวกะทัดรัดแทน (desktop เหมือนเดิม) */
@@ -46,7 +48,7 @@ export function SubPageShell({ title, children, breadcrumbLabel, backHref = "/",
             <span className="lotto-fit__title">{title}</span>
           </div>
         ) : null}
-        <div className={`${desktopOnly}mb-3 flex items-center gap-3 text-xs text-[var(--text-muted)]`}>
+        <div className={`${desktopOnly}relative z-[1] mb-3 flex items-center gap-3 text-xs text-[var(--text-muted)]`}>
           <Link
             href={backHref}
             aria-label="back"
@@ -62,7 +64,7 @@ export function SubPageShell({ title, children, breadcrumbLabel, backHref = "/",
             <span className="truncate text-[var(--text-on-light)]">{crumb}</span>
           </nav>
         </div>
-        <h1 className={`${fit ? "hidden " : desktopOnly}mb-4 text-xl font-bold text-[var(--text-on-light)] sm:text-2xl`}>{title}</h1>
+        <h1 className={`${fit || hideTitle ? "hidden " : desktopOnly}mb-4 text-xl font-bold text-[var(--text-on-light)] sm:text-2xl`}>{title}</h1>
         {fit ? <div className="lotto-fit__body">{children}</div> : children}
       </div>
     </LottoShellFrame>

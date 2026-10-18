@@ -158,5 +158,5 @@
 /* ธีมสว่าง: ช่องผลหวยย่อยเป็นเทาอ่อน และตัวหนังสือเข้ม */
 :global(html[data-mode="light"]) .cell {
   --ink: #1b2230;
-  background: #eceef2;
+  background: #e4e5e9;
 }

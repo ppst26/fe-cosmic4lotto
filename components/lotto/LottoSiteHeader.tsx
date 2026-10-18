@@ -80,16 +80,11 @@ export function LottoSiteHeader({
                 <div className={`wallet-wrapper ${walletDesktopClass}`}>
                   <div className="wallet-lines">
                     <div className="wallet-row">
-                      <span>เงิน</span>
+                      <span>เครดิต</span>
                       <span className="wallet-value">
                         <BahtIcon />
                         {wallet.money}
                       </span>
-                    </div>
-                    <div className="gold-line" />
-                    <div className="wallet-row wallet-row--credit">
-                      <span>เครดิต</span>
-                      <span className="wallet-value">{wallet.credit}</span>
                     </div>
                   </div>
                   <div className="transfer-icon">

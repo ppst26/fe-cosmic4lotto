@@ -3,7 +3,7 @@
 .lottoResultsWrap {
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 4px;
   width: 100%;
 }
 
@@ -249,4 +249,19 @@
   width: 28px;
   object-fit: contain;
   filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.35));
+}
+
+/* ธีมสว่าง: การ์ดย่อยของผลหวยเป็นเทาอ่อน ตัวหนังสือเข้ม */
+:global(html[data-mode="light"]) :is(.card, .prizeBox) {
+  background: #e4e5e9;
+  color: #1b2230;
+}
+
+:global(html[data-mode="light"]) :is(.label, .awardLabel) {
+  color: #4a5265;
+  border-bottom-color: rgba(0, 0, 0, 0.12);
+}
+
+:global(html[data-mode="light"]) :is(.resultXl, .resultMd, .awardNumber) {
+  color: #1b2230;
 }

@@ -9,7 +9,7 @@ import { useT } from "@/lib/i18n/I18nProvider";
 export default function VipPage() {
   const t = useT("vip");
   return (
-    <SubPageShell title="VIP">
+    <SubPageShell title="VIP" hideTitle>
       <Suspense fallback={<p className="py-16 text-center text-sm text-[var(--text-muted)]">{t("status.loading")}</p>}>
         <VipPageContent />
       </Suspense>

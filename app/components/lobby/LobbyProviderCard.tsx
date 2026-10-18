@@ -8,7 +8,7 @@ type LobbyProviderCardProps = {
   /** ป้ายเล็กบนการ์ด เช่น LIVE / EXCLUSIVE / HOT */
   badges?: string[];
   ariaLabel?: string;
-  /** แสดงชื่อค่ายใต้รูป (คาสิโน) — สล็อตแสดงเฉพาะรูป */
+  /** ไม่แสดงชื่อใต้รูปแล้ว (คงไว้เพื่อให้ผู้เรียกเดิมไม่พัง) */
   showTitle?: boolean;
   priority?: boolean;
 };
@@ -18,16 +18,14 @@ export function LobbyProviderCard({
   href,
   title,
   coverSrc,
-  badges,
   ariaLabel,
-  showTitle = false,
   priority = false,
 }: LobbyProviderCardProps) {
   return (
     <Link
       href={href}
       aria-label={ariaLabel ?? title}
-      className="group relative flex min-w-0 flex-col overflow-hidden rounded-2xl border border-white/10 bg-[var(--soft-card-elevated)] no-underline transition hover:border-[var(--brand)]/60 active:scale-[0.98]"
+      className="group relative flex min-w-0 flex-col overflow-hidden rounded-md border border-white/10 bg-[var(--soft-card-elevated)] no-underline transition hover:border-[var(--brand)]/60 active:scale-[0.98]"
     >
       <div className="relative aspect-square w-full overflow-hidden bg-[var(--soft-surface)]">
         {coverSrc ? (
@@ -44,22 +42,7 @@ export function LobbyProviderCard({
             {title.charAt(0).toUpperCase()}
           </span>
         )}
-        {badges && badges.length > 0 ? (
-          <div className="absolute left-1.5 top-1.5 flex flex-wrap gap-1">
-            {badges.map((badge) => (
-              <span
-                key={badge}
-                className="rounded bg-[var(--brand)] px-1.5 py-0.5 text-[9px] font-bold uppercase leading-none text-[#2a0607]"
-              >
-                {badge}
-              </span>
-            ))}
-          </div>
-        ) : null}
       </div>
-      {showTitle ? (
-        <p className="truncate px-2 py-2 text-center text-xs font-semibold text-[var(--text-on-light)]">{title}</p>
-      ) : null}
     </Link>
   );
 }

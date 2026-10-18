@@ -1,15 +1,16 @@
 "use client";
 
 import React from "react";
+import Image from "next/image";
+import { ChevronRight } from "lucide-react";
 import type { VipModalTabId, VipPlayerState, VipRankTier } from "@/app/types/vip";
-import { getVipRankTier } from "@/app/data/vipMockData";
 import { VipBenefitsComparisonTable } from "./VipBenefitsComparisonTable";
 import { VipMaintainRankPanel } from "./VipMaintainRankPanel";
 import { VipMyLevelBenefitsCard } from "./VipMyLevelBenefitsCard";
 import { VipRankCarousel } from "./VipRankCarousel";
-import { VipRankEmblem } from "./VipRankEmblem";
 import { VipRankLevelUpCard } from "./VipRankLevelUpCard";
 import { useT } from "@/lib/i18n/I18nProvider";
+import s from "./vip-page.module.css";
 
 interface VipTabPanelsProps {
   tab: VipModalTabId;
@@ -18,44 +19,46 @@ interface VipTabPanelsProps {
   vipRankTiers: VipRankTier[];
   rankFocusIndex: number;
   onRankFocusChange: (index: number) => void;
+  onSelectTab?: (tab: VipModalTabId) => void;
 }
 
 /** เนื้อหาแท็บ VIP — มือถือเรียงแนวตั้ง · จอกว้าง (lg) แยก 2 คอลัมน์ */
-export function VipTabPanels({ tab, player, vipRankTiers, rankFocusIndex, onRankFocusChange }: VipTabPanelsProps) {
+export function VipTabPanels({
+  tab,
+  player,
+  vipRankTiers,
+  rankFocusIndex,
+  onRankFocusChange,
+  onSelectTab,
+}: VipTabPanelsProps) {
   const t = useT("vip");
 
   if (tab === "my-level") {
-    const currentTier = getVipRankTier(player.currentRankId);
-    const nextTier = player.nextRankId ? getVipRankTier(player.nextRankId) : null;
-
     return (
-      <div className="flex w-full flex-col items-center gap-4">
-        <div className="flex flex-col items-center text-center" aria-label={t("level.currentAriaLabel")}>
-          <p className="text-sm font-semibold text-[var(--text-muted)]">{t("level.label")}</p>
-          <div className="my-2">
-            <VipRankEmblem rankId={player.currentRankId} size="lg" />
-          </div>
-          <p className="text-2xl font-semibold tracking-[0.2em]" style={{ color: currentTier.accent }}>
-            {currentTier.label}
-          </p>
-          {nextTier ? (
-            <p className="mt-1 text-sm text-[var(--text-muted)]">
-              {t("level.next")} <span className="font-semibold text-[var(--text-on-light)]">{nextTier.label}</span>
-            </p>
-          ) : null}
+      <div className="grid w-full items-start gap-3.5 lg:grid-cols-2" aria-label={t("level.benefitsAndMaintainAriaLabel")}>
+        <div className="flex min-w-0 flex-col gap-3.5">
+          <VipRankLevelUpCard player={player} focusRankId={player.currentRankId} mode="current" />
+          <VipMaintainRankPanel activeRankId={player.currentRankId} />
         </div>
-
-        <div
-          className="grid w-full gap-3 lg:grid-cols-2"
-          aria-label={t("level.benefitsAndMaintainAriaLabel")}
-        >
-          <div className="flex min-w-0 flex-col gap-3">
-            <VipRankLevelUpCard player={player} focusRankId={player.currentRankId} mode="current" />
-            <VipMaintainRankPanel activeRankId={player.currentRankId} />
-          </div>
-          <div className="flex min-w-0 flex-col gap-3">
-            <VipMyLevelBenefitsCard player={player} />
-          </div>
+        <div className="flex min-w-0 flex-col gap-3.5">
+          <VipMyLevelBenefitsCard player={player} onViewAll={onSelectTab ? () => onSelectTab("benefits") : undefined} />
+          <section className={s.cta}>
+            <h3 className={s.ctaTitle}>CLIMB HIGHER</h3>
+            <p className={s.ctaSub}>{t("cta.sub")}</p>
+            <button type="button" className={s.ctaBtn} onClick={() => onSelectTab?.("benefits")}>
+              {t("cta.button")}
+              <ChevronRight size={16} aria-hidden />
+            </button>
+            <Image
+              src="/assets/check-in/diamon3.avif"
+              alt=""
+              width={260}
+              height={200}
+              sizes="(min-width: 1024px) 260px, 50vw"
+              className={s.ctaArt}
+              aria-hidden
+            />
+          </section>
         </div>
       </div>
     );
@@ -63,15 +66,13 @@ export function VipTabPanels({ tab, player, vipRankTiers, rankFocusIndex, onRank
 
   if (tab === "rank") {
     return (
-      <div className="grid w-full items-start gap-4 lg:grid-cols-2">
-        <div className="flex w-full flex-col items-center gap-3">
-          <VipRankCarousel
-            focusIndex={rankFocusIndex}
-            onFocusChange={onRankFocusChange}
-            playerRankId={player.currentRankId}
-            vipRankTiers={vipRankTiers}
-          />
-        </div>
+      <div className="flex w-full flex-col gap-3.5">
+        <VipRankCarousel
+          focusIndex={rankFocusIndex}
+          onFocusChange={onRankFocusChange}
+          playerRankId={player.currentRankId}
+          vipRankTiers={vipRankTiers}
+        />
         <VipRankLevelUpCard
           player={player}
           focusRankId={vipRankTiers[rankFocusIndex]?.id ?? player.currentRankId}

@@ -237,3 +237,14 @@
 :global(html[data-mode="light"]) .hubTitle {
   text-shadow: none;
 }
+
+/* ธีมสว่าง: ปุ่มถอนเงินใช้สีที่ 1 ของธีม (ไล่เฉดบน→ล่าง) ตัวหนังสือสีขาว · ปุ่มฝากเงินคงสีเดิม */
+:global(html[data-mode="light"]) .btnSecondary {
+  border-color: transparent;
+  background: linear-gradient(
+    to bottom,
+    color-mix(in srgb, var(--t-ga) 88%, #fff),
+    color-mix(in srgb, var(--t-ga) 70%, #000)
+  );
+  color: #fff;
+}

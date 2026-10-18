@@ -9,6 +9,9 @@ import { parseVipPageTab, VIP_PAGE_TAB_QUERY_KEY } from "@/lib/vipRoutes";
 import { VipTabPanels } from "./VipTabPanels";
 import { VipTabList } from "./VipTabList";
 import { useT } from "@/lib/i18n/I18nProvider";
+import { getVipRankTier } from "@/app/data/vipMockData";
+import { VipRankEmblem } from "./VipRankEmblem";
+import s from "./vip-page.module.css";
 
 interface VipPageContentProps {
   /** ใน hub modal — สลับแท็บเป็น state ในเครื่อง ไม่เขียน URL */
@@ -59,9 +62,32 @@ function VipPageContentInner({
 }) {
   const currentRankIndex = vipRankTiers.findIndex((tier) => tier.id === player.currentRankId);
   const [rankFocusIndex, setRankFocusIndex] = useState(currentRankIndex >= 0 ? currentRankIndex : 0);
+  const t = useT("vip");
+  const currentTier = getVipRankTier(player.currentRankId);
+  const nextTier = player.nextRankId ? getVipRankTier(player.nextRankId) : null;
 
   return (
-    <div className="flex min-h-0 flex-col gap-4">
+    <div className={s.root}>
+      <section className={s.hero}>
+        <div className={s.heroText}>
+          <h2 className={s.heroVip}>VIP</h2>
+          <p className={s.heroTag}>{t("hero.tagline")}</p>
+          <p className={s.heroSub}>{t("hero.sub")}</p>
+        </div>
+        <div className={s.heroEmblem} aria-label={t("level.currentAriaLabel")}>
+          <div className={s.emblemWrap}>
+            <VipRankEmblem rankId={player.currentRankId} size="xl" />
+          </div>
+          <div className={s.pedestal} aria-hidden />
+          <p className={s.heroRank}>{currentTier.label}</p>
+          {nextTier ? (
+            <p className={s.heroNext}>
+              {t("level.next")} <b>{nextTier.label}</b>
+            </p>
+          ) : null}
+        </div>
+      </section>
+
       <VipTabList activeTab={tab} onSelect={onSelectTab} />
 
       <div key={tab} className="min-h-0 animate-fade-in pb-1">
@@ -71,6 +97,7 @@ function VipPageContentInner({
           vipRankTiers={vipRankTiers}
           rankFocusIndex={rankFocusIndex}
           onRankFocusChange={setRankFocusIndex}
+          onSelectTab={onSelectTab}
         />
       </div>
     </div>

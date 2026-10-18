@@ -1,6 +1,6 @@
 .section {
   /* มือถือ: เว้นระยะจาก header ด้านบน (desktop ไม่ต้องเว้น) */
-  margin-top: 12px;
+  margin-top: 8px;
   position: relative;
   overflow: hidden;
   border-radius: 12px;

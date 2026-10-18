@@ -1,24 +1,45 @@
 "use client";
 
+import { Crown, Gift, Trophy } from "lucide-react";
 import type { VipModalTabId } from "@/app/types/vip";
-import { SoftLineTabs } from "../ui/SoftLineTabs";
 import { VIP_PAGE_TABS } from "./vipTabConfig";
 import { useT } from "@/lib/i18n/I18nProvider";
+import { cn } from "@/lib/utils";
+import s from "./vip-page.module.css";
 
 interface VipTabListProps {
   activeTab: VipModalTabId;
   onSelect: (tab: VipModalTabId) => void;
 }
 
-/** แท็บ VIP — ระดับของฉัน / แร็งค์ / สิทธิประโยชน์ */
+const TAB_ICON: Record<VipModalTabId, typeof Crown> = {
+  "my-level": Crown,
+  rank: Trophy,
+  benefits: Gift,
+};
+
+/** แท็บ VIP — แคปซูลเดียว: ระดับของฉัน / แร็งค์ / สิทธิประโยชน์ */
 export function VipTabList({ activeTab, onSelect }: VipTabListProps) {
   const t = useT("vip");
   return (
-    <SoftLineTabs
-      tabs={VIP_PAGE_TABS.map((tab) => ({ id: tab.id, label: t(tab.labelKey) }))}
-      activeId={activeTab}
-      onSelect={onSelect}
-      ariaLabel={t("tabs.ariaLabel")}
-    />
+    <div role="tablist" aria-label={t("tabs.ariaLabel")} className={s.tabs}>
+      {VIP_PAGE_TABS.map((tab) => {
+        const Icon = TAB_ICON[tab.id];
+        const active = tab.id === activeTab;
+        return (
+          <button
+            key={tab.id}
+            type="button"
+            role="tab"
+            aria-selected={active}
+            onClick={() => onSelect(tab.id)}
+            className={cn(s.tab, active && s.tabActive)}
+          >
+            <Icon aria-hidden />
+            {t(tab.labelKey)}
+          </button>
+        );
+      })}
+    </div>
   );
 }

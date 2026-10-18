@@ -76,5 +76,23 @@
     "play": "Play",
     "unitDays": "days",
     "unitTimes": "times"
+  },
+  "hero": {
+    "tagline": "More exclusive privileges",
+    "sub": "The more you play, the more you get"
+  },
+  "cta": {
+    "sub": "More privileges at every level",
+    "button": "View VIP level details"
+  },
+  "viewAll": "View All",
+  "tiles": {
+    "instant": "Instant",
+    "fastWithdraw": "Fast Withdrawal",
+    "depositGems": "Deposit Gems"
+  },
+  "allLevels": {
+    "title": "All VIP levels",
+    "details": "Details"
   }
 }

@@ -18,6 +18,16 @@
   padding: 10px 8px;
 }
 
+/* มือถือ/แท็บเล็ต: ไม่มีการ์ดนอก — หัวข้อและแถวการ์ดวางบนพื้นหน้าโดยตรง */
+@media (max-width: 1023px) {
+  .section {
+    background: none;
+    border-radius: 0;
+    padding: 0;
+    gap: 4px;
+  }
+}
+
 .sectionCompact {
   padding: 8px 6px;
   border-radius: 10px;
@@ -108,9 +118,10 @@
 
 @media (max-width: 767px) {
   .trackMode7Grid {
-    --carousel-visible: 2.15;
-    --carousel-peek: 0.35;
-    --carousel-peek-gaps: 2;
+    /* มือถือ: เห็นเต็ม 3 ใบ + โผล่ใบที่ 4 ประมาณครึ่งใบ (คาสิโน สล็อต กีฬา) */
+    --carousel-visible: 3;
+    --carousel-peek: 0.5;
+    --carousel-peek-gaps: 3;
   }
 }
 

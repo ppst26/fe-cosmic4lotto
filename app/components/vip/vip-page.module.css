@@ -1,0 +1,706 @@
+/* หน้า VIP — สีทั้งหมดอิงธีม: พื้นการ์ด --t-ga → --t-gb · เน้นด้วย --t-accent (โหมดสว่างใช้สีอ่อนจาก --t-ga) */
+.root {
+  --v-ink: #f4f1fb;
+  --v-acc: var(--t-accent, #f7edd2);
+  --v-muted: color-mix(in srgb, var(--v-ink) 62%, transparent);
+  --v-line: color-mix(in srgb, var(--v-acc) 26%, transparent);
+  --v-glow: color-mix(in srgb, var(--v-acc) 16%, transparent);
+  --v-sub: color-mix(in srgb, var(--v-acc) 78%, var(--v-ink));
+  --v-gold: linear-gradient(
+    180deg,
+    color-mix(in srgb, var(--v-acc) 55%, #fff) 0%,
+    var(--v-acc) 48%,
+    color-mix(in srgb, var(--v-acc) 62%, #000) 100%
+  );
+  --v-panel: linear-gradient(160deg, color-mix(in srgb, var(--t-gb, #140c1f) 90%, #fff) 0%, var(--t-ga, #0c090f) 100%);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  color: var(--v-ink);
+}
+
+:global(html[data-mode="light"]) .root {
+  --v-acc: color-mix(in srgb, var(--t-ga, #0c090f) 35%, #fff);
+}
+
+/* ── hero ── */
+/* hero ดันขึ้นไปซ้อนใต้แถว breadcrumb ของ SubPageShell */
+.hero {
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 4px;
+  min-height: 190px;
+  margin: -44px -12px 0;
+  padding: 48px 12px 0;
+  overflow: hidden;
+  border-radius: 0 0 18px 18px;
+  background:
+    radial-gradient(1.5px 1.5px at 14% 30%, rgba(255, 255, 255, 0.9) 50%, transparent 52%),
+    radial-gradient(1.5px 1.5px at 30% 72%, rgba(255, 255, 255, 0.7) 50%, transparent 52%),
+    radial-gradient(2px 2px at 46% 22%, rgba(255, 255, 255, 0.8) 50%, transparent 52%),
+    radial-gradient(1.5px 1.5px at 60% 85%, rgba(255, 255, 255, 0.7) 50%, transparent 52%),
+    radial-gradient(2px 2px at 70% 14%, rgba(255, 255, 255, 0.9) 50%, transparent 52%),
+    radial-gradient(1.5px 1.5px at 88% 24%, rgba(255, 255, 255, 0.7) 50%, transparent 52%),
+    radial-gradient(1.5px 1.5px at 94% 60%, rgba(255, 255, 255, 0.8) 50%, transparent 52%),
+    radial-gradient(circle at 72% 42%, var(--v-glow), transparent 32%),
+    radial-gradient(55% 70% at 88% 20%, color-mix(in srgb, var(--v-acc) 22%, transparent), transparent 70%),
+    radial-gradient(45% 60% at 6% 95%, var(--v-glow), transparent 70%),
+    linear-gradient(180deg, color-mix(in srgb, var(--t-ga, #0c090f) 82%, #000) 0%, var(--t-gb, #140c1f) 100%);
+}
+
+.heroText {
+  position: relative;
+  z-index: 1;
+  align-self: center;
+  min-width: 0;
+  padding: 6px 0 14px 4px;
+}
+
+.heroVip {
+  margin: 0;
+  font-family: "Cinzel", "Trajan Pro", Georgia, "Times New Roman", serif;
+  font-size: clamp(56px, 16vw, 84px);
+  font-weight: 700;
+  line-height: 0.9;
+  letter-spacing: 0.02em;
+  background: var(--v-gold);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  filter: drop-shadow(0 3px 10px var(--v-glow));
+}
+
+.heroTag {
+  margin: 8px 0 0;
+  font-size: clamp(16px, 4.6vw, 20px);
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.heroSub {
+  margin: 2px 0 0;
+  font-size: 13px;
+  color: var(--v-sub);
+}
+
+.heroEmblem {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex: 0 0 auto;
+  flex-direction: column;
+  align-items: center;
+  padding-bottom: 10px;
+  text-align: center;
+}
+
+/* ตราแรงค์ลอยเหนือแท่น — แท่นวงรีซ้อน 2 ชั้นขอบสีเน้นของธีม */
+.emblemWrap {
+  position: relative;
+  z-index: 2;
+  margin-bottom: -12px;
+  filter: drop-shadow(0 10px 18px rgba(0, 0, 0, 0.55));
+}
+
+.pedestal {
+  position: relative;
+  width: 150px;
+  height: 36px;
+  border-radius: 50%;
+  background: radial-gradient(ellipse at 50% 35%, var(--t-gb, #140c1f) 0%, var(--t-ga, #0c090f) 75%);
+  box-shadow:
+    0 0 0 2px color-mix(in srgb, var(--v-acc) 70%, #000),
+    0 0 22px var(--v-glow),
+    inset 0 -6px 12px rgba(0, 0, 0, 0.6);
+}
+
+.pedestal::after {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  inset: 12px -12px -14px;
+  border-radius: 50%;
+  background: linear-gradient(180deg, var(--t-gb, #140c1f), var(--t-ga, #0c090f));
+  box-shadow: 0 0 0 1px var(--v-line), 0 8px 20px rgba(0, 0, 0, 0.6);
+}
+
+.heroRank {
+  position: relative;
+  z-index: 3;
+  margin: -25px 0 0;
+  font-size: clamp(20px, 5.4vw, 26px);
+  font-weight: 800;
+  line-height: 1.1;
+  letter-spacing: 0.08em;
+  background: var(--v-gold);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent !important;
+}
+
+.heroNext {
+  position: relative;
+  z-index: 3;
+  margin: 2px 0 0;
+  font-size: 12px;
+  color: var(--v-muted);
+}
+
+.heroNext b {
+  color: var(--v-ink);
+  letter-spacing: 0.04em;
+}
+
+/* ── tabs (แคปซูลเดียว · แท็บละเท่ากัน · active ใช้สีปุ่มของธีม) ── */
+.tabs {
+  display: flex;
+  width: 100%;
+  overflow: hidden;
+  border-radius: 12px;
+  border: 1px solid var(--v-line);
+  background: var(--v-panel);
+}
+
+.tab {
+  position: relative;
+  display: flex;
+  flex: 1 1 0;
+  min-width: 0;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  min-height: 42px;
+  padding: 0 6px;
+  border: 0;
+  background: transparent;
+  color: var(--v-muted);
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: color 0.2s;
+}
+
+.tab.tabActive::before,
+.tab.tabActive + .tab::before {
+  display: none;
+}
+
+.tab + .tab::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 25%;
+  bottom: 25%;
+  width: 1px;
+  background: var(--v-line);
+}
+
+.tab svg {
+  width: 18px;
+  height: 18px;
+  flex: 0 0 auto;
+}
+
+.tabActive {
+  color: var(--btn-theme-fg, var(--t-action-text, #0c090f));
+  background: var(--btn-theme-gradient, var(--v-acc));
+}
+
+.tab:not(.tabActive):hover {
+  color: var(--v-ink);
+}
+
+/* ── panels ── */
+.panel {
+  position: relative;
+  min-width: 0;
+  padding: 12px;
+  border-radius: 14px;
+  border: 1px solid var(--v-line);
+  background:
+    radial-gradient(90% 70% at 50% -20%, var(--v-glow), transparent 60%),
+    var(--v-panel);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.06);
+  color: var(--v-ink);
+}
+
+.infoIcon {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  margin-left: 6px;
+  vertical-align: -2px;
+  color: var(--v-sub);
+}
+
+.panelHead {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.panelTitle {
+  margin: 0;
+  font-size: 17px;
+  font-weight: 800;
+  line-height: 1.15;
+  white-space: nowrap;
+}
+
+.hl {
+  color: var(--v-acc);
+}
+
+.panelSub {
+  margin: 4px 0 0;
+  font-size: 12px;
+  color: var(--v-sub);
+}
+
+.percentWrap {
+  display: flex;
+  flex: 1 1 auto;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 4px;
+  max-width: 46%;
+}
+
+.percent {
+  font-size: 28px;
+  font-weight: 800;
+  line-height: 1;
+  background: var(--v-gold);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.percent small {
+  font-size: 0.62em;
+  font-weight: 700;
+}
+
+.percentWrap .bar {
+  width: 100%;
+}
+
+.daysBox {
+  flex: 0 0 auto;
+  min-width: 76px;
+  padding: 5px 10px;
+  text-align: center;
+  border-radius: 12px;
+  border: 1px solid var(--v-line);
+  background: rgba(0, 0, 0, 0.3);
+}
+
+.daysNum {
+  display: block;
+  font-size: 24px;
+  font-weight: 800;
+  line-height: 1;
+  background: var(--v-gold);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.daysLabel {
+  display: block;
+  margin-top: 1px;
+  font-size: 11px;
+  color: var(--v-muted);
+}
+
+.metrics {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+  margin-top: 10px;
+}
+
+/* เส้นคั่นกลางระหว่างกล่องฝาก/เทิร์น */
+.metrics::before {
+  content: "";
+  position: absolute;
+  top: 8px;
+  bottom: 8px;
+  left: 50%;
+  width: 1px;
+  background: var(--v-line);
+}
+
+.metric {
+  min-width: 0;
+  padding: 8px 8px 7px;
+  border-radius: 10px;
+  border: 1px solid color-mix(in srgb, var(--v-acc) 16%, transparent);
+  background: rgba(0, 0, 0, 0.28);
+}
+
+/* ยอดยาว (14,647 / 10,000) ตกไปบรรทัดถัดไปแทนที่จะล้นกล่อง */
+.metricTop {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1px 4px;
+}
+
+.metricLabel {
+  display: flex;
+  flex: 0 0 auto;
+  min-width: 0;
+  align-items: center;
+  gap: 4px;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.metricLabel svg {
+  width: 16px;
+  height: 16px;
+  flex: 0 0 auto;
+  color: var(--v-acc);
+}
+
+.metricTurn .metricLabel svg {
+  color: var(--v-sub);
+}
+
+.metricAmt {
+  margin-left: auto;
+  font-size: 12px;
+  white-space: nowrap;
+  color: var(--v-muted);
+  font-variant-numeric: tabular-nums;
+}
+
+.metricAmt b {
+  color: var(--v-ink);
+  font-weight: 700;
+}
+
+/* จอแคบ: ยอดลงบรรทัดของตัวเองเสมอ (กล่องฝากกับเทิร์นสูงเท่ากัน) */
+@media (max-width: 420px) {
+  .metricAmt {
+    flex: 0 0 100%;
+    text-align: right;
+  }
+}
+
+.bar {
+  height: 8px;
+  margin-top: 8px;
+  overflow: hidden;
+  border-radius: 999px;
+  border: 1px solid var(--v-line);
+  background: rgba(0, 0, 0, 0.35);
+}
+
+.barFill {
+  height: 100%;
+  border-radius: 999px;
+  transition: width 0.5s;
+}
+
+.barGold {
+  background: linear-gradient(90deg, color-mix(in srgb, var(--v-acc) 62%, #000), color-mix(in srgb, var(--v-acc) 70%, #fff));
+}
+
+.barPurple {
+  background: linear-gradient(90deg, color-mix(in srgb, var(--v-acc) 38%, #000), color-mix(in srgb, var(--v-acc) 88%, #000));
+}
+
+.barDone {
+  background: linear-gradient(90deg, #14c996, #3be8b0);
+}
+
+.barTop {
+  height: 7px;
+  margin: 0;
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.metricFoot {
+  margin-top: 6px;
+  text-align: right;
+  font-size: 12px;
+  color: var(--v-muted);
+}
+
+.done {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  color: #3be8b0;
+  font-weight: 600;
+}
+
+.locked {
+  opacity: 0.6;
+}
+
+/* ── benefits tiles ── */
+.benHead {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.viewAll {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 5px 12px;
+  border-radius: 999px;
+  border: 1px solid color-mix(in srgb, var(--v-acc) 60%, transparent);
+  background: var(--v-glow);
+  color: var(--v-ink);
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.tiles {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 6px;
+  margin: 10px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.tile {
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+  align-items: center;
+  gap: 3px;
+  padding: 8px 2px 8px;
+  text-align: center;
+  border-radius: 10px;
+  border: 1px solid var(--v-line);
+  background: rgba(0, 0, 0, 0.28);
+}
+
+.tileIcon {
+  width: 40px;
+  height: 40px;
+  color: var(--v-acc);
+}
+
+/* ภาพ 3D จาก public/assets */
+.tileImg {
+  width: 44px;
+  height: 44px;
+  object-fit: contain;
+  filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.45));
+}
+
+.tintGold {
+  filter: sepia(1) saturate(2.8) hue-rotate(-8deg) brightness(1.02) drop-shadow(0 4px 8px rgba(0, 0, 0, 0.45));
+}
+
+.tileValue {
+  max-width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-size: 16px;
+  font-weight: 800;
+  line-height: 1.1;
+  background: var(--v-gold);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.tileLabel {
+  font-size: 11px;
+  line-height: 1.2;
+  color: var(--v-ink);
+}
+
+/* ── banner CLIMB HIGHER ── */
+.cta {
+  position: relative;
+  display: flex;
+  min-height: 130px;
+  flex-direction: column;
+  justify-content: center;
+  gap: 4px;
+  padding: 12px 38% 12px 12px;
+  overflow: hidden;
+  border-radius: 14px;
+  border: 1px solid var(--v-line);
+  background:
+    radial-gradient(50% 90% at 88% 60%, color-mix(in srgb, var(--v-acc) 20%, transparent), transparent 70%),
+    var(--v-panel);
+}
+
+.ctaArt {
+  position: absolute;
+  right: -6px;
+  bottom: -8px;
+  width: 44%;
+  max-width: 220px;
+  height: auto;
+  object-fit: contain;
+  filter: drop-shadow(0 8px 18px rgba(0, 0, 0, 0.5));
+}
+
+.ctaTitle {
+  margin: 0;
+  font-size: clamp(20px, 6vw, 26px);
+  font-weight: 800;
+  letter-spacing: 0.02em;
+  white-space: nowrap;
+  background: var(--v-gold);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.ctaSub {
+  margin: 0;
+  font-size: 13px;
+  line-height: 1.3;
+}
+
+.ctaBtn {
+  position: relative;
+  z-index: 1;
+  display: inline-flex;
+  width: fit-content;
+  align-items: center;
+  gap: 4px;
+  margin-top: 6px;
+  padding: 6px 12px;
+  border-radius: 999px;
+  border: 1px solid color-mix(in srgb, var(--v-acc) 60%, transparent);
+  background: rgba(0, 0, 0, 0.45);
+  color: var(--v-ink);
+  font-size: 12px;
+  font-weight: 600;
+  white-space: nowrap;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+@media (min-width: 1024px) {
+  .hero {
+    min-height: 240px;
+    margin-inline: 0;
+    padding: 48px 32px 0;
+    border-radius: 18px;
+  }
+
+  .heroEmblem {
+    margin-right: 6%;
+  }
+
+  .panel {
+    padding: 16px;
+  }
+}
+
+/* ── แท็บแร็งค์: เวทีตราแรงค์ (ข้างละ 1–2 ตราจาง) ── */
+.rankStage {
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  gap: 2px;
+  min-height: 190px;
+  padding: 6px 40px 4px;
+  overflow: hidden;
+  border-radius: 14px;
+  background:
+    radial-gradient(45% 70% at 50% 45%, var(--v-glow), transparent 70%),
+    radial-gradient(70% 90% at 50% 100%, color-mix(in srgb, var(--v-acc) 14%, transparent), transparent 70%);
+}
+
+.rankSide {
+  display: flex;
+  flex: 0 0 auto;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+  padding: 0;
+  border: 0;
+  background: none;
+  color: var(--v-muted);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  opacity: 0.8;
+  cursor: pointer;
+}
+
+.rankSideFar {
+  display: none;
+}
+
+@media (min-width: 420px) {
+  .rankSideFar {
+    display: flex;
+    opacity: 0.5;
+  }
+}
+
+.rankMain {
+  display: flex;
+  flex: 0 0 auto;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.rankName {
+  margin: -4px 0 0;
+  font-size: 20px;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+}
+
+.rankStatus {
+  margin: 0;
+  font-size: 12px;
+  color: var(--v-muted);
+}
+
+.rankArrow {
+  position: absolute;
+  top: 45%;
+  z-index: 2;
+  display: grid;
+  width: 30px;
+  height: 30px;
+  place-items: center;
+  transform: translateY(-50%);
+  border-radius: 999px;
+  border: 1px solid var(--v-line);
+  background: rgba(0, 0, 0, 0.55);
+  color: var(--v-ink);
+  cursor: pointer;
+}
+
+.rankArrow:disabled {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.arrowL {
+  left: 6px;
+}
+
+.arrowR {
+  right: 6px;
+}

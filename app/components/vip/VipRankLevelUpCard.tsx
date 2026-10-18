@@ -10,8 +10,9 @@ import {
   getVipRequirementRankForFocus,
 } from "@/app/data/vipMockData";
 import { VipRankProgressMetric } from "./VipRankProgressMetric";
-import { toneClass } from "../ui/valueTone";
 import { useT } from "@/lib/i18n/I18nProvider";
+import { cn } from "@/lib/utils";
+import s from "./vip-page.module.css";
 
 interface VipRankLevelUpCardProps {
   player: VipPlayerState;
@@ -46,24 +47,40 @@ export function VipRankLevelUpCard({ player, focusRankId, mode = "carousel" }: V
 
   const overallPct = getVipLevelUpOverallPercent(depositProgress, turnoverProgress, depositTarget, turnoverTarget);
 
-  const title = cleared ? `VIP ${targetVipNumber}` : t("progress.levelUpTo", { level: targetVipNumber });
+  /** เน้น "VIP 10" เป็นสีทองในหัวข้อ (ตัดจากข้อความแปล) */
+  const marker = `VIP ${targetVipNumber}`;
+  const raw = cleared ? marker : t("progress.levelUpTo", { level: targetVipNumber });
+  const at = raw.indexOf(marker);
+  const title =
+    at >= 0 ? (
+      <>
+        {raw.slice(0, at)}
+        <span className={s.hl}>{marker}</span>
+        {raw.slice(at + marker.length)}
+      </>
+    ) : (
+      raw
+    );
 
   return (
-    <section className="soft-panel p-4">
-      <div className="flex items-start justify-between gap-3">
-        <div className="min-w-0 text-left">
-          <h3 className="text-base font-bold text-[var(--text-on-light)] sm:text-lg">{title}</h3>
-          <p className="mt-1 text-xs text-[var(--text-muted)] sm:text-sm">{t("progress.bothRequired")}</p>
+    <section className={s.panel}>
+      <div className={s.panelHead}>
+        <div className="min-w-0">
+          <h3 className={s.panelTitle}>{title}</h3>
+          <p className={s.panelSub}>{t("progress.bothRequired")}</p>
         </div>
-        <span
-          className={toneClass("accent", "shrink-0 text-2xl sm:text-[1.75rem]")}
-          aria-label={t("progress.overallAriaLabel", { percent: Math.round(overallPct) })}
-        >
-          {Math.round(overallPct)}%
-        </span>
+        <div className={s.percentWrap} aria-label={t("progress.overallAriaLabel", { percent: Math.round(overallPct) })}>
+          <span className={s.percent}>
+            {Math.round(overallPct)}
+            <small>%</small>
+          </span>
+          <div className={cn(s.bar, s.barTop)}>
+            <div className={cn(s.barFill, s.barPurple)} style={{ width: `${Math.min(100, overallPct)}%` }} />
+          </div>
+        </div>
       </div>
 
-      <div className="mt-4 grid grid-cols-2 gap-3 sm:gap-4">
+      <div className={s.metrics}>
         <VipRankProgressMetric
           label={t("progress.deposit")}
           iconKind="deposit"

@@ -29,7 +29,7 @@ export function BottomNavLotto({ loggedIn }: { loggedIn?: boolean }) {
   );
 
   return (
-    <nav className={styles.wrapper} aria-label={t("bottomNav.label")}>
+    <nav className={`${styles.wrapper} lotto-bottom-nav`} aria-label={t("bottomNav.label")}>
       <div className={styles.footer}>
         <div className={styles.menu}>
           <button type="button" className={styles.item} onClick={openDeposit}>

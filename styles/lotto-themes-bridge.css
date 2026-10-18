@@ -36,6 +36,24 @@ html[data-theme]:not([data-theme="cosmic"]) {
   --Main-Disable: color-mix(in srgb, var(--text-primary) 12%, transparent);
 }
 
+/* ธีมสว่าง: ช่อง input ทุกอันเป็นเทาอ่อน (#e4e5e9) ตัวหนังสือเข้ม */
+html[data-mode="light"] {
+  --input-bg: #e4e5e9;
+  --sheet-field-fill: #e4e5e9;
+  --sheet-field-fill-focus: #dadbe0;
+  --sheet-field-addon-bg: #d6d7dc;
+}
+
+html[data-mode="light"] .lotto-field {
+  background: #e4e5e9;
+  color: #1b2230;
+  border-color: rgba(0, 0, 0, 0.1);
+}
+
+html[data-mode="light"] .lotto-field::placeholder {
+  color: #6b7385;
+}
+
 /* ธีมสว่าง: ตัวอักษรกลับเป็นสเกลเข้มตามที่ themes.css กำหนด (--text-primary / --text-secondary) */
 html[data-mode="light"] {
   --Text-Icon-Title: var(--text-primary);
@@ -55,6 +73,11 @@ html[data-theme]:not([data-theme="cosmic"]) .lotto-page {
     var(--cosmic-page-base);
 }
 
+/* ธีมสว่าง: พื้นหน้าเป็นสีเรียบ ไม่ไล่เฉดสี */
+html[data-mode="light"][data-theme]:not([data-theme="cosmic"]) .lotto-page {
+  background: var(--cosmic-page-base);
+}
+
 @media (min-width: 1024px) {
   html[data-theme]:not([data-theme="cosmic"]) .lotto-page {
     background: var(--cosmic-page-base);
@@ -63,7 +86,7 @@ html[data-theme]:not([data-theme="cosmic"]) .lotto-page {
 
 /* header + bottom nav = พื้นเข้มไล่เฉดสีที่ 1→2 ของธีม (--t-ga → --t-gb) ทั้งโหมดมืดและสว่าง
  * ตั้ง token เฉพาะใน scope นี้ เพื่อไม่กระทบการ์ด/พื้นผิวอื่นที่ใช้ --BG-Surface-* */
-html[data-theme]:not([data-theme="cosmic"]) :is(.lotto-site-header .header-shell, nav[aria-label="เมนูหลัก"]) {
+html[data-theme]:not([data-theme="cosmic"]) :is(.lotto-site-header .header-shell, .lotto-bottom-nav) {
   --BG-Surface-Lighter: var(--t-ga);
   --BG-Surface-Darker: var(--t-gb);
   --Text-Icon-Body: #ffffff;
