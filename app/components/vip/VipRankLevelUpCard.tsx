@@ -63,7 +63,7 @@ export function VipRankLevelUpCard({ player, focusRankId, mode = "carousel" }: V
     );
 
   return (
-    <section className={s.panel}>
+    <section className={`${s.panel} motion-reveal`}>
       <div className={s.panelHead}>
         <div className="min-w-0">
           <h3 className={s.panelTitle}>{title}</h3>
@@ -75,7 +75,7 @@ export function VipRankLevelUpCard({ player, focusRankId, mode = "carousel" }: V
             <small>%</small>
           </span>
           <div className={cn(s.bar, s.barTop)}>
-            <div className={cn(s.barFill, s.barPurple)} style={{ width: `${Math.min(100, overallPct)}%` }} />
+            <div className={cn(s.barFill, s.barPurple, "motion-bar")} style={{ width: `${Math.min(100, overallPct)}%` }} />
           </div>
         </div>
       </div>

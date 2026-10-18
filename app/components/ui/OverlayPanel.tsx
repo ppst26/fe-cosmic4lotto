@@ -92,8 +92,8 @@ export function OverlayPanel({
     >
       <div
         className={cn(
-          "absolute inset-0 bg-black/50 transition-opacity duration-200",
-          visible ? "opacity-100" : "opacity-0",
+          "absolute inset-0 bg-black/50 transition-opacity ease-[cubic-bezier(0.2,0.8,0.2,1)] motion-reduce:transition-none",
+          visible ? "opacity-100 duration-[320ms]" : "opacity-0 duration-[180ms]",
         )}
         onClick={() => dismissible && onClose()}
         aria-hidden="true"
@@ -105,11 +105,11 @@ export function OverlayPanel({
         aria-modal="true"
         aria-labelledby={title && !hideHeader ? titleId : undefined}
         className={cn(
-          "relative flex max-h-[88dvh] w-full flex-col overflow-hidden rounded-t-[var(--radius-soft-xl)] modal-surface-bg p-4 text-[var(--text-on-light)] shadow-[var(--shadow-soft)] outline-none transition duration-200 md:max-h-[85dvh] md:rounded-[var(--radius-soft-xl)]",
+          "relative flex max-h-[88dvh] w-full flex-col overflow-hidden rounded-t-[var(--radius-soft-xl)] modal-surface-bg p-4 text-[var(--text-on-light)] shadow-[var(--shadow-soft)] outline-none transition ease-[cubic-bezier(0.2,0.8,0.2,1)] motion-reduce:transition-none md:max-h-[85dvh] md:rounded-[var(--radius-soft-xl)]",
           maxWidthClassName,
           visible
-            ? "translate-y-0 opacity-100 md:scale-100"
-            : "translate-y-full opacity-0 md:translate-y-0 md:scale-95",
+            ? "translate-y-0 opacity-100 duration-[320ms] md:scale-100"
+            : "translate-y-full opacity-0 duration-[180ms] md:translate-y-0 md:scale-95",
           className,
         )}
       >

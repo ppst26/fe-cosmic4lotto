@@ -1,6 +1,6 @@
 "use client";
 
-import type { ReactNode } from "react";
+import { ViewTransition, type ReactNode } from "react";
 import { LobbySidebar } from "@/components/lotto/LobbySidebar";
 import { LottoSiteHeader } from "@/components/lotto/LottoSiteHeader";
 import { BottomNavLotto } from "@/components/lotto/BottomNavLotto";
@@ -45,16 +45,21 @@ export function LottoShellFrame({
       <LottoShellHeader />
       <div className={`${layout.pageShell}${fitClass("lotto-fit__shell")}`}>
         {isAuthenticated ? (
-          <div className={layout.sidebarSlot}>
+          <div className={layout.sidebarSlot} style={{ viewTransitionName: "site-sidebar" }}>
             <LobbySidebar wallet={wallet} />
           </div>
         ) : null}
         <div className={`${layout.mainColumn}${fitClass("lotto-fit__col")}`}>
-          <div className={`${layout.mainStack}${fitClass("lotto-fit__stack")}`}>{children}</div>
+          <div className={`${layout.mainStack}${fitClass("lotto-fit__stack")}`}>
+            {/* เปลี่ยนหน้า: เนื้อหา crossfade เบา ๆ · header/sidebar/bottom nav ตั้งชื่อไว้ให้อยู่นิ่ง */}
+            <ViewTransition enter="page-enter" exit="page-exit" default="none">
+              {children}
+            </ViewTransition>
+          </div>
         </div>
       </div>
       {bottomNav ? (
-        <div className={layout.bottomNavSlot}>
+        <div className={layout.bottomNavSlot} style={{ viewTransitionName: "site-bottom-nav" }}>
           <BottomNavLotto loggedIn={isAuthenticated} />
         </div>
       ) : null}

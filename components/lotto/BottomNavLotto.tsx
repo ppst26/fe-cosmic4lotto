@@ -32,14 +32,14 @@ export function BottomNavLotto({ loggedIn }: { loggedIn?: boolean }) {
     <nav className={`${styles.wrapper} lotto-bottom-nav`} aria-label={t("bottomNav.label")}>
       <div className={styles.footer}>
         <div className={styles.menu}>
-          <button type="button" className={styles.item} onClick={openDeposit}>
+          <button type="button" className={`${styles.item} motion-press`} onClick={openDeposit}>
             {sideItem(Wallet, t("bottomNav.deposit"))}
           </button>
-          <button type="button" className={styles.item} onClick={openWithdraw}>
+          <button type="button" className={`${styles.item} motion-press`} onClick={openWithdraw}>
             {sideItem(Banknote, t("bottomNav.withdraw"))}
           </button>
 
-          <Link href="/enterlotto" className={`${styles.item} ${styles.center}`}>
+          <Link href="/enterlotto" className={`${styles.item} ${styles.center} motion-press`}>
             <div className={styles.badge}>
               <Image
                 src="/_nuxt/png/lottoFooter.D-kpI84T.png"
@@ -52,12 +52,12 @@ export function BottomNavLotto({ loggedIn }: { loggedIn?: boolean }) {
             <span className={styles.label}>แทงหวย</span>
           </Link>
 
-          <Link href="/cashback" className={styles.item}>
+          <Link href="/cashback" className={`${styles.item} motion-press`}>
             {sideItem(RotateCcw, t("bottomNav.cashback"))}
           </Link>
           <button
             type="button"
-            className={styles.item}
+            className={`${styles.item} motion-press`}
             onClick={() => showToast(tCommon("theme.chatUnavailable"), "info")}
           >
             {sideItem(MessageCircle, t("bottomNav.contact"))}

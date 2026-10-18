@@ -104,3 +104,22 @@ html[data-theme]:not([data-theme="cosmic"]) :is(.btn-outline-gold, .soft-btn-out
   color: var(--t-icon);
   border-color: var(--t-icon);
 }
+
+/* โหมดมืด (ทุกธีม): พื้นหลังหลังสุดอ่อนลงจากเดิม — ผสมขาว 7% ทับสีพื้นของธีม (cosmic ใช้ #060409) */
+html:not([data-mode="light"]) body,
+html:not([data-mode="light"]) .lotto-page {
+  background-color: color-mix(in srgb, #fff 7%, #060409);
+}
+
+html:not([data-mode="light"]) .lotto-page {
+  background-image: none;
+}
+
+html:not([data-mode="light"])[data-theme]:not([data-theme="cosmic"]) body {
+  background: color-mix(in srgb, #fff 7%, var(--cosmic-page-base));
+}
+
+html:not([data-mode="light"])[data-theme]:not([data-theme="cosmic"]) .lotto-page {
+  background: radial-gradient(120% 80% at 50% -20%, color-mix(in srgb, var(--t-ga) 45%, transparent), transparent 55%),
+    color-mix(in srgb, #fff 7%, var(--cosmic-page-base));
+}

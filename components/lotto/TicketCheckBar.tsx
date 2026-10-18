@@ -1,6 +1,6 @@
 export function TicketCheckBar() {
   return (
-    <section className="mt-3 rounded-xl bg-[var(--BG-Surface-Darker)] p-3">
+    <section className="motion-reveal mt-3 rounded-xl bg-[var(--BG-Surface-Darker)] p-3">
       <div className="flex flex-row items-center gap-2">
         <input
           type="text"

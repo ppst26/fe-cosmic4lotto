@@ -19,10 +19,10 @@ export function LottoMobileHeroPanel({ children }: { children?: ReactNode }) {
     <div className={styles.panel}>
       {children}
       <div className={`${layout.hideDesktop} ${styles.actions}`}>
-        <button type="button" className={styles.btnPrimary} onClick={openDeposit}>
+        <button type="button" className={`${styles.btnPrimary} motion-press`} onClick={openDeposit}>
           ฝากเงิน
         </button>
-        <button type="button" className={styles.btnSecondary} onClick={openWithdraw}>
+        <button type="button" className={`${styles.btnSecondary} motion-press`} onClick={openWithdraw}>
           ถอนเงิน
         </button>
       </div>
@@ -44,9 +44,9 @@ export function LottoMobileQuickMenu() {
               key={item.key}
               href={item.href}
               aria-current={isActive ? "page" : undefined}
-              className={`${styles.menuItem} ${isActive ? styles.menuActive : ""}`}
+              className={`motion-press ${styles.menuItem} ${isActive ? styles.menuActive : ""}`}
             >
-              <Image src={item.icon} alt="" width={36} height={36} unoptimized />
+              <Image src={item.icon} alt="" width={28} height={28} unoptimized />
               <span className={isActive ? styles.textGold : undefined}>{item.label}</span>
             </Link>
           );

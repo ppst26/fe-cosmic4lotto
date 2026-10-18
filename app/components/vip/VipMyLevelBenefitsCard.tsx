@@ -22,7 +22,7 @@ export function VipMyLevelBenefitsCard({ player, onViewAll }: { player: VipPlaye
   const t = useT("vip");
 
   return (
-    <section className={s.panel}>
+    <section className={`${s.panel} motion-reveal`}>
       <div className={s.benHead}>
         <h3 className={s.panelTitle}>{t("tabs.benefits")}</h3>
         {onViewAll ? (

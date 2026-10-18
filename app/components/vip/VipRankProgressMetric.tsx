@@ -49,7 +49,7 @@ export function VipRankProgressMetric({
       </div>
       <div className={s.bar}>
         <div
-          className={cn(s.barFill, complete ? s.barDone : iconKind === "deposit" ? s.barGold : s.barPurple)}
+          className={cn(s.barFill, "motion-bar", complete ? s.barDone : iconKind === "deposit" ? s.barGold : s.barPurple)}
           style={{ width: locked ? "0%" : `${pct}%` }}
         />
       </div>

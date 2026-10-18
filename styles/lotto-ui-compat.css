@@ -87,11 +87,11 @@
 }
 
 .animate-fade-in {
-  animation: fade-in 0.2s ease-out;
+  animation: fade-in var(--dur-base, 200ms) var(--ease-out, ease-out);
 }
 
 .animate-scale-up {
-  animation: scale-up 0.22s ease-out;
+  animation: scale-up 240ms var(--ease-out, ease-out);
 }
 
 /* พื้นผิว modal / bottom sheet — ทึบ ใช้ token ของ lotto */

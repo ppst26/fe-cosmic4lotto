@@ -52,7 +52,7 @@ export function LottoSiteHeader({
     hideWalletOnDesktop && loggedIn ? "header-hide-with-sidebar" : "";
 
   return (
-    <header className="lotto-site-header w-full z-10 relative">
+    <header className="lotto-site-header w-full z-10 relative" style={{ viewTransitionName: "site-header" }}>
       <div className="header-shell">
         <LottoDesktopHeader
           logoSrc={LOGO_SRC}

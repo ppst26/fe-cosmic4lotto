@@ -42,7 +42,7 @@ export function VipMaintainRankPanel({ activeRankId }: VipMaintainRankPanelProps
     );
 
   return (
-    <section className={s.panel}>
+    <section className={`${s.panel} motion-reveal`}>
       <div className={s.panelHead}>
         <div className="min-w-0">
           <h3 className={s.panelTitle}>

@@ -25,11 +25,11 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 4px;
+  gap: 1px;
   font-size: 11px;
   color: var(--Text-Icon-Body);
-  padding: 4px 4px;
-  border-radius: 12px;
+  padding: 3px 4px;
+  border-radius: 10px;
   border: 1px solid transparent;
   text-decoration: none;
   scroll-snap-align: start;
@@ -99,8 +99,10 @@
 
 @media (max-width: 1023px) {
   .panel {
-    padding: 8px;
-    border-radius: 16px;
+    /* เต็มความกว้างจอ (หักช่องไฟ 12px ของเปลือกหน้า) ชิดใต้ header — มนเฉพาะมุมล่าง */
+    margin-inline: -12px;
+    padding: 8px 12px 22px;
+    border-radius: 0 0 16px 16px;
     background: color-mix(in srgb, #fff 8%, var(--surface-start, #16101e));
   }
 

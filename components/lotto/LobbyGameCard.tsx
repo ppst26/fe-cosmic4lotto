@@ -24,7 +24,7 @@ export function LobbyGameCard({
 
   return (
     <article
-      className={`${styles.card} ${variant === "wide" ? styles.cardWide : ""} ${layout === "carousel" ? styles.cardCarousel : ""}`}
+      className={`motion-lift ${styles.card} ${variant === "wide" ? styles.cardWide : ""} ${layout === "carousel" ? styles.cardCarousel : ""}`}
       style={style}
     >
       <Link href={href} aria-label={item.title} style={{ display: "block", color: "inherit", textDecoration: "none" }}>

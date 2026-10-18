@@ -7,7 +7,7 @@ import styles from "./hall-of-fame.module.css";
 /** Hall of Fame — ผู้ถูกรางวัลล่าสุด (mock) เป็นแถวแบบ live feed · ใต้ section ผู้ชนะสูงสุด */
 export function HallOfFameSection() {
   return (
-    <section className={showcase.section} aria-label="ผู้โชคดี">
+    <section className={`${showcase.section} motion-reveal`} aria-label="ผู้โชคดี">
       <div className={showcase.header}>
         <div className={showcase.headerLeft}>
           <Clover className={styles.headIcon} strokeWidth={1.75} aria-hidden />

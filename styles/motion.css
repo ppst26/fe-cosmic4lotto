@@ -1,0 +1,199 @@
+/* Motion system — token + utility ชุดเดียวทั้งเว็บ
+ * หลักการ: animate เฉพาะ transform/opacity · ไม่เกิน 320ms · ไม่ loop · ปิดทั้งหมดเมื่อ prefers-reduced-motion */
+
+:root {
+  --dur-fast: 120ms;
+  --dur-base: 200ms;
+  --dur-slow: 320ms;
+  --ease-out: cubic-bezier(0.2, 0.8, 0.2, 1);
+  --ease-in-out: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* ── Reveal: เนื้อหาค่อย ๆ เลื่อนขึ้น + fade เมื่อเข้าจอ ─────────────────────────────
+ * ใช้ CSS scroll-driven animation (ไม่ต้องใช้ JS / ไม่มี hydration flash)
+ * เบราว์เซอร์ที่ไม่รองรับจะเห็นเนื้อหาปกติทันที */
+@keyframes motion-reveal {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@supports (animation-timeline: view()) {
+  .motion-reveal {
+    animation: motion-reveal linear both;
+    animation-timeline: view();
+    animation-range: entry 0% entry 35%;
+  }
+}
+
+/* ── Bar grow: แถบความคืบหน้าขยายจาก 0 ครั้งเดียวตอนแสดง ─────────────────────────── */
+@keyframes motion-bar-grow {
+  from {
+    transform: scaleX(0);
+  }
+  to {
+    transform: scaleX(1);
+  }
+}
+
+.motion-bar {
+  transform-origin: left center;
+  animation: motion-bar-grow 600ms var(--ease-out) both;
+}
+
+/* ── Press / Lift: ตอบสนองการกด และ hover (เฉพาะอุปกรณ์ที่ hover ได้) ───────────────── */
+.motion-press {
+  transition: transform var(--dur-fast) var(--ease-out);
+}
+
+.motion-press:active {
+  transform: scale(0.97);
+}
+
+.motion-lift {
+  transition:
+    transform var(--dur-base) var(--ease-out),
+    box-shadow var(--dur-base) var(--ease-out);
+}
+
+@media (hover: hover) {
+  .motion-lift:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.32);
+  }
+}
+
+.motion-lift:active {
+  transform: translateY(0) scale(0.985);
+}
+
+/* ── Reduced motion: ปิดการเคลื่อนไหวทั้งหมด ───────────────────────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+  .motion-reveal,
+  .motion-bar {
+    animation: none;
+  }
+
+  .motion-press,
+  .motion-lift {
+    transition: none;
+  }
+
+  .motion-press:active,
+  .motion-lift:hover,
+  .motion-lift:active {
+    transform: none;
+  }
+}
+
+/* ── Toast: เลื่อนลงจากด้านบน + fade ─────────────────────────────────────────────── */
+@keyframes motion-toast-in {
+  from {
+    opacity: 0;
+    transform: translateY(-12px) scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.motion-toast {
+  animation: motion-toast-in var(--dur-slow) var(--ease-out) both;
+}
+
+/* Dialog ที่ใช้ animate-fade-in / animate-scale-up (ไม่ผ่าน OverlayPanel) */
+@media (prefers-reduced-motion: reduce) {
+  .motion-toast,
+  .animate-fade-in,
+  .animate-scale-up {
+    animation: none;
+  }
+}
+
+/* ── View Transition (เปลี่ยนหน้า) ────────────────────────────────────────────────
+ * เนื้อหาเก่า fade ออกเร็ว · ใหม่ fade เข้า + ลอยขึ้น 8px · header/sidebar/bottom nav อยู่นิ่ง */
+::view-transition {
+  pointer-events: none;
+}
+
+::view-transition-old(.page-exit) {
+  animation: 140ms var(--ease-in-out) both motion-vt-out;
+}
+
+::view-transition-new(.page-enter) {
+  animation: 240ms var(--ease-out) 90ms both motion-vt-in;
+}
+
+@keyframes motion-vt-out {
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes motion-vt-in {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+}
+
+::view-transition-group(site-header),
+::view-transition-group(site-sidebar),
+::view-transition-group(site-bottom-nav) {
+  animation: none;
+}
+
+::view-transition-group(site-header),
+::view-transition-group(site-bottom-nav) {
+  z-index: 100;
+}
+
+::view-transition-old(site-header),
+::view-transition-old(site-sidebar),
+::view-transition-old(site-bottom-nav) {
+  display: none;
+}
+
+::view-transition-new(site-header),
+::view-transition-new(site-sidebar),
+::view-transition-new(site-bottom-nav) {
+  animation: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  ::view-transition-old(*),
+  ::view-transition-new(*),
+  ::view-transition-group(*) {
+    animation-duration: 0s !important;
+    animation-delay: 0s !important;
+  }
+}
+
+/* ── Skeleton (โหลดหน้า) ───────────────────────────────────────────────────────── */
+@keyframes motion-skeleton {
+  0%,
+  100% {
+    opacity: 0.55;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+.motion-skeleton {
+  border-radius: 14px;
+  background: color-mix(in srgb, #fff 7%, transparent);
+  animation: motion-skeleton 1.6s var(--ease-in-out) infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .motion-skeleton {
+    animation: none;
+  }
+}

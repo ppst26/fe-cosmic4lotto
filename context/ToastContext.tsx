@@ -55,7 +55,7 @@ function ToastHost({ items, onDismiss }: { items: ToastItem[]; onDismiss: (id: s
           <div
             key={toast.id}
             role="alert"
-            className={`pointer-events-auto flex w-full max-w-md items-start gap-2.5 rounded-2xl border px-4 py-3 text-sm font-semibold shadow-[var(--shadow-soft)] ${style.box}`}
+            className={`motion-toast pointer-events-auto flex w-full max-w-md items-start gap-2.5 rounded-2xl border px-4 py-3 text-sm font-semibold shadow-[var(--shadow-soft)] ${style.box}`}
           >
             <span className="flex h-5 w-5 shrink-0 items-center justify-center text-xs font-bold" aria-hidden>
               {style.icon}

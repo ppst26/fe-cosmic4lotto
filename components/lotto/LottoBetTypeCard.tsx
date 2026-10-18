@@ -8,7 +8,7 @@ export function LottoBetTypeCard({ item }: { item: LottoBetTypeItem }) {
   const art = getLotteryArtSrc(item.id);
   return (
     <article
-      className={`${styles.card} ${item.closed ? styles.cardClosed : ""} ${art ? styles.cardArt : ""}`}
+      className={`motion-lift ${styles.card} ${item.closed ? styles.cardClosed : ""} ${art ? styles.cardArt : ""}`}
     >
       {art ? (
         <span className={styles.art} aria-hidden>
@@ -35,7 +35,7 @@ export function LottoBetTypeCard({ item }: { item: LottoBetTypeItem }) {
       {item.closed ? (
         <span className={styles.btnDisabled}>แทงหวย</span>
       ) : (
-        <Link href={item.href} className={styles.btnBet}>
+        <Link href={item.href} className={`${styles.btnBet} motion-press`}>
           แทงหวย
         </Link>
       )}

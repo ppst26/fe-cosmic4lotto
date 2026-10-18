@@ -51,7 +51,7 @@ export function GameShowcaseSection({
   ));
 
   return (
-    <section className={styles.section}>
+    <section className={`${styles.section} motion-reveal`}>
       <div className={styles.header}>
         <div className={styles.headerLeft}>
           <Image

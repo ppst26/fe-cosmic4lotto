@@ -16,7 +16,7 @@ function formatPrize(value: number): string {
 
 function LeaderCard({ item }: { item: TopLeaderItem }) {
   return (
-    <article className={`${styles.card} ${RANK_CLASS[item.rank] ?? ""}`}>
+    <article className={`motion-lift ${styles.card} ${RANK_CLASS[item.rank] ?? ""}`}>
       <div className={styles.avatarWrap}>
         <span className={styles.laurel} aria-hidden />
         <span className={styles.avatarRing}>
@@ -46,7 +46,7 @@ function LeaderCard({ item }: { item: TopLeaderItem }) {
 /** ผู้ชนะรางวัลสูงสุด 5 อันดับ (mock) — ใต้แถบตรวจผลสลากในหน้าแรก */
 export function TopLeadersSection() {
   return (
-    <section className={showcase.section} aria-label="ผู้ชนะสูงสุด">
+    <section className={`${showcase.section} motion-reveal`} aria-label="ผู้ชนะสูงสุด">
       <div className={showcase.header}>
         <div className={showcase.headerLeft}>
           <Trophy className={styles.headIcon} strokeWidth={1.75} aria-hidden />

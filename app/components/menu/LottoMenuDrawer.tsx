@@ -443,8 +443,8 @@ function LottoMenuDrawerContent({ visible }: { visible: boolean }) {
     >
       <div
         className={cn(
-          "absolute inset-0 bg-black/60 transition-opacity duration-200",
-          visible ? "opacity-100" : "opacity-0",
+          "absolute inset-0 bg-black/60 transition-opacity ease-[cubic-bezier(0.2,0.8,0.2,1)] motion-reduce:transition-none",
+          visible ? "opacity-100 duration-[320ms]" : "opacity-0 duration-[180ms]",
         )}
         onClick={closeMobileMenu}
         aria-hidden="true"
@@ -455,8 +455,10 @@ function LottoMenuDrawerContent({ visible }: { visible: boolean }) {
         aria-modal="true"
         aria-label={t("drawer.title")}
         className={cn(
-          "relative h-full w-full overflow-y-auto bg-[var(--BG-Surface-Darker)] text-[var(--text-on-light)] shadow-[var(--shadow-soft)] transition duration-200 md:w-[400px] md:border-l md:border-white/10",
-          visible ? "translate-y-0 opacity-100 md:translate-x-0" : "translate-y-3 opacity-0 md:translate-x-full md:translate-y-0",
+          "relative h-full w-full overflow-y-auto bg-[var(--BG-Surface-Darker)] text-[var(--text-on-light)] shadow-[var(--shadow-soft)] transition ease-[cubic-bezier(0.2,0.8,0.2,1)] motion-reduce:transition-none md:w-[400px] md:border-l md:border-white/10",
+          visible
+            ? "translate-y-0 opacity-100 duration-[320ms] md:translate-x-0"
+            : "translate-y-3 opacity-0 duration-[180ms] md:translate-x-full md:translate-y-0",
         )}
         style={{
           backgroundImage:

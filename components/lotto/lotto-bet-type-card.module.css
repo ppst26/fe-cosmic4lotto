@@ -3,9 +3,9 @@
   flex-direction: column;
   align-items: stretch;
   gap: 8px;
-  /* การ์ดใช้สีพื้นผิวมืดของธีม (--surface-start) + ขาวนิดเดียว ไล่เฉดซ้าย→ขวา — ไม่ใช้ --t-ga เพราะบางธีมเป็นสีสด (ชมพู ฯลฯ) */
-  --card-from: color-mix(in srgb, var(--surface-start, var(--BG-Surface-Normal)) 94%, #fff);
-  --card-to: color-mix(in srgb, var(--surface-start, var(--BG-Surface-Normal)) 97%, #fff);
+  /* ธีมมืด: ไล่เฉดซ้าย→ขวาจากสีพื้นผิวของธีมไปเข้มเกือบดำ (ใช้สีพื้นผิว ไม่ใช้ --t-ga เพราะบางธีมเป็นสีสด) */
+  --card-from: color-mix(in srgb, var(--surface-start, var(--BG-Surface-Normal)) 82%, var(--t-gb, #000));
+  --card-to: color-mix(in srgb, var(--surface-start, var(--BG-Surface-Normal)) 38%, #000);
   background: linear-gradient(90deg, var(--card-from), var(--card-to));
   border-radius: 10px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
