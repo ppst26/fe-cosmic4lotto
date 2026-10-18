@@ -1,17 +1,22 @@
 "use client";
 
-import { Delete } from "lucide-react";
-import { useLotteryI18n } from "@/app/components/lottery/useLotteryI18n";
-const PAD_DIGITS = ["1", "2", "3", "4", "5", "6", "7", "8", "9"];
+import React from "react";
+import { useT } from "@/lib/i18n/I18nProvider";
 
-type LotteryNumberPadProps = {
+interface LotteryNumberPadProps {
   digits: number;
   value: string;
   onDigit: (digit: string) => void;
   onBackspace: () => void;
   onClear: () => void;
-};
+}
 
+const PAD_DIGITS = ["1", "2", "3", "4", "5", "6", "7", "8", "9"];
+
+/**
+ * ช่องแสดงเลขตามจำนวนหลัก + แป้นตัวเลข 0–9
+ * ใช้ร่วมกันใน ThaiLottoBetBoard และ YikiBetBoard — ครบหลักแล้วผู้เรียกเพิ่มลงโพยเอง
+ */
 export function LotteryNumberPad({
   digits,
   value,
@@ -19,9 +24,9 @@ export function LotteryNumberPad({
   onBackspace,
   onClear,
 }: LotteryNumberPadProps) {
-  const { t } = useLotteryI18n();
+  const t = useT("lottery");
   return (
-    <div className="lottery-number-pad flex flex-col gap-2">
+    <div className="lottery-number-pad flex flex-col gap-1.5">
       <div
         className="thai-lotto-slots flex justify-center gap-1.5"
         aria-live="polite"
@@ -33,7 +38,7 @@ export function LotteryNumberPad({
           return (
             <span
               key={index}
-              className={`thai-lotto-slot grid h-9 w-8 place-items-center rounded-[var(--radius-soft-sm)] text-sm font-bold${char ? " is-filled" : ""}${isNext ? " is-next" : ""}`}
+              className={`thai-lotto-slot grid place-items-center w-8 h-9${char ? " is-filled" : ""}${isNext ? " is-next" : ""}`}
               aria-hidden="true"
             >
               {char ?? ""}
@@ -42,12 +47,12 @@ export function LotteryNumberPad({
         })}
       </div>
 
-      <div className="thai-lotto-pad grid grid-cols-3 gap-1">
+      <div className="thai-lotto-pad grid grid-cols-3 gap-1 lg:mx-auto lg:w-full lg:max-w-[420px]">
         {PAD_DIGITS.map((digit) => (
           <button
             key={digit}
             type="button"
-            className="thai-lotto-pad__key min-h-10 text-sm font-semibold"
+            className="thai-lotto-pad__key grid place-items-center min-h-[1.875rem]"
             onClick={() => onDigit(digit)}
           >
             {digit}
@@ -55,7 +60,7 @@ export function LotteryNumberPad({
         ))}
         <button
           type="button"
-          className="thai-lotto-pad__key thai-lotto-pad__key--muted min-h-10 text-xs font-semibold"
+          className="thai-lotto-pad__key thai-lotto-pad__key--muted grid place-items-center min-h-[1.875rem]"
           onClick={onClear}
           disabled={!value}
         >
@@ -63,21 +68,35 @@ export function LotteryNumberPad({
         </button>
         <button
           type="button"
-          className="thai-lotto-pad__key min-h-10 text-sm font-semibold"
+          className="thai-lotto-pad__key grid place-items-center min-h-[1.875rem]"
           onClick={() => onDigit("0")}
         >
           0
         </button>
         <button
           type="button"
-          className="thai-lotto-pad__key thai-lotto-pad__key--muted min-h-10"
+          className="thai-lotto-pad__key thai-lotto-pad__key--muted grid place-items-center min-h-[1.875rem]"
           onClick={onBackspace}
           disabled={!value}
           aria-label={t("pad.backspace")}
         >
-          <Delete className="mx-auto h-4 w-4" aria-hidden />
+          <BackspaceIcon />
         </button>
       </div>
     </div>
+  );
+}
+
+function BackspaceIcon() {
+  return (
+    <svg viewBox="0 0 24 24" className="h-3.5 w-3.5" fill="none" aria-hidden>
+      <path
+        d="M8.5 5H20a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H8.5L3 12l5.5-7Z"
+        stroke="currentColor"
+        strokeWidth="1.6"
+        strokeLinejoin="round"
+      />
+      <path d="m11 9.5 5 5m0-5-5 5" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" />
+    </svg>
   );
 }

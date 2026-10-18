@@ -1,24 +1,24 @@
 "use client";
 
-import { useMemo } from "react";
-import { EmptyState, LoadingState } from "@/app/components/ui/StatusState";
+import React, { useMemo } from "react";
+import { EmptyState } from "@/app/components/ui/StatusState";
+import { YikiBetBoard } from "@/app/components/lottery/yiki/YikiBetBoard";
+import { LotteryBetResultDialog } from "@/app/components/lottery/LotteryBetResultDialog";
 import { useYikiBoard } from "@/app/hooks/api/lottery";
-import { useYikiStyleBetSubmit } from "@/app/hooks/useLotteryBetSubmit";
+import { LoadingState } from "@/app/components/ui/StatusState";
 import { lotteryPlayMarketMeta, resolveLotteryPlayRound } from "@/lib/lottery/resolvePlayRound";
-import { YikiBetBoard } from "./yiki/YikiBetBoard";
-import { LotteryBetResultDialog } from "./LotteryBetResultDialog";
-import { useLotteryI18n } from "./useLotteryI18n";
+import { useYikiStyleBetSubmit } from "@/app/hooks/useLotteryBetSubmit";
+import { useLotteryI18n } from "@/app/components/lottery/useLotteryI18n";
 
 interface LotteryYikiPlayBoardProps {
   marketSlug: string;
   roundId: string;
   backHref: string;
-  onStepChange?: (step: "pick" | "price") => void;
+  onStepChange: (step: "pick" | "price") => void;
 }
 
 /**
  * กระดานแทงยี่กี/หวยหุ้น — UI เดียวกับหวยรัฐบาล · resolve รอบจาก slug+id
- * ส่งโพยผ่าน useYikiStyleBetSubmit → /api/lottery/bets
  */
 export function LotteryYikiPlayBoard({
   marketSlug,
@@ -27,7 +27,8 @@ export function LotteryYikiPlayBoard({
   onStepChange,
 }: LotteryYikiPlayBoardProps) {
   const { t, roundLabel } = useLotteryI18n();
-  const yikiBoard = useYikiBoard().data;
+  const yikiBoardResource = useYikiBoard();
+  const yikiBoard = yikiBoardResource.data;
   const playRound = useMemo(
     () => resolveLotteryPlayRound(marketSlug, roundId),
     [marketSlug, roundId],
@@ -57,7 +58,6 @@ export function LotteryYikiPlayBoard({
         className="mt-4"
         title={t("board.roundNotFoundTitle")}
         description={t("board.roundNotFoundNext")}
-        primaryAction={{ label: t("board.viewAllRounds"), href: backHref }}
       />
     );
   }
@@ -67,7 +67,7 @@ export function LotteryYikiPlayBoard({
   }
 
   return (
-    <div className="lottery-thai-theme flex flex-col gap-2">
+    <>
       <YikiBetBoard
         round={round}
         groups={yikiBoard.groups}
@@ -83,6 +83,6 @@ export function LotteryYikiPlayBoard({
         isSubmitting={isSubmitting}
       />
       <LotteryBetResultDialog state={dialog} onClose={closeDialog} />
-    </div>
+    </>
   );
 }

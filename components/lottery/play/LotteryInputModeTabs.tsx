@@ -1,10 +1,15 @@
 "use client";
 
-import { useRef } from "react";
-import { useLotteryI18n } from "@/app/components/lottery/useLotteryI18n";
+import React, { useRef } from "react";
+import { useT } from "@/lib/i18n/I18nProvider";
 
 export type LotteryInputMode = "manual" | "grid";
 
+/**
+ * แท็บสลับวิธีใส่เลข — แป้นกรอกเลข / แผงเลขให้กดเลือก
+ * ใช้ร่วมกันใน ThaiLottoBetBoard และ YikiBetBoard (ข้อความบนแท็บต่างกันตามเกม จึงรับผ่าน `modes`)
+ * รองรับลูกศรซ้าย/ขวา/Home/End ตาม tablist pattern
+ */
 export function LotteryInputModeTabs({
   modes,
   activeMode,
@@ -16,7 +21,7 @@ export function LotteryInputModeTabs({
   onChange: (mode: LotteryInputMode) => void;
   panelId: string;
 }) {
-  const { t } = useLotteryI18n();
+  const t = useT("lottery");
   const tabRefs = useRef<(HTMLButtonElement | null)[]>([]);
 
   const focusTab = (index: number) => {
@@ -35,7 +40,11 @@ export function LotteryInputModeTabs({
   };
 
   return (
-    <div className="lottery-mode-tabs grid grid-cols-2 gap-1" role="tablist" aria-label={t("inputMode.aria")}>
+    <div
+      className="thai-lotto-mode-tabs grid grid-cols-2"
+      role="tablist"
+      aria-label={t("inputMode.aria")}
+    >
       {modes.map((mode, index) => {
         const isActive = mode.id === activeMode;
         return (
@@ -44,7 +53,7 @@ export function LotteryInputModeTabs({
             ref={(node) => {
               tabRefs.current[index] = node;
             }}
-            id={`lottery-mode-${mode.id}`}
+            id={`thai-lotto-mode-${mode.id}`}
             type="button"
             role="tab"
             aria-selected={isActive}
@@ -52,7 +61,7 @@ export function LotteryInputModeTabs({
             tabIndex={isActive ? 0 : -1}
             onClick={() => onChange(mode.id)}
             onKeyDown={(event) => handleKeyDown(event, index)}
-            className={`lottery-mode-tabs__tab min-h-9 text-xs font-semibold${isActive ? " is-active" : ""}`}
+            className={`thai-lotto-mode-tabs__tab relative min-h-9${isActive ? " is-active" : ""}`}
           >
             {mode.label}
           </button>

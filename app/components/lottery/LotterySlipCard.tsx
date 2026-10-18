@@ -49,7 +49,7 @@ export function LotterySlipCard({ slip, now }: { slip: LotterySubmittedSlip; now
   return (
     <Link
       href={`/lottery/slips/${slip.id}`}
-      className="lottery-slips-list__card lottery-soft-card flex flex-col gap-2 px-4 py-3"
+      className="lottery-slips-list__card flex flex-col gap-2 px-4 py-[0.85rem]"
     >
       <div className="flex items-center gap-2.5">
         <LotteryMarketIcon
@@ -60,33 +60,29 @@ export function LotterySlipCard({ slip, now }: { slip: LotterySubmittedSlip; now
           className="!h-9 !w-9"
         />
         <div className="min-w-0 flex-1">
-          <p className="m-0 truncate text-sm font-bold text-[var(--text-on-light)]">{t(meta.titleKey)}</p>
-          <p className="m-0 truncate text-xs text-[var(--text-muted)]">
-            {slip.drawLabel || t("round.current")}
-          </p>
+          <p className="lottery-slips-list__id m-0 truncate">{t(meta.titleKey)}</p>
+          <p className="lottery-slips-list__meta m-0 truncate">{slip.drawLabel || t("round.current")}</p>
         </div>
-        <span className={toneClass(SLIP_STATUS_ROLE[status], "shrink-0 text-xs font-semibold")}>
+        <span className={toneClass(SLIP_STATUS_ROLE[status], "shrink-0 text-xs font-medium")}>
           {t(`slips.status.${status}`)}
         </span>
       </div>
 
-      <p className="m-0 text-xs text-[var(--text-muted)]">
+      <p className="lottery-slips-list__meta m-0">
         {isSettled && slip.settledAt
           ? t("slips.card.settledAt", { date: dateTime(slip.settledAt) })
           : t("slips.card.drawAt", { date: dateTime(slip.drawAt) })}
       </p>
 
-      <div className="flex items-end justify-between gap-3 border-t border-white/[0.06] pt-2">
+      <div className="flex items-end justify-between gap-3 border-t border-[var(--border-subtle)]/50 pt-2">
         <div className="min-w-0">
-          <p className="m-0 text-xs text-[var(--text-muted)]">
-            {t("slip.itemCount", { count: slip.lines.length })}
-          </p>
-          <p className="m-0 text-sm font-semibold tabular-nums text-[var(--text-on-light)]">
+          <p className="lottery-slips-list__meta m-0">{t("slip.itemCount", { count: slip.lines.length })}</p>
+          <p className="lottery-slips-list__stake m-0 tabular-nums">
             {t("slips.stake", { amount: formatBaht(slip.totalStake) })}
           </p>
         </div>
         {isSettled && slip.winLoss !== null ? (
-          <span className={signedMoneyToneClass(slip.winLoss, "shrink-0 text-base font-bold")}>
+          <span className={signedMoneyToneClass(slip.winLoss, "shrink-0 text-base font-medium tabular-nums")}>
             {formatSignedBaht(slip.winLoss)}
           </span>
         ) : null}

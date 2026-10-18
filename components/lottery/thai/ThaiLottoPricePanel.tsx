@@ -1,14 +1,28 @@
 "use client";
 
-import { useMemo, type Ref } from "react";
+import React, { useMemo } from "react";
 import type { ThaiLottoBetEntry, ThaiLottoBetType, ThaiLottoBetTypeId } from "@/app/types/lottery";
-import { useT } from "@/lib/i18n/I18nProvider";
 import {
   LotteryPriceSlipPanel,
   type LotteryPriceSlipGroup,
   type LotteryPriceSlipHandle,
 } from "@/components/lottery/play/LotteryPriceSlipPanel";
+import { useT } from "@/lib/i18n/I18nProvider";
 
+interface ThaiLottoPricePanelProps {
+  entries: ThaiLottoBetEntry[];
+  betTypes: ThaiLottoBetType[];
+  handleRef?: React.Ref<LotteryPriceSlipHandle>;
+  selectedEntryId: string | null;
+  onSelectEntry: (entryId: string) => void;
+  onAmountChange: (entryId: string, amount: number) => void;
+  onRemove: (entryId: string) => void;
+}
+
+/**
+ * โพยขั้นใส่ราคาหวยรัฐบาล — ห่อ LotteryPriceSlipPanel จัดกลุ่มตามประเภทแทง
+ * ใช้ใน ThaiLottoBetBoard หลังกด "ใส่ราคา"
+ */
 export function ThaiLottoPricePanel({
   entries,
   betTypes,
@@ -17,15 +31,7 @@ export function ThaiLottoPricePanel({
   onSelectEntry,
   onAmountChange,
   onRemove,
-}: {
-  entries: ThaiLottoBetEntry[];
-  betTypes: ThaiLottoBetType[];
-  handleRef?: Ref<LotteryPriceSlipHandle>;
-  selectedEntryId: string | null;
-  onSelectEntry: (entryId: string) => void;
-  onAmountChange: (entryId: string, amount: number) => void;
-  onRemove: (entryId: string) => void;
-}) {
+}: ThaiLottoPricePanelProps) {
   const t = useT("lottery");
   const typeById = useMemo(
     () => new Map<ThaiLottoBetTypeId, ThaiLottoBetType>(betTypes.map((type) => [type.id, type])),

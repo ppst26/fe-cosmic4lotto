@@ -1,6 +1,6 @@
 "use client";
 
-import { useCallback, useEffect, useEffectEvent, useMemo, useRef, useState } from "react";
+import React, { useCallback, useEffect, useEffectEvent, useMemo, useRef, useState } from "react";
 import Link from "@/lib/i18n/navigation";
 import type { LotteryFlagTone, LotteryMessageKey, ThaiLottoBetTypeId } from "@/app/types/lottery";
 import type {
@@ -12,21 +12,18 @@ import type {
   YikiSettlementType,
 } from "@/app/types/yiki";
 import { mapYikiBetTypesForPicker } from "@/lib/lottery/yikiToThaiBetTypes";
-import { uniquePermutations } from "@/app/components/lottery/lotteryUtils";
-import { useLotteryI18n } from "@/app/components/lottery/useLotteryI18n";
 import { LotteryDrawCard } from "@/components/lottery/play/LotteryDrawCard";
 import { ThaiLottoBetTypePicker } from "@/components/lottery/thai/ThaiLottoBetTypePicker";
 import { LotteryNumberPad } from "@/components/lottery/play/LotteryNumberPad";
 import { LotteryNumberGrid } from "@/components/lottery/play/LotteryNumberGrid";
-import {
-  LotteryInputModeTabs,
-  type LotteryInputMode,
-} from "@/components/lottery/play/LotteryInputModeTabs";
+import { LotteryInputModeTabs, type LotteryInputMode } from "@/components/lottery/play/LotteryInputModeTabs";
+import { YikiSlip } from "@/app/components/lottery/yiki/YikiSlip";
+import { YikiPricePanel } from "@/app/components/lottery/yiki/YikiPricePanel";
+import { YikiPriceControls } from "@/app/components/lottery/yiki/YikiPriceControls";
 import { LotteryPriceStepCard } from "@/components/lottery/play/LotteryPriceStepCard";
 import type { LotteryPriceSlipHandle } from "@/components/lottery/play/LotteryPriceSlipPanel";
-import { YikiSlip } from "./YikiSlip";
-import { YikiPricePanel } from "./YikiPricePanel";
-import { YikiPriceControls } from "./YikiPriceControls";
+import { uniquePermutations } from "@/app/components/lottery/lotteryUtils";
+import { useLotteryI18n } from "@/app/components/lottery/useLotteryI18n";
 
 /** แท็บวิธีใส่เลข — ป้ายแปลตอน render (lottery.inputMode.*) */
 const INPUT_MODE_IDS: LotteryInputMode[] = ["manual", "grid"];
@@ -43,12 +40,12 @@ interface YikiBetBoardProps {
   /** ตราตลาด — ค่าเริ่มต้นเป็นยี่กี (YK/gold) ตลาดหวยหุ้นอื่นส่งธงของตัวเองมาแทน */
   flagLabel?: string;
   flagTone?: LotteryFlagTone;
-  /** slug ตลาด — การ์ดหัวงวดลิงก์ไปหน้ากติกา */
+  /** slug ตลาดสำหรับไอคอนรูป */
   marketSlug?: string;
   /** ส่งโพย+ราคาไป API — คืน true เมื่อสำเร็จเพื่อล้างโพย */
   onSubmit?: (entries: YikiBetEntry[]) => void | Promise<boolean>;
   isSubmitting?: boolean;
-  /** แจ้ง shell เมื่อเปลี่ยนขั้น (เลือกเลข / ใส่ราคา) */
+  /** แจ้ง shell ซ่อน bottom nav ตอนขั้นใส่ราคา (มือถือ) */
   onStepChange?: (step: "pick" | "price") => void;
 }
 
@@ -62,7 +59,9 @@ function isTypingTarget(target: EventTarget | null): boolean {
 
 /**
  * กระดานแทงหวยแบบ "โพยซ้าย/ใส่เลขขวา" — ถือ state ทั้งหมด (ประเภท · เลขที่กด · โพย · ขั้นใส่ราคา)
- * ใช้ร่วมกันทั้งยี่กี (5/15/30 นาที) และตลาดหวยหุ้นอื่น — ต่างกันแค่ round/flag ที่ส่งเข้ามา
+ * ใช้ร่วมกันทั้งยี่กี (15/30 นาที ผ่าน app/lottery/yiki-15|yiki-30/[roundId]/page.tsx)
+ * และตลาดหวยหุ้นอื่น (ผ่าน app/lottery/[marketId]/page.tsx) — ต่างกันแค่ round/flag ที่ส่งเข้ามา
+ * ทุกขนาดจอ: โพย/ใส่ราคาคอลัมน์ซ้าย + เลือกเลขคอลัมน์ขวา อยู่คู่กันตลอด ไม่ซ้อนแนวตั้ง
  */
 export function YikiBetBoard({
   round,
@@ -94,7 +93,7 @@ export function YikiBetBoard({
   const [feedback, setFeedback] = useState("");
   const [remainingMs, setRemainingMs] = useState<number | null>(null);
   const [step, setStep] = useState<"pick" | "price">("pick");
-  // ขั้นใส่ราคา: เลือก 1 รายการ (หรือติ๊ก "ราคาเท่ากันทั้งหมด") แล้วกดชิปราคา — ใส่ราคาทันทีที่กด
+  // ขั้นใส่ราคา: เลือก 1 รายการ (หรือติ๊ก "ราคาเท่ากันทั้งหมด") แล้วกดชิปราคา — ใส่ราคาทันทีที่กด ไม่ต้องกดยืนยันซ้ำ
   const [selectedEntryId, setSelectedEntryId] = useState<string | null>(null);
   const [sameForAll, setSameForAll] = useState(false);
   const priceSlipRef = useRef<LotteryPriceSlipHandle>(null);
@@ -207,7 +206,7 @@ export function YikiBetBoard({
     setFeedback("");
   };
 
-  // รองรับแป้นพิมพ์จริงบนจอใหญ่ (เฉพาะแท็บกรอกเลขเอง ขั้นเลือกเลข) — useEffectEvent อ่าน state ล่าสุดโดยไม่ต้องผูก listener ใหม่
+  // รองรับแป้นพิมพ์จริงบนจอใหญ่ (เฉพาะแท็บกดเลือกเอง ขั้นเลือกเลข) — useEffectEvent อ่าน state ล่าสุดโดยไม่ต้องผูก listener ใหม่
   const onKeyDown = useEffectEvent((event: KeyboardEvent) => {
     if (step !== "pick" || inputMode !== "manual") return;
     if (isTypingTarget(event.target) || event.metaKey || event.ctrlKey || event.altKey) return;
@@ -251,13 +250,16 @@ export function YikiBetBoard({
 
   const handleGoToPrice = () => {
     if (entries.length === 0 || isClosed) return;
-    // เข้าขั้นใส่ราคาแบบว่างเปล่าเสมอ — เลือกรายการแรกไว้ก่อนให้เริ่มใส่ราคาได้ทันที
+    // เข้าขั้นใส่ราคาแบบว่างเปล่าเสมอ (ไม่เติมราคาเริ่มต้นให้) — เลือกรายการแรกไว้ก่อนให้เริ่มใส่ราคาได้ทันที
     setSelectedEntryId(entries[0]?.id ?? null);
     setSameForAll(false);
     setStep("price");
   };
 
-  /** กดชิปราคา — ใส่ราคาทันทีกับรายการที่เลือก (หรือทุกรายการถ้าติ๊ก "ราคาเท่ากันทั้งหมด") แล้วย้ายไปช่องถัดไป */
+  /**
+   * กดชิปราคา — ใส่ราคาให้ครบทันทีกับรายการที่เลือกอยู่ (หรือทุกรายการถ้าติ๊ก "ราคาเท่ากันทั้งหมด")
+   * แล้วย้ายเคอร์เซอร์ไปช่องราคาของรายการถัดไปต่อเลย (ไม่ย้ายเมื่อใส่ทุกรายการพร้อมกัน)
+   */
   const handleQuickAmount = (amount: number) => {
     setEntries((prev) =>
       prev.map((entry) => (sameForAll || entry.id === selectedEntryId ? { ...entry, amount } : entry)),
@@ -269,7 +271,9 @@ export function YikiBetBoard({
     () => mapYikiBetTypesForPicker(betTypes, settlementTypes),
     [betTypes, settlementTypes],
   );
-  const selectedTypeIdsForPicker = selectedTypeId ? [selectedTypeId as ThaiLottoBetTypeId] : [];
+  const selectedTypeIdsForPicker = selectedTypeId
+    ? [selectedTypeId as ThaiLottoBetTypeId]
+    : [];
 
   const canConfirm =
     Boolean(onSubmit) &&
@@ -297,67 +301,29 @@ export function YikiBetBoard({
   };
 
   return (
-    <div className={`thai-lotto-layout${step === "price" ? " thai-lotto-layout--price" : ""}`}>
-      {step === "pick" ? (
-        <div className="thai-lotto-layout__draw">
-          <LotteryDrawCard
-            title={marketTitle}
-            drawLabel={roundLabel(round.label)}
-            remainingMs={remainingMs}
-            flagLabel={flagLabel}
-            flagTone={flagTone}
-            marketSlug={marketSlug}
-          />
-        </div>
-      ) : null}
-
-      <div className="thai-lotto-layout__slip">
+    <>
+      <div
+        className={`thai-lotto-layout surface-solid-outer${step === "price" ? " thai-lotto-layout--price" : ""}`}
+      >
         {step === "pick" ? (
-          <YikiSlip
-            entries={entries}
-            settlementTypes={settlementTypes}
-            canUndo={lastAddedIds.length > 0}
-            onRemove={(entryId) => setEntries((prev) => prev.filter((entry) => entry.id !== entryId))}
-            onUndo={handleUndo}
-            onClearAll={handleClearAll}
-          />
-        ) : (
-          <LotteryPriceStepCard
-            controls={
-              <YikiPriceControls
-                selectedEntry={selectedEntry}
-                sameForAll={sameForAll}
-                onToggleSameForAll={setSameForAll}
-                onQuickAmount={handleQuickAmount}
-                onBack={() => setStep("pick")}
-                onSubmit={() => void handleSubmitSlip()}
-                submitDisabled={!canConfirm}
-                isSubmitting={isSubmitting}
-                total={priceTotal}
-              />
-            }
-          >
-            <YikiPricePanel
-              handleRef={priceSlipRef}
-              entries={entries}
-              settlementTypes={settlementTypes}
-              selectedEntryId={selectedEntryId}
-              onSelectEntry={setSelectedEntryId}
-              onAmountChange={(entryId, amount) =>
-                setEntries((prev) => prev.map((entry) => (entry.id === entryId ? { ...entry, amount } : entry)))
-              }
-              onRemove={(entryId) => setEntries((prev) => prev.filter((entry) => entry.id !== entryId))}
+          <div className="thai-lotto-layout__draw">
+            <LotteryDrawCard
+              title={marketTitle}
+              drawLabel={roundLabel(round.label)}
+              remainingMs={remainingMs}
+              flagLabel={flagLabel}
+              flagTone={flagTone}
+              marketSlug={marketSlug}
             />
-          </LotteryPriceStepCard>
-        )}
-      </div>
+          </div>
+        ) : null}
 
-      {step === "pick" ? (
-        <section
-          className="thai-lotto-panel thai-lotto-layout__input flex h-full min-h-0 flex-col gap-0 overflow-hidden px-1.5 py-2 sm:gap-4 sm:p-4 md:p-5"
-          aria-label={t("board.pickAria")}
-        >
-          <div className="thai-lotto-layout__input-body flex min-h-0 flex-1 flex-col gap-2">
+        {step === "pick" ? (
+          <section
+            className="thai-lotto-panel thai-lotto-layout__input flex min-h-0 flex-col gap-0 px-1.5 py-2 sm:gap-4 sm:p-4 md:p-5"
+            aria-label={t("board.pickAria")}
+          >
+            <div className="thai-lotto-layout__input-body flex min-h-0 flex-1 flex-col gap-2">
             <ThaiLottoBetTypePicker
               groups={groups}
               betTypes={pickerBetTypes}
@@ -375,7 +341,7 @@ export function YikiBetBoard({
               panelId="yiki-input-panel"
             />
 
-            <div id="yiki-input-panel" role="tabpanel">
+            <div id="yiki-input-panel" role="tabpanel" aria-labelledby={`thai-lotto-mode-${inputMode}`}>
               {inputMode === "manual" ? (
                 <LotteryNumberPad
                   digits={digits}
@@ -399,26 +365,66 @@ export function YikiBetBoard({
                 {feedback}
               </p>
             ) : null}
-          </div>
+            </div>
 
-          <div className="thai-lotto-pick-actions grid shrink-0 gap-2 pt-1.5" aria-label={t("board.actionsAria")}>
-            <Link
-              href={backHref}
-              className="thai-lotto-pick-actions__back soft-btn-outline min-h-11 text-center text-sm font-semibold"
+            <div className="thai-lotto-layout__input-dock yiki-pick-actions grid shrink-0 gap-2 pt-1.5" aria-label={t("board.actionsAria")}>
+              <Link href={backHref} className="yiki-pick-actions__back">
+                {t("board.back")}
+              </Link>
+              <button
+                type="button"
+                className="cosmic-cta-primary cosmic-cta-primary--lg yiki-pick-actions__primary min-h-11 w-full"
+                disabled={entries.length === 0 || isClosed}
+                onClick={handleGoToPrice}
+              >
+                {t("board.enterPrice")}
+              </button>
+            </div>
+          </section>
+        ) : null}
+
+        <div className="thai-lotto-layout__slip">
+          {step === "pick" ? (
+            <YikiSlip
+              entries={entries}
+              settlementTypes={settlementTypes}
+              canUndo={lastAddedIds.length > 0}
+              onRemove={(entryId) => setEntries((prev) => prev.filter((entry) => entry.id !== entryId))}
+              onUndo={handleUndo}
+              onClearAll={handleClearAll}
+            />
+          ) : (
+            <LotteryPriceStepCard
+              controls={
+                <YikiPriceControls
+                  selectedEntry={selectedEntry}
+                  sameForAll={sameForAll}
+                  onToggleSameForAll={setSameForAll}
+                  onQuickAmount={handleQuickAmount}
+                  onBack={() => setStep("pick")}
+                  onSubmit={() => void handleSubmitSlip()}
+                  submitDisabled={!canConfirm}
+                  isSubmitting={isSubmitting}
+                  total={priceTotal}
+                />
+              }
             >
-              {t("board.back")}
-            </Link>
-            <button
-              type="button"
-              className="soft-btn-primary min-h-11 w-full text-sm font-semibold disabled:opacity-50"
-              disabled={entries.length === 0 || isClosed}
-              onClick={handleGoToPrice}
-            >
-              {t("board.enterPrice")}
-            </button>
-          </div>
-        </section>
-      ) : null}
-    </div>
+              <YikiPricePanel
+                handleRef={priceSlipRef}
+                entries={entries}
+                settlementTypes={settlementTypes}
+                selectedEntryId={selectedEntryId}
+                onSelectEntry={setSelectedEntryId}
+                onAmountChange={(entryId, amount) =>
+                  setEntries((prev) => prev.map((entry) => (entry.id === entryId ? { ...entry, amount } : entry)))
+                }
+                onRemove={(entryId) => setEntries((prev) => prev.filter((entry) => entry.id !== entryId))}
+              />
+            </LotteryPriceStepCard>
+          )}
+        </div>
+      </div>
+
+    </>
   );
 }

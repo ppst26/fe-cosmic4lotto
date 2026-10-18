@@ -1,0 +1,499 @@
+/*
+ * ขนาดตัวอักษรของ UI หวย — พอร์ตจาก glass typography-bridge.css (เฉพาะคลาส lottery / thai-lotto / yiki)
+ */
+
+.lottery-feature-card__title {
+  @apply text-base font-medium;
+}
+
+.lottery-feature-card__yiki-ball {
+  @apply text-xs font-medium;
+}
+
+.lottery-flag__sphere {
+  @apply text-xs font-medium;
+}
+
+.lottery-flag--sm .lottery-flag__sphere {
+  @apply text-xs;
+}
+
+.lottery-flag--lg .lottery-flag__sphere {
+  @apply text-xs;
+}
+
+.lottery-type-card__title {
+  @apply text-sm font-medium;
+}
+
+.lottery-type-card__closed {
+  @apply text-xs font-medium;
+}
+
+.lottery-results-board__header-cell {
+  @apply text-sm font-normal;
+}
+
+.lottery-results-board__market-name {
+  @apply text-sm font-medium;
+}
+
+.lottery-results-board__prize-label {
+  @apply text-xs font-medium;
+}
+
+.lottery-results-board__prize-value {
+  @apply text-lg font-medium;
+}
+
+.lottery-results-board__date-text {
+  @apply text-xs font-medium;
+}
+
+.lottery-results-board__empty {
+  @apply text-sm;
+}
+
+.lottery-results-board__header-cell {
+  @apply text-base;
+}
+
+.lottery-results-board__market-name {
+  @apply text-sm;
+}
+
+.lottery-results-board__prize-label {
+  @apply text-xs;
+}
+
+.lottery-results-board__prize-value {
+  @apply text-xl;
+}
+
+.lottery-results-board__date-text {
+  @apply text-xs;
+}
+
+.lottery-market-sidebar__title {
+  @apply text-xs;
+}
+
+.lottery-market-sidebar__item .lottery-countdown {
+  @apply text-xs;
+}
+
+.lottery-market-sidebar__title {
+  @apply text-sm font-medium;
+}
+
+.lottery-market-sidebar__meta {
+  @apply text-xs font-medium;
+}
+
+.lottery-market-banner__title {
+  @apply text-lg font-medium;
+}
+
+.lottery-market-banner__rules {
+  @apply text-xs font-medium;
+}
+
+.lottery-market-round-count {
+  @apply text-sm;
+}
+
+.lottery-market-round-count__n {
+  @apply font-medium;
+}
+
+.lottery-play-round-card__title {
+  @apply text-base font-medium;
+}
+
+.lottery-play-round-card__countdown {
+  @apply text-xs font-medium;
+}
+
+.lottery-play-round-card__opens {
+  @apply text-xs font-medium;
+}
+
+.lottery-play-round-grid__round {
+  @apply text-xs font-medium;
+}
+
+.lottery-play-round-grid__time {
+  @apply text-lg font-medium;
+}
+
+.lottery-play-round-grid__countdown {
+  @apply text-xs font-medium;
+}
+
+.lottery-play-rounds__expand {
+  @apply text-sm font-medium;
+}
+
+.lottery-play-rounds__expand-chevron {
+  @apply text-xs;
+}
+
+.lottery-price-slip__head {
+  @apply text-sm font-medium;
+}
+
+.lottery-price-row__number {
+  @apply text-sm font-medium;
+}
+
+.lottery-price-row__tag {
+  @apply text-xs font-medium;
+}
+
+.lottery-price-row__rate {
+  @apply text-xs;
+}
+
+.lottery-price-row__amount .thai-lotto-amount__input {
+  @apply text-sm;
+}
+
+.lottery-price-controls__checkbox {
+  @apply text-xs font-medium;
+}
+
+.lottery-price-controls__edit {
+  @apply text-xs font-medium;
+}
+
+.lottery-price-controls__total-label {
+  @apply text-xs;
+}
+
+.lottery-price-controls__total-value {
+  @apply text-sm font-medium;
+}
+
+.lottery-price-chip {
+  @apply text-sm font-medium;
+}
+
+.lottery-price-controls__back {
+  @apply text-sm font-medium;
+}
+
+.lottery-price-controls__submit {
+  @apply text-sm;
+}
+
+.thai-lotto-panel__title {
+  @apply text-base font-medium;
+}
+
+.thai-lotto-panel__meta {
+  @apply text-xs;
+}
+
+.thai-lotto-draw__title {
+  @apply text-lg font-medium;
+}
+
+.thai-lotto-draw__meta {
+  @apply text-sm;
+}
+
+.thai-lotto-draw__close-label {
+  @apply text-xs;
+}
+
+.thai-lotto-draw__close .lottery-countdown {
+  @apply text-sm;
+}
+
+.thai-lotto-type-chip__label {
+  @apply text-xs font-medium;
+}
+
+.thai-lotto-type-chip__rate {
+  @apply text-xs font-medium;
+}
+
+.thai-lotto-slot {
+  @apply text-lg font-medium;
+}
+
+.thai-lotto-pad__key {
+  @apply text-base font-medium;
+}
+
+.thai-lotto-pad__key--muted {
+  @apply text-xs;
+}
+
+.thai-lotto-mode-tabs__tab {
+  @apply text-sm font-medium;
+}
+
+.thai-lotto-hundreds__btn {
+  @apply text-xs font-medium;
+}
+
+.thai-lotto-grid__btn {
+  @apply text-xs font-medium;
+}
+
+.thai-lotto-grid--run .thai-lotto-grid__btn {
+  @apply text-base;
+}
+
+.thai-lotto-feedback {
+  @apply text-xs;
+}
+
+.thai-lotto-layout__slip .lottery-bet-slip__default-label {
+  @apply text-xs;
+}
+
+.thai-lotto-layout__slip .lottery-bet-slip__text-btn {
+  @apply text-xs;
+}
+
+.thai-lotto-layout__slip .lottery-bet-slip__total {
+  @apply text-base;
+}
+
+.lottery-bet-slip__count {
+  @apply text-xs;
+}
+
+.lottery-bet-slip__text-btn {
+  @apply text-sm font-medium;
+}
+
+.lottery-bet-slip__default-label {
+  @apply text-sm;
+}
+
+.thai-lotto-amount__input {
+  @apply text-base font-medium;
+}
+
+.thai-lotto-amount__unit {
+  @apply text-xs;
+}
+
+.lottery-bet-slip__empty {
+  @apply text-sm;
+}
+
+.lottery-bet-slip__group-head {
+  @apply text-xs font-medium;
+}
+
+.lottery-bet-slip__number {
+  @apply text-sm font-medium;
+}
+
+.lottery-bet-slip__rate {
+  @apply text-xs font-medium;
+}
+
+.thai-lotto-amount--slip-row .thai-lotto-amount__input {
+  @apply text-sm;
+}
+
+.lottery-bet-slip__error {
+  @apply text-xs;
+}
+
+.lottery-bet-slip__total {
+  @apply text-xl font-medium;
+}
+
+.thai-lotto-result__label {
+  @apply text-xs font-medium;
+}
+
+.thai-lotto-result__first-value {
+  @apply text-3xl font-medium;
+}
+
+.thai-lotto-result__values {
+  @apply text-lg font-medium;
+}
+
+.yiki-round-strip__label {
+  @apply text-base font-medium;
+}
+
+.yiki-round-strip__close-label {
+  @apply text-xs;
+}
+
+.yiki-type-chip__label {
+  @apply text-sm font-medium;
+}
+
+.yiki-type-chip__rate {
+  @apply text-xs font-medium;
+}
+
+.yiki-price-row__index {
+  @apply text-xs;
+}
+
+.yiki-price-row__number {
+  @apply text-lg font-medium;
+}
+
+.yiki-price-row__input .thai-lotto-amount__input::placeholder {
+  @apply font-medium;
+}
+
+.yiki-price-row__rate {
+  @apply text-xs;
+}
+
+.yiki-price-row__payout {
+  @apply text-sm font-medium;
+}
+
+.yiki-action-bar__secondary {
+  @apply text-base font-medium;
+}
+
+.yiki-action-bar__primary {
+  @apply text-base;
+}
+
+.yiki-howto__title {
+  @apply text-base font-medium;
+}
+
+.yiki-howto__badge {
+  @apply text-xs font-medium;
+}
+
+.yiki-howto__label {
+  @apply text-xs font-medium;
+}
+
+.yiki-price-controls__title {
+  @apply text-base font-medium;
+}
+
+.yiki-price-controls__preview-label {
+  @apply text-xs;
+}
+
+.yiki-price-controls__preview-number {
+  @apply text-3xl font-medium;
+}
+
+.yiki-price-controls__preview-rate {
+  @apply text-sm font-medium;
+}
+
+.yiki-price-controls__checkbox {
+  @apply text-sm font-medium;
+}
+
+.yiki-price-chip {
+  @apply text-sm font-medium;
+}
+
+.yiki-price-controls__total {
+  @apply text-sm;
+}
+
+.yiki-price-controls__total span:last-child {
+  @apply text-lg font-medium;
+}
+
+.yiki-price-controls__back {
+  @apply text-sm font-medium;
+}
+
+.yiki-price-controls__submit {
+  @apply text-sm;
+}
+
+.yiki-pick-actions__primary {
+  @apply text-sm;
+}
+
+.yiki-pick-actions__back {
+  @apply text-sm font-medium;
+}
+
+.lottery-bet-result-dialog__amount {
+  @apply text-4xl font-medium;
+}
+
+.lottery-slip-summary__meta {
+  @apply text-xs font-normal leading-snug sm:text-sm;
+}
+
+.lottery-slip-summary__slip-id {
+  @apply text-sm font-medium leading-snug;
+}
+
+.lottery-slip-summary__status {
+  @apply text-xs font-medium leading-snug;
+}
+
+.lottery-slip-summary__note {
+  @apply text-xs font-normal leading-relaxed;
+}
+
+.lottery-slip-summary__group-title {
+  @apply text-sm font-medium leading-tight;
+}
+
+.lottery-slip-summary__group-count {
+  @apply text-xs font-normal leading-tight;
+}
+
+.lottery-slip-summary__number {
+  @apply text-lg font-medium leading-none tracking-wide;
+}
+
+.lottery-slip-summary__pill {
+  @apply text-[11px] font-medium leading-none sm:text-xs;
+}
+
+.lottery-slip-summary__total-label {
+  @apply text-xs font-normal leading-tight;
+}
+
+.lottery-slip-summary__total-value {
+  @apply text-2xl font-medium leading-none;
+}
+
+.lottery-slip-summary__total-muted {
+  @apply text-lg font-medium leading-none;
+}
+
+.lottery-slip-summary__copy-hint {
+  @apply text-xs;
+}
+
+.lottery-slip-summary__btn {
+  @apply text-base font-medium;
+}
+
+.lottery-slips-list__id {
+  @apply text-sm font-medium;
+}
+
+.lottery-slips-list__status {
+  @apply text-xs font-medium;
+}
+
+.lottery-slips-list__meta {
+  @apply text-xs;
+}
+
+.lottery-slips-list__stake {
+  @apply text-sm font-medium;
+}

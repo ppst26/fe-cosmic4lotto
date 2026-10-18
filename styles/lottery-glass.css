@@ -1,0 +1,1507 @@
+/*
+ * Lottery play UI — พอร์ตจาก glass app/styles/lottery.css (เฉพาะโซนหน้าแทง/ใส่ราคา/โพย/สรุปโพย)
+ * สี/พื้น/ขอบมาจาก token ธีมของ lotto (app/styles/themes.css) · hub/market/rounds อยู่ใน lottery-hub.css + lottery-art.css
+ */
+
+/* token เลย์เอาต์จาก glass tokens.css ที่ lotto ยังไม่มี */
+:root {
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 20px;
+  --space-6: 24px;
+  --radius-control: 4px;
+  --radius-card: 6px;
+  --radius-pill: 999px;
+  --cta-white-bg: #f2f0fa;
+  --cta-white-fg: #14121f;
+  --content-max: 1200px;
+  --page-gutter: clamp(16px, 3vw, 24px);
+  --layout-inline-gutter: var(--page-gutter);
+  --nav-safe: env(safe-area-inset-bottom, 0px);
+  --motion-instant: 100ms;
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+  --header-desktop-bar-height: 72px;
+  --lobby-sidebar-sticky-top: 72px;
+  --lobby-bottom-nav-inset-left: 0px;
+  --yiki-action-bar-height: 4.5rem;
+}
+
+
+/*
+ * ธีมเริ่มต้น (cosmic) ไม่มี token พื้นผิวของ glass — map เข้า token มืด-ทองของ lotto
+ * (ธีมอื่นใช้ค่าจาก app/styles/themes.css ตามปกติ)
+ */
+:root:is([data-theme="cosmic"], :not([data-theme])) {
+  --surface-solid-outer: var(--BG-Surface-Darker);
+  --surface-solid-inner: var(--BG-Surface-Normal);
+  --inner-card-fill: var(--Card-Normal);
+  --inner-card-fill-hover: color-mix(in srgb, var(--Card-Normal) 88%, white);
+  --surface-hover: color-mix(in srgb, var(--BG-Surface-Normal) 88%, white);
+  --border-subtle: rgb(255 255 255 / 0.14);
+  --border-active: var(--Main-Primary);
+  --action-solid: var(--Main-Primary);
+  --text-secondary: var(--Text-Icon-Body);
+  --icon-default: var(--Text-Icon-Body);
+  --focus-ring: var(--Main-Primary);
+  --cta-primary-gradient: linear-gradient(180deg, #fffaea 0%, #f7edd2 45%, #cdbf94 100%);
+  --value-reward: var(--Main-Primary);
+  --value-success: #34d399;
+  --chart-2: var(--Main-Primary);
+  --cosmic-chrome-border: rgb(255 255 255 / 0.1);
+  --cosmic-mobile-sheet-bg: var(--BG-Surface-Darker);
+  --standalone-page-bg: var(--body);
+}
+
+/* พื้น/ขอบการ์ดในโซนแทงหวย (ชุดเดียวกับกลุ่ม :is(.lottery-page-main …) ของ glass) */
+:is(.lottery-hub-theme, .lottery-thai-theme, .thai-lotto-layout, .yiki-layout, .yiki-page-main, main.lottery-slips-page) {
+  --lottery-glass-fill: var(--inner-card-fill);
+  --lottery-glass-fill-hover: var(--inner-card-fill-hover);
+  --lottery-glass-border: transparent;
+  --lottery-control-border: color-mix(in srgb, var(--border-subtle) 62%, rgb(255 255 255 / 0.05));
+  --lottery-grid-cell-radius: var(--radius-card);
+  --lottery-group-head-fill: color-mix(in srgb, var(--surface-solid-outer) 82%, #000);
+}
+
+:is(.lottery-hub-theme, .lottery-thai-theme, main.lottery-slips-page)
+  :is(.glass-card--soft, .lottery-slips-list__card) {
+  border: 0;
+  background: var(--lottery-glass-fill);
+  box-shadow: none;
+  -webkit-backdrop-filter: none;
+  backdrop-filter: none;
+}
+
+:is(.lottery-hub-theme, .lottery-thai-theme, main.lottery-slips-page) .glass-control {
+  border: 1px solid var(--lottery-control-border);
+  background: var(--lottery-glass-fill);
+  box-shadow: inset 0 1px 0 rgb(255 255 255 / 0.06);
+  -webkit-backdrop-filter: none;
+  backdrop-filter: none;
+}
+
+/**
+ * ช่องแทง (โพย + แผงกรอกเลข) — พื้นเข้ม (--surface-solid-inner) ให้ปุ่ม/ช่องด้านในซึ่งใช้ --inner-card-fill ลอยขึ้นชัด
+ * และตรงกับพื้นแถบ dock ล่างที่ใช้ token เดียวกัน · ขอบปุ่มเป็นเส้นขาวโปร่งเพื่อแยกปุ่มแต่ละตัว
+ */
+:is(.thai-lotto-layout, .yiki-layout) {
+  --lottery-panel-fill: var(--surface-solid-inner);
+  --lottery-control-border: rgb(255 255 255 / 0.22);
+}
+
+.thai-lotto-layout,
+.yiki-layout {
+  padding: var(--space-3);
+  border: 0;
+  border-radius: var(--radius-panel);
+  background: var(--surface-solid-outer);
+}
+
+@media (min-width: 640px) {
+  .thai-lotto-layout,
+  .yiki-layout {
+    padding: var(--space-4);
+  }
+}
+
+/*
+ * มือถือ — พื้นหลังหวยเต็มความกว้างจอ · เนื้อหา inset เล็กน้อย (--lottery-mobile-inset)
+ * ใช้คลาส lottery-page-main จาก LobbyDesktopPageShell เมื่อ activeCategoryId="lottery"
+ */
+@media (max-width: 1023px) {
+  main.page-shell.lottery-page-main {
+    --lottery-mobile-inset: var(--space-1);
+    display: flex;
+    flex-direction: column;
+    max-width: none;
+    margin-inline: 0;
+    padding-inline: 0;
+    padding-top: 0;
+  }
+
+  .lottery-page-main .thai-lotto-layout,
+  .lottery-page-main .yiki-layout {
+    flex: 1 1 auto;
+    min-height: 0;
+    height: 100%;
+    max-height: 100%;
+    padding-inline: var(--lottery-mobile-inset);
+    padding-block: var(--space-2);
+    border-radius: 0;
+    box-shadow: none;
+  }
+
+  .lottery-page-main .thai-lotto-layout:not(.thai-lotto-layout--price),
+  .lottery-page-main .yiki-layout:not(.yiki-layout--price) {
+    gap: var(--space-1) var(--space-1);
+    grid-template-rows: auto minmax(0, 1fr);
+    align-items: stretch;
+  }
+
+  .lottery-page-main .thai-lotto-layout__slip,
+  .lottery-page-main .yiki-layout__slip {
+    display: flex;
+    flex-direction: column;
+    min-height: 0;
+    max-height: 100%;
+    height: 100%;
+    overflow: hidden;
+  }
+
+  .lottery-page-main .thai-lotto-layout__slip .lottery-bet-slip,
+  .lottery-page-main .yiki-layout__slip .lottery-bet-slip {
+    min-height: 0;
+    height: 100%;
+    overflow: hidden;
+  }
+
+  .lottery-page-main .lottery-bet-slip__body {
+    flex: 1 1 auto;
+    min-height: 0;
+    overflow-x: hidden;
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .lottery-page-main .lottery-bet-slip__body .lottery-bet-slip__list {
+    flex: 0 0 auto;
+    overflow: visible;
+    max-height: none;
+  }
+
+  .lottery-page-main .thai-lotto-layout__input.thai-lotto-panel,
+  .lottery-page-main .yiki-layout__input.thai-lotto-panel {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    min-height: 0;
+    max-height: 100%;
+    height: 100%;
+    overflow: hidden;
+  }
+
+  .lottery-page-main .thai-lotto-layout__input-body {
+    flex: 1 1 auto;
+    min-height: 0;
+    overflow-x: hidden;
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .lottery-page-main .thai-lotto-layout__input-dock,
+  .lottery-page-main .lottery-bet-slip__dock {
+    position: sticky;
+    bottom: 0;
+    z-index: 2;
+    flex-shrink: 0;
+    background: var(--surface-solid-inner);
+    box-shadow: 0 -10px 20px rgb(0 0 0 / 0.28);
+  }
+}
+
+/*
+ * ขั้นเลือกเลข (มือถือ) — เหมือนไม่มี footer อยู่ข้างล่าง: ซ่อน footer ไม่ให้เลื่อนลงไปเจอ
+ * ขนาด/ตำแหน่ง UI ทั้งหมดคงเดิม (ไม่ขยายกรอบให้เต็มจอ) · เปิด/ปิด class โดย LotteryPlayPageShell
+ */
+@media (max-width: 1023px) {
+  html.is-viewport-locked {
+    overscroll-behavior-y: none;
+  }
+
+  html.is-viewport-locked .cosmic-footer {
+    display: none;
+  }
+}
+
+/*
+ * --- Thai government lottery (/lottery/thai-government) — mobile-first ---
+ * มือถือ/แท็บเล็ต: โพยคอลัมน์ซ้าย (แคบ) + เลือกเลขคอลัมน์ขวา วางคู่กันตลอด ไม่ซ้อนแนวตั้ง
+ * จอใหญ่ (≥1024px): แบนเนอร์งวดเต็มความกว้าง · โพยซ้าย (กว้าง) · แผงกรอกเลขขวา
+ */
+.thai-lotto-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 148px) minmax(0, 1fr);
+  grid-template-areas:
+    "draw draw"
+    "slip input";
+  gap: var(--space-2) var(--space-1);
+  align-items: stretch;
+}
+
+@media (min-width: 640px) {
+  .thai-lotto-layout {
+    grid-template-columns: minmax(0, 176px) minmax(0, 1fr);
+    gap: var(--space-3) var(--space-2);
+  }
+}
+
+.thai-lotto-layout__draw { grid-area: draw; min-width: 0; }
+
+.thai-lotto-layout__input {
+  grid-area: input;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.thai-lotto-layout__slip {
+  grid-area: slip;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+@media (min-width: 1024px) {
+  .lottery-page-main .thai-lotto-layout,
+  .lottery-page-main .yiki-layout {
+    min-height: min(44rem, calc(100dvh - var(--lobby-sidebar-sticky-top, 5rem) - 7rem));
+    padding: var(--space-4);
+  }
+
+  .thai-lotto-layout {
+    grid-template-columns: minmax(0, 1fr) minmax(280px, 360px);
+    grid-template-areas:
+      "draw draw"
+      "slip input";
+    grid-template-rows: auto minmax(0, 1fr);
+    gap: var(--space-4);
+    align-items: stretch;
+  }
+
+  .thai-lotto-layout__draw {
+    grid-column: 1 / -1;
+  }
+
+  .thai-lotto-layout__slip,
+  .thai-lotto-layout__input {
+    min-height: 0;
+    max-height: none;
+    overflow: hidden;
+  }
+
+  .thai-lotto-draw {
+    padding: var(--space-4) var(--space-5);
+  }
+}
+
+/* ผลรางวัลงวดก่อน — แสดงใต้รายการรอบ (step 2) ไม่ใช่หน้าแทง/ใส่ราคา */
+/* ขั้นใส่ราคา — การ์ดโพย+ใส่ราคาชิ้นเดียว (ตาราง scroll · แถบราคา sticky ในการ์ด) */
+:is(.thai-lotto-layout.thai-lotto-layout--price, .yiki-layout.yiki-layout--price) {
+  grid-template-columns: minmax(0, 1fr);
+  grid-template-areas: "slip";
+  gap: var(--space-3);
+  align-items: stretch;
+}
+
+:is(.thai-lotto-layout--price, .yiki-layout--price) .thai-lotto-layout__slip,
+:is(.thai-lotto-layout--price, .yiki-layout--price) .yiki-layout__slip {
+  min-width: 0;
+  align-self: stretch;
+}
+
+.lottery-price-step-card.thai-lotto-panel {
+  gap: 0;
+  padding: var(--space-2);
+  min-height: 0;
+  max-height: min(40rem, calc(100dvh - 7.5rem));
+  overflow: hidden;
+}
+
+@media (max-width: 1023px) {
+  .lottery-price-step-card.thai-lotto-panel {
+    max-height: calc(100dvh - 6.5rem - var(--nav-safe));
+  }
+}
+
+@media (min-width: 1024px) {
+  .lottery-price-step-card.thai-lotto-panel {
+    max-height: min(44rem, calc(100dvh - var(--header-desktop-bar-height) - 5rem));
+  }
+}
+
+.lottery-price-step-card__scroll {
+  flex: 1 1 auto;
+  min-height: 0;
+  overflow-x: hidden;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  -webkit-overflow-scrolling: touch;
+  padding-bottom: var(--space-1);
+}
+
+.lottery-price-step-card__dock {
+  position: sticky;
+  bottom: 0;
+  z-index: 2;
+  flex-shrink: 0;
+  margin-top: var(--space-2);
+  padding-top: var(--space-2);
+  border-top: 1px solid var(--border-subtle);
+  background: var(--surface-solid-inner);
+  box-shadow: 0 -10px 28px rgb(0 0 0 / 0.28);
+}
+
+/* โพยขั้นใส่ราคา — ใช้ร่วมทุกประเภทหวย */
+.lottery-price-slip__head {
+  color: var(--text-primary);
+}
+
+:is(.lottery-price-slip__group-head, .lottery-bet-slip__group-head) {
+  border-radius: calc(var(--radius-panel) - 14px);
+  background: var(--lottery-group-head-fill);
+  color: var(--text-primary);
+}
+
+:is(.lottery-price-slip__group-head, .lottery-bet-slip__group-head) span:last-child {
+  color: var(--value-reward);
+  font-variant-numeric: tabular-nums;
+}
+
+.lottery-price-slip__rows {
+  list-style: none;
+}
+
+.lottery-price-row {
+  border-radius: calc(var(--radius-panel) - 14px);
+  background: color-mix(in srgb, var(--surface-solid-outer) 68%, var(--surface-solid-inner));
+  cursor: pointer;
+}
+
+.lottery-price-row.is-selected {
+  background: var(--lottery-glass-fill-hover, var(--surface-solid-inner));
+}
+
+.lottery-price-row__number {
+  color: var(--text-primary);
+  letter-spacing: 0.06em;
+  font-variant-numeric: tabular-nums;
+}
+
+.lottery-price-row__tag {
+  border: 0;
+  border-radius: calc(var(--radius-panel) - 16px);
+  background: color-mix(in srgb, var(--surface-solid-outer) 88%, #000);
+  color: var(--text-secondary);
+}
+
+.lottery-price-row__rate {
+  color: var(--text-muted);
+  font-variant-numeric: tabular-nums;
+}
+
+.lottery-price-row__amount .thai-lotto-amount__input {
+  text-align: center;
+}
+
+.lottery-price-row__remove {
+  border: 0;
+  border-radius: calc(var(--radius-panel) - 16px);
+  background: transparent;
+  color: var(--icon-default);
+}
+
+.lottery-price-controls__checkbox input[type="checkbox"] {
+  accent-color: var(--chart-2);
+}
+
+.lottery-price-controls__edit {
+  border: 0;
+  border-radius: calc(var(--radius-panel) - 14px);
+  background: var(--lottery-glass-fill);
+  color: var(--text-primary);
+}
+
+.lottery-price-controls__total-badge {
+  border-radius: var(--radius-pill);
+  background: color-mix(in srgb, #d99a08 22%, var(--surface-solid-inner));
+}
+
+.lottery-price-controls__total-label {
+  color: var(--text-secondary);
+}
+
+.lottery-price-controls__total-value {
+  color: var(--value-reward);
+  font-variant-numeric: tabular-nums;
+}
+
+.lottery-price-chip {
+  border: 1px dashed color-mix(in srgb, var(--text-primary) 28%, transparent);
+  border-radius: var(--radius-panel);
+  background: var(--lottery-glass-fill);
+  color: var(--text-primary);
+}
+
+.lottery-price-chip.is-active {
+  border-style: solid;
+  border-color: transparent;
+  background: var(--cta-white-bg);
+  color: var(--cta-white-fg);
+}
+
+.lottery-price-chip--5:not(.is-active) {
+  background: color-mix(in srgb, #38bdf8 14%, var(--surface-solid-inner));
+}
+
+.lottery-price-chip--10:not(.is-active) {
+  background: color-mix(in srgb, #22c55e 12%, var(--surface-solid-inner));
+}
+
+.lottery-price-chip--20:not(.is-active) {
+  background: color-mix(in srgb, #d99a08 14%, var(--surface-solid-inner));
+}
+
+.lottery-price-chip--50:not(.is-active) {
+  background: color-mix(in srgb, #f97316 12%, var(--surface-solid-inner));
+}
+
+.lottery-price-chip--100:not(.is-active) {
+  background: color-mix(in srgb, #f43f5e 12%, var(--surface-solid-inner));
+}
+
+.lottery-price-controls__back {
+  border: 0;
+  border-radius: var(--radius-panel);
+  background: var(--lottery-glass-fill);
+  color: var(--text-primary);
+}
+
+@media (min-width: 1024px) {
+  :is(.thai-lotto-layout--price, .yiki-layout--price) .lottery-price-controls__actions {
+    padding-top: var(--space-1);
+  }
+}
+
+:is(.thai-lotto-panel, .lottery-panel) {
+  border: 0;
+  border-radius: var(--radius-panel);
+  background: var(--lottery-panel-fill, var(--inner-card-fill));
+  box-shadow: inset 0 1px 0 rgb(255 255 255 / 0.05);
+}
+
+.thai-lotto-panel__title {
+  color: var(--text-primary);
+}
+
+.thai-lotto-panel__meta {
+  color: var(--text-secondary);
+}
+
+/* หัวงวด — เป็นลิงก์ไปหน้ากติกา / อัตราจ่าย (LotteryDrawCard) */
+a.thai-lotto-draw {
+  display: flex;
+  color: inherit;
+  text-decoration: none;
+  cursor: pointer;
+  transition:
+    background var(--motion-fast) ease,
+    transform var(--motion-instant) var(--ease-out);
+}
+
+a.thai-lotto-draw:hover {
+  background: var(--inner-card-fill-hover);
+}
+
+a.thai-lotto-draw:active {
+  transform: scale(0.99);
+}
+
+a.thai-lotto-draw:focus-visible {
+  outline: 2px solid var(--focus-ring);
+  outline-offset: 2px;
+}
+
+.thai-lotto-draw {
+  border: 0;
+  border-radius: var(--radius-panel);
+  background: var(--inner-card-fill);
+  box-shadow: inset 0 1px 0 rgb(255 255 255 / 0.05);
+}
+
+.thai-lotto-draw__meta {
+  color: var(--text-secondary);
+}
+
+.thai-lotto-draw__close-label {
+  color: var(--text-muted);
+}
+
+:is(.thai-lotto-layout, .yiki-layout) .cosmic-segment-track {
+  border: 1px solid var(--lottery-control-border);
+  gap: 0.25rem;
+  padding: 0.25rem;
+  background: color-mix(in srgb, var(--surface-solid-outer) 88%, #000);
+}
+
+:is(.thai-lotto-layout, .yiki-layout) .cosmic-segment-btn {
+  min-height: 2rem;
+  padding: 0.2rem 0.35rem;
+  white-space: nowrap;
+  line-height: 1.2;
+}
+
+:is(.thai-lotto-layout, .yiki-layout) .cosmic-segment-btn.is-active {
+  background: var(--cta-white-bg);
+  color: var(--cta-white-fg);
+  box-shadow: 0 2px 12px rgb(0 0 0 / 0.16);
+}
+
+/* ประเภทการแทง */
+.thai-lotto-type-chip {
+  border: 1px solid var(--lottery-control-border);
+  border-radius: calc(var(--radius-panel) - 4px);
+  background: var(--lottery-glass-fill);
+  color: var(--text-secondary);
+  transition:
+    background var(--motion-fast) ease,
+    color var(--motion-fast) ease,
+    border-color var(--motion-fast) ease;
+}
+
+.thai-lotto-type-chip:hover {
+  background: var(--lottery-glass-fill-hover);
+  color: var(--text-primary);
+}
+
+.thai-lotto-type-chip.is-active {
+  border-color: color-mix(in srgb, var(--cta-white-bg) 88%, var(--lottery-control-border));
+  background: var(--cta-white-bg);
+  color: var(--cta-white-fg);
+  box-shadow:
+    0 4px 16px rgb(0 0 0 / 0.18),
+    inset 0 1px 0 rgb(255 255 255 / 0.35);
+}
+
+.thai-lotto-type-chip__label {
+  line-height: 1.25;
+}
+
+.thai-lotto-type-chip__rate {
+  color: var(--text-muted);
+  font-variant-numeric: tabular-nums;
+  line-height: 1.2;
+}
+
+.thai-lotto-type-chip.is-active .thai-lotto-type-chip__rate {
+  color: color-mix(in srgb, var(--cta-white-fg) 72%, #b45309);
+}
+
+/* toggle กลับเลข */
+.thai-lotto-toggle {
+  color: var(--text-secondary);
+}
+
+.thai-lotto-toggle.is-active {
+  color: var(--text-primary);
+}
+
+.thai-lotto-toggle__track {
+  border: 1px solid var(--lottery-control-border);
+  border-radius: var(--radius-pill);
+  background: var(--surface-hover);
+  transition: background var(--motion-fast) ease;
+}
+
+.thai-lotto-toggle.is-active .thai-lotto-toggle__track {
+  background: var(--cta-primary-gradient);
+}
+
+.thai-lotto-toggle__thumb {
+  background: var(--text-primary);
+  transition: transform var(--motion-fast) ease;
+}
+
+.thai-lotto-toggle.is-active .thai-lotto-toggle__thumb {
+  transform: translateX(1rem);
+}
+
+/* ช่องเลข + แป้น */
+.thai-lotto-slot {
+  border: 1px solid var(--lottery-control-border);
+  border-radius: calc(var(--radius-panel) - 6px);
+  background: color-mix(in srgb, var(--surface-solid-outer) 78%, var(--surface-solid-inner));
+  color: transparent;
+  font-variant-numeric: tabular-nums;
+  transition:
+    background var(--motion-fast) ease,
+    color var(--motion-fast) ease,
+    border-color var(--motion-fast) ease,
+    box-shadow var(--motion-fast) ease;
+}
+
+/* ตัวเลขที่กรอกแล้ว — สีขาวชัด ต่างจากช่องว่าง */
+.thai-lotto-slot.is-filled {
+  background: var(--surface-solid-inner);
+  color: var(--text-primary);
+}
+
+.thai-lotto-slot.is-next {
+  border-color: color-mix(in srgb, var(--border-active) 55%, var(--lottery-control-border));
+  box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--border-active) 35%, transparent);
+}
+
+.thai-lotto-pad__key {
+  border: 1px solid var(--lottery-control-border);
+  border-radius: calc(var(--radius-panel) - 8px);
+  background: var(--lottery-glass-fill);
+  color: var(--text-primary);
+  font-variant-numeric: tabular-nums;
+  transition:
+    background var(--motion-fast) ease,
+    opacity var(--motion-fast) ease,
+    transform var(--motion-fast) ease;
+}
+
+.thai-lotto-pad__key:hover:not(:disabled) {
+  background: var(--lottery-glass-fill-hover);
+}
+
+.thai-lotto-pad__key:active:not(:disabled) {
+  transform: scale(0.98);
+}
+
+.thai-lotto-pad__key--muted {
+  color: var(--text-secondary);
+  border: 1px solid var(--lottery-control-border);
+  background: color-mix(in srgb, var(--surface-solid-outer) 55%, var(--surface-solid-inner));
+}
+
+.thai-lotto-pad__key:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+/* แท็บวิธีใส่เลข — ขีดเส้นใต้ แยกจาก segment จำนวนหลักด้านบน */
+.thai-lotto-mode-tabs {
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.thai-lotto-mode-tabs__tab {
+  color: var(--text-muted);
+  transition: color var(--motion-fast) ease;
+}
+
+.thai-lotto-mode-tabs__tab:hover {
+  color: var(--text-primary);
+}
+
+.thai-lotto-mode-tabs__tab.is-active {
+  color: var(--text-primary);
+}
+
+.thai-lotto-mode-tabs__tab.is-active::after {
+  content: "";
+  position: absolute;
+  right: 20%;
+  bottom: -1px;
+  left: 20%;
+  height: 2px;
+  border-radius: var(--radius-pill);
+  background: rgb(255 255 255 / 0.88);
+}
+
+.thai-lotto-mode-tabs__tab:focus-visible {
+  outline: 2px solid var(--focus-ring);
+  outline-offset: -2px;
+  border-radius: calc(var(--radius-panel) - 12px);
+}
+
+/* แผงเลข */
+.thai-lotto-grid__caption {
+  color: var(--text-secondary);
+}
+
+.thai-lotto-hundreds__btn {
+  border: 1px solid var(--lottery-control-border);
+  border-radius: calc(var(--lottery-grid-cell-radius, var(--radius-card)) - 2px);
+  background: var(--lottery-glass-fill);
+  color: var(--text-secondary);
+  font-variant-numeric: tabular-nums;
+  transition:
+    background var(--motion-fast) ease,
+    color var(--motion-fast) ease;
+}
+
+.thai-lotto-hundreds__btn:hover {
+  color: var(--text-primary);
+  background: var(--lottery-glass-fill-hover);
+}
+
+.thai-lotto-hundreds__btn.is-active {
+  background: var(--cta-white-bg);
+  color: var(--cta-white-fg);
+  border-color: transparent;
+}
+
+.thai-lotto-hundreds__dot {
+  background: var(--value-reward);
+}
+
+.thai-lotto-grid__btn {
+  border: 1px solid var(--lottery-control-border);
+  border-radius: calc(var(--lottery-grid-cell-radius, var(--radius-card)) - 2px);
+  background: var(--lottery-glass-fill);
+  color: var(--text-primary);
+  font-variant-numeric: tabular-nums;
+  transition:
+    background var(--motion-fast) ease,
+    color var(--motion-fast) ease,
+    border-color var(--motion-fast) ease;
+}
+
+.thai-lotto-grid--run .thai-lotto-grid__btn {
+  min-height: 2.25rem;
+  padding: 0.25rem;
+}
+
+.thai-lotto-grid__btn:hover:not(:disabled) {
+  background: var(--lottery-glass-fill-hover);
+}
+
+.thai-lotto-grid__btn.is-active {
+  background: #ffcc00;
+  color: #0a0a0a;
+}
+
+.thai-lotto-grid__btn:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+.thai-lotto-feedback {
+  margin: 0;
+  text-align: center;
+  color: var(--value-success);
+}
+
+.thai-lotto-feedback:empty {
+  display: none;
+}
+
+/* โพย — แถบเครื่องมือล่าง (ย้อนกลับ / ล้าง) */
+.lottery-slip-toolbar {
+  border: 0;
+  border-radius: var(--radius-panel);
+  background: color-mix(in srgb, var(--surface-solid-outer) 78%, var(--surface-solid-inner));
+}
+
+.lottery-slip-toolbar__divider {
+  background: rgb(255 255 255 / 0.1);
+}
+
+.lottery-slip-toolbar__btn {
+  color: var(--text-secondary);
+  transition:
+    background var(--motion-fast) ease,
+    color var(--motion-fast) ease,
+    opacity var(--motion-fast) ease;
+}
+
+.lottery-slip-toolbar__btn:hover:not(:disabled) {
+  background: color-mix(in srgb, var(--surface-hover) 45%, transparent);
+  color: var(--text-primary);
+}
+
+.lottery-slip-toolbar__btn:disabled {
+  opacity: 0.38;
+  cursor: not-allowed;
+}
+
+:is(.yiki-layout__slip, .thai-lotto-layout__slip) .lottery-bet-slip {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  min-height: 0;
+  gap: var(--space-2);
+  padding: var(--space-2);
+}
+
+:is(.yiki-layout__slip, .thai-lotto-layout__slip) .lottery-bet-slip__head-count {
+  margin: 0;
+  color: var(--text-primary);
+}
+
+.thai-lotto-layout__slip .thai-lotto-amount {
+  min-height: 2rem;
+  padding-inline: var(--space-2);
+}
+
+.thai-lotto-amount {
+  border: 0;
+  border-radius: var(--radius-panel);
+  background: var(--lottery-glass-fill);
+}
+
+.thai-lotto-amount:focus-within {
+  box-shadow: 0 0 0 2px var(--focus-ring);
+}
+
+.thai-lotto-amount.is-invalid {
+  box-shadow: inset 0 0 0 1.5px #f87171;
+}
+
+.thai-lotto-amount__input {
+  border: 0;
+  outline: none;
+  background: transparent;
+  color: var(--text-primary);
+  font-variant-numeric: tabular-nums;
+}
+
+.thai-lotto-amount__unit {
+  color: var(--text-muted);
+}
+
+.lottery-bet-slip__empty {
+  display: grid;
+  place-items: center;
+  flex: 1 1 auto;
+  margin: 0;
+  padding: var(--space-6) var(--space-2);
+  text-align: center;
+  color: var(--text-muted);
+}
+
+.lottery-bet-slip__list {
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 auto;
+  min-height: 0;
+  gap: var(--space-2);
+  overflow-y: auto;
+  overscroll-behavior: contain;
+}
+
+:is(.yiki-layout__slip, .thai-lotto-layout__slip) .lottery-bet-slip__list {
+  flex: 1 1 auto;
+  min-height: 0;
+}
+
+@media (min-width: 1024px) {
+  .lottery-bet-slip__list,
+  :is(.yiki-layout__slip, .thai-lotto-layout__slip) .lottery-bet-slip__list {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: var(--space-3);
+    align-content: start;
+    flex: 1 1 0;
+    max-height: none;
+  }
+
+  .lottery-bet-slip__group {
+    min-width: 0;
+    padding: var(--space-2);
+    border-radius: var(--radius-panel);
+    background: color-mix(in srgb, var(--inner-card-fill-hover) 42%, var(--inner-card-fill));
+    box-shadow: inset 0 1px 0 rgb(255 255 255 / 0.04);
+  }
+
+  .lottery-bet-slip__head {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--space-2);
+  }
+
+  .lottery-bet-slip__dock--mobile-only {
+    display: none;
+  }
+
+  .lottery-slip-toolbar--head {
+    width: auto;
+    min-width: 10rem;
+    border-radius: var(--radius-control);
+    background: color-mix(in srgb, var(--inner-card-fill-hover) 55%, var(--inner-card-fill));
+  }
+}
+
+.lottery-bet-slip__group-head {
+  border-radius: calc(var(--radius-panel) - 14px);
+  background: color-mix(in srgb, var(--surface-solid-outer) 82%, #000);
+  color: var(--text-secondary);
+}
+
+.lottery-bet-slip__group-head span:last-child {
+  color: var(--value-reward);
+  font-variant-numeric: tabular-nums;
+}
+
+.lottery-bet-slip__rows {
+  list-style: none;
+}
+
+/** แถวโพย — เลข · อัตราจ่าย · ลบ ในบรรทัดเดียว */
+.lottery-bet-slip__row {
+  border: 0;
+  border-radius: calc(var(--radius-panel) - 14px);
+  background: color-mix(in srgb, var(--inner-card-fill-hover) 38%, var(--inner-card-fill));
+}
+
+.lottery-bet-slip__number {
+  line-height: 1.2;
+  color: var(--text-primary);
+  letter-spacing: 0.08em;
+  font-variant-numeric: tabular-nums;
+}
+
+.lottery-bet-slip__rate {
+  color: var(--value-reward);
+  font-variant-numeric: tabular-nums;
+}
+
+.lottery-bet-slip__remove {
+  border-radius: 9999px;
+  color: var(--text-muted);
+  transition:
+    background var(--motion-fast) ease,
+    color var(--motion-fast) ease;
+}
+
+.lottery-bet-slip__remove:hover {
+  background: color-mix(in srgb, var(--surface-solid-outer) 70%, var(--surface-solid-inner));
+  color: var(--text-primary);
+}
+
+/* ผลงวดก่อน */
+.thai-lotto-result__first {
+  border-radius: calc(var(--radius-panel) - 10px);
+  background: color-mix(in srgb, var(--surface-solid-outer) 90%, #000);
+}
+
+.thai-lotto-result__label {
+  color: var(--text-secondary);
+}
+
+.thai-lotto-result__first-value {
+  line-height: 1.2;
+  color: var(--value-reward);
+  letter-spacing: 0.12em;
+  font-variant-numeric: tabular-nums;
+}
+
+.thai-lotto-result__cell {
+  border-radius: calc(var(--radius-panel) - 10px);
+  background: var(--surface-solid-inner);
+}
+
+.thai-lotto-result__values {
+  color: var(--text-primary);
+  font-variant-numeric: tabular-nums;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .thai-lotto-type-chip,
+  .thai-lotto-toggle__track,
+  .thai-lotto-toggle__thumb,
+  .thai-lotto-slot,
+  .thai-lotto-pad__key,
+  .thai-lotto-mode-tabs__tab,
+  .thai-lotto-hundreds__btn,
+  .thai-lotto-grid__btn,
+  .lottery-bet-slip__remove {
+    transition: none;
+  }
+}
+
+/*
+ * --- Yiki 15-minute lottery (/lottery/yiki-15) — mobile-first ---
+ * เลย์เอาต์เดียวกับหวยรัฐบาลไทย (โพย/ใส่ราคาซ้าย + เลือกเลขขวา) แต่ไม่มีแถวผลรางวัลในหน้าแทง
+ * และมี action bar คงที่ล่างสุดแทน FloatingBottomNav
+ */
+.yiki-page-main {
+  padding-bottom: calc(var(--yiki-action-bar-height, 76px) + var(--nav-safe) + var(--space-4));
+}
+
+.yiki-round-strip {
+  border: 0;
+  border-radius: var(--radius-panel);
+  background: var(--surface-solid-inner);
+}
+
+.yiki-round-strip__label {
+  color: var(--text-primary);
+}
+
+.yiki-round-strip__close-label {
+  color: var(--text-muted);
+}
+
+.yiki-type-chip {
+  border: 1px solid var(--lottery-control-border);
+  border-radius: calc(var(--radius-panel) - 8px);
+  background: var(--lottery-glass-fill, var(--surface-solid-inner));
+  color: var(--text-secondary);
+  transition:
+    background var(--motion-fast) ease,
+    color var(--motion-fast) ease,
+    border-color var(--motion-fast) ease;
+}
+
+.yiki-type-chip:hover {
+  background: var(--lottery-glass-fill-hover, var(--surface-solid-inner));
+  color: var(--text-primary);
+}
+
+.yiki-type-chip.is-active {
+  border-color: color-mix(in srgb, var(--cta-white-bg) 88%, var(--lottery-control-border));
+  background: var(--cta-white-bg);
+  color: var(--cta-white-fg);
+}
+
+.yiki-type-chip__label {
+  line-height: 1.2;
+}
+
+.yiki-type-chip__rate {
+  color: var(--text-muted);
+  font-variant-numeric: tabular-nums;
+}
+
+.yiki-type-chip.is-active .yiki-type-chip__rate {
+  color: color-mix(in srgb, var(--cta-white-fg) 72%, #b45309);
+}
+
+/* action bar คงที่ล่างสุด — แทน FloatingBottomNav บนหน้าแทงยี่กี */
+.yiki-action-bar {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 40;
+  background: color-mix(in srgb, var(--surface-solid-outer) 94%, #000);
+  border-top: 0;
+}
+
+@media (min-width: 1024px) {
+  /*
+   * จัดปุ่มให้กว้างตรงกับคอลัมน์โพย/เลือกเลขด้านบน แทนแบ่งครึ่งเท่ากัน
+   * เว้นซ้ายตาม sidebar ของ LobbyDesktopPageShell (--lobby-bottom-nav-inset-left จาก .lobby-desktop-shell
+   * ที่ครอบอยู่ — ไม่งั้นพื้นแถบจะพาดใต้ sidebar) fallback 0px กันหน้าที่ไม่มี shell ครอบ
+   */
+  .yiki-action-bar {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 380px);
+    gap: var(--space-6);
+    max-width: var(--content-max);
+    margin-inline: auto;
+    left: var(--lobby-bottom-nav-inset-left, 0px);
+  }
+}
+
+/* ไม่มีปุ่มรอง (เช่นขั้นใส่ราคาที่ย้าย "กลับแก้ไขเลข" ไปการ์ดขวาแล้ว) — ปุ่มหลักขยายเต็มความกว้าง */
+.yiki-action-bar--single {
+  grid-template-columns: minmax(0, 1fr);
+}
+
+.yiki-action-bar--single .yiki-action-bar__primary {
+  grid-column: 1 / -1;
+}
+
+.yiki-action-bar__secondary {
+  border: 0;
+  border-radius: var(--radius-panel);
+  background: var(--lottery-glass-fill);
+  color: var(--text-primary);
+  text-decoration: none;
+}
+
+.yiki-action-bar__secondary:hover {
+  background: var(--lottery-glass-fill-hover);
+}
+
+/* "วิธีการแทงหวย" — จอใหญ่เท่านั้น สีตามธีมเดิมทั้งหมด (ไม่ใช้โทนทอง/ดำจากภาพอ้างอิง) */
+.yiki-howto {
+  border: 0;
+  border-radius: var(--radius-panel);
+  background: var(--surface-solid-inner);
+}
+
+.yiki-howto__title {
+  color: var(--text-primary);
+}
+
+.yiki-howto__badge {
+  background: var(--action-solid);
+  color: var(--text-primary);
+}
+
+.yiki-howto__icon {
+  background: color-mix(in srgb, var(--surface-solid-outer) 88%, #000);
+  color: var(--icon-default);
+}
+
+.yiki-howto__label {
+  color: var(--text-secondary);
+}
+
+:is(.thai-lotto-panel.thai-lotto-layout__input, .thai-lotto-panel.yiki-layout__input) {
+  height: 100%;
+  gap: 0.5rem;
+}
+
+.yiki-pick-actions__back {
+  display: none;
+}
+
+@media (min-width: 1024px) {
+  .yiki-pick-actions {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    margin-top: var(--space-3);
+  }
+
+  .yiki-pick-actions__back {
+    display: grid;
+    place-items: center;
+    min-height: 2.75rem;
+    border: 0;
+    border-radius: var(--radius-panel);
+    background: var(--lottery-glass-fill);
+    color: var(--text-primary);
+    text-decoration: none;
+    transition: background var(--motion-fast) ease;
+  }
+
+  .yiki-pick-actions__back:hover {
+    background: var(--lottery-glass-fill-hover);
+  }
+
+  .yiki-page-main {
+    padding-bottom: var(--space-6);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .yiki-type-chip,
+  .lottery-bet-slip__remove {
+    transition: none;
+  }
+}
+
+/* Dialog ผลส่งโพย — LotteryBetResultDialog.tsx */
+.lottery-bet-result-dialog.cosmic-modal-shell {
+  border: 0;
+  background: var(--cosmic-mobile-sheet-bg);
+  -webkit-backdrop-filter: none;
+  backdrop-filter: none;
+}
+
+.lottery-bet-result-dialog__icon {
+  border-radius: var(--radius-pill);
+  border: 1px solid rgb(255 255 255 / 0.12);
+}
+
+.lottery-bet-result-dialog__icon.is-error {
+  color: var(--text-primary);
+  background: color-mix(in srgb, var(--surface-hover) 65%, transparent);
+}
+
+/*
+ * หน้าโพยสรุป / รายการโพย — gutter มาตรฐาน (ไม่ใช้ padding-inline: 0 แบบหน้าแทง)
+ * ใช้คลาส lottery-slips-page บน main จาก /lottery/slips*
+ */
+main.page-shell.lottery-page-main.lottery-slips-page {
+  padding-inline: var(--layout-inline-gutter);
+}
+
+@media (max-width: 1023px) {
+  main.page-shell.lottery-page-main.lottery-slips-page {
+    background-color: var(--standalone-page-bg);
+    padding-top: 0.75rem;
+    padding-bottom: 1.25rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  main.page-shell.lottery-page-main.lottery-slips-page {
+    padding-inline: var(--page-gutter);
+  }
+}
+
+/* สรุปโพยหลังส่ง — LotterySlipSummary.tsx */
+.lottery-slip-summary {
+  color: var(--text-primary);
+  box-sizing: border-box;
+}
+
+@media (max-width: 1023px) {
+  .lottery-slip-summary {
+    padding: 0.35rem 0 1rem;
+    background: transparent;
+    border: 0;
+  }
+}
+
+@media (min-width: 1024px) {
+  .lottery-slip-summary {
+    border-radius: var(--radius-panel);
+    border: 1px solid var(--cosmic-chrome-border);
+    background-color: var(--standalone-page-bg);
+    padding: 0.65rem 0.75rem 0.85rem;
+  }
+}
+
+.lottery-slip-summary__head {
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid rgb(255 255 255 / 0.05);
+}
+
+.lottery-slip-summary__meta {
+  color: var(--text-secondary);
+}
+
+.lottery-slip-summary__slip-id {
+  border: 0;
+  background: transparent;
+  color: var(--value-reward);
+  cursor: pointer;
+}
+
+.lottery-slip-summary__status {
+  color: var(--value-success);
+}
+
+.lottery-slip-summary__note {
+  color: var(--text-muted);
+}
+
+.lottery-slip-summary__group-count {
+  color: var(--text-muted);
+}
+
+.lottery-slip-summary__group {
+  border-radius: calc(var(--radius-panel) - 4px);
+  border: 1px solid rgb(255 255 255 / 0.06);
+  background: var(--surface-solid-inner);
+}
+
+/* หัวกลุ่มประเภท — พื้นเดียวกับหัวกลุ่มในโพยหน้าแทง (--lottery-group-head-fill) แทน gradient nebula เดิม */
+.lottery-slip-summary .lottery-slip-summary__group-head {
+  color: #f3eeff;
+  background: var(--lottery-group-head-fill);
+  border-bottom: 1px solid rgb(255 255 255 / 0.06);
+}
+
+.lottery-slip-summary__rows {
+  list-style: none;
+}
+
+.lottery-slip-summary__row {
+  border-bottom: 1px solid rgb(255 255 255 / 0.04);
+}
+
+.lottery-slip-summary__row:last-child {
+  border-bottom: 0;
+}
+
+.lottery-slip-summary__number {
+  letter-spacing: 0.12em;
+  font-variant-numeric: tabular-nums;
+}
+
+.lottery-slip-summary__pill {
+  border-radius: 9999px;
+  border: 1px solid rgb(255 255 255 / 0.08);
+  background: rgb(255 255 255 / 0.04);
+  font-variant-numeric: tabular-nums;
+  color: var(--text-muted);
+}
+
+.lottery-slip-summary__pill--stake {
+  color: var(--value-reward);
+  border-color: rgb(255 230 109 / 0.22);
+  background: rgb(255 230 109 / 0.08);
+}
+
+.lottery-slip-summary__totals {
+  border: 1px solid rgb(255 255 255 / 0.06);
+  border-radius: calc(var(--radius-panel) - 4px);
+  background: var(--surface-solid-inner);
+}
+
+.lottery-slip-summary__total-label {
+  color: var(--text-muted);
+}
+
+.lottery-slip-summary__total-value {
+  line-height: 1;
+  color: var(--value-reward);
+}
+
+.lottery-slip-summary__total-muted {
+  color: var(--text-muted);
+}
+
+.lottery-slip-summary__copy-hint {
+  color: var(--value-success);
+}
+
+.lottery-slip-summary__continue {
+  width: 100%;
+}
+
+/* ปุ่มรอง "โพยทั้งหมด" — outline ทรง rounded-full สูง 54px เท่าปุ่ม "แทงต่อ" */
+.lottery-slip-summary__back {
+  min-height: 54px;
+  border: 1px solid rgb(255 255 255 / 0.3);
+  border-radius: var(--radius-pill);
+  background: transparent;
+  color: var(--text-primary);
+  font-size: 0.9375rem;
+  font-weight: 500;
+  transition: background var(--motion-fast) ease;
+}
+
+.lottery-slip-summary__back:hover {
+  border-color: rgb(255 255 255 / 0.5);
+  background: rgb(255 255 255 / 0.06);
+}
+
+.lottery-slip-summary__back:active {
+  transform: scale(0.98);
+}
+
+/* รายการโพยทั้งหมด — /lottery/slips */
+.lottery-slips-list {
+  list-style: none;
+}
+
+.lottery-slips-list__card {
+  border-radius: var(--radius-panel);
+  text-decoration: none;
+  color: inherit;
+}
+
+.lottery-slips-list__id {
+  color: var(--value-reward);
+}
+
+.lottery-slips-list__status {
+  color: var(--value-success);
+}
+
+.lottery-slips-list__meta {
+  color: var(--text-muted);
+}
+
+.lottery-slips-list__stake {
+  color: var(--text-primary);
+}
+
+/* ปุ่มโพยของฉัน — พื้นทึบ ไม่ใช้ glass */
+.lottery-slips-entry {
+  background: var(--lottery-glass-fill, var(--surface-solid-inner));
+  color: var(--text-primary);
+}
+
+/* ปุ่มประเภทเลขแทง — ใหญ่ขึ้น · ชื่อประเภทหนา/ใหญ่ · อัตราจ่ายเล็กลง */
+.thai-lotto-type-grid .thai-lotto-type-chip {
+  min-height: 3.5rem;
+  padding: 0.6rem 0.75rem;
+  gap: 0.15rem;
+}
+
+.thai-lotto-type-grid .thai-lotto-type-chip__label {
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+.thai-lotto-type-grid .thai-lotto-type-chip__rate {
+  font-size: 0.6875rem;
+  font-weight: 400;
+}
+
+/* ปุ่มใส่ราคา (มือถือ) — ลด padding บน/ล่าง ความกว้างเต็มเหมือนเดิม */
+@media (max-width: 1023px) {
+  .yiki-pick-actions .yiki-pick-actions__primary {
+    min-height: 2.5rem;
+    padding-block: 0.35rem;
+  }
+}
+
+/*
+ * ปุ่ม/segment พื้นฐานของ glass (buttons.css · layout.css) ที่ lotto ยังไม่มี — สีทองตามธีม lotto
+ */
+:root {
+  --motion-base: 200ms;
+}
+
+.cosmic-cta-primary {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  width: 100%;
+  min-height: 54px;
+  padding: 0 1.25rem;
+  overflow: hidden;
+  border: 1px solid rgb(255 255 255 / 0.35);
+  border-radius: var(--radius-pill);
+  background: var(--cta-primary-gradient);
+  color: #2a0607;
+  font-size: 0.9375rem;
+  font-weight: 700;
+  line-height: 1.2;
+  text-decoration: none;
+  cursor: pointer;
+  transition:
+    transform 0.15s ease,
+    filter 0.15s ease;
+}
+
+.cosmic-cta-primary--lg {
+  min-height: 54px;
+}
+
+.cosmic-cta-primary:hover:not(:disabled):not([aria-disabled="true"]) {
+  transform: translateY(-1px);
+  filter: brightness(1.07);
+}
+
+.cosmic-cta-primary:active:not(:disabled):not([aria-disabled="true"]) {
+  transform: translateY(1px);
+  filter: brightness(0.95);
+}
+
+.cosmic-cta-primary:disabled,
+.cosmic-cta-primary[aria-disabled="true"] {
+  cursor: not-allowed;
+  opacity: 0.45;
+  pointer-events: none;
+  filter: none;
+}
+
+.cosmic-segment-track,
+.lottery-segment-track {
+  border-radius: var(--radius-panel);
+  background: color-mix(in srgb, var(--surface-hover) 88%, transparent);
+  padding: 4px;
+}
+
+.cosmic-segment-btn,
+.lottery-segment-btn {
+  min-height: 2rem;
+  border-radius: calc(var(--radius-panel) - 4px);
+  color: var(--text-muted);
+  font-weight: 600;
+  transition:
+    color var(--motion-base) var(--ease-out),
+    background var(--motion-base) var(--ease-out),
+    box-shadow var(--motion-base) var(--ease-out),
+    transform var(--motion-instant) var(--ease-out);
+}
+
+.cosmic-segment-btn:active:not(:disabled) {
+  transform: scale(0.97);
+}
+
+.cosmic-segment-btn.is-active,
+.lottery-segment-btn.is-active {
+  background: var(--action-solid);
+  color: #2a0607;
+  box-shadow: 0 2px 12px rgb(0 0 0 / 0.3);
+}

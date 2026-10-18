@@ -1,6 +1,6 @@
 "use client";
 
-import { useCallback } from "react";
+import React, { useCallback } from "react";
 import type { YikiBetEntry, YikiSettlementTypeId, YikiSettlementType } from "@/app/types/yiki";
 import { LotteryBetSlip } from "@/components/lottery/play/LotteryBetSlip";
 import { useT } from "@/lib/i18n/I18nProvider";
@@ -14,7 +14,10 @@ interface YikiSlipProps {
   onClearAll: () => void;
 }
 
-/** โพยยี่กี/หวยหุ้น — ห่อ LotteryBetSlip มาตรฐานเดียวกับหวยรัฐบาล */
+/**
+ * โพยยี่กี/หวยหุ้น — ห่อ LotteryBetSlip มาตรฐานเดียวกับหวยรัฐบาล
+ * ใช้ใน YikiBetBoard
+ */
 export function YikiSlip({
   entries,
   settlementTypes,

@@ -1,5 +1,6 @@
 "use client";
 
+import React from "react";
 import type { YikiBetEntry } from "@/app/types/yiki";
 import { LotteryPriceControls } from "@/components/lottery/play/LotteryPriceControls";
 

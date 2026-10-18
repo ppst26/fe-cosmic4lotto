@@ -308,3 +308,11 @@ Lotto-only: notification bell kept top-left (lotto's frozen header has no bell),
 `components/lotto/LobbySidebar.tsx` (+ css module): wallet + deposit/withdraw kept (lotto has no header wallet on desktop), then glass-style menu panel with 3D icons
 (home / lottery / casino / slots / promotions / activities, active row by pathname), then the glass hub-card stack from `DESKTOP_RIGHT_MENU_TILES`
 (referral, check-in, wheel, gems, coupon, VIP — auth-guarded, coupon/VIP via lotto contexts). Deposit/withdraw buttons are now wired to the wallet sheets.
+
+## หวย step 2/3 — โครง viewport-locked + UI หน้าแทง (reverse จาก glass)
+- `components/lottery/play/*`, `thai/*`, `app/components/lottery/yiki/*`, `LotteryYikiPlayBoard.tsx` — copy markup/logic จาก glass (แก้เฉพาะ path import) → ใช้คลาส `lottery-bet-slip__*`, `lottery-price-*`, `thai-lotto-*`, `yiki-*` ตัวเดียวกับ glass
+- `styles/lottery-glass.css` — rule หน้าแทง/ใส่ราคา/โพย จาก glass `lottery.css` + token (`--space-*`, `--radius-*`, ฯลฯ) และ map ธีม cosmic → token มืด-ทองของ lotto · `styles/lottery-typography.css` — ขนาดตัวอักษรจาก `typography-bridge.css`
+- `styles/lottery-thai.css` ถูกแทนด้วยสองไฟล์ข้างบน (ลบแล้ว)
+- มือถือ step 2/3: `SubPageShell fit` + `LottoShellFrame fit` ล็อกความสูงเท่าจอ (เทียบ `.lobby-desktop-shell:has(main.lottery-page-main)` ของ glass) — โซนรายการตลาด/รอบ/โพย/แผงเลขเลื่อนเองข้างใน · `LotteryPlayPage` ซ่อน bottom nav ตอนขั้นใส่ราคา + `is-viewport-locked` เหมือน `LotteryPlayPageShell`
+- `compactBar` — หัวมือถือแบบลูกศร + ชื่อ (โพย/กฎ/สรุปโพย)
+- ยังไม่ได้ port: `LotteryBetResultDialog`, `LotterySlipSummary`, `LotteryRulesContent` (glass ใช้ `ui/Icons`, `cosmicButtonClasses`, `responsiveSheetDialog` ที่ lotto ยังไม่มี) — ใช้เวอร์ชัน lotto เดิม

@@ -35,7 +35,7 @@ export function LotteryMarketRoundsView({ marketSlug }: LotteryMarketRoundsViewP
   const openCount = rounds.filter((round) => round.status === "open").length;
 
   return (
-    <div className="lottery-hub-theme space-y-3">
+    <div className="lottery-hub-theme space-y-3 max-lg:flex max-lg:min-h-0 max-lg:flex-1 max-lg:flex-col max-lg:space-y-0">
       <LotteryMarketShell activeEntry={entry} roundCount={openCount}>
         <ResourceGate
           resource={roundsResource}

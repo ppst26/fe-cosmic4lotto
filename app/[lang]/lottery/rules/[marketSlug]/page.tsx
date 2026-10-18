@@ -15,6 +15,7 @@ export default function LotteryRulesPage() {
     <SubPageShell
       title={t("market.rules")}
       backHref={marketSlug ? `/lottery/${marketSlug}` : "/lottery"}
+      compactBar
     >
       <LotteryRulesContent marketSlug={marketSlug} />
     </SubPageShell>

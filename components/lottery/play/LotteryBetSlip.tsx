@@ -1,22 +1,24 @@
 "use client";
 
-import { useMemo } from "react";
+import React, { useMemo } from "react";
+import { LotterySlipToolbar } from "@/components/lottery/play/LotterySlipToolbar";
 import { formatLotteryDigitsDisplay } from "@/app/components/lottery/lotteryUtils";
 import { useLotteryI18n } from "@/app/components/lottery/useLotteryI18n";
-import { LotterySlipToolbar } from "./LotterySlipToolbar";
 
-export type LotteryBetSlipPickEntry = {
+/** รายการในโพยขั้นเลือกเลข — ใช้ร่วมทุกตลาดหวย */
+export interface LotteryBetSlipPickEntry {
   id: string;
   number: string;
   groupKey: string;
-};
+}
 
-export type LotteryBetSlipGroupInfo = {
+/** หัวข้อกลุ่มในโพย (ประเภทแทง / ผลจ่าย) */
+export interface LotteryBetSlipGroupInfo {
   label: string;
   payoutRate: number;
-};
+}
 
-type LotteryBetSlipProps = {
+interface LotteryBetSlipProps {
   entries: LotteryBetSlipPickEntry[];
   resolveGroup: (groupKey: string) => LotteryBetSlipGroupInfo | undefined;
   emptyMessage: string;
@@ -25,8 +27,12 @@ type LotteryBetSlipProps = {
   onClearAll: () => void;
   canUndo?: boolean;
   onUndo?: () => void;
-};
+}
 
+/**
+ * โพยขั้นเลือกเลข — มาตรฐานเดียวทุกตลาด (ยึด UI หวยรัฐบาล)
+ * ใช้ใน ThaiLottoBetSlip · YikiSlip และหน้าแทงหวยอื่นที่ใช้เลย์เอาต์ lottery-play
+ */
 export function LotteryBetSlip({
   entries,
   resolveGroup,
@@ -53,65 +59,93 @@ export function LotteryBetSlip({
 
   return (
     <section
-      className="lottery-bet-slip lottery-soft-card flex h-full min-h-0 flex-col gap-2 overflow-hidden p-3"
+      className="lottery-panel lottery-bet-slip lottery-bet-slip--pick-only flex min-h-0 flex-1 flex-col gap-2 overflow-hidden px-1.5 py-2 sm:gap-4 sm:p-4 md:p-5"
       aria-labelledby={titleId}
     >
-      <h2 id={titleId} className="m-0 shrink-0 text-sm font-bold text-[var(--text-on-light)]">
-        {t("slip.itemCount", { count: entries.length })}
-      </h2>
-
-      <div className="lottery-bet-slip__scroll flex min-h-0 flex-1 flex-col">
-        {entries.length === 0 ? (
-          <p className="m-auto px-2 text-center text-xs leading-relaxed text-[var(--text-muted)] sm:text-sm">
-            {emptyMessage}
-          </p>
-        ) : (
-          <div className="space-y-2">
-            {grouped.order.map((groupKey) => {
-              const groupEntries = grouped.map.get(groupKey)!;
-              const group = resolveGroup(groupKey);
-              const label = group?.label ?? groupKey;
-              const payoutRate = group?.payoutRate ?? 0;
-              return (
-                <section key={groupKey} aria-label={label}>
-                  <div className="mb-1 flex items-center justify-between px-1 text-xs font-semibold text-[var(--text-muted)]">
-                    <span>{label}</span>
-                    <span>{t("slip.itemCount", { count: groupEntries.length })}</span>
-                  </div>
-                  <ul className="m-0 flex list-none flex-col gap-1 p-0">
-                    {groupEntries.map((entry) => (
-                      <li
-                        key={entry.id}
-                        className="lottery-bet-slip__row flex items-center gap-1 rounded-[var(--radius-soft-sm)] soft-panel-bg py-1 pr-1 pl-2"
-                      >
-                        <span className="min-w-0 flex-1 font-semibold tabular-nums text-[var(--text-on-light)]">
-                          {formatLotteryDigitsDisplay(entry.number)}
-                        </span>
-                        <span className="shrink-0 text-xs text-[var(--text-muted)]">x{payoutRate}</span>
-                        <button
-                          type="button"
-                          className="grid h-8 w-8 shrink-0 place-items-center text-[var(--text-muted)]"
-                          onClick={() => onRemove(entry.id)}
-                          aria-label={t("slip.removeAria", { label, number: entry.number })}
-                        >
-                          ×
-                        </button>
-                      </li>
-                    ))}
-                  </ul>
-                </section>
-              );
-            })}
-          </div>
-        )}
+      <div className="lottery-bet-slip__head shrink-0">
+        <h2 id={titleId} className="lottery-bet-slip__head-count">
+          {t("slip.itemCount", { count: entries.length })}
+        </h2>
+        <div className="lottery-slip-toolbar--head hidden lg:block">
+          <LotterySlipToolbar
+            visible={entries.length > 0}
+            canUndo={canUndo}
+            onUndo={() => onUndo?.()}
+            onClearAll={onClearAll}
+          />
+        </div>
       </div>
 
-      <LotterySlipToolbar
-        visible={entries.length > 0}
-        canUndo={canUndo}
-        onUndo={() => onUndo?.()}
-        onClearAll={onClearAll}
-      />
+      <div className="lottery-bet-slip__body min-h-0 flex-1 overflow-y-auto overscroll-y-contain">
+      {entries.length === 0 ? (
+        <p className="lottery-bet-slip__empty">{emptyMessage}</p>
+      ) : (
+        <div className="lottery-bet-slip__list">
+          {grouped.order.map((groupKey) => {
+            const groupEntries = grouped.map.get(groupKey)!;
+            const group = resolveGroup(groupKey);
+            const label = group?.label ?? groupKey;
+            const payoutRate = group?.payoutRate ?? 0;
+            return (
+              <section
+                key={groupKey}
+                className="lottery-bet-slip__group flex flex-col gap-1 min-w-0"
+                aria-label={label}
+              >
+                <div className="lottery-bet-slip__group-head flex items-center justify-between px-2 py-[0.35rem]">
+                  <span>{label}</span>
+                  <span>{t("slip.itemCount", { count: groupEntries.length })}</span>
+                </div>
+                <ul className="lottery-bet-slip__rows flex flex-col gap-1 m-0 p-0">
+                  {groupEntries.map((entry) => (
+                    <li
+                      key={entry.id}
+                      className="lottery-bet-slip__row flex items-center gap-[0.35rem] py-[0.3rem] pr-[0.35rem] pl-2"
+                    >
+                      <span className="lottery-bet-slip__number flex-1 min-w-0 whitespace-nowrap">
+                        {formatLotteryDigitsDisplay(entry.number)}
+                      </span>
+                      <span className="lottery-bet-slip__rate shrink-0">x{payoutRate}</span>
+                      <button
+                        type="button"
+                        className="lottery-bet-slip__remove grid shrink-0 place-items-center w-[1.75rem] h-[1.75rem]"
+                        onClick={() => onRemove(entry.id)}
+                        aria-label={t("slip.removeAria", { label, number: entry.number })}
+                      >
+                        <TrashIcon />
+                      </button>
+                    </li>
+                  ))}
+                </ul>
+              </section>
+            );
+          })}
+        </div>
+      )}
+      </div>
+
+      <div className="lottery-bet-slip__dock lottery-bet-slip__dock--mobile-only shrink-0 pt-1.5 lg:hidden">
+        <LotterySlipToolbar
+          visible={entries.length > 0}
+          canUndo={canUndo}
+          onUndo={() => onUndo?.()}
+          onClearAll={onClearAll}
+        />
+      </div>
     </section>
+  );
+}
+
+function TrashIcon() {
+  return (
+    <svg viewBox="0 0 20 20" className="h-4 w-4" fill="none" aria-hidden>
+      <path
+        d="M4 6h12M8 6V4.5a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1V6m-7 0 .6 9.4a1 1 0 0 0 1 .9h5.8a1 1 0 0 0 1-.9L15 6"
+        stroke="currentColor"
+        strokeWidth="1.4"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </svg>
   );
 }

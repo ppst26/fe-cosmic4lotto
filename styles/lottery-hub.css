@@ -250,3 +250,73 @@
   border-radius: var(--radius-soft-lg);
   box-shadow: var(--shadow-soft-sm);
 }
+
+/*
+ * หวย step 2/3 บนมือถือ — ล็อกความสูงเท่าจอ (เหมือน .lobby-desktop-shell:has(main.lottery-page-main) ของ glass)
+ * header ติดบน · bottom nav ติดล่าง · โซนรอบ/แทงเลื่อนเองข้างใน (ไม่เลื่อนทั้งหน้า)
+ */
+@media (max-width: 1023px) {
+  .lotto-page.lotto-fit {
+    display: flex;
+    flex-direction: column;
+    height: 100dvh;
+    max-height: 100dvh;
+    overflow: hidden;
+  }
+
+  .lotto-fit > :first-child {
+    flex-shrink: 0;
+  }
+
+  .lotto-fit__shell,
+  .lotto-fit__col,
+  .lotto-fit__stack,
+  .lotto-fit__content,
+  .lotto-fit__body {
+    display: flex;
+    flex: 1 1 auto;
+    flex-direction: column;
+    min-height: 0;
+    min-width: 0;
+  }
+
+  .lotto-fit__shell {
+    padding-inline: 0;
+  }
+
+  .lotto-fit__col {
+    padding: 0;
+  }
+
+  /* bottom nav slot (spacer 100px) อยู่นอก content แล้ว — เว้นล่างแค่เล็กน้อย */
+  .lotto-fit__content {
+    padding: 0 0 8px;
+    max-width: none;
+  }
+
+  .lotto-fit__bar {
+    display: flex;
+    flex-shrink: 0;
+    align-items: center;
+    gap: 8px;
+    padding: 6px 0 8px;
+  }
+
+  .lotto-fit__back {
+    display: grid;
+    place-items: center;
+    width: 36px;
+    height: 36px;
+    color: var(--text-on-light);
+  }
+
+  .lotto-fit__title {
+    flex: 1;
+    padding-right: 36px;
+    text-align: center;
+    font-size: 0.9375rem;
+    font-weight: 600;
+    color: var(--text-on-light);
+  }
+}
+

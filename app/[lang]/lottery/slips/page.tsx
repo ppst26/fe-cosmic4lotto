@@ -14,7 +14,7 @@ export default function LotterySlipsListPage() {
   const { t } = useLotteryI18n();
 
   return (
-    <SubPageShell title={t("slips.title")} backHref="/lottery">
+    <SubPageShell title={t("slips.title")} backHref="/lottery" compactBar>
       <Suspense fallback={<LoadingState label={t("slips.loading")} />}>
         <LotterySlipsPageContent />
       </Suspense>

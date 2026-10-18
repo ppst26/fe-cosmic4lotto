@@ -47,7 +47,7 @@ export default function LotterySlipSummaryPage() {
   const slip = loading ? null : fetched.slip;
 
   return (
-    <SubPageShell title={t("slips.summaryTitle")} backHref="/lottery/slips">
+    <SubPageShell title={t("slips.summaryTitle")} backHref="/lottery/slips" compactBar>
       {loading ? (
         <LoadingState label={t("slips.loading")} />
       ) : slip ? (

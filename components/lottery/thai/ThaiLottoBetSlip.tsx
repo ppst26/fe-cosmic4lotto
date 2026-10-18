@@ -1,10 +1,23 @@
 "use client";
 
-import { useCallback, useMemo } from "react";
+import React, { useCallback, useMemo } from "react";
 import type { ThaiLottoBetEntry, ThaiLottoBetType, ThaiLottoBetTypeId } from "@/app/types/lottery";
 import { LotteryBetSlip } from "@/components/lottery/play/LotteryBetSlip";
 import { useT } from "@/lib/i18n/I18nProvider";
 
+interface ThaiLottoBetSlipProps {
+  entries: ThaiLottoBetEntry[];
+  betTypes: ThaiLottoBetType[];
+  onRemove: (entryId: string) => void;
+  onClearAll: () => void;
+  canUndo?: boolean;
+  onUndo?: () => void;
+}
+
+/**
+ * โพยหวยรัฐบาล — ห่อ LotteryBetSlip มาตรฐาน
+ * ใช้ใน ThaiLottoBetBoard
+ */
 export function ThaiLottoBetSlip({
   entries,
   betTypes,
@@ -12,14 +25,7 @@ export function ThaiLottoBetSlip({
   onClearAll,
   canUndo = false,
   onUndo,
-}: {
-  entries: ThaiLottoBetEntry[];
-  betTypes: ThaiLottoBetType[];
-  onRemove: (entryId: string) => void;
-  onClearAll: () => void;
-  canUndo?: boolean;
-  onUndo?: () => void;
-}) {
+}: ThaiLottoBetSlipProps) {
   const t = useT("lottery");
   const typeById = useMemo(
     () => new Map<ThaiLottoBetTypeId, ThaiLottoBetType>(betTypes.map((type) => [type.id, type])),

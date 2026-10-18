@@ -18,18 +18,35 @@ type SubPageShellProps = {
   sessionMode?: MemberSessionMode;
   breadcrumbLabel?: string;
   backHref?: string;
+  /** มือถือ: ล็อกความสูงเท่าจอ + หัวแบบกะทัดรัด (หวย step 2/3 เหมือน glass) */
+  fit?: boolean;
+  /** ซ่อน bottom nav (มือถือ) เช่น หวย step ใส่ราคา */
+  hideBottomNav?: boolean;
+  /** มือถือ: ใช้แถบหัวกะทัดรัด (ลูกศร + ชื่อ) แทน breadcrumb/h1 โดยไม่ล็อกความสูง */
+  compactBar?: boolean;
 };
 
 /**
  * เปลือกหน้าย่อย (ธีมมืด-ทองของ lotto) — ใช้ header / sidebar / bottom nav ชุดเดียวกับหน้าแรก
  */
-export function SubPageShell({ title, children, breadcrumbLabel, backHref = "/" }: SubPageShellProps) {
+export function SubPageShell({ title, children, breadcrumbLabel, backHref = "/", fit = false, hideBottomNav = false, compactBar = false }: SubPageShellProps) {
   const t = useT("nav");
   const crumb = breadcrumbLabel ?? title;
+  /** fit: มือถือซ่อน breadcrumb + h1 ใช้แถบหัวกะทัดรัดแทน (desktop เหมือนเดิม) */
+  const showBar = fit || compactBar;
+  const desktopOnly = showBar ? "max-lg:hidden " : "";
   return (
-    <LottoShellFrame>
-      <div className="mx-auto w-full max-w-[1240px]">
-        <div className="mb-3 flex items-center gap-3 text-xs text-[var(--text-muted)]">
+    <LottoShellFrame fit={fit} bottomNav={!hideBottomNav}>
+      <div className={`${fit ? `lotto-fit__content${hideBottomNav ? " lotto-fit__content--no-nav" : ""} ` : ""}mx-auto w-full max-w-[1240px]`}>
+        {showBar ? (
+          <div className="lotto-fit__bar lg:hidden">
+            <Link href={backHref} aria-label="back" className="lotto-fit__back">
+              <ArrowLeft className="h-5 w-5" />
+            </Link>
+            <span className="lotto-fit__title">{title}</span>
+          </div>
+        ) : null}
+        <div className={`${desktopOnly}mb-3 flex items-center gap-3 text-xs text-[var(--text-muted)]`}>
           <Link
             href={backHref}
             aria-label="back"
@@ -45,8 +62,8 @@ export function SubPageShell({ title, children, breadcrumbLabel, backHref = "/" 
             <span className="truncate text-[var(--text-on-light)]">{crumb}</span>
           </nav>
         </div>
-        <h1 className="mb-4 text-xl font-bold text-[var(--text-on-light)] sm:text-2xl">{title}</h1>
-        {children}
+        <h1 className={`${fit ? "hidden " : desktopOnly}mb-4 text-xl font-bold text-[var(--text-on-light)] sm:text-2xl`}>{title}</h1>
+        {fit ? <div className="lotto-fit__body">{children}</div> : children}
       </div>
     </LottoShellFrame>
   );

@@ -47,7 +47,7 @@ export function ThaiGovernmentPlayScreen({ roundId, onStepChange }: ThaiGovernme
   }
 
   return (
-    <div className="lottery-thai-theme flex flex-col gap-2">
+    <div className="lottery-thai-theme flex min-h-0 flex-1 flex-col gap-2">
       <ThaiLottoBetBoard
         draw={draw}
         groups={thaiBoard.groups}

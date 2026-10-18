@@ -15,7 +15,7 @@ export function LotteryMarketRoundsPage({ marketSlug }: LotteryMarketRoundsPageP
   const title = entry ? t(entry.titleKey) : t("markets.generic");
 
   return (
-    <SubPageShell title={title} backHref="/lottery">
+    <SubPageShell title={title} backHref="/lottery" fit>
       <LotteryMarketRoundsView marketSlug={marketSlug} />
     </SubPageShell>
   );

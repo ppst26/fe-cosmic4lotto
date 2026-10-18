@@ -27,20 +27,30 @@ export function LottoShellHeader() {
 /**
  * โครงหน้าย่อย: header + (sidebar เมื่อ login บน desktop) + เนื้อหา + bottom nav — เหมือนโครงหน้าแรก
  */
-export function LottoShellFrame({ children, bottomNav = true }: { children: ReactNode; bottomNav?: boolean }) {
+export function LottoShellFrame({
+  children,
+  bottomNav = true,
+  fit = false,
+}: {
+  children: ReactNode;
+  bottomNav?: boolean;
+  /** มือถือล็อกความสูงเท่าจอ (หวย step 2/3 แบบ glass) — โซนเนื้อหาเลื่อนเองข้างใน */
+  fit?: boolean;
+}) {
   const { isAuthenticated } = useAuth();
   const wallet = useLottoWalletSnapshot();
+  const fitClass = (name: string) => (fit ? ` ${name}` : "");
   return (
-    <div className="lotto-page">
+    <div className={`lotto-page${fitClass("lotto-fit")}`}>
       <LottoShellHeader />
-      <div className={layout.pageShell}>
+      <div className={`${layout.pageShell}${fitClass("lotto-fit__shell")}`}>
         {isAuthenticated ? (
           <div className={layout.sidebarSlot}>
             <LobbySidebar wallet={wallet} />
           </div>
         ) : null}
-        <div className={layout.mainColumn}>
-          <div className={layout.mainStack}>{children}</div>
+        <div className={`${layout.mainColumn}${fitClass("lotto-fit__col")}`}>
+          <div className={`${layout.mainStack}${fitClass("lotto-fit__stack")}`}>{children}</div>
         </div>
       </div>
       {bottomNav ? (

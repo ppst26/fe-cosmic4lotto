@@ -1,6 +1,6 @@
 "use client";
 
-import { useMemo, type Ref } from "react";
+import React, { useMemo } from "react";
 import type { YikiBetEntry, YikiSettlementTypeId, YikiSettlementType } from "@/app/types/yiki";
 import {
   LotteryPriceSlipPanel,
@@ -12,14 +12,17 @@ import { useT } from "@/lib/i18n/I18nProvider";
 interface YikiPricePanelProps {
   entries: YikiBetEntry[];
   settlementTypes: Record<YikiSettlementTypeId, YikiSettlementType>;
-  handleRef?: Ref<LotteryPriceSlipHandle>;
+  handleRef?: React.Ref<LotteryPriceSlipHandle>;
   selectedEntryId: string | null;
   onSelectEntry: (entryId: string) => void;
   onAmountChange: (entryId: string, amount: number) => void;
   onRemove: (entryId: string) => void;
 }
 
-/** โพยขั้นใส่ราคายี่กี — ห่อ LotteryPriceSlipPanel จัดกลุ่มตามผลการจ่าย */
+/**
+ * โพยขั้นใส่ราคายี่กี — ห่อ LotteryPriceSlipPanel จัดกลุ่มตามผลการจ่าย
+ * ใช้ใน YikiBetBoard หลังกด "ใส่ราคา"
+ */
 export function YikiPricePanel({
   entries,
   settlementTypes,

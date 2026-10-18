@@ -25,6 +25,7 @@ import {
   type SlipRangeId,
 } from "@/lib/lottery/slipRange";
 import { ResourceGate } from "@/app/components/ui/ResourceGate";
+import { SoftLineTabs } from "@/app/components/ui/SoftLineTabs";
 import { EmptyState } from "@/app/components/ui/StatusState";
 import { LotterySlipCard, formatSignedBaht, signedMoneyToneClass } from "./LotterySlipCard";
 import { formatBaht } from "./lotteryUtils";
@@ -188,27 +189,12 @@ export function LotterySlipsPageContent() {
 
   return (
     <div className="lottery-hub-theme flex flex-col gap-3 pt-1">
-      <div
-        className="lottery-segment-track grid grid-cols-2 gap-1"
-        role="tablist"
-        aria-label={t("slips.tabs.aria")}
-      >
-        {tabs.map((tab) => {
-          const isActive = tab.id === scope;
-          return (
-            <button
-              key={tab.id}
-              type="button"
-              role="tab"
-              aria-selected={isActive}
-              onClick={() => setParams({ tab: tab.id })}
-              className={`lottery-segment-btn text-sm${isActive ? " is-active" : ""}`}
-            >
-              {tab.label}
-            </button>
-          );
-        })}
-      </div>
+      <SoftLineTabs
+        tabs={tabs}
+        activeId={scope}
+        onSelect={(id) => setParams({ tab: id })}
+        ariaLabel={t("slips.tabs.aria")}
+      />
 
       {/* ตัวกรอง */}
       <div className="flex flex-col gap-2" role="group" aria-label={t("slips.filters.aria")}>
