@@ -3,7 +3,6 @@ import type { LobbyGameItem } from "@/lib/lotto/load-lobby-games";
 import { DesktopFeatureCards } from "./DesktopFeatureCards";
 import { GameShowcaseSection } from "./GameShowcaseSection";
 import { HeroBanner } from "./HeroBanner";
-import { LobbyCategoryBody } from "./LobbyCategoryBody";
 import { LottoBettingCarousels } from "./LottoBettingCarousels";
 import { LottoForeignResults } from "./LottoForeignResults";
 import { LottoMobileQuickMenu } from "./LottoMobileQuickMenu";
@@ -35,45 +34,39 @@ export function LottoHomeContent({
       <HeroBanner />
       <DesktopFeatureCards />
       <LottoMobileQuickMenu />
-      <LobbyCategoryBody
-        home={
-          <>
-              <div className={styles.lottoResultsWrap}>
-                <div className={styles.betCarouselFull}>
-                  <LottoBettingCarousels />
-                </div>
-                <div className={layout.resultsInline}>
-                  <ThaiLottoCard data={thai} />
-                  <LottoForeignResults bank={bankLotto} dashboard={dashboardLotto} />
-                </div>
-              </div>
-              <TicketCheckBar />
-              <GameShowcaseSection
-                title="คาสิโนออนไลน์"
-                iconSrc="/_nuxt/png/casino-icon.DHi208DR.png"
-                items={casino}
-                cardVariant="wide"
-                carousel
-                showViewAll
-              />
-              <GameShowcaseSection
-                title="สล็อตออนไลน์"
-                iconSrc="/_nuxt/png/games.Br3sScDj.png"
-                items={slots}
-                cardVariant="wide"
-                carousel
-                showViewAll
-              />
-              <GameShowcaseSection
-                title="กีฬาออนไลน์"
-                iconSrc="/_nuxt/png/golotto.i1Wnq1XM.png"
-                items={sports}
-                cardVariant="wide"
-                carousel
-                showViewAll
-              />
-          </>
-        }
+      <div className={styles.lottoResultsWrap}>
+        <div className={styles.betCarouselFull}>
+          <LottoBettingCarousels />
+        </div>
+        <div className={layout.resultsInline}>
+          <ThaiLottoCard data={thai} />
+          <LottoForeignResults bank={bankLotto} dashboard={dashboardLotto} />
+        </div>
+      </div>
+      <TicketCheckBar />
+      <GameShowcaseSection
+        title="คาสิโนออนไลน์"
+        iconSrc="/_nuxt/png/casino-icon.DHi208DR.png"
+        items={casino}
+        cardVariant="wide"
+        carousel
+        showViewAll
+      />
+      <GameShowcaseSection
+        title="สล็อตออนไลน์"
+        iconSrc="/_nuxt/png/games.Br3sScDj.png"
+        items={slots}
+        cardVariant="wide"
+        carousel
+        showViewAll
+      />
+      <GameShowcaseSection
+        title="กีฬาออนไลน์"
+        iconSrc="/_nuxt/png/golotto.i1Wnq1XM.png"
+        items={sports}
+        cardVariant="wide"
+        carousel
+        showViewAll
       />
     </div>
   );

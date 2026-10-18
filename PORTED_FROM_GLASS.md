@@ -316,3 +316,9 @@ Lotto-only: notification bell kept top-left (lotto's frozen header has no bell),
 - มือถือ step 2/3: `SubPageShell fit` + `LottoShellFrame fit` ล็อกความสูงเท่าจอ (เทียบ `.lobby-desktop-shell:has(main.lottery-page-main)` ของ glass) — โซนรายการตลาด/รอบ/โพย/แผงเลขเลื่อนเองข้างใน · `LotteryPlayPage` ซ่อน bottom nav ตอนขั้นใส่ราคา + `is-viewport-locked` เหมือน `LotteryPlayPageShell`
 - `compactBar` — หัวมือถือแบบลูกศร + ชื่อ (โพย/กฎ/สรุปโพย)
 - ยังไม่ได้ port: `LotteryBetResultDialog`, `LotterySlipSummary`, `LotteryRulesContent` (glass ใช้ `ui/Icons`, `cosmicButtonClasses`, `responsiveSheetDialog` ที่ lotto ยังไม่มี) — ใช้เวอร์ชัน lotto เดิม
+
+## หมวดเกม (สล็อต/คาสิโน/ยิงปลา/กีฬา/เกมไพ่) — หน้า standalone แบบ black-purple
+แทนแนวทางเดิมที่สลับเนื้อหาใต้หน้าแรก: `/casino` `/slots` `/fishing` `/sport` `/cards` เป็นหน้าของตัวเอง (`app/[lang]/(lobby)/<หมวด>/page.tsx`) ใช้ `components/gaming/GamingCategoryPage`
+- layout ตาม black-purple `GamingProvidersView` / `GamingFilterSidebar` / `gaming-category-hero`: hero ชื่อหมวด (desktop) + sidebar "ตัวกรอง" (โลโก้ค่ายเฉพาะสล็อต/ยิงปลา/เกมไพ่ · จำนวนผลลัพธ์ · ล้าง) + กริดการ์ดค่าย · มือถือใช้เมนูหมวด `LottoMobileQuickMenu` + กริด
+- ข้อมูลค่ายใช้ชุด local เดิมของ lotto (`*ProvidersData`) ผ่าน `components/gaming/gaming-category.ts` (black-purple ใช้ API hook) · สีใช้ token มืด-ทองใน `styles/gaming-lobby.css`
+- `(hub)/layout.tsx` ห่อเฉพาะหน้าแรก · ลบ `HomeOnly`, `LobbyCategoryBody`, `LobbyProvidersView` · หน้าเกมในค่าย (`/slots/[provider]` ฯลฯ) ยังเป็นเวอร์ชันเดิม

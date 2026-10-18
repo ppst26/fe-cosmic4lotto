@@ -1,0 +1,109 @@
+/* หน้าหมวดเกม (สล็อต/คาสิโน/ยิงปลา/กีฬา/เกมไพ่) — พอร์ตเลย์เอาต์จาก black-purple · สีใช้ token ทอง-มืดของ lotto */
+
+.gaming-games-layout {
+  display: flex;
+  min-width: 0;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 0.5rem;
+}
+
+@media (min-width: 1024px) {
+  .gaming-games-layout {
+    gap: 1rem;
+  }
+}
+
+/* hero ชื่อหมวด (desktop) — พื้นไล่สีจากโทนแบรนด์ลงสู่พื้นหน้า · ตั้งรูปต่อหมวดด้วย --category-hero-bg */
+.gaming-category-hero {
+  display: none;
+  height: clamp(8rem, 13vw, 14rem);
+  align-items: center;
+  justify-content: center;
+  background:
+    var(--category-hero-bg, none),
+    linear-gradient(180deg, color-mix(in srgb, var(--brand) 22%, var(--BG-Surface-Darker, #0c090f)) 0%, var(--BG-Surface-Darker, #0c090f) 100%);
+  background-size: cover;
+  background-position: center;
+}
+
+@media (min-width: 1024px) {
+  .gaming-category-hero {
+    display: flex;
+  }
+}
+
+.gaming-category-hero__title {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.25rem;
+  margin: 0;
+  text-align: center;
+  color: var(--text-on-light);
+}
+
+.gaming-category-hero__th {
+  font-size: clamp(2rem, 4vw, 3.5rem);
+  font-weight: 700;
+  line-height: 1.1;
+}
+
+.gaming-category-hero__en {
+  font-size: clamp(0.875rem, 1.3vw, 1.5rem);
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+.gaming-filter-sidebar {
+  position: sticky;
+  top: 6rem;
+  overflow: hidden;
+  border-radius: 1.25rem;
+  background: var(--soft-card);
+  border: 1px solid rgb(255 255 255 / 0.08);
+}
+
+.gaming-filter-head {
+  background: linear-gradient(180deg, color-mix(in srgb, var(--brand) 28%, var(--soft-card-elevated)) 0%, var(--soft-card-elevated) 100%);
+  color: var(--text-on-light);
+}
+
+.gaming-filter-bar {
+  background: var(--soft-card-elevated);
+  color: var(--text-on-light);
+}
+
+.gaming-filter-tile,
+.gaming-provider-thumb {
+  border-radius: 0.75rem;
+  background: var(--soft-card-elevated);
+  border: 1px solid rgb(255 255 255 / 0.08);
+}
+
+.gaming-filter-tile {
+  transition: border-color 0.2s;
+}
+
+.gaming-filter-tile:hover {
+  border-color: color-mix(in srgb, var(--brand) 60%, transparent);
+}
+
+.gaming-filter-result {
+  background: var(--soft-card-elevated);
+  border: 1px solid rgb(255 255 255 / 0.08);
+  color: var(--text-on-light);
+}
+
+.gaming-filter-clear {
+  background: transparent;
+  border: 1px solid color-mix(in srgb, var(--brand) 55%, transparent);
+  color: var(--text-on-light);
+}
+
+.gaming-filter-clear:hover {
+  border-color: var(--brand);
+  background: color-mix(in srgb, var(--brand) 12%, transparent);
+}
