@@ -13,7 +13,7 @@ export default async function ProviderPage({ params }: PageProps) {
   const providerName = PROVIDER_INFO_MAP[slug]?.name ?? slug.replace(/-/g, " ").toUpperCase();
 
   return (
-    <SubPageShell title={providerName} breadcrumbLabel={providerName} backHref="/fishing">
+    <SubPageShell title={providerName} breadcrumbLabel={providerName} parentLabel="ยิงปลา" backHref="/fishing">
       <LobbyProviderGamesView providerId={slug} providerName={providerName} />
     </SubPageShell>
   );

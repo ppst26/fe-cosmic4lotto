@@ -1,4 +1,4 @@
-/** อัตราส่วนต้นฉบับ HomeProBanner (Mbanner-1.png 1916×821) */
+/** อัตราส่วนต้นฉบับ HomeProBanner (Mbanner-1.avif 1916×821) */
 export const HOME_HERO_BANNER_ASPECT = {
   width: 1916,
   height: 821,

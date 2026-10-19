@@ -7,7 +7,7 @@ import { ViewTransition } from "react";
 export function PageSkeleton() {
   return (
     <ViewTransition exit="page-exit" default="none">
-      <main className="mx-auto w-full max-w-[1240px] px-3 pt-3" aria-busy="true" aria-live="polite">
+      <main className="w-full" aria-busy="true" aria-live="polite">
         <span className="sr-only">กำลังโหลด...</span>
         <div className="motion-skeleton h-[56px]" aria-hidden />
         <div className="motion-skeleton mt-3 h-[150px] sm:h-[220px]" aria-hidden />

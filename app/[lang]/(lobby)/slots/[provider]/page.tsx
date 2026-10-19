@@ -13,7 +13,7 @@ export default async function SlotsProviderPage({ params }: PageProps) {
   const providerName = PROVIDER_INFO_MAP[slug]?.name ?? slug.replace(/-/g, " ").toUpperCase();
 
   return (
-    <SubPageShell title={providerName} breadcrumbLabel={providerName} backHref="/slots">
+    <SubPageShell title={providerName} breadcrumbLabel={providerName} parentLabel="สล็อต" backHref="/slots">
       <LobbyProviderGamesView providerId={slug} providerName={providerName} />
     </SubPageShell>
   );

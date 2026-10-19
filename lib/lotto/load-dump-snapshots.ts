@@ -1,3 +1,4 @@
+import { cache } from "react";
 import thLottery from "@/lib/i18n/messages/th/lottery.json";
 import { fetchLotteryHub, fetchThaiLottoBoard } from "@/lib/api/lotteryContent";
 import type { LotteryResultRow } from "@/app/types/lottery";
@@ -61,13 +62,14 @@ function rowToCard(id: string, rows: LotteryResultRow[]): LottoCardData | null {
   };
 }
 
-async function loadLatestRows(): Promise<LotteryResultRow[]> {
+/** cache ต่อ request — layout + page + หลายการ์ดเรียกซ้ำได้โดยยิง API ครั้งเดียว */
+const loadLatestRows = cache(async (): Promise<LotteryResultRow[]> => {
   const res = await fetchLotteryHub();
   return res.ok ? res.data.latest : [];
-}
+});
 
 /** ผลหวยรัฐบาลไทยงวดล่าสุด · null เมื่อโหลดไม่ได้ (LottoHomePage fallback เป็น thaiLottoMock) */
-export async function loadThaiLottoFromDump(): Promise<ThaiLottoResults | null> {
+export const loadThaiLottoFromDump = cache(async (): Promise<ThaiLottoResults | null> => {
   const res = await fetchThaiLottoBoard();
   if (!res.ok) return null;
   const last = res.data.lastResult;
@@ -78,7 +80,7 @@ export async function loadThaiLottoFromDump(): Promise<ThaiLottoResults | null> 
     backThree: last.back3.length ? last.back3 : ["-", "-"],
     backTwo: last.bottom2 || "-",
   };
-}
+});
 
 export async function loadLottoCardsByIds(ids: readonly string[]): Promise<LottoCardData[]> {
   const rows = await loadLatestRows();

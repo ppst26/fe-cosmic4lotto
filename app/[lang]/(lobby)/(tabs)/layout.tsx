@@ -9,9 +9,12 @@ import { bankLottoMock, dashboardLottoMock, thaiLottoMock } from "@/lib/lotto/mo
  * หน้าในกลุ่มนี้ (page.tsx) render เฉพาะเนื้อหา เพื่อไม่ให้เปลือกถูกสร้างใหม่ตอนสลับแท็บ
  */
 export default async function LobbyTabsLayout({ children }: { children: ReactNode }) {
-  const thai = (await loadThaiLottoFromDump()) ?? thaiLottoMock;
-  const bankLotto = await loadBankLottoFromDump();
-  const dashboardLotto = await loadDashboardLottoFromDump();
+  const [thaiRaw, bankLotto, dashboardLotto] = await Promise.all([
+    loadThaiLottoFromDump(),
+    loadBankLottoFromDump(),
+    loadDashboardLottoFromDump(),
+  ]);
+  const thai = thaiRaw ?? thaiLottoMock;
 
   return (
     <LobbyTabsShell

@@ -46,8 +46,10 @@
   font-weight: 600;
 }
 
-/* ฝาก - ถอน เป็นแถวปุ่มคู่ใต้หมวดเกม (เตี้ย ตัวหนังสือใหญ่) */
-.actions {
+/* ฝาก - ถอน / เข้าสู่ระบบ - สมัครสมาชิก เป็นแถวปุ่มคู่
+ * ใช้ .panel .actions (specificity สูงกว่า) เพราะองค์ประกอบนี้ใช้คลาส hideDesktop (display:block) ร่วมด้วย
+ * ถ้าใช้คลาสเดียว ลำดับการโหลด CSS หลังสลับหน้าจะทำให้ display:block ชนะ grid แล้วปุ่มพัง */
+.panel .actions {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 10px;

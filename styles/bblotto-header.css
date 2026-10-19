@@ -642,3 +642,17 @@ html[data-mode="light"] .lotto-site-header .wallet-row {
     animation: none;
   }
 }
+
+/* ปุ่มเข้าสู่ระบบ/สมัครสมาชิก (มือถือ): เตี้ยลง + ตัวหนังสืออ่านออก */
+.lotto-site-header .auth-buttons .bb-btn {
+  height: 30px;
+  min-height: 30px;
+}
+
+.lotto-site-header .auth-buttons .bb-btn-primary {
+  color: #1a1200;
+}
+
+.lotto-site-header .auth-buttons .bb-btn-secondary {
+  color: #fff;
+}

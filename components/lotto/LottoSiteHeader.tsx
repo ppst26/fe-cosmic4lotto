@@ -90,14 +90,8 @@ export function LottoSiteHeader({
                   </div>
                 </div>
               ) : (
-                <div className="auth-buttons">
-                  <button type="button" className="bb-btn bb-btn-primary">
-                    เข้าสู่ระบบ
-                  </button>
-                  <button type="button" className="bb-btn bb-btn-secondary">
-                    สมัครสมาชิก
-                  </button>
-                </div>
+                /* ยังไม่ล็อกอิน: ปุ่มเข้าสู่ระบบ/สมัครสมาชิกย้ายไปใต้แบนเนอร์ (LottoMobileHeroPanel) */
+                <div className="auth-buttons" />
               )}
               {loggedIn ? <HeaderBell /> : null}
               <HeaderMenu />

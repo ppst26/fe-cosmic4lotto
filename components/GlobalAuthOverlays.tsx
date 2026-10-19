@@ -1,7 +1,10 @@
 "use client";
 
-import { AuthSheet } from "@/components/auth/AuthSheet";
+import dynamic from "next/dynamic";
 import { useAuthUI } from "@/context/AuthUIContext";
+
+/** โหลด sheet เข้าสู่ระบบ/สมัครเมื่อเปิดครั้งแรกเท่านั้น — ไม่รวมใน bundle แรกของทุกหน้า */
+const AuthSheet = dynamic(() => import("@/components/auth/AuthSheet").then((m) => m.AuthSheet));
 
 export function GlobalAuthOverlays() {
   const { mode, closeAuth, switchToLogin, switchToRegister } = useAuthUI();

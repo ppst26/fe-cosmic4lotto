@@ -41,7 +41,7 @@ body {
 
 .lotto-page {
   min-height: 100dvh;
-  padding-bottom: calc(100px + env(safe-area-inset-bottom, 0px));
+  padding-bottom: calc(84px + env(safe-area-inset-bottom, 0px));
   background: radial-gradient(
       120% 80% at 50% -20%,
       rgba(12, 9, 15, 0.7),

@@ -5,12 +5,15 @@ import { LottoHomeContent } from "./LottoHomeContent";
 
 /** เนื้อหาหน้าแรก (เฉพาะส่วนที่เปลี่ยนตามแท็บ) — เปลือก header / sidebar / bottom nav อยู่ใน (tabs)/layout.tsx */
 export async function LottoHomePage() {
-  const thai = (await loadThaiLottoFromDump()) ?? thaiLottoMock;
-  const bankLotto = await loadBankLottoFromDump();
-  const dashboardLotto = await loadDashboardLottoFromDump();
-  const casino = await loadCasinoShowcase();
-  const slots = await loadSlotShowcase();
-  const sports = await loadSportsShowcase();
+  const [thaiRaw, bankLotto, dashboardLotto, casino, slots, sports] = await Promise.all([
+    loadThaiLottoFromDump(),
+    loadBankLottoFromDump(),
+    loadDashboardLottoFromDump(),
+    loadCasinoShowcase(),
+    loadSlotShowcase(),
+    loadSportsShowcase(),
+  ]);
+  const thai = thaiRaw ?? thaiLottoMock;
 
   return (
     <LottoHomeContent

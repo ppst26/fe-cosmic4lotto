@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useEffect, useMemo, useState } from "react";
+import { SoftLineTabs } from "@/app/components/ui/SoftLineTabs";
 import dynamic from "next/dynamic";
 import Link from "@/lib/i18n/navigation";
 import { matchesPromoHubCategory } from "@/lib/promotions/promotionFilters";
@@ -11,7 +12,6 @@ import type {
   PromotionDetailId,
 } from "@/app/types/promotions";
 import { ErrorState, LoadingState } from "@/app/components/ui/StatusState";
-import { HubTabs } from "./HubTabs";
 import { PromotionsCategoryTabs } from "./PromotionsCategoryTabs";
 import { PromotionsMobileFeed } from "./PromotionsMobileFeed";
 import { PromoHubDesktopMasterDetail } from "./PromoHubDesktopMasterDetail";
@@ -59,7 +59,7 @@ function PromotionsHubPageContentInner({ embedded }: { embedded: boolean }) {
   const hasAnyPromo = showHero || featuredItems.length > 0;
 
   const viewTabs = (
-    <HubTabs
+    <SoftLineTabs
       tabs={[
         { id: "all" as const, label: t("my.all") },
         { id: "mine" as const, label: t("my.tab") },

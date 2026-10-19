@@ -3,6 +3,8 @@
 import Image from "next/image";
 import type { ReactNode } from "react";
 import Link, { usePathname } from "@/lib/i18n/navigation";
+import { useAuth } from "@/app/components/auth/AuthProvider";
+import { useAuthUI } from "@/context/AuthUIContext";
 import { useDeposit } from "@/context/DepositContext";
 import { LOBBY_CATEGORIES, resolveLobbyCategory } from "./lobby-category";
 import layout from "./lobby-layout.module.css";
@@ -14,16 +16,18 @@ import styles from "./lotto-mobile-quick.module.css";
  */
 export function LottoMobileHeroPanel({ children }: { children?: ReactNode }) {
   const { openDeposit, openWithdraw } = useDeposit();
+  const { isAuthenticated } = useAuth();
+  const { openLogin, openRegister } = useAuthUI();
 
   return (
     <div className={styles.panel}>
       {children}
       <div className={`${layout.hideDesktop} ${styles.actions}`}>
-        <button type="button" className={`${styles.btnPrimary} motion-press`} onClick={openDeposit}>
-          ฝากเงิน
+        <button type="button" className={`${styles.btnPrimary} motion-press`} onClick={isAuthenticated ? openDeposit : openLogin}>
+          {isAuthenticated ? "ฝากเงิน" : "เข้าสู่ระบบ"}
         </button>
-        <button type="button" className={`${styles.btnSecondary} motion-press`} onClick={openWithdraw}>
-          ถอนเงิน
+        <button type="button" className={`${styles.btnSecondary} motion-press`} onClick={isAuthenticated ? openWithdraw : openRegister}>
+          {isAuthenticated ? "ถอนเงิน" : "สมัครสมาชิก"}
         </button>
       </div>
     </div>

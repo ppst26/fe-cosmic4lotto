@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useCallback, useEffect, useMemo, useState } from "react";
+import React, { useCallback, useEffect, useMemo } from "react";
 import Image from "next/image";
 import { ArrowDownToLine, ArrowUpFromLine, ChevronRight, Copy, LogOut, X } from "lucide-react";
 import { useAuth } from "@/app/components/auth/AuthProvider";
@@ -30,8 +30,10 @@ import { buildReferralLink } from "@/lib/domain/referral";
 import { useT } from "@/lib/i18n/I18nProvider";
 import { useLocale, useRouter } from "@/lib/i18n/navigation";
 import { cn } from "@/lib/utils";
+import { usePresence } from "@/lib/usePresence";
 
-const EXIT_MS = 200;
+/** เท่ากับ --menu-motion-out (styles/motion-glass.css) */
+const EXIT_MS = 280;
 
 /**
  * เมนูหลักของหน้าแรก lotto — เปิดจากปุ่มแฮมเบอร์เกอร์ใน header (ผ่าน HomeActionBridge)
@@ -40,31 +42,16 @@ const EXIT_MS = 200;
  */
 export function LottoMenuDrawer() {
   const { isMobileMenuOpen } = useMenuUI();
-  const [mounted, setMounted] = useState(isMobileMenuOpen);
-  const [visible, setVisible] = useState(false);
+  const { rendered, state } = usePresence(isMobileMenuOpen, EXIT_MS);
 
-  useEffect(() => {
-    // mount/unmount ตามแอนิเมชันเข้า-ออก (ต้องตั้ง state ใน effect เพื่อรอ frame / timer)
-    /* eslint-disable react-hooks/set-state-in-effect */
-    if (isMobileMenuOpen) {
-      setMounted(true);
-      const raf = requestAnimationFrame(() => setVisible(true));
-      return () => cancelAnimationFrame(raf);
-    }
-    setVisible(false);
-    const timer = window.setTimeout(() => setMounted(false), EXIT_MS);
-    return () => window.clearTimeout(timer);
-    /* eslint-enable react-hooks/set-state-in-effect */
-  }, [isMobileMenuOpen]);
-
-  if (!mounted) return null;
-  return <LottoMenuDrawerContent visible={visible && isMobileMenuOpen} />;
+  if (!rendered) return null;
+  return <LottoMenuDrawerContent state={state} />;
 }
 
 /** โลโก้ตัวอักษร (แทน CosmicbetLogo ของ glass) */
 function BrandLogo() {
   return (
-    <span className="inline-block text-2xl font-semibold leading-none tracking-wide text-[var(--brand)]">
+    <span className="inline-block text-xl font-semibold leading-none tracking-wide text-[var(--brand)]">
       CM-SaturnLotto
     </span>
   );
@@ -95,7 +82,10 @@ function MenuTileIcon({ tile, size }: { tile: MenuDialogTile; size: number }) {
 
 const CARD = "rounded-2xl border border-white/10 bg-[var(--BG-Surface-Normal)]";
 
-function LottoMenuDrawerContent({ visible }: { visible: boolean }) {
+/** ลำดับเข้าของแต่ละชิ้น (menu-enter-item ใน motion-glass.css) — เหมือน glass RightMenuDrawer */
+const enterStyle = (index: number) => ({ "--menu-enter-i": index }) as React.CSSProperties;
+
+function LottoMenuDrawerContent({ state }: { state: "open" | "closed" }) {
   const t = useT("nav");
   const tAuth = useT("auth");
   const tCommon = useT("common");
@@ -224,11 +214,17 @@ function LottoMenuDrawerContent({ visible }: { visible: boolean }) {
   const rowClass =
     "group flex w-full cursor-pointer items-center justify-between gap-3 rounded-xl border-0 bg-transparent px-3 py-2.5 text-left transition-colors hover:bg-white/5";
 
-  const renderRow = (tile: MenuDialogTile) => (
-    <button key={tile.id} type="button" onClick={() => onTile(tile)} className={rowClass}>
+  const renderRow = (tile: MenuDialogTile, enterIndex?: number) => (
+    <button
+      key={tile.id}
+      type="button"
+      onClick={() => onTile(tile)}
+      className={cn(rowClass, enterIndex !== undefined && "menu-enter-item")}
+      style={enterIndex !== undefined ? enterStyle(enterIndex) : undefined}
+    >
       <span className="flex min-w-0 items-center gap-3">
-        <MenuTileIcon tile={tile} size={28} />
-        <span className="truncate text-[13.5px] font-semibold text-white">{t(tile.labelKey)}</span>
+        <MenuTileIcon tile={tile} size={22} />
+        <span className="truncate text-[12.5px] font-semibold text-white">{t(tile.labelKey)}</span>
       </span>
       <span className="flex shrink-0 items-center gap-2">
         {tile.action === "vip-rank" && hubStats.data?.vipLabel ? (
@@ -247,12 +243,18 @@ function LottoMenuDrawerContent({ visible }: { visible: boolean }) {
   );
 
   const gridTileClass =
-    "group flex cursor-pointer flex-col items-center justify-center gap-1.5 rounded-2xl border-0 bg-transparent p-2 text-center transition-colors hover:bg-white/5";
+    "group flex cursor-pointer flex-col items-center justify-center gap-1 rounded-2xl border-0 bg-transparent p-1 text-center transition-colors hover:bg-white/5";
 
-  const renderGridTile = (tile: MenuDialogTile, size = 36) => (
-    <button key={tile.id} type="button" onClick={() => onTile(tile)} className={gridTileClass}>
+  const renderGridTile = (tile: MenuDialogTile, size = 28, enterIndex?: number) => (
+    <button
+      key={tile.id}
+      type="button"
+      onClick={() => onTile(tile)}
+      className={cn(gridTileClass, enterIndex !== undefined && "menu-enter-item")}
+      style={enterIndex !== undefined ? enterStyle(enterIndex) : undefined}
+    >
       <MenuTileIcon tile={tile} size={size} />
-      <span className="line-clamp-2 text-[11.5px] font-semibold leading-tight text-white transition-colors group-hover:text-[var(--brand)]">
+      <span className="line-clamp-2 text-[11px] font-semibold leading-tight text-white transition-colors group-hover:text-[var(--brand)]">
         {tile.action === "language" ? tCommon("language") : t(tile.labelKey)}
       </span>
     </button>
@@ -274,14 +276,14 @@ function LottoMenuDrawerContent({ visible }: { visible: boolean }) {
       <button
         type="button"
         onClick={() => closeThen(openRegister)}
-        className="btn-gold h-12 w-full cursor-pointer whitespace-nowrap text-[15px] font-semibold active:scale-[0.98]"
+        className="btn-gold h-10 w-full cursor-pointer whitespace-nowrap text-sm font-semibold active:scale-[0.98]"
       >
         {tAuth("signUp")}
       </button>
       <button
         type="button"
         onClick={() => closeThen(openLogin)}
-        className="btn-outline-gold h-12 w-full cursor-pointer whitespace-nowrap text-[15px] font-semibold active:scale-[0.98]"
+        className="btn-outline-gold h-10 w-full cursor-pointer whitespace-nowrap text-sm font-semibold active:scale-[0.98]"
       >
         {tAuth("login")}
       </button>
@@ -289,21 +291,24 @@ function LottoMenuDrawerContent({ visible }: { visible: boolean }) {
   );
 
   const listTiles = MENU_DIALOG_MOBILE_LIST_ITEMS;
+  /** ชิ้น 0–4 = ฝาก/ถอน/โบนัส 2 ใบ/ลิงก์แนะนำ (เฉพาะล็อกอิน) แล้วต่อด้วยรายการ · กริด · ปุ่มท้าย */
+  const mobileEnterBase = isAuthenticated ? 5 : 1;
+  const mobileTailIndex = mobileEnterBase + listTiles.length + MENU_DIALOG_MOBILE_GRID_ITEMS.length + 1;
 
   const mobileMenu = (
-    <div className="mx-auto flex w-full max-w-[440px] flex-col gap-3 px-4 pb-6 pt-14 md:hidden">
+    <div className="mx-auto flex w-full max-w-[440px] flex-col gap-2 px-3 pb-3 pt-11 md:hidden">
       {isAuthenticated ? (
         <div className="flex shrink-0 justify-center">
-          <span className="rounded-full border-2 border-[var(--brand)]/70 p-0.5 shadow-[0_0_18px_color-mix(in_srgb,var(--brand)_35%,transparent)]">
+          <span className="menu-enter-avatar rounded-full border-2 border-[var(--brand)]/70 p-0.5 shadow-[0_0_18px_color-mix(in_srgb,var(--brand)_35%,transparent)]">
             {profile.data ? (
-              <UserAvatar profile={profile.data} size="lg" className="!h-14 !w-14 !rounded-full" />
+              <UserAvatar profile={profile.data} size="lg" className="!h-11 !w-11 !rounded-full" />
             ) : (
-              <span className="block h-14 w-14 rounded-full bg-[var(--BG-Surface-Normal)]" aria-hidden />
+              <span className="block h-11 w-11 rounded-full bg-[var(--BG-Surface-Normal)]" aria-hidden />
             )}
           </span>
         </div>
       ) : (
-        <div className="flex shrink-0 justify-center pb-1">
+        <div className="menu-enter-logo flex shrink-0 justify-center pb-1">
           <BrandLogo />
         </div>
       )}
@@ -314,17 +319,19 @@ function LottoMenuDrawerContent({ visible }: { visible: boolean }) {
             <button
               type="button"
               onClick={() => runAuthed(openDeposit)}
-              className="btn-gold flex h-11 cursor-pointer items-center justify-center gap-2 text-sm font-semibold active:scale-[0.98]"
+              className="menu-drawer-quick-actions__btn menu-enter-item btn-gold relative flex h-9 cursor-pointer items-center justify-center gap-2 overflow-hidden text-sm font-semibold active:scale-[0.98]"
+              style={enterStyle(0)}
             >
-              <ArrowDownToLine className="h-4 w-4" aria-hidden />
+              <ArrowDownToLine className="menu-drawer-quick-actions__icon h-4 w-4" aria-hidden />
               {t("drawer.deposit")}
             </button>
             <button
               type="button"
               onClick={() => runAuthed(openWithdraw)}
-              className="btn-outline-gold flex h-11 cursor-pointer items-center justify-center gap-2 text-sm font-semibold active:scale-[0.98]"
+              className="menu-drawer-quick-actions__btn menu-enter-item btn-outline-gold relative flex h-9 cursor-pointer items-center justify-center gap-2 overflow-hidden text-sm font-semibold active:scale-[0.98]"
+              style={enterStyle(1)}
             >
-              <ArrowUpFromLine className="h-4 w-4" aria-hidden />
+              <ArrowUpFromLine className="menu-drawer-quick-actions__icon h-4 w-4" aria-hidden />
               {t("drawer.withdraw")}
             </button>
           </div>
@@ -335,12 +342,13 @@ function LottoMenuDrawerContent({ visible }: { visible: boolean }) {
                 ["play", t("drawer.playBonus"), playBonusLabel],
                 ["loss", t("drawer.lossBonus"), lossBonusLabel],
               ] as const
-            ).map(([tab, label, value]) => (
+            ).map(([tab, label, value], bonusIndex) => (
               <button
                 key={tab}
                 type="button"
                 onClick={() => goCashback(tab)}
-                className={cn(CARD, "relative flex cursor-pointer flex-col items-start px-3 py-2 text-left text-white")}
+                className={cn(CARD, "menu-enter-item relative flex cursor-pointer flex-col items-start px-3 py-2 text-left text-white")}
+                style={enterStyle(2 + bonusIndex)}
               >
                 <span className="text-[11px] font-medium text-[var(--text-muted)]">{label}</span>
                 <span className="font-sans text-sm font-semibold tabular-nums">{value}</span>
@@ -352,7 +360,7 @@ function LottoMenuDrawerContent({ visible }: { visible: boolean }) {
             ))}
           </div>
 
-          <div className={cn(CARD, "flex w-full min-w-0 items-center gap-2 px-3 py-2")}>
+          <div className={cn(CARD, "menu-enter-item flex w-full min-w-0 items-center gap-2 px-3 py-2")} style={enterStyle(4)}>
             <Image
               src="/assets/3d/menuicon/referral.avif"
               alt=""
@@ -379,15 +387,21 @@ function LottoMenuDrawerContent({ visible }: { visible: boolean }) {
         </div>
       ) : null}
 
-      <div className={cn(CARD, "flex shrink-0 flex-col gap-0.5 p-1.5")}>{listTiles.map(renderRow)}</div>
+      <div className={cn(CARD, "menu-enter-item flex shrink-0 flex-col p-1")} style={enterStyle(mobileEnterBase)}>
+        {listTiles.map((tile, index) => renderRow(tile, mobileEnterBase + index))}
+      </div>
 
-      <div className={cn(CARD, "w-full shrink-0 p-3")}>
-        <div className="grid grid-cols-3 gap-x-1.5 gap-y-3">
-          {MENU_DIALOG_MOBILE_GRID_ITEMS.map((tile) => renderGridTile(tile))}
+      <div className={cn(CARD, "menu-enter-item w-full shrink-0 p-2")} style={enterStyle(mobileEnterBase + listTiles.length)}>
+        <div className="grid grid-cols-3 gap-x-1 gap-y-1.5">
+          {MENU_DIALOG_MOBILE_GRID_ITEMS.map((tile, index) =>
+            renderGridTile(tile, 28, mobileEnterBase + listTiles.length + 1 + index),
+          )}
         </div>
       </div>
 
-      {isAuthenticated ? logoutButton : guestAuthButtons}
+      <div className="menu-enter-item" style={enterStyle(mobileTailIndex)}>
+        {isAuthenticated ? logoutButton : guestAuthButtons}
+      </div>
     </div>
   );
 
@@ -398,24 +412,29 @@ function LottoMenuDrawerContent({ visible }: { visible: boolean }) {
           <button
             type="button"
             onClick={() => runAuthed(openDeposit)}
-            className="btn-gold flex h-11 cursor-pointer items-center justify-center gap-2 text-sm font-semibold active:scale-[0.98]"
+            className="menu-drawer-quick-actions__btn btn-gold relative flex h-9 cursor-pointer items-center justify-center gap-2 overflow-hidden text-sm font-semibold active:scale-[0.98]"
           >
-            <ArrowDownToLine className="h-4 w-4" aria-hidden />
+            <ArrowDownToLine className="menu-drawer-quick-actions__icon h-4 w-4" aria-hidden />
             {t("drawer.deposit")}
           </button>
           <button
             type="button"
             onClick={() => runAuthed(openWithdraw)}
-            className="btn-outline-gold flex h-11 cursor-pointer items-center justify-center gap-2 text-sm font-semibold active:scale-[0.98]"
+            className="menu-drawer-quick-actions__btn btn-outline-gold relative flex h-9 cursor-pointer items-center justify-center gap-2 overflow-hidden text-sm font-semibold active:scale-[0.98]"
           >
-            <ArrowUpFromLine className="h-4 w-4" aria-hidden />
+            <ArrowUpFromLine className="menu-drawer-quick-actions__icon h-4 w-4" aria-hidden />
             {t("drawer.withdraw")}
           </button>
         </div>
       ) : null}
 
-      {MENU_DIALOG_SECTIONS.map((section) => (
-        <section key={section.id} className="flex flex-col" aria-labelledby={`lotto-menu-section-${section.id}`}>
+      {MENU_DIALOG_SECTIONS.map((section, sectionIndex) => (
+        <section
+          key={section.id}
+          className="menu-enter-item flex flex-col"
+          style={{ "--menu-enter-i": sectionIndex } as React.CSSProperties}
+          aria-labelledby={`lotto-menu-section-${section.id}`}
+        >
           <h3
             id={`lotto-menu-section-${section.id}`}
             className="mb-1 px-0.5 text-xs font-semibold text-[var(--text-muted)]"
@@ -442,10 +461,8 @@ function LottoMenuDrawerContent({ visible }: { visible: boolean }) {
       role="presentation"
     >
       <div
-        className={cn(
-          "absolute inset-0 bg-black/60 transition-opacity ease-[cubic-bezier(0.2,0.8,0.2,1)] motion-reduce:transition-none",
-          visible ? "opacity-100 duration-[320ms]" : "opacity-0 duration-[180ms]",
-        )}
+        className="lotto-menu-scrim absolute inset-0 bg-black/60"
+        data-state={state}
         onClick={closeMobileMenu}
         aria-hidden="true"
       />
@@ -454,12 +471,8 @@ function LottoMenuDrawerContent({ visible }: { visible: boolean }) {
         role="dialog"
         aria-modal="true"
         aria-label={t("drawer.title")}
-        className={cn(
-          "relative h-full w-full overflow-y-auto bg-[var(--BG-Surface-Darker)] text-[var(--text-on-light)] shadow-[var(--shadow-soft)] transition ease-[cubic-bezier(0.2,0.8,0.2,1)] motion-reduce:transition-none md:w-[400px] md:border-l md:border-white/10",
-          visible
-            ? "translate-y-0 opacity-100 duration-[320ms] md:translate-x-0"
-            : "translate-y-3 opacity-0 duration-[180ms] md:translate-x-full md:translate-y-0",
-        )}
+        data-state={state}
+        className="lotto-menu-shell relative h-full w-full overflow-y-auto bg-[var(--BG-Surface-Darker)] text-[var(--text-on-light)] shadow-[var(--shadow-soft)] md:w-[400px] md:border-l md:border-white/10"
         style={{
           backgroundImage:
             "radial-gradient(ellipse 80% 38% at 50% 0%, color-mix(in srgb, var(--brand) 14%, transparent), transparent 70%)",

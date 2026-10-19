@@ -320,3 +320,30 @@
   }
 }
 
+
+/* หน้าหวยมือถือ: แถบหัว (ลูกศร + ชื่อ) เตี้ยลง ตัวอักษร/ไอคอนเล็กลง + ให้กล่องเนื้อหาสูงขึ้น */
+@media (max-width: 1023px) {
+  .lotto-fit__bar {
+    gap: 4px;
+    padding: 0 0 2px;
+  }
+
+  .lotto-fit__back {
+    width: 28px;
+    height: 28px;
+  }
+
+  .lotto-fit__back svg {
+    width: 16px;
+    height: 16px;
+  }
+
+  .lotto-fit__title {
+    padding-right: 28px;
+    font-size: 0.8125rem;
+  }
+
+  .lotto-fit__content {
+    padding-bottom: 0;
+  }
+}
