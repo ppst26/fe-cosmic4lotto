@@ -5,6 +5,7 @@ import type { CashbackPanelsData } from "@/lib/api/cashback";
 import { useCashbackPanels, usePrefetchCashbackTabs } from "@/app/hooks/api/member";
 import { useUrlTab } from "@/app/hooks/useUrlTab";
 import { ResourceGate } from "@/app/components/ui/ResourceGate";
+import { TabPanelTransition } from "@/app/components/ui/TabPanelTransition";
 import { SoftLineTabs } from "@/app/components/ui/SoftLineTabs";
 import { CashbackLossRebateExtraSections } from "./CashbackLossRebateExtraSections";
 import {
@@ -119,7 +120,7 @@ function CashbackPanelsView({
         ariaLabel={t("tabs.ariaLabel")}
       />
 
-      <div key={tab} className="flex animate-fade-in flex-col gap-5">
+      <TabPanelTransition tabKey={tab} order={["play", "loss"]} className="flex flex-col gap-5">
         <CashbackPanelShell embedded={embedded}>
           <CashbackPanelHeader title={t(panel.titleKey)} subtitle={t(panel.subtitleKey)} />
 
@@ -147,7 +148,7 @@ function CashbackPanelsView({
         </CashbackPanelShell>
 
         {tab === "loss" ? <CashbackLossRebateExtraSections /> : null}
-      </div>
+      </TabPanelTransition>
     </div>
   );
 }

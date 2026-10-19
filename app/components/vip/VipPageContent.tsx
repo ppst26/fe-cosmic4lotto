@@ -3,11 +3,13 @@
 import React, { useState } from "react";
 import type { VipModalTabId, VipPlayerState, VipRankTier } from "@/app/types/vip";
 import { usePrefetchVipTabs, useVipPlayer, useVipRanks } from "@/app/hooks/api/member";
+import { TabPanelTransition } from "@/app/components/ui/TabPanelTransition";
 import { ResourceGate } from "@/app/components/ui/ResourceGate";
 import { useUrlTab } from "@/app/hooks/useUrlTab";
 import { parseVipPageTab, VIP_PAGE_TAB_QUERY_KEY } from "@/lib/vipRoutes";
 import { VipTabPanels } from "./VipTabPanels";
 import { VipTabList } from "./VipTabList";
+import { VIP_PAGE_TABS } from "./vipTabConfig";
 import { useT } from "@/lib/i18n/I18nProvider";
 import { getVipRankTier } from "@/app/data/vipMockData";
 import { VipRankEmblem } from "./VipRankEmblem";
@@ -90,7 +92,7 @@ function VipPageContentInner({
 
       <VipTabList activeTab={tab} onSelect={onSelectTab} />
 
-      <div key={tab} className="min-h-0 animate-fade-in pb-1">
+      <TabPanelTransition tabKey={tab} order={VIP_PAGE_TABS.map((item) => item.id)} className="min-h-0 pb-1">
         <VipTabPanels
           tab={tab}
           player={player}
@@ -99,7 +101,7 @@ function VipPageContentInner({
           onRankFocusChange={setRankFocusIndex}
           onSelectTab={onSelectTab}
         />
-      </div>
+      </TabPanelTransition>
     </div>
   );
 }

@@ -1,0 +1,489 @@
+/* Motion ที่พอร์ตจาก glass (motion.css · motion-recent.css · component css) — ปรับให้ใช้ DOM/token ของ lotto
+ * ต้อง import หลัง motion.css · animate เฉพาะ transform/opacity · ปิดเมื่อ prefers-reduced-motion */
+
+:root {
+  --motion-instant: 100ms;
+  --motion-fast: 160ms;
+  --motion-base: 240ms;
+  --motion-slow: 400ms;
+  --stagger: 40ms;
+  /* กริดค่ายเกม — เฟดเข้าทีละใบ (.motion-game-card-enter) */
+  --game-card-stagger: 55ms;
+  --motion-sheet-in: 560ms;
+  --motion-sheet-out: 520ms;
+  --motion-overlay-in: 420ms;
+  --motion-dialog: 240ms;
+  --ease-in: cubic-bezier(0.4, 0, 0.2, 1);
+  --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
+  /* drawer เมนู — เข้า/ออกด้วย easing เดียวกับ menu-shell ของ glass */
+  --menu-motion-in: 400ms;
+  --menu-motion-out: 280ms;
+  --menu-ease-in: cubic-bezier(0.22, 1.08, 0.36, 1);
+  --menu-ease-out: cubic-bezier(0.45, 0, 0.75, 0.35);
+}
+
+/* ── Dialog ที่ใช้ .animate-fade-in / .animate-scale-up (SoftDialog · WalletConfirm · Coupon · PendingTransaction)
+   เดิมเป็น fade/scale 0.96 — ใช้ motion-overlay-in / motion-modal-in ของ glass (ลอยขึ้น 24px + ขยาย 0.94) ── */
+@keyframes motion-overlay-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes motion-modal-in {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 24px, 0) scale(0.94);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.animate-fade-in {
+  animation: motion-overlay-in var(--motion-overlay-in) var(--ease-out) both;
+}
+
+.animate-scale-up {
+  animation: motion-modal-in var(--motion-dialog) var(--ease-out) both;
+}
+
+/* เนื้อหาในกล่อง dialog ไล่ขึ้นตามหลังกล่องมาถึง (motion-sheet-content-in) */
+@keyframes motion-sheet-content-in {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 14px, 0);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.animate-scale-up > * {
+  animation: motion-sheet-content-in 380ms var(--ease-out) backwards;
+  animation-delay: calc(120ms + var(--stagger-i, 0) * var(--stagger));
+}
+
+.animate-scale-up > :nth-child(2) {
+  --stagger-i: 1;
+}
+
+.animate-scale-up > :nth-child(3) {
+  --stagger-i: 2;
+}
+
+.animate-scale-up > :nth-child(n + 4) {
+  --stagger-i: 3;
+}
+
+/* ── OverlayPanel (sheet มือถือ · modal กลางจอ md+) — 2 step แบบ glass
+   เปิด: กล่องเลื่อน/ขยายเข้า → เนื้อหาไล่ขึ้น · ปิด: เนื้อหาจางก่อน → กล่องเลื่อน/ย่อออก + scrim จาง ── */
+.lotto-overlay-scrim[data-state="open"] {
+  animation: motion-overlay-in var(--motion-overlay-in) var(--ease-out) both;
+}
+
+.lotto-overlay-scrim[data-state="closed"] {
+  animation: motion-overlay-out var(--motion-sheet-out) linear both;
+}
+
+.lotto-overlay-panel[data-state="open"] {
+  animation: motion-sheet-in var(--motion-sheet-in) var(--ease-out) both;
+}
+
+.lotto-overlay-panel[data-state="closed"] {
+  animation: motion-sheet-out var(--motion-sheet-out) linear both;
+}
+
+.lotto-overlay-panel[data-state="open"] > * {
+  animation: motion-sheet-content-in 380ms var(--ease-out) backwards;
+  animation-delay: calc(240ms + var(--stagger-i, 0) * var(--stagger));
+}
+
+.lotto-overlay-panel[data-state="open"] > :nth-child(2) {
+  --stagger-i: 1;
+}
+
+.lotto-overlay-panel[data-state="open"] > :nth-child(3) {
+  --stagger-i: 2;
+}
+
+.lotto-overlay-panel[data-state="open"] > :nth-child(n + 4) {
+  --stagger-i: 3;
+}
+
+.lotto-overlay-panel[data-state="closed"] > * {
+  animation: motion-sheet-content-out 190ms var(--ease-in) both;
+}
+
+@media (min-width: 768px) {
+  .lotto-overlay-panel[data-state="open"] {
+    animation-name: motion-modal-in;
+    animation-duration: var(--motion-sheet-in);
+  }
+
+  .lotto-overlay-panel[data-state="closed"] {
+    animation-name: motion-modal-out;
+  }
+}
+
+@keyframes motion-overlay-out {
+  0%,
+  36% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes motion-sheet-in {
+  from {
+    opacity: 1;
+    transform: translate3d(0, 100%, 0);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes motion-sheet-out {
+  0%,
+  36% {
+    transform: none;
+    animation-timing-function: var(--ease-in);
+  }
+  100% {
+    transform: translate3d(0, 100%, 0);
+  }
+}
+
+@keyframes motion-modal-out {
+  0%,
+  36% {
+    opacity: 1;
+    transform: none;
+    animation-timing-function: var(--ease-in);
+  }
+  100% {
+    opacity: 0;
+    transform: translate3d(0, 12px, 0) scale(0.96);
+  }
+}
+
+@keyframes motion-sheet-content-out {
+  from {
+    opacity: 1;
+    transform: none;
+  }
+  to {
+    opacity: 0;
+    transform: translate3d(0, 6px, 0);
+  }
+}
+
+/* ── Utilities ── */
+@keyframes motion-reveal-in {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/** โหลดลิสเกม/ค่าย — เฟด + เลื่อนขึ้นเล็กน้อย ทีละใบ (lib/gameCardEnterMotion.ts) */
+@keyframes motion-game-card-in {
+  from {
+    opacity: 0;
+    transform: translateY(10px) scale(0.97);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.motion-game-card-enter {
+  opacity: 0;
+  animation: motion-game-card-in var(--motion-slow) var(--ease-out) forwards;
+  animation-delay: calc(min(var(--i, 0), 31) * var(--game-card-stagger));
+}
+
+@keyframes motion-pop-in {
+  0% {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  100% {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.motion-pop {
+  animation: motion-pop-in var(--motion-base) var(--ease-spring) both;
+}
+
+@keyframes motion-active-pop {
+  0% {
+    transform: scale(0.82);
+  }
+  60% {
+    transform: scale(1.08);
+  }
+  100% {
+    transform: none;
+  }
+}
+
+/* Skeleton — แสงกวาด (shimmer) แทนพัลส์ opacity เดิม */
+@keyframes motion-shimmer {
+  to {
+    background-position-x: -200%;
+  }
+}
+
+.motion-skeleton {
+  background:
+    linear-gradient(100deg, transparent 30%, color-mix(in srgb, #fff 9%, transparent) 50%, transparent 70%) 0 0 / 200% 100%
+      no-repeat,
+    color-mix(in srgb, #fff 6%, transparent);
+  animation: motion-shimmer 1.4s linear infinite;
+}
+
+/* Press — ยุบตอนกด (เดิม scale .97 ไม่มี transition สี) */
+.motion-press {
+  transition:
+    transform var(--motion-instant) var(--ease-out),
+    background-color var(--motion-fast) ease,
+    color var(--motion-fast) ease;
+}
+
+/* Collapse — ขยาย/ยุบด้วย grid-template-rows (ไม่ animate height) */
+.motion-collapse {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows var(--motion-base) var(--ease-out);
+}
+
+.motion-collapse[data-open="true"] {
+  grid-template-rows: 1fr;
+}
+
+.motion-collapse__inner {
+  min-height: 0;
+  overflow: hidden;
+}
+
+/* ── Tab panel — เนื้อหาเปลี่ยนตามแท็บ (TabPanelTransition) · a/b สลับชื่อเพื่อเล่นซ้ำโดยไม่ remount ── */
+.motion-tab-panel[data-flip="1"] {
+  animation: motion-tab-in-a var(--motion-fast) var(--ease-out) backwards;
+}
+
+.motion-tab-panel[data-flip="2"] {
+  animation: motion-tab-in-b var(--motion-fast) var(--ease-out) backwards;
+}
+
+@keyframes motion-tab-in-a {
+  from {
+    opacity: 0;
+    transform: translate3d(calc(var(--tab-dir, 0) * 10px), 4px, 0);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes motion-tab-in-b {
+  from {
+    opacity: 0;
+    transform: translate3d(calc(var(--tab-dir, 0) * 10px), 4px, 0);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.motion-tab-panel[data-dir="1"] {
+  --tab-dir: 1;
+}
+
+.motion-tab-panel[data-dir="-1"] {
+  --tab-dir: -1;
+}
+
+/* ── Line tabs (SoftLineTabs) — เส้นใต้แท็บ active ขยายจากกลาง ── */
+.soft-line-tab {
+  position: relative;
+}
+
+.soft-line-tab__bar {
+  position: absolute;
+  right: 0;
+  bottom: -1px;
+  left: 0;
+  z-index: 2;
+  height: 2.5px;
+  border-radius: 999px;
+  background: var(--brand);
+  transform-origin: center;
+  pointer-events: none;
+  animation: line-tab-underline-in var(--motion-fast) var(--ease-out) both;
+}
+
+@keyframes line-tab-underline-in {
+  from {
+    opacity: 0;
+    transform: scaleX(0.2);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* ── Pagination (SoftPagination) — กดยุบ · หน้า active เด้งเข้า ── */
+.soft-pagination-btn {
+  transition:
+    transform var(--motion-fast) var(--ease-spring),
+    background-color var(--motion-fast) ease,
+    color var(--motion-fast) ease;
+}
+
+.soft-pagination-btn:active:not(:disabled) {
+  transform: scale(0.92);
+}
+
+.soft-pagination-btn.is-active {
+  animation: motion-active-pop var(--motion-base) var(--ease-spring) both;
+}
+
+@media (hover: hover) {
+  .soft-pagination-btn:hover:not(:disabled):not(.is-active) {
+    transform: translateY(-1px);
+  }
+}
+
+/* ── Menu drawer — ไอเท็มไล่เข้าทีละส่วน (menu-enter-*) ── */
+@keyframes menu-enter-avatar {
+  from {
+    opacity: 0;
+    scale: 0.82;
+  }
+  to {
+    opacity: 1;
+    scale: 1;
+  }
+}
+
+@keyframes menu-enter-item {
+  from {
+    opacity: 0;
+    translate: 0 14px;
+    scale: 0.94;
+  }
+  to {
+    opacity: 1;
+    translate: 0 0;
+    scale: 1;
+  }
+}
+
+.menu-enter-avatar {
+  animation: menu-enter-avatar 520ms var(--ease-out) backwards;
+}
+
+.menu-enter-item {
+  animation: menu-enter-item 460ms var(--ease-out) backwards;
+  animation-delay: calc(120ms + var(--menu-enter-i, 0) * 42ms);
+}
+
+/* ── Notification — ไอคอนช่องทางติดต่อท้ายกล่องเด้งเข้าทีละตัว ── */
+.notification-center__footer-link {
+  animation: motion-pop-in var(--motion-base) var(--ease-spring) both;
+  transition:
+    transform var(--motion-fast) var(--ease-spring),
+    background var(--motion-fast) ease,
+    color var(--motion-fast) ease;
+}
+
+.notification-center__footer-link:nth-child(2) {
+  animation-delay: var(--stagger);
+}
+
+.notification-center__footer-link:nth-child(n + 3) {
+  animation-delay: calc(var(--stagger) * 2);
+}
+
+.notification-center__footer-link:active {
+  transform: scale(0.9);
+}
+
+@media (hover: hover) {
+  .notification-center__footer-link:hover {
+    transform: translateY(-2px) scale(1.08);
+  }
+}
+
+/* ── Status — วงหมุน/แท่งกะพริบ (status-state) ── */
+@keyframes status-pulse {
+  0%,
+  100% {
+    opacity: 0.55;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+/* ── Reduced motion ── */
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --motion-instant: 1ms;
+    --motion-fast: 1ms;
+    --motion-base: 1ms;
+    --motion-slow: 1ms;
+    --stagger: 0ms;
+    --game-card-stagger: 0ms;
+    --menu-motion-in: 1ms;
+    --menu-motion-out: 1ms;
+  }
+
+  .animate-fade-in,
+  .animate-scale-up,
+  .animate-scale-up > *,
+  .motion-pop,
+  .motion-skeleton,
+  .menu-enter-avatar,
+  .menu-enter-item,
+  .notification-center__footer-link,
+  .soft-pagination-btn.is-active,
+  .soft-line-tab__bar,
+  .motion-tab-panel[data-flip],
+  .lotto-overlay-panel,
+  .lotto-overlay-panel > * {
+    animation: none;
+  }
+
+  .motion-game-card-enter {
+    opacity: 1;
+    animation: none;
+  }
+
+  .soft-pagination-btn:hover:not(:disabled),
+  .soft-pagination-btn:active:not(:disabled),
+  .notification-center__footer-link:hover,
+  .notification-center__footer-link:active {
+    transform: none;
+  }
+}

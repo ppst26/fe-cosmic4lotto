@@ -8,6 +8,7 @@ import { getGamesByProvider } from "@/app/data/providerGamesData";
 import { buildGamePlayHref } from "@/lib/gamePlayPaths";
 import type { ProviderGameItem } from "@/app/types/providers";
 import { LobbySearchBar } from "./LobbySearchBar";
+import { gameCardEnterClassName, gameCardEnterStyle } from "@/lib/gameCardEnterMotion";
 
 type LobbyProviderGamesViewProps = {
   /** providerId สำหรับ getGamesByProvider (สล็อตใช้ slug ตรง) */
@@ -91,17 +92,21 @@ export function LobbyProviderGamesView({ providerId, providerName }: LobbyProvid
           <p className="mt-1 text-xs text-[var(--text-muted)]">{t("providerGames.notFoundHint")}</p>
         </div>
       ) : (
-        <div className="grid grid-cols-3 gap-2.5 sm:grid-cols-4 lg:grid-cols-6 xl:grid-cols-8">
-          {games.map((game) => {
+        <div
+          key={games.map((game) => game.id).join("|")}
+          className="grid grid-cols-3 gap-2.5 sm:grid-cols-4 lg:grid-cols-6 xl:grid-cols-8"
+        >
+          {games.map((game, index) => {
             const favorite = Boolean(favorites[game.id] ?? game.isFavorite);
             return (
-              <GameTile
-                key={game.id}
-                game={game}
-                favorite={favorite}
-                favoriteLabel={favorite ? t("providerGames.favoriteRemove") : t("providerGames.favoriteAdd")}
-                onToggleFavorite={() => setFavorites((prev) => ({ ...prev, [game.id]: !favorite }))}
-              />
+              <div key={game.id} className={gameCardEnterClassName("min-w-0")} style={gameCardEnterStyle(index)}>
+                <GameTile
+                  game={game}
+                  favorite={favorite}
+                  favoriteLabel={favorite ? t("providerGames.favoriteRemove") : t("providerGames.favoriteAdd")}
+                  onToggleFavorite={() => setFavorites((prev) => ({ ...prev, [game.id]: !favorite }))}
+                />
+              </div>
             );
           })}
         </div>

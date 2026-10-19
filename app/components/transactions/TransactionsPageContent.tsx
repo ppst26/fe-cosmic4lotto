@@ -6,6 +6,7 @@ import { TRANSACTION_KIND_TABS } from "@/app/data/transactionsMockData";
 import { usePrefetchTransactionKinds, useTransactions } from "@/app/hooks/api/transactions";
 import { useUrlTab } from "@/app/hooks/useUrlTab";
 import { ResourceGate } from "@/app/components/ui/ResourceGate";
+import { TabPanelTransition } from "@/app/components/ui/TabPanelTransition";
 import { toneClass } from "@/app/components/ui/valueTone";
 import { getDefaultTransactionDateRange } from "@/app/lib/transactionDateUtils";
 import { TransactionKindTabs } from "./TransactionKindTabs";
@@ -118,7 +119,7 @@ export function TransactionsPageContent({ embedded = false, initialKind = "depos
 
         <ResourceGate resource={transactions} loadingLabel={t("loading")} errorTitle={t("loadError")}>
           {() => (
-            <div key={activeKind} className="flex animate-fade-in flex-col gap-4">
+            <TabPanelTransition tabKey={activeKind} className="flex flex-col gap-4">
               <TransactionHistoryTable kind={activeKind} items={tableItems} />
 
               {activeKind === "bet" ? (
@@ -170,7 +171,7 @@ export function TransactionsPageContent({ embedded = false, initialKind = "depos
                   </div>
                 </div>
               ) : null}
-            </div>
+            </TabPanelTransition>
           )}
         </ResourceGate>
       </section>

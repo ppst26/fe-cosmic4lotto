@@ -70,9 +70,9 @@ function PageBtn({
       disabled={disabled}
       onClick={onClick}
       className={cn(
-        "flex h-8 min-w-8 cursor-pointer items-center justify-center rounded-full border-0 px-2 text-xs font-semibold transition-colors disabled:cursor-not-allowed disabled:opacity-40",
+        "soft-pagination-btn flex h-8 min-w-8 cursor-pointer items-center justify-center rounded-full border-0 px-2 text-xs font-semibold transition-colors disabled:cursor-not-allowed disabled:opacity-40",
         active
-          ? "bg-[var(--brand)] text-white"
+          ? "is-active bg-[var(--brand)] text-white"
           : "soft-panel-bg text-[var(--text-on-light)] hover:bg-[var(--brand-soft)]",
       )}
     >

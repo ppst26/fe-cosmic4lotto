@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import Link from "@/lib/i18n/navigation";
+import { gameCardEnterClassName, gameCardEnterStyle } from "@/lib/gameCardEnterMotion";
 import { GamingFilterSidebar } from "./GamingFilterSidebar";
 import { GAMING_CATEGORIES, getGamingProviders, type GamingCategoryId } from "./gaming-category";
 
@@ -33,7 +34,13 @@ export function GamingCategoryPage({ categoryId }: { categoryId: GamingCategoryI
 
           <div className="grid grid-cols-3 gap-2 sm:gap-3 lg:grid-cols-4 xl:grid-cols-6">
             {providers.map((entry, index) => (
-              <Link key={entry.key} href={entry.href} aria-label={entry.title} className="group block min-w-0 no-underline">
+              <Link
+                key={entry.key}
+                href={entry.href}
+                aria-label={entry.title}
+                className={gameCardEnterClassName("group block min-w-0 no-underline")}
+                style={gameCardEnterStyle(index)}
+              >
                 <div className="gaming-provider-thumb relative grid aspect-square w-full place-items-center overflow-hidden transition duration-300 group-hover:-translate-y-1">
                   {entry.image ? (
                     <Image

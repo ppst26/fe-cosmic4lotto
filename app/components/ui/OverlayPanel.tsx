@@ -26,7 +26,8 @@ interface OverlayPanelProps {
   children: React.ReactNode;
 }
 
-const EXIT_MS = 180;
+/** เท่ากับ --motion-sheet-out (styles/motion-glass.css) — รอให้แอนิเมชันปิดจบก่อนถอด DOM */
+const EXIT_MS = 520;
 
 /**
  * กรอบ overlay กลาง ๆ สไตล์ sport — bottom sheet บนมือถือ · กล่องกลางจอ md ขึ้นไป
@@ -49,15 +50,15 @@ export function OverlayPanel({
   const titleId = useId();
   const panelRef = useRef<HTMLDivElement>(null);
   const [mounted, setMounted] = useState(open);
-  const [visible, setVisible] = useState(false);
+  const [visible, setVisible] = useState(open);
 
   useEffect(() => {
     // mount/unmount ตามแอนิเมชันเข้า-ออก (ต้องตั้ง state ใน effect เพื่อรอ frame / timer)
     /* eslint-disable react-hooks/set-state-in-effect */
     if (open) {
       setMounted(true);
-      const raf = requestAnimationFrame(() => setVisible(true));
-      return () => cancelAnimationFrame(raf);
+      setVisible(true);
+      return;
     }
     setVisible(false);
     const timer = window.setTimeout(() => setMounted(false), EXIT_MS);
@@ -91,10 +92,8 @@ export function OverlayPanel({
       role="presentation"
     >
       <div
-        className={cn(
-          "absolute inset-0 bg-black/50 transition-opacity ease-[cubic-bezier(0.2,0.8,0.2,1)] motion-reduce:transition-none",
-          visible ? "opacity-100 duration-[320ms]" : "opacity-0 duration-[180ms]",
-        )}
+        className="lotto-overlay-scrim absolute inset-0 bg-black/50"
+        data-state={visible ? "open" : "closed"}
         onClick={() => dismissible && onClose()}
         aria-hidden="true"
       />
@@ -104,12 +103,10 @@ export function OverlayPanel({
         role={role}
         aria-modal="true"
         aria-labelledby={title && !hideHeader ? titleId : undefined}
+        data-state={visible ? "open" : "closed"}
         className={cn(
-          "overlay-theme relative flex max-h-[88dvh] w-full flex-col overflow-hidden rounded-t-[var(--radius-soft-xl)] modal-surface-bg p-4 text-[var(--text-on-light)] shadow-[var(--shadow-soft)] outline-none transition ease-[cubic-bezier(0.2,0.8,0.2,1)] motion-reduce:transition-none md:max-h-[85dvh] md:rounded-[var(--radius-soft-xl)]",
+          "lotto-overlay-panel overlay-theme relative flex max-h-[88dvh] w-full flex-col overflow-hidden rounded-t-[var(--radius-soft-xl)] modal-surface-bg p-4 text-[var(--text-on-light)] shadow-[var(--shadow-soft)] outline-none md:max-h-[85dvh] md:rounded-[var(--radius-soft-xl)]",
           maxWidthClassName,
-          visible
-            ? "translate-y-0 opacity-100 duration-[320ms] md:scale-100"
-            : "translate-y-full opacity-0 duration-[180ms] md:translate-y-0 md:scale-95",
           className,
         )}
       >

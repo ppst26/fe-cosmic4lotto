@@ -322,3 +322,15 @@ Lotto-only: notification bell kept top-left (lotto's frozen header has no bell),
 - layout ตาม black-purple `GamingProvidersView` / `GamingFilterSidebar` / `gaming-category-hero`: hero ชื่อหมวด (desktop) + sidebar "ตัวกรอง" (โลโก้ค่ายเฉพาะสล็อต/ยิงปลา/เกมไพ่ · จำนวนผลลัพธ์ · ล้าง) + กริดการ์ดค่าย · มือถือใช้เมนูหมวด `LottoMobileQuickMenu` + กริด
 - ข้อมูลค่ายใช้ชุด local เดิมของ lotto (`*ProvidersData`) ผ่าน `components/gaming/gaming-category.ts` (black-purple ใช้ API hook) · สีใช้ token มืด-ทองใน `styles/gaming-lobby.css`
 - `(hub)/layout.tsx` ห่อเฉพาะหน้าแรก · ลบ `HomeOnly`, `LobbyCategoryBody`, `LobbyProvidersView` · หน้าเกมในค่าย (`/slots/[provider]` ฯลฯ) ยังเป็นเวอร์ชันเดิม
+
+## Motion / CSS animation
+
+พอร์ตจาก glass (`motion.css`, `motion-recent.css`, `menu-drawer.css`, `cosmic-line-tabs.css`, `notifications.css`) → `styles/motion-glass.css` (import ต่อจาก `motion.css`)
+
+- dialog `.animate-fade-in` / `.animate-scale-up` ใช้ keyframe `motion-overlay-in` / `motion-modal-in` ของ glass + เนื้อหาไล่ขึ้นทีละส่วน
+- `OverlayPanel` เปลี่ยนจาก transition เป็น 2-step animation (`data-state` open/closed) แบบ sheet/modal ของ glass · `EXIT_MS` = 520
+- `TabPanelTransition` (`app/components/ui`) ใช้กับ VIP · คืนยอด · ประวัติธุรกรรม แทน `key` + fade
+- `lib/gameCardEnterMotion.ts` + `.motion-game-card-enter` — การ์ดค่าย/เกมเข้าทีละใบ (หน้าหมวดเกม · `LobbyProviderGamesView`)
+- `SoftLineTabs` เส้นใต้ขยายจากกลาง · `SoftPagination` กดยุบ/หน้า active เด้ง · skeleton แบบ shimmer
+- menu drawer: easing/ระยะเวลาเท่า `menu-shell` + `.menu-enter-item` / `.menu-enter-avatar`
+- ไม่ได้พอร์ต (lotto ไม่มี component คู่): notification popover, toast progress, bottom-nav active pop, marquee/most-online, hamburger pulse (lotto มี `lotto-hamburger-stretch` ของตัวเอง)
