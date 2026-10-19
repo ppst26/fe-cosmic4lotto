@@ -18,14 +18,14 @@ export function RewardHubSummaryCard({ pointsBalance, className }: { pointsBalan
       <div className="flex items-start justify-between gap-3">
         <div className="min-w-0">
           <p className="text-xs text-[var(--text-muted)]">{t("hub.totalCredits")}</p>
-          <p className="mt-0.5 text-xl font-bold tabular-nums text-[var(--text-on-light)] sm:text-2xl">
+          <p className="mt-0.5 text-xl font-semibold tabular-nums text-[var(--text-on-light)] sm:text-2xl">
             {wallet.data ? formatHeaderWalletBalance(wallet.data.amount) : "—"}
             <span className="ml-1 text-sm font-normal text-[var(--text-muted)]">฿</span>
           </p>
         </div>
         <div className="flex shrink-0 items-center gap-2 rounded-full border border-[var(--brand)]/30 bg-[var(--brand-soft)] px-2.5 py-1.5">
           <Image src={REWARD_GEM_ICON_SRC} alt="" width={22} height={22} className="h-[22px] w-[22px] object-contain" />
-          <span className="text-sm font-bold tabular-nums text-[var(--brand-strong)]">
+          <span className="text-sm font-semibold tabular-nums text-[var(--brand-strong)]">
             {formatRewardPoints(pointsBalance)}
           </span>
         </div>

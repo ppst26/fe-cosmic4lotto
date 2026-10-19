@@ -72,7 +72,7 @@ function MyPromotionCard({ item }: { item: ClaimedPromotion }) {
           {item.title}
         </h3>
         <span
-          className={`shrink-0 rounded-full px-2.5 py-0.5 text-[11px] font-bold ${
+          className={`shrink-0 rounded-full px-2.5 py-0.5 text-[11px] font-semibold ${
             completed ? "bg-emerald-500/15 text-emerald-400" : "bg-[var(--brand-soft)] text-[var(--brand)]"
           }`}
         >
@@ -95,7 +95,7 @@ function MyPromotionCard({ item }: { item: ClaimedPromotion }) {
 
       <button
         type="button"
-        className="mt-3 flex w-full cursor-pointer items-center justify-between gap-2 border-0 border-t border-white/10 bg-transparent pt-2.5 text-xs font-bold text-[var(--Text-Icon-Body)]"
+        className="mt-3 flex w-full cursor-pointer items-center justify-between gap-2 border-0 border-t border-white/10 bg-transparent pt-2.5 text-xs font-semibold text-[var(--Text-Icon-Body)]"
         aria-expanded={open}
         onClick={() => setOpen((v) => !v)}
       >
@@ -149,7 +149,7 @@ function ConditionList({ id }: { id: ClaimedPromotion["id"] }) {
     <div className="mt-2 flex flex-col gap-2.5">
       {blocks.map((block, index) => (
         <div key={`${block.title}-${index}`}>
-          <p className="text-xs font-bold text-[var(--Text-Icon-Title)]">{plain(block.title)}</p>
+          <p className="text-xs font-semibold text-[var(--Text-Icon-Title)]">{plain(block.title)}</p>
           {block.description ? (
             <p className="mt-0.5 text-xs leading-relaxed text-[var(--Text-Icon-Body)]">{plain(block.description)}</p>
           ) : null}
@@ -167,7 +167,7 @@ function ConditionList({ id }: { id: ClaimedPromotion["id"] }) {
       ))}
       <Link
         href={promotionDetailHref(id)}
-        className="soft-btn-primary mt-1 flex h-9 items-center justify-center self-center px-5 text-sm font-extrabold no-underline"
+        className="soft-btn-primary mt-1 flex h-9 items-center justify-center self-center px-5 text-sm font-semibold no-underline"
       >
         {t("my.viewDetail")}
       </Link>

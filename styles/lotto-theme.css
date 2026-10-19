@@ -36,7 +36,7 @@ html {
 body {
   background: #060409;
   color: var(--Text-Icon-Title);
-  font-family: var(--font-kanit), Kanit, system-ui, sans-serif;
+  font-family: var(--font-noto), "Noto Sans Thai", "Noto Sans", system-ui, sans-serif;
 }
 
 .lotto-page {

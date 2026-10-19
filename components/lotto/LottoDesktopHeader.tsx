@@ -90,7 +90,7 @@ function MemberCluster({ wallet, onOpenTheme }: { wallet: WalletSnapshot; onOpen
         </span>
         <span className="dh-ticket__text">
           <span className="dh-ticket__title">
-            {tLottery("hub.mySlips")} <em>[x{pendingCount}]</em>
+            {tLottery("hub.mySlips")}
           </span>
           <span className="dh-ticket__sub">{tLottery("slips.tabs.pending")}</span>
         </span>

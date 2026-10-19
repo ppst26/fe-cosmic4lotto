@@ -3,10 +3,10 @@
   flex-direction: column;
   align-items: stretch;
   gap: 8px;
-  /* ธีมมืด: ไล่เฉดซ้าย→ขวาจากสีพื้นผิวของธีมไปเข้มเกือบดำ (ใช้สีพื้นผิว ไม่ใช้ --t-ga เพราะบางธีมเป็นสีสด) */
-  --card-from: color-mix(in srgb, var(--surface-start, var(--BG-Surface-Normal)) 82%, var(--t-gb, #000));
-  --card-to: color-mix(in srgb, var(--surface-start, var(--BG-Surface-Normal)) 38%, #000);
-  background: linear-gradient(90deg, var(--card-from), var(--card-to));
+  /* ธีมมืด: ไล่เฉดบน→ล่างด้วยสีพื้นผิวของธีม (--surface-start) ที่อ่อนกว่าพื้นหลังหน้า — ไม่ใช้ --t-ga เพราะบางธีมเป็นสีสด */
+  --card-from: color-mix(in srgb, var(--surface-start, var(--BG-Surface-Normal)) 82%, #fff);
+  --card-to: color-mix(in srgb, var(--surface-start, var(--BG-Surface-Normal)) 95%, #fff);
+  background: linear-gradient(180deg, var(--card-from), var(--card-to));
   border-radius: 10px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
   padding: 10px 12px;
@@ -48,7 +48,7 @@
     270deg,
     rgba(0, 0, 0, 0.1) 0%,
     transparent 45%,
-    var(--card-from) 85%
+    transparent 85%
   );
 }
 
@@ -111,11 +111,11 @@
 }
 
 .btnBet {
-  /* ธีมมืด: ไล่เฉดซ้าย→ขวา สีที่ 1 → สีที่ 2 ของธีมแบบเข้ม (ไม่ผสมขาว) ตัวหนังสือขาว */
+  /* ธีมมืด: ปุ่มไล่เฉดซ้าย→ขวาเป็นสีเข้ม ตัดกับการ์ดที่อ่อนกว่า ตัวหนังสือขาว */
   background: linear-gradient(
     to right,
-    color-mix(in srgb, var(--t-ga) 84%, #fff),
-    color-mix(in srgb, var(--t-gb) 62%, #a78bfa)
+    color-mix(in srgb, var(--surface-start, var(--t-ga)) 40%, #000),
+    color-mix(in srgb, var(--t-gb) 55%, #000)
   );
   color: #fff;
   text-decoration: none;

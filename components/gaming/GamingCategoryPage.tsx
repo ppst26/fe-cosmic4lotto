@@ -2,9 +2,6 @@
 
 import Image from "next/image";
 import Link from "@/lib/i18n/navigation";
-import { LottoShellFrame } from "@/components/layout/LottoShellChrome";
-import { HeroBanner } from "@/components/lotto/HeroBanner";
-import { LottoMobileHeroPanel, LottoMobileQuickMenu } from "@/components/lotto/LottoMobileQuickMenu";
 import { GamingFilterSidebar } from "./GamingFilterSidebar";
 import { GAMING_CATEGORIES, getGamingProviders, type GamingCategoryId } from "./gaming-category";
 
@@ -18,21 +15,13 @@ export function GamingCategoryPage({ categoryId }: { categoryId: GamingCategoryI
   const providers = getGamingProviders(categoryId);
 
   return (
-    <LottoShellFrame>
+    <>
       <div className="gaming-category-hero" data-category={categoryId}>
         <h1 className="gaming-category-hero__title">
           <span className="gaming-category-hero__th">{meta.th}</span>
           <span className="gaming-category-hero__en">{meta.en}</span>
         </h1>
       </div>
-
-      <div className="lg:hidden">
-        <LottoMobileHeroPanel>
-          <HeroBanner />
-        </LottoMobileHeroPanel>
-      </div>
-
-      <LottoMobileQuickMenu />
 
       <div className="gaming-games-layout w-full px-4 py-3 lg:py-5">
         <GamingFilterSidebar meta={meta} providers={providers} resultCount={providers.length} resultUnit="ค่าย" />
@@ -66,6 +55,6 @@ export function GamingCategoryPage({ categoryId }: { categoryId: GamingCategoryI
           </div>
         </div>
       </div>
-    </LottoShellFrame>
+    </>
   );
 }

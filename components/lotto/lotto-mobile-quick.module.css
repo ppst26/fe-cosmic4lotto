@@ -58,7 +58,7 @@
   border: 0;
   background: var(--btn-theme-gradient, linear-gradient(180deg, #ffe082 0%, #ffd15c 45%, #c9a227 100%));
   color: var(--btn-theme-fg, #2a0607);
-  font-weight: 700;
+  font-weight: 600;
   font-size: 16px;
   padding: 5px 8px;
 }
@@ -68,7 +68,7 @@
   border: 1px solid var(--t-action, rgba(255, 255, 255, 0.25));
   background: var(--shade-mid);
   color: var(--t-action, #fff);
-  font-weight: 700;
+  font-weight: 600;
   font-size: 16px;
   padding: 5px 8px;
 }

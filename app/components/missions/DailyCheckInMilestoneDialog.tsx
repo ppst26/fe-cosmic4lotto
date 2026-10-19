@@ -45,8 +45,8 @@ export function DailyCheckInMilestoneDialog({
             <Image src="/assets/check-in/diamonds.avif" alt="" fill sizes="36px" className="object-contain" />
           </div>
         </div>
-        <h3 className="mt-4 text-lg font-bold text-[var(--text-on-light)]">{title}</h3>
-        <p className="mt-1.5 text-base font-bold text-[var(--brand-strong)]">
+        <h3 className="mt-4 text-lg font-semibold text-[var(--text-on-light)]">{title}</h3>
+        <p className="mt-1.5 text-base font-semibold text-[var(--brand-strong)]">
           {t("checkIn.milestoneGems", { amount: gemsReward })}
         </p>
         <div className="mt-4 w-full">

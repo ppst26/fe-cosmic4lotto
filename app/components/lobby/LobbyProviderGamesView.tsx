@@ -35,14 +35,14 @@ function GameTile({
         className={`relative block aspect-square w-full overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br ${game.bgGradient} transition group-hover:border-[var(--brand)]/60 group-active:scale-[0.97]`}
       >
         <span
-          className="absolute inset-0 flex items-center justify-center text-4xl font-black opacity-40"
+          className="absolute inset-0 flex items-center justify-center text-4xl font-semibold opacity-40"
           style={{ color: game.accentColor }}
           aria-hidden
         >
           {game.title.charAt(0).toUpperCase()}
         </span>
         {game.badge ? (
-          <span className="absolute bottom-1 left-1 rounded bg-[var(--brand)] px-1.5 py-0.5 text-[9px] font-bold leading-none text-[#2a0607]">
+          <span className="absolute bottom-1 left-1 rounded bg-[var(--brand)] px-1.5 py-0.5 text-[9px] font-semibold leading-none text-[#2a0607]">
             {game.badge}
           </span>
         ) : null}

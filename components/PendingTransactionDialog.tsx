@@ -40,13 +40,13 @@ export function PendingTransactionDialog({ payload, onClose }: PendingTransactio
         role="dialog"
         aria-labelledby="pending-tx-title"
         aria-describedby="pending-tx-desc"
-        className="relative rounded-3xl border border-white/10 bg-[var(--BG-Surface-Darker)] text-[var(--text-on-light)] shadow-[var(--shadow-soft)] w-full max-w-[400px] animate-scale-up px-5 pb-5 pt-4"
+        className="overlay-theme relative rounded-3xl border border-white/10 bg-[var(--BG-Surface-Darker)] text-[var(--text-on-light)] shadow-[var(--shadow-soft)] w-full max-w-[400px] animate-scale-up px-5 pb-5 pt-4"
         onClick={(e) => e.stopPropagation()}
       >
         <button
           type="button"
           onClick={onClose}
-          className="absolute right-3 top-3 flex h-8 w-8 cursor-pointer items-center justify-center rounded-lg border-0 bg-[var(--BG-Surface-Normal)] text-[var(--text-muted)] transition-colors hover:text-[var(--text-on-light)]"
+          className="absolute right-3 top-3 flex h-8 w-8 cursor-pointer items-center justify-center rounded-lg border-0 bg-transparent text-[var(--text-muted)] transition-colors hover:text-[var(--text-on-light)]"
           aria-label={t("pending.close")}
         >
           <X className="w-4 h-4" />
@@ -60,7 +60,7 @@ export function PendingTransactionDialog({ payload, onClose }: PendingTransactio
           )}
 
 
-          <h2 id="pending-tx-title" className="text-lg font-black text-[var(--text-on-light)] sm:text-xl">
+          <h2 id="pending-tx-title" className="text-lg font-semibold text-[var(--text-on-light)] sm:text-xl">
             {t(payload.titleKey)}
           </h2>
           <p id="pending-tx-desc" className="mt-1 text-sm font-medium text-[var(--text-muted)]">
@@ -68,7 +68,7 @@ export function PendingTransactionDialog({ payload, onClose }: PendingTransactio
           </p>
         </div>
 
-        <p className="mt-6 text-center text-4xl font-black tracking-tight text-[var(--text-on-light)] sm:text-[2.75rem]">
+        <p className="mt-6 text-center text-4xl font-semibold tracking-tight text-[var(--text-on-light)] sm:text-[2.75rem]">
           <span className="text-[var(--brand)]">฿</span> {payload.amountDisplay}
         </p>
 
@@ -85,7 +85,7 @@ export function PendingTransactionDialog({ payload, onClose }: PendingTransactio
             return (
               <div key={row.labelKey} className="flex items-start justify-between gap-3">
                 <dt className="shrink-0 font-medium text-[var(--text-muted)]">{t(row.labelKey)}</dt>
-                <dd className="flex min-w-0 items-center justify-end gap-1.5 text-right font-bold text-[var(--text-on-light)]">
+                <dd className="flex min-w-0 items-center justify-end gap-1.5 text-right font-semibold text-[var(--text-on-light)]">
                   <span className="truncate">{value}</span>
                   {isRef && (
                     <button
@@ -106,7 +106,7 @@ export function PendingTransactionDialog({ payload, onClose }: PendingTransactio
         <button
           type="button"
           onClick={onClose}
-          className="soft-btn-primary mt-6 flex h-12 w-full cursor-pointer items-center justify-center text-[15px] font-extrabold active:scale-[0.98]"
+          className="soft-btn-primary mt-6 flex h-12 w-full cursor-pointer items-center justify-center text-[15px] font-semibold active:scale-[0.98]"
         >
           {t("pending.done")}
         </button>
@@ -114,7 +114,7 @@ export function PendingTransactionDialog({ payload, onClose }: PendingTransactio
         <Link
           href={payload.historyHref}
           onClick={onClose}
-          className="mt-4 block text-center text-sm font-bold text-[var(--text-muted)] underline underline-offset-4 transition-colors hover:text-[var(--text-primary)]"
+          className="mt-4 block text-center text-sm font-semibold text-[var(--text-muted)] underline underline-offset-4 transition-colors hover:text-[var(--text-primary)]"
         >
           {t("pending.viewHistory")}
         </Link>

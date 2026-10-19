@@ -11,3 +11,10 @@
 @import "../styles/lottery-art.css";
 @import "../styles/gaming-lobby.css";
 @import "../styles/motion.css";
+
+/* ฟอนต์เดียวทั้งโปรเจค: Noto Sans (ไทย+ละติน) — ตัด mono/serif ออก น้ำหนักสูงสุด semibold (600) */
+@theme inline {
+  --font-sans: var(--font-noto), "Noto Sans Thai", "Noto Sans", system-ui, sans-serif;
+  --font-mono: var(--font-noto), "Noto Sans Thai", "Noto Sans", system-ui, sans-serif;
+  --font-serif: var(--font-noto), "Noto Sans Thai", "Noto Sans", system-ui, sans-serif;
+}

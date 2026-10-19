@@ -16,7 +16,7 @@ export function RewardPointsBar({ pointsBalance, className }: { pointsBalance: n
       aria-label={t("hub.pointsBalance")}
     >
       <p className="text-sm text-[var(--text-muted)]">{t("hub.pointsBalance")}</p>
-      <p className="flex items-center gap-2 text-lg font-bold tabular-nums text-[var(--brand-strong)]">
+      <p className="flex items-center gap-2 text-lg font-semibold tabular-nums text-[var(--brand-strong)]">
         <Image src={REWARD_GEM_ICON_SRC} alt="" width={24} height={24} className="h-6 w-6 object-contain" />
         {formatRewardPoints(pointsBalance)}
       </p>

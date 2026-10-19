@@ -64,7 +64,7 @@ function ThemeGrid({
                 <span className="flex items-center justify-between gap-2 p-2.5" style={{ backgroundColor: view.bgColor }}>
                   <span className="min-w-0">
                     <span
-                      className="block truncate text-xs font-bold"
+                      className="block truncate text-xs font-semibold"
                       style={{ color: theme.isDark ? "#ffffff" : "#1f2937" }}
                     >
                       {view.name}

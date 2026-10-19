@@ -64,7 +64,7 @@ export function LottoMenuDrawer() {
 /** โลโก้ตัวอักษร (แทน CosmicbetLogo ของ glass) */
 function BrandLogo() {
   return (
-    <span className="inline-block text-2xl font-black leading-none tracking-wide text-[var(--brand)]">
+    <span className="inline-block text-2xl font-semibold leading-none tracking-wide text-[var(--brand)]">
       CM-SaturnLotto
     </span>
   );
@@ -232,7 +232,7 @@ function LottoMenuDrawerContent({ visible }: { visible: boolean }) {
       </span>
       <span className="flex shrink-0 items-center gap-2">
         {tile.action === "vip-rank" && hubStats.data?.vipLabel ? (
-          <span className="rounded-md bg-[var(--brand-soft)] px-2 py-0.5 text-[10px] font-extrabold text-[var(--brand)]">
+          <span className="rounded-md bg-[var(--brand-soft)] px-2 py-0.5 text-[10px] font-semibold text-[var(--brand)]">
             {hubStats.data.vipLabel}
           </span>
         ) : null}
@@ -274,14 +274,14 @@ function LottoMenuDrawerContent({ visible }: { visible: boolean }) {
       <button
         type="button"
         onClick={() => closeThen(openRegister)}
-        className="btn-gold h-12 w-full cursor-pointer whitespace-nowrap text-[15px] font-extrabold active:scale-[0.98]"
+        className="btn-gold h-12 w-full cursor-pointer whitespace-nowrap text-[15px] font-semibold active:scale-[0.98]"
       >
         {tAuth("signUp")}
       </button>
       <button
         type="button"
         onClick={() => closeThen(openLogin)}
-        className="btn-outline-gold h-12 w-full cursor-pointer whitespace-nowrap text-[15px] font-extrabold active:scale-[0.98]"
+        className="btn-outline-gold h-12 w-full cursor-pointer whitespace-nowrap text-[15px] font-semibold active:scale-[0.98]"
       >
         {tAuth("login")}
       </button>
@@ -314,7 +314,7 @@ function LottoMenuDrawerContent({ visible }: { visible: boolean }) {
             <button
               type="button"
               onClick={() => runAuthed(openDeposit)}
-              className="btn-gold flex h-11 cursor-pointer items-center justify-center gap-2 text-sm font-extrabold active:scale-[0.98]"
+              className="btn-gold flex h-11 cursor-pointer items-center justify-center gap-2 text-sm font-semibold active:scale-[0.98]"
             >
               <ArrowDownToLine className="h-4 w-4" aria-hidden />
               {t("drawer.deposit")}
@@ -322,7 +322,7 @@ function LottoMenuDrawerContent({ visible }: { visible: boolean }) {
             <button
               type="button"
               onClick={() => runAuthed(openWithdraw)}
-              className="btn-outline-gold flex h-11 cursor-pointer items-center justify-center gap-2 text-sm font-extrabold active:scale-[0.98]"
+              className="btn-outline-gold flex h-11 cursor-pointer items-center justify-center gap-2 text-sm font-semibold active:scale-[0.98]"
             >
               <ArrowUpFromLine className="h-4 w-4" aria-hidden />
               {t("drawer.withdraw")}
@@ -343,7 +343,7 @@ function LottoMenuDrawerContent({ visible }: { visible: boolean }) {
                 className={cn(CARD, "relative flex cursor-pointer flex-col items-start px-3 py-2 text-left text-white")}
               >
                 <span className="text-[11px] font-medium text-[var(--text-muted)]">{label}</span>
-                <span className="font-mono text-sm font-bold tabular-nums">{value}</span>
+                <span className="font-sans text-sm font-semibold tabular-nums">{value}</span>
                 <ChevronRight
                   className="absolute right-2 top-1/2 h-4 w-4 -translate-y-1/2 text-[var(--text-muted)]"
                   aria-hidden
@@ -398,7 +398,7 @@ function LottoMenuDrawerContent({ visible }: { visible: boolean }) {
           <button
             type="button"
             onClick={() => runAuthed(openDeposit)}
-            className="btn-gold flex h-11 cursor-pointer items-center justify-center gap-2 text-sm font-extrabold active:scale-[0.98]"
+            className="btn-gold flex h-11 cursor-pointer items-center justify-center gap-2 text-sm font-semibold active:scale-[0.98]"
           >
             <ArrowDownToLine className="h-4 w-4" aria-hidden />
             {t("drawer.deposit")}
@@ -406,7 +406,7 @@ function LottoMenuDrawerContent({ visible }: { visible: boolean }) {
           <button
             type="button"
             onClick={() => runAuthed(openWithdraw)}
-            className="btn-outline-gold flex h-11 cursor-pointer items-center justify-center gap-2 text-sm font-extrabold active:scale-[0.98]"
+            className="btn-outline-gold flex h-11 cursor-pointer items-center justify-center gap-2 text-sm font-semibold active:scale-[0.98]"
           >
             <ArrowUpFromLine className="h-4 w-4" aria-hidden />
             {t("drawer.withdraw")}

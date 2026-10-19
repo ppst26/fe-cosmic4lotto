@@ -65,7 +65,7 @@ export function SubPageShell({ title, children, breadcrumbLabel, backHref = "/",
             <span className="truncate text-[var(--text-on-light)]">{crumb}</span>
           </nav>
         </div>
-        <h1 className={`${fit || hideTitle ? "hidden " : desktopOnly}mb-4 text-xl font-bold text-[var(--text-on-light)] sm:text-2xl`}>{title}</h1>
+        <h1 className={`${fit || hideTitle ? "hidden " : desktopOnly}mb-4 text-xl font-semibold text-[var(--text-on-light)] sm:text-2xl`}>{title}</h1>
         {fit ? <div className="lotto-fit__body">{children}</div> : children}
       </div>
     </LottoShellFrame>

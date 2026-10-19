@@ -42,14 +42,14 @@ export function SoftDialog({ open, onClose, title, locked = false, closeLabel = 
         role="dialog"
         aria-modal="true"
         aria-label={title}
-        className="modal-surface relative w-full max-w-[380px] animate-scale-up p-5 sm:p-6"
+        className="overlay-theme modal-surface relative w-full max-w-[380px] animate-scale-up p-5 sm:p-6"
         onClick={(event) => event.stopPropagation()}
       >
         <button
           type="button"
           disabled={locked}
           onClick={onClose}
-          className="absolute right-4 top-4 flex h-8 w-8 cursor-pointer items-center justify-center rounded-lg border-0 soft-panel-bg text-[var(--text-muted)] transition-colors hover:text-[var(--text-on-light)] disabled:opacity-50"
+          className="absolute right-4 top-4 flex h-8 w-8 cursor-pointer items-center justify-center rounded-lg border-0 bg-transparent text-[var(--text-muted)] transition-colors hover:text-[var(--text-on-light)] disabled:opacity-50"
           aria-label={closeLabel}
         >
           <X className="h-4 w-4" />

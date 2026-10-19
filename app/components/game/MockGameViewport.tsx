@@ -115,13 +115,13 @@ export function MockGameViewport({ gameId, title, provider, className }: MockGam
       </button>
 
       <div className="soft-panel mx-4 flex w-full max-w-xl flex-col items-center gap-2 border border-dashed border-[var(--brand)] px-6 py-14 text-center">
-        <p className="rounded-full bg-[var(--brand-soft)] px-2.5 py-0.5 text-[10px] font-bold tracking-widest text-[var(--brand-strong)]">
+        <p className="rounded-full bg-[var(--brand-soft)] px-2.5 py-0.5 text-[10px] font-semibold tracking-widest text-[var(--brand-strong)]">
           MOCK
         </p>
-        <h2 className="text-xl font-bold text-[var(--text-on-light)] sm:text-2xl">{title}</h2>
+        <h2 className="text-xl font-semibold text-[var(--text-on-light)] sm:text-2xl">{title}</h2>
         {provider ? <p className="text-sm text-[var(--text-muted)]">{provider}</p> : null}
         <p className="text-xs text-[var(--text-muted)]">{t("play.iframePlaceholder")}</p>
-        <p className="font-mono text-[11px] text-[var(--text-muted)]">gameId: {gameId}</p>
+        <p className="font-sans text-[11px] text-[var(--text-muted)]">gameId: {gameId}</p>
       </div>
     </section>
   );

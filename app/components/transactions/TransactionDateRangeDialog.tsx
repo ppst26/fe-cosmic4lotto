@@ -102,7 +102,7 @@ export function TransactionDateRangeDialog({
       title={t("calendar.title")}
       closeLabel={t("calendar.close")}
     >
-      <h2 className="mb-3 pr-10 text-sm font-bold text-[var(--text-on-light)]">{t("calendar.title")}</h2>
+      <h2 className="mb-3 pr-10 text-sm font-semibold text-[var(--text-on-light)]">{t("calendar.title")}</h2>
 
       <div className="mb-3 flex gap-2">
         <select

@@ -89,22 +89,36 @@
 }
 
 @media (min-width: 1024px) {
-  .track {
-    --carousel-visible: 4;
-    --carousel-peek: 1;
-  }
-
+  /* desktop: การ์ดแทงหวยเห็นเต็ม 3 ใบ + โผล่ครึ่งใบที่ 4 (peek) ทุกหมวด */
+  .track,
   .trackMode2Peek {
-    --carousel-visible: 2;
-    /* 2 การ์ดเต็ม + โผล่ครึ่งการ์ดที่ 3 */
+    --carousel-visible: 3;
     --carousel-peek: 0.5;
-    --carousel-peek-gaps: 2;
+    --carousel-peek-gaps: 3;
   }
 
   .trackMode7Grid {
     --carousel-visible: 7;
     --carousel-peek: 0;
     --carousel-peek-gaps: 6;
+  }
+
+  /* มีไม่เกิน 3 ใบ: ไม่มีใบให้ peek — ขยายเต็มแถว */
+  .track[data-count="1"]:not(.trackMode7Grid),
+  .track[data-count="2"]:not(.trackMode7Grid),
+  .track[data-count="3"]:not(.trackMode7Grid) {
+    --carousel-peek: 0;
+  }
+  .track[data-count="1"]:not(.trackMode7Grid) {
+    --carousel-visible: 1;
+    --carousel-peek-gaps: 0;
+  }
+  .track[data-count="2"]:not(.trackMode7Grid) {
+    --carousel-visible: 2;
+    --carousel-peek-gaps: 1;
+  }
+  .track[data-count="3"]:not(.trackMode7Grid) {
+    --carousel-peek-gaps: 2;
   }
 }
 

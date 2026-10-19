@@ -138,7 +138,7 @@ export function DepositSheet({ onClose, onCompleted }: DepositSheetProps) {
         <>
           <WalletSheetHeader
             titleIconSrc="/assets/deposit/Wallet2.avif"
-            title={<h2 className="text-xl font-extrabold leading-tight sm:text-2xl">{t("deposit.title")}</h2>}
+            title={<h2 className="text-xl font-semibold leading-tight sm:text-2xl">{t("deposit.title")}</h2>}
             subtitle={<p className="mt-1 text-sm text-[var(--text-muted)]">{t("deposit.selectMethod")}</p>}
             onClose={onClose}
             closeLabel={closeLabel}
@@ -157,7 +157,7 @@ export function DepositSheet({ onClose, onCompleted }: DepositSheetProps) {
                       >
                         {/* eslint-disable-next-line @next/next/no-img-element */}
                         <img src={asset.src} alt={t(asset.altKey)} className="h-8 w-8 shrink-0 object-contain sm:h-9 sm:w-9" />
-                        <span className="min-w-0 flex-1 text-sm font-bold sm:text-base">{t(method.titleKey)}</span>
+                        <span className="min-w-0 flex-1 text-sm font-semibold sm:text-base">{t(method.titleKey)}</span>
                         <ChevronRight className="h-5 w-5 shrink-0 text-[var(--text-muted)]" />
                       </button>
                     </li>
@@ -172,7 +172,7 @@ export function DepositSheet({ onClose, onCompleted }: DepositSheetProps) {
       {step === "bank" && (
         <>
           <WalletSheetHeader
-            title={<h2 className="text-lg font-extrabold leading-tight">{t("deposit.bank.title")}</h2>}
+            title={<h2 className="text-lg font-semibold leading-tight">{t("deposit.bank.title")}</h2>}
             onBack={handleBackToMethods}
             backLabel={t("deposit.bank.back")}
             onClose={onClose}
@@ -188,7 +188,7 @@ export function DepositSheet({ onClose, onCompleted }: DepositSheetProps) {
                     {t("deposit.bank.amountLabel")}
                   </label>
                   <div className="mt-2 flex h-14 items-center rounded-xl border border-white/10 bg-[var(--Card-Normal)] focus-within:ring-2 focus-within:ring-[var(--brand)]/40">
-                    <span className="px-3 text-lg font-black text-[var(--brand)]">฿</span>
+                    <span className="px-3 text-lg font-semibold text-[var(--brand)]">฿</span>
                     <input
                       id="deposit-amount"
                       type="text"
@@ -196,7 +196,7 @@ export function DepositSheet({ onClose, onCompleted }: DepositSheetProps) {
                       value={amountInput}
                       maxLength={MONEY_AMOUNT_MAX_DIGITS}
                       onChange={(e) => handleAmountChange(e.target.value)}
-                      className="min-w-0 flex-1 bg-transparent px-1 font-mono text-2xl font-black text-[var(--text-on-light)] outline-none"
+                      className="min-w-0 flex-1 bg-transparent px-1 font-sans text-2xl font-semibold text-[var(--text-on-light)] outline-none"
                     />
                     <span className="shrink-0 px-3 text-sm text-[var(--text-muted)]">{t("shared.currencyUnit")}</span>
                   </div>
@@ -231,7 +231,7 @@ export function DepositSheet({ onClose, onCompleted }: DepositSheetProps) {
       {step === "confirm" && (
         <>
           <WalletSheetHeader
-            title={<h2 className="text-lg font-extrabold leading-tight">{t("deposit.confirm.title")}</h2>}
+            title={<h2 className="text-lg font-semibold leading-tight">{t("deposit.confirm.title")}</h2>}
             subtitle={<p className="mt-0.5 text-xs text-[var(--text-muted)]">{t("deposit.confirm.step", { current: 3, total: 3 })}</p>}
             onBack={handleBackToBank}
             backLabel={t("deposit.confirm.back")}
@@ -243,7 +243,7 @@ export function DepositSheet({ onClose, onCompleted }: DepositSheetProps) {
               <div className="space-y-3 pb-3">
                 <section className={`${WALLET_CARD} px-3 py-3.5 text-center sm:px-4`}>
                   <p className={WALLET_HINT}>{t("deposit.confirm.transferAmount")}</p>
-                  <p className="mt-1 font-mono text-3xl font-black text-[var(--brand)] sm:text-4xl">
+                  <p className="mt-1 font-sans text-3xl font-semibold text-[var(--brand)] sm:text-4xl">
                     ฿ {formatDepositTransferAmount(amount)}
                   </p>
                 </section>
@@ -253,7 +253,7 @@ export function DepositSheet({ onClose, onCompleted }: DepositSheetProps) {
                     {/* eslint-disable-next-line @next/next/no-img-element */}
                     <img src="/assets/bank-logo/KBANK.webp" alt={bank.bankName} className="h-10 w-10 shrink-0 rounded-xl object-contain" />
                     <div className="min-w-0 flex-1 space-y-1.5 text-sm">
-                      <p className="font-bold">{bank.bankName}</p>
+                      <p className="font-semibold">{bank.bankName}</p>
                       <p className="text-[var(--text-muted)]">
                         {t("deposit.confirm.accountNameLabel")}
                         <span className="text-[var(--text-on-light)]">{bank.accountName}</span>
@@ -261,7 +261,7 @@ export function DepositSheet({ onClose, onCompleted }: DepositSheetProps) {
                       <div className="flex flex-wrap items-center gap-2">
                         <p className="text-[var(--text-muted)]">
                           {t("deposit.confirm.accountNumberLabel")}
-                          <span className="font-bold text-[var(--text-on-light)]">{bank.accountNumberDisplay}</span>
+                          <span className="font-semibold text-[var(--text-on-light)]">{bank.accountNumberDisplay}</span>
                         </p>
                         <CopyButton copied={copied} onCopy={handleCopyAccount} />
                       </div>
@@ -276,7 +276,7 @@ export function DepositSheet({ onClose, onCompleted }: DepositSheetProps) {
                 </section>
 
                 <section className="pt-1">
-                  <p className="text-sm font-bold">{t("deposit.confirm.slipTitle")}</p>
+                  <p className="text-sm font-semibold">{t("deposit.confirm.slipTitle")}</p>
                   <input
                     ref={slipInputRef}
                     type="file"
@@ -293,7 +293,7 @@ export function DepositSheet({ onClose, onCompleted }: DepositSheetProps) {
                       {slipFileName ? <Check className="h-6 w-6 text-emerald-400" /> : <ImageIcon className="h-6 w-6" />}
                     </span>
                     <span className="min-w-0 flex-1">
-                      <span className="block truncate text-sm font-bold">{slipFileName ?? t("deposit.confirm.slipPick")}</span>
+                      <span className="block truncate text-sm font-semibold">{slipFileName ?? t("deposit.confirm.slipPick")}</span>
                       <span className="mt-0.5 block truncate text-[11px] text-[var(--text-muted)]">
                         {slipFileName ? t("deposit.confirm.slipChange") : t("deposit.confirm.slipFromDevice")}
                       </span>
@@ -377,17 +377,17 @@ function BankDetailCard({
           <div className="space-y-1">
             <div className="flex items-baseline gap-2">
               <span className={`${WALLET_HINT} shrink-0`}>{t("deposit.bank.bankLabel")}</span>
-              <span className="truncate text-sm font-bold sm:text-base">{bank.bankName}</span>
+              <span className="truncate text-sm font-semibold sm:text-base">{bank.bankName}</span>
             </div>
             <div className="flex items-baseline gap-2">
               <span className={`${WALLET_HINT} shrink-0`}>{t("deposit.bank.accountName")}</span>
-              <span className="truncate text-sm font-bold">{bank.accountName}</span>
+              <span className="truncate text-sm font-semibold">{bank.accountName}</span>
             </div>
           </div>
           <div>
             <span className={WALLET_HINT}>{t("deposit.bank.accountNumber")}</span>
             <div className="mt-0.5 flex items-center justify-between gap-2">
-              <span className="min-w-0 select-all font-mono text-base font-black tracking-wider sm:text-lg">
+              <span className="min-w-0 select-all font-sans text-base font-semibold tracking-wider sm:text-lg">
                 {bank.accountNumberDisplay}
               </span>
               <CopyButton copied={copied} onCopy={onCopy} />

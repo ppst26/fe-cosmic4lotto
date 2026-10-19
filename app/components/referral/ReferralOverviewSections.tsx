@@ -74,7 +74,7 @@ function StatCard({ icon, label, value, accent = false }: { icon: string; label:
       </span>
       <p className="text-[10px] leading-snug text-[var(--text-muted)] sm:text-xs">{label}</p>
       <p
-        className={`text-xs font-bold tabular-nums sm:text-sm ${accent ? "text-[var(--brand-strong)]" : "text-[var(--text-on-light)]"}`}
+        className={`text-xs font-semibold tabular-nums sm:text-sm ${accent ? "text-[var(--brand-strong)]" : "text-[var(--text-on-light)]"}`}
       >
         {value}
       </p>

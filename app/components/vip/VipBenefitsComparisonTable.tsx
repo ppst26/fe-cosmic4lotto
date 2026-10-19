@@ -55,7 +55,7 @@ export function VipBenefitsComparisonTable({ currentRankId }: VipBenefitsCompari
   return (
     <div className="space-y-2 pb-2">
       <div className="flex items-start justify-between gap-2">
-        <h3 className="text-sm font-bold text-[var(--text-on-light)] sm:text-[0.9375rem]">
+        <h3 className="text-sm font-semibold text-[var(--text-on-light)] sm:text-[0.9375rem]">
           {t("benefitsTable.title")}
         </h3>
         <p className="max-w-[9rem] text-right text-xs leading-snug text-[var(--text-muted)]">

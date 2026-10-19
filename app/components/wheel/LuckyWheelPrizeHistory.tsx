@@ -50,7 +50,7 @@ export function LuckyWheelPrizeHistory({ extraRows = [], variant = "default" }: 
         <h2
           id="wheel-history-title"
           className={cn(
-            "font-bold leading-snug text-[var(--text-on-light)]",
+            "font-semibold leading-snug text-[var(--text-on-light)]",
             isSidebar ? "text-[11px] lg:text-xs" : "text-sm",
           )}
         >

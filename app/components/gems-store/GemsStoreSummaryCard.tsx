@@ -23,7 +23,7 @@ export function GemsStoreSummaryCard({ gemsBalance, store }: GemsStoreSummaryCar
         <Image src="/assets/gems/diamond.avif" alt="" fill sizes="64px" className="object-contain" />
       </div>
       <p
-        className="text-3xl font-bold leading-none tabular-nums text-[var(--brand-strong)]"
+        className="text-3xl font-semibold leading-none tabular-nums text-[var(--brand-strong)]"
         aria-label={t("gemsStore.summary.balanceAria", { amount: formatGemsBalance(gemsBalance) })}
       >
         {formatGemsBalance(gemsBalance)}
@@ -32,13 +32,13 @@ export function GemsStoreSummaryCard({ gemsBalance, store }: GemsStoreSummaryCar
       <div className="mt-1 flex flex-wrap items-center justify-center gap-x-5 gap-y-1 text-xs text-[var(--text-on-light)]">
         <p>
           {t("gemsStore.summary.today")}{" "}
-          <span className="font-bold tabular-nums">
+          <span className="font-semibold tabular-nums">
             {dailyUsed}/{dailyLimit}
           </span>
         </p>
         <p>
           {t("gemsStore.summary.thisWeek")}{" "}
-          <span className="font-bold tabular-nums">
+          <span className="font-semibold tabular-nums">
             {weeklyUsed}/{weeklyLimit}
           </span>
         </p>

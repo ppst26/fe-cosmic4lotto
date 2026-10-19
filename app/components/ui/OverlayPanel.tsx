@@ -105,7 +105,7 @@ export function OverlayPanel({
         aria-modal="true"
         aria-labelledby={title && !hideHeader ? titleId : undefined}
         className={cn(
-          "relative flex max-h-[88dvh] w-full flex-col overflow-hidden rounded-t-[var(--radius-soft-xl)] modal-surface-bg p-4 text-[var(--text-on-light)] shadow-[var(--shadow-soft)] outline-none transition ease-[cubic-bezier(0.2,0.8,0.2,1)] motion-reduce:transition-none md:max-h-[85dvh] md:rounded-[var(--radius-soft-xl)]",
+          "overlay-theme relative flex max-h-[88dvh] w-full flex-col overflow-hidden rounded-t-[var(--radius-soft-xl)] modal-surface-bg p-4 text-[var(--text-on-light)] shadow-[var(--shadow-soft)] outline-none transition ease-[cubic-bezier(0.2,0.8,0.2,1)] motion-reduce:transition-none md:max-h-[85dvh] md:rounded-[var(--radius-soft-xl)]",
           maxWidthClassName,
           visible
             ? "translate-y-0 opacity-100 duration-[320ms] md:scale-100"
@@ -115,7 +115,7 @@ export function OverlayPanel({
       >
         {hideHeader ? null : (
           <div className="mb-3 flex shrink-0 items-center justify-between gap-3">
-            <h2 id={titleId} className="text-base font-bold text-[var(--text-on-light)]">
+            <h2 id={titleId} className="text-base font-semibold text-[var(--text-on-light)]">
               {title}
             </h2>
             <button
@@ -123,7 +123,7 @@ export function OverlayPanel({
               onClick={onClose}
               disabled={!dismissible}
               aria-label={closeLabel ?? t("close")}
-              className="flex h-9 w-9 shrink-0 cursor-pointer items-center justify-center rounded-full border-0 soft-panel-bg text-[var(--text-muted)] hover:text-[var(--text-on-light)] disabled:opacity-50"
+              className="flex h-9 w-9 shrink-0 cursor-pointer items-center justify-center rounded-full border-0 bg-transparent text-[var(--text-muted)] hover:text-[var(--text-on-light)] disabled:opacity-50"
             >
               <X className="h-4 w-4" aria-hidden />
             </button>

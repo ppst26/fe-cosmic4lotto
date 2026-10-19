@@ -64,7 +64,7 @@ function ReferralEarningContent({
     <div className="space-y-3">
       <section className="soft-panel p-4" aria-label={t("earning.claimableBonus")}>
         <p className="text-sm text-[var(--text-muted)]">{t("earning.claimableBonus")}</p>
-        <p className="text-2xl font-bold tabular-nums text-[var(--brand-strong)]">{formatReferralCurrency(claimable)}</p>
+        <p className="text-2xl font-semibold tabular-nums text-[var(--brand-strong)]">{formatReferralCurrency(claimable)}</p>
         <button
           type="button"
           disabled={claimable <= 0}
@@ -100,7 +100,7 @@ function ReferralEarningContent({
       <section className="soft-panel p-4" aria-label={t("earning.periodSummaryAriaLabel")}>
         <p className="text-sm text-[var(--text-muted)]">{t("earning.networkIncomePeriod")}</p>
         <div className="mt-1 flex flex-wrap items-end justify-between gap-2">
-          <p className="text-2xl font-bold tabular-nums">{formatReferralCurrency(periodTotal)}</p>
+          <p className="text-2xl font-semibold tabular-nums">{formatReferralCurrency(periodTotal)}</p>
           {totalEarningsThb !== undefined ? (
             <p className="text-xs text-[var(--text-muted)]">
               {t("earning.totalAccumulated", { amount: formatReferralCurrency(totalEarningsThb) })}

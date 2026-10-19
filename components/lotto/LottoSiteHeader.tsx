@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { HeaderAvatar } from "./HeaderAvatar";
+import { HeaderBell } from "./HeaderBell";
 import { LottoDesktopHeader } from "./LottoDesktopHeader";
 import type { WalletSnapshot } from "@/lib/lotto/load-wallet-snapshot";
 
@@ -99,7 +99,7 @@ export function LottoSiteHeader({
                   </button>
                 </div>
               )}
-              {loggedIn ? <HeaderAvatar /> : null}
+              {loggedIn ? <HeaderBell /> : null}
               <HeaderMenu />
             </div>
           </div>

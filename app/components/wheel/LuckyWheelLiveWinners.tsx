@@ -26,7 +26,7 @@ export function LuckyWheelLiveWinners({ variant = "default" }: { variant?: "defa
         <h2
           id="wheel-live-title"
           className={cn(
-            "font-bold leading-snug text-[var(--text-on-light)]",
+            "font-semibold leading-snug text-[var(--text-on-light)]",
             isSidebar ? "text-[11px] lg:text-xs" : "text-sm",
           )}
         >

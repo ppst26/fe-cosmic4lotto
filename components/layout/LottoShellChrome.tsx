@@ -31,8 +31,11 @@ export function LottoShellFrame({
   children,
   bottomNav = true,
   fit = false,
+  rail = null,
 }: {
   children: ReactNode;
+  /** แถบผลหวยขวา (desktop ≥1280) — ไม่ส่ง = ไม่มีคอลัมน์ขวา */
+  rail?: ReactNode;
   bottomNav?: boolean;
   /** มือถือล็อกความสูงเท่าจอ (หวย step 2/3 แบบ glass) — โซนเนื้อหาเลื่อนเองข้างใน */
   fit?: boolean;
@@ -57,9 +60,10 @@ export function LottoShellFrame({
             </ViewTransition>
           </div>
         </div>
+        {rail ? <aside className={layout.railSlot}>{rail}</aside> : null}
       </div>
       {bottomNav ? (
-        <div className={layout.bottomNavSlot} style={{ viewTransitionName: "site-bottom-nav" }}>
+        <div className={layout.bottomNavSlot} style={{ viewTransitionName: "site-bottom-nav", position: "relative", zIndex: 40 }}>
           <BottomNavLotto loggedIn={isAuthenticated} />
         </div>
       ) : null}

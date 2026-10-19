@@ -41,7 +41,7 @@ export function CashbackPanelShell({ children, embedded = false, className }: Ca
 export function CashbackPanelHeader({ title, subtitle }: { title: string; subtitle: string }) {
   return (
     <header className="border-b border-white/[0.08] pb-3 text-center">
-      <h2 className="text-base font-bold text-[var(--text-on-light)]">{title}</h2>
+      <h2 className="text-base font-semibold text-[var(--text-on-light)]">{title}</h2>
       <p className="mt-0.5 text-xs text-[var(--text-muted)]">{subtitle}</p>
     </header>
   );
@@ -186,7 +186,7 @@ export function CashbackRulesTableSection({ title, rows, action }: CashbackRules
   return (
     <section className="flex flex-col gap-2.5">
       <div className="flex flex-wrap items-center justify-between gap-2">
-        <h3 className="text-sm font-bold text-[var(--text-on-light)]">{title}</h3>
+        <h3 className="text-sm font-semibold text-[var(--text-on-light)]">{title}</h3>
         {action}
       </div>
       <div className="soft-card overflow-hidden">

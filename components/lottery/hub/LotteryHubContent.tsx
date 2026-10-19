@@ -47,7 +47,7 @@ export function LotteryHubContent({
         <header className="lottery-hub__head flex min-w-0 items-start justify-between gap-3">
           <div className="min-w-0">
             {showTitle ? (
-              <h2 className="text-lg font-bold tracking-tight text-[var(--text-on-light)] sm:text-xl">
+              <h2 className="text-lg font-semibold tracking-tight text-[var(--text-on-light)] sm:text-xl">
                 {t("hub.title")}
               </h2>
             ) : null}

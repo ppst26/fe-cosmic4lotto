@@ -135,7 +135,7 @@ function GemsRedeemCard({
 
   return (
     <article className={`soft-card flex h-full flex-col gap-2 p-3 ${affordable ? "" : "opacity-80"}`}>
-      <p className="text-sm font-bold">{fmt.credits(pkg.credits)}</p>
+      <p className="text-sm font-semibold">{fmt.credits(pkg.credits)}</p>
       <div className="relative mx-auto h-14 w-14">
         <Image src={pkg.coinSrc} alt="" fill sizes="56px" className="object-contain object-center" />
       </div>

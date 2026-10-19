@@ -28,7 +28,7 @@ export function LotterySlipsEntryButton({ className }: { className?: string }) {
       <span>{t("hub.mySlips")}</span>
       {count > 0 ? (
         <span
-          className="absolute -right-1.5 -top-1.5 grid h-[1.125rem] min-w-[1.125rem] place-items-center rounded-full bg-[var(--brand)] px-1 text-[0.6875rem] font-bold leading-none tabular-nums text-[var(--btn-text)]"
+          className="absolute -right-1.5 -top-1.5 grid h-[1.125rem] min-w-[1.125rem] place-items-center rounded-full bg-[var(--brand)] px-1 text-[0.6875rem] font-semibold leading-none tabular-nums text-[var(--btn-text)]"
           aria-hidden="true"
         >
           {count > 99 ? "99+" : count}

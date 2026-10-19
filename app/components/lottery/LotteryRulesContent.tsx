@@ -38,11 +38,11 @@ export function LotteryRulesContent({ marketSlug }: { marketSlug: string }) {
           fallbackLabel={rules.flagLabel}
           fallbackTone={rules.flagTone}
         />
-        <h2 className="m-0 min-w-0 flex-1 text-base font-bold text-[var(--text-on-light)]">{t(rules.titleKey)}</h2>
+        <h2 className="m-0 min-w-0 flex-1 text-base font-semibold text-[var(--text-on-light)]">{t(rules.titleKey)}</h2>
       </section>
 
       <section className="thai-lotto-panel p-3 sm:p-4" aria-labelledby="lottery-rules-payout">
-        <h2 id="lottery-rules-payout" className="m-0 mb-1 text-sm font-bold text-[var(--text-on-light)]">
+        <h2 id="lottery-rules-payout" className="m-0 mb-1 text-sm font-semibold text-[var(--text-on-light)]">
           {t("rules.payoutHeading")}
         </h2>
         <ul className="m-0 list-none p-0">
@@ -62,7 +62,7 @@ export function LotteryRulesContent({ marketSlug }: { marketSlug: string }) {
 
       {rules.minBet !== null && rules.maxBet !== null ? (
         <section className="thai-lotto-panel p-3 sm:p-4" aria-labelledby="lottery-rules-limits">
-          <h2 id="lottery-rules-limits" className="m-0 mb-1 text-sm font-bold text-[var(--text-on-light)]">
+          <h2 id="lottery-rules-limits" className="m-0 mb-1 text-sm font-semibold text-[var(--text-on-light)]">
             {t("rules.limitsHeading")}
           </h2>
           <dl className="m-0">

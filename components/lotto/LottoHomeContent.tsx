@@ -6,7 +6,6 @@ import { HallOfFameSection } from "./HallOfFameSection";
 import { HeroBanner } from "./HeroBanner";
 import { LottoBettingCarousels } from "./LottoBettingCarousels";
 import { LottoForeignResults } from "./LottoForeignResults";
-import { LottoMobileHeroPanel, LottoMobileQuickMenu } from "./LottoMobileQuickMenu";
 import styles from "./lotto-cards.module.css";
 import layout from "./lobby-layout.module.css";
 import { ThaiLottoCard } from "./ThaiLottoCard";
@@ -33,11 +32,11 @@ export function LottoHomeContent({
 }: LottoHomeContentProps) {
   return (
     <div className="flex flex-col gap-1 lg:gap-3">
-      <LottoMobileHeroPanel>
+      {/* แบนเนอร์มือถืออยู่ใน (tabs) layout — ที่นี่เฉพาะ desktop */}
+      <div className="hidden lg:block">
         <HeroBanner />
-      </LottoMobileHeroPanel>
+      </div>
       <DesktopFeatureCards />
-      <LottoMobileQuickMenu />
       <div className={styles.lottoResultsWrap}>
         <div className={styles.betCarouselFull}>
           <LottoBettingCarousels />

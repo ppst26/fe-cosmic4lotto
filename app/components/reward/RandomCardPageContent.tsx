@@ -25,7 +25,7 @@ function PrizeTile({ card }: { card: RandomCardDisplayItem }) {
           className={cn("object-contain object-center", empty && "opacity-35 grayscale")}
         />
       </div>
-      <p className="flex items-center gap-1 text-xs font-bold text-[var(--text-on-light)]">
+      <p className="flex items-center gap-1 text-xs font-semibold text-[var(--text-on-light)]">
         <Image src={REWARD_GEM_ICON_SRC} alt="" width={12} height={12} className="h-3 w-3 object-contain" />
         <span className="tabular-nums">{formatRewardPoints(card.pointsValue)}</span>
       </p>

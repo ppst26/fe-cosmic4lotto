@@ -45,14 +45,14 @@ export function useLogoutConfirm(onSuccess?: () => void) {
         <div className="mx-auto mb-2 flex h-14 w-14 items-center justify-center rounded-2xl bg-[#ef4a52]/15 text-[#ef4a52]">
           <LogOut className="h-6 w-6" aria-hidden />
         </div>
-        <h3 className="text-lg font-black text-[var(--text-on-light)]">{t("logoutConfirm.title")}</h3>
+        <h3 className="text-lg font-semibold text-[var(--text-on-light)]">{t("logoutConfirm.title")}</h3>
         <p className="mt-1 text-sm text-[var(--text-muted)]">{t("logoutConfirm.description")}</p>
         <div className="mt-5 grid grid-cols-2 gap-2">
           <button
             type="button"
             disabled={loading}
             onClick={() => setOpen(false)}
-            className="soft-btn-outline h-11 cursor-pointer text-sm font-bold disabled:opacity-50"
+            className="soft-btn-outline h-11 cursor-pointer text-sm font-semibold disabled:opacity-50"
           >
             {t("logoutConfirm.stay")}
           </button>
@@ -60,7 +60,7 @@ export function useLogoutConfirm(onSuccess?: () => void) {
             type="button"
             disabled={loading}
             onClick={() => void handleConfirm()}
-            className="h-11 cursor-pointer rounded-full border-0 bg-gradient-to-b from-[#ef4a52] to-[#d93642] text-sm font-bold text-white disabled:opacity-60"
+            className="h-11 cursor-pointer rounded-full border-0 bg-gradient-to-b from-[#ef4a52] to-[#d93642] text-sm font-semibold text-white disabled:opacity-60"
           >
             {loading ? tCommon("processing") : t("logout")}
           </button>

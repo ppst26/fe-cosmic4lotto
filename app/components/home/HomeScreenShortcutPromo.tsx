@@ -21,7 +21,7 @@ const INSTALL_STEPS: Record<InstallPlatform, MessageKey<"home">[]> = {
 /** โลโก้ตัวอักษร CM-SaturnLotto (ไม่พึ่งไฟล์รูป) */
 function BrandLogo({ className }: { className?: string }) {
   return (
-    <span className={cn("inline-block text-lg font-black leading-none tracking-wide text-[var(--brand)]", className)}>
+    <span className={cn("inline-block text-lg font-semibold leading-none tracking-wide text-[var(--brand)]", className)}>
       CM-SaturnLotto
     </span>
   );
@@ -120,7 +120,7 @@ export function HomeScreenShortcutPromo({ className }: { className?: string }) {
       className={cn("mt-1 lg:hidden", className)}
       aria-labelledby="home-shortcut-title"
     >
-      <h2 id="home-shortcut-title" className="mb-2 text-sm font-bold text-[var(--text-on-light)]">
+      <h2 id="home-shortcut-title" className="mb-2 text-sm font-semibold text-[var(--text-on-light)]">
         {t("a2hs.title")}
       </h2>
 
@@ -129,7 +129,7 @@ export function HomeScreenShortcutPromo({ className }: { className?: string }) {
           <div className="min-w-0 flex-1">
             <BrandLogo />
 
-            <p className="mt-3 text-base font-extrabold text-white sm:text-lg">{t("a2hs.cardTitle")}</p>
+            <p className="mt-3 text-base font-semibold text-white sm:text-lg">{t("a2hs.cardTitle")}</p>
             <p className="mt-1 text-xs leading-relaxed text-white/65 sm:text-sm">
               {t("a2hs.cardSubtitle")}
             </p>
@@ -186,7 +186,7 @@ export function HomeScreenShortcutPromo({ className }: { className?: string }) {
         <div className="mt-4 overflow-hidden rounded-xl bg-black/30">
           <button
             type="button"
-            className="flex w-full cursor-pointer items-center justify-between gap-2 border-0 bg-transparent px-3 py-2.5 text-left text-xs font-bold text-white"
+            className="flex w-full cursor-pointer items-center justify-between gap-2 border-0 bg-transparent px-3 py-2.5 text-left text-xs font-semibold text-white"
             aria-expanded={stepsOpen}
             aria-controls={stepsPanelId}
             onClick={() => setStepsOpen((open) => !open)}
@@ -202,7 +202,7 @@ export function HomeScreenShortcutPromo({ className }: { className?: string }) {
               {steps.map((step, index) => (
                 <li key={`${platform}-${index}`} className="flex items-start gap-2.5 text-xs text-white/80">
                   <span
-                    className="flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-[var(--brand)] text-[11px] font-black text-[#2a0607]"
+                    className="flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-[var(--brand)] text-[11px] font-semibold text-[#2a0607]"
                     aria-hidden="true"
                   >
                     {index + 1}

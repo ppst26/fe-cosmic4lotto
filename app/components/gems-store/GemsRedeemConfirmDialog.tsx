@@ -45,7 +45,7 @@ export function GemsRedeemConfirmDialog({
     >
       <div className="flex items-start justify-between gap-3 pr-10">
         <div className="min-w-0">
-          <h3 className="text-lg font-bold text-[var(--text-on-light)]">{title}</h3>
+          <h3 className="text-lg font-semibold text-[var(--text-on-light)]">{title}</h3>
           <p className="mt-0.5 text-xs text-[var(--text-muted)]">
             {t("gemsStore.confirm.subtitle", {
               gems: formatGemsBalance(gemsCost),
@@ -55,7 +55,7 @@ export function GemsRedeemConfirmDialog({
         </div>
       </div>
       <div className="mt-2 text-right">
-        <p className="text-2xl font-black tabular-nums text-[var(--brand)]">+{formatCreditAmount(credits)}</p>
+        <p className="text-2xl font-semibold tabular-nums text-[var(--brand)]">+{formatCreditAmount(credits)}</p>
         <p className="text-xs text-[var(--text-muted)]">{t("gemsStore.confirm.creditsLabel")}</p>
       </div>
 
@@ -67,7 +67,7 @@ export function GemsRedeemConfirmDialog({
             </span>
             {t("gemsStore.confirm.gemsUsed")}
           </dt>
-          <dd className="font-bold tabular-nums text-[var(--text-on-light)]">{formatGemsBalance(gemsCost)}</dd>
+          <dd className="font-semibold tabular-nums text-[var(--text-on-light)]">{formatGemsBalance(gemsCost)}</dd>
         </div>
         <div className="h-px bg-white/10" />
         <div className="flex items-center justify-between text-[var(--text-muted)]">
@@ -77,7 +77,7 @@ export function GemsRedeemConfirmDialog({
             </span>
             {t("gemsStore.confirm.balanceAfter")}
           </dt>
-          <dd className="font-bold tabular-nums text-[var(--text-on-light)]">{formatGemsBalance(balanceAfter)}</dd>
+          <dd className="font-semibold tabular-nums text-[var(--text-on-light)]">{formatGemsBalance(balanceAfter)}</dd>
         </div>
       </dl>
 
@@ -86,7 +86,7 @@ export function GemsRedeemConfirmDialog({
           type="button"
           disabled={loading}
           onClick={() => onOpenChange(false)}
-          className="h-11 flex-1 cursor-pointer rounded-lg border border-white/10 bg-[var(--soft-surface)] text-sm font-extrabold text-[var(--text-on-light)] transition-colors hover:bg-[var(--soft-card-elevated)] disabled:opacity-50"
+          className="h-11 flex-1 cursor-pointer rounded-lg border border-white/10 bg-[var(--soft-surface)] text-sm font-semibold text-[var(--text-on-light)] transition-colors hover:bg-[var(--soft-card-elevated)] disabled:opacity-50"
         >
           {t("gemsStore.confirm.cancel")}
         </button>
@@ -94,7 +94,7 @@ export function GemsRedeemConfirmDialog({
           type="button"
           disabled={loading}
           onClick={() => void onConfirm()}
-          className="soft-btn-primary h-11 flex-1 cursor-pointer text-sm font-extrabold transition-transform active:scale-95 disabled:opacity-60"
+          className="soft-btn-primary h-11 flex-1 cursor-pointer text-sm font-semibold transition-transform active:scale-95 disabled:opacity-60"
         >
           {loading ? t("gemsStore.confirm.processing") : t("gemsStore.confirm.confirm")}
         </button>

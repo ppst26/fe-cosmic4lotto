@@ -100,7 +100,7 @@ function LossRebateSections({
 
       <section className="flex flex-col gap-3">
         <div className="flex flex-wrap items-center justify-between gap-2">
-          <h2 className="text-sm font-bold text-[var(--text-on-light)] sm:text-base">{t("lossRebate.historyTitle")}</h2>
+          <h2 className="text-sm font-semibold text-[var(--text-on-light)] sm:text-base">{t("lossRebate.historyTitle")}</h2>
           <select
             aria-label={t("lossRebate.selectMonth")}
             value={monthId}
@@ -225,7 +225,7 @@ function LossRebateFormulaSection({ summary }: { summary: LossRebateSummaryMock 
   const t = useT("cashback");
   return (
     <section className="soft-panel px-4 py-4 sm:px-5">
-      <h2 className="text-sm font-bold text-[var(--text-on-light)]">{t("lossRebate.formula.title")}</h2>
+      <h2 className="text-sm font-semibold text-[var(--text-on-light)]">{t("lossRebate.formula.title")}</h2>
       <div className="mt-4 flex items-center gap-2">
         <FormulaCell
           label={t("lossRebate.formula.eligibleNetLoss")}

@@ -50,14 +50,14 @@ export function WalletConfirmDialog({
         role="alertdialog"
         aria-labelledby="wallet-confirm-title"
         aria-describedby="wallet-confirm-desc"
-        className="relative rounded-3xl border border-white/10 bg-[var(--BG-Surface-Darker)] text-[var(--text-on-light)] shadow-[var(--shadow-soft)] w-full max-w-[360px] animate-scale-up p-5 sm:p-6"
+        className="overlay-theme relative rounded-3xl border border-white/10 bg-[var(--BG-Surface-Darker)] text-[var(--text-on-light)] shadow-[var(--shadow-soft)] w-full max-w-[360px] animate-scale-up p-5 sm:p-6"
         onClick={(e) => e.stopPropagation()}
       >
         <button
           type="button"
           disabled={loading}
           onClick={onClose}
-          className="absolute right-4 top-4 flex h-8 w-8 cursor-pointer items-center justify-center rounded-lg border-0 bg-[var(--BG-Surface-Normal)] text-[var(--text-muted)] transition-colors hover:text-[var(--text-on-light)] disabled:opacity-50"
+          className="absolute right-4 top-4 flex h-8 w-8 cursor-pointer items-center justify-center rounded-lg border-0 bg-transparent text-[var(--text-muted)] transition-colors hover:text-[var(--text-on-light)] disabled:opacity-50"
           aria-label={tc("close")}
         >
           <X className="h-4 w-4" />
@@ -66,7 +66,7 @@ export function WalletConfirmDialog({
         <div className="pb-3 text-center">
           <div
             className={`mx-auto mb-2 flex h-14 w-14 items-center justify-center rounded-lg ${
-              isDeposit ? "bg-emerald-500/15 text-emerald-400" : "bg-amber-500/15 text-amber-400"
+              isDeposit ? "text-emerald-400" : "text-amber-400"
             }`}
           >
             {isDeposit ? (
@@ -75,7 +75,7 @@ export function WalletConfirmDialog({
               <ArrowUpRight className="h-7 w-7 stroke-[2.5]" />
             )}
           </div>
-          <h3 id="wallet-confirm-title" className="text-lg font-black text-[var(--text-on-light)]">
+          <h3 id="wallet-confirm-title" className="text-lg font-semibold text-[var(--text-on-light)]">
             {title}
           </h3>
           {description ? (
@@ -88,7 +88,7 @@ export function WalletConfirmDialog({
         <div className="my-3 rounded-lg bg-[var(--BG-Surface-Normal)] p-3.5 text-xs sm:text-[13px]">
           <div className="flex items-center justify-between text-[var(--text-muted)]">
             <span>{amountLabel}</span>
-            <span className="font-mono text-base font-black text-[var(--brand)]">฿{amountDisplay}</span>
+            <span className="font-sans text-base font-semibold text-[var(--brand)]">฿{amountDisplay}</span>
           </div>
         </div>
 
@@ -97,7 +97,7 @@ export function WalletConfirmDialog({
             type="button"
             disabled={loading}
             onClick={onClose}
-            className="h-11 flex-1 cursor-pointer rounded-lg border-0 bg-[var(--BG-Surface-Normal)] text-sm font-extrabold text-[var(--text-on-light)] transition-colors hover:bg-[var(--Card-Normal)] disabled:opacity-50"
+            className="h-11 flex-1 cursor-pointer rounded-lg border-0 bg-[var(--BG-Surface-Normal)] text-sm font-semibold text-[var(--text-on-light)] transition-colors hover:bg-[var(--Card-Normal)] disabled:opacity-50"
           >
             {tc("cancel")}
           </button>
@@ -105,7 +105,7 @@ export function WalletConfirmDialog({
             type="button"
             disabled={loading}
             onClick={onConfirm}
-            className="soft-btn-primary h-11 flex-1 cursor-pointer text-sm font-extrabold transition-transform active:scale-95 disabled:opacity-60"
+            className="soft-btn-primary h-11 flex-1 cursor-pointer text-sm font-semibold transition-transform active:scale-95 disabled:opacity-60"
           >
             {loading ? tw("shared.submitting") : confirmLabel}
           </button>

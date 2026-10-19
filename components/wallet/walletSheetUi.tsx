@@ -13,17 +13,17 @@ export const WALLET_CARD_INTERACTIVE = cn(
   WALLET_CARD,
   "cursor-pointer text-left transition-all hover:ring-1 hover:ring-[var(--brand)] active:scale-[0.99]",
 );
-export const WALLET_LABEL = "text-xs font-bold text-[var(--text-muted)]";
+export const WALLET_LABEL = "text-xs font-semibold text-[var(--text-muted)]";
 export const WALLET_HINT = "text-[11px] font-medium text-[var(--text-muted)]";
 export const WALLET_ERROR =
   "rounded-xl border border-rose-500/25 bg-rose-500/10 px-3 py-2 text-xs font-medium text-rose-400 sm:text-sm";
 export const WALLET_PRIMARY_BTN =
-  "soft-btn-primary flex h-12 w-full cursor-pointer items-center justify-center gap-2 text-[15px] font-extrabold transition-transform active:scale-[0.98] disabled:cursor-not-allowed disabled:opacity-60";
+  "soft-btn-primary flex h-12 w-full cursor-pointer items-center justify-center gap-2 text-[15px] font-semibold transition-transform active:scale-[0.98] disabled:cursor-not-allowed disabled:opacity-60";
 
 /** ปุ่มเลือกยอดด่วน (เทียบ COSMIC_CHOICE_BTN) */
 export function choiceBtn(active: boolean, className?: string) {
   return cn(
-    "cursor-pointer rounded-xl border-0 text-xs font-black transition-all",
+    "cursor-pointer rounded-xl border-0 text-xs font-semibold transition-all",
     active
       ? "bg-[var(--brand)] text-[#2a0607]"
       : "bg-[var(--Card-Normal)] text-[var(--text-on-light)] hover:bg-[var(--brand-soft)]",
@@ -32,7 +32,7 @@ export function choiceBtn(active: boolean, className?: string) {
 }
 
 const ROUND_BTN =
-  "flex h-9 w-9 shrink-0 cursor-pointer items-center justify-center rounded-full border-0 bg-[var(--BG-Surface-Darker)] text-[var(--text-muted)] transition-all hover:text-[var(--text-on-light)] active:scale-95";
+  "flex h-9 w-9 shrink-0 cursor-pointer items-center justify-center rounded-full border-0 bg-transparent text-[var(--text-muted)] transition-all hover:text-[var(--text-on-light)] active:scale-95";
 
 interface WalletSheetProps {
   onClose: () => void;

@@ -75,11 +75,11 @@ function DailyCheckInView({ checkIn }: { checkIn: CheckInData }) {
         <p className="text-sm font-semibold text-[var(--text-on-light)]">{t("checkIn.subtitle")}</p>
         <p className="text-sm text-[var(--text-muted)]">
           {t("checkIn.bonusBefore")}{" "}
-          <span className="font-bold text-[var(--text-on-light)]">
+          <span className="font-semibold text-[var(--text-on-light)]">
             {t("checkIn.bonusDays", { count: daysRemainingForBonus })}
           </span>{" "}
           {t("checkIn.bonusAfter")}{" "}
-          <span className="font-bold text-[var(--brand-strong)]">{t("checkIn.bonusGems", { amount: 20 })}</span>
+          <span className="font-semibold text-[var(--brand-strong)]">{t("checkIn.bonusGems", { amount: 20 })}</span>
         </p>
         <div className="flex items-center gap-3">
           <div className="h-2.5 flex-1 overflow-hidden rounded-full bg-[var(--soft-surface)]">
@@ -124,7 +124,7 @@ function DailyCheckInView({ checkIn }: { checkIn: CheckInData }) {
                   className={`object-contain ${item.status === "locked" ? "opacity-60" : ""}`}
                 />
               </div>
-              <p className="font-bold tabular-nums">+{item.credits}</p>
+              <p className="font-semibold tabular-nums">+{item.credits}</p>
               <p className={isToday ? "font-semibold text-[var(--brand-strong)]" : "text-[var(--text-muted)]"}>
                 {t(`checkIn.dayStatus.${item.status}`)}
               </p>
@@ -135,7 +135,7 @@ function DailyCheckInView({ checkIn }: { checkIn: CheckInData }) {
 
       <section className="soft-panel space-y-3 p-4">
         <div className="text-center">
-          <h3 className="text-base font-bold text-[var(--text-on-light)]">{t("checkIn.cumulativeTitle")}</h3>
+          <h3 className="text-base font-semibold text-[var(--text-on-light)]">{t("checkIn.cumulativeTitle")}</h3>
           <p className="mt-1 text-sm text-[var(--text-muted)]">{t("checkIn.cumulativeDesc")}</p>
         </div>
         <div className="grid grid-cols-4 gap-2">
@@ -151,7 +151,7 @@ function DailyCheckInView({ checkIn }: { checkIn: CheckInData }) {
                   isReached ? "bg-[var(--brand-soft)]" : "bg-[var(--soft-surface)]"
                 }`}
               >
-                <span className="text-xs font-bold tabular-nums">
+                <span className="text-xs font-semibold tabular-nums">
                   {t("checkIn.milestoneGems", { amount: m.gemsReward })}
                 </span>
                 <span className="relative h-6 w-6">

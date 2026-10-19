@@ -123,3 +123,46 @@ html:not([data-mode="light"])[data-theme]:not([data-theme="cosmic"]) .lotto-page
   background: radial-gradient(120% 80% at 50% -20%, color-mix(in srgb, var(--t-ga) 45%, transparent), transparent 55%),
     color-mix(in srgb, #fff 7%, var(--cosmic-page-base));
 }
+
+/* ── Overlay (bottom sheet / modal / confirm dialog) โหมดมืด ───────────────────────────
+ * พื้นนอกไล่เฉดตามสีธีม (--t-gb → --t-ga) · ช่อง/การ์ดด้านในอ่อนกว่าชัดเจนแต่ยังเข้มพอให้ตัวหนังสือขาวอ่านง่าย
+ * ตั้ง token ใหม่ใน scope นี้ — การ์ดด้านในที่ใช้ --BG-Surface-* / --Card-Normal จึงได้สีอ่อนโดยไม่ต้องแก้ทีละไฟล์ */
+html:not([data-mode="light"]) .overlay-theme {
+  --overlay-from: color-mix(in srgb, var(--t-gb, #140c1f) 94%, #fff);
+  --overlay-to: color-mix(in srgb, var(--t-ga, #0c090f) 97%, #fff);
+  --overlay-mid: color-mix(in srgb, var(--overlay-from) 50%, var(--overlay-to));
+  --overlay-inner: color-mix(in srgb, #fff 12%, var(--overlay-mid));
+  --BG-Surface-Normal: var(--overlay-inner);
+  --BG-Surface-Darker: var(--overlay-inner);
+  --Card-Normal: color-mix(in srgb, #fff 15%, var(--overlay-mid));
+  background: linear-gradient(165deg, var(--overlay-from), var(--overlay-to));
+}
+
+/* ── Overlay โหมดสว่าง: ไล่เฉดเงิน (silver) แบบพรีเมียม ────────────────────────────────
+ * ขาวมุกด้านบน → เงินเทาตรงกลาง → ประกายเงินอ่อนด้านล่าง · การ์ดด้านในเป็นขาวนวลลอยจากพื้นเงิน */
+html[data-mode="light"] .overlay-theme {
+  --BG-Surface-Normal: rgba(255, 255, 255, 0.72);
+  --BG-Surface-Darker: rgba(255, 255, 255, 0.72);
+  --Card-Normal: rgba(255, 255, 255, 0.9);
+  background: linear-gradient(160deg, #f7f8fa 0%, #dcdfe5 42%, #c7ccd4 62%, #e6e8ed 100%);
+  border-color: rgba(255, 255, 255, 0.7);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.9),
+    0 18px 48px rgba(40, 46, 60, 0.28);
+}
+
+/* ── โหมดสว่าง: ตัวหนังสือบนพื้น active (--brand) เป็นสีขาวทุกจุด ─────────────────────────
+ * คลาสเดิม hard-code text-[#2a0607] (เหมาะกับพื้นครีมของธีมมืด) — บังคับขาวเฉพาะที่อยู่บนพื้น --brand */
+html[data-mode="light"] [class*="bg-[var(--brand)]"][class*="text-[#2a0607]"] {
+  color: #fff;
+}
+
+/* กระดิ่งใน header เป็นสีขาว (header ธีมสว่างเป็นพื้นเข้มเสมอ) */
+html[data-mode="light"] .lotto-site-header .header-bell {
+  color: #fff;
+}
+
+html[data-mode="light"] .lotto-site-header .header-bell:hover {
+  color: #fff;
+  opacity: 0.8;
+}

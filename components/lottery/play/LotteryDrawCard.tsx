@@ -36,7 +36,7 @@ export function LotteryDrawCard({
         fallbackTone={flagTone}
       />
       <div className="min-w-0 flex-1">
-        <h2 className="m-0 text-sm font-bold text-[var(--text-on-light)] sm:text-base">{title}</h2>
+        <h2 className="m-0 text-sm font-semibold text-[var(--text-on-light)] sm:text-base">{title}</h2>
         <p className="m-0 text-xs text-[var(--text-muted)]">{drawLabel}</p>
       </div>
       <div className="flex flex-col items-end gap-0.5">

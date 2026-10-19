@@ -92,7 +92,7 @@ function ReferralTabs({ refCode, overview }: { refCode: string; overview: Referr
                     <p className="mt-0.5 text-[11px] text-[var(--text-muted)] sm:text-xs">{t(tier.subtitleKey)}</p>
                   </div>
                   <div className="shrink-0 text-right">
-                    <p className="text-xl font-bold leading-none text-[var(--brand-strong)]">{tier.rateLabel}</p>
+                    <p className="text-xl font-semibold leading-none text-[var(--brand-strong)]">{tier.rateLabel}</p>
                     <p className="mt-1 text-[10px] text-[var(--text-muted)] sm:text-xs">{t(tier.rateHintKey)}</p>
                   </div>
                 </div>
@@ -116,7 +116,7 @@ function ReferralTabs({ refCode, overview }: { refCode: string; overview: Referr
               {overview.steps.map((step, index) => (
                 <Fragment key={step.id}>
                   <li className="flex min-w-0 flex-1 flex-col items-center text-center">
-                    <div className="flex h-11 w-11 items-center justify-center rounded-full bg-[var(--brand-soft)] text-xs font-bold text-[var(--brand-strong)]">
+                    <div className="flex h-11 w-11 items-center justify-center rounded-full bg-[var(--brand-soft)] text-xs font-semibold text-[var(--brand-strong)]">
                       {String(index + 1).padStart(2, "0")}
                     </div>
                     <p className="mt-2 text-xs font-semibold sm:text-[13px]">{t(step.labelKey)}</p>

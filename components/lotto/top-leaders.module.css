@@ -112,7 +112,7 @@
   min-width: 30px;
   padding: 3px 8px 6px;
   font-size: 14px;
-  font-weight: 800;
+  font-weight: 600;
   line-height: 1;
   color: var(--lead-fg);
   background: var(--lead);
@@ -122,7 +122,7 @@
 .prize {
   margin: 0;
   font-size: 18px;
-  font-weight: 800;
+  font-weight: 600;
   color: var(--Text-Icon-Title);
 }
 
@@ -168,7 +168,7 @@
 
 .metaNumber {
   font-size: 14px;
-  font-weight: 800;
+  font-weight: 600;
   letter-spacing: 0.08em;
   color: var(--Text-Icon-Title);
 }

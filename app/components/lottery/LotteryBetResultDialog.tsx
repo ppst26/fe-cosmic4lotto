@@ -48,7 +48,7 @@ export function LotteryBetResultDialog({ state, onClose }: LotteryBetResultDialo
           >
             <X className="h-6 w-6 stroke-[2.5]" />
           </span>
-          <h3 id="lottery-bet-result-title" className="mt-3 text-lg font-black text-[var(--text-on-light)]">
+          <h3 id="lottery-bet-result-title" className="mt-3 text-lg font-semibold text-[var(--text-on-light)]">
             {t("submit.failedTitle")}
           </h3>
           <p id="lottery-bet-result-desc" className="mt-1 text-sm text-[var(--text-muted)]">

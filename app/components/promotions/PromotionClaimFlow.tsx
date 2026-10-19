@@ -28,7 +28,7 @@ export function PromotionClaimFlow({ content }: { content: PromotionDetailConten
       <button
         type="button"
         disabled={claimed}
-        className="soft-btn-primary flex h-10 cursor-pointer items-center justify-center px-6 text-sm font-extrabold transition-transform active:scale-95 disabled:cursor-not-allowed disabled:opacity-60"
+        className="soft-btn-primary flex h-10 cursor-pointer items-center justify-center px-6 text-sm font-semibold transition-transform active:scale-95 disabled:cursor-not-allowed disabled:opacity-60"
         onClick={() => runWithAuth(true, () => setConfirmOpen(true))}
       >
         {claimed ? t("detail.claim.claimed") : t("detail.claim.button")}
@@ -41,7 +41,7 @@ export function PromotionClaimFlow({ content }: { content: PromotionDetailConten
         closeLabel={tRewards("actions.close")}
       >
         <div className="pr-10">
-          <h3 className="text-lg font-bold text-[var(--text-on-light)]">{t("detail.claim.confirm.title")}</h3>
+          <h3 className="text-lg font-semibold text-[var(--text-on-light)]">{t("detail.claim.confirm.title")}</h3>
           <p className="mt-1 text-sm leading-relaxed text-[var(--text-muted)]">
             {t("detail.claim.confirm.description", { title })}
           </p>
@@ -50,7 +50,7 @@ export function PromotionClaimFlow({ content }: { content: PromotionDetailConten
           <button
             type="button"
             onClick={() => setConfirmOpen(false)}
-            className="h-11 flex-1 cursor-pointer rounded-lg border border-white/10 bg-[var(--soft-surface)] text-sm font-extrabold text-[var(--text-on-light)] transition-colors hover:bg-[var(--soft-card-elevated)]"
+            className="h-11 flex-1 cursor-pointer rounded-lg border border-white/10 bg-[var(--soft-surface)] text-sm font-semibold text-[var(--text-on-light)] transition-colors hover:bg-[var(--soft-card-elevated)]"
           >
             {tc("cancel")}
           </button>
@@ -61,7 +61,7 @@ export function PromotionClaimFlow({ content }: { content: PromotionDetailConten
               claimPromotion(content.id, title);
               setSuccessOpen(true);
             }}
-            className="soft-btn-primary h-11 flex-1 cursor-pointer text-sm font-extrabold transition-transform active:scale-95"
+            className="soft-btn-primary h-11 flex-1 cursor-pointer text-sm font-semibold transition-transform active:scale-95"
           >
             {tc("confirm")}
           </button>
@@ -81,7 +81,7 @@ export function PromotionClaimFlow({ content }: { content: PromotionDetailConten
           >
             <Check className="h-8 w-8 stroke-[3]" />
           </span>
-          <h3 className="mt-4 text-lg font-bold text-[var(--text-on-light)]">{t("detail.claim.success.title")}</h3>
+          <h3 className="mt-4 text-lg font-semibold text-[var(--text-on-light)]">{t("detail.claim.success.title")}</h3>
           <p className="mt-1.5 text-sm leading-relaxed text-[var(--text-muted)]">
             {t("detail.claim.success.description", { title })}
           </p>

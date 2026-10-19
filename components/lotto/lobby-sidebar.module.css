@@ -71,7 +71,7 @@
   border: 0;
   background: var(--btn-theme-gradient);
   color: var(--btn-theme-fg);
-  font-weight: 700;
+  font-weight: 600;
   font-size: 14px;
   padding: 10px 8px;
 }
@@ -81,7 +81,7 @@
   border: 0;
   background: var(--shade-mid);
   color: var(--t-action, #fff);
-  font-weight: 700;
+  font-weight: 600;
   font-size: 14px;
   padding: 10px 8px;
 }

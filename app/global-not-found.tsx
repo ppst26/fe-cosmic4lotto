@@ -1,12 +1,12 @@
 import type { Metadata } from "next";
-import { Kanit } from "next/font/google";
+import { Noto_Sans_Thai } from "next/font/google";
 import { StatusState } from "@/app/components/ui/StatusState";
 import "./globals.css";
 
-const kanit = Kanit({
+const notoSans = Noto_Sans_Thai({
   subsets: ["thai", "latin"],
-  weight: ["400", "500", "600", "700"],
-  variable: "--font-kanit",
+  weight: ["400", "500", "600"],
+  variable: "--font-noto",
 });
 
 export const metadata: Metadata = {
@@ -19,7 +19,7 @@ export const metadata: Metadata = {
  */
 export default function GlobalNotFound() {
   return (
-    <html lang="th" className={`dark ${kanit.variable}`}>
+    <html lang="th" className={`dark ${notoSans.variable}`}>
       <body className="flex min-h-dvh items-center justify-center px-4">
         <StatusState
           icon={<span className="text-lg font-medium tabular-nums">404</span>}

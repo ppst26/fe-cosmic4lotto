@@ -154,7 +154,7 @@
 }
 
 .lucky-wheel__slice-label {
-  font-family: var(--font-sans);
+  font-family: inherit;
   font-weight: 600;
   fill: var(--wheel-label-color, #ffffff);
 }
@@ -183,7 +183,7 @@
     0 0 0 2px var(--wheel-hub-ring, #1a1a1d);
   letter-spacing: 0.12em;
   color: var(--wheel-hub-text, #2a0607);
-  font-weight: 700;
+  font-weight: 600;
   cursor: pointer;
 }
 

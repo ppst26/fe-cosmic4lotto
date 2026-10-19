@@ -39,7 +39,7 @@ export function NotificationCenterPanel({ variant = "popover" }: NotificationCen
               className={cn(
                 "min-h-9 cursor-pointer rounded-xl border-0 px-1 py-2 text-xs font-semibold sm:text-[13px]",
                 selected
-                  ? "bg-[var(--brand)] font-bold text-[#2a0607]"
+                  ? "bg-[var(--brand)] font-semibold text-[#2a0607]"
                   : "bg-transparent text-[var(--text-muted)] hover:text-[var(--text-on-light)]",
               )}
               onClick={() => setActiveTab(tab.id)}

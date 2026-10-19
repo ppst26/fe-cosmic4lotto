@@ -1,6 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import type React from "react";
-import { Kanit } from "next/font/google";
+import { Noto_Sans_Thai } from "next/font/google";
 import { lang } from "next/root-params";
 import { notFound } from "next/navigation";
 import "@/app/globals.css";
@@ -15,10 +15,10 @@ import { DEFAULT_THEME, LIGHT_THEME_KEYS, THEME_KEYS, THEME_STORAGE_KEY } from "
 /** ตั้ง data-theme / data-mode / class dark ก่อน paint ครั้งแรก — สคริปต์เดียวกับ glass */
 const THEME_INIT_SCRIPT = `try{var k=localStorage.getItem(${JSON.stringify(THEME_STORAGE_KEY)});var d=document.documentElement;if(!(k&&${JSON.stringify(THEME_KEYS)}.indexOf(k)>-1))k=${JSON.stringify(DEFAULT_THEME)};var l=${JSON.stringify(LIGHT_THEME_KEYS)}.indexOf(k)>-1;d.dataset.theme=k;d.dataset.mode=l?"light":"dark";d.classList.toggle("dark",!l)}catch(e){}`;
 
-const kanit = Kanit({
+const notoSans = Noto_Sans_Thai({
   subsets: ["thai", "latin"],
-  weight: ["400", "500", "600", "700"],
-  variable: "--font-kanit",
+  weight: ["400", "500", "600"],
+  variable: "--font-noto",
 });
 
 export function generateStaticParams() {
@@ -42,7 +42,7 @@ export const viewport: Viewport = {
 };
 
 /**
- * RootLayout ต่อภาษา — โครงตาม glass app/[lang]/layout.tsx · ฟอนต์ Kanit/ธีมมืด-ทองเป็นของ lotto
+ * RootLayout ต่อภาษา — โครงตาม glass app/[lang]/layout.tsx · ฟอนต์ Noto Sans/ธีมมืด-ทองเป็นของ lotto
  */
 export default async function RootLayout({ children }: { children: React.ReactNode }) {
   const locale = await lang();
@@ -52,7 +52,7 @@ export default async function RootLayout({ children }: { children: React.ReactNo
     <html
       lang={locale}
       suppressHydrationWarning
-      className={`dark ${kanit.variable} ${localeFontClass(locale)}`}
+      className={`dark ${notoSans.variable} ${localeFontClass(locale)}`}
     >
       <head>
         <script dangerouslySetInnerHTML={{ __html: THEME_INIT_SCRIPT }} />

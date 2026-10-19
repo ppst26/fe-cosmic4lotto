@@ -49,12 +49,12 @@ const HERO_CARDS: HeroCard[] = [
 ];
 
 /**
- * การ์ดฟีเจอร์หน้าแรก — desktop เท่านั้น (≥1024) วางใต้ welcome banner
+ * การ์ดฟีเจอร์หน้าแรก — desktop (≥1024) วางใต้ welcome banner · mobile={true} = เวอร์ชันมือถือ (การ์ดบนเลื่อนข้าง แถบล่างเรียงลง) วางก่อนเมนูหมวด
  * แถวบน 3 การ์ดใหญ่ (รูปล้นขวา) · แถวล่าง 2 การ์ดแถบยาว — layout ตามภาพอ้างอิงใน design.md
  */
-export function DesktopFeatureCards() {
+export function DesktopFeatureCards({ mobile = false }: { mobile?: boolean }) {
   return (
-    <section className={styles.root} aria-label="ฟีเจอร์แนะนำ">
+    <section className={`${styles.root} ${mobile ? styles.rootMobile : styles.rootDesktop}`} aria-label="ฟีเจอร์แนะนำ">
       <div className={styles.heroRow}>
         {HERO_CARDS.map((card) => (
           <Link key={card.key} href={card.href} className={`${styles.hero} ${styles[card.tone]}`}>

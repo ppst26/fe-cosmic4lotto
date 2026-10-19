@@ -38,7 +38,7 @@ export function LobbyProviderCard({
             priority={priority}
           />
         ) : (
-          <span className="absolute inset-0 flex items-center justify-center text-3xl font-black text-[var(--brand)]">
+          <span className="absolute inset-0 flex items-center justify-center text-3xl font-semibold text-[var(--brand)]">
             {title.charAt(0).toUpperCase()}
           </span>
         )}

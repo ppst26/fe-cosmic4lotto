@@ -56,7 +56,7 @@
 
 .name {
   font-size: 13px;
-  font-weight: 700;
+  font-weight: 600;
   color: var(--Text-Icon-Title);
   white-space: nowrap;
   overflow: hidden;
@@ -95,7 +95,7 @@
   height: 26px;
   border-radius: 6px;
   font-size: 14px;
-  font-weight: 800;
+  font-weight: 600;
   color: var(--Main-Secondary);
   background: color-mix(in srgb, var(--Main-Secondary) 14%, transparent);
 }

@@ -86,7 +86,7 @@ function ProfileAccountView({
           <UserAvatar profile={profile} size="xl" />
         </button>
         <p className="text-xs text-[var(--text-muted)]">{t("avatar.tapToChange")}</p>
-        <p className="text-lg font-bold text-[var(--text-on-light)]">{profile.displayName}</p>
+        <p className="text-lg font-semibold text-[var(--text-on-light)]">{profile.displayName}</p>
         <p className="text-sm text-[var(--text-muted)]">{profile.phoneMasked}</p>
       </section>
 
@@ -219,14 +219,14 @@ function BankAccountCard({ profile }: { profile: ProfileUser }) {
   return (
     <article className="soft-card flex items-start gap-3 px-3 py-3 sm:px-3.5">
       <span
-        className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-[var(--brand-soft)] text-xs font-bold uppercase text-[var(--brand-strong)]"
+        className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-[var(--brand-soft)] text-xs font-semibold uppercase text-[var(--brand-strong)]"
         aria-hidden="true"
       >
         {profile.bankLabel.slice(0, 3)}
       </span>
       <div className="min-w-0 flex-1">
         <p className="text-sm font-semibold leading-snug text-[var(--text-on-light)]">{profile.bankLabel}</p>
-        <p className="mt-1.5 text-base font-bold tracking-tight tabular-nums">
+        <p className="mt-1.5 text-base font-semibold tracking-tight tabular-nums">
           {formatBankAccountForDisplay(profile.bankAccountNumber)}
         </p>
         <p className="mt-1 truncate text-xs text-[var(--text-muted)]">{profile.displayName}</p>
@@ -273,14 +273,14 @@ function LogoutButton() {
         locked={loading}
         closeLabel={t("avatar.close")}
       >
-        <h3 className="pr-10 text-lg font-bold text-[var(--text-on-light)]">{tAuth("logoutConfirm.title")}</h3>
+        <h3 className="pr-10 text-lg font-semibold text-[var(--text-on-light)]">{tAuth("logoutConfirm.title")}</h3>
         <p className="mt-1 text-sm text-[var(--text-muted)]">{tAuth("logoutConfirm.description")}</p>
         <div className="mt-5 flex items-center gap-2.5">
           <button
             type="button"
             disabled={loading}
             onClick={() => setOpen(false)}
-            className="h-11 flex-1 cursor-pointer rounded-lg border border-white/10 bg-[var(--soft-surface)] text-sm font-extrabold text-[var(--text-on-light)] disabled:opacity-50"
+            className="h-11 flex-1 cursor-pointer rounded-lg border border-white/10 bg-[var(--soft-surface)] text-sm font-semibold text-[var(--text-on-light)] disabled:opacity-50"
           >
             {tAuth("logoutConfirm.stay")}
           </button>
@@ -288,7 +288,7 @@ function LogoutButton() {
             type="button"
             disabled={loading}
             onClick={() => void handleConfirm()}
-            className="soft-btn-primary h-11 flex-1 cursor-pointer text-sm font-extrabold disabled:opacity-60"
+            className="soft-btn-primary h-11 flex-1 cursor-pointer text-sm font-semibold disabled:opacity-60"
           >
             {t("logout")}
           </button>

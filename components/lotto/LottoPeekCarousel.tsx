@@ -1,6 +1,7 @@
 "use client";
 
 import {
+  Children,
   useCallback,
   useEffect,
   useRef,
@@ -66,7 +67,7 @@ export function LottoPeekCarousel({
     if (!el) return;
     const slide = el.querySelector<HTMLElement>(`.${styles.slide}`);
     const gap = 8;
-    const page = mode === "2peek" ? 2 : mode === "7grid" ? 7 : 4;
+    const page = mode === "7grid" ? 7 : window.matchMedia("(min-width: 1024px)").matches ? 3 : mode === "2peek" ? 2 : 4;
     const step = slide
       ? slide.offsetWidth * page + gap * (page - 1)
       : el.clientWidth * 0.85;
@@ -87,6 +88,7 @@ export function LottoPeekCarousel({
       <div
         ref={trackRef}
         className={`${styles.track} ${compact ? styles.trackCompact : ""} ${mode === "2peek" ? styles.trackMode2Peek : ""} ${mode === "7grid" ? styles.trackMode7Grid : ""}`}
+        data-count={Children.count(children)}
         role="region"
         aria-roledescription="carousel"
         aria-label={ariaLabel}

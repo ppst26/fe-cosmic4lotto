@@ -19,7 +19,7 @@ export function ThaiLottoResultPanel({ result }: { result: ThaiLottoResult }) {
       <div className="flex flex-wrap items-center justify-between gap-2">
         <h2
           id="thai-lotto-result-title"
-          className="m-0 text-sm font-bold text-[var(--text-on-light)]"
+          className="m-0 text-sm font-semibold text-[var(--text-on-light)]"
         >
           {t("thaiResult.title")}
         </h2>
@@ -28,7 +28,7 @@ export function ThaiLottoResultPanel({ result }: { result: ThaiLottoResult }) {
 
       <div className="thai-lotto-result__first flex flex-col items-center gap-1 rounded-[var(--radius-soft-sm)] soft-panel-bg p-3">
         <span className="text-xs text-[var(--text-muted)]">{t("thaiResult.firstPrize")}</span>
-        <span className="text-2xl font-bold tracking-widest text-[var(--brand)]">
+        <span className="text-2xl font-semibold tracking-widest text-[var(--brand)]">
           {result.firstPrize}
         </span>
       </div>

@@ -33,10 +33,10 @@ export function DailyCheckInClaimSuccessDialog({ open, credits, onOpenChange }: 
             <Image src="/assets/check-in/diamond.avif" alt="" fill sizes="36px" className="object-contain" />
           </div>
         </div>
-        <h3 className="mt-4 text-lg font-bold text-[var(--text-on-light)]">{t("checkIn.success.title")}</h3>
+        <h3 className="mt-4 text-lg font-semibold text-[var(--text-on-light)]">{t("checkIn.success.title")}</h3>
         <p className="mt-1.5 text-sm leading-relaxed text-[var(--text-muted)]">
           {t("checkIn.success.descBefore")}{" "}
-          <span className="font-bold text-[var(--brand-strong)]">{fmt.gems(credits)}</span>
+          <span className="font-semibold text-[var(--brand-strong)]">{fmt.gems(credits)}</span>
           {descAfter ? ` ${descAfter}` : null}
         </p>
       </div>

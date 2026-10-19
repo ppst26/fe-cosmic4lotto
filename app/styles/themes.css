@@ -2378,7 +2378,7 @@ html[data-mode="light"][data-theme]:not([data-theme="cosmic"]) .category-nav:not
 
 [data-mode="light"] .referral-earn-card > ul li > span[aria-hidden="true"] {
   color: #ffffff;
-  font-weight: 700;
+  font-weight: 600;
 }
 
 [data-mode="light"] .referral-earning-claim {
@@ -2974,7 +2974,7 @@ html[data-mode][data-theme]:not([data-theme="cosmic"]) :is(.lottery-bet-slip__gr
 html[data-mode][data-theme]:not([data-theme="cosmic"]) .lottery-price-chip:not(.is-active) {
   border: 0;
   color: #ffffff;
-  font-weight: 700;
+  font-weight: 600;
 }
 
 html[data-mode][data-theme]:not([data-theme="cosmic"]) .lottery-price-chip--5:not(.is-active) { background: #0ea5e9; }
@@ -2986,7 +2986,7 @@ html[data-mode][data-theme]:not([data-theme="cosmic"]) .lottery-price-chip--100:
 html[data-mode][data-theme]:not([data-theme="cosmic"]) .lottery-price-chip.is-active {
   background: var(--t-gb);
   color: #ffffff;
-  font-weight: 700;
+  font-weight: 600;
   outline: 2px solid var(--t-gb);
   outline-offset: 2px;
 }

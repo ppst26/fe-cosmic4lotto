@@ -42,7 +42,7 @@ export function ProfileAvatarPicker({ open, onOpenChange, currentPresetId, onSav
       locked={savingId !== null}
       closeLabel={t("avatar.close")}
     >
-      <h3 className="pr-10 text-lg font-bold text-[var(--text-on-light)]">{t("avatar.pickerTitle")}</h3>
+      <h3 className="pr-10 text-lg font-semibold text-[var(--text-on-light)]">{t("avatar.pickerTitle")}</h3>
       <p className="mt-1 text-xs text-[var(--text-muted)]">{t("avatar.pickerDescription")}</p>
       {error ? (
         <p className="mt-2 text-xs font-semibold text-[var(--brand-strong)]" role="alert">

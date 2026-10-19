@@ -45,12 +45,12 @@ const MOCK_PROVIDER_LOGOS = [
 export function GamingFilterSidebar({ meta, providers, resultCount, resultUnit }: Props) {
   return (
     <aside className="gaming-filter-sidebar hidden w-[15rem] shrink-0 self-start lg:block xl:w-[17rem]">
-      <div className="gaming-filter-head px-4 py-3.5 text-center text-base font-extrabold">ตัวกรอง</div>
+      <div className="gaming-filter-head px-4 py-3.5 text-center text-base font-semibold">ตัวกรอง</div>
 
       {meta.showLogos ? (
         <>
           <div className="gaming-filter-bar flex items-center justify-between px-4 py-1.5 text-[11px]">
-            <span className="font-extrabold">ค้นหาค่ายเกม</span>
+            <span className="font-semibold">ค้นหาค่ายเกม</span>
             <span className="opacity-80">เลือกอย่างใดอย่างหนึ่ง</span>
           </div>
           <div className="gaming-filter-logos grid max-h-[26rem] grid-cols-3 gap-2 overflow-y-auto p-3">
@@ -66,7 +66,7 @@ export function GamingFilterSidebar({ meta, providers, resultCount, resultUnit }
                     className="object-contain p-2"
                   />
                 ) : (
-                  <span className="grid h-full place-items-center px-1 text-center text-[9px] font-bold leading-tight">{p.title}</span>
+                  <span className="grid h-full place-items-center px-1 text-center text-[9px] font-semibold leading-tight">{p.title}</span>
                 )}
               </Link>
             ))}
@@ -77,13 +77,13 @@ export function GamingFilterSidebar({ meta, providers, resultCount, resultUnit }
       <div className="space-y-3 p-3 pt-2">
         <div className="gaming-filter-result flex items-center justify-between rounded-xl px-3.5 py-3 text-sm">
           <span>พบเกมส์ที่คุณค้นหา</span>
-          <span className="font-bold">
+          <span className="font-semibold">
             {resultCount.toLocaleString("en-US")} {resultUnit}
           </span>
         </div>
         <Link
           href={meta.basePath}
-          className="gaming-filter-clear flex h-11 w-full items-center justify-center rounded-xl text-sm font-extrabold no-underline"
+          className="gaming-filter-clear flex h-11 w-full items-center justify-center rounded-xl text-sm font-semibold no-underline"
         >
           ล้าง
         </Link>

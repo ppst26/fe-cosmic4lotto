@@ -94,7 +94,7 @@ export function WithdrawSheet({ onClose, onCompleted }: WithdrawSheetProps) {
     <WalletSheet onClose={onClose} dismissible={!submitting} closeLabel={closeLabel}>
       <WalletSheetHeader
         titleIconSrc="/assets/deposit/Wallet2.avif"
-        title={<h2 className="text-xl font-extrabold leading-tight sm:text-2xl">{t("withdraw.title")}</h2>}
+        title={<h2 className="text-xl font-semibold leading-tight sm:text-2xl">{t("withdraw.title")}</h2>}
         onClose={onClose}
         closeLabel={closeLabel}
       />
@@ -110,8 +110,8 @@ export function WithdrawSheet({ onClose, onCompleted }: WithdrawSheetProps) {
               <KbankLogoGraphic className="h-11 w-11 shrink-0" />
               <span className="min-w-0 flex-1">
                 <span className={`${WALLET_HINT} block`}>{t("withdraw.transferToYourAccount")}</span>
-                <span className="mt-0.5 block text-sm font-extrabold sm:text-base">{bank.bankShortName}</span>
-                <span className="mt-0.5 block font-mono text-xs tracking-wider text-[var(--text-muted)]">
+                <span className="mt-0.5 block text-sm font-semibold sm:text-base">{bank.bankShortName}</span>
+                <span className="mt-0.5 block font-sans text-xs tracking-wider text-[var(--text-muted)]">
                   {bank.accountNumberDisplay}
                 </span>
                 <span className={`${WALLET_HINT} mt-0.5 block truncate`}>{bank.holderLabel}</span>
@@ -129,7 +129,7 @@ export function WithdrawSheet({ onClose, onCompleted }: WithdrawSheetProps) {
           </label>
           <div className="mt-4 pb-3">
             <div className="flex items-baseline justify-center gap-0.5">
-              <span className="shrink-0 text-5xl font-black leading-none text-[var(--brand)] sm:text-6xl" aria-hidden="true">
+              <span className="shrink-0 text-5xl font-semibold leading-none text-[var(--brand)] sm:text-6xl" aria-hidden="true">
                 ฿
               </span>
               <input
@@ -139,7 +139,7 @@ export function WithdrawSheet({ onClose, onCompleted }: WithdrawSheetProps) {
                 value={amountInput}
                 maxLength={MONEY_AMOUNT_MAX_DIGITS}
                 onChange={(e) => handleAmountChange(e.target.value)}
-                className="min-w-[2ch] max-w-[min(72vw,320px)] bg-transparent font-mono text-5xl font-black leading-none tracking-tight text-[var(--text-on-light)] outline-none sm:text-6xl"
+                className="min-w-[2ch] max-w-[min(72vw,320px)] bg-transparent font-sans text-5xl font-semibold leading-none tracking-tight text-[var(--text-on-light)] outline-none sm:text-6xl"
                 style={{ width: `${Math.max(2, amountInput.length || 1)}.5ch` }}
               />
             </div>
@@ -149,7 +149,7 @@ export function WithdrawSheet({ onClose, onCompleted }: WithdrawSheetProps) {
             <button
               type="button"
               onClick={() => applyAmount(available)}
-              className="cursor-pointer border-0 bg-transparent text-xs font-bold text-[var(--brand-strong)] underline-offset-2 transition-colors hover:text-[var(--brand)] hover:underline"
+              className="cursor-pointer border-0 bg-transparent text-xs font-semibold text-[var(--brand-strong)] underline-offset-2 transition-colors hover:text-[var(--brand)] hover:underline"
             >
               {t("withdraw.withdrawAll")}
             </button>

@@ -1,4 +1,4 @@
-/* การ์ดฟีเจอร์ desktop — ตามภาพอ้างอิง (design.md §2.2–2.3) · ซ่อนต่ำกว่า 1024 */
+/* การ์ดฟีเจอร์ — desktop ตามภาพอ้างอิง (design.md §2.2–2.3) · มีเวอร์ชันมือถือ (.rootMobile) แยกกันแสดง */
 .root {
   display: none;
   /* ขอบการ์ด = สี surface ที่อ่อนลง */
@@ -6,10 +6,99 @@
 }
 
 @media (min-width: 1024px) {
-  .root {
+  .rootDesktop {
     display: flex;
     flex-direction: column;
     gap: 14px;
+  }
+}
+
+@media (max-width: 1023px) {
+  .rootMobile {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  /* การ์ดบน: เลื่อนข้างแบบ snap เห็นใบถัดไปโผล่ */
+  .rootMobile .heroRow {
+    display: flex;
+    gap: 8px;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none;
+  }
+
+  .rootMobile .heroRow::-webkit-scrollbar {
+    display: none;
+  }
+
+  .rootMobile .hero {
+    flex: 0 0 78%;
+    min-height: 0;
+    scroll-snap-align: start;
+  }
+
+  .rootMobile .heroBody {
+    padding: 12px 14px;
+  }
+
+  .rootMobile .heroTitle {
+    font-size: 17px;
+  }
+
+  .rootMobile .stripRow {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 8px;
+  }
+
+  .rootMobile .strip {
+    gap: 12px;
+    min-height: 64px;
+    padding: 10px 14px;
+  }
+
+  .rootMobile .hex {
+    width: 36px;
+    height: 40px;
+  }
+
+  /* ไอคอน/ตัวหนังสือสีขาว (มือถือ) — พื้นการ์ดใช้สีเดิม */
+  .rootMobile,
+  .rootMobile .hero,
+  .rootMobile .strip {
+    color: #fff;
+  }
+
+  .rootMobile .linkText,
+  .rootMobile .linkText b,
+  .rootMobile .stripDesc,
+  .rootMobile .stripTitle {
+    color: #fff;
+  }
+
+  .rootMobile .linkText {
+    opacity: 0.85;
+  }
+
+  .rootMobile .linkArrow {
+    border-color: #fff;
+    background: rgb(255 255 255 / 0.14);
+    color: #fff;
+  }
+
+  .rootMobile .stripIcon,
+  .rootMobile .stripEvent .stripIcon {
+    color: #fff;
+  }
+
+  /* ชิปทางลัดไม่มีที่พอบนมือถือ */
+  .rootMobile .chips {
+    display: none;
+  }
+
+  .rootMobile .stripDesc {
+    font-size: 11px;
   }
 }
 
@@ -93,7 +182,7 @@
 
 .heroTitle {
   font-size: 22px;
-  font-weight: 800;
+  font-weight: 600;
   line-height: 1.15;
   text-shadow: 0 2px 8px rgb(0 0 0 / 0.5);
 }
@@ -128,7 +217,7 @@
 .linkText b {
   display: block;
   font-size: 11px;
-  font-weight: 700;
+  font-weight: 600;
   color: #22d36b;
 }
 
@@ -180,7 +269,7 @@
 
 .stripTitle {
   font-size: 13px;
-  font-weight: 800;
+  font-weight: 600;
   line-height: 1.2;
 }
 
@@ -236,7 +325,7 @@
   background: color-mix(in srgb, var(--ink) 10%, var(--BG-Surface-Darker));
   box-shadow: inset 0 1px 0 color-mix(in srgb, var(--ink) 12%, transparent);
   font-size: 11px;
-  font-weight: 700;
+  font-weight: 600;
 }
 
 /* ธีมสว่าง: การ์ดใช้สีที่ 1 ของธีมที่เข้มลง + ตัวหนังสืออ่อน */

@@ -79,7 +79,7 @@ export function LotteryPlayRoundList({ rounds, marketSlug, basePath }: LotteryPl
                 <span className="lottery-play-round-grid__round text-xs text-[var(--text-muted)]">
                   {roundLabel(round.drawLabel) || t("round.numbered", { n: index + 1 })}
                 </span>
-                <span className="lottery-play-round-grid__time text-lg font-bold leading-tight text-[var(--text-on-light)]">
+                <span className="lottery-play-round-grid__time text-lg font-semibold leading-tight text-[var(--text-on-light)]">
                   {formatBangkokTimeHHmm(round.closeAt)}
                 </span>
                 <span className="lottery-play-round-grid__countdown lottery-countdown inline-flex min-w-[4.5rem] justify-center px-[0.45rem] py-[0.2rem] tabular-nums">
@@ -131,7 +131,7 @@ export function LotteryPlayRoundList({ rounds, marketSlug, basePath }: LotteryPl
           className="lottery-play-round-card lottery-play-round-card--open flex flex-col items-center gap-3 p-3 text-center sm:flex-row sm:items-center sm:justify-between sm:text-left"
         >
           <div className="flex w-full flex-col items-center gap-1 sm:items-start">
-            <p className="m-0 text-sm font-bold text-[var(--text-on-light)]">{roundLabel(round.drawLabel)}</p>
+            <p className="m-0 text-sm font-semibold text-[var(--text-on-light)]">{roundLabel(round.drawLabel)}</p>
             {nowMs !== null ? (
               <p className="lottery-countdown m-0">
                 {t("status.closesInTime", { time: formatCountdown(new Date(round.closeAt).getTime() - nowMs) })}
