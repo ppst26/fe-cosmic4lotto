@@ -3,6 +3,7 @@
 import React from "react";
 import { ArrowDownLeft, ArrowUpRight, X } from "lucide-react";
 import { useT } from "@/lib/i18n/I18nProvider";
+import { usePresence } from "@/lib/usePresence";
 
 export type WalletConfirmKind = "deposit" | "withdraw";
 
@@ -34,13 +35,15 @@ export function WalletConfirmDialog({
 }: WalletConfirmDialogProps) {
   const tc = useT("common");
   const tw = useT("wallet");
-  if (!open) return null;
+  const { rendered, state } = usePresence(open);
+  if (!rendered) return null;
 
   const isDeposit = kind === "deposit";
 
   return (
     <div
-      className="fixed inset-0 z-[130] flex animate-fade-in select-none items-center justify-center bg-black/60 p-4"
+      className="lotto-overlay-scrim fixed inset-0 z-[130] flex select-none items-center justify-center bg-black/60 p-4"
+      data-state={state}
       role="presentation"
       onClick={() => {
         if (!loading) onClose();
@@ -50,7 +53,8 @@ export function WalletConfirmDialog({
         role="alertdialog"
         aria-labelledby="wallet-confirm-title"
         aria-describedby="wallet-confirm-desc"
-        className="overlay-theme relative rounded-3xl border border-white/10 bg-[var(--BG-Surface-Darker)] text-[var(--text-on-light)] shadow-[var(--shadow-soft)] w-full max-w-[360px] animate-scale-up p-5 sm:p-6"
+        className="lotto-overlay-panel lotto-overlay-panel--modal overlay-theme relative rounded-3xl border border-white/10 bg-[var(--BG-Surface-Darker)] text-[var(--text-on-light)] shadow-[var(--shadow-soft)] w-full max-w-[360px] p-5 sm:p-6"
+        data-state={state}
         onClick={(e) => e.stopPropagation()}
       >
         <button

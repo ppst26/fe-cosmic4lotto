@@ -6,6 +6,7 @@ import { Copy, X } from "lucide-react";
 import type { PendingTransactionPayload } from "@/app/types/transaction";
 import { useToast } from "@/context/ToastContext";
 import { useT } from "@/lib/i18n/I18nProvider";
+import { usePresence, useLastValue } from "@/lib/usePresence";
 import { useLocale } from "@/lib/i18n/navigation";
 import { formatTransactionDateTimeMedium } from "@/app/lib/transactionDateUtils";
 
@@ -14,12 +15,14 @@ interface PendingTransactionDialogProps {
   onClose: () => void;
 }
 
-export function PendingTransactionDialog({ payload, onClose }: PendingTransactionDialogProps) {
+export function PendingTransactionDialog({ payload: payloadProp, onClose }: PendingTransactionDialogProps) {
+  const payload = useLastValue(payloadProp);
+  const { rendered, state } = usePresence(payloadProp !== null);
   const t = useT("wallet");
   const locale = useLocale();
   const { showToast } = useToast();
 
-  if (!payload) return null;
+  if (!payload || !rendered) return null;
 
   const handleCopyRef = async () => {
     try {
@@ -32,15 +35,17 @@ export function PendingTransactionDialog({ payload, onClose }: PendingTransactio
 
   return (
     <div
-      className="fixed inset-0 z-[140] flex items-center justify-center p-4 bg-black/60 animate-fade-in select-none"
+      className="lotto-overlay-scrim fixed inset-0 z-[140] flex items-center justify-center p-4 bg-black/60 select-none"
+      data-state={state}
       role="presentation"
       onClick={onClose}
     >
       <div
         role="dialog"
+        data-state={state}
         aria-labelledby="pending-tx-title"
         aria-describedby="pending-tx-desc"
-        className="overlay-theme relative rounded-3xl border border-white/10 bg-[var(--BG-Surface-Darker)] text-[var(--text-on-light)] shadow-[var(--shadow-soft)] w-full max-w-[400px] animate-scale-up px-5 pb-5 pt-4"
+        className="lotto-overlay-panel lotto-overlay-panel--modal overlay-theme relative rounded-3xl border border-white/10 bg-[var(--BG-Surface-Darker)] text-[var(--text-on-light)] shadow-[var(--shadow-soft)] w-full max-w-[400px] px-5 pb-5 pt-4"
         onClick={(e) => e.stopPropagation()}
       >
         <button

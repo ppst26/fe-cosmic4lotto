@@ -45,40 +45,11 @@
 }
 
 .animate-fade-in {
-  animation: motion-overlay-in var(--motion-overlay-in) var(--ease-out) both;
+  animation: motion-overlay-in var(--motion-base) var(--ease-out) both;
 }
 
 .animate-scale-up {
   animation: motion-modal-in var(--motion-dialog) var(--ease-out) both;
-}
-
-/* เนื้อหาในกล่อง dialog ไล่ขึ้นตามหลังกล่องมาถึง (motion-sheet-content-in) */
-@keyframes motion-sheet-content-in {
-  from {
-    opacity: 0;
-    transform: translate3d(0, 14px, 0);
-  }
-  to {
-    opacity: 1;
-    transform: none;
-  }
-}
-
-.animate-scale-up > * {
-  animation: motion-sheet-content-in 380ms var(--ease-out) backwards;
-  animation-delay: calc(120ms + var(--stagger-i, 0) * var(--stagger));
-}
-
-.animate-scale-up > :nth-child(2) {
-  --stagger-i: 1;
-}
-
-.animate-scale-up > :nth-child(3) {
-  --stagger-i: 2;
-}
-
-.animate-scale-up > :nth-child(n + 4) {
-  --stagger-i: 3;
 }
 
 /* ── OverlayPanel (sheet มือถือ · modal กลางจอ md+) — 2 step แบบ glass
@@ -120,6 +91,16 @@
   animation: motion-sheet-content-out 190ms var(--ease-in) both;
 }
 
+/* dialog กลางจอ — ใช้แอนิเมชัน modal ทุกขนาดจอ (sheet จะเปลี่ยนเป็น modal เฉพาะ md+) */
+.lotto-overlay-panel--modal[data-state="open"] {
+  animation-name: motion-modal-in;
+  animation-duration: var(--motion-sheet-in);
+}
+
+.lotto-overlay-panel--modal[data-state="closed"] {
+  animation-name: motion-modal-out;
+}
+
 @media (min-width: 768px) {
   .lotto-overlay-panel[data-state="open"] {
     animation-name: motion-modal-in;
@@ -128,6 +109,17 @@
 
   .lotto-overlay-panel[data-state="closed"] {
     animation-name: motion-modal-out;
+  }
+}
+
+@keyframes motion-sheet-content-in {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 14px, 0);
+  }
+  to {
+    opacity: 1;
+    transform: none;
   }
 }
 
@@ -212,8 +204,8 @@
 }
 
 .motion-game-card-enter {
-  opacity: 0;
-  animation: motion-game-card-in var(--motion-slow) var(--ease-out) forwards;
+  /* backwards (ไม่ใช่ forwards) — จบแอนิเมชันแล้วคืน transform ให้ hover (.motion-lift) ทำงานต่อ */
+  animation: motion-game-card-in var(--motion-slow) var(--ease-out) backwards;
   animation-delay: calc(min(var(--i, 0), 31) * var(--game-card-stagger));
 }
 
@@ -435,6 +427,152 @@
   }
 }
 
+/* ── Toast — แถบเวลา auto-dismiss (ความยาวจาก --toast-duration ของ ToastContext) ── */
+.motion-toast {
+  position: relative;
+  overflow: hidden;
+}
+
+.motion-toast::after {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  height: 2px;
+  background: currentcolor;
+  opacity: 0.35;
+  transform-origin: left;
+  animation: motion-toast-progress var(--toast-duration, 4000ms) linear forwards;
+  content: "";
+}
+
+@keyframes motion-toast-progress {
+  from {
+    transform: scaleX(1);
+  }
+  to {
+    transform: scaleX(0);
+  }
+}
+
+/* ── Inline alert (role=alert ที่ไม่ใช่ toast) — เลื่อนลงเข้า ── */
+@keyframes motion-alert-in {
+  from {
+    opacity: 0;
+    transform: translateY(-6px) scale(0.97);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+[role="alert"]:not(.motion-toast) {
+  animation: motion-alert-in var(--motion-base) var(--ease-out) both;
+}
+
+/* ── Bottom nav — ไอคอนของแท็บที่กำลังเปิดอยู่เด้งเข้า ── */
+@keyframes nav-icon-pop {
+  0% {
+    transform: scale(0.82);
+  }
+  100% {
+    transform: none;
+  }
+}
+
+.lotto-bottom-nav [data-active="true"] [data-nav-icon] {
+  animation: nav-icon-pop var(--motion-base) var(--ease-spring) both;
+}
+
+/* ── Menu drawer — ปุ่มฝาก/ถอน: แสงกวาดตอน hover/โฟกัส + ไอคอนเด้ง ── */
+@keyframes motion-sheen {
+  from {
+    transform: translateX(-120%) skewX(-18deg);
+  }
+  to {
+    transform: translateX(260%) skewX(-18deg);
+  }
+}
+
+.menu-drawer-quick-actions__btn::after {
+  content: "";
+  position: absolute;
+  inset: 0 auto 0 0;
+  width: 40%;
+  background: linear-gradient(90deg, transparent, rgb(255 255 255 / 0.22), transparent);
+  transform: translateX(-120%) skewX(-18deg);
+  pointer-events: none;
+}
+
+.menu-drawer-quick-actions__icon {
+  transition: transform var(--motion-base) var(--ease-spring);
+}
+
+@media (hover: hover) {
+  .menu-drawer-quick-actions__btn:hover::after {
+    animation: motion-sheen 700ms var(--ease-out) both;
+  }
+
+  .menu-drawer-quick-actions__btn:hover .menu-drawer-quick-actions__icon {
+    transform: translateY(-1px) scale(1.12) rotate(-6deg);
+  }
+}
+
+.menu-drawer-quick-actions__btn:focus-visible::after {
+  animation: motion-sheen 700ms var(--ease-out) both;
+}
+
+/* ── Provider logo marquee (ProviderLogoMarquee) — เลื่อนอัตโนมัติ · grayscale → ขาวตอน hover ── */
+.provider-logo-marquee {
+  -webkit-mask-image: linear-gradient(90deg, transparent, #000 5%, #000 95%, transparent);
+  mask-image: linear-gradient(90deg, transparent, #000 5%, #000 95%, transparent);
+}
+
+.provider-logo-marquee__track {
+  /* width: max-content ผูกกับ keyframe translateX(-50%) — คงไว้ที่นี่ */
+  width: max-content;
+  animation: provider-logo-marquee-scroll 52s linear infinite;
+  will-change: transform;
+}
+
+.provider-logo-marquee__track:hover {
+  animation-play-state: paused;
+}
+
+.provider-logo-marquee__link {
+  border-radius: 12px;
+  transition: transform var(--motion-fast) ease;
+}
+
+.provider-logo-marquee__link:hover,
+.provider-logo-marquee__link:focus-visible {
+  transform: translateY(-1px);
+}
+
+.provider-logo-marquee__img {
+  opacity: 0.58;
+  filter: grayscale(1);
+  transition:
+    filter var(--motion-fast) ease,
+    opacity var(--motion-fast) ease;
+}
+
+.provider-logo-marquee__link:hover .provider-logo-marquee__img,
+.provider-logo-marquee__link:focus-visible .provider-logo-marquee__img {
+  opacity: 1;
+  filter: grayscale(1) brightness(0) invert(1);
+}
+
+@keyframes provider-logo-marquee-scroll {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+  to {
+    transform: translate3d(-50%, 0, 0);
+  }
+}
+
 /* ── Status — วงหมุน/แท่งกะพริบ (status-state) ── */
 @keyframes status-pulse {
   0%,
@@ -448,6 +586,25 @@
 
 /* ── Reduced motion ── */
 @media (prefers-reduced-motion: reduce) {
+  [role="alert"]:not(.motion-toast),
+  .motion-toast::after,
+  .menu-drawer-quick-actions__btn::after,
+  .lotto-bottom-nav [data-active="true"] [data-nav-icon] {
+    animation: none;
+  }
+
+  .menu-drawer-quick-actions__btn:hover .menu-drawer-quick-actions__icon,
+  .provider-logo-marquee__link:hover {
+    transform: none;
+  }
+
+  .provider-logo-marquee__track {
+    animation: none;
+    flex-wrap: wrap;
+    width: 100%;
+    justify-content: center;
+  }
+
   :root {
     --motion-instant: 1ms;
     --motion-fast: 1ms;
@@ -461,7 +618,6 @@
 
   .animate-fade-in,
   .animate-scale-up,
-  .animate-scale-up > *,
   .motion-pop,
   .motion-skeleton,
   .menu-enter-avatar,
@@ -476,7 +632,6 @@
   }
 
   .motion-game-card-enter {
-    opacity: 1;
     animation: none;
   }
 

@@ -40,9 +40,10 @@ export function GameShowcaseSection({
   if (items.length === 0) return null;
   const allHref = viewAllHref ?? DEFAULT_VIEW_ALL_HREF[title];
 
-  const cards = items.map((item) => (
+  const cards = items.map((item, index) => (
     <LottoCarouselSlide key={item.id}>
       <LobbyGameCard
+        index={index}
         item={item}
         variant={cardVariant}
         layout={carousel ? "carousel" : "fixed"}
@@ -80,9 +81,10 @@ export function GameShowcaseSection({
           {cards}
         </LottoPeekCarousel>
       ) : (
-        <div className={styles.track}>{items.map((item) => (
+        <div className={styles.track}>{items.map((item, index) => (
           <LobbyGameCard
             key={item.id}
+            index={index}
             item={item}
             variant={cardVariant}
             width={cardWidth ?? "22%"}

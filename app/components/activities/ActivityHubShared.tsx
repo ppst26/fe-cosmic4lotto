@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import { TabPanelTransition } from "@/app/components/ui/TabPanelTransition";
 import { HubTabs } from "@/app/components/promotions/HubTabs";
 import { ACTIVITY_HUB_CATEGORY_TABS } from "@/app/data/activitiesHubMockData";
 import { formatActivityNumber } from "@/lib/format";
@@ -281,10 +282,10 @@ export function ActivityDetailBody({
       </div>
 
       {item.detailKind === "turn-tier" && item.progress ? (
-        <div key={category} className="animate-fade-in flex flex-col gap-4">
+        <TabPanelTransition tabKey={category} className="flex flex-col gap-4">
           <ActivityTurnProgressCard progress={item.progress} />
           <ActivityTierTable rows={tiers} />
-        </div>
+        </TabPanelTransition>
       ) : (
         <ActivityInfoDetail item={item} />
       )}

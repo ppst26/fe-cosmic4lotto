@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import { Banknote, MessageCircle, RotateCcw, Wallet, type LucideIcon } from "lucide-react";
-import Link from "@/lib/i18n/navigation";
+import Link, { usePathname } from "@/lib/i18n/navigation";
 import { useDeposit } from "@/context/DepositContext";
 import { useToast } from "@/context/ToastContext";
 import { useT } from "@/lib/i18n/I18nProvider";
@@ -18,10 +18,11 @@ export function BottomNavLotto({ loggedIn }: { loggedIn?: boolean }) {
   const tCommon = useT("common");
   const { openDeposit, openWithdraw } = useDeposit();
   const { showToast } = useToast();
+  const pathname = usePathname();
 
   const sideItem = (Icon: LucideIcon, label: string) => (
     <>
-      <span className={styles.icon} aria-hidden>
+      <span className={styles.icon} data-nav-icon aria-hidden>
         <Icon size={24} strokeWidth={1.75} />
       </span>
       <span className={styles.label}>{label}</span>
@@ -39,7 +40,7 @@ export function BottomNavLotto({ loggedIn }: { loggedIn?: boolean }) {
             {sideItem(Banknote, t("bottomNav.withdraw"))}
           </button>
 
-          <Link href="/enterlotto" className={`${styles.item} ${styles.center} motion-press`}>
+          <Link href="/enterlotto" data-active={pathname.startsWith("/enterlotto")} className={`${styles.item} ${styles.center} motion-press`}>
             <div className={styles.badge}>
               <Image
                 src="/_nuxt/png/lottoFooter.D-kpI84T.png"
@@ -52,7 +53,7 @@ export function BottomNavLotto({ loggedIn }: { loggedIn?: boolean }) {
             <span className={styles.label}>แทงหวย</span>
           </Link>
 
-          <Link href="/cashback" className={`${styles.item} motion-press`}>
+          <Link href="/cashback" data-active={pathname.startsWith("/cashback")} className={`${styles.item} motion-press`}>
             {sideItem(RotateCcw, t("bottomNav.cashback"))}
           </Link>
           <button

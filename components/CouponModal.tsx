@@ -7,6 +7,7 @@ import { useWallet } from "@/app/hooks/api/account";
 import { submitCoupon } from "@/lib/api/coupon";
 import { COUPON_CODE_MAX_LENGTH, sanitizeCouponCode } from "@/lib/fieldInput";
 import { useT } from "@/lib/i18n/I18nProvider";
+import { usePresence } from "@/lib/usePresence";
 
 export interface CouponModalProps {
   isOpen: boolean;
@@ -14,11 +15,12 @@ export interface CouponModalProps {
 }
 
 export function CouponModal({ isOpen, onClose }: CouponModalProps) {
-  if (!isOpen) return null;
-  return <CouponModalBody onClose={onClose} />;
+  const { rendered, state } = usePresence(isOpen);
+  if (!rendered) return null;
+  return <CouponModalBody onClose={onClose} state={state} />;
 }
 
-function CouponModalBody({ onClose }: { onClose: () => void }) {
+function CouponModalBody({ onClose, state }: { onClose: () => void; state: "open" | "closed" }) {
   const t = useT("common");
   const { showToast } = useToast();
   const wallet = useWallet();
@@ -46,11 +48,12 @@ function CouponModalBody({ onClose }: { onClose: () => void }) {
   };
 
   return (
-    <div className="fixed inset-0 z-[120] flex animate-fade-in select-none items-center justify-center p-4">
-      <div className="fixed inset-0 bg-black/60 transition-opacity" onClick={onClose} aria-hidden="true" />
+    <div className="fixed inset-0 z-[120] flex select-none items-center justify-center p-4">
+      <div className="lotto-overlay-scrim fixed inset-0 bg-black/60" data-state={state} onClick={onClose} aria-hidden="true" />
 
       <div
-        className="overlay-theme relative z-10 w-full max-w-[380px] rounded-3xl border border-white/10 bg-[var(--BG-Surface-Darker)] p-5 text-[var(--text-on-light)] shadow-[var(--shadow-soft)] sm:p-6"
+        data-state={state}
+        className="lotto-overlay-panel lotto-overlay-panel--modal overlay-theme relative z-10 w-full max-w-[380px] rounded-3xl border border-white/10 bg-[var(--BG-Surface-Darker)] p-5 text-[var(--text-on-light)] shadow-[var(--shadow-soft)] sm:p-6"
         role="dialog"
         aria-modal="true"
         aria-labelledby="coupon-modal-title"

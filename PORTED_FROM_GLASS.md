@@ -333,4 +333,7 @@ Lotto-only: notification bell kept top-left (lotto's frozen header has no bell),
 - `lib/gameCardEnterMotion.ts` + `.motion-game-card-enter` — การ์ดค่าย/เกมเข้าทีละใบ (หน้าหมวดเกม · `LobbyProviderGamesView`)
 - `SoftLineTabs` เส้นใต้ขยายจากกลาง · `SoftPagination` กดยุบ/หน้า active เด้ง · skeleton แบบ shimmer
 - menu drawer: easing/ระยะเวลาเท่า `menu-shell` + `.menu-enter-item` / `.menu-enter-avatar`
-- ไม่ได้พอร์ต (lotto ไม่มี component คู่): notification popover, toast progress, bottom-nav active pop, marquee/most-online, hamburger pulse (lotto มี `lotto-hamburger-stretch` ของตัวเอง)
+- dialog กลางจอทุกตัว (SoftDialog · WalletConfirm · Coupon · PendingTransaction · LotteryBetResult) มีแอนิเมชันปิดแบบ 2 step ผ่าน `lib/usePresence.ts`
+- toast มีแถบเวลา auto-dismiss · inline `role="alert"` เลื่อนลงเข้า · bottom nav ไอคอนแท็บที่เปิดอยู่เด้ง (คืนยอด/แทงหวย)
+- การ์ดเกมหน้าแรก (`LobbyGameCard`) เข้าทีละใบ · `ProviderLogoMarquee` ท้ายหน้าแรก (พอร์ตจาก glass) · ปุ่มฝาก/ถอนใน drawer มีแสงกวาด
+- ไม่ได้พอร์ต: notification popover (lotto เปิดเป็น sheet เสมอ) · profile slideover · most-online live pulse · lobby-category-providers-in (หน้าหมวดเป็น route แยก) · hamburger pulse (lotto ใช้ `lotto-hamburger-stretch` ของตัวเอง)

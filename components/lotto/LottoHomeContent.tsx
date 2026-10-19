@@ -5,6 +5,7 @@ import { GameShowcaseSection } from "./GameShowcaseSection";
 import { HallOfFameSection } from "./HallOfFameSection";
 import { HeroBanner } from "./HeroBanner";
 import { LottoBettingCarousels } from "./LottoBettingCarousels";
+import { ProviderLogoMarquee } from "./ProviderLogoMarquee";
 import { LottoForeignResults } from "./LottoForeignResults";
 import styles from "./lotto-cards.module.css";
 import layout from "./lobby-layout.module.css";
@@ -73,6 +74,7 @@ export function LottoHomeContent({
         carousel
         showViewAll
       />
+      <ProviderLogoMarquee />
     </div>
   );
 }

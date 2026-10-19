@@ -17,6 +17,8 @@ export interface ToastItem {
   id: string;
   message: string;
   variant: ToastVariant;
+  /** อายุ toast (ms) — ใช้กำหนดความยาวแถบเวลา auto-dismiss */
+  durationMs: number;
 }
 
 interface ToastContextValue {
@@ -55,6 +57,7 @@ function ToastHost({ items, onDismiss }: { items: ToastItem[]; onDismiss: (id: s
           <div
             key={toast.id}
             role="alert"
+            style={{ "--toast-duration": `${toast.durationMs}ms` } as React.CSSProperties}
             className={`motion-toast pointer-events-auto flex w-full max-w-md items-start gap-2.5 rounded-2xl border px-4 py-3 text-sm font-semibold shadow-[var(--shadow-soft)] ${style.box}`}
           >
             <span className="flex h-5 w-5 shrink-0 items-center justify-center text-xs font-bold" aria-hidden>
@@ -90,7 +93,7 @@ export function ToastProvider({ children }: { children: React.ReactNode }) {
   const showToast = useCallback(
     (message: string, variant: ToastVariant = "info", durationMs = 4000) => {
       const id = `toast-${Date.now()}-${Math.random().toString(36).slice(2, 8)}`;
-      setItems((prev) => [...prev.slice(-2), { id, message, variant }]);
+      setItems((prev) => [...prev.slice(-2), { id, message, variant, durationMs }]);
       const timer = setTimeout(() => dismiss(id), durationMs);
       timersRef.current.set(id, timer);
     },

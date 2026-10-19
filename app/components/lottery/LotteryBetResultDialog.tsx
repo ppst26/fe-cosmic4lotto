@@ -4,6 +4,7 @@ import React from "react";
 import { X } from "lucide-react";
 import type { LotteryBetDialogState } from "@/app/hooks/useLotteryBetSubmit";
 import { useT } from "@/lib/i18n/I18nProvider";
+import { usePresence, useLastValue } from "@/lib/usePresence";
 
 interface LotteryBetResultDialogProps {
   state: LotteryBetDialogState | null;
@@ -13,14 +14,17 @@ interface LotteryBetResultDialogProps {
 /**
  * Dialog แจ้งส่งโพยไม่สำเร็จ — สำเร็จไปหน้าสรุปโพยแทน
  */
-export function LotteryBetResultDialog({ state, onClose }: LotteryBetResultDialogProps) {
+export function LotteryBetResultDialog({ state: stateProp, onClose }: LotteryBetResultDialogProps) {
   const t = useT("lottery");
+  const state = useLastValue(stateProp);
+  const { rendered, state: motionState } = usePresence(stateProp !== null);
 
-  if (!state) return null;
+  if (!state || !rendered) return null;
 
   return (
     <div
-      className="fixed inset-0 z-[130] flex animate-fade-in items-center justify-center bg-black/60 p-4"
+      className="lotto-overlay-scrim fixed inset-0 z-[130] flex items-center justify-center bg-black/60 p-4"
+      data-state={motionState}
       role="presentation"
       onClick={onClose}
     >
@@ -29,7 +33,8 @@ export function LotteryBetResultDialog({ state, onClose }: LotteryBetResultDialo
         aria-modal="true"
         aria-labelledby="lottery-bet-result-title"
         aria-describedby="lottery-bet-result-desc"
-        className="modal-surface relative w-full max-w-[360px] animate-scale-up p-5 sm:p-6"
+        data-state={motionState}
+        className="lotto-overlay-panel lotto-overlay-panel--modal modal-surface relative w-full max-w-[360px] p-5 sm:p-6"
         onClick={(event) => event.stopPropagation()}
       >
         <button

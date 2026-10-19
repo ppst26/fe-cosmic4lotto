@@ -3,6 +3,7 @@
 import { useEffect, type ReactNode } from "react";
 import { createPortal } from "react-dom";
 import { X } from "lucide-react";
+import { usePresence } from "@/lib/usePresence";
 
 type SoftDialogProps = {
   open: boolean;
@@ -28,11 +29,13 @@ export function SoftDialog({ open, onClose, title, locked = false, closeLabel = 
     return () => document.removeEventListener("keydown", onKey);
   }, [open, locked, onClose]);
 
-  if (!open || typeof document === "undefined") return null;
+  const { rendered, state } = usePresence(open);
+  if (!rendered || typeof document === "undefined") return null;
 
   return createPortal(
     <div
-      className="fixed inset-0 z-[100] flex animate-fade-in select-none items-center justify-center bg-black/60 p-4"
+      className="lotto-overlay-scrim fixed inset-0 z-[100] flex select-none items-center justify-center bg-black/60 p-4"
+      data-state={state}
       role="presentation"
       onClick={() => {
         if (!locked) onClose();
@@ -42,7 +45,8 @@ export function SoftDialog({ open, onClose, title, locked = false, closeLabel = 
         role="dialog"
         aria-modal="true"
         aria-label={title}
-        className="overlay-theme modal-surface relative w-full max-w-[380px] animate-scale-up p-5 sm:p-6"
+        data-state={state}
+        className="lotto-overlay-panel lotto-overlay-panel--modal overlay-theme modal-surface relative w-full max-w-[380px] p-5 sm:p-6"
         onClick={(event) => event.stopPropagation()}
       >
         <button
