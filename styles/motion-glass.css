@@ -366,7 +366,119 @@
   }
 }
 
-/* ── Menu drawer — ไอเท็มไล่เข้าทีละส่วน (menu-enter-*) ── */
+/* ── Menu drawer — เปลือกเปิด/ปิด (menu-shell-in/out ของ glass) + ไอเท็มไล่เข้าทีละส่วน (menu-enter-*) ──
+   มือถือ: fade + เลื่อนขึ้นเบา · md+: แผงชิดขวาเลื่อนเข้า/ออกด้วย easing เดียวกัน */
+.lotto-menu-scrim {
+  opacity: 0;
+}
+
+.lotto-menu-scrim[data-state="open"] {
+  animation: menu-overlay-in var(--menu-motion-in) ease-out both;
+}
+
+.lotto-menu-scrim[data-state="closed"] {
+  animation: menu-overlay-out var(--menu-motion-out) ease-in both;
+}
+
+.lotto-menu-shell[data-state="open"] {
+  animation: menu-shell-in var(--menu-motion-in) var(--menu-ease-in) both;
+}
+
+.lotto-menu-shell[data-state="closed"] {
+  animation: menu-shell-out var(--menu-motion-out) var(--menu-ease-out) both;
+}
+
+@media (min-width: 768px) {
+  .lotto-menu-shell[data-state="open"] {
+    animation-name: menu-shell-in-desktop;
+  }
+
+  .lotto-menu-shell[data-state="closed"] {
+    animation-name: menu-shell-out-desktop;
+  }
+}
+
+@keyframes menu-overlay-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes menu-overlay-out {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes menu-shell-in {
+  0% {
+    opacity: 0;
+    transform: translate3d(0, 12px, 0);
+  }
+  100% {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes menu-shell-out {
+  0% {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+  100% {
+    opacity: 0;
+    transform: translate3d(0, 16px, 0);
+  }
+}
+
+@keyframes menu-shell-in-desktop {
+  0% {
+    opacity: 0;
+    transform: translate3d(48px, 0, 0);
+  }
+  58% {
+    opacity: 1;
+    transform: translate3d(-6px, 0, 0);
+  }
+  100% {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes menu-shell-out-desktop {
+  0% {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+  100% {
+    opacity: 0;
+    transform: translate3d(64px, 0, 0);
+  }
+}
+
+@keyframes menu-enter-logo {
+  from {
+    opacity: 0;
+    translate: 0 -10px;
+  }
+  to {
+    opacity: 0.98;
+    translate: 0 0;
+  }
+}
+
+.menu-enter-logo {
+  animation: menu-enter-logo 420ms var(--ease-out) 70ms backwards;
+}
+
 @keyframes menu-enter-avatar {
   from {
     opacity: 0;
@@ -620,8 +732,11 @@
   .animate-scale-up,
   .motion-pop,
   .motion-skeleton,
+  .menu-enter-logo,
   .menu-enter-avatar,
   .menu-enter-item,
+  .lotto-menu-scrim[data-state],
+  .lotto-menu-shell[data-state],
   .notification-center__footer-link,
   .soft-pagination-btn.is-active,
   .soft-line-tab__bar,
