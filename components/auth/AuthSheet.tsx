@@ -22,6 +22,7 @@ import {
 } from "@/lib/fieldInput";
 import { useT } from "@/lib/i18n/I18nProvider";
 import { LOTTO_SHEET_SURFACE } from "@/app/components/menu/lottoSurface";
+import { SelectField } from "@/components/ui/select";
 
 const inputClass =
   "h-11 w-full rounded-2xl border border-white/10 bg-[var(--input-bg)] px-3.5 text-sm text-[var(--text-on-light)] placeholder:text-[var(--text-muted)] outline-none transition-colors [color-scheme:dark] focus:border-[var(--brand)]";
@@ -264,19 +265,14 @@ export function AuthSheet({
                 className={inputClass}
                 autoComplete="family-name"
               />
-              <select
+              <SelectField
                 value={bankId}
-                onChange={(event) => setBankId(event.target.value)}
-                aria-label={t("fields.bank")}
-                className={inputClass}
-              >
-                <option value="">{t("fields.bankPlaceholder")}</option>
-                {banks.map((bank) => (
-                  <option key={bank.id} value={bank.id}>
-                    {bank.label}
-                  </option>
-                ))}
-              </select>
+                onValueChange={setBankId}
+                ariaLabel={t("fields.bank")}
+                placeholder={t("fields.bankPlaceholder")}
+                options={banks.map((bank) => ({ value: bank.id, label: bank.label }))}
+                className="h-11"
+              />
               <input
                 value={accountNumber}
                 onChange={(event) => setAccountNumber(sanitizeBankAccount(event.target.value))}
@@ -287,19 +283,14 @@ export function AuthSheet({
                 className={inputClass}
                 autoComplete="off"
               />
-              <select
+              <SelectField
                 value={channelId}
-                onChange={(event) => setChannelId(event.target.value)}
-                aria-label={t("fields.channel")}
-                className={inputClass}
-              >
-                <option value="">{t("fields.channelPlaceholder")}</option>
-                {channels.map((item) => (
-                  <option key={item.id} value={item.id}>
-                    {item.label}
-                  </option>
-                ))}
-              </select>
+                onValueChange={setChannelId}
+                ariaLabel={t("fields.channel")}
+                placeholder={t("fields.channelPlaceholder")}
+                options={channels.map((item) => ({ value: item.id, label: item.label }))}
+                className="h-11"
+              />
               <div className="flex gap-2">
                 <button
                   type="button"

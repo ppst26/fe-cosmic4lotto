@@ -17,6 +17,7 @@ import type { LossRebateHistoryRow, LossRebateSummaryMock } from "@/app/types/ca
 import { useT } from "@/lib/i18n/I18nProvider";
 import { useFormat } from "@/lib/i18n/useFormat";
 import { useLocale } from "@/lib/i18n/navigation";
+import { SelectField } from "@/components/ui/select";
 
 /** ชื่อเดือนจาก id "YYYY-MM" ตามภาษา — th ใช้ label จาก API ตามเดิม */
 function formatMonthOption(id: string, fallback: string, locale: string): string {
@@ -101,18 +102,13 @@ function LossRebateSections({
       <section className="flex flex-col gap-3">
         <div className="flex flex-wrap items-center justify-between gap-2">
           <h2 className="text-sm font-semibold text-[var(--text-on-light)] sm:text-base">{t("lossRebate.historyTitle")}</h2>
-          <select
-            aria-label={t("lossRebate.selectMonth")}
+          <SelectField
+            ariaLabel={t("lossRebate.selectMonth")}
             value={monthId}
-            onChange={(event) => handleMonthChange(event.target.value)}
-            className="h-9 rounded-[var(--radius-soft-sm)] border-0 bg-[var(--soft-card-elevated)] px-3 text-xs font-semibold text-[var(--text-on-light)] outline-none"
-          >
-            {lossRebate.months.map((option) => (
-              <option key={option.id} value={option.id}>
-                {formatMonthOption(option.id, option.label, locale)}
-              </option>
-            ))}
-          </select>
+            onValueChange={handleMonthChange}
+            options={lossRebate.months.map((option) => ({ value: option.id, label: formatMonthOption(option.id, option.label, locale) }))}
+            className="h-9 w-auto min-w-[10rem] text-xs"
+          />
         </div>
 
         <div className="soft-card overflow-hidden">

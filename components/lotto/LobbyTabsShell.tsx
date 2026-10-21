@@ -12,10 +12,10 @@ import { LottoMobileHeroPanel, LottoMobileQuickMenu } from "./LottoMobileQuickMe
  * อยู่ใน layout จึงไม่ถูกสร้างใหม่เมื่อสลับแท็บ — header / แบนเนอร์ / ปุ่มฝากถอน / เมนูหมวด / bottom nav คงที่
  * เปลี่ยนเฉพาะ {children}; แถบผลหวยขวา (desktop) แสดงเฉพาะหน้าแรก
  */
-export function LobbyTabsShell({ rail, children }: { rail: ReactNode; children: ReactNode }) {
+export function LobbyTabsShell({ children }: { children: ReactNode }) {
   const isHome = usePathname() === "/";
   return (
-    <LottoShellFrame rail={isHome ? rail : null}>
+    <LottoShellFrame>
       <div className="lg:hidden">
         <LottoMobileHeroPanel>
           <HeroBanner />

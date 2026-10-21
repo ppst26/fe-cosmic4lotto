@@ -26,6 +26,8 @@ import {
 } from "@/lib/lottery/slipRange";
 import { ResourceGate } from "@/app/components/ui/ResourceGate";
 import { SoftLineTabs } from "@/app/components/ui/SoftLineTabs";
+import { DatePicker } from "@/components/ui/date-picker";
+import { SelectField } from "@/components/ui/select";
 import { EmptyState } from "@/app/components/ui/StatusState";
 import { LotterySlipCard, formatSignedBaht, signedMoneyToneClass } from "./LotterySlipCard";
 import { formatBaht } from "./lotteryUtils";
@@ -38,9 +40,6 @@ const RESULTS: readonly LotterySlipResult[] = ["won", "lost", "void"];
 const PAGE_SIZE = 20;
 /** ค่าของตัวเลือก "ทั้งหมด" ใน dropdown — ใน URL/state ยังเป็น "" */
 const ALL = "all";
-
-const SELECT_CLASS =
-  "h-10 w-full rounded-[var(--radius-soft-sm)] border border-white/[0.08] soft-card-bg px-3 text-sm text-[var(--text-on-light)] outline-none focus:border-[var(--brand)]";
 
 /** ค่าจาก URL ที่ไม่รู้จัก → default (กัน ?market=… ที่แต่งมา) */
 function sanitize(key: ParamKey, raw: string): string {
@@ -199,31 +198,19 @@ export function LotterySlipsPageContent() {
       {/* ตัวกรอง */}
       <div className="flex flex-col gap-2" role="group" aria-label={t("slips.filters.aria")}>
         <div className="grid grid-cols-2 gap-2">
-          <select
-            className={SELECT_CLASS}
+          <SelectField
             value={params.market || ALL}
-            onChange={(event) => setParams({ market: event.target.value === ALL ? "" : event.target.value })}
-            aria-label={t("slips.filters.market")}
-          >
-            {marketOptions.map((option) => (
-              <option key={option.value} value={option.value}>
-                {option.label}
-              </option>
-            ))}
-          </select>
+            onValueChange={(value) => setParams({ market: value === ALL ? "" : value })}
+            options={marketOptions}
+            ariaLabel={t("slips.filters.market")}
+          />
           {scope === "history" ? (
-            <select
-              className={SELECT_CLASS}
+            <SelectField
               value={result || ALL}
-              onChange={(event) => setParams({ result: event.target.value === ALL ? "" : event.target.value })}
-              aria-label={t("slips.filters.result")}
-            >
-              {resultOptions.map((option) => (
-                <option key={option.value} value={option.value}>
-                  {option.label}
-                </option>
-              ))}
-            </select>
+              onValueChange={(value) => setParams({ result: value === ALL ? "" : value })}
+              options={resultOptions}
+              ariaLabel={t("slips.filters.result")}
+            />
           ) : null}
         </div>
 
@@ -244,31 +231,19 @@ export function LotterySlipsPageContent() {
             </div>
             {range === "custom" ? (
               <div className="grid grid-cols-2 gap-2">
-                <input
-                  type="date"
-                  className={SELECT_CLASS}
-                  value={formatDateOnly(customFrom)}
-                  min={minDate}
-                  max={maxDate}
-                  onChange={(event) =>
-                    parseDateOnly(event.target.value)
-                      ? setParams({ range: "custom", from: event.target.value, to: formatDateOnly(customTo) })
-                      : undefined
-                  }
-                  aria-label={t("slips.filters.range")}
+                <DatePicker
+                  value={customFrom}
+                  min={parseDateOnly(minDate) ?? undefined}
+                  max={parseDateOnly(maxDate) ?? undefined}
+                  onChange={(date) => setParams({ range: "custom", from: formatDateOnly(date), to: formatDateOnly(customTo) })}
+                  ariaLabel={t("slips.filters.range")}
                 />
-                <input
-                  type="date"
-                  className={SELECT_CLASS}
-                  value={formatDateOnly(customTo)}
-                  min={minDate}
-                  max={maxDate}
-                  onChange={(event) =>
-                    parseDateOnly(event.target.value)
-                      ? setParams({ range: "custom", from: formatDateOnly(customFrom), to: event.target.value })
-                      : undefined
-                  }
-                  aria-label={t("slips.filters.range")}
+                <DatePicker
+                  value={customTo}
+                  min={parseDateOnly(minDate) ?? undefined}
+                  max={parseDateOnly(maxDate) ?? undefined}
+                  onChange={(date) => setParams({ range: "custom", from: formatDateOnly(customFrom), to: formatDateOnly(date) })}
+                  ariaLabel={t("slips.filters.range")}
                 />
               </div>
             ) : null}

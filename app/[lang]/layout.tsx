@@ -4,6 +4,10 @@ import { Noto_Sans_Thai } from "next/font/google";
 import { lang } from "next/root-params";
 import { notFound } from "next/navigation";
 import "@/app/globals.css";
+import { ShellRailProvider } from "@/components/layout/shell-rail-context";
+import { ResultsRail } from "@/components/lotto/ResultsRail";
+import { loadBankLottoFromDump, loadDashboardLottoFromDump, loadThaiLottoFromDump } from "@/lib/lotto/load-dump-snapshots";
+import { bankLottoMock, dashboardLottoMock, thaiLottoMock } from "@/lib/lotto/mock-home-data";
 import { AppProviders } from "@/components/AppProviders";
 import { CosmicFooterGate } from "@/app/components/layout/CosmicFooterGate";
 import { LOCALES, hasLocale } from "@/lib/i18n/config";
@@ -49,6 +53,20 @@ export default async function RootLayout({ children }: { children: React.ReactNo
   const locale = await lang();
   if (!hasLocale(locale)) notFound();
 
+  // แถบผลหวยขวา (desktop) เป็นเปลือกค่าเริ่มต้นของทุกหน้า — ดึงข้อมูลที่นี่ครั้งเดียว (cache ต่อ request)
+  const [thaiRaw, bankLotto, dashboardLotto] = await Promise.all([
+    loadThaiLottoFromDump(),
+    loadBankLottoFromDump(),
+    loadDashboardLottoFromDump(),
+  ]);
+  const rail = (
+    <ResultsRail
+      thai={thaiRaw ?? thaiLottoMock}
+      bank={bankLotto.length > 0 ? bankLotto : bankLottoMock}
+      dashboard={dashboardLotto.length > 0 ? dashboardLotto : dashboardLottoMock}
+    />
+  );
+
   return (
     <html
       lang={locale}
@@ -61,10 +79,12 @@ export default async function RootLayout({ children }: { children: React.ReactNo
       <body className="flex min-h-dvh min-w-0 flex-col">
         <MessagesBoundary namespaces={NAMESPACES}>
           <AppProviders>
-            <div className="flex min-h-dvh min-w-0 flex-1 flex-col">
-              <div className="flex min-h-0 min-w-0 flex-1 flex-col">{children}</div>
-              <CosmicFooterGate />
-            </div>
+            <ShellRailProvider rail={rail}>
+              <div className="flex min-h-dvh min-w-0 flex-1 flex-col">
+                <div className="flex min-h-0 min-w-0 flex-1 flex-col">{children}</div>
+                <CosmicFooterGate />
+              </div>
+            </ShellRailProvider>
           </AppProviders>
         </MessagesBoundary>
       </body>

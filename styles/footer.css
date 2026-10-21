@@ -632,7 +632,7 @@
   --space-8: 32px;
   --nav-height: 104px;
   --nav-float-offset: 0px;
-  --cosmic-footer-desktop-bg: none;
+  --cosmic-footer-desktop-bg: var(--header-desktop-chrome-gradient);
   --sheet-soft-fill: linear-gradient(145deg, rgb(255 255 255 / 0.11), rgb(255 255 255 / 0.045));
 }
 
@@ -677,4 +677,14 @@
   color: var(--brand);
   background: none;
   -webkit-text-fill-color: currentColor;
+}
+
+/* sidebar ซ้ายเป็น position: fixed (z 39) — footer ทึบอยู่เหนือ เพื่อให้ sidebar ไม่ลอยทับพื้นที่ footer */
+@media (min-width: 1024px) {
+  .cosmic-footer {
+    position: relative;
+    z-index: 39;
+    background-color: var(--header-desktop-chrome-bg);
+    background-image: var(--cosmic-footer-desktop-bg);
+  }
 }

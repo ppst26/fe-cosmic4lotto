@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useMemo, useState } from "react";
+import { SelectField } from "@/components/ui/select";
 import {
   getCalendarMonthCells,
   getMonthOptionLabels,
@@ -23,9 +24,6 @@ interface TransactionDateRangeDialogProps {
   minDate?: Date;
   maxDate?: Date;
 }
-
-const selectClass =
-  "h-10 rounded-[var(--radius-soft-sm)] border-0 bg-[var(--soft-surface)] px-2 text-sm text-[var(--text-on-light)] outline-none";
 
 /** เลือกช่วงวันที่ — ปฏิทินเดือน + ยืนยัน/ยกเลิก (portal เหนือ hub modal ผ่าน SoftDialog) */
 export function TransactionDateRangeDialog({
@@ -105,28 +103,18 @@ export function TransactionDateRangeDialog({
       <h2 className="mb-3 pr-10 text-sm font-semibold text-[var(--text-on-light)]">{t("calendar.title")}</h2>
 
       <div className="mb-3 flex gap-2">
-        <select
-          className={`${selectClass} min-w-0 flex-1`}
-          value={viewMonth.getMonth()}
-          onChange={(event) => setViewMonth(new Date(viewMonth.getFullYear(), Number(event.target.value), 1))}
-        >
-          {monthLabels.map((label, index) => (
-            <option key={label} value={index}>
-              {label}
-            </option>
-          ))}
-        </select>
-        <select
-          className={`${selectClass} w-24`}
-          value={viewMonth.getFullYear()}
-          onChange={(event) => setViewMonth(new Date(Number(event.target.value), viewMonth.getMonth(), 1))}
-        >
-          {years.map((year) => (
-            <option key={year} value={year}>
-              {year}
-            </option>
-          ))}
-        </select>
+        <SelectField
+          className="min-w-0 flex-1"
+          value={String(viewMonth.getMonth())}
+          onValueChange={(value) => setViewMonth(new Date(viewMonth.getFullYear(), Number(value), 1))}
+          options={monthLabels.map((label, index) => ({ value: String(index), label }))}
+        />
+        <SelectField
+          className="w-28"
+          value={String(viewMonth.getFullYear())}
+          onValueChange={(value) => setViewMonth(new Date(Number(value), viewMonth.getMonth(), 1))}
+          options={years.map((year) => ({ value: String(year), label: String(year) }))}
+        />
       </div>
 
       <div className="mb-1 grid grid-cols-7">

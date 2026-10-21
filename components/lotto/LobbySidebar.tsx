@@ -6,6 +6,7 @@ import type { WalletSnapshot } from "@/lib/lotto/load-wallet-snapshot";
 import { DESKTOP_RIGHT_MENU_TILES } from "@/app/data/desktopLobbyMockData";
 import { menuActionRequiresAuth, menuHrefRequiresAuth } from "@/app/data/menuMockData";
 import { useRequireAuthAction } from "@/app/hooks/useRequireAuthAction";
+import { useAuthUI } from "@/context/AuthUIContext";
 import { useCouponUI } from "@/context/CouponUIContext";
 import { useDeposit } from "@/context/DepositContext";
 import { useT } from "@/lib/i18n/I18nProvider";
@@ -40,12 +41,14 @@ export function LobbySidebar({ wallet }: Props) {
   const pathname = usePathname();
   const { openDeposit, openWithdraw } = useDeposit();
   const { openCoupon } = useCouponUI();
-  const { runWithAuth } = useRequireAuthAction();
+  const { runWithAuth, isAuthenticated } = useRequireAuthAction();
+  const { openLogin, openRegister } = useAuthUI();
 
   const tiles = DESKTOP_RIGHT_MENU_TILES;
 
   return (
     <aside className={styles.aside} aria-label={t("desktop.sidebar")}>
+      {isAuthenticated ? (
       <div className={styles.wallet}>
         <div className={styles.walletRow}>
           <span className={styles.walletLabel}>เงิน</span>
@@ -59,13 +62,14 @@ export function LobbySidebar({ wallet }: Props) {
           <span className={styles.walletValue}>{wallet.credit}</span>
         </div>
       </div>
+      ) : null}
 
       <div className={styles.actions}>
-        <button type="button" className={styles.btnPrimary} onClick={openDeposit}>
-          {t("drawer.deposit")}
+        <button type="button" className={styles.btnPrimary} onClick={isAuthenticated ? openDeposit : openLogin}>
+          {isAuthenticated ? t("drawer.deposit") : "เข้าสู่ระบบ"}
         </button>
-        <button type="button" className={styles.btnSecondary} onClick={openWithdraw}>
-          {t("drawer.withdraw")}
+        <button type="button" className={styles.btnSecondary} onClick={isAuthenticated ? openWithdraw : openRegister}>
+          {isAuthenticated ? t("drawer.withdraw") : "สมัครสมาชิก"}
         </button>
       </div>
 
@@ -84,6 +88,12 @@ export function LobbySidebar({ wallet }: Props) {
                   className={`${styles.link} ${active ? styles.linkActive : ""}`}
                   aria-current={active ? "page" : undefined}
                   title={label}
+                  onClick={(event) => {
+                    // ผู้เยี่ยมชมดูเมนูได้เฉพาะหลังล็อกอิน (ยกเว้นหน้าแรก) — กดแล้วเปิดหน้าเข้าสู่ระบบแทน
+                    if (isAuthenticated || item.id === "home") return;
+                    event.preventDefault();
+                    runWithAuth(true, () => router.push(item.href));
+                  }}
                 >
                   <span className={styles.linkIcon} aria-hidden>
                     <Image

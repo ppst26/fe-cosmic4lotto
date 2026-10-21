@@ -24,7 +24,7 @@ export function GamingCategoryPage({ categoryId }: { categoryId: GamingCategoryI
         </h1>
       </div>
 
-      <div className="gaming-games-layout w-full px-4 py-3 lg:py-5">
+      <div className="gaming-games-layout w-full px-0 py-2 lg:px-4 lg:py-5">
         <GamingFilterSidebar meta={meta} providers={providers} resultCount={providers.length} resultUnit="ค่าย" />
 
         <div className="flex min-w-0 flex-1 flex-col gap-3">
