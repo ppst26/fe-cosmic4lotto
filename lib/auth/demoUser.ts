@@ -2,38 +2,45 @@ import type { StoredUser } from "@/app/types/auth";
 import { resolveDemoLoginPassword, resolveDemoLoginPhone } from "./demoCredentials";
 import { hashPassword } from "./password";
 
-const DEMO_PHONE = resolveDemoLoginPhone();
-const demoPasswordHash = hashPassword(resolveDemoLoginPassword());
-
 /**
  * เปิดบัญชีเดโมไหม — dev เปิดเสมอ · production ต้องตั้ง AUTH_ENABLE_DEMO_USER=1 เอง (ค่าเริ่มต้นปิด)
  */
 export function isDemoUserEnabled(): boolean {
-  return process.env.NODE_ENV !== "production" || process.env.AUTH_ENABLE_DEMO_USER === "1";
+  const flag = process.env.AUTH_ENABLE_DEMO_USER?.trim();
+  return (
+    process.env.NODE_ENV !== "production" ||
+    flag === "1" ||
+    flag?.toLowerCase() === "true"
+  );
 }
 
-/**
- * บัญชีเดโมที่มากับโค้ด (เบอร์ 0999999999) — ใช้ทดสอบตอน dev แม้ไม่มีไฟล์ .data/users.json
- * production ปิดไว้ (ดู isDemoUserEnabled) · ใช้จาก findUserByPhone / findUserById ใน lib/auth/userStore.ts
- */
-export const DEMO_USER: StoredUser = {
-  id: `demo-user-${DEMO_PHONE}`,
-  phone: DEMO_PHONE,
-  firstName: "Demo",
-  lastName: "Player",
-  bankAccountNumber: "1234567890",
-  bankId: "scb",
-  channelId: "facebook",
-  passwordHash: demoPasswordHash,
-  createdAt: "2026-10-01T00:00:00.000Z",
-  avatarPresetId: "avatar-1",
-};
+let demoUserCache: StoredUser | undefined;
+
+/** สร้าง/คืน demo user ตอน runtime (อ่าน env ตอน cold start บน Vercel) */
+function getDemoUserRecord(): StoredUser {
+  if (!demoUserCache) {
+    const phone = resolveDemoLoginPhone();
+    demoUserCache = {
+      id: `demo-user-${phone}`,
+      phone,
+      firstName: "Demo",
+      lastName: "Player",
+      bankAccountNumber: "1234567890",
+      bankId: "scb",
+      channelId: "facebook",
+      passwordHash: hashPassword(resolveDemoLoginPassword()),
+      createdAt: "2026-10-01T00:00:00.000Z",
+      avatarPresetId: "avatar-1",
+    };
+  }
+  return demoUserCache;
+}
 
 /**
  * อัปเดต preset avatar บัญชีเดโม (in-memory — ใช้ตอน dev / ไม่มี .data)
  */
 export function setDemoUserAvatarPreset(avatarPresetId: string): void {
-  DEMO_USER.avatarPresetId = avatarPresetId;
+  getDemoUserRecord().avatarPresetId = avatarPresetId;
 }
 
 /**
@@ -41,15 +48,18 @@ export function setDemoUserAvatarPreset(avatarPresetId: string): void {
  */
 export function findDemoUserByPhone(phone: string): StoredUser | undefined {
   if (!isDemoUserEnabled()) return undefined;
+  const user = getDemoUserRecord();
   const digits = phone.replace(/\D/g, "");
-  if (digits !== DEMO_PHONE) return undefined;
-  return DEMO_USER;
+  if (digits !== user.phone) return undefined;
+  return user;
 }
 
 /**
  * คืนบัญชีเดโมเมื่อ session ชี้มาที่ id คงที่
  */
 export function findDemoUserById(id: string): StoredUser | undefined {
-  if (!isDemoUserEnabled() || id !== DEMO_USER.id) return undefined;
-  return DEMO_USER;
+  if (!isDemoUserEnabled()) return undefined;
+  const user = getDemoUserRecord();
+  if (id !== user.id) return undefined;
+  return user;
 }
