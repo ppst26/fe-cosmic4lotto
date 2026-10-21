@@ -1,7 +1,9 @@
 import type { StoredUser } from "@/app/types/auth";
-import { DEMO_LOGIN_PHONE } from "./demoCredentials";
+import { resolveDemoLoginPassword, resolveDemoLoginPhone } from "./demoCredentials";
+import { hashPassword } from "./password";
 
-const DEMO_PHONE = DEMO_LOGIN_PHONE;
+const DEMO_PHONE = resolveDemoLoginPhone();
+const demoPasswordHash = hashPassword(resolveDemoLoginPassword());
 
 /**
  * เปิดบัญชีเดโมไหม — dev เปิดเสมอ · production ต้องตั้ง AUTH_ENABLE_DEMO_USER=1 เอง (ค่าเริ่มต้นปิด)
@@ -15,16 +17,14 @@ export function isDemoUserEnabled(): boolean {
  * production ปิดไว้ (ดู isDemoUserEnabled) · ใช้จาก findUserByPhone / findUserById ใน lib/auth/userStore.ts
  */
 export const DEMO_USER: StoredUser = {
-  id: "demo-user-0999999999",
+  id: `demo-user-${DEMO_PHONE}`,
   phone: DEMO_PHONE,
   firstName: "Demo",
   lastName: "Player",
   bankAccountNumber: "1234567890",
   bankId: "scb",
   channelId: "facebook",
-  /** hash ของ DEMO_LOGIN_PASSWORD (demo1234) — scrypt salt:hash */
-  passwordHash:
-    "35d232d831f80bda204063593b4214f0:0d4b3fd191c31dc420c6f701fa511bd8c1df974defb94c30438f4eb7d24e4b595573b50f41e950a3488bfc4bfb8cfc8c30b95a193153ae3457cd9dd5dc18b669",
+  passwordHash: demoPasswordHash,
   createdAt: "2026-10-01T00:00:00.000Z",
   avatarPresetId: "avatar-1",
 };
