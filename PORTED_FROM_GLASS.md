@@ -337,3 +337,6 @@ Lotto-only: notification bell kept top-left (lotto's frozen header has no bell),
 - toast มีแถบเวลา auto-dismiss · inline `role="alert"` เลื่อนลงเข้า · bottom nav ไอคอนแท็บที่เปิดอยู่เด้ง (คืนยอด/แทงหวย)
 - การ์ดเกมหน้าแรก (`LobbyGameCard`) เข้าทีละใบ · `ProviderLogoMarquee` ท้ายหน้าแรก (พอร์ตจาก glass) · ปุ่มฝาก/ถอนใน drawer มีแสงกวาด
 - ไม่ได้พอร์ต: notification popover (lotto เปิดเป็น sheet เสมอ) · profile slideover · most-online live pulse · lobby-category-providers-in (หน้าหมวดเป็น route แยก) · hamburger pulse (lotto ใช้ `lotto-hamburger-stretch` ของตัวเอง)
+
+## Footer
+- `app/components/layout/CosmicFooter.tsx` + `CosmicFooterGate.tsx`, `app/data/footerMockData.ts`, `app/types/footer.ts`, `styles/footer.css` (ก๊อปจาก glass; โลโก้เป็นตัวอักษร CM-SaturnLotto, ตัดป้าย Web3, เติม glass-control/pill + ตัวแปร nav ใน footer.css) — mount ใน `app/[lang]/layout.tsx` ต่อจาก children

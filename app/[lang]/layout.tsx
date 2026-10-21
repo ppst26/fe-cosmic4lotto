@@ -5,6 +5,7 @@ import { lang } from "next/root-params";
 import { notFound } from "next/navigation";
 import "@/app/globals.css";
 import { AppProviders } from "@/components/AppProviders";
+import { CosmicFooterGate } from "@/app/components/layout/CosmicFooterGate";
 import { LOCALES, hasLocale } from "@/lib/i18n/config";
 import { localeFontClass } from "@/lib/i18n/fonts";
 import { MessagesBoundary } from "@/lib/i18n/MessagesBoundary";
@@ -57,9 +58,14 @@ export default async function RootLayout({ children }: { children: React.ReactNo
       <head>
         <script dangerouslySetInnerHTML={{ __html: THEME_INIT_SCRIPT }} />
       </head>
-      <body>
+      <body className="flex min-h-dvh min-w-0 flex-col">
         <MessagesBoundary namespaces={NAMESPACES}>
-          <AppProviders>{children}</AppProviders>
+          <AppProviders>
+            <div className="flex min-h-dvh min-w-0 flex-1 flex-col">
+              <div className="flex min-h-0 min-w-0 flex-1 flex-col">{children}</div>
+              <CosmicFooterGate />
+            </div>
+          </AppProviders>
         </MessagesBoundary>
       </body>
     </html>

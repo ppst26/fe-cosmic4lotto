@@ -12,6 +12,7 @@
 @import "../styles/gaming-lobby.css";
 @import "../styles/motion.css";
 @import "../styles/motion-glass.css";
+@import "../styles/footer.css";
 
 /* ฟอนต์เดียวทั้งโปรเจค: Noto Sans (ไทย+ละติน) — ตัด mono/serif ออก น้ำหนักสูงสุด semibold (600) */
 @theme inline {
