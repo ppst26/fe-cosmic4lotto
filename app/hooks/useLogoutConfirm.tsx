@@ -60,7 +60,7 @@ export function useLogoutConfirm(onSuccess?: () => void) {
             type="button"
             disabled={loading}
             onClick={() => void handleConfirm()}
-            className="h-11 cursor-pointer rounded-full border-0 bg-gradient-to-b from-[#ef4a52] to-[#d93642] text-sm font-semibold text-white disabled:opacity-60"
+            className="soft-btn-danger h-11 cursor-pointer text-sm font-semibold disabled:opacity-60"
           >
             {loading ? tCommon("processing") : t("logout")}
           </button>

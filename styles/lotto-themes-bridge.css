@@ -166,3 +166,31 @@ html[data-mode="light"] .lotto-site-header .header-bell:hover {
   color: #fff;
   opacity: 0.8;
 }
+
+/* ── ปุ่มใน modal / bottom sheet / confirm dialog: รูปทรงเดียวกันทั้งหมด (มุม 12px เท่าปุ่มฝาก/ถอน) ──
+ * primary = สีปุ่มของธีม · outline = เส้นขอบ · neutral = พื้นการ์ด · danger = แดง (ออกจากระบบ) */
+.overlay-theme :is(.soft-btn-primary, .soft-btn-outline, .soft-btn-neutral, .soft-btn-danger) {
+  border-radius: 12px;
+  font-weight: 600;
+}
+
+.overlay-theme .soft-btn-neutral {
+  border: 0;
+  background: var(--Card-Normal);
+  color: var(--text-on-light);
+  transition: background-color 150ms ease, transform 150ms ease;
+}
+
+.overlay-theme .soft-btn-neutral:hover:not(:disabled) {
+  background: color-mix(in srgb, #fff 8%, var(--Card-Normal));
+}
+
+.overlay-theme .soft-btn-danger {
+  border: 0;
+  background: linear-gradient(180deg, #ef4a52, #d93642);
+  color: #fff;
+}
+
+.overlay-theme :is(.soft-btn-neutral, .soft-btn-danger):active:not(:disabled) {
+  transform: scale(0.97);
+}

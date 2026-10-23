@@ -101,7 +101,7 @@ export function WalletConfirmDialog({
             type="button"
             disabled={loading}
             onClick={onClose}
-            className="h-11 flex-1 cursor-pointer rounded-lg border-0 bg-[var(--BG-Surface-Normal)] text-sm font-semibold text-[var(--text-on-light)] transition-colors hover:bg-[var(--Card-Normal)] disabled:opacity-50"
+            className="soft-btn-neutral h-11 flex-1 cursor-pointer text-sm font-semibold disabled:opacity-50"
           >
             {tc("cancel")}
           </button>
