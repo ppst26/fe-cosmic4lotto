@@ -5,6 +5,7 @@ import { ChevronLeft, ChevronRight } from "lucide-react";
 import type { VipRankId, VipRankTier } from "@/app/types/vip";
 import { getVipRankViewStatus } from "@/app/data/vipMockData";
 import { VipRankEmblem } from "./VipRankEmblem";
+import { VipStardust } from "./VipStardust";
 import { cn } from "@/lib/utils";
 import { useT } from "@/lib/i18n/I18nProvider";
 import s from "./vip-page.module.css";
@@ -77,7 +78,10 @@ export function VipRankCarousel({ focusIndex, onFocusChange, playerRankId, vipRa
       {side(-2)}
       {side(-1)}
       <div className={s.rankMain}>
-        <VipRankEmblem rankId={focused.id} size="xl" inactive={isLocked} playing={!isLocked} />
+        <div className={s.rankEmblemBox}>
+          {isLocked ? null : <VipStardust accent={focused.accent} />}
+          <VipRankEmblem rankId={focused.id} size="xl" inactive={isLocked} />
+        </div>
         <p className={s.rankName} style={isLocked ? undefined : { color: focused.accent }}>
           {focused.label}
         </p>

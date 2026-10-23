@@ -13,6 +13,7 @@ import { VIP_PAGE_TABS } from "./vipTabConfig";
 import { useT } from "@/lib/i18n/I18nProvider";
 import { getVipRankTier } from "@/app/data/vipMockData";
 import { VipRankEmblem } from "./VipRankEmblem";
+import { VipStardust } from "./VipStardust";
 import s from "./vip-page.module.css";
 
 interface VipPageContentProps {
@@ -78,6 +79,7 @@ function VipPageContentInner({
         </div>
         <div className={s.heroEmblem} aria-label={t("level.currentAriaLabel")}>
           <div className={s.emblemWrap}>
+            <VipStardust accent={currentTier.accent} />
             <VipRankEmblem rankId={player.currentRankId} size="xl" />
           </div>
           <div className={s.pedestal} aria-hidden />

@@ -26,17 +26,10 @@ export const VIP_RANK_TIERS: VipRankTier[] = [
   { id: "obsidian", label: "OBSIDIAN", vipLevel: 13, expRequired: 5_000_000, accent: "#8b7fa8" },
 ];
 
-/** วิดีโอตราแรงค์ VIP — ไฟล์ใน public/rank */
-export const VIP_RANK_VIDEO: Record<VipRankId, string> = {
-  base: "/rank/base-tier_dark.q65PET5L.webm",
-  bronze: "/rank/bronze-tier.DttGN2ww.webm",
-  silver: "/rank/silver-tier.C7ZBg7E2.webm",
-  gold: "/rank/gold-tier.CiYu19wS.webm",
-  platinum: "/rank/platinum-tier.X7LpQ2-P.webm",
-  emerald: "/rank/emerald-tier.B5fMjduG.webm",
-  diamond: "/rank/diamond-tier.CTp40fMd.webm",
-  obsidian: "/rank/obsidian-tier.BxvJWsnt.webm",
-};
+/** รูปตราแรงค์ VIP (webp โปร่งใส) — ไฟล์ใน public/rank/img */
+export function getVipRankImageSrc(rankId: VipRankId): string {
+  return `/rank/img/${rankId}.webp`;
+}
 
 /**
  * เป้าเลื่อนขึ้นสู่แรงค์นี้ (ฝาก + เทิร์น ต้องครบทั้งคู่) — mock สำหรับ UI
@@ -68,19 +61,6 @@ export const VIP_RANK_MAINTAIN_TARGETS: Partial<
   diamond: { depositTarget: 800_000, turnoverTarget: 6_000_000 },
   obsidian: { depositTarget: 2_000_000, turnoverTarget: 15_000_000 },
 };
-
-export function getVipRankVideoSrc(rankId: VipRankId): string | null {
-  return VIP_RANK_VIDEO[rankId] ?? null;
-}
-
-/**
- * MP4 แบบ stacked-alpha (สี+mask) สำหรับ Safari/iOS — ชื่อไฟล์ = webm ตัด hash เป็น .stacked.mp4
- * ไฟล์ปัจจุบันเป็น 60 fps — ต่อ ?v=60fps เพื่อทิ้งแคชของไฟล์ 24 fps เดิม (เปลี่ยนค่าเมื่อเข้ารหัสใหม่)
- */
-export function getVipRankStackedSrc(rankId: VipRankId): string | null {
-  const webm = VIP_RANK_VIDEO[rankId];
-  return webm ? webm.replace(/.[A-Za-z0-9_-]{8}.webm$/, ".stacked.mp4?v=60fps") : null;
-}
 
 /** เป้าเทิร์นอ้างอิงตาราง (fallback) */
 export const VIP_TURNOVER_BASE = 500;

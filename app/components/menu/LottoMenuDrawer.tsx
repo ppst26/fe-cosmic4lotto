@@ -21,6 +21,7 @@ import { useCashbackPanels, useProfileHubStats, useReferralOverview } from "@/ap
 import { useLogoutConfirm } from "@/app/hooks/useLogoutConfirm";
 import type { MenuDialogAction, MenuDialogTile } from "@/app/types/menu";
 import { useAuthUI } from "@/context/AuthUIContext";
+import { lockBodyScroll } from "@/lib/scroll-lock";
 import { useCouponUI } from "@/context/CouponUIContext";
 import { useDeposit } from "@/context/DepositContext";
 import { useMenuUI } from "@/context/MenuUIContext";
@@ -109,11 +110,10 @@ function LottoMenuDrawerContent({ state }: { state: "open" | "closed" }) {
       if (event.key === "Escape") closeMobileMenu();
     };
     window.addEventListener("keydown", onKeyDown);
-    const prevOverflow = document.body.style.overflow;
-    document.body.style.overflow = "hidden";
+    const unlock = lockBodyScroll();
     return () => {
       window.removeEventListener("keydown", onKeyDown);
-      document.body.style.overflow = prevOverflow;
+      unlock();
     };
   }, [closeMobileMenu]);
 

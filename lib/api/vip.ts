@@ -3,7 +3,6 @@ import {
   VIP_BENEFIT_COMPARISON_VALUES,
   VIP_PLAYER_MOCK,
   VIP_RANK_TIERS,
-  VIP_RANK_VIDEO,
 } from "@/app/data/vipMockData";
 import type { ApiResult } from "./http";
 import { mockResult } from "./mock";
@@ -23,7 +22,7 @@ export function fetchVipPlayer(): Promise<ApiResult<VipPlayerData>> {
 }
 
 function vipRanksMock() {
-  return { tiers: VIP_RANK_TIERS, videos: VIP_RANK_VIDEO };
+  return { tiers: VIP_RANK_TIERS };
 }
 
 /** รูปข้อมูลที่ backend ต้องส่ง — GET /api/vip/ranks (ตอนนี้อนุมานจาก mock) */

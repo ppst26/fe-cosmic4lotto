@@ -721,3 +721,68 @@
 .arrowR {
   right: 6px;
 }
+
+/* ── stardust: ประกายฝุ่นดาวลอยฟุ้งขึ้นด้านหลังตราแรงค์ ── */
+.stardust {
+  position: absolute;
+  inset: -45% -40% -10%;
+  z-index: 0;
+  pointer-events: none;
+  /* ขอบบนเลือนหายไปกับพื้นหลัง */
+  -webkit-mask-image: linear-gradient(to top, #000 35%, transparent 100%);
+  mask-image: linear-gradient(to top, #000 35%, transparent 100%);
+}
+
+.stardustGlow {
+  position: absolute;
+  left: 50%;
+  top: 62%;
+  width: 70%;
+  aspect-ratio: 1;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  background: radial-gradient(circle, color-mix(in srgb, var(--sd-color) 50%, transparent) 0%, transparent 70%);
+  filter: blur(8px);
+}
+
+.stardustDot {
+  position: absolute;
+  width: var(--sd-size);
+  height: var(--sd-size);
+  border-radius: 50%;
+  background: color-mix(in srgb, var(--sd-color) 55%, #fff);
+  box-shadow: 0 0 8px 2px color-mix(in srgb, var(--sd-color) 75%, transparent);
+  opacity: 0;
+  animation: vip-stardust var(--sd-dur) ease-out var(--sd-delay) infinite;
+}
+
+@keyframes vip-stardust {
+  0% {
+    opacity: 0;
+    transform: translate(0, 0) scale(0.4);
+  }
+  18% {
+    opacity: 0.95;
+  }
+  100% {
+    opacity: 0;
+    transform: translate(var(--sd-dx), var(--sd-dy)) scale(1.1);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .stardustDot {
+    animation: none;
+    opacity: 0.35;
+  }
+}
+
+.rankEmblemBox {
+  position: relative;
+}
+
+.rankEmblemBox > :not(.stardust),
+.emblemWrap > :not(.stardust) {
+  position: relative;
+  z-index: 1;
+}

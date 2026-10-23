@@ -4,6 +4,7 @@ import React, { useEffect, useId, useRef, useState } from "react";
 import { X } from "lucide-react";
 import { useT } from "@/lib/i18n/I18nProvider";
 import { cn } from "@/lib/utils";
+import { lockBodyScroll } from "@/lib/scroll-lock";
 
 interface OverlayPanelProps {
   /** ค่าเริ่มต้น true — ส่ง false เพื่อให้เล่นแอนิเมชันปิดก่อนถอด DOM */
@@ -75,12 +76,11 @@ export function OverlayPanel({
       }
     };
     window.addEventListener("keydown", onKeyDown);
-    const prevOverflow = document.body.style.overflow;
-    document.body.style.overflow = "hidden";
+    const unlock = lockBodyScroll();
     panelRef.current?.focus();
     return () => {
       window.removeEventListener("keydown", onKeyDown);
-      document.body.style.overflow = prevOverflow;
+      unlock();
     };
   }, [mounted, dismissible, onClose]);
 

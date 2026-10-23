@@ -37,11 +37,11 @@ function ThemeGrid({
   const t = useT("common");
   return (
     <section className="mt-4 first:mt-0">
-      <div className="mb-2.5 flex items-center gap-2">
+      <div className="mb-2.5 flex items-center gap-2 px-1">
         <span className="h-4 w-1.5 rounded-full bg-[var(--brand)]" aria-hidden="true" />
         <h3 className="text-sm font-semibold tracking-wide text-[var(--text-muted)]">{title}</h3>
       </div>
-      <ul className="grid grid-cols-2 gap-3" role="list">
+      <ul className="grid grid-cols-2 gap-3 p-1" role="list">
         {themes.map((theme) => {
           const selected = activeTheme === theme.key;
           const view = theme.key === DEFAULT_THEME ? { ...theme, ...LOTTO_DEFAULT_PREVIEW } : theme;
