@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import { Wallet } from "lucide-react";
 import { HeaderBell } from "./HeaderBell";
 import { LottoDesktopHeader } from "./LottoDesktopHeader";
 import type { WalletSnapshot } from "@/lib/lotto/load-wallet-snapshot";
@@ -79,7 +80,7 @@ export function LottoSiteHeader({
                 <div className={`wallet-wrapper ${walletDesktopClass}`}>
                   <div className="wallet-lines">
                     <div className="wallet-row">
-                      <span>เครดิต</span>
+                      <Wallet className="h-[18px] w-[18px]" strokeWidth={1.75} aria-label="เครดิต" role="img" />
                       <span className="wallet-value">
                         {wallet.money}
                       </span>

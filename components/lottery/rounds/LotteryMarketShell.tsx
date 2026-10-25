@@ -209,6 +209,7 @@ function LotteryMarketSidebarLink({
             sizes="(max-width: 1023px) 7rem, 11rem"
             className="lottery-market-sidebar__bg-img"
             preload={isActive}
+            loading="eager"
           />
         </span>
       ) : (

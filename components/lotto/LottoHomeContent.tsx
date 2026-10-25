@@ -6,6 +6,7 @@ import { HallOfFameSection } from "./HallOfFameSection";
 import { HeroBanner } from "./HeroBanner";
 import { LottoBettingCarousels } from "./LottoBettingCarousels";
 import { ProviderLogoMarquee } from "./ProviderLogoMarquee";
+import { LazyMount } from "./LazyMount";
 import { LottoForeignResults } from "./LottoForeignResults";
 import styles from "./lotto-cards.module.css";
 import layout from "./lobby-layout.module.css";
@@ -48,33 +49,39 @@ export function LottoHomeContent({
         </div>
       </div>
       <TicketCheckBar />
-      <TopLeadersSection />
-      <HallOfFameSection />
-      <GameShowcaseSection
-        title="คาสิโนออนไลน์"
-        iconSrc="/_nuxt/png/casino-icon.DHi208DR.png"
-        items={casino}
-        cardVariant="wide"
-        carousel
-        showViewAll
-      />
-      <GameShowcaseSection
-        title="สล็อตออนไลน์"
-        iconSrc="/_nuxt/png/games.Br3sScDj.png"
-        items={slots}
-        cardVariant="wide"
-        carousel
-        showViewAll
-      />
-      <GameShowcaseSection
-        title="กีฬาออนไลน์"
-        iconSrc="/_nuxt/png/golotto.i1Wnq1XM.png"
-        items={sports}
-        cardVariant="wide"
-        carousel
-        showViewAll
-      />
-      <ProviderLogoMarquee />
+      <LazyMount minHeight={420}>
+        <TopLeadersSection />
+      </LazyMount>
+      <LazyMount minHeight={520}>
+        <HallOfFameSection />
+      </LazyMount>
+      <LazyMount minHeight={300}>
+        <GameShowcaseSection
+          title="คาสิโนออนไลน์"
+          iconSrc="/_nuxt/png/casino-icon.DHi208DR.png"
+          items={casino}
+          cardVariant="wide"
+          carousel
+          showViewAll
+        />
+        <GameShowcaseSection
+          title="สล็อตออนไลน์"
+          iconSrc="/_nuxt/png/games.Br3sScDj.png"
+          items={slots}
+          cardVariant="wide"
+          carousel
+          showViewAll
+        />
+        <GameShowcaseSection
+          title="กีฬาออนไลน์"
+          iconSrc="/_nuxt/png/golotto.i1Wnq1XM.png"
+          items={sports}
+          cardVariant="wide"
+          carousel
+          showViewAll
+        />
+        <ProviderLogoMarquee />
+      </LazyMount>
     </div>
   );
 }

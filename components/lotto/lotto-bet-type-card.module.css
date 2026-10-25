@@ -3,10 +3,9 @@
   flex-direction: column;
   align-items: stretch;
   gap: 8px;
-  /* ธีมมืด: ไล่เฉดบน→ล่างด้วยสีพื้นผิวของธีม (--surface-start) ที่อ่อนกว่าพื้นหลังหน้า — ไม่ใช้ --t-ga เพราะบางธีมเป็นสีสด */
-  --card-from: color-mix(in srgb, var(--surface-start, var(--BG-Surface-Normal)) 82%, #fff);
-  --card-to: color-mix(in srgb, var(--surface-start, var(--BG-Surface-Normal)) 95%, #fff);
-  background: linear-gradient(180deg, var(--card-from), var(--card-to));
+  /* สี solid อ่อนกว่าพื้นหลังหน้า (ฐาน --surface-start ของธีม) — ไม่ใช้ --t-ga เพราะบางธีมเป็นสีสด */
+  --card-solid: color-mix(in srgb, var(--surface-start, var(--BG-Surface-Normal)) 86%, #fff);
+  background: var(--card-solid);
   border-radius: 10px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
   padding: 10px 12px;
@@ -103,23 +102,19 @@
   justify-content: center;
   width: 50%;
   align-self: flex-start;
-  border-radius: 8px;
-  font-size: 14px;
+  border-radius: 12px;
+  font-size: 16px;
   font-weight: 600;
-  padding: 6px 12px;
+  padding: 5px 12px;
   text-align: center;
 }
 
 .btnBet {
-  /* ธีมมืด: ปุ่มไล่เฉดซ้าย→ขวาเป็นสีเข้ม ตัดกับการ์ดที่อ่อนกว่า ตัวหนังสือขาว */
-  background: linear-gradient(
-    to right,
-    color-mix(in srgb, var(--surface-start, var(--t-ga)) 40%, #000),
-    color-mix(in srgb, var(--t-gb) 55%, #000)
-  );
-  color: #fff;
+  /* เหมือนปุ่มฝากเงิน (btnPrimary ของ quick menu) */
+  background: var(--btn-theme-gradient, linear-gradient(180deg, #ffe082 0%, #ffd15c 45%, #c9a227 100%));
+  color: var(--btn-theme-fg, #2a0607);
   text-decoration: none;
-  box-shadow: 0 0 4px rgba(0, 0, 0, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.12);
+  border: 0;
 }
 
 .btnBet:hover {
@@ -134,8 +129,7 @@
 
 /* ธีมสว่าง: การ์ดใช้สีที่ 1 ของธีม (เข้ม) + ชื่อสีอ่อนให้อ่านออก */
 :global(html[data-mode="light"]) .card {
-  --card-from: color-mix(in srgb, var(--t-ga) 62%, #000);
-  --card-to: color-mix(in srgb, var(--t-ga) 50%, #000);
+  --card-solid: color-mix(in srgb, var(--t-ga) 56%, #000);
 }
 
 :global(html[data-mode="light"]) .name {
@@ -144,11 +138,4 @@
 
 :global(html[data-mode="light"]) .status {
   color: #ffd0d0;
-}
-
-/* ธีมสว่าง: ปุ่มแทงหวยเป็นสีขาว ตัวหนังสือสีธีมเข้ม */
-:global(html[data-mode="light"]) .btnBet {
-  background: #fff;
-  color: color-mix(in srgb, var(--t-ga) 80%, #000);
-  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.25);
 }

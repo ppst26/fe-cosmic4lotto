@@ -1,14 +1,8 @@
-"use client";
+import { LotteryHubPage } from "@/components/lottery/hub/LotteryHubPage";
+import { fetchLotteryHub } from "@/lib/api/lotteryContent";
 
-import { LotteryHubContent } from "@/components/lottery/hub/LotteryHubContent";
-import { SubPageShell } from "@/components/layout/SubPageShell";
-import { useT } from "@/lib/i18n/I18nProvider";
-
-export default function LotteryPage() {
-  const t = useT("lottery");
-  return (
-    <SubPageShell title={t("hub.title")}>
-      <LotteryHubContent showTitle={false} />
-    </SubPageShell>
-  );
+/** ดึงข้อมูล hub บนเซิร์ฟเวอร์ — การ์ดอยู่ใน HTML แรก (LCP ไม่ต้องรอ hydrate + fetch ฝั่ง client) */
+export default async function LotteryPage() {
+  const result = await fetchLotteryHub();
+  return <LotteryHubPage hub={result.ok ? result.data : undefined} />;
 }

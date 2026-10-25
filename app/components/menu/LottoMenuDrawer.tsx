@@ -299,7 +299,7 @@ function LottoMenuDrawerContent({ state }: { state: "open" | "closed" }) {
     <div className="mx-auto flex w-full max-w-[440px] flex-col gap-2 px-3 pb-3 pt-11 md:hidden">
       {isAuthenticated ? (
         <div className="flex shrink-0 justify-center">
-          <span className="menu-enter-avatar rounded-full border-2 border-[var(--brand)]/70 p-0.5 shadow-[0_0_18px_color-mix(in_srgb,var(--brand)_35%,transparent)]">
+          <span className="menu-enter-avatar rounded-full">
             {profile.data ? (
               <UserAvatar profile={profile.data} size="lg" className="!h-11 !w-11 !rounded-full" />
             ) : (

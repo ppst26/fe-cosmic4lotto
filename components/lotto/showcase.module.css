@@ -5,6 +5,9 @@
   border-radius: 12px;
   background: var(--BG-Surface-Darker);
   padding: 8px;
+  /* section ใต้ fold: เบราว์เซอร์ข้าม layout/paint จนเลื่อนใกล้ถึง (ลดงานตอนเปิดหน้าแรก) */
+  content-visibility: auto;
+  contain-intrinsic-size: auto 360px;
 }
 
 .header {

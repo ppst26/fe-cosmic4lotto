@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 import { useMemo, useRef } from "react";
 import {
   buildLoopedTrack,
@@ -36,16 +35,21 @@ export function HeroBanner() {
       >
         {trackItems.map(({ item, key }, index) => (
           <div key={key} className={styles.slide}>
-            <Image
-              src={item.src}
-              alt={item.alt}
-              width={HOME_HERO_BANNER_ASPECT.width}
-              height={HOME_HERO_BANNER_ASPECT.height}
-              className={styles.image}
-              sizes="(min-width: 1024px) 1280px, 100vw"
-              priority={index <= 1}
-              unoptimized={item.src.endsWith(".avif")}
-            />
+            {/* มือถือใช้ไฟล์ -sm (960px) เบากว่า ~85% · รูปแรกเท่านั้นที่ eager + fetchPriority สูง (LCP) */}
+            <picture>
+              <source media="(max-width: 1023px)" srcSet={item.src.replace(".avif", "-sm.avif")} type="image/avif" />
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src={item.src}
+                alt={item.alt}
+                width={HOME_HERO_BANNER_ASPECT.width}
+                height={HOME_HERO_BANNER_ASPECT.height}
+                className={styles.image}
+                loading={index === 0 ? "eager" : "lazy"}
+                fetchPriority={index === 0 ? "high" : "auto"}
+                decoding="async"
+              />
+            </picture>
           </div>
         ))}
       </div>

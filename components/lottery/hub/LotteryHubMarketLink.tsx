@@ -61,6 +61,7 @@ export function LotteryHubMarketLink({
             fill
             sizes={isFeature ? "(max-width: 640px) 9rem, 7rem" : "(max-width: 640px) 6.5rem, 5rem"}
             className="lottery-hub-market-card__bg-img"
+            priority={isFeature}
           />
         </span>
       ) : (

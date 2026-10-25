@@ -194,3 +194,8 @@ html[data-mode="light"] .lotto-site-header .header-bell:hover {
 .overlay-theme :is(.soft-btn-neutral, .soft-btn-danger):active:not(:disabled) {
   transform: scale(0.97);
 }
+
+/* ธีมมืด: soft-card บนหน้า (นอก overlay) สว่างขึ้นให้แยกจากพื้นหลังชัด */
+html:not([data-mode="light"]) .soft-card:not(.overlay-theme .soft-card) {
+  background-color: color-mix(in srgb, #fff 9%, var(--Card-Normal));
+}

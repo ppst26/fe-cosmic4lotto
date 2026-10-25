@@ -1,6 +1,7 @@
 "use client";
 
 import { usePathname } from "@/lib/i18n/navigation";
+import { LazyMount } from "@/components/lotto/LazyMount";
 import { CosmicFooter } from "./CosmicFooter";
 
 /**
@@ -11,5 +12,10 @@ export function CosmicFooterGate() {
   if (pathname.startsWith("/play")) {
     return null;
   }
-  return <CosmicFooter />;
+  /* ฟุตเตอร์อยู่ท้ายหน้า — hydrate เมื่อเลื่อนใกล้ถึง ลดงาน JS ตอนเปิดหน้า */
+  return (
+    <LazyMount minHeight={320}>
+      <CosmicFooter />
+    </LazyMount>
+  );
 }

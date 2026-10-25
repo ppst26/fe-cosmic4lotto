@@ -11,7 +11,6 @@ import { bankLottoMock, dashboardLottoMock, thaiLottoMock } from "@/lib/lotto/mo
 import { AppProviders } from "@/components/AppProviders";
 import { CosmicFooterGate } from "@/app/components/layout/CosmicFooterGate";
 import { LOCALES, hasLocale } from "@/lib/i18n/config";
-import { localeFontClass } from "@/lib/i18n/fonts";
 import { MessagesBoundary } from "@/lib/i18n/MessagesBoundary";
 import { NAMESPACES } from "@/lib/i18n/messages";
 import { getT } from "@/lib/i18n/server";
@@ -71,7 +70,7 @@ export default async function RootLayout({ children }: { children: React.ReactNo
     <html
       lang={locale}
       suppressHydrationWarning
-      className={`dark ${notoSans.variable} ${localeFontClass(locale)}`}
+      className={`dark ${notoSans.variable}`}
     >
       <head>
         <script dangerouslySetInnerHTML={{ __html: THEME_INIT_SCRIPT }} />

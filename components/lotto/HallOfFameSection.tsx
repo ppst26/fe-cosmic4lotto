@@ -1,11 +1,27 @@
+"use client";
+
+import { useEffect, useState } from "react";
 import Image from "next/image";
 import { Clover } from "lucide-react";
-import { HALL_OF_FAME } from "@/lib/lotto/mock-hall-of-fame";
+import { MOCK_ROTATE_MS, randomHallOfFameEntry } from "@/lib/lotto/mock-random";
+import { HALL_OF_FAME, type HallOfFameItem } from "@/lib/lotto/mock-hall-of-fame";
 import showcase from "./showcase.module.css";
 import styles from "./hall-of-fame.module.css";
 
 /** Hall of Fame — ผู้ถูกรางวัลล่าสุด (mock) เป็นแถวแบบ live feed · ใต้ section ผู้ชนะสูงสุด */
 export function HallOfFameSection() {
+  // เริ่มด้วยชุดคงที่ (กัน hydration mismatch) แล้วเพิ่มผู้โชคดีใหม่ 1 คนทุก 10 วินาที — แทรกบนสุด ตัดแถวล่างสุดออก
+  const [items, setItems] = useState<HallOfFameItem[]>(HALL_OF_FAME);
+  useEffect(() => {
+    let tick = 0;
+    const id = window.setInterval(() => {
+      if (document.hidden) return;
+      tick += 1;
+      setItems((prev) => [randomHallOfFameEntry(tick), ...prev.slice(0, HALL_OF_FAME.length - 1)]);
+    }, MOCK_ROTATE_MS);
+    return () => window.clearInterval(id);
+  }, []);
+
   return (
     <section className={`${showcase.section} motion-reveal`} aria-label="ผู้โชคดี">
       <div className={showcase.header}>
@@ -28,8 +44,8 @@ export function HallOfFameSection() {
           <span role="columnheader" className={styles.colRound}>รอบ</span>
           <span role="columnheader" className={styles.colNumbers}>เลขที่ถูกรางวัล</span>
         </div>
-        {HALL_OF_FAME.map((item) => (
-          <div key={item.id} className={styles.row} role="row">
+        {items.map((item) => (
+          <div key={item.id} className={styles.row} role="row" style={item.id.startsWith("n-") ? { animation: "fade-in 450ms ease both" } : undefined}>
             <span className={styles.player} role="cell">
               <Image src={`/Avartar/${item.avatar}.webp`} alt="" width={32} height={32} className={styles.avatar} unoptimized />
               <span className={styles.name}>{item.name}</span>
