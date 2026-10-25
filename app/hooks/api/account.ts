@@ -10,7 +10,8 @@ import { useApi, type ApiResource } from "@/app/hooks/useApi";
  * ใช้ใน ProfileSlideOverCard · DesktopHubAccountBody · MenuDrawerUserAvatar · /profile/account · /referral
  */
 export function useProfile(): ApiResource<ProfileUser> {
-  return useApi(["profile"], fetchProfile, { auth: true });
+  // header ถูก mount ใหม่ทุกครั้งที่เปลี่ยนหน้า — มีใน cache แล้วไม่ต้องดึงซ้ำ (อัปเดตผ่าน setData หลังแก้โปรไฟล์)
+  return useApi(["profile"], fetchProfile, { auth: true, swr: { revalidateIfStale: false } });
 }
 
 /**

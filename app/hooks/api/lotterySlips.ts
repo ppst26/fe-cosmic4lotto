@@ -1,6 +1,7 @@
 "use client";
 
 import { useMemo } from "react";
+import type { SWRConfiguration } from "swr";
 import type { LotterySlipListQuery, LotterySlipListResponse } from "@/app/types/lotterySlip";
 import { fetchLotterySlipPage } from "@/lib/lottery/fetchLotterySlip";
 import { useApi, usePrefetchApi, type ApiResource, type PrefetchTarget } from "@/app/hooks/useApi";
@@ -29,8 +30,9 @@ function cacheKey(filter: LotterySlipFilterKey): readonly unknown[] {
 export function useLotterySlipFirstPage(
   filter: LotterySlipFilterKey,
   buildQuery: () => LotterySlipListQuery,
+  swr?: SWRConfiguration,
 ): ApiResource<LotterySlipListResponse> {
-  return useApi(cacheKey(filter), () => fetchLotterySlipPage({ ...buildQuery(), limit: FIRST_PAGE_SIZE }), { auth: true });
+  return useApi(cacheKey(filter), () => fetchLotterySlipPage({ ...buildQuery(), limit: FIRST_PAGE_SIZE }), { auth: true, swr });
 }
 
 /** อุ่นแท็บฝั่งตรงข้าม (ตัวกรองเริ่มต้น) — สลับ pending ↔ history แล้วขึ้นทันที */

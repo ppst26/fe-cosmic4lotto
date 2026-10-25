@@ -31,6 +31,8 @@ type Props = {
 };
 
 const PENDING_FILTER = { scope: "pending", market: "", result: "", range: "" } as const;
+/** header mount ใหม่ทุกหน้า — ใช้ค่าใน cache ไม่ยิงซ้ำ (ส่งโพยสำเร็จแล้ว mutate ใน useLotteryBetSubmit) */
+const PENDING_SWR = { revalidateIfStale: false } as const;
 
 /** กลุ่มขวาของคนที่ login — ชื่อ + ยอดเงิน · avatar · ปุ่มธีม · แผงโพยค้าง */
 function MemberCluster({ wallet, onOpenTheme }: { wallet: WalletSnapshot; onOpenTheme: () => void }) {
@@ -39,7 +41,7 @@ function MemberCluster({ wallet, onOpenTheme }: { wallet: WalletSnapshot; onOpen
   const tCommon = useT("common");
   const { openDeposit } = useDeposit();
   const profile = useProfile();
-  const pending = useLotterySlipFirstPage(PENDING_FILTER, () => ({ scope: "pending" }));
+  const pending = useLotterySlipFirstPage(PENDING_FILTER, () => ({ scope: "pending" }), PENDING_SWR);
   const pendingCount = pending.data?.summary.count ?? 0;
   const name = profile.data?.displayName ?? "";
   const avatarUrl = profile.data?.avatarUrl;

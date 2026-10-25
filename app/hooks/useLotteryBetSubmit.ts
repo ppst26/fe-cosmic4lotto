@@ -1,6 +1,7 @@
 "use client";
 
 import { useCallback, useState } from "react";
+import { useSWRConfig } from "swr";
 import { useRouter } from "@/lib/i18n/navigation";
 import { useT } from "@/lib/i18n/I18nProvider";
 import { submitLotteryBetSlip } from "@/lib/lottery/submitBetSlip";
@@ -19,6 +20,7 @@ export interface LotteryBetRoundMeta {
  */
 export function useLotteryBetSubmit(continuePlayHref?: string) {
   const router = useRouter();
+  const { mutate } = useSWRConfig();
   const t = useT("lottery");
   const [dialog, setDialog] = useState<LotteryBetDialogState | null>(null);
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -34,6 +36,7 @@ export function useLotteryBetSubmit(continuePlayHref?: string) {
           continuePlayHref: payload.continuePlayHref ?? continuePlayHref,
         });
         if (result.ok) {
+          void mutate((key) => Array.isArray(key) && key[0] === "lottery-slips");
           const playHref = encodeURIComponent(
             payload.continuePlayHref ?? continuePlayHref ?? "/lottery",
           );
@@ -49,7 +52,7 @@ export function useLotteryBetSubmit(continuePlayHref?: string) {
         setIsSubmitting(false);
       }
     },
-    [continuePlayHref, router, t],
+    [continuePlayHref, mutate, router, t],
   );
 
   return { submit, dialog, closeDialog, isSubmitting };
