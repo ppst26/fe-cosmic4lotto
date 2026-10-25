@@ -7,12 +7,12 @@ export const LOBBY_CATEGORIES: {
   icon: string;
   href: string;
 }[] = [
-  { key: "lottery", label: "หวย", icon: "/assets/3d/menuicon/lotto.avif", href: "/" },
-  { key: "casino", label: "คาสิโน", icon: "/assets/3d/menuicon/casino.avif", href: "/casino" },
-  { key: "slots", label: "สล็อต", icon: "/assets/3d/menuicon/slot.avif", href: "/slots" },
-  { key: "fishing", label: "ยิงปลา", icon: "/assets/3d/menuicon/fish.avif", href: "/fishing" },
-  { key: "sports", label: "กีฬา", icon: "/assets/3d/menuicon/sport.avif", href: "/sport" },
-  { key: "cards", label: "เกมไพ่", icon: "/assets/3d/menuicon/card.avif", href: "/cards" },
+  { key: "lottery", label: "หวย", icon: "/menu-icon/lotto.webp", href: "/" },
+  { key: "casino", label: "คาสิโน", icon: "/menu-icon/casino.webp", href: "/casino" },
+  { key: "slots", label: "สล็อต", icon: "/menu-icon/slot.webp", href: "/slots" },
+  { key: "fishing", label: "ยิงปลา", icon: "/menu-icon/fish.webp", href: "/fishing" },
+  { key: "sports", label: "กีฬา", icon: "/menu-icon/sport.webp", href: "/sport" },
+  { key: "cards", label: "เกมไพ่", icon: "/menu-icon/card.webp", href: "/cards" },
 ];
 
 /** หมวดที่ active จาก pathname — "/" (หน้าแรก) = หวย */

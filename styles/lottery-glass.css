@@ -700,7 +700,7 @@ a.thai-lotto-draw:focus-visible {
   left: 20%;
   height: 2px;
   border-radius: var(--radius-pill);
-  background: rgb(255 255 255 / 0.88);
+  background: var(--t-active, var(--t-icon, #fff));
 }
 
 .thai-lotto-mode-tabs__tab:focus-visible {
@@ -1441,8 +1441,8 @@ main.page-shell.lottery-page-main.lottery-slips-page {
   overflow: hidden;
   border: 1px solid rgb(255 255 255 / 0.35);
   border-radius: var(--radius-pill);
-  background: var(--cta-primary-gradient);
-  color: #2a0607;
+  background: var(--btn-theme-gradient, var(--cta-primary-gradient));
+  color: var(--btn-theme-fg, #2a0607);
   font-size: 0.9375rem;
   font-weight: 600;
   line-height: 1.2;

@@ -89,7 +89,7 @@ export function LotteryPriceControls({
       <div className="lottery-price-controls__actions grid grid-cols-2 gap-2">
         <button
           type="button"
-          className="lottery-price-controls__back min-h-11"
+          className="cosmic-cta-primary cosmic-cta-primary--lg lottery-price-controls__submit min-h-11"
           onClick={onBack}
         >
           {t("price.backToNumbers")}

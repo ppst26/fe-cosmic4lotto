@@ -199,3 +199,14 @@ html[data-mode="light"] .lotto-site-header .header-bell:hover {
 html:not([data-mode="light"]) .soft-card:not(.overlay-theme .soft-card) {
   background-color: color-mix(in srgb, #fff 9%, var(--Card-Normal));
 }
+
+/* หัวกลุ่มประเภทในโพย/ใส่ราคา/สรุปโพย: พื้นสีธีม ตัวอักษรขาว — ทุกธีมและทุกโหมด (แยกจากการ์ดสีอ่อนชัด) */
+html[data-mode] :is(.lottery-bet-slip__group-head, .lottery-price-slip__group-head, .lottery-slip-summary__group-head) {
+  background: var(--t-gb, #140c1f);
+  color: #fff;
+  border-color: transparent;
+}
+
+html[data-mode] :is(.lottery-bet-slip__group-head, .lottery-price-slip__group-head, .lottery-slip-summary__group-head) span {
+  color: #fff;
+}

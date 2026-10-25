@@ -84,7 +84,7 @@ export const FREESPIN_OFFERS_MOCK: FreespinOffer[] = [
     providerLabel: "PG",
     pointsCost: 600,
     spins: 10,
-    thumbSrc: "/assets/3d/menuicon/slot.avif",
+    thumbSrc: "/menu-icon/slot.webp",
   },
   {
     id: "fs-2",
@@ -92,7 +92,7 @@ export const FREESPIN_OFFERS_MOCK: FreespinOffer[] = [
     providerLabel: "JILI",
     pointsCost: 900,
     spins: 15,
-    thumbSrc: "/assets/3d/menuicon/slot.avif",
+    thumbSrc: "/menu-icon/slot.webp",
   },
   {
     id: "fs-3",
@@ -100,7 +100,7 @@ export const FREESPIN_OFFERS_MOCK: FreespinOffer[] = [
     providerLabel: "PP",
     pointsCost: 1_200,
     spins: 20,
-    thumbSrc: "/assets/3d/menuicon/slot.avif",
+    thumbSrc: "/menu-icon/slot.webp",
   },
 ];
 

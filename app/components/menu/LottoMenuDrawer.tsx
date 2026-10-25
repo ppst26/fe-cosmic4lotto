@@ -362,7 +362,7 @@ function LottoMenuDrawerContent({ state }: { state: "open" | "closed" }) {
 
           <div className={cn(CARD, "menu-enter-item flex w-full min-w-0 items-center gap-2 px-3 py-2")} style={enterStyle(4)}>
             <Image
-              src="/assets/3d/menuicon/referral.avif"
+              src="/menu-icon/refferal.webp"
               alt=""
               width={28}
               height={28}

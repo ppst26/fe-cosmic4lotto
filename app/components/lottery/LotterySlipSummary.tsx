@@ -108,7 +108,7 @@ export function LotterySlipSummary({ slip, continuePlayHref }: LotterySlipSummar
       <div className="flex flex-col gap-2.5">
         {groups.map((group) => (
           <section key={group.typeLabelKey} className="lottery-soft-card overflow-hidden">
-            <div className="flex items-center justify-between gap-3 soft-panel-bg px-3.5 py-2.5 sm:px-4">
+            <div className="lottery-slip-summary__group-head flex items-center justify-between gap-3 px-3.5 py-2.5 sm:px-4">
               <span className="text-sm font-semibold text-[var(--text-on-light)]">{t(group.typeLabelKey)}</span>
               <span className="shrink-0 text-xs text-[var(--text-muted)]">
                 {t("slip.itemCount", { count: group.items.length })}

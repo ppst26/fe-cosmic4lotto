@@ -49,9 +49,9 @@ export function ReferralStatsSection({ stats }: { stats: ReferralStatsMock }) {
     <section>
       <h2 className="mb-2 text-sm font-semibold text-[var(--text-on-light)]">{t("stats.title")}</h2>
       <div className="grid grid-cols-3 gap-2">
-        <StatCard icon="referral" label={t("stats.friends")} value={fmt.people(stats.friendsCount)} />
+        <StatCard icon="refferal" label={t("stats.friends")} value={fmt.people(stats.friendsCount)} />
         <StatCard
-          icon="transactions"
+          icon="history"
           label={t("stats.totalTurnover")}
           value={formatReferralCurrency(stats.totalTurnoverThb)}
         />
@@ -70,7 +70,7 @@ function StatCard({ icon, label, value, accent = false }: { icon: string; label:
   return (
     <div className="soft-card flex min-w-0 flex-col items-center gap-1 p-2 text-center">
       <span className="relative h-9 w-9" aria-hidden="true">
-        <Image src={`/assets/3d/menuicon/${icon}.avif`} alt="" fill sizes="36px" className="object-contain" />
+        <Image src={`/menu-icon/${icon}.webp`} alt="" fill sizes="36px" className="object-contain" />
       </span>
       <p className="text-[10px] leading-snug text-[var(--text-muted)] sm:text-xs">{label}</p>
       <p

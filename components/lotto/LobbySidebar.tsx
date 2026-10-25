@@ -14,7 +14,7 @@ import styles from "./lobby-sidebar.module.css";
 
 type Props = { wallet: WalletSnapshot };
 
-const MENU_ICON = "/assets/3d/menuicon";
+const MENU_ICON = "/menu-icon";
 
 /** แผงเมนูซ้าย (โครงเดียวกับ LobbyDesktopSidebar ของ glass) — เฉพาะหมวดที่ lotto มีจริง */
 const SIDEBAR_ITEMS = [
@@ -97,7 +97,7 @@ export function LobbySidebar({ wallet }: Props) {
                 >
                   <span className={styles.linkIcon} aria-hidden>
                     <Image
-                      src={`${MENU_ICON}/${item.icon}.avif`}
+                      src={`${MENU_ICON}/${item.icon}.webp`}
                       alt=""
                       width={28}
                       height={28}
