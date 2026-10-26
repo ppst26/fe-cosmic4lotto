@@ -97,13 +97,6 @@ export const MENU_DIALOG_ALL_TILES: MenuDialogTile[] = MENU_DIALOG_SECTIONS.flat
  */
 export const MENU_DIALOG_MOBILE_LIST_ITEMS: MenuDialogTile[] = [
   { id: "rank", labelKey: "menu.vipRank", action: "vip-rank", iconId: "rank", requiresAuth: true },
-  {
-    id: "referral-earnings",
-    labelKey: "menu.referralEarnings",
-    href: "/referral",
-    iconId: "referral",
-    requiresAuth: true,
-  },
   { id: "referral", labelKey: "menu.referFriend", href: "/referral", iconId: "referral", requiresAuth: true },
   {
     id: "my-promotions",
