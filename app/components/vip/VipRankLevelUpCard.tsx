@@ -26,21 +26,22 @@ export function VipRankLevelUpCard({ player, focusRankId, mode = "carousel" }: V
   const t = useT("vip");
   const status = getVipRankViewStatus(focusRankId, player.currentRankId);
 
-  if (mode === "current") {
-    if (!player.nextRankId) return null;
-  } else if (status === "active" && !player.nextRankId && focusRankId === player.currentRankId) {
-    return null;
-  }
+  /** ถึงแรงค์สูงสุดแล้ว — แสดงเป้าของแรงค์ปัจจุบันครบ 100% (ไม่มีขั้นถัดไป) */
+  const maxed = !player.nextRankId && (mode === "current" || focusRankId === player.currentRankId);
 
-  const requirementRankId =
-    mode === "current" && player.nextRankId
+  const requirementRankId = maxed
+    ? player.currentRankId
+    : mode === "current" && player.nextRankId
       ? player.nextRankId
       : getVipRequirementRankForFocus(focusRankId, player);
-  const targetVipNumber = getVipRankDisplayNumber(requirementRankId);
-  const { depositTarget, turnoverTarget } = getVipRankLevelUpAmounts(requirementRankId);
+  const levelUpFromPlayer = mode === "current" && !maxed ? player.levelUpTarget : null;
+  const fallbackAmounts = getVipRankLevelUpAmounts(requirementRankId);
+  const targetVipNumber = levelUpFromPlayer?.vipLevel ?? getVipRankDisplayNumber(requirementRankId);
+  const depositTarget = levelUpFromPlayer?.depositTarget ?? fallbackAmounts.depositTarget;
+  const turnoverTarget = levelUpFromPlayer?.turnoverTarget ?? fallbackAmounts.turnoverTarget;
 
   const locked = mode === "carousel" && status === "locked";
-  const cleared = mode === "carousel" && status === "cleared";
+  const cleared = maxed || (mode === "carousel" && status === "cleared");
 
   const depositProgress = locked ? 0 : cleared ? depositTarget : player.depositProgress;
   const turnoverProgress = locked ? 0 : cleared ? turnoverTarget : player.turnoverProgress;

@@ -628,62 +628,90 @@
   }
 }
 
-/* ── แท็บแร็งค์: เวทีตราแรงค์ (ข้างละ 1–2 ตราจาง) ── */
+/* ── แท็บแร็งค์: เวทีตราแรงค์ (ข้างละ 1–2 ตราจาง) ──
+   ทุกตราวาง absolute ที่กึ่งกลาง แล้วเลื่อน/ย่อตาม data-offset (ระยะจากตัวกลาง)
+   เปลี่ยนตัวกลาง → transform/opacity/font-size transition ให้ตราไหลเข้าที่เอง */
 .rankStage {
+  --rank-ease: cubic-bezier(0.22, 0.61, 0.36, 1);
+  --rank-dur: 0.42s;
   position: relative;
-  display: flex;
-  align-items: flex-end;
-  justify-content: center;
-  gap: 2px;
   min-height: 190px;
-  padding: 6px 40px 4px;
   overflow: hidden;
   border-radius: 14px;
   background:
     radial-gradient(45% 70% at 50% 45%, var(--v-glow), transparent 70%),
-    radial-gradient(70% 90% at 50% 100%, color-mix(in srgb, var(--v-acc) 14%, transparent), transparent 70%);
+    radial-gradient(70% 90% at 50% 100%, color-mix(in srgb, var(--v-acc) 10%, transparent), transparent 70%);
 }
 
-.rankSide {
+.rankItem {
+  --x: 0px;
+  --dy: 0px;
+  --scale: 1;
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
   display: flex;
-  flex: 0 0 auto;
+  width: 144px;
   flex-direction: column;
   align-items: center;
-  gap: 2px;
   padding: 0;
   border: 0;
   background: none;
   color: var(--v-muted);
-  font-size: 11px;
-  font-weight: 600;
-  letter-spacing: 0.04em;
+  text-align: center;
+  white-space: nowrap;
   opacity: 0.8;
   cursor: pointer;
+  transform: translate(calc(-50% + var(--x)), var(--dy));
+  transition:
+    transform var(--rank-dur) var(--rank-ease),
+    opacity var(--rank-dur) var(--rank-ease);
+  will-change: transform, opacity;
 }
 
-.rankSideFar {
-  display: none;
+.rankItemFocus {
+  --dy: 16px;
+  z-index: 1;
+  opacity: 1;
+  cursor: default;
 }
+
+/* ตำแหน่งตามระยะจากตัวกลาง: ±1 ข้างๆ · ±2 ไกล (ซ่อนบนจอแคบ) · ±3 พ้นขอบ รอเลื่อนเข้า */
+.rankItem[data-offset="-1"] { --x: -120px; --scale: 0.6875; }
+.rankItem[data-offset="1"] { --x: 120px; --scale: 0.6875; }
+.rankItem[data-offset="-2"] { --x: -196px; --scale: 0.375; opacity: 0; pointer-events: none; }
+.rankItem[data-offset="2"] { --x: 196px; --scale: 0.375; opacity: 0; pointer-events: none; }
+.rankItem[data-offset="-3"] { --x: -260px; --scale: 0.375; opacity: 0; pointer-events: none; }
+.rankItem[data-offset="3"] { --x: 260px; --scale: 0.375; opacity: 0; pointer-events: none; }
 
 @media (min-width: 420px) {
-  .rankSideFar {
-    display: flex;
+  .rankItem[data-offset="-2"],
+  .rankItem[data-offset="2"] {
     opacity: 0.5;
+    pointer-events: auto;
   }
 }
 
-.rankMain {
-  display: flex;
-  flex: 0 0 auto;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
+/* ตราขนาด xl เสมอ แล้วย่อด้วย transform (ฐานตราอยู่กับที่) — ไม่สลับ DOM ตอนเลื่อน */
+.rankEmblem {
+  display: block;
+  transform: scale(var(--scale));
+  transform-origin: 50% 100%;
+  transition: transform var(--rank-dur) var(--rank-ease);
 }
 
 .rankName {
   margin: -4px 0 0;
-  font-size: 20px;
+  font-size: 11px;
   font-weight: 600;
+  letter-spacing: 0.04em;
+  transition:
+    font-size var(--rank-dur) var(--rank-ease),
+    color var(--rank-dur) var(--rank-ease);
+}
+
+.rankItemFocus .rankName {
+  font-size: 20px;
   letter-spacing: 0.06em;
 }
 
@@ -691,6 +719,21 @@
   margin: 0;
   font-size: 12px;
   color: var(--v-muted);
+  opacity: 0;
+  transition: opacity var(--rank-dur) var(--rank-ease);
+}
+
+.rankItemFocus .rankStatus {
+  opacity: 1;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .rankItem,
+  .rankEmblem,
+  .rankName,
+  .rankStatus {
+    transition: none;
+  }
 }
 
 .rankArrow {

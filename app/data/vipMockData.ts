@@ -122,7 +122,7 @@ export const VIP_PLAYER_MOCK: VipPlayerState = {
 export const VIP_MAINTAIN_BY_RANK: Partial<Record<VipRankId, VipMaintainState>> = {
   vip10: {
     daysRemaining: 0,
-    depositProgress: 7_000,
+    depositProgress: 12_000,
     depositTarget: 10_000,
     turnoverProgress: 14_647,
     turnoverTarget: 10_000,
