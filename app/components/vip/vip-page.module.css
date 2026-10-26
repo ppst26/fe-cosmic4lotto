@@ -86,6 +86,7 @@
 }
 
 .heroEmblem {
+  --vip-glow: var(--v-acc);
   position: relative;
   z-index: 1;
   display: flex;
@@ -96,61 +97,201 @@
   text-align: center;
 }
 
-/* ตราแรงค์ลอยเหนือแท่น — แท่นวงรีซ้อน 2 ชั้นขอบสีเน้นของธีม */
+/* ตราแรงค์ลอยเหนือแท่น — แท่นวงรีซ้อน 2 ชั้น */
 .emblemWrap {
   position: relative;
   z-index: 2;
   margin-bottom: -12px;
-  filter: drop-shadow(0 10px 18px rgba(0, 0, 0, 0.55));
+  filter: drop-shadow(0 10px 18px rgb(0 0 0 / 0.55));
+}
+
+/* แสงเรืองสีประจำระดับหลังตรา (--vip-glow ตั้งจาก tier.accent) */
+.emblemWrap::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  inset: -22%;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle,
+    color-mix(in srgb, var(--vip-glow) 58%, transparent) 0%,
+    color-mix(in srgb, var(--vip-glow) 22%, transparent) 38%,
+    transparent 70%
+  );
+  filter: blur(8px);
+  animation: vipGlowPulse 3.8s ease-in-out infinite;
+}
+
+/* ฝุ่นดาวลอยขึ้นหลังตราแล้วจางหาย — ค่าต่อเม็ดส่งผ่าน --x --drift --s --t --d จาก VipPageContent */
+.dust {
+  position: absolute;
+  z-index: 1;
+  inset: 0;
+  pointer-events: none;
+}
+
+.dust i {
+  position: absolute;
+  left: calc(50% + var(--x));
+  bottom: 34px;
+  width: var(--s);
+  height: var(--s);
+  border-radius: 50%;
+  background: #fff1c2;
+  box-shadow: 0 0 6px 1px rgb(255 221 140 / 0.85);
+  opacity: 0;
+  animation: vipDustRise var(--t) linear var(--d) infinite;
+}
+
+@keyframes vipGlowPulse {
+  0%,
+  100% {
+    opacity: 0.75;
+    transform: scale(0.96);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.06);
+  }
+}
+
+@keyframes vipDustRise {
+  0% {
+    transform: translate3d(0, 0, 0) scale(0.5);
+    opacity: 0;
+  }
+  12% {
+    opacity: 1;
+  }
+  65% {
+    opacity: 0.55;
+  }
+  100% {
+    transform: translate3d(var(--drift), -130px, 0) scale(1.05);
+    opacity: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .emblemWrap::before,
+  .dust i {
+    animation: none;
+  }
+
+  .dust i {
+    opacity: 0.5;
+  }
 }
 
 .pedestal {
   position: relative;
-  width: 150px;
-  height: 36px;
+  width: 160px;
+  height: 38px;
   border-radius: 50%;
   background: radial-gradient(ellipse at 50% 35%, var(--t-gb, #140c1f) 0%, var(--t-ga, #0c090f) 75%);
   box-shadow:
-    0 0 0 2px color-mix(in srgb, var(--v-acc) 70%, #000),
+    0 0 0 2px var(--v-line),
     0 0 22px var(--v-glow),
-    inset 0 -6px 12px rgba(0, 0, 0, 0.6);
+    inset 0 -6px 12px rgb(0 0 0 / 0.6);
 }
 
 .pedestal::after {
   content: "";
   position: absolute;
   z-index: -1;
-  inset: 12px -12px -14px;
+  inset: 12px -12px -15px;
   border-radius: 50%;
   background: linear-gradient(180deg, var(--t-gb, #140c1f), var(--t-ga, #0c090f));
-  box-shadow: 0 0 0 1px var(--v-line), 0 8px 20px rgba(0, 0, 0, 0.6);
+  box-shadow: 0 0 0 1px var(--v-line), 0 8px 20px rgb(0 0 0 / 0.6);
+}
+
+/* ป้ายชื่อระดับใต้ตรา — แผ่นหกเหลี่ยมขอบทอง + pill "ระดับถัดไป" ซ้อนใต้ */
+.heroPlate {
+  position: relative;
+  z-index: 3;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: -26px;
 }
 
 .heroRank {
+  --rank-accent: var(--value-reward);
   position: relative;
-  z-index: 3;
-  margin: -25px 0 0;
-  font-size: clamp(20px, 5.4vw, 26px);
-  font-weight: 600;
+  isolation: isolate;
+  margin: 0;
+  min-width: 138px;
+  padding: 5px 22px 3px;
+  text-align: center;
+  font-family: "Cinzel", "Trajan Pro", Georgia, "Times New Roman", serif;
+  font-size: clamp(16px, 4.6vw, 21px);
+  font-weight: 700;
   line-height: 1.1;
   letter-spacing: 0.08em;
-  background: var(--v-gold);
+  text-transform: uppercase;
+  /* ขอบทอง = พื้นของ p · พื้นดำ = ::after หดเข้า 2px · ตัวอักษรไล่เฉดอยู่ใน .heroRankText (ชั้นบนสุด) */
+  background: linear-gradient(
+    100deg,
+    #8a6a1f 0%,
+    #f6d77a 22%,
+    #fff3c4 38%,
+    #d9ad4b 55%,
+    #fff0b8 72%,
+    #9c7a2a 100%
+  );
+  clip-path: polygon(9% 0, 91% 0, 100% 50%, 91% 100%, 9% 100%, 0 50%);
+}
+
+.heroRank::after {
+  content: "";
+  position: absolute;
+  inset: 2px 3px;
+  z-index: 0;
+  clip-path: polygon(9% 0, 91% 0, 100% 50%, 91% 100%, 9% 100%, 0 50%);
+  background:
+    radial-gradient(80% 120% at 50% -20%, rgb(255 255 255 / 0.12), transparent 60%),
+    linear-gradient(180deg, #1c1626 0%, #0d0a14 100%);
+}
+
+.heroRankText {
+  position: relative;
+  z-index: 1;
+  display: block;
+  color: transparent;
+  background: linear-gradient(
+    180deg,
+    #fff8dc 0%,
+    color-mix(in srgb, var(--rank-accent) 72%, #ffffff) 30%,
+    var(--rank-accent) 55%,
+    color-mix(in srgb, var(--rank-accent) 72%, #000000) 100%
+  );
   -webkit-background-clip: text;
   background-clip: text;
-  color: transparent !important;
 }
 
 .heroNext {
   position: relative;
-  z-index: 3;
-  margin: 2px 0 0;
-  font-size: 12px;
-  color: var(--v-muted);
+  z-index: -1;
+  margin: -6px 0 0;
+  padding: 8px 12px 3px;
+  border-radius: 0 0 14px 14px;
+  border: 1px solid rgb(245 197 66 / 0.28);
+  border-top: 0;
+  background: linear-gradient(180deg, #17121f 0%, #0a0812 100%);
+  box-shadow: 0 6px 14px rgb(0 0 0 / 0.45);
+  font-size: 11px;
+  line-height: 1.2;
+  white-space: nowrap;
+  color: rgb(255 255 255 / 0.8);
 }
 
 .heroNext b {
-  color: var(--v-ink);
-  letter-spacing: 0.04em;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  color: transparent;
+  background: linear-gradient(180deg, #ffffff 0%, #d9dce6 45%, #8f95a8 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
 }
 
 /* ── tabs (แคปซูลเดียว · แท็บละเท่ากัน · active ใช้สีปุ่มของธีม) ── */
