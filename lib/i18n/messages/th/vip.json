@@ -57,8 +57,10 @@
     "fastWithdraw": "ถอนด่วน",
     "vipManager": "VIP Manager",
     "upgradeBonus": "โบนัสอัปเกรด",
-    "depositCondition": "เงื่อนไขฝาก",
-    "turnoverCondition": "เงื่อนไขเทิร์น"
+    "depositCondition": "เลื่อนขั้น · ฝากสะสม",
+    "turnoverCondition": "เลื่อนขั้น · เทิร์นสะสม",
+    "maintainDeposit": "รักษาระดับ · ฝากในรอบ",
+    "maintainTurnover": "รักษาระดับ · เทิร์นในรอบ"
   },
   "benefitValues": {
     "faster": "✓ เร็วขึ้น",

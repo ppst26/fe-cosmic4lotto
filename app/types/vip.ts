@@ -1,15 +1,18 @@
 import type { MessageKey } from "@/lib/i18n/messages";
 
-/** ชื่อแรงค์ VIP — ลำดับจากต่ำไปสูง (วิดีโอใน public/rank) */
+/** รหัสแรงค์ VIP 0–10 — ลำดับจากต่ำไปสูง (ตรารูป webp ใน public/rank) */
 export type VipRankId =
-  | "base"
-  | "bronze"
-  | "silver"
-  | "gold"
-  | "platinum"
-  | "emerald"
-  | "diamond"
-  | "obsidian";
+  | "vip0"
+  | "vip1"
+  | "vip2"
+  | "vip3"
+  | "vip4"
+  | "vip5"
+  | "vip6"
+  | "vip7"
+  | "vip8"
+  | "vip9"
+  | "vip10";
 
 export type VipModalTabId = "my-level" | "rank" | "benefits";
 

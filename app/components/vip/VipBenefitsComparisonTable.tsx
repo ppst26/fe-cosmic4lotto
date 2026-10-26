@@ -84,7 +84,7 @@ export function VipBenefitsComparisonTable({ currentRankId }: VipBenefitsCompari
                       )}
                     >
                       <div className="flex flex-col items-center gap-1 pb-0.5">
-                        <VipRankEmblem rankId={tier.id} size="sm" playing={false} />
+                        <VipRankEmblem rankId={tier.id} size="sm" />
                         <span className="text-xs font-semibold tracking-wide" style={{ color: tier.accent }}>
                           {tier.label}
                         </span>

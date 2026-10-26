@@ -57,8 +57,10 @@
     "fastWithdraw": "Fast Withdrawal",
     "vipManager": "VIP Manager",
     "upgradeBonus": "Upgrade Bonus",
-    "depositCondition": "Deposit Requirement",
-    "turnoverCondition": "Turnover Requirement"
+    "depositCondition": "Upgrade · Total Deposit",
+    "turnoverCondition": "Upgrade · Total Turnover",
+    "maintainDeposit": "Maintain · Deposit / Cycle",
+    "maintainTurnover": "Maintain · Turnover / Cycle"
   },
   "benefitValues": {
     "faster": "✓ Faster",

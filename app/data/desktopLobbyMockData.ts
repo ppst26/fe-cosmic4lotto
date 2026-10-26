@@ -1,10 +1,13 @@
 import type { MessageKey } from "@/lib/i18n/messages";
+import { getVipRankTier, VIP_PLAYER_MOCK } from "./vipMockData";
+
+const PLAYER_RANK = getVipRankTier(VIP_PLAYER_MOCK.currentRankId);
 
 /** ข้อมูล mock แถบขวา desktop lobby — ไม่ใช่ยอด live */
 export const DESKTOP_PLAYER_PANEL_MOCK = {
   gems: 1000,
-  rankLabel: "GOLD",
-  rankId: "gold" as const,
+  rankLabel: PLAYER_RANK.label,
+  rankId: PLAYER_RANK.id,
   expCurrent: 1250,
   expTarget: 2000,
   cashbackHint: "ตรวจสอบยอดคืนเงินที่มี",
