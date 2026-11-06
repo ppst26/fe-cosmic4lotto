@@ -133,6 +133,7 @@
 
 .category-bg-page[data-category="slots"] { --category-hero-bg: url("/bg/slot.webp"); }
 .category-bg-page[data-category="casino"] { --category-hero-bg: url("/bg/casino.webp"); }
+.category-bg-page[data-category="fishing"] { --category-hero-bg: url("/bg/fishing.webp"); }
 .category-bg-page[data-category="sports"] { --category-hero-bg: url("/bg/sports.webp"); }
 .category-bg-page[data-category="cards"] { --category-hero-bg: url("/bg/cards.webp"); }
 .category-bg-page[data-category="lottery"] { --category-hero-bg: url("/bg/lottery.webp"); }

@@ -10,11 +10,11 @@ import { useAuth } from "@/app/components/auth/AuthProvider";
 import { useWallet } from "@/app/hooks/api/account";
 import { usePathname } from "@/lib/i18n/navigation";
 
-/** bg รูปหมวด (desktop) — คลุมทั้ง sidebar ซ้าย/เนื้อหา/แถบขวา · ยิงปลายังไม่มีรูป */
+/** bg รูปหมวด (desktop) — คลุมทั้ง sidebar ซ้าย/เนื้อหา/แถบขวา · รูปต่อหมวดใน public/bg */
 function categoryBgFromPath(pathname: string): string | undefined {
   if (pathname === "/lottery") return "lottery";
   const first = pathname.split("/")[1];
-  return ({ slots: "slots", casino: "casino", sport: "sports", cards: "cards" } as Record<string, string>)[first];
+  return ({ slots: "slots", casino: "casino", fishing: "fishing", sport: "sports", cards: "cards" } as Record<string, string>)[first];
 }
 
 /** ยอดกระเป๋าสำหรับ header/sidebar ของหน้าแรก (รูป `{money, credit}` เดิมของ lotto) — glass มียอดเดียว: credit แสดง 0.00 */
