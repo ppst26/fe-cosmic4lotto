@@ -8,6 +8,14 @@ import layout from "@/components/lotto/lobby-layout.module.css";
 import { useShellRail } from "./shell-rail-context";
 import { useAuth } from "@/app/components/auth/AuthProvider";
 import { useWallet } from "@/app/hooks/api/account";
+import { usePathname } from "@/lib/i18n/navigation";
+
+/** bg รูปหมวด (desktop) — คลุมทั้ง sidebar ซ้าย/เนื้อหา/แถบขวา · ยิงปลายังไม่มีรูป */
+function categoryBgFromPath(pathname: string): string | undefined {
+  if (pathname === "/lottery") return "lottery";
+  const first = pathname.split("/")[1];
+  return ({ slots: "slots", casino: "casino", sport: "sports", cards: "cards" } as Record<string, string>)[first];
+}
 
 /** ยอดกระเป๋าสำหรับ header/sidebar ของหน้าแรก (รูป `{money, credit}` เดิมของ lotto) — glass มียอดเดียว: credit แสดง 0.00 */
 export function useLottoWalletSnapshot() {
@@ -44,12 +52,16 @@ export function LottoShellFrame({
   const { isAuthenticated } = useAuth();
   const wallet = useLottoWalletSnapshot();
   const defaultRail = useShellRail();
+  const categoryBg = categoryBgFromPath(usePathname());
   const railNode = rail === undefined ? defaultRail : rail;
   const fitClass = (name: string) => (fit ? ` ${name}` : "");
   return (
     <div className={`lotto-page${fitClass("lotto-fit")}`}>
       <LottoShellHeader />
-      <div className={`${layout.pageShell}${fitClass("lotto-fit__shell")}`}>
+      <div
+        className={`${layout.pageShell}${fitClass("lotto-fit__shell")}${categoryBg ? " category-bg-page" : ""}`}
+        data-category={categoryBg}
+      >
         {/* sidebar เป็น shell ค่าเริ่มต้นของ PC ทั้งตอนล็อกอินและยังไม่ล็อกอิน (ผู้เยี่ยมชมกดเมนูแล้วเปิดหน้าเข้าสู่ระบบ) */}
         <div className={layout.sidebarSlot} style={{ viewTransitionName: "site-sidebar" }}>
           <LobbySidebar wallet={wallet} />

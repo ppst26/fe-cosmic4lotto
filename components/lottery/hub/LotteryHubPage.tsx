@@ -9,14 +9,12 @@ export function LotteryHubPage({ hub }: { hub?: LotteryHubData }) {
   const t = useT("lottery");
   return (
     <SubPageShell title={t("hub.title")}>
-      <div className="category-bg-page" data-category="lottery">
       <LotteryHubContent
         showTitle={false}
         featured={hub?.featured}
         gridItems={hub?.grid}
         results={hub?.latest}
       />
-      </div>
     </SubPageShell>
   );
 }
