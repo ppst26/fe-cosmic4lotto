@@ -1,15 +1,18 @@
-"use client";
-
-import { use } from "react";
 import { LotteryPlayPage } from "@/components/lottery/LotteryPlayPage";
 
 type PageProps = {
   params: Promise<{ roundId: string }>;
 };
 
-export default function ThaiGovernmentPlayPage({ params }: PageProps) {
-  const { roundId } = use(params);
-  return (
-    <LotteryPlayPage marketId="thai-government" roundId={roundId} />
-  );
+/**
+ * รอบสร้างตามเวลา — ไม่ prerender ตอน build แต่ render ครั้งแรกแล้วแคชเป็นหน้า static
+ * (เดิมเป็น dynamic → <Link> ไม่ prefetch กดรอบแล้วต้องรอ server render ทุกครั้ง)
+ */
+export function generateStaticParams() {
+  return [];
+}
+
+export default async function Play({ params }: PageProps) {
+  const { roundId } = await params;
+  return <LotteryPlayPage marketId="thai-government" roundId={roundId} />;
 }

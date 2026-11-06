@@ -91,7 +91,7 @@ export function LotteryPlayRoundList({ rounds, marketSlug, basePath }: LotteryPl
             return (
               <li key={round.id}>
                 {playable ? (
-                  <Link href={`${basePath}/${round.id}`} className={className}>
+                  <Link href={`${basePath}/${round.id}`} prefetch className={className}>
                     {inner}
                   </Link>
                 ) : (
@@ -140,6 +140,7 @@ export function LotteryPlayRoundList({ rounds, marketSlug, basePath }: LotteryPl
           </div>
           <Link
             href={`${basePath}/${round.id}`}
+            prefetch
             className="soft-btn-primary inline-flex h-11 w-full max-w-[12rem] shrink-0 items-center justify-center px-4 text-sm font-semibold sm:w-auto"
           >
             {t("rounds.play")}

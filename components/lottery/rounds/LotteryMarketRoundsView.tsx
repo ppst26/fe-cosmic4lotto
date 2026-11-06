@@ -1,7 +1,7 @@
 "use client";
 
 import { getLotteryCatalogEntry } from "@/app/data/lotteryCatalogMockData";
-import { useLotteryPlayRounds, useThaiLottoBoard } from "@/app/hooks/api/lottery";
+import { useLotteryPlayRounds, usePrefetchLotteryRounds, useThaiLottoBoard } from "@/app/hooks/api/lottery";
 import { EmptyState } from "@/app/components/ui/StatusState";
 import { ResourceGate } from "@/app/components/ui/ResourceGate";
 import { useT } from "@/lib/i18n/I18nProvider";
@@ -20,6 +20,7 @@ export function LotteryMarketRoundsView({ marketSlug }: LotteryMarketRoundsViewP
   const roundsResource = useLotteryPlayRounds(marketSlug);
   const rounds = roundsResource.data ?? [];
   const thaiLastResult = useThaiLottoBoard().data?.lastResult ?? null;
+  usePrefetchLotteryRounds();
 
   if (!entry) {
     return (

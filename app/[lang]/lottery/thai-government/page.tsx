@@ -1,7 +1,4 @@
-"use client";
-
-import { LotteryMarketRoundsPage } from "@/components/lottery/rounds/LotteryMarketRoundsPage";
-
-export default function ThaiGovernmentRoundsPage() {
-  return <LotteryMarketRoundsPage marketSlug="thai-government" />;
+/** Step 2 — รายการรอบหวย /lottery/thai-government (เนื้อหาอยู่ใน lottery/layout.tsx → LotteryMarketsLayout) */
+export default function LotteryMarketRoundsPage() {
+  return null;
 }

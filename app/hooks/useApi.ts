@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect } from "react";
-import useSWR, { unstable_serialize, useSWRConfig, preload, type SWRConfiguration } from "swr";
+import useSWR, { unstable_serialize, useSWRConfig, type SWRConfiguration } from "swr";
 import type { ApiError, ApiResult } from "@/lib/api/http";
 import { useAuth } from "@/app/components/auth/AuthProvider";
 import { resolveApiStatus, type ResourceStatus } from "./apiStatus";
@@ -96,7 +96,7 @@ export interface PrefetchTarget {
  */
 export function usePrefetchApi(targets: readonly PrefetchTarget[], enabled = true): void {
   const { user, isLoading: authLoading } = useAuth();
-  const { cache } = useSWRConfig();
+  const { cache, mutate } = useSWRConfig();
   const userId = user?.id ?? null;
 
   useEffect(() => {
@@ -108,9 +108,12 @@ export function usePrefetchApi(targets: readonly PrefetchTarget[], enabled = tru
         if (!scope) continue;
         const swrKey = [...target.key, scope];
         if (cache.get(unstable_serialize(swrKey))?.data !== undefined) continue;
-        preload(swrKey, () => unwrap(target.load)).catch(() => {
-          /* พลาดตอนอุ่น — ตอนเปิดแท็บ useApi จะโหลดและแสดง error เอง */
-        });
+        /** เขียนลง cache ตรง ๆ (ไม่ใช่ SWR preload) — preload เก็บแค่ promise ทำให้ตอน mount ยังขึ้นสถานะโหลด 1 จังหวะ */
+        unwrap(target.load)
+          .then((data) => mutate(swrKey, data, { revalidate: false }))
+          .catch(() => {
+            /* พลาดตอนอุ่น — ตอนเปิดแท็บ useApi จะโหลดและแสดง error เอง */
+          });
       }
     };
 
@@ -120,5 +123,5 @@ export function usePrefetchApi(targets: readonly PrefetchTarget[], enabled = tru
     }
     const id = window.setTimeout(run, 300);
     return () => window.clearTimeout(id);
-  }, [targets, enabled, authLoading, userId, cache]);
+  }, [targets, enabled, authLoading, userId, cache, mutate]);
 }

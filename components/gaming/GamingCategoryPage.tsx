@@ -16,7 +16,7 @@ export function GamingCategoryPage({ categoryId }: { categoryId: GamingCategoryI
   const providers = getGamingProviders(categoryId);
 
   return (
-    <>
+    <div className="category-bg-page" data-category={categoryId}>
       <div className="gaming-category-hero" data-category={categoryId}>
         <h1 className="gaming-category-hero__title">
           <span className="gaming-category-hero__th">{meta.th}</span>
@@ -62,6 +62,6 @@ export function GamingCategoryPage({ categoryId }: { categoryId: GamingCategoryI
           </div>
         </div>
       </div>
-    </>
+    </div>
   );
 }

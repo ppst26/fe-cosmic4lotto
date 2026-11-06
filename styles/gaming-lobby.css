@@ -20,11 +20,8 @@
   height: clamp(8rem, 13vw, 14rem);
   align-items: center;
   justify-content: center;
-  background:
-    var(--category-hero-bg, none),
-    linear-gradient(180deg, color-mix(in srgb, var(--brand) 22%, var(--BG-Surface-Darker, #0c090f)) 0%, var(--BG-Surface-Darker, #0c090f) 100%);
-  background-size: cover;
-  background-position: center;
+  /* bg รูปอยู่ที่ .category-bg-page::before — hero โปร่งใสให้เห็นรูปด้านหลัง */
+  background: transparent;
 }
 
 @media (min-width: 1024px) {
@@ -107,3 +104,32 @@
   border-color: var(--brand);
   background: color-mix(in srgb, var(--brand) 12%, transparent);
 }
+
+/* ---- bg รูปหมวด (desktop) — ลอยหลังหัวข้อ + เนื้อหา แล้วเฟดเข้าสีพื้น ---- */
+.category-bg-page {
+  position: relative;
+  isolation: isolate;
+}
+
+@media (min-width: 1024px) {
+  .category-bg-page::before {
+    content: "";
+    position: absolute;
+    inset: 0 0 auto 0;
+    z-index: -1;
+    height: min(48rem, 56vw);
+    background-image: var(--category-hero-bg, none);
+    background-size: cover;
+    background-position: center top;
+    background-repeat: no-repeat;
+    pointer-events: none;
+    -webkit-mask-image: linear-gradient(180deg, #000 55%, transparent 100%);
+    mask-image: linear-gradient(180deg, #000 55%, transparent 100%);
+  }
+}
+
+.category-bg-page[data-category="slots"] { --category-hero-bg: url("/bg/slot.webp"); }
+.category-bg-page[data-category="casino"] { --category-hero-bg: url("/bg/casino.webp"); }
+.category-bg-page[data-category="sports"] { --category-hero-bg: url("/bg/sports.webp"); }
+.category-bg-page[data-category="cards"] { --category-hero-bg: url("/bg/cards.webp"); }
+.category-bg-page[data-category="lottery"] { --category-hero-bg: url("/bg/lottery.webp"); }

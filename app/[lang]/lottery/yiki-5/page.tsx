@@ -1,7 +1,4 @@
-"use client";
-
-import { LotteryMarketRoundsPage } from "@/components/lottery/rounds/LotteryMarketRoundsPage";
-
-export default function Yiki5RoundsPage() {
-  return <LotteryMarketRoundsPage marketSlug="yiki-5" />;
+/** Step 2 — รายการรอบหวย /lottery/yiki-5 (เนื้อหาอยู่ใน lottery/layout.tsx → LotteryMarketsLayout) */
+export default function LotteryMarketRoundsPage() {
+  return null;
 }
