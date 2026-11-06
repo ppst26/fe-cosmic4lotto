@@ -120,7 +120,7 @@
     height: min(48rem, 56vw);
     /* overlay มืด (ปรับด้วย --category-bg-dim) ซ้อนบนรูปหมวด */
     background-image:
-      linear-gradient(rgb(0 0 0 / var(--category-bg-dim, 0.55)), rgb(0 0 0 / var(--category-bg-dim, 0.55))),
+      linear-gradient(rgb(0 0 0 / var(--category-bg-dim, 0.7)), rgb(0 0 0 / var(--category-bg-dim, 0.7))),
       var(--category-hero-bg, none);
     background-size: cover;
     background-position: center top;

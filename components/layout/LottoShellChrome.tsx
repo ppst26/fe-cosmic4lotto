@@ -12,7 +12,7 @@ import { usePathname } from "@/lib/i18n/navigation";
 
 /** bg รูปหมวด (desktop) — คลุมทั้ง sidebar ซ้าย/เนื้อหา/แถบขวา · รูปต่อหมวดใน public/bg */
 function categoryBgFromPath(pathname: string): string | undefined {
-  if (pathname === "/lottery") return "lottery";
+  if (pathname === "/lottery" || pathname.startsWith("/lottery/")) return "lottery";
   const first = pathname.split("/")[1];
   return ({ slots: "slots", casino: "casino", fishing: "fishing", sport: "sports", cards: "cards" } as Record<string, string>)[first];
 }
