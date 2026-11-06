@@ -122,12 +122,6 @@ export const FOOTER_MOBILE_SOCIAL: FooterSocialIcon[] = [
   { label: "TikTok", href: "/support", icon: "tiktok" },
 ];
 
-export const FOOTER_TRUST_BADGES: readonly { labelKey: MessageKey<"nav">; name: string }[] = [
-  { labelKey: "footer.auditedBy", name: "CERTIK" },
-  { labelKey: "footer.auditedBy", name: "PESSIMISTIC" },
-  { labelKey: "footer.approvedBy", name: "ECHELON" },
-];
-
 export const FOOTER_EXTERNAL_MOCK_LINKS: FooterBrandLink[] = [
   { label: "CoinMarketCap", href: "/support" },
   { label: "CoinGecko", href: "/support" },
@@ -184,6 +178,6 @@ export const FOOTER_LEGAL_LINKS: FooterNavLink[] = [
   { labelKey: "footer.link.sitemap", href: "/support" },
 ];
 
-export const FOOTER_COPYRIGHT = "Copyright © CM-SaturnLotto, since 2021";
+export const FOOTER_COPYRIGHT = "Copyright © cosmicbet 2026";
 
 export const FOOTER_TAGLINE_KEY: MessageKey<"nav"> = "footer.tagline";

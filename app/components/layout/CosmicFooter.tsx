@@ -8,7 +8,6 @@ import {
   FOOTER_DESKTOP_SOCIAL,
   FOOTER_DISCLAIMER_KEY,
   FOOTER_PAYMENT_BANKS,
-  FOOTER_TRUST_BADGES,
 } from "@/app/data/footerMockData";
 import { cn } from "@/lib/utils";
 import { useT } from "@/lib/i18n/I18nProvider";
@@ -22,7 +21,7 @@ const COSMIC_SHEET_SOFT_GLASS = "cosmic-sheet-soft-glass";
 function BrandLogo({ className }: { className?: string }) {
   return (
     <span className={cn("inline-block text-xl font-semibold leading-none tracking-wide text-[var(--brand)]", className)}>
-      CM-SaturnLotto
+      cosmicbet
     </span>
   );
 }
@@ -58,21 +57,6 @@ function CosmicFooterMobile() {
       <FooterCommunityChatCta className="cosmic-footer__cta-row w-full max-w-md" />
 
       <FooterPaymentMethodsBand variant="mobile" />
-
-      <ul
-        className="cosmic-footer__trust-grid cosmic-footer__trust-grid--three m-0 w-full max-w-md list-none p-0"
-        aria-label={t("footer.certifications")}
-      >
-        {FOOTER_TRUST_BADGES.map((badge) => (
-          <li key={badge.name} className={`cosmic-footer__trust-card ${COSMIC_SHEET_SOFT_GLASS}`}>
-            <span className="cosmic-footer__trust-check" aria-hidden>✓</span>
-            <span className="cosmic-footer__trust-copy">
-              <span className="cosmic-footer__trust-label">{t(badge.labelKey)}</span>
-              <strong className="cosmic-footer__trust-name">{badge.name}</strong>
-            </span>
-          </li>
-        ))}
-      </ul>
 
       <p className="cosmic-footer__disclaimer max-w-md text-center text-xs leading-relaxed text-[var(--text-secondary)]">
         {t(FOOTER_DISCLAIMER_KEY)}
@@ -172,7 +156,7 @@ function CosmicFooterDesktop() {
             className="cosmic-footer__brandmark text-2xl font-medium tracking-tight"
             aria-label={t("footer.home")}
           >
-            CM-Saturn<span>Lotto</span>
+            cosmic<span>bet</span>
           </Link>
         </div>
         <nav className="flex flex-wrap items-center gap-2" aria-label={t("footer.social")}>
