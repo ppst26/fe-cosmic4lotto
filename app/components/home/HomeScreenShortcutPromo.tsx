@@ -18,12 +18,11 @@ const INSTALL_STEPS: Record<InstallPlatform, MessageKey<"home">[]> = {
   ios: ["a2hs.steps.ios1", "a2hs.steps.ios2", "a2hs.steps.ios3", INSTALL_STEP_LAUNCH],
 };
 
-/** โลโก้ตัวอักษร CM-SaturnLotto (ไม่พึ่งไฟล์รูป) */
+/** โลโก้ cosmicbet (รูป) */
 function BrandLogo({ className }: { className?: string }) {
   return (
-    <span className={cn("inline-block text-lg font-semibold leading-none tracking-wide text-[var(--brand)]", className)}>
-      CM-SaturnLotto
-    </span>
+    // eslint-disable-next-line @next/next/no-img-element
+    <img src="/cosmic-dark.png" alt="cosmicbet" width={180} height={52} decoding="async" className={cn("h-7 w-auto max-w-[170px] object-contain", className)} />
   );
 }
 

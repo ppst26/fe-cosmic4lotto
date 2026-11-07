@@ -13,6 +13,7 @@
 @import "../styles/motion.css";
 @import "../styles/motion-glass.css";
 @import "../styles/footer.css";
+@import "../styles/dark-cosmic-bg.css";
 
 /* ฟอนต์เดียวทั้งโปรเจค: Noto Sans (ไทย+ละติน) — ตัด mono/serif ออก น้ำหนักสูงสุด semibold (600) */
 @theme inline {

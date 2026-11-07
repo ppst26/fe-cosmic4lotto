@@ -49,12 +49,11 @@ export function LottoMenuDrawer() {
   return <LottoMenuDrawerContent state={state} />;
 }
 
-/** โลโก้ตัวอักษร (แทน CosmicbetLogo ของ glass) */
+/** โลโก้ cosmicbet (รูป) */
 function BrandLogo() {
   return (
-    <span className="inline-block text-xl font-semibold leading-none tracking-wide text-[var(--brand)]">
-      CM-SaturnLotto
-    </span>
+    // eslint-disable-next-line @next/next/no-img-element
+    <img src="/cosmic-dark.png" alt="cosmicbet" width={180} height={52} decoding="async" className={"h-7 w-auto max-w-[170px] object-contain"} />
   );
 }
 

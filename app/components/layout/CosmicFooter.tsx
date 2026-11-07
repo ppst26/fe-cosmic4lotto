@@ -17,12 +17,11 @@ import type { FooterSocialIcon } from "@/app/types/footer";
 const COSMIC_BTN_GLASS_PILL = "glass-control glass-pill";
 const COSMIC_SHEET_SOFT_GLASS = "cosmic-sheet-soft-glass";
 
-/** โลโก้ตัวอักษร (แทน CosmicbetLogo ของ glass) */
+/** โลโก้ cosmicbet (รูป) */
 function BrandLogo({ className }: { className?: string }) {
   return (
-    <span className={cn("inline-block text-xl font-semibold leading-none tracking-wide text-[var(--brand)]", className)}>
-      cosmicbet
-    </span>
+    // eslint-disable-next-line @next/next/no-img-element
+    <img src="/cosmic-dark.png" alt="cosmicbet" width={180} height={52} decoding="async" className={cn("h-7 w-auto max-w-[170px] object-contain", className)} />
   );
 }
 
@@ -153,10 +152,11 @@ function CosmicFooterDesktop() {
         <div className="flex flex-wrap items-center gap-3">
           <Link
             href="/"
-            className="cosmic-footer__brandmark text-2xl font-medium tracking-tight"
+            className="cosmic-footer__brandmark inline-flex items-center"
             aria-label={t("footer.home")}
           >
-            cosmic<span>bet</span>
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img src="/cosmic-dark.png" alt="cosmicbet" width={180} height={52} decoding="async" className="h-9 w-auto max-w-[200px] object-contain" />
           </Link>
         </div>
         <nav className="flex flex-wrap items-center gap-2" aria-label={t("footer.social")}>
