@@ -327,10 +327,10 @@
   .lotto-site-header .dh-nav a {
     display: inline-flex;
     align-items: center;
-    gap: 6px;
-    font-size: 11px;
+    gap: 7px;
+    font-size: 14px;
     font-weight: 600;
-    color: color-mix(in srgb, #fff 55%, transparent);
+    color: color-mix(in srgb, #fff 75%, transparent);
     text-decoration: none;
     white-space: nowrap;
   }

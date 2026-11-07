@@ -12,9 +12,7 @@ import { useProfile } from "@/app/hooks/api/account";
 import { useLotterySlipFirstPage } from "@/app/hooks/api/lotterySlips";
 import { useLazyOverlayMount } from "@/app/hooks/useLazyOverlayMount";
 import { useAuthUI } from "@/context/AuthUIContext";
-import { useDeposit } from "@/context/DepositContext";
 import type { WalletSnapshot } from "@/lib/lotto/load-wallet-snapshot";
-import { BahtIcon } from "./BahtIcon";
 import { DevQuickLogin } from "./DevQuickLogin";
 
 const ThemePickerSheet = dynamic(() =>
@@ -34,12 +32,9 @@ const PENDING_FILTER = { scope: "pending", market: "", result: "", range: "" } a
 /** header mount ใหม่ทุกหน้า — ใช้ค่าใน cache ไม่ยิงซ้ำ (ส่งโพยสำเร็จแล้ว mutate ใน useLotteryBetSubmit) */
 const PENDING_SWR = { revalidateIfStale: false } as const;
 
-/** กลุ่มขวาของคนที่ login — ชื่อ + ยอดเงิน · avatar · ปุ่มธีม · แผงโพยค้าง */
-function MemberCluster({ wallet, onOpenTheme }: { wallet: WalletSnapshot; onOpenTheme: () => void }) {
-  const tNav = useT("nav");
+/** กลุ่มขวาของคนที่ login — ชื่อ + ยอดเงิน · avatar · แผงโพยค้าง */
+function MemberCluster({ wallet }: { wallet: WalletSnapshot }) {
   const tLottery = useT("lottery");
-  const tCommon = useT("common");
-  const { openDeposit } = useDeposit();
   const profile = useProfile();
   const pending = useLotterySlipFirstPage(PENDING_FILTER, () => ({ scope: "pending" }), PENDING_SWR);
   const pendingCount = pending.data?.summary.count ?? 0;
@@ -51,16 +46,6 @@ function MemberCluster({ wallet, onOpenTheme }: { wallet: WalletSnapshot; onOpen
       <div className="dh-account">
         <span className="dh-account__name">{name}</span>
         <div className="dh-balance">
-          <button
-            type="button"
-            className="dh-balance__plus"
-            onClick={openDeposit}
-            aria-label={tNav("bottomNav.deposit")}
-            title={tNav("bottomNav.deposit")}
-          >
-            <Plus className="h-3 w-3" strokeWidth={3} aria-hidden="true" />
-          </button>
-          <BahtIcon />
           <span className="dh-balance__value">{wallet.money}</span>
         </div>
       </div>
@@ -68,16 +53,6 @@ function MemberCluster({ wallet, onOpenTheme }: { wallet: WalletSnapshot; onOpen
       <Link href="/profile" className="dh-avatar" aria-label={name || undefined}>
         {avatarUrl ? <Image src={avatarUrl} alt="" width={44} height={44} unoptimized /> : null}
       </Link>
-
-      <button
-        type="button"
-        className="dh-hex"
-        onClick={onOpenTheme}
-        aria-label={tCommon("theme.fab")}
-        title={tCommon("theme.fab")}
-      >
-        <Palette className="h-4 w-4" aria-hidden="true" />
-      </button>
 
       <Link
         href="/lottery/slips"
@@ -174,22 +149,22 @@ export function LottoDesktopHeader({ logoSrc, loggedIn, wallet }: Props) {
 
         <nav className="dh-nav">
           <Link href="/promotions">
-            <Megaphone className="h-3.5 w-3.5" aria-hidden="true" />
+            <Megaphone className="h-4 w-4" aria-hidden="true" />
             {tNav("menu.promotions")}
           </Link>
           <Link href="/cashback">
-            <RotateCcw className="h-3.5 w-3.5" aria-hidden="true" />
+            <RotateCcw className="h-4 w-4" aria-hidden="true" />
             {tNav("menu.cashback")}
           </Link>
           <Link href="/activities">
-            <Gift className="h-3.5 w-3.5" aria-hidden="true" />
+            <Gift className="h-4 w-4" aria-hidden="true" />
             {tNav("menu.activities")}
           </Link>
         </nav>
       </div>
 
       <div className="dh-right">
-        {loggedIn ? <MemberCluster wallet={wallet} onOpenTheme={openTheme} /> : <GuestCluster onOpenTheme={openTheme} />}
+        {loggedIn ? <MemberCluster wallet={wallet} /> : <GuestCluster onOpenTheme={openTheme} />}
       </div>
 
       {themeMounted ? <ThemePickerSheet isOpen={themeOpen} onClose={() => setThemeOpen(false)} /> : null}
