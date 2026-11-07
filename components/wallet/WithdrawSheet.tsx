@@ -129,9 +129,6 @@ export function WithdrawSheet({ onClose, onCompleted }: WithdrawSheetProps) {
           </label>
           <div className="mt-4 pb-3">
             <div className="flex items-baseline justify-center gap-0.5">
-              <span className="shrink-0 text-5xl font-semibold leading-none text-[var(--brand)] sm:text-6xl" aria-hidden="true">
-                ฿
-              </span>
               <input
                 id="withdraw-amount"
                 type="text"
