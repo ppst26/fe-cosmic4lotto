@@ -25,7 +25,7 @@ export function HubTabs<T extends string>({
     <div
       role="tablist"
       aria-label={ariaLabel}
-      className={`scrollbar-none flex gap-2 overflow-x-auto ${className}`}
+      className={`scrollbar-none flex gap-2 overflow-x-auto [justify-content:safe_center] ${className}`}
     >
       {tabs.map((tab) => {
         const selected = tab.id === activeId;

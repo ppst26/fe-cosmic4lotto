@@ -69,7 +69,7 @@ export function ActivityHubThumb({
     >
       {imageUrl ? (
         // eslint-disable-next-line @next/next/no-img-element
-        <img src={imageUrl} alt="" className="h-full w-full object-cover" loading="lazy" />
+        <img src={imageUrl} alt="" className="h-full w-full object-cover" loading="lazy" decoding="async" />
       ) : (
         <ActivityThumbArt tone={tone ?? "turn"} />
       )}
