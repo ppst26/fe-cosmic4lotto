@@ -2,6 +2,7 @@ import assert from "node:assert/strict";
 import test from "node:test";
 import {
   WHEEL_DEFAULT_SPIN_MS,
+  resolveWheelRays,
   resolveWheelTheme,
   safeCssColor,
   safeImageUrl,
@@ -65,4 +66,25 @@ test("segment fill: per-segment color, then cycling theme colors, else default",
   assert.equal(segmentFill(3, {}, colors), "#222222");
   assert.equal(segmentFill(1, { color: "#ff0000" }, colors), "#ff0000");
   assert.equal(segmentFill(1, {}, []), undefined);
+});
+
+test("resolveWheelRays returns null unless explicitly enabled", () => {
+  assert.equal(resolveWheelRays(undefined), null);
+  assert.equal(resolveWheelRays({}), null);
+  assert.equal(resolveWheelRays({ rays: { count: 12 } }), null);
+  assert.equal(resolveWheelRays({ rays: { enabled: false } }), null);
+});
+
+test("resolveWheelRays builds css vars, clamps values and drops unsafe colors", () => {
+  const r = resolveWheelRays({ rays: { enabled: true, count: 12, widthPercent: 50, color: "#d4a017", rotateSeconds: 0, direction: "ccw" } });
+  assert.ok(r);
+  assert.equal(r.vars["--wheel-rays-step" as keyof typeof r.vars], "30deg");
+  assert.equal(r.vars["--wheel-rays-width" as keyof typeof r.vars], "15deg");
+  assert.equal(r.isStatic, true);
+  assert.equal(r.reverse, true);
+  const bad = resolveWheelRays({ rays: { enabled: true, count: 999, color: "url(x)", opacity: 5 } });
+  assert.ok(bad);
+  assert.equal(bad.vars["--wheel-rays-color" as keyof typeof bad.vars], undefined);
+  assert.equal(bad.vars["--wheel-rays-opacity" as keyof typeof bad.vars], "0.4");
+  assert.equal(bad.vars["--wheel-rays-step" as keyof typeof bad.vars], "22.5deg");
 });

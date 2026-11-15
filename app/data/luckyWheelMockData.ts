@@ -24,7 +24,19 @@ export const LUCKY_WHEEL_HISTORY_TOTAL_PAGES = 15;
  * ธีมวงล้อ mock — ว่าง = ดีไซน์เริ่มต้น · backend ส่งค่าตาม WheelTheme เพื่อเปลี่ยนหน้าตาทั้งชุด
  * ตัวอย่างเต็ม: docs/api/wheel-theme.md
  */
-export const LUCKY_WHEEL_THEME: WheelTheme = {};
+export const LUCKY_WHEEL_THEME: WheelTheme = {
+  /** รัศมีสีทองหมุนช้าด้านหลังวงล้อ (mock) — ปิดด้วย enabled: false หรือไม่ส่ง rays */
+  rays: {
+    enabled: true,
+    count: 16,
+    color: "#d4a017",
+    opacity: 0.45,
+    widthPercent: 45,
+    sizePercent: 170,
+    rotateSeconds: 60,
+    direction: "cw",
+  },
+};
 
 export const LUCKY_WHEEL_SEGMENTS: WheelSegment[] = [
   { id: "w1", label: "เพชร 3", kind: "gems" },
@@ -58,12 +70,14 @@ export const LUCKY_WHEEL_BENEFITS: WheelBenefitCard[] = [
 export const LUCKY_WHEEL_TAGLINE =
   "ทุกการหมุน คือ โอกาสใหม่ ให้คุณได้มากกว่าเดิม";
 
+/** mock ผู้ได้รับรางวัลล่าสุด — มีเฉพาะเพชร / เครดิต (ต่อ backend ให้ GET /api/wheel ส่งรูปเดียวกัน) */
 export const LUCKY_WHEEL_LIVE_WINNERS: WheelLiveWinnerEntry[] = [
-  { id: "lw1", avatarLetter: "M", maskedName: "m*****l", gemsAmount: 10, timeLabel: "เมื่อสักครู่" },
-  { id: "lw2", avatarLetter: "N", maskedName: "n*****k", gemsAmount: 3, timeLabel: "1 นาทีที่แล้ว" },
-  { id: "lw3", avatarLetter: "I", maskedName: "i*****n", gemsAmount: 20, timeLabel: "2 นาทีที่แล้ว" },
-  { id: "lw4", avatarLetter: "P", maskedName: "p*****t", gemsAmount: 5, timeLabel: "3 นาทีที่แล้ว" },
-  { id: "lw5", avatarLetter: "A", maskedName: "a*****m", gemsAmount: 10, timeLabel: "5 นาทีที่แล้ว" },
+  { id: "lw1", handle: "@ZAB9", maskedPhone: "********7329", prizeKind: "gems", amount: "10.00" },
+  { id: "lw2", handle: "@ZAB2", maskedPhone: "********6325", prizeKind: "credit", amount: "50.00" },
+  { id: "lw3", handle: "@ZAB3", maskedPhone: "********4258", prizeKind: "gems", amount: "20.00" },
+  { id: "lw4", handle: "@ZAB1", maskedPhone: "********9136", prizeKind: "credit", amount: "20.00" },
+  { id: "lw5", handle: "@ZAB5", maskedPhone: "********2074", prizeKind: "gems", amount: "5.00" },
+  { id: "lw6", handle: "@ZAB7", maskedPhone: "********3318", prizeKind: "credit", amount: "100.00" },
 ];
 
 export const LUCKY_WHEEL_PRIZE_HISTORY: WheelPrizeHistoryRow[] = [

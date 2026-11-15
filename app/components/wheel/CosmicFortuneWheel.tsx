@@ -11,15 +11,13 @@ import {
   wheelThemeCssVars,
 } from "@/lib/domain/wheelTheme";
 import { cn } from "@/lib/utils";
+import { WheelRays } from "./WheelRays";
 import "./luckyWheel.css";
-import { useT } from "@/lib/i18n/I18nProvider";
 
 interface CosmicFortuneWheelProps {
   segments: WheelSegment[];
   rotationDeg: number;
   spinning: boolean;
-  onCenterClick?: () => void;
-  centerDisabled?: boolean;
   /** ธีมจาก API (GET /api/wheel → theme) — ไม่ส่ง = ดีไซน์เริ่มต้น */
   theme?: WheelTheme;
 }
@@ -55,11 +53,8 @@ export function CosmicFortuneWheel({
   segments,
   rotationDeg,
   spinning,
-  onCenterClick,
-  centerDisabled,
   theme,
 }: CosmicFortuneWheelProps) {
-  const tr = useT("rewards");
   const uid = useId().replace(/:/g, "");
   const hubGradId = `wheelHub-${uid}`;
   const cx = 200;
@@ -80,6 +75,7 @@ export function CosmicFortuneWheel({
       )}
       style={wheelThemeCssVars(theme)}
     >
+      <WheelRays theme={theme} />
       {t.pointerImageUrl ? (
         // eslint-disable-next-line @next/next/no-img-element -- รูปจาก API (โดเมนไม่แน่นอน) ขนาดเล็ก
         <img src={t.pointerImageUrl} alt="" className="lucky-wheel__pointer-img" draggable={false} />
@@ -196,12 +192,10 @@ export function CosmicFortuneWheel({
         <img src={t.frameImageUrl} alt="" className="lucky-wheel__frame-img" draggable={false} />
       ) : null}
 
-      <button
-        type="button"
+      {/* โลโก้กลางวง — ตกแต่งอย่างเดียว กดไม่ได้ · หมุนจากปุ่มด้านล่างเท่านั้น */}
+      <div
         className="lucky-wheel__hub-btn"
-        disabled={centerDisabled || spinning}
-        onClick={onCenterClick}
-        aria-label={tr("wheel.spinAria")}
+        aria-hidden="true"
         /** letter-spacing ของ "SPIN" ทำให้ภาษาไทยห่างเกิน — ปิดเมื่อข้อความไม่ใช่ตัวอักษรละติน */
         style={/[^\x20-\x7e]/.test(t.hubLabel) ? { letterSpacing: 0 } : undefined}
       >
@@ -211,7 +205,7 @@ export function CosmicFortuneWheel({
         ) : (
           t.hubLabel
         )}
-      </button>
+      </div>
     </div>
   );
 }

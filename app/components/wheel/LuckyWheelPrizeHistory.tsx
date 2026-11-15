@@ -1,10 +1,11 @@
 "use client";
 
-import React, { useMemo, useState } from "react";
-import { Clock, Gem } from "lucide-react";
+import React, { useMemo } from "react";
+import { Clock } from "lucide-react";
 import { useWheel } from "@/app/hooks/api/member";
 import type { WheelPrizeHistoryRow, WheelSpinMethod } from "@/app/types/reward";
-import { toneClass } from "@/app/components/ui/valueTone";
+import { WHEEL_LIST_MAX_ROWS } from "@/lib/domain/wheelList";
+import { toneClass as valueClass } from "@/app/components/ui/valueTone";
 import type { ValueRole } from "@/lib/semanticValue";
 import { cn } from "@/lib/utils";
 import { useT } from "@/lib/i18n/I18nProvider";
@@ -15,121 +16,90 @@ interface LuckyWheelPrizeHistoryProps {
   variant?: "default" | "sidebar";
 }
 
-const pageBtnClass =
-  "flex h-7 w-7 cursor-pointer items-center justify-center rounded-full border-0 bg-[var(--soft-card-elevated)] text-sm text-[var(--text-on-light)] transition-colors hover:bg-[var(--brand-soft)] disabled:opacity-30";
-
-/** ประวัติการหมุนของฉัน */
+/**
+ * ตารางประวัติการหมุนของฉัน — โครงเดียวกับตารางผู้ได้รับรางวัล (ความสูงเท่ากัน เห็น 5 แถว)
+ * แสดงสูงสุด WHEEL_LIST_MAX_ROWS แถว · เกิน 5 แถวเลื่อนในกรอบเมื่อเมาส์ชี้ · ไม่แบ่งหน้า
+ * สไตล์: app/styles/lucky-wheel.css (.wheel-winners / .wheel-history)
+ */
 export function LuckyWheelPrizeHistory({ extraRows = [], variant = "default" }: LuckyWheelPrizeHistoryProps) {
   const t = useT("rewards");
-  const isSidebar = variant === "sidebar";
   /** ใช้ cache เดียวกับ LuckyWheelPageContent (SWR) */
-  const wheel = useWheel().data;
-  const [page, setPage] = useState(1);
-
-  const prizeHistory = wheel?.prizeHistory;
-  const historyPageSize = wheel?.historyPageSize ?? 1;
-  const allRows = useMemo(() => [...extraRows, ...(prizeHistory ?? [])], [extraRows, prizeHistory]);
-  const totalPages = Math.max(
-    1,
-    Math.min(wheel?.historyTotalPages ?? 1, Math.ceil(allRows.length / historyPageSize)),
+  const prizeHistory = useWheel().data?.prizeHistory;
+  const rows = useMemo(
+    () => [...extraRows, ...(prizeHistory ?? [])].slice(0, WHEEL_LIST_MAX_ROWS),
+    [extraRows, prizeHistory],
   );
-  const safePage = Math.min(page, totalPages);
-  const sliceStart = (safePage - 1) * historyPageSize;
-  const pageRows = allRows.slice(sliceStart, sliceStart + historyPageSize);
 
   return (
     <section
-      className={cn("soft-panel flex h-full min-h-0 flex-col p-4 lg:p-3", isSidebar && "min-w-0")}
+      className={cn("wheel-winners wheel-history", variant === "sidebar" && "wheel-winners--sidebar")}
       aria-labelledby="wheel-history-title"
     >
-      <header className={cn("flex items-start gap-2 pb-3.5 lg:pb-2.5", isSidebar && "gap-1.5")}>
-        <Clock
-          className={cn("shrink-0 text-[var(--brand-strong)]", isSidebar ? "mt-0.5 h-3.5 w-3.5" : "h-4 w-4")}
-          aria-hidden="true"
-        />
-        <h2
-          id="wheel-history-title"
-          className={cn(
-            "font-semibold leading-snug text-[var(--text-on-light)]",
-            isSidebar ? "text-[11px] lg:text-xs" : "text-sm",
-          )}
-        >
+      <header className="wheel-winners__head">
+        <span className="wheel-winners__head-icon" aria-hidden="true">
+          <ClockIcon className="h-6 w-6" />
+        </span>
+        <h2 id="wheel-history-title" className="wheel-winners__title">
           {t("wheel.history.title")}
         </h2>
       </header>
 
-      <div className="flex min-h-0 flex-1 flex-col gap-2">
-        {pageRows.map((row) => (
-          <div
-            key={row.id}
-            className={cn(
-              "soft-card rounded-[var(--radius-soft-sm)]",
-              isSidebar
-                ? "flex min-w-0 flex-col gap-1 px-2.5 py-2 text-[10px] leading-snug lg:text-[11px]"
-                : "flex items-center justify-between gap-1 px-3 py-2.5 text-xs lg:px-2.5 lg:py-2",
-            )}
-          >
-            {isSidebar ? (
-              <div className="flex items-start justify-between gap-2">
-                <span className={toneClass("muted", "shrink-0")}>{row.atLabel}</span>
-                <div className="flex min-w-0 flex-col items-end gap-0.5 text-right leading-snug">
-                  <span className={toneClass("success", "font-semibold")}>
-                    +{row.amount} {row.prizeName}
-                  </span>
-                  <span className={toneClass(wheelSpinCostRole(row.method))}>
-                    {row.method === "gems" ? t("wheel.history.usedGems") : t("wheel.history.usedTicket")}
-                  </span>
-                </div>
-              </div>
-            ) : (
-              <>
-                <span className="w-24 shrink-0 text-xs tabular-nums text-[var(--text-muted)]">{row.atLabel}</span>
-                <div className="flex flex-1 items-center justify-center gap-1.5 font-semibold text-[var(--text-on-light)]">
-                  <span className="flex h-5 w-5 items-center justify-center rounded-full bg-[var(--brand-soft)] text-[var(--brand-strong)]">
-                    <Gem className="h-3 w-3" aria-hidden />
-                  </span>
-                  <span className={toneClass("reward")}>
-                    {row.amount} {row.prizeName}
-                  </span>
-                </div>
-                <div className="flex w-20 shrink-0 items-center justify-end gap-1 text-xs text-[var(--text-muted)]">
-                  <Gem className="h-3.5 w-3.5" aria-hidden />
-                  <span>{row.method === "gems" ? t("wheel.history.usedGems") : t("wheel.history.usedTicket")}</span>
-                </div>
-              </>
-            )}
-          </div>
-        ))}
-      </div>
+      <div className="wheel-winners__panel wheel-winners__panel--solo">
+        <div className="wheel-winners__bar">
+          <Clock size={18} className="wheel-winners__bar-icon" aria-hidden="true" />
+          <span>{t("wheel.history.latest")}</span>
+        </div>
 
-      <footer className="flex items-center justify-end gap-3 pt-3.5">
-        <button
-          type="button"
-          className={pageBtnClass}
-          aria-label={t("wheel.history.prevPage")}
-          disabled={safePage <= 1}
-          onClick={() => setPage((p) => Math.max(1, p - 1))}
-        >
-          &lsaquo;
-        </button>
-        <span className="text-xs font-semibold tabular-nums text-[var(--text-muted)]">
-          {safePage} / {totalPages}
-        </span>
-        <button
-          type="button"
-          className={pageBtnClass}
-          aria-label={t("wheel.history.nextPage")}
-          disabled={safePage >= totalPages}
-          onClick={() => setPage((p) => Math.min(totalPages, p + 1))}
-        >
-          &rsaquo;
-        </button>
-      </footer>
+        <ul className="wheel-winners__list">
+          {rows.map((row) => (
+            <li key={row.id} className="wheel-winners__row wheel-history__row">
+              <div className="wheel-history__main">
+                <span className={valueClass("reward", "wheel-history__prize")}>
+                  <span className="wheel-history__prize-icon" aria-hidden="true">
+                    <DiamondSmallIcon />
+                  </span>
+                  {row.amount} {row.prizeName}
+                </span>
+                <span className="wheel-history__time">{row.atLabel}</span>
+              </div>
+              <span className={valueClass(wheelSpinCostRole(row.method), "wheel-history__cost")}>
+                <DiamondOutlineSmallIcon />
+                {row.method === "gems" ? t("wheel.history.usedGems") : t("wheel.history.usedTicket")}
+              </span>
+            </li>
+          ))}
+        </ul>
+      </div>
     </section>
   );
 }
 
-/** สีค่าใช้จ่าย — ใช้เพชรแดง · ใช้ตั๋ว neutral */
+/** สีค่าใช้จ่าย — ใช้เพชรแดงอ่อน (ลด) · ใช้ตั๋ว neutral */
 function wheelSpinCostRole(method: WheelSpinMethod): ValueRole {
   return method === "gems" ? "danger" : "neutral";
+}
+
+function ClockIcon({ className }: { className?: string }) {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className={className} aria-hidden="true">
+      <circle cx="12" cy="12" r="9" />
+      <path d="M12 7v5l3 2" strokeLinecap="round" />
+    </svg>
+  );
+}
+
+function DiamondSmallIcon() {
+  return (
+    <svg viewBox="0 0 16 16" className="h-3.5 w-3.5 shrink-0 text-white" fill="currentColor" aria-hidden="true">
+      <path d="M8 2 13 7 10 14 6 14 3 7Z" />
+    </svg>
+  );
+}
+
+function DiamondOutlineSmallIcon() {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="h-3.5 w-3.5 shrink-0 text-white/70" aria-hidden="true">
+      <path d="M12 4 19 10 15 20 9 20 5 10Z" strokeLinejoin="round" />
+    </svg>
+  );
 }

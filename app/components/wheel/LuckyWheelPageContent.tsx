@@ -2,6 +2,7 @@
 
 import React, { useCallback, useState } from "react";
 import { Gem, Ticket } from "lucide-react";
+import Image from "next/image";
 import Link from "@/lib/i18n/navigation";
 import { useWheel } from "@/app/hooks/api/member";
 import type { WheelData } from "@/lib/api/wheel";
@@ -37,7 +38,6 @@ function LuckyWheelPlay({ wheel, embedded }: { wheel: WheelData; embedded: boole
   const spinDurationMs = resolveWheelTheme(wheel.theme).spinDurationMs;
   const [gemsBalance, setGemsBalance] = useState(wheel.initialGems);
   const [ticketCount, setTicketCount] = useState(wheel.initialTickets);
-  const [spinMethod, setSpinMethod] = useState<WheelSpinMethod>("ticket");
   const [rotation, setRotation] = useState(0);
   const [spinning, setSpinning] = useState(false);
   const [lastWin, setLastWin] = useState<string | null>(null);
@@ -46,13 +46,11 @@ function LuckyWheelPlay({ wheel, embedded }: { wheel: WheelData; embedded: boole
   const currentGemsCost = wheel.gemsPerSpin;
   const currentTicketCost = wheel.ticketsPerSpin;
 
-  const canAfford =
-    spinMethod === "gems"
-      ? gemsBalance >= currentGemsCost
-      : ticketCount >= currentTicketCost && ticketCount > 0;
+  const canAffordGems = gemsBalance >= currentGemsCost;
+  const canAffordTicket = ticketCount >= currentTicketCost && ticketCount > 0;
 
-  const handleSpin = useCallback(() => {
-    if (spinning || !canAfford) return;
+  const handleSpin = useCallback((spinMethod: WheelSpinMethod) => {
+    if (spinning || !(spinMethod === "gems" ? canAffordGems : canAffordTicket)) return;
 
     const targetIndex = Math.floor(Math.random() * wheel.segments.length);
     const segment: WheelSegment = wheel.segments[targetIndex];
@@ -84,10 +82,8 @@ function LuckyWheelPlay({ wheel, embedded }: { wheel: WheelData; embedded: boole
       };
       setRecentHistoryRows((prev) => [row, ...prev].slice(0, 5));
     }, spinDurationMs);
-  }, [t, spinDurationMs, canAfford, currentGemsCost, currentTicketCost, rotation, segmentDeg, spinMethod, spinning, wheel.segments]);
+  }, [t, spinDurationMs, canAffordGems, canAffordTicket, currentGemsCost, currentTicketCost, rotation, segmentDeg, spinning, wheel.segments]);
 
-  const badgeClass =
-    "inline-flex h-9 items-center gap-1.5 rounded-full bg-[var(--soft-card-elevated)] px-3 text-[var(--text-on-light)] shadow-[var(--shadow-soft-sm)]";
   const helperLinkClass =
     "mt-2.5 cursor-pointer border-0 bg-transparent text-xs font-semibold text-[var(--text-muted)] underline underline-offset-4 hover:text-[var(--text-primary)]";
 
@@ -109,93 +105,65 @@ function LuckyWheelPlay({ wheel, embedded }: { wheel: WheelData; embedded: boole
         </aside>
 
         <div className="flex w-full min-w-0 flex-col items-center">
-          <div className="relative flex w-full max-w-[380px] flex-col items-center justify-center pt-2 sm:max-w-[420px]">
-            <div className="mb-2 flex w-full items-center justify-between gap-3 px-0.5 sm:px-1">
-              <Link href="/gems-store" className={cn(badgeClass, "no-underline")} aria-label={t("wheel.gemsBalanceAria")}>
-                <Gem className="h-3.5 w-3.5 shrink-0 text-[var(--brand-strong)]" aria-hidden />
-                <span className={toneClass("accent", "text-xs tracking-tight")}>{formatGemsBalance(gemsBalance)}</span>
+          <div className="relative flex w-full max-w-[420px] flex-col items-center justify-center pt-2 sm:max-w-[460px]">
+            {/* การ์ดยอดคงเหลือ — เพชร (ซ้าย, กดไปร้านเพชร) · ตั๋ว (ขวา) */}
+            <div className="wheel-balance-row">
+              <Link href="/gems-store" className="wheel-balance wheel-balance--link" aria-label={t("wheel.gemsBalanceAria")}>
+                <span className="wheel-balance__icon wheel-balance__icon--gems" aria-hidden="true">
+                  <Image src="/assets/gems/diamond.avif" alt="" width={800} height={800} className="wheel-balance__img" />
+                </span>
+                <span className="wheel-balance__label">{t("wheel.gemsLabel")}</span>
+                <span className="wheel-balance__value">{formatGemsBalance(gemsBalance)}</span>
               </Link>
-              <div className={badgeClass} aria-label={t("wheel.ticketsAria")}>
-                <Ticket className="h-3.5 w-3.5 shrink-0 text-[var(--brand-strong)]" aria-hidden />
-                <span className="text-xs font-semibold tabular-nums tracking-tight">{ticketCount}</span>
+              <div className="wheel-balance" aria-label={t("wheel.ticketsAria")}>
+                <span className="wheel-balance__icon wheel-balance__icon--ticket" aria-hidden="true">
+                  <Image src="/menu-icon/coupon.webp" alt="" width={96} height={96} className="wheel-balance__img" />
+                </span>
+                <span className="wheel-balance__label">{t("wheel.ticketLabel")}</span>
+                <span className="wheel-balance__value">{ticketCount}</span>
               </div>
             </div>
             <CosmicFortuneWheel
               segments={wheel.segments}
               rotationDeg={rotation}
               spinning={spinning}
-              onCenterClick={handleSpin}
-              centerDisabled={!canAfford}
               theme={wheel.theme}
             />
           </div>
 
-          {/* แท็บเลือกวิธีหมุน */}
-          <div
-            role="tablist"
-            aria-label={t("wheel.methodTabsAria")}
-            className="my-3.5 grid w-full max-w-[380px] grid-cols-2 gap-1.5 rounded-[var(--radius-soft-sm)] bg-[var(--soft-card-elevated)] p-1.5 sm:max-w-[420px]"
-          >
+          {/* ปุ่มหมุน 2 ปุ่ม — ซ้ายใช้เพชร (ม่วง) · ขวาใช้ตั๋ว (เหลือง) · สไตล์ 3D ใน .wheel-spin-btn */}
+          <div className="wheel-spin-actions">
             {(
               [
-                { id: "gems" as const, label: t("wheel.methodGems", { cost: wheel.gemsPerSpin.toFixed(2) }) },
-                { id: "ticket" as const, label: t("wheel.methodTicket", { cost: wheel.ticketsPerSpin }) },
+                { id: "gems" as const, Icon: Gem, cost: wheel.gemsPerSpin.toFixed(2), ok: canAffordGems, aria: t("wheel.useGems", { amount: wheel.gemsPerSpin.toFixed(2) }) },
+                { id: "ticket" as const, Icon: Ticket, cost: String(wheel.ticketsPerSpin), ok: canAffordTicket, aria: t("wheel.useTickets", { count: wheel.ticketsPerSpin }) },
               ] as const
-            ).map((tab) => {
-              const isActive = spinMethod === tab.id;
-              return (
-                <button
-                  key={tab.id}
-                  type="button"
-                  role="tab"
-                  aria-selected={isActive}
-                  onClick={() => setSpinMethod(tab.id)}
-                  className={cn(
-                    "min-h-9 cursor-pointer rounded-[var(--radius-soft-sm)] border-0 px-3 py-2 text-xs font-semibold transition-colors sm:text-sm",
-                    isActive
-                      ? "bg-[var(--brand)] text-[#2a0607]"
-                      : "bg-transparent text-[var(--text-muted)] hover:text-[var(--text-on-light)]",
-                  )}
-                >
-                  {tab.label}
-                </button>
-              );
-            })}
+            ).map(({ id, Icon, cost, ok, aria }) => (
+              <button
+                key={id}
+                type="button"
+                disabled={spinning}
+                data-dimmed={!ok}
+                aria-label={`${t("wheel.spinNow")} — ${aria}`}
+                onClick={() => handleSpin(id)}
+                className={`wheel-spin-btn wheel-spin-btn--${id}`}
+              >
+                <span className="wheel-spin-btn__title">{spinning ? t("wheel.spinning") : t("wheel.spinNow")}</span>
+                <span className="wheel-spin-btn__cost">
+                  <Icon size={14} strokeWidth={2.5} aria-hidden="true" />
+                  {cost}
+                </span>
+              </button>
+            ))}
           </div>
 
-          {/* ปุ่มหมุน */}
           <div className="flex w-full max-w-[340px] flex-col items-center">
-            <button
-              type="button"
-              disabled={spinning}
-              onClick={() => {
-                if (!canAfford) {
-                  if (spinMethod === "ticket") setSpinMethod("gems");
-                  return;
-                }
-                handleSpin();
-              }}
-              className={cn(
-                "soft-btn-primary flex w-full flex-col items-center justify-center gap-0.5 py-2.5 text-sm font-semibold disabled:opacity-60",
-                !canAfford && "opacity-60",
-              )}
-            >
-              <span>{spinning ? t("wheel.spinning") : t("wheel.spinNow")}</span>
-              <span className="text-[11px] font-normal opacity-90">
-                {spinMethod === "ticket"
-                  ? t("wheel.useTickets", { count: wheel.ticketsPerSpin })
-                  : t("wheel.useGems", { amount: wheel.gemsPerSpin.toFixed(2) })}
-              </span>
-            </button>
-
-            {spinMethod === "ticket" && ticketCount <= 0 ? (
-              <button type="button" onClick={() => setSpinMethod("gems")} className={helperLinkClass}>
-                {t("wheel.noTickets")}
-              </button>
-            ) : spinMethod === "gems" && gemsBalance < currentGemsCost ? (
+            {!canAffordGems ? (
               <Link href="/gems-store" className={cn(helperLinkClass, "no-underline hover:underline")}>
                 {t("wheel.notEnoughGems")}
               </Link>
+            ) : !canAffordTicket ? (
+              <span className="mt-2.5 text-xs text-[var(--text-muted)]">{t("wheel.noTickets")}</span>
             ) : (
               <span className="mt-2.5 text-xs text-[var(--text-muted)]">{t("wheel.hint")}</span>
             )}

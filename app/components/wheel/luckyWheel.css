@@ -5,7 +5,8 @@
 .lucky-wheel__stage {
   position: relative;
   margin-inline: auto;
-  width: min(100%, 350px);
+  /* วงล้อใหญ่ขึ้น — ยื่นออกเกินช่องเนื้อหาข้างละ 0.75rem เพื่อลด padding รอบวง */
+  width: min(calc(100% + 1.5rem), 430px);
   aspect-ratio: 1;
   border-radius: 50%;
   background: var(--wheel-stage-image, none) center / cover no-repeat, var(--wheel-stage-bg, transparent);
@@ -187,9 +188,9 @@
   cursor: pointer;
 }
 
-.lucky-wheel__hub-btn:disabled {
-  opacity: 0.5;
-  cursor: not-allowed;
+.lucky-wheel__hub-btn {
+  pointer-events: none;
+  user-select: none;
 }
 
 @media (width >= 1024px) {
@@ -197,4 +198,519 @@
     width: var(--wheel-hub-size, clamp(3.5rem, 13.5%, 5.25rem));
     height: var(--wheel-hub-size, clamp(3.5rem, 13.5%, 5.25rem));
   }
+}
+
+/* ───── ปุ่มหมุนวงล้อ 2 ปุ่ม (เพชร = ม่วงเข้ม · ตั๋ว = เหลืองเข้ม) — หน้าปุ่มไล่เฉด + ขอบล่างหนาแบบ 3D ───── */
+.wheel-spin-actions {
+  display: grid;
+  width: 100%;
+  max-width: 380px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.25rem;
+  margin: 0.875rem 0 0.5rem;
+  padding: 0 0.5rem 18px;
+}
+.wheel-spin-btn {
+  --wsb-depth: 6px;
+  /* ฐานรองใต้ปุ่ม — แผ่นเข้มกว้างกว่าปุ่มเล็กน้อย มีขอบบนสว่าง */
+  --wsb-base-top: #4b4672;
+  --wsb-base: #2b2747;
+  --wsb-base-edge: #15122a;
+  position: relative;
+  display: flex;
+  min-height: 3.5rem;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.125rem;
+  border: 0;
+  border-radius: 14px;
+  padding: 0.5rem 0.75rem;
+  background: linear-gradient(180deg, var(--wsb-top) 0%, var(--wsb-mid) 52%, var(--wsb-bot) 100%);
+  color: var(--wsb-text);
+  cursor: pointer;
+  box-shadow:
+    inset 0 1px 0 rgb(255 255 255 / 0.5),
+    inset 0 -2px 0 rgb(0 0 0 / 0.2),
+    0 var(--wsb-depth) 0 var(--wsb-edge),
+    0 calc(var(--wsb-depth) + 2px) 0 6px var(--wsb-base-top),
+    0 calc(var(--wsb-depth) + 9px) 0 6px var(--wsb-base),
+    0 calc(var(--wsb-depth) + 12px) 0 6px var(--wsb-base-edge);
+  transition: transform 90ms ease, box-shadow 90ms ease, filter 150ms ease;
+  -webkit-tap-highlight-color: transparent;
+}
+/* เงาสะท้อนครึ่งบน */
+.wheel-spin-btn::before {
+  content: "";
+  position: absolute;
+  inset: 1px 1px 52% 1px;
+  border-radius: 13px 13px 10px 10px;
+  background: linear-gradient(180deg, rgb(255 255 255 / 0.3), rgb(255 255 255 / 0.04));
+  pointer-events: none;
+}
+.wheel-spin-btn > * {
+  position: relative;
+}
+.wheel-spin-btn--gems {
+  --wsb-top: #8b5cf6;
+  --wsb-mid: #6d28d9;
+  --wsb-bot: #4c1d95;
+  --wsb-edge: #2e1065;
+  --wsb-text: #ffffff;
+  --wsb-text-shadow: 0 1px 0 rgb(0 0 0 / 0.4);
+}
+.wheel-spin-btn--ticket {
+  --wsb-top: #ffe14d;
+  --wsb-mid: #ffb800;
+  --wsb-bot: #f08a00;
+  --wsb-edge: #a85a00;
+  --wsb-text: #3b2400;
+  --wsb-text-shadow: 0 1px 0 rgb(255 255 255 / 0.35);
+}
+.wheel-spin-btn__title {
+  font-size: 0.9375rem;
+  font-weight: 700;
+  line-height: 1.2;
+  text-shadow: var(--wsb-text-shadow);
+}
+.wheel-spin-btn__cost {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  line-height: 1;
+  font-variant-numeric: tabular-nums;
+  opacity: 0.92;
+}
+.wheel-spin-btn:hover:not(:disabled) {
+  filter: brightness(1.06);
+}
+.wheel-spin-btn:active:not(:disabled) {
+  transform: translateY(calc(var(--wsb-depth) - 2px));
+  box-shadow:
+    inset 0 1px 0 rgb(255 255 255 / 0.5),
+    inset 0 -2px 0 rgb(0 0 0 / 0.2),
+    0 2px 0 var(--wsb-edge),
+    0 4px 0 6px var(--wsb-base-top),
+    0 11px 0 6px var(--wsb-base),
+    0 14px 0 6px var(--wsb-base-edge);
+}
+.wheel-spin-btn:focus-visible {
+  outline: 2px solid #ffffff;
+  outline-offset: 2px;
+}
+.wheel-spin-btn:disabled {
+  cursor: default;
+  filter: saturate(0.7) brightness(0.85);
+}
+.wheel-spin-btn[data-dimmed="true"] {
+  filter: saturate(0.75) brightness(0.88);
+}
+@media (prefers-reduced-motion: reduce) {
+  .wheel-spin-btn { transition: none; }
+}
+
+/* ───── ตารางผู้ได้รับรางวัล (LuckyWheelLiveWinners) — การ์ดเทาเข้ม · แท็บโฟลเดอร์ · แถวการ์ด ───── */
+.wheel-winners {
+  --ww-card: linear-gradient(180deg, #232327 0%, #0e0e10 100%);
+  --ww-panel: #2a2a2d;
+  --ww-tab-off: #151517;
+  --ww-row: #161618;
+  --ww-line: rgb(255 255 255 / 0.1);
+  --ww-row-h: 3rem;
+  --ww-row-gap: 0.5rem;
+  --ww-text: #f6f4fb;
+  --ww-text-2: rgb(246 244 251 / 0.72);
+  --ww-muted: rgb(246 244 251 / 0.6);
+  --ww-accent: var(--brand-strong, var(--accent-primary, #a78bfa));
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+  gap: 1rem;
+  border: 1px solid var(--ww-line);
+  position: relative;
+  z-index: 1;
+  border-radius: 20px;
+  background: var(--ww-card);
+  padding: 1rem;
+  color: var(--ww-text);
+}
+.wheel-winners__head {
+  display: flex;
+  align-items: center;
+  gap: 0.875rem;
+}
+.wheel-winners__head-icon {
+  display: grid;
+  width: 3.25rem;
+  height: 3.25rem;
+  flex-shrink: 0;
+  place-items: center;
+  border-radius: 14px;
+  background: linear-gradient(180deg, #2c2c2f, #1b1b1d);
+  color: rgb(255 255 255 / 0.85);
+}
+.wheel-winners__title {
+  margin: 0;
+  font-size: 1.25rem;
+  font-weight: 700;
+  line-height: 1.2;
+}
+.wheel-winners__tabs {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  margin-bottom: -1rem; /* ชนกับ panel ให้แท็บ active ต่อเนื่องเป็นก้อนเดียว */
+  position: relative;
+  z-index: 1;
+}
+.wheel-winners__tab {
+  min-height: 2.75rem;
+  border: 0;
+  border-radius: 14px 14px 0 0;
+  background: var(--ww-tab-off);
+  color: var(--ww-muted);
+  font-size: 0.9375rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 150ms ease, color 150ms ease;
+}
+.wheel-winners__tab[aria-selected="true"] {
+  background: var(--ww-panel);
+  color: var(--ww-text);
+}
+.wheel-winners__tab:focus-visible {
+  outline: 2px solid #ffffff;
+  outline-offset: -2px;
+}
+.wheel-winners__panel {
+  display: flex;
+  min-height: 0;
+  flex-direction: column;
+  gap: 0.625rem;
+  border-radius: 0 0 14px 14px;
+  background: var(--ww-panel);
+  padding: 0.875rem;
+}
+.wheel-winners__tabs:has(.wheel-winners__tab:first-child[aria-selected="true"]) + .wheel-winners__panel {
+  border-top-left-radius: 0;
+}
+.wheel-winners__bar {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  border-radius: 10px;
+  background: linear-gradient(180deg, #3d3d40 0%, #19191b 100%);
+  padding: 0.75rem 0.875rem;
+  font-size: 0.9375rem;
+  font-weight: 700;
+}
+.wheel-winners__bar-icon {
+  flex-shrink: 0;
+  color: #f7c13a;
+}
+.wheel-winners__list {
+  display: flex;
+  min-height: 0;
+  /* เห็น 5 แถวพอดี (ความสูงแถวคงที่) — เกินนี้เลื่อนในกรอบ · ไม่แบ่งหน้า */
+  height: calc(5 * var(--ww-row-h) + 4 * var(--ww-row-gap));
+  flex: none;
+  flex-direction: column;
+  gap: var(--ww-row-gap);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  scrollbar-width: thin;
+  scrollbar-color: transparent transparent;
+}
+/* แถบเลื่อนปรากฏเมื่อเอาเมาส์ชี้ที่รายการ */
+.wheel-winners__list:hover {
+  scrollbar-color: rgb(255 255 255 / 0.35) transparent;
+}
+.wheel-winners__list::-webkit-scrollbar {
+  width: 6px;
+}
+.wheel-winners__list::-webkit-scrollbar-thumb {
+  border-radius: 999px;
+  background: transparent;
+}
+.wheel-winners__list:hover::-webkit-scrollbar-thumb {
+  background: rgb(255 255 255 / 0.35);
+}
+html[data-mode="light"] .wheel-winners__list:hover {
+  scrollbar-color: rgb(0 0 0 / 0.3) transparent;
+}
+html[data-mode="light"] .wheel-winners__list:hover::-webkit-scrollbar-thumb {
+  background: rgb(0 0 0 / 0.3);
+}
+.wheel-winners__row {
+  box-sizing: border-box;
+  display: flex;
+  height: var(--ww-row-h);
+  align-items: center;
+  flex-shrink: 0;
+  gap: 0.75rem;
+  border: 1px solid var(--ww-line);
+  border-radius: 10px;
+  background: var(--ww-row);
+  padding: 0.4375rem 0.75rem;
+}
+.wheel-winners__who {
+  display: flex;
+  min-width: 0;
+  flex: 1 1 auto;
+  flex-direction: column;
+  gap: 0;
+}
+.wheel-winners__handle {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-size: 0.875rem;
+  font-weight: 700;
+  line-height: 1.25;
+}
+.wheel-winners__phone {
+  color: var(--ww-muted);
+  font-size: 0.75rem;
+  line-height: 1.2;
+  font-variant-numeric: tabular-nums;
+}
+.wheel-winners__prize {
+  display: flex;
+  flex: 0 0 auto;
+  min-width: 0;
+  align-items: center;
+  gap: 0.5rem;
+}
+.wheel-winners__prize-visual {
+  display: grid;
+  width: 2rem;
+  height: 2rem;
+  flex-shrink: 0;
+  place-items: center;
+  color: rgb(255 255 255 / 0.85);
+}
+.wheel-winners__prize-img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+.wheel-winners__prize-name {
+  min-width: 0;
+  white-space: nowrap;
+  color: var(--ww-accent);
+  font-size: 0.75rem;
+  font-weight: 700;
+  line-height: 1.25;
+}
+.wheel-winners--sidebar {
+  padding: 0.75rem;
+}
+.wheel-winners--sidebar .wheel-winners__title {
+  font-size: 1rem;
+}
+.wheel-winners--sidebar .wheel-winners__head-icon {
+  width: 2.5rem;
+  height: 2.5rem;
+}
+html[data-mode="light"] .wheel-winners {
+  --ww-card: linear-gradient(180deg, #ffffff 0%, #e6e6ec 100%);
+  --ww-panel: #f3f3f6;
+  --ww-tab-off: #dcdce2;
+  --ww-row: #ffffff;
+  --ww-line: rgb(0 0 0 / 0.1);
+  --ww-text: #1b1b22;
+  --ww-text-2: rgb(27 27 34 / 0.72);
+  --ww-muted: rgb(27 27 34 / 0.6);
+}
+html[data-mode="light"] .wheel-winners__head-icon,
+html[data-mode="light"] .wheel-winners__prize-visual {
+  color: rgb(0 0 0 / 0.7);
+}
+html[data-mode="light"] .wheel-winners__head-icon {
+  background: #e4e4ea;
+}
+html[data-mode="light"] .wheel-winners__bar {
+  background: linear-gradient(180deg, #ffffff 0%, #e2e2e8 100%);
+}
+
+/* ───── ประวัติการหมุนของฉัน (LuckyWheelPrizeHistory) — โครงเดียวกับ .wheel-winners ───── */
+/* เว้นที่เท่าความสูงแท็บของตารางผู้ได้รับรางวัล เพื่อให้การ์ดซ้าย-ขวาสูงเท่ากันและแถวตรงกัน */
+.wheel-history .wheel-winners__panel--solo {
+  margin-top: 2.75rem;
+  border-radius: 14px;
+}
+.wheel-history__row {
+  justify-content: space-between;
+  gap: 0.5rem;
+}
+.wheel-history__main {
+  display: flex;
+  min-width: 0;
+  flex: 1 1 auto;
+  flex-direction: column;
+  gap: 0.125rem;
+}
+.wheel-history__prize {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.375rem;
+  white-space: nowrap;
+  font-size: 0.8125rem;
+  font-weight: 700;
+  line-height: 1.25;
+}
+.wheel-history__prize-icon {
+  display: grid;
+  width: 1.25rem;
+  height: 1.25rem;
+  flex-shrink: 0;
+  place-items: center;
+  border-radius: 999px;
+  background: rgb(255 255 255 / 0.1);
+}
+.wheel-history__time {
+  color: var(--ww-text-2);
+  white-space: nowrap;
+  font-size: 0.6875rem;
+  line-height: 1.2;
+  font-variant-numeric: tabular-nums;
+}
+.wheel-history__cost {
+  display: inline-flex;
+  flex: 0 0 auto;
+  align-items: center;
+  gap: 0.25rem;
+  white-space: nowrap;
+  font-size: 0.75rem;
+}
+html[data-mode="light"] .wheel-history__prize-icon {
+  background: rgb(0 0 0 / 0.07);
+  color: rgb(0 0 0 / 0.7);
+}
+
+/* ───── การ์ดยอดตั๋ว / เพชร — แคปซูลเทาเข้ม ไอคอนใหญ่ยื่นออกซ้าย · ชื่อกลาง · ตัวเลขขวา ───── */
+.wheel-balance-row {
+  display: grid;
+  width: 100%;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 0.5rem;
+  padding: 1.125rem 0.25rem 0 1rem;
+}
+.wheel-balance {
+  position: relative;
+  z-index: 2; /* อยู่เหนือรัศมีของวงล้อ (stage ถัดไปใน DOM) */
+  display: flex;
+  min-width: 0;
+  height: 2.75rem;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0 0.875rem 0 4rem;
+  border: 1px solid rgb(255 255 255 / 0.1);
+  border-radius: 999px;
+  background: linear-gradient(180deg, #424246 0%, #1c1c1f 100%);
+  color: #fff;
+  text-decoration: none;
+}
+.wheel-balance--link {
+  cursor: pointer;
+  transition: filter 150ms ease, transform 90ms ease;
+}
+.wheel-balance--link:hover {
+  filter: brightness(1.12);
+}
+.wheel-balance--link:active {
+  transform: scale(0.98);
+}
+/* ไอคอนเป็น layer ล้นออกจากแคปซูล — ใหญ่กว่าแคปซูลและยื่นออกซ้าย/บน/ล่าง */
+.wheel-balance__icon {
+  position: absolute;
+  top: 50%;
+  display: block;
+  pointer-events: none;
+  transform: translateY(-50%);
+}
+.wheel-balance__icon--gems {
+  left: -1rem;
+  width: 4.75rem;
+  height: 4.75rem;
+}
+.wheel-balance__icon--ticket {
+  left: -1rem;
+  width: 4.75rem;
+  height: 4.75rem;
+}
+.wheel-balance__img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+.wheel-balance__label {
+  min-width: 0;
+  flex: 1 1 auto;
+  text-align: center;
+  font-size: 0.8125rem;
+  font-weight: 600;
+}
+.wheel-balance__value {
+  flex: 0 0 auto;
+  font-size: 0.9375rem;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+}
+html[data-mode="light"] .wheel-balance {
+  border-color: rgb(0 0 0 / 0.1);
+  background: linear-gradient(180deg, #ffffff 0%, #dcdce3 100%);
+  color: #1b1b22;
+}
+
+/* ───── รัศมี (rays) ด้านหลังวงล้อ — theme.rays จาก API (WheelRays.tsx) · ไม่ใช้ glow/เงา ───── */
+.lucky-wheel__stage {
+  isolation: isolate;
+}
+.lucky-wheel__rays {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: -1;
+  width: var(--wheel-rays-size, 170%);
+  aspect-ratio: 1;
+  translate: -50% -50%;
+  border-radius: 50%;
+  pointer-events: none;
+  background: repeating-conic-gradient(
+    from calc(var(--wheel-rays-width, 20deg) / -2),
+    var(--wheel-rays-color, #f5b301) 0 var(--wheel-rays-width, 20deg),
+    transparent var(--wheel-rays-width, 20deg) var(--wheel-rays-step, 22.5deg)
+  );
+  opacity: var(--wheel-rays-opacity, 0.4);
+  -webkit-mask-image: radial-gradient(closest-side, #000 18%, rgb(0 0 0 / 0.55) 55%, transparent 100%);
+  mask-image: radial-gradient(closest-side, #000 18%, rgb(0 0 0 / 0.55) 55%, transparent 100%);
+  animation: wheel-rays-spin var(--wheel-rays-duration, 60s) linear infinite;
+}
+.lucky-wheel__rays--static {
+  animation: none;
+}
+.lucky-wheel__rays--reverse {
+  animation-direction: reverse;
+}
+@keyframes wheel-rays-spin {
+  to { rotate: 360deg; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .lucky-wheel__rays { animation: none; }
+}
+/* รัศมียื่นเกินวงล้อ — กันหน้าเลื่อนแนวนอน */
+.lucky-wheel-page {
+  overflow-x: clip;
+}
+
+/* มีรัศมี — เว้นพื้นที่บนล่างรอบวงล้อให้แฉกไม่ถูกส่วนอื่นทับ */
+.lucky-wheel__stage:has(> .lucky-wheel__rays) {
+  margin-block: 3rem;
 }

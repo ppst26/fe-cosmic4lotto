@@ -81,12 +81,21 @@ export interface WheelBenefitCard {
   iconId: "prize" | "check-in" | "crown";
 }
 
+/**
+ * ผู้ได้รับรางวัลล่าสุด — รางวัลมีแค่เพชร / เครดิต (WheelPrizeKind)
+ * ต่อ backend: ส่งรายการเดียวรวมทั้งสองชนิด UI แยกแท็บตาม prizeKind
+ */
 export interface WheelLiveWinnerEntry {
   id: string;
-  avatarLetter: string;
-  maskedName: string;
-  gemsAmount: number;
-  timeLabel: string;
+  /** ชื่อผู้ใช้แบบ @handle */
+  handle: string;
+  /** เลขโทรศัพท์ที่ backend ปิดบังมาแล้ว */
+  maskedPhone: string;
+  prizeKind: WheelPrizeKind;
+  /** จำนวนรางวัลที่ format แล้ว เช่น "10.00" */
+  amount: string;
+  /** รูปรางวัลจาก backend (ไม่บังคับ) — ไม่ส่ง = ใช้ไอคอนตาม prizeKind */
+  prizeImageSrc?: string;
 }
 
 export interface WheelPrizeHistoryRow {

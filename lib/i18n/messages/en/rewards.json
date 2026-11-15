@@ -126,6 +126,8 @@
       "credit": "Credits"
     },
     "gemsBalanceAria": "Your Gems balance",
+    "ticketLabel": "Tickets",
+    "gemsLabel": "Gems",
     "ticketsAria": "Your tickets",
     "spinAria": "Spin the wheel",
     "methodTabsAria": "Choose spin method",
@@ -143,6 +145,9 @@
     "hint": "Spin for fun and win prizes every day",
     "sampleNote": "Sample prizes and wallet balances",
     "liveWinners": {
+      "heading": "Prize Winners",
+      "latestGems": "Latest Gems winners",
+      "latestCredit": "Latest Credit winners",
       "title": "Recent Winners",
       "gemsWon": "+{amount} Gems",
       "received": "Won",
@@ -150,6 +155,7 @@
     },
     "history": {
       "title": "My Spin History",
+      "latest": "My latest spins",
       "usedGems": "Gems",
       "usedTicket": "Ticket",
       "prevPage": "Previous page",

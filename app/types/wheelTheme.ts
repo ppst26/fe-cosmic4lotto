@@ -82,12 +82,33 @@ export interface WheelHubTheme {
   sizePercent?: number;
 }
 
+/** เอฟเฟกต์รัศมี (rays) ด้านหลังวงล้อ — ไม่ส่ง/ไม่ enabled = ไม่แสดง */
+export interface WheelRaysTheme {
+  enabled?: boolean;
+  /** จำนวนแฉก (4–48 · ค่าเริ่มต้น 16) */
+  count?: number;
+  /** สีแฉก */
+  color?: CssColor;
+  /** ความเข้มรวม 0–1 (ค่าเริ่มต้น 0.4) */
+  opacity?: number;
+  /** ความกว้างแฉกเป็น % ของช่วงต่อแฉก (10–90 · ค่าเริ่มต้น 45) */
+  widthPercent?: number;
+  /** เส้นผ่านศูนย์กลางของรัศมีเป็น % ของวงล้อ (100–300 · ค่าเริ่มต้น 170) */
+  sizePercent?: number;
+  /** วินาทีต่อหนึ่งรอบ (4–300) · 0 = ไม่หมุน · ไม่ส่ง = 60 */
+  rotateSeconds?: number;
+  /** ทิศทางหมุน — cw = ตามเข็ม (ค่าเริ่มต้น) · ccw = ทวนเข็ม */
+  direction?: "cw" | "ccw";
+}
+
 export interface WheelTheme {
   rim?: WheelRimTheme;
   lights?: WheelLightsTheme;
   segments?: WheelSegmentsTheme;
   pointer?: WheelPointerTheme;
   hub?: WheelHubTheme;
+  /** เอฟเฟกต์รัศมีด้านหลังวงล้อ */
+  rays?: WheelRaysTheme;
   /** พื้นหลังด้านหลังวงล้อ */
   background?: { color?: CssPaint; imageUrl?: ImageUrl };
   /** เวลาหมุน (ms · 2000–10000 · ค่าเริ่มต้น 4200) */

@@ -107,3 +107,33 @@ export function resolveWheelTheme(theme: WheelTheme | undefined): ResolvedWheelT
 export function segmentFill(index: number, segment: WheelSegmentStyle, colors: CssColor[]): CssColor | undefined {
   return safeCssColor(segment.color) ?? (colors.length > 0 ? colors[index % colors.length] : undefined);
 }
+
+/** ผลลัพธ์รัศมีด้านหลังวงล้อ — null = ไม่แสดง · vars ส่งเข้า style ของ .lucky-wheel__rays */
+export interface ResolvedWheelRays {
+  vars: CSSProperties;
+  /** true = ไม่หมุน */
+  isStatic: boolean;
+  reverse: boolean;
+}
+
+export function resolveWheelRays(theme: WheelTheme | undefined): ResolvedWheelRays | null {
+  const rays = theme?.rays;
+  if (!rays || rays.enabled !== true) return null;
+  const count = Math.round(safeNumber(rays.count, 4, 48) ?? 16);
+  const step = 360 / count;
+  const width = (step * (safeNumber(rays.widthPercent, 10, 90) ?? 45)) / 100;
+  const rotate = safeNumber(rays.rotateSeconds, 0, 300);
+  const vars: Record<string, string | undefined> = {
+    "--wheel-rays-step": `${step}deg`,
+    "--wheel-rays-width": `${width}deg`,
+    "--wheel-rays-color": safeCssColor(rays.color),
+    "--wheel-rays-opacity": String(safeNumber(rays.opacity, 0, 1) ?? 0.4),
+    "--wheel-rays-size": `${safeNumber(rays.sizePercent, 100, 300) ?? 170}%`,
+    "--wheel-rays-duration": `${rotate !== undefined && rotate >= 4 ? rotate : 60}s`,
+  };
+  return {
+    vars: Object.fromEntries(Object.entries(vars).filter(([, v]) => v !== undefined)) as CSSProperties,
+    isStatic: rotate === 0,
+    reverse: rays.direction === "ccw",
+  };
+}
