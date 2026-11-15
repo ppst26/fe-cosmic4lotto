@@ -88,7 +88,7 @@ function LuckyWheelPlay({ wheel, embedded }: { wheel: WheelData; embedded: boole
     "mt-2.5 cursor-pointer border-0 bg-transparent text-xs font-semibold text-[var(--text-muted)] underline underline-offset-4 hover:text-[var(--text-primary)]";
 
   return (
-    <div className={cn("flex flex-col gap-6 pb-4", embedded && "gap-4")}>
+    <div className={cn("lucky-wheel-page flex flex-col gap-6 pb-4", embedded && "gap-4")}>
       {!embedded ? (
         <p className="text-center text-xs text-[var(--text-muted)] sm:text-[13px]">{t("wheel.subtitle")}</p>
       ) : null}
