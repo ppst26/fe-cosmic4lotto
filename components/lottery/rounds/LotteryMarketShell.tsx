@@ -92,9 +92,21 @@ export function LotteryMarketShell({ activeEntry, roundCount, children }: Lotter
           "lg:flex lg:h-full lg:flex-col lg:overflow-hidden lg:px-1 lg:py-2",
         )}
       >
+        {/* ทั้งการ์ดหัวตลาดกดเปิดกติกา / อัตราจ่ายได้ (ไม่ต้องกดที่ข้อความ) */}
         <header
+          role="button"
+          tabIndex={0}
+          aria-haspopup="dialog"
+          aria-label={`${t(activeEntry.titleKey)} — ${t("market.rules")}`}
+          onClick={() => setRulesOpen(true)}
+          onKeyDown={(e) => {
+            if (e.key === "Enter" || e.key === " ") {
+              e.preventDefault();
+              setRulesOpen(true);
+            }
+          }}
           className={cn(
-            "lottery-market-banner",
+            "lottery-market-banner cursor-pointer",
             "flex shrink-0 flex-nowrap items-center border-0 bg-[var(--lottery-card-fill)]",
             "max-lg:relative max-lg:z-[2] max-lg:min-h-[4.5rem] max-lg:items-center max-lg:justify-end max-lg:overflow-hidden",
             "max-lg:rounded-[calc(var(--radius-panel)-4px)] max-lg:px-3 max-lg:py-3",
@@ -143,21 +155,18 @@ export function LotteryMarketShell({ activeEntry, roundCount, children }: Lotter
             >
               {t(activeEntry.titleKey)}
             </h1>
-            <button
-              type="button"
-              onClick={() => setRulesOpen(true)}
-              aria-haspopup="dialog"
+            <span
               className={cn(
-                "lottery-market-banner__rules cursor-pointer border-0 bg-transparent p-0 text-left text-[var(--text-muted)] no-underline hover:text-[var(--brand)] hover:underline",
+                "lottery-market-banner__rules text-left text-[var(--text-muted)] no-underline hover:text-[var(--brand)] hover:underline",
                 "max-lg:mt-1 max-lg:block max-lg:leading-snug",
                 "lg:mt-1 lg:inline-block lg:text-xs",
               )}
             >
               {t("market.rules")}
-            </button>
-            <LotteryRulesModal open={rulesOpen} onClose={() => setRulesOpen(false)} marketSlug={activeEntry.slug} />
+            </span>
           </div>
         </header>
+        <LotteryRulesModal open={rulesOpen} onClose={() => setRulesOpen(false)} marketSlug={activeEntry.slug} />
 
         <p className="lottery-market-round-count mb-3 text-[var(--text-muted)] max-lg:hidden">
           {t("rounds.openCountPrefix")}{" "}
