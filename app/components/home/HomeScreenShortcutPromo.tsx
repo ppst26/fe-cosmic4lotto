@@ -146,7 +146,7 @@ export function HomeScreenShortcutPromo({ className }: { className?: string }) {
                 className={cn(
                   "inline-flex cursor-pointer items-center gap-2 rounded-xl border-solid px-3 py-2 text-xs font-semibold disabled:opacity-60",
                   platform === "android"
-                    ? "border-2 border-[var(--brand)] bg-black/50 text-white shadow-[0_0_12px_rgba(255,209,92,0.3)] hover:bg-black/65"
+                    ? "border-2 border-[var(--brand)] bg-black/50 text-white  hover:bg-black/65"
                     : "border border-white/15 bg-black/40 text-white/75 hover:bg-black/55",
                 )}
               >
@@ -160,7 +160,7 @@ export function HomeScreenShortcutPromo({ className }: { className?: string }) {
                 className={cn(
                   "inline-flex cursor-pointer items-center gap-2 rounded-xl border-solid px-3 py-2 text-xs font-semibold",
                   platform === "ios"
-                    ? "border-2 border-[var(--brand)] bg-black/50 text-white shadow-[0_0_12px_rgba(255,209,92,0.3)] hover:bg-black/65"
+                    ? "border-2 border-[var(--brand)] bg-black/50 text-white  hover:bg-black/65"
                     : "border border-white/15 bg-black/40 text-white/75 hover:bg-black/55",
                 )}
               >
@@ -172,7 +172,7 @@ export function HomeScreenShortcutPromo({ className }: { className?: string }) {
 
           <div className="relative hidden w-[108px] shrink-0 sm:block sm:w-[120px]">
             <div
-              className="absolute inset-y-2 right-0 aspect-square w-full rounded-full border-[3px] border-[var(--brand)] bg-gradient-to-br from-[#3a3118] via-[#1a1a1d] to-[#0d0d0f] shadow-[0_0_24px_rgba(255,209,92,0.4)]"
+              className="absolute inset-y-2 right-0 aspect-square w-full rounded-full border-[3px] border-[var(--brand)] bg-gradient-to-br from-[#3a3118] via-[#1a1a1d] to-[#0d0d0f]"
               aria-hidden
             >
               <div className="flex h-full items-center justify-center px-2">

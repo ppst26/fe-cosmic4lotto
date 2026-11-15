@@ -174,7 +174,7 @@
     var(--Main-Primary-Light, #f6db96) 0%,
     var(--Main-Primary-Dark, #9b7a24) 100%
   );
-  box-shadow: 0 0 4px rgba(0, 0, 0, 0.25);
+  box-shadow: none;
   color: var(--Text-Icon-Title, #1a1a1d);
   border: 1px solid rgba(255, 255, 255, 0.25);
 }
@@ -186,7 +186,7 @@
     var(--BG-Surface-Darker, #171719) 100%
   );
   border: 1px solid var(--balance-wrapper-stroke);
-  box-shadow: 0 0 4px rgba(0, 0, 0, 0.25);
+  box-shadow: none;
   color: var(--Text-Icon-Title, #fff);
 }
 
@@ -308,7 +308,7 @@
     border-radius: 9999px;
     border: 1px solid color-mix(in srgb, var(--t-accent, var(--Main-Secondary)) 70%, transparent);
     background: color-mix(in srgb, #000 35%, transparent);
-    box-shadow: 0 0 10px color-mix(in srgb, var(--t-accent, var(--Main-Secondary)) 35%, transparent);
+    box-shadow: none;
     color: #fff;
     font-size: 12px;
     font-weight: 600;
@@ -448,7 +448,7 @@
     color: var(--t-action-text, #fff);
     font-size: 12px;
     font-weight: 600;
-    box-shadow: 0 0 12px color-mix(in srgb, var(--t-accent, var(--Main-Secondary)) 55%, transparent);
+    box-shadow: none;
   }
 
   .lotto-site-header .dh-ticket__plus {

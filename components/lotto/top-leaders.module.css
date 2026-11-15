@@ -92,7 +92,7 @@
   border-radius: 50%;
   padding: 2px;
   background: var(--lead);
-  box-shadow: 0 0 14px color-mix(in srgb, var(--lead) 55%, transparent);
+  box-shadow: none;
 }
 
 .avatar {
