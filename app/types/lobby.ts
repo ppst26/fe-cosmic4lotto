@@ -110,7 +110,8 @@ export interface GameSectionData {
   /** key แปลหัวข้อ section (mock) — ไม่มีใช้ title จาก backend */
   titleKey?: MessageKey<"home">;
   icon: SectionIconId;
-  viewAllHref: string;
+  /** ไม่ส่ง = ไม่แสดงปุ่ม View All (เช่น เกมยอดฮิต) */
+  viewAllHref?: string;
   games: GameItem[];
   /** จำกัดการ์ดใน carousel — default จาก HOME_LOBBY_GAME_CAROUSEL_MAX */
   carouselMax?: number;

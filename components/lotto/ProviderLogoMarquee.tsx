@@ -26,14 +26,14 @@ const PROVIDER_LOGOS: LogoItem[] = [
 
 /**
  * แถวโลโก้ค่ายเลื่อนอัตโนมัติ — พอร์ตจาก glass ProviderLogoMarquee
- * grayscale ปกติ · hover โลโก้ขาว · หยุดเลื่อนเมื่อ hover (CSS ใน styles/motion-glass.css)
+ * โลโก้สีจริง ระยะห่างกว้าง · หยุดเลื่อนเมื่อ hover (CSS ใน styles/motion-glass.css)
  */
 export function ProviderLogoMarquee() {
   const t = useT("home");
 
   const renderGroup = (groupKey: string, ariaHidden?: boolean) => (
     <div
-      className="provider-logo-marquee__group flex shrink-0 items-center gap-[clamp(0.75rem,2vw,1.25rem)] px-[clamp(0.375rem,1vw,0.75rem)]"
+      className="provider-logo-marquee__group flex shrink-0 items-center gap-[clamp(3rem,9vw,4.5rem)] px-[clamp(1.5rem,4.5vw,2.25rem)]"
       aria-hidden={ariaHidden || undefined}
     >
       {PROVIDER_LOGOS.map((item) => (

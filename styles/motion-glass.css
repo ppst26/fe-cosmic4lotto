@@ -663,17 +663,9 @@
 }
 
 .provider-logo-marquee__img {
-  opacity: 0.58;
-  filter: grayscale(1);
-  transition:
-    filter var(--motion-fast) ease,
-    opacity var(--motion-fast) ease;
-}
-
-.provider-logo-marquee__link:hover .provider-logo-marquee__img,
-.provider-logo-marquee__link:focus-visible .provider-logo-marquee__img {
+  /* โลโก้สีจริง — ไม่ทำ grayscale */
   opacity: 1;
-  filter: grayscale(1) brightness(0) invert(1);
+  filter: none;
 }
 
 @keyframes provider-logo-marquee-scroll {

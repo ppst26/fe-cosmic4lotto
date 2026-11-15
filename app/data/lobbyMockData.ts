@@ -208,7 +208,6 @@ export const GAME_SECTIONS_DATA: GameSectionData[] = [
     title: "เกมยอดฮิต",
     titleKey: "sections.hotGames",
     icon: "flame",
-    viewAllHref: "/games?filter=hot",
     games: HOT_GAMES_FEATURED_ITEMS,
     carouselMax: HOT_GAMES_FEATURED_ITEMS.length,
   },
