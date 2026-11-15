@@ -99,7 +99,16 @@ export function PwaInstallBanner() {
         </button>
 
         <div className="min-w-0 flex-1">
-          <Image src="/cosmic-dark.png" alt="cosmicbet" width={600} height={116} className="h-6 w-auto" priority />
+          <div className="flex items-center gap-2">
+            <Image src="/cosmic-dark.png" alt="cosmicbet" width={600} height={116} className="h-6 w-auto" priority />
+            {/* ลิงก์ดูวิธีโหลด — ต่อท้ายโลโก้ ตัวอักษรสีม่วงเด่น เปิดหน้า /download */}
+            <Link
+              href="/download"
+              className="whitespace-nowrap text-xs font-extrabold text-[color-mix(in_srgb,var(--t-action,var(--brand,var(--action-solid,#7c3aed)))_55%,#ffffff)] underline decoration-2 underline-offset-2"
+            >
+              {t("a2hs.howTo")}
+            </Link>
+          </div>
           <p className="mt-1 line-clamp-2 text-[11px] leading-snug text-white/75">{t("a2hs.bannerSubtitle")}</p>
         </div>
 
