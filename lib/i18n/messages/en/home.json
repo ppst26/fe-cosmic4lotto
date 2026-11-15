@@ -125,6 +125,28 @@
     "cardSubtitle": "Get a better experience. Add it now",
     "addButton": "Add shortcut",
     "bannerSubtitle": "Install the app for more benefits and bigger bonuses",
+    "page": {
+      "title": "Download the app",
+      "subtitle": "Tap the button to install the app!",
+      "install": "Install app",
+      "back": "Back to home",
+      "iosNote": "On iPhone, open this page in Safari",
+      "stepLabel": "Step {n}",
+      "contact": "Contact us",
+      "android": {
+        "s1": "Tap “Add shortcut” or “Install app”",
+        "s2": "Tap “Install” in the pop-up",
+        "s3": "Wait a moment while the app installs",
+        "s4": "Open the app from the Cosmicbet icon on your home screen"
+      },
+      "ios": {
+        "s1": "Tap the “…” button on Safari's bottom bar",
+        "s2": "Choose “Share”",
+        "s3": "Tap “More”",
+        "s4": "Choose “Add to Home Screen”",
+        "s5": "Tap “Add” at the top right, then open the app from your home screen"
+      }
+    },
     "closeAria": "Close",
     "platformsAriaLabel": "Choose your device",
     "stepsTitle": "How to add the shortcut ({platform})",

@@ -3,20 +3,12 @@
 import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
 import { X } from "lucide-react";
-import { usePwaInstall } from "./PwaInstallProvider";
+import Link, { usePathname } from "@/lib/i18n/navigation";
 import { useT } from "@/lib/i18n/I18nProvider";
-import type { MessageKey } from "@/lib/i18n/messages";
 
 /** ซ่อนแบนเนอร์หลังผู้ใช้กดปิด — แสดงอีกครั้งเมื่อครบเวลานี้ */
 const DISMISS_KEY = "pwa-install-banner-dismissed-at";
 const DISMISS_TTL_MS = 24 * 60 * 60 * 1000;
-
-type InstallPlatform = "android" | "ios";
-
-const INSTALL_STEPS: Record<InstallPlatform, MessageKey<"home">[]> = {
-  android: ["a2hs.steps.android1", "a2hs.steps.android2", "a2hs.steps.android3"],
-  ios: ["a2hs.steps.ios1", "a2hs.steps.ios2", "a2hs.steps.ios3"],
-};
 
 /** อ่าน/เขียน localStorage แบบกัน error (โหมดส่วนตัว / ปิด storage) */
 function wasDismissedRecently(): boolean {
@@ -43,24 +35,33 @@ function isStandalone(): boolean {
 
 /**
  * แบนเนอร์ชวนติดตั้งแอป (PWA) ด้านบนสุดของหน้า — มือถือเท่านั้น แสดงตอนโหลดหน้า
- * ปุ่มปิดซ้าย · กลาง = โลโก้แบรนด์ + คำอธิบาย · ขวา = ปุ่ม「เพิ่มปุ่มลัด」
+ * ปุ่มปิดซ้าย · กลาง = โลโก้แบรนด์ + คำอธิบาย · ขวา = ปุ่ม「เพิ่มปุ่มลัด」→ หน้า /download (ขั้นตอน + ปุ่มติดตั้ง)
  * sticky ชิดบนสุด และตั้ง --pwa-banner-h บน <html> ให้ header แบบ fixed/sticky เลื่อนลงมาต่อใต้แบนเนอร์
- * Android ที่เบราว์เซอร์พร้อม → เปิดหน้าต่างติดตั้งทันที · อย่างอื่นแสดงขั้นตอนใต้แบนเนอร์
  */
 export function PwaInstallBanner() {
   const t = useT("home");
-  const { canPrompt, promptInstall } = usePwaInstall();
+  const pathname = usePathname();
   const [visible, setVisible] = useState(false);
-  const [platform, setPlatform] = useState<InstallPlatform>("ios");
-  const [stepsOpen, setStepsOpen] = useState(false);
-  const [installing, setInstalling] = useState(false);
   const rootRef = useRef<HTMLElement>(null);
+  const onDownloadPage = pathname === "/download";
+
+  /** ตัดสินใจหลัง mount เท่านั้น (อ่าน storage / display-mode) กัน hydration mismatch */
+  /* eslint-disable react-hooks/set-state-in-effect -- ค่าอ่านได้เฉพาะฝั่ง browser หลัง mount */
+  useEffect(() => {
+    setVisible(!isStandalone() && !wasDismissedRecently());
+    const onInstalled = () => setVisible(false);
+    window.addEventListener("appinstalled", onInstalled);
+    return () => window.removeEventListener("appinstalled", onInstalled);
+  }, []);
+  /* eslint-enable react-hooks/set-state-in-effect */
+
+  const shown = visible && !onDownloadPage;
 
   /** บอกความสูงแบนเนอร์ให้ header ที่ fixed/sticky (--pwa-banner-h) — เป็น 0 เมื่อซ่อน/จอใหญ่ */
   useEffect(() => {
     const el = rootRef.current;
     const root = document.documentElement;
-    if (!visible || !el) {
+    if (!shown || !el) {
       root.style.removeProperty("--pwa-banner-h");
       return;
     }
@@ -72,38 +73,13 @@ export function PwaInstallBanner() {
       observer.disconnect();
       root.style.removeProperty("--pwa-banner-h");
     };
-  }, [visible, stepsOpen]);
+  }, [shown]);
 
-  /** ตัดสินใจหลัง mount เท่านั้น (อ่าน storage / display-mode) กัน hydration mismatch */
-  /* eslint-disable react-hooks/set-state-in-effect -- ค่าอ่านได้เฉพาะฝั่ง browser หลัง mount */
-  useEffect(() => {
-    setPlatform(/android/i.test(window.navigator.userAgent) ? "android" : "ios");
-    setVisible(!isStandalone() && !wasDismissedRecently());
-    const onInstalled = () => setVisible(false);
-    window.addEventListener("appinstalled", onInstalled);
-    return () => window.removeEventListener("appinstalled", onInstalled);
-  }, []);
-  /* eslint-enable react-hooks/set-state-in-effect */
-
-  if (!visible) return null;
+  if (!shown) return null;
 
   const dismiss = () => {
     rememberDismissed();
     setVisible(false);
-  };
-
-  const handleAdd = async () => {
-    if (platform === "android" && canPrompt) {
-      setInstalling(true);
-      const outcome = await promptInstall();
-      setInstalling(false);
-      if (outcome === "accepted") {
-        setVisible(false);
-        return;
-      }
-      if (outcome === "dismissed") return;
-    }
-    setStepsOpen((open) => !open);
   };
 
   return (
@@ -127,29 +103,13 @@ export function PwaInstallBanner() {
           <p className="mt-1 line-clamp-2 text-[11px] leading-snug text-white/75">{t("a2hs.bannerSubtitle")}</p>
         </div>
 
-        <button
-          type="button"
-          onClick={() => void handleAdd()}
-          disabled={installing}
-          aria-expanded={stepsOpen}
-          className="shrink-0 cursor-pointer whitespace-nowrap rounded-lg border-0 bg-[var(--t-action,var(--brand,var(--action-solid,#7c3aed)))] px-4 py-2 text-xs font-bold text-white disabled:opacity-60"
+        <Link
+          href="/download"
+          className="shrink-0 whitespace-nowrap rounded-lg bg-[var(--t-action,var(--brand,var(--action-solid,#7c3aed)))] px-4 py-2 text-xs font-bold text-white no-underline"
         >
           {t("a2hs.addButton")}
-        </button>
+        </Link>
       </div>
-
-      {stepsOpen ? (
-        <ol className="m-0 flex list-none flex-col gap-1.5 border-t border-white/10 px-4 py-3 text-[11px] leading-snug text-white/80">
-          {INSTALL_STEPS[platform].map((step, index) => (
-            <li key={step} className="flex items-start gap-2">
-              <span className="grid size-4 shrink-0 place-items-center rounded-full bg-white/15 text-[10px] font-bold">
-                {index + 1}
-              </span>
-              <span>{t(step)}</span>
-            </li>
-          ))}
-        </ol>
-      ) : null}
     </section>
   );
 }
