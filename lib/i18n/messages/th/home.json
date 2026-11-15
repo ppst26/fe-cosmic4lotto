@@ -63,7 +63,7 @@
     "loginToSeeEvents": "เข้าสู่ระบบหรือสมัครสมาชิกเพื่อดูกิจกรรม"
   },
   "events": {
-    "title": "กิจกรรม",
+    "title": "ทายผล",
     "slidesAriaLabel": "สไลด์{title}",
     "goTo": "ไปยัง{name}"
   },
