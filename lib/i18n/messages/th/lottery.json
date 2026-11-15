@@ -111,6 +111,46 @@
     "empty": "ยังไม่มีผลหวย",
     "today": "วันนี้"
   },
+  "resultsPage": {
+    "title": "ผลรางวัล",
+    "subtitle": "ผลหวยทุกชนิดของแต่ละวัน ดูได้ว่าออกแล้วหรือรอผล",
+    "categories": {
+      "all": "ทั้งหมด",
+      "government": "รัฐบาล",
+      "thaiStock": "หุ้นไทย",
+      "foreignStock": "หุ้นต่างประเทศ",
+      "laos": "ลาว",
+      "hanoi": "ฮานอย",
+      "yiki": "ยี่กี"
+    },
+    "summary": "ออกแล้ว {done} จาก {total} หวย",
+    "yikiSummary": "ออกแล้ว {done} จาก {total} รอบ",
+    "yikiInterval": "{minutes} นาที",
+    "yikiEmpty": "ยังไม่มีรอบที่ออกผล",
+    "round": "รอบที่ {n}",
+    "doneAt": "ออกผลแล้ว {time}",
+    "waitAt": "รอผล {time}",
+    "showMore": "ดูรอบที่เหลืออีก {count} รอบ",
+    "showLess": "ย่อรายการ",
+    "dateLabel": "ผลรางวัลวันที่",
+    "today": "วันนี้",
+    "pickDate": "เลือกวันที่",
+    "prevDay": "วันก่อนหน้า",
+    "nextDay": "วันถัดไป",
+    "filterAria": "กรองตามหมวดหวย",
+    "loading": "กำลังโหลดผลรางวัล…",
+    "loadError": "โหลดผลรางวัลไม่สำเร็จ",
+    "empty": "ไม่มีผลหวยในหมวดนี้",
+    "fig": {
+      "first": "รางวัลที่ 1",
+      "drawn": "เลขที่ออก",
+      "top3": "3 ตัวบน",
+      "top2": "2 ตัวบน",
+      "bottom2": "2 ตัวล่าง",
+      "front3": "3 ตัวหน้า",
+      "back3": "3 ตัวท้าย"
+    }
+  },
   "thaiResult": {
     "title": "ผลรางวัลงวดก่อน",
     "firstPrize": "รางวัลที่ 1",

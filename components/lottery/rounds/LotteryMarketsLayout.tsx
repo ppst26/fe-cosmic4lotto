@@ -8,7 +8,7 @@ import { useT } from "@/lib/i18n/I18nProvider";
 import { LotteryMarketRoundsView } from "./LotteryMarketRoundsView";
 
 /** segment ชั้นแรกใต้ /lottery ที่ไม่ใช่หน้ารายการรอบ */
-const NON_MARKET_SEGMENTS = new Set(["slips", "rules"]);
+const NON_MARKET_SEGMENTS = new Set(["slips", "rules", "results"]);
 
 /**
  * กรอบหน้ารายการรอบ (/lottery/[slug]) ที่คงอยู่ข้ามการเปลี่ยนตลาด — ใช้ใน app/[lang]/lottery/layout.tsx

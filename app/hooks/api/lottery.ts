@@ -4,6 +4,7 @@ import {
   fetchLotteryCatalog,
   fetchLotteryHub,
   fetchLotteryPlayRounds,
+  fetchLotteryResults,
   fetchThaiLottoBoard,
   fetchYikiBoard,
 } from "@/lib/api/lotteryContent";
@@ -31,3 +32,6 @@ export const usePrefetchLotteryRounds = () => usePrefetchApi(LOTTERY_ROUNDS_TARG
 
 export const useYikiBoard = () => useApi(["yiki-board"], fetchYikiBoard);
 export const useThaiLottoBoard = () => useApi(["thai-lotto-board"], fetchThaiLottoBoard);
+
+/** ผลรางวัลของวันที่ระบุ (YYYY-MM-DD) — key ตามวันที่ จึงเลื่อนวันกลับมาใช้ cache เดิมได้ */
+export const useLotteryResults = (date: string) => useApi(["lottery-results", date], () => fetchLotteryResults(date));

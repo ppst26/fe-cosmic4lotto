@@ -151,3 +151,69 @@ export interface LotteryMarketConfig {
   /** นาทีก่อนปิดรับนับจากตอนนี้ — mock; ติดลบ/0 = ปิดรับแล้ว */
   closesInMinutes: number;
 }
+
+/* ---------- หน้าผลรางวัล (/lottery/results) ---------- */
+
+/** หมวดในตัวกรองหน้าผลรางวัล — ยี่กี แยกเป็นส่วนของตัวเอง (ไม่ใช่การ์ดต่อตลาด) */
+export type LotteryResultCategory = "government" | "thai-stock" | "foreign-stock" | "laos" | "hanoi";
+
+/** pending = ยังไม่ถึงเวลาออกผล · done = ออกผลแล้ว (backend เป็นผู้ตัดสิน) */
+export type LotteryResultStatus = "pending" | "done";
+
+/** ช่องตัวเลขในการ์ดผล — label แปลจาก results.fig.{id} */
+export type LotteryResultFigureId = "first" | "drawn" | "top3" | "top2" | "bottom2" | "front3" | "back3";
+
+export interface LotteryResultFigure {
+  id: LotteryResultFigureId;
+  /** null = ยังไม่ออกผล */
+  value: string | null;
+  /** จำนวนหลัก — ใช้แสดงขีดแทนตัวเลขตอนยังไม่ออกผล */
+  digits: number;
+  /** ช่องกว้างเต็มแถว (รางวัลที่ 1 / เลขที่ออก) */
+  wide?: boolean;
+}
+
+/** ผลของหวยหนึ่งตลาดในหนึ่งวัน */
+export interface LotteryDrawResult {
+  id: string;
+  /** segment หลัง /lottery/ — ใช้แมปไอคอน */
+  marketSlug: string;
+  titleKey: LotteryMessageKey;
+  category: LotteryResultCategory;
+  flagLabel: string;
+  flagTone: LotteryFlagTone;
+  /** วันที่งวด YYYY-MM-DD */
+  drawDate: string;
+  /** เวลาออกผล HH:MM (เวลาไทย) */
+  drawTime: string;
+  status: LotteryResultStatus;
+  figures: LotteryResultFigure[];
+}
+
+export interface LotteryYikiRoundResult {
+  /** รอบที่ (เริ่ม 1) */
+  round: number;
+  /** เวลาออกผล HH:MM */
+  time: string;
+  status: LotteryResultStatus;
+  top3: string | null;
+  bottom2: string | null;
+}
+
+/** ผลยี่กีของแต่ละความถี่ (5 / 15 / 30 นาที) */
+export interface LotteryYikiResults {
+  slug: string;
+  titleKey: LotteryMessageKey;
+  intervalMinutes: number;
+  /** จำนวนรอบทั้งวัน */
+  total: number;
+  /** เรียงจากรอบที่ 1 */
+  rounds: LotteryYikiRoundResult[];
+}
+
+/** รูปข้อมูลที่ backend ต้องส่ง — GET /api/lottery/results?date=YYYY-MM-DD */
+export interface LotteryResultsDay {
+  date: string;
+  draws: LotteryDrawResult[];
+  yiki: LotteryYikiResults[];
+}

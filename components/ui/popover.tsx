@@ -7,16 +7,19 @@ import { cn } from "@/lib/utils";
 /** shadcn/ui Popover (Radix) */
 const Popover = PopoverPrimitive.Root;
 const PopoverTrigger = PopoverPrimitive.Trigger;
+/** จุดอ้างอิงตำแหน่ง — ครอบทั้งแถบที่ต้องการให้ popover ยึดความกว้าง/ตำแหน่ง */
+const PopoverAnchor = PopoverPrimitive.Anchor;
 
 const PopoverContent = React.forwardRef<
   React.ComponentRef<typeof PopoverPrimitive.Content>,
   React.ComponentPropsWithoutRef<typeof PopoverPrimitive.Content>
->(({ className, align = "start", sideOffset = 6, ...props }, ref) => (
+>(({ className, align = "start", sideOffset = 6, collisionPadding = 12, ...props }, ref) => (
   <PopoverPrimitive.Portal>
     <PopoverPrimitive.Content
       ref={ref}
       align={align}
       sideOffset={sideOffset}
+      collisionPadding={collisionPadding}
       className={cn(
         "overlay-theme z-[400] rounded-xl border border-white/10 p-3 text-[var(--text-on-light)] shadow-[0_16px_40px_rgba(0,0,0,0.45)] outline-none",
         className,
@@ -27,4 +30,4 @@ const PopoverContent = React.forwardRef<
 ));
 PopoverContent.displayName = "PopoverContent";
 
-export { Popover, PopoverTrigger, PopoverContent };
+export { Popover, PopoverAnchor, PopoverTrigger, PopoverContent };

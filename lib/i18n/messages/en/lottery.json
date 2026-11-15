@@ -111,6 +111,46 @@
     "empty": "No results yet",
     "today": "Today"
   },
+  "resultsPage": {
+    "title": "Results",
+    "subtitle": "Today’s results for every lottery — see what has been drawn and what is pending",
+    "categories": {
+      "all": "All",
+      "government": "Government",
+      "thaiStock": "Thai stock",
+      "foreignStock": "Foreign stocks",
+      "laos": "Laos",
+      "hanoi": "Hanoi",
+      "yiki": "Yiki"
+    },
+    "summary": "{done} of {total} drawn",
+    "yikiSummary": "{done} of {total} rounds drawn",
+    "yikiInterval": "{minutes} min",
+    "yikiEmpty": "No rounds drawn yet",
+    "round": "Round {n}",
+    "doneAt": "Drawn {time}",
+    "waitAt": "Pending {time}",
+    "showMore": "Show {count} more rounds",
+    "showLess": "Show less",
+    "dateLabel": "Results for",
+    "today": "Today",
+    "pickDate": "Pick a date",
+    "prevDay": "Previous day",
+    "nextDay": "Next day",
+    "filterAria": "Filter by lottery type",
+    "loading": "Loading results…",
+    "loadError": "Could not load results",
+    "empty": "No results in this category",
+    "fig": {
+      "first": "1st prize",
+      "drawn": "Drawn number",
+      "top3": "3 top",
+      "top2": "2 top",
+      "bottom2": "2 bottom",
+      "front3": "3 front",
+      "back3": "3 back"
+    }
+  },
   "thaiResult": {
     "title": "Previous Draw Results",
     "firstPrize": "1st Prize",

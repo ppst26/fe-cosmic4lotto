@@ -5,6 +5,8 @@ import {
   LOTTERY_LATEST_RESULTS,
 } from "@/app/data/lotteryHubMockData";
 import { LOTTERY_MARKETS } from "@/app/data/lotteryMarketsMockData";
+import { buildLotteryResultsForDate } from "@/app/data/lotteryResultsMockData";
+import type { LotteryResultsDay } from "@/app/types/lottery";
 import { getLotteryPlayRounds } from "@/app/data/lotteryRoundsMockData";
 import { THAI_LOTTO_BET_TYPES, THAI_LOTTO_GROUPS, THAI_LOTTO_LAST_RESULT } from "@/app/data/thaiLottoMockData";
 import { YIKI_BET_TYPES, YIKI_GROUPS, YIKI_SETTLEMENT_TYPES } from "@/app/data/yikiMockData";
@@ -107,4 +109,12 @@ export type ThaiLottoBoardData = ReturnType<typeof thaiLottoBoardMock>;
  */
 export function fetchThaiLottoBoard(): Promise<ApiResult<ThaiLottoBoardData>> {
   return mockResult(thaiLottoBoardMock());
+}
+
+/**
+ * ผลรางวัลทุกตลาดของวันที่ระบุ (YYYY-MM-DD) — หน้า /lottery/results
+ * ต่อ backend: return apiFetch<LotteryResultsDay>(`/api/lottery/results?date=${date}`)
+ */
+export function fetchLotteryResults(date: string): Promise<ApiResult<LotteryResultsDay>> {
+  return mockResult(buildLotteryResultsForDate(date));
 }
