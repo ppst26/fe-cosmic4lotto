@@ -20,17 +20,24 @@
     "hanoi": "Hanoi Lottery",
     "malaysia": "Malaysia Lottery",
     "dowJones": "Dow Jones Lottery",
-    "china": "China Stock Lottery",
+    "china": "China Stock Lottery (Morning)",
     "germany": "Germany Stock Lottery",
     "russia": "Russia Stock Lottery",
     "korea": "Korea Stock Lottery",
-    "nikkei": "Nikkei Lottery",
+    "nikkei": "Nikkei Lottery (Morning)",
     "uk": "UK Stock Lottery",
-    "hongKong": "Hang Seng Lottery",
+    "hongKong": "Hang Seng Lottery (Morning)",
     "taiwan": "Taiwan Stock Lottery",
     "singapore": "Singapore Stock Lottery",
     "india": "India Stock Lottery",
-    "egypt": "Egypt Stock Lottery"
+    "egypt": "Egypt Stock Lottery",
+    "laosSuper": "Laos Super Lottery",
+    "hanoiSpecial": "Hanoi Special Lottery",
+    "hanoiVip": "Hanoi VIP Lottery",
+    "thaiStock": "Thai Stock Lottery",
+    "chinaPm": "China Stock Lottery (Afternoon)",
+    "nikkeiPm": "Nikkei Lottery (Afternoon)",
+    "hongKongPm": "Hang Seng Lottery (Afternoon)"
   },
   "status": {
     "open": "Open",
@@ -88,6 +95,8 @@
     "marketNotFound": "Lottery market not found"
   },
   "rules": {
+    "modalTitle": "Rules",
+    "accept": "I understand and accept",
     "payoutHeading": "Payout per 1 baht",
     "limitsHeading": "Bet amount per entry",
     "minBet": "Minimum",

@@ -347,3 +347,134 @@
     padding-bottom: 0;
   }
 }
+
+/* ───── Bottom sheet กติกา / อัตราการจ่าย (LotteryRulesModal) ─────
+ * เลื่อนขึ้นจากล่าง · ชิดซ้าย-ขวา · มุมล่างไม่โค้ง
+ * หัว = สีธีม (--t-action / --brand) · พื้น: dark = เทาเข้ม→ดำ · light = ขาว→เทาอ่อน */
+.lottery-rules-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 85;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  background: rgb(0 0 0 / 0.72);
+  animation: lottery-rules-fade 0.2s ease both;
+}
+.lottery-rules-backdrop[data-state="closed"] {
+  animation: lottery-rules-fade-out 0.24s ease both;
+  pointer-events: none;
+}
+.lottery-rules-sheet {
+  --lottery-rules-accent: var(--t-action, var(--brand, #7c3aed));
+  /* dark (ค่าเริ่มต้น) */
+  --lottery-rules-bg: linear-gradient(180deg, #2a2a2f 0%, #161618 48%, #050506 100%);
+  --text-primary: #f6f4fb;
+  --text-on-light: #f6f4fb;
+  --text-secondary: rgb(246 244 251 / 0.7);
+  --text-muted: rgb(246 244 251 / 0.66);
+  --border-subtle: rgb(255 255 255 / 0.1);
+  --brand-strong: color-mix(in srgb, var(--lottery-rules-accent) 55%, #ffffff);
+  --lottery-rules-chip: rgb(255 255 255 / 0.06);
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 720px;
+  max-height: min(88dvh, 820px);
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  border: 0;
+  border-radius: 24px 24px 0 0;
+  background: var(--lottery-rules-bg);
+  color: var(--text-primary);
+  box-shadow: 0 -14px 44px rgb(0 0 0 / 0.55);
+  animation: lottery-rules-up 0.34s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+html[data-mode="light"] .lottery-rules-sheet {
+  --lottery-rules-bg: linear-gradient(180deg, #ffffff 0%, #f4f4f7 52%, #e4e4ea 100%);
+  --text-primary: #1b1b22;
+  --text-on-light: #1b1b22;
+  --text-secondary: rgb(27 27 34 / 0.68);
+  --text-muted: rgb(27 27 34 / 0.62);
+  --border-subtle: rgb(0 0 0 / 0.1);
+  --brand-strong: color-mix(in srgb, var(--lottery-rules-accent) 80%, #000000);
+  --lottery-rules-chip: rgb(0 0 0 / 0.05);
+  box-shadow: 0 -14px 44px rgb(0 0 0 / 0.28);
+}
+.lottery-rules-backdrop[data-state="closed"] .lottery-rules-sheet {
+  animation: lottery-rules-down 0.24s cubic-bezier(0.4, 0, 1, 1) both;
+}
+.lottery-rules-sheet__head {
+  display: flex;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  padding: 1rem 1rem 0.875rem;
+  background: var(--lottery-rules-accent);
+  color: #ffffff;
+}
+.lottery-rules-sheet__title {
+  margin: 0;
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: #ffffff;
+}
+.lottery-rules-sheet__close {
+  display: grid;
+  width: 2.25rem;
+  height: 2.25rem;
+  place-items: center;
+  border: 0;
+  border-radius: 9999px;
+  background: transparent;
+  color: #ffffff;
+  cursor: pointer;
+}
+.lottery-rules-sheet__close:hover {
+  background: rgb(255 255 255 / 0.18);
+}
+.lottery-rules-sheet__body {
+  min-height: 0;
+  flex: 1;
+  overflow-x: hidden;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  padding: 1rem 1rem 0.25rem;
+}
+.lottery-rules-sheet__body .rounded-xl {
+  background: var(--lottery-rules-chip);
+}
+.lottery-rules-sheet__foot {
+  display: flex;
+  flex-shrink: 0;
+  justify-content: flex-end;
+  padding: 0.75rem 1rem max(1rem, env(safe-area-inset-bottom, 0px));
+}
+@keyframes lottery-rules-fade { from { opacity: 0; } to { opacity: 1; } }
+@keyframes lottery-rules-fade-out { from { opacity: 1; } to { opacity: 0; } }
+@keyframes lottery-rules-up { from { transform: translateY(100%); } to { transform: translateY(0); } }
+@keyframes lottery-rules-down { from { transform: translateY(0); } to { transform: translateY(100%); } }
+@media (prefers-reduced-motion: reduce) {
+  .lottery-rules-backdrop,
+  .lottery-rules-sheet,
+  .lottery-rules-backdrop[data-state="closed"] .lottery-rules-sheet { animation-duration: 0.01ms; }
+}
+
+/* ───── ชื่อตลาดสองระดับ (LotteryMarketTitle) — ชื่อหลักหนา · ส่วนขยายเล็กและบาง ───── */
+.lottery-market-title__main {
+  display: block;
+  font-weight: 500;
+  letter-spacing: -0.005em;
+  text-wrap: balance;
+}
+.lottery-market-title__sub {
+  display: block;
+  margin-top: 0.1rem;
+  font-size: 0.6875rem;
+  font-weight: 400;
+  line-height: 1.2;
+  letter-spacing: 0.02em;
+  opacity: 0.72;
+}

@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useRef } from "react";
+import React, { useRef, useState } from "react";
 import Image from "next/image";
 import Link from "@/lib/i18n/navigation";
 import { useContainedVerticalScroll } from "./useContainedVerticalScroll";
@@ -11,7 +11,8 @@ import { LotteryCountdown } from "@/components/lottery/hub/LotteryFlagOrb";
 import { LotteryMarketIcon } from "@/components/lottery/hub/LotteryMarketIcon";
 import { cn } from "@/lib/utils";
 import { useLotteryI18n } from "@/app/components/lottery/useLotteryI18n";
-import { lotteryRulesHref } from "@/lib/lottery/rules";
+import { LotteryRulesModal } from "@/app/components/lottery/LotteryRulesModal";
+import { LotteryMarketTitle } from "@/lib/lottery/marketTitle";
 
 interface LotteryMarketShellProps {
   activeEntry: LotteryCatalogEntry;
@@ -25,6 +26,7 @@ interface LotteryMarketShellProps {
  */
 export function LotteryMarketShell({ activeEntry, roundCount, children }: LotteryMarketShellProps) {
   const { t } = useLotteryI18n();
+  const [rulesOpen, setRulesOpen] = useState(false);
   const catalog = useLotteryCatalog();
   const sidebarScrollRef = useRef<HTMLDivElement>(null);
   const roundsScrollRef = useRef<HTMLDivElement>(null);
@@ -141,16 +143,19 @@ export function LotteryMarketShell({ activeEntry, roundCount, children }: Lotter
             >
               {t(activeEntry.titleKey)}
             </h1>
-            <Link
-              href={lotteryRulesHref(activeEntry.slug)}
+            <button
+              type="button"
+              onClick={() => setRulesOpen(true)}
+              aria-haspopup="dialog"
               className={cn(
-                "lottery-market-banner__rules text-[var(--text-muted)] no-underline hover:text-[var(--brand)] hover:underline",
+                "lottery-market-banner__rules cursor-pointer border-0 bg-transparent p-0 text-left text-[var(--text-muted)] no-underline hover:text-[var(--brand)] hover:underline",
                 "max-lg:mt-1 max-lg:block max-lg:leading-snug",
                 "lg:mt-1 lg:inline-block lg:text-xs",
               )}
             >
               {t("market.rules")}
-            </Link>
+            </button>
+            <LotteryRulesModal open={rulesOpen} onClose={() => setRulesOpen(false)} marketSlug={activeEntry.slug} />
           </div>
         </header>
 
@@ -225,10 +230,10 @@ function LotteryMarketSidebarLink({
         <span
           className={cn(
             "lottery-market-sidebar__title text-[var(--text-on-light)]",
-            "line-clamp-2 max-w-full leading-tight lg:leading-snug",
+            "max-w-full leading-tight lg:leading-snug",
           )}
         >
-          {t(entry.titleKey)}
+          <LotteryMarketTitle title={t(entry.titleKey)} />
         </span>
         {entry.status === "closed" ? (
           <span className="lottery-market-sidebar__meta text-[var(--text-muted)]">{t("status.closed")}</span>

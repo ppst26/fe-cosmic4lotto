@@ -7,6 +7,7 @@ import type { LotteryFlagTone } from "@/app/types/lottery";
 import { getLotteryIconSrc } from "@/app/data/lotteryIconAssets";
 import { useLotteryI18n } from "@/app/components/lottery/useLotteryI18n";
 import { cn } from "@/lib/utils";
+import { LotteryMarketTitle } from "@/lib/lottery/marketTitle";
 import { LotteryCountdown } from "./LotteryFlagOrb";
 import { LotteryMarketIcon } from "./LotteryMarketIcon";
 
@@ -81,7 +82,7 @@ export function LotteryHubMarketLink({
         )}
       >
         <span className={isFeature ? "lottery-feature-card__title" : "lottery-type-card__title"}>
-          {title}
+          <LotteryMarketTitle title={title} />
         </span>
         {isClosed ? (
           <span className="lottery-type-card__closed">{closedLabel ?? t("status.closed")}</span>

@@ -3,17 +3,28 @@
 import { useMemo } from "react";
 import { EmptyState } from "@/app/components/ui/StatusState";
 import { getLotteryRules } from "@/lib/lottery/rules";
-import { LotteryMarketIcon } from "@/components/lottery/hub/LotteryMarketIcon";
+import { getLotteryRuleDoc } from "@/lib/lottery/rulesContent";
 import { formatBaht } from "./lotteryUtils";
 import { useLotteryI18n } from "./useLotteryI18n";
 
+function BulletList({ items }: { items: string[] }) {
+  return (
+    <ul className="m-0 flex list-disc flex-col gap-1.5 pl-5 text-sm leading-relaxed text-[var(--text-on-light)] marker:text-[var(--brand-strong)]">
+      {items.map((line) => (
+        <li key={line}>{line}</li>
+      ))}
+    </ul>
+  );
+}
+
 /**
- * เนื้อหาหน้ากติกา / อัตราการจ่าย (/lottery/rules/[marketSlug]) — เปิดจากการ์ดหัวงวดในหน้าแทง
- * แสดงอัตราจ่ายต่อ 1 บาทของแต่ละประเภทการแทง + ยอดแทงต่อรายการ (ข้อมูลจาก lib/lottery/rules.ts)
+ * เนื้อหากติกา / อัตราการจ่ายของตลาดหวย — แสดงใน modal (LotteryRulesModal) และหน้า /lottery/rules/[marketSlug]
+ * ลำดับ: เวลาเปิด-ปิดรับ → วิธีดูผล + แหล่งอ้างอิง → อัตราจ่าย (ข้อมูลของเราจาก lib/lottery/rules.ts)
  */
 export function LotteryRulesContent({ marketSlug }: { marketSlug: string }) {
   const { t } = useLotteryI18n();
   const rules = useMemo(() => getLotteryRules(marketSlug), [marketSlug]);
+  const doc = getLotteryRuleDoc(marketSlug);
 
   if (!rules) {
     return (
@@ -26,30 +37,43 @@ export function LotteryRulesContent({ marketSlug }: { marketSlug: string }) {
     );
   }
 
-  return (
-    <div className="lottery-hub-theme flex flex-col gap-3">
-      <section
-        className="thai-lotto-draw lottery-soft-card flex items-center gap-3 p-3 sm:p-4"
-        aria-label={t(rules.titleKey)}
-      >
-        <LotteryMarketIcon
-          marketSlug={rules.slug}
-          size="lg"
-          fallbackLabel={rules.flagLabel}
-          fallbackTone={rules.flagTone}
-        />
-        <h2 className="m-0 min-w-0 flex-1 text-base font-semibold text-[var(--text-on-light)]">{t(rules.titleKey)}</h2>
-      </section>
+  const title = doc?.title ?? t(rules.titleKey);
 
-      <section className="thai-lotto-panel p-3 sm:p-4" aria-labelledby="lottery-rules-payout">
-        <h2 id="lottery-rules-payout" className="m-0 mb-1 text-sm font-semibold text-[var(--text-on-light)]">
+  return (
+    <article className="flex flex-col gap-4">
+      <header className="flex flex-col gap-1.5">
+        <h2 className="m-0 text-2xl font-bold leading-tight text-[var(--text-on-light)]">{title}</h2>
+        {doc ? <p className="m-0 text-sm text-[var(--text-muted)]">{doc.intro}</p> : null}
+      </header>
+
+      {doc ? (
+        <>
+          <BulletList items={doc.schedule} />
+          <section className="flex flex-col gap-2" aria-label={doc.resultHeading}>
+            <h3 className="m-0 text-lg font-bold text-[var(--text-on-light)]">{doc.resultHeading}</h3>
+            <BulletList items={doc.result} />
+            {doc.example ? (
+              <div className="rounded-xl bg-[var(--surface-muted,rgba(127,127,127,0.1))] px-3 py-2 text-sm leading-relaxed text-[var(--text-on-light)]">
+                {doc.example.map((line) => (
+                  <p key={line} className="m-0">
+                    {line}
+                  </p>
+                ))}
+              </div>
+            ) : null}
+          </section>
+        </>
+      ) : null}
+
+      <section className="flex flex-col gap-1" aria-labelledby="lottery-rules-payout">
+        <h3 id="lottery-rules-payout" className="m-0 text-sm font-bold text-[var(--text-on-light)]">
           {t("rules.payoutHeading")}
-        </h2>
+        </h3>
         <ul className="m-0 list-none p-0">
           {rules.rows.map((row) => (
             <li
               key={row.id}
-              className="flex items-center justify-between gap-3 border-b border-white/[0.06] py-2.5 last:border-b-0"
+              className="flex items-center justify-between gap-3 border-b border-[var(--border-soft,rgba(127,127,127,0.18))] py-2 last:border-b-0"
             >
               <span className="min-w-0 text-sm text-[var(--text-on-light)]">{t(row.labelKey)}</span>
               <span className="shrink-0 text-sm font-semibold tabular-nums text-[var(--brand-strong)]">
@@ -58,25 +82,12 @@ export function LotteryRulesContent({ marketSlug }: { marketSlug: string }) {
             </li>
           ))}
         </ul>
+        {rules.minBet !== null && rules.maxBet !== null ? (
+          <p className="m-0 mt-1 text-xs text-[var(--text-muted)]">
+            {t("rules.minBet")} {formatBaht(rules.minBet)} · {t("rules.maxBet")} {formatBaht(rules.maxBet)}
+          </p>
+        ) : null}
       </section>
-
-      {rules.minBet !== null && rules.maxBet !== null ? (
-        <section className="thai-lotto-panel p-3 sm:p-4" aria-labelledby="lottery-rules-limits">
-          <h2 id="lottery-rules-limits" className="m-0 mb-1 text-sm font-semibold text-[var(--text-on-light)]">
-            {t("rules.limitsHeading")}
-          </h2>
-          <dl className="m-0">
-            <div className="flex items-center justify-between gap-3 border-b border-white/[0.06] py-2.5">
-              <dt className="text-sm text-[var(--text-muted)]">{t("rules.minBet")}</dt>
-              <dd className="m-0 text-sm tabular-nums text-[var(--text-on-light)]">{formatBaht(rules.minBet)}</dd>
-            </div>
-            <div className="flex items-center justify-between gap-3 py-2.5">
-              <dt className="text-sm text-[var(--text-muted)]">{t("rules.maxBet")}</dt>
-              <dd className="m-0 text-sm tabular-nums text-[var(--text-on-light)]">{formatBaht(rules.maxBet)}</dd>
-            </div>
-          </dl>
-        </section>
-      ) : null}
-    </div>
+    </article>
   );
 }
