@@ -103,6 +103,116 @@ export const THEMES: ThemeOption[] = [
     "bgColor": "#0C0303"
   },
   {
+    "key": "midnight-violet",
+    "name": "Midnight Violet",
+    "isDark": true,
+    "colors": [
+      "#4c1d95",
+      "#1e0b45",
+      "#a78bfa"
+    ],
+    "bgColor": "#08060f"
+  },
+  {
+    "key": "emerald-night",
+    "name": "Emerald Night",
+    "isDark": true,
+    "colors": [
+      "#0f5c43",
+      "#052e22",
+      "#34d399"
+    ],
+    "bgColor": "#040b09"
+  },
+  {
+    "key": "crimson-noir",
+    "name": "Crimson Noir",
+    "isDark": true,
+    "colors": [
+      "#9f1239",
+      "#4c0519",
+      "#fb7185"
+    ],
+    "bgColor": "#0b0506"
+  },
+  {
+    "key": "ocean-deep",
+    "name": "Ocean Deep",
+    "isDark": true,
+    "colors": [
+      "#0e5a8a",
+      "#052a45",
+      "#38bdf8"
+    ],
+    "bgColor": "#03080d"
+  },
+  {
+    "key": "royal-gold",
+    "name": "Royal Gold",
+    "isDark": true,
+    "colors": [
+      "#5a4310",
+      "#231a05",
+      "#fbbf24"
+    ],
+    "bgColor": "#0a0804"
+  },
+  {
+    "key": "ember",
+    "name": "Ember",
+    "isDark": true,
+    "colors": [
+      "#c2410c",
+      "#5a1d06",
+      "#fb923c"
+    ],
+    "bgColor": "#0b0603"
+  },
+  {
+    "key": "graphite",
+    "name": "Graphite",
+    "isDark": true,
+    "colors": [
+      "#2b3038",
+      "#0e1013",
+      "#e2e8f0"
+    ],
+    "bgColor": "#07080a"
+  },
+  {
+    "key": "orchid",
+    "name": "Orchid",
+    "isDark": true,
+    "colors": [
+      "#a21caf",
+      "#4a044e",
+      "#e879f9"
+    ],
+    "bgColor": "#0c0610"
+  },
+  {
+    "key": "venom",
+    "name": "Venom",
+    "isDark": true,
+    "colors": [
+      "#3f6212",
+      "#1a2e05",
+      "#a3e635"
+    ],
+    "bgColor": "#060a04"
+  },
+  {
+    "key": "nebula",
+    "name": "Nebula",
+    "isDark": true,
+    "colors": [
+      "#3730a3",
+      "#1e1b4b",
+      "#818cf8"
+    ],
+    "bgColor": "#05060f"
+  },
+  {
     "key": "sunfire",
     "name": "Sunfire",
     "isDark": false,

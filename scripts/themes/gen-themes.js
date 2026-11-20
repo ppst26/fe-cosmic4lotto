@@ -21,6 +21,16 @@ const T = [
   { key: "gatsby", name: "Gatsby", dark: true, colors: ["#101421", "#002830", "#fef1cf"], bg: "#000000", page: "#04060b", nav: "#0a0d18", card: "#101421", card2: "#0c101b", inner: "#0b2229", accent: "#fef1cf" },
   { key: "navy", name: "Navy", dark: true, colors: ["#090c0f", "#0c121f", "#f7edd2"], bg: "#05070a", page: "#06080b", nav: "#0a0e14", card: "#0f1520", card2: "#0b1019", inner: "#131c2b", accent: "#f7edd2" },
   { key: "wisdom", name: "Wisdom", dark: true, colors: ["#772639", "#400A1A", "#E6E6E6"], bg: "#0C0303", page: "#12040a", nav: "#2a0a14", card: "#300d1b", card2: "#260a15", inner: "#400a1a", accent: "#e6e6e6" },
+  { key: "midnight-violet", name: "Midnight Violet", dark: true, colors: ["#4c1d95", "#1e0b45", "#a78bfa"], bg: "#08060f", page: "#08060f", nav: "#0d0a18", card: "#15101f", card2: "#110d1a", inner: "#1c1529", accent: "#a78bfa" },
+  { key: "emerald-night", name: "Emerald Night", dark: true, colors: ["#0f5c43", "#052e22", "#34d399"], bg: "#040b09", page: "#040b09", nav: "#07130f", card: "#0d1c17", card2: "#0a1612", inner: "#12271f", accent: "#34d399" },
+  { key: "crimson-noir", name: "Crimson Noir", dark: true, colors: ["#9f1239", "#4c0519", "#fb7185"], bg: "#0b0506", page: "#0b0506", nav: "#14080a", card: "#1d0d10", card2: "#170a0c", inner: "#261216", accent: "#fb7185" },
+  { key: "ocean-deep", name: "Ocean Deep", dark: true, colors: ["#0e5a8a", "#052a45", "#38bdf8"], bg: "#03080d", page: "#03080d", nav: "#061018", card: "#0b1a26", card2: "#08141e", inner: "#102536", accent: "#38bdf8" },
+  { key: "royal-gold", name: "Royal Gold", dark: true, colors: ["#5a4310", "#231a05", "#fbbf24"], bg: "#0a0804", page: "#0a0804", nav: "#120e06", card: "#1a1409", card2: "#151007", inner: "#231b0d", accent: "#fbbf24" },
+  { key: "ember", name: "Ember", dark: true, colors: ["#c2410c", "#5a1d06", "#fb923c"], bg: "#0b0603", page: "#0b0603", nav: "#140b05", card: "#1c110a", card2: "#170d07", inner: "#26170e", accent: "#fb923c" },
+  { key: "graphite", name: "Graphite", dark: true, colors: ["#2b3038", "#0e1013", "#e2e8f0"], bg: "#07080a", page: "#07080a", nav: "#0e1013", card: "#16191d", card2: "#121418", inner: "#1e2228", accent: "#e2e8f0" },
+  { key: "orchid", name: "Orchid", dark: true, colors: ["#a21caf", "#4a044e", "#e879f9"], bg: "#0c0610", page: "#0c0610", nav: "#150a1b", card: "#1e1026", card2: "#190d20", inner: "#281634", accent: "#e879f9" },
+  { key: "venom", name: "Venom", dark: true, colors: ["#3f6212", "#1a2e05", "#a3e635"], bg: "#060a04", page: "#060a04", nav: "#0c1307", card: "#131c0b", card2: "#101709", inner: "#1b2810", accent: "#a3e635" },
+  { key: "nebula", name: "Nebula", dark: true, colors: ["#3730a3", "#1e1b4b", "#818cf8"], bg: "#05060f", page: "#05060f", nav: "#0a0c1c", card: "#10132b", card2: "#0d1024", inner: "#171b3d", accent: "#818cf8" },
   { key: "sunfire", name: "Sunfire", dark: false, colors: ["#d9202e", "#99121d", "#ffd864"], bg: "#e4e4e4", accent: "#d9202e" },
   { key: "blue-syrah", name: "Blue Syrah", dark: false, colors: ["#4ea8ff", "#0078ab", "#ffd864"], bg: "#e4e4e4", accent: "#0078ab" },
   { key: "good-witch", name: "Good Witch", dark: false, colors: ["#5ed076", "#10943e", "#ffd864"], bg: "#e4e4e4", accent: "#10943e" },
@@ -37,6 +47,16 @@ const ROLES = {
   gatsby: { ga: "#101421", gb: "#002830", icon: "#fef1cf", action: "#fef1cf", at: "#1a1405", active: "#fef1cf", act: "#1a1405" },
   navy: { ga: "#090c0f", gb: "#0c121f", icon: "#f7edd2", action: "#f7edd2", at: "#090c0f", active: "#f7edd2", act: "#090c0f" },
   wisdom: { ga: "#772639", gb: "#400a1a", icon: "#e6e6e6", action: "#e6e6e6", at: "#2a0a14", active: "#772639", act: "#ffffff" },
+  "midnight-violet": { ga: "#4c1d95", gb: "#1e0b45", icon: "#c4b5fd", action: "#a78bfa", at: "#1a0b3d", active: "#6d28d9", act: "#ffffff" },
+  "emerald-night": { ga: "#0f5c43", gb: "#052e22", icon: "#6ee7b7", action: "#34d399", at: "#03241a", active: "#0f766e", act: "#ffffff" },
+  "crimson-noir": { ga: "#9f1239", gb: "#4c0519", icon: "#fda4af", action: "#fb7185", at: "#2a0309", active: "#be123c", act: "#ffffff" },
+  "ocean-deep": { ga: "#0e5a8a", gb: "#052a45", icon: "#7dd3fc", action: "#38bdf8", at: "#04202f", active: "#0369a1", act: "#ffffff" },
+  "royal-gold": { ga: "#5a4310", gb: "#231a05", icon: "#fcd34d", action: "#fbbf24", at: "#2a1d00", active: "#b45309", act: "#ffffff" },
+  "ember": { ga: "#c2410c", gb: "#5a1d06", icon: "#fdba74", action: "#fb923c", at: "#2a1000", active: "#c2410c", act: "#ffffff" },
+  "graphite": { ga: "#2b3038", gb: "#0e1013", icon: "#cbd5e1", action: "#e2e8f0", at: "#0f172a", active: "#475569", act: "#ffffff" },
+  "orchid": { ga: "#a21caf", gb: "#4a044e", icon: "#f0abfc", action: "#e879f9", at: "#2e0430", active: "#a21caf", act: "#ffffff" },
+  "venom": { ga: "#3f6212", gb: "#1a2e05", icon: "#bef264", action: "#a3e635", at: "#1a2e05", active: "#4d7c0f", act: "#ffffff" },
+  "nebula": { ga: "#3730a3", gb: "#1e1b4b", icon: "#a5b4fc", action: "#818cf8", at: "#12104a", active: "#4338ca", act: "#ffffff" },
   sunfire: { ga: "#d9202e", gb: "#99121d", icon: "#99121d", action: "#ffd864", at: "#3a2a00", active: "#d9202e", act: "#ffffff" },
   "blue-syrah": { ga: "#4ea8ff", gb: "#0078ab", icon: "#0078ab", action: "#ffd864", at: "#3a2a00", active: "#4ea8ff", act: "#08233d" },
   "good-witch": { ga: "#5ed076", gb: "#10943e", icon: "#10943e", action: "#ffd864", at: "#3a2a00", active: "#5ed076", act: "#0a2a14" },
@@ -81,7 +101,7 @@ function common(t) {
   --focus-ring: ${mix("var(--t-accent)", 70, "white")};
   --border-active: ${mix("var(--t-accent)", 55, "var(--border-subtle)")};
   --line-tab-neon-gradient: linear-gradient(90deg, var(--t-active) 0%, ${mix("var(--t-active)", 78, "white")} 100%);
-  --line-tab-neon-glow: 0 0 8px ${mix("var(--t-active)", 70, "transparent")}, 0 0 16px ${mix("var(--t-active)", 38, "transparent")};
+  --line-tab-neon-glow: none;
   --category-active-gradient: linear-gradient(110deg, var(--t-active), ${mix("var(--t-active)", 78, "black")});
   --action-solid: var(--t-action);
   --action-solid-hover: ${mix("var(--t-action)", 86, "white")};
@@ -273,7 +293,7 @@ ${lightTint(t)}
 
 const header = `/**
  * Themes — สลับด้วย <html data-theme="key"> (ดู lib/theme.ts)
- * ไฟล์นี้สร้างจาก scripts/themes/gen-themes.js (อย่าแก้มือ) — ธีมเริ่มต้น (${DEFAULT_THEME}) อยู่ใน tokens.css
+ * ไฟล์นี้สร้างจาก scripts/themes/gen-themes.js (อย่าแก้มือ — รันสคริปต์ใหม่เมื่อเพิ่มธีม) — ธีมเริ่มต้น (${DEFAULT_THEME}) อยู่ใน tokens.css
  * มืด: เปลี่ยนพื้นผิว + สีปุ่มหลัก · สว่าง: กลับสเกลตัวอักษร/เส้น และกลับสเกล --color-white/zinc ของ Tailwind
  */
 `;
