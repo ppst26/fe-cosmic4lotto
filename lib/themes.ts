@@ -211,61 +211,6 @@ export const THEMES: ThemeOption[] = [
       "#818cf8"
     ],
     "bgColor": "#05060f"
-  },
-  {
-    "key": "sunfire",
-    "name": "Sunfire",
-    "isDark": false,
-    "colors": [
-      "#d9202e",
-      "#99121d",
-      "#ffd864"
-    ],
-    "bgColor": "#e4e4e4"
-  },
-  {
-    "key": "blue-syrah",
-    "name": "Blue Syrah",
-    "isDark": false,
-    "colors": [
-      "#4ea8ff",
-      "#0078ab",
-      "#ffd864"
-    ],
-    "bgColor": "#e4e4e4"
-  },
-  {
-    "key": "good-witch",
-    "name": "Good Witch",
-    "isDark": false,
-    "colors": [
-      "#5ed076",
-      "#10943e",
-      "#ffd864"
-    ],
-    "bgColor": "#e4e4e4"
-  },
-  {
-    "key": "mix-berry",
-    "name": "Mix Berry",
-    "isDark": false,
-    "colors": [
-      "#df5c90",
-      "#741a61",
-      "#ffd864"
-    ],
-    "bgColor": "#e4e4e4"
-  },
-  {
-    "key": "mr-bond",
-    "name": "Mr Bond",
-    "isDark": false,
-    "colors": [
-      "#1f2735",
-      "#0e131c",
-      "#72a3f9"
-    ],
-    "bgColor": "#e4e4e4"
   }
 ];
 

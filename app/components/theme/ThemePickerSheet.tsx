@@ -126,7 +126,6 @@ export function ThemePickerSheet({ isOpen, onClose }: ThemePickerSheetProps) {
     >
       <p className="mb-3 text-xs text-[var(--text-muted)]">{t("theme.description")}</p>
       <ThemeGrid title={t("theme.dark")} themes={THEMES.filter((x) => x.isDark)} activeTheme={theme} onSelect={pick} />
-      <ThemeGrid title={t("theme.light")} themes={THEMES.filter((x) => !x.isDark)} activeTheme={theme} onSelect={pick} />
     </OverlayPanel>
   );
 }

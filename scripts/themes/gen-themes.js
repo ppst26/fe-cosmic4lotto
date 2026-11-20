@@ -31,11 +31,6 @@ const T = [
   { key: "orchid", name: "Orchid", dark: true, colors: ["#a21caf", "#4a044e", "#e879f9"], bg: "#0c0610", page: "#0c0610", nav: "#150a1b", card: "#1e1026", card2: "#190d20", inner: "#281634", accent: "#e879f9" },
   { key: "venom", name: "Venom", dark: true, colors: ["#3f6212", "#1a2e05", "#a3e635"], bg: "#060a04", page: "#060a04", nav: "#0c1307", card: "#131c0b", card2: "#101709", inner: "#1b2810", accent: "#a3e635" },
   { key: "nebula", name: "Nebula", dark: true, colors: ["#3730a3", "#1e1b4b", "#818cf8"], bg: "#05060f", page: "#05060f", nav: "#0a0c1c", card: "#10132b", card2: "#0d1024", inner: "#171b3d", accent: "#818cf8" },
-  { key: "sunfire", name: "Sunfire", dark: false, colors: ["#d9202e", "#99121d", "#ffd864"], bg: "#e4e4e4", accent: "#d9202e" },
-  { key: "blue-syrah", name: "Blue Syrah", dark: false, colors: ["#4ea8ff", "#0078ab", "#ffd864"], bg: "#e4e4e4", accent: "#0078ab" },
-  { key: "good-witch", name: "Good Witch", dark: false, colors: ["#5ed076", "#10943e", "#ffd864"], bg: "#e4e4e4", accent: "#10943e" },
-  { key: "mix-berry", name: "Mix Berry", dark: false, colors: ["#df5c90", "#741a61", "#ffd864"], bg: "#e4e4e4", accent: "#741a61" },
-  { key: "mr-bond", name: "Mr Bond", dark: false, colors: ["#1f2735", "#0e131c", "#72a3f9"], bg: "#e4e4e4", accent: "#2f5fc4" },
 ];
 
 // บทบาทสี: ga→gb ไล่สี header/footer/bottom nav/หัวแถวเกม · icon = ไอคอน+ขอบ · action(+at ตัวอักษร) = ปุ่มหลัก · active(+act) = แท็บ/ชิป active
@@ -57,11 +52,6 @@ const ROLES = {
   "orchid": { ga: "#a21caf", gb: "#4a044e", icon: "#f0abfc", action: "#e879f9", at: "#2e0430", active: "#a21caf", act: "#ffffff" },
   "venom": { ga: "#3f6212", gb: "#1a2e05", icon: "#bef264", action: "#a3e635", at: "#1a2e05", active: "#4d7c0f", act: "#ffffff" },
   "nebula": { ga: "#3730a3", gb: "#1e1b4b", icon: "#a5b4fc", action: "#818cf8", at: "#12104a", active: "#4338ca", act: "#ffffff" },
-  sunfire: { ga: "#d9202e", gb: "#99121d", icon: "#99121d", action: "#ffd864", at: "#3a2a00", active: "#d9202e", act: "#ffffff" },
-  "blue-syrah": { ga: "#4ea8ff", gb: "#0078ab", icon: "#0078ab", action: "#ffd864", at: "#3a2a00", active: "#4ea8ff", act: "#08233d" },
-  "good-witch": { ga: "#5ed076", gb: "#10943e", icon: "#10943e", action: "#ffd864", at: "#3a2a00", active: "#5ed076", act: "#0a2a14" },
-  "mix-berry": { ga: "#df5c90", gb: "#741a61", icon: "#741a61", action: "#ffd864", at: "#3a2a00", active: "#df5c90", act: "#ffffff" },
-  "mr-bond": { ga: "#1f2735", gb: "#0e131c", icon: "#0e131c", action: "#72a3f9", at: "#0b1530", active: "#1f2735", act: "#ffffff" },
 };
 for (const t of T) Object.assign(t, ROLES[t.key]);
 
