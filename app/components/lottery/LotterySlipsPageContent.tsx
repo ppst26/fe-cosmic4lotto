@@ -25,6 +25,7 @@ import {
   type SlipRangeId,
 } from "@/lib/lottery/slipRange";
 import { ResourceGate } from "@/app/components/ui/ResourceGate";
+import { TabPanelTransition } from "@/app/components/ui/TabPanelTransition";
 import { SoftLineTabs } from "@/app/components/ui/SoftLineTabs";
 import { DatePicker } from "@/components/ui/date-picker";
 import { SelectField } from "@/components/ui/select";
@@ -38,6 +39,7 @@ type ParamKey = keyof typeof DEFAULTS;
 
 const RESULTS: readonly LotterySlipResult[] = ["won", "lost", "void"];
 const PAGE_SIZE = 20;
+const TAB_ORDER = ["pending", "history"] as const;
 /** ค่าของตัวเลือก "ทั้งหมด" ใน dropdown — ใน URL/state ยังเป็น "" */
 const ALL = "all";
 
@@ -251,6 +253,7 @@ export function LotterySlipsPageContent() {
         ) : null}
       </div>
 
+      <TabPanelTransition tabKey={scope} order={TAB_ORDER}>
       <ResourceGate resource={first} loadingLabel={t("slips.loading")} errorTitle={t("slips.loadError")}>
         {(data) => (
           <div className="flex flex-col gap-3">
@@ -294,7 +297,7 @@ export function LotterySlipsPageContent() {
                 />
               )
             ) : (
-              <ul className="lottery-slips-list m-0 flex list-none flex-col gap-2.5 p-0">
+              <ul className="lottery-slips-list m-0 flex list-none flex-col gap-[0.65rem] p-0">
                 {slips.map((slip) => (
                   <li key={slip.id}>
                     <LotterySlipCard slip={slip} now={now} />
@@ -329,6 +332,7 @@ export function LotterySlipsPageContent() {
           </div>
         )}
       </ResourceGate>
+      </TabPanelTransition>
     </div>
   );
 }

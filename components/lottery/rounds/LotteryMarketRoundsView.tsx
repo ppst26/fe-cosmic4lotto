@@ -47,12 +47,12 @@ export function LotteryMarketRoundsView({ marketSlug }: LotteryMarketRoundsViewP
             <LotteryPlayRoundList rounds={list} marketSlug={marketSlug} basePath={entry.roundsHref} />
           )}
         </ResourceGate>
+        {marketSlug === "thai-government" && thaiLastResult ? (
+          <div className="lottery-market-rounds__result mt-4 hidden min-w-0 lg:block">
+            <ThaiLottoResultPanel result={thaiLastResult} />
+          </div>
+        ) : null}
       </LotteryMarketShell>
-      {marketSlug === "thai-government" && thaiLastResult ? (
-        <div className="hidden lg:block">
-          <ThaiLottoResultPanel result={thaiLastResult} />
-        </div>
-      ) : null}
     </div>
   );
 }

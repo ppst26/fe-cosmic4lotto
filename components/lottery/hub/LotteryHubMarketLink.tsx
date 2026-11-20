@@ -46,7 +46,7 @@ export function LotteryHubMarketLink({
     <Link
       href={href}
       className={cn(
-        "lottery-hub-market-card relative flex items-center justify-end overflow-hidden text-inherit no-underline",
+        "lottery-hub-market-card relative flex items-center justify-end overflow-hidden rounded-[var(--radius-panel)] text-inherit no-underline",
         iconSrc && "lottery-hub-market-card--has-art",
         isFeature
           ? "lottery-feature-card lottery-hub-market-card--feature min-h-[5.5rem] px-3 py-3 sm:px-4"

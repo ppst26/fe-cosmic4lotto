@@ -63,14 +63,15 @@ export function LotterySlipSummary({ slip, continuePlayHref }: LotterySlipSummar
       className="lottery-hub-theme lottery-slip-summary flex flex-col gap-4 pb-3 pt-1"
       aria-label={t("summary.aria")}
     >
-      <header className="lottery-soft-card flex flex-col gap-2 p-3 sm:p-4">
-        <div className="flex items-start justify-between gap-3">
-          <p className="m-0 text-sm font-semibold text-[var(--text-on-light)]">
+      <div className="lottery-slip-summary__info lottery-soft-card flex flex-col gap-3 px-3.5 py-3.5 sm:px-4">
+      <header className="lottery-slip-summary__head flex flex-col gap-2">
+        <div className="lottery-slip-summary__head-row flex items-start justify-between gap-3">
+          <p className="lottery-slip-summary__meta m-0 text-sm font-semibold text-[var(--text-on-light)]">
             {t("summary.drawDate", { date: drawSchedule })}
           </p>
           <button
             type="button"
-            className="inline-flex cursor-pointer items-center gap-1.5 border-0 bg-transparent p-0 text-xs font-semibold text-[var(--brand)]"
+            className="lottery-slip-summary__slip-id inline-flex cursor-pointer items-center gap-1.5 border-0 bg-transparent p-0 text-xs font-semibold text-[var(--brand)]"
             onClick={() => void handleCopyId()}
             aria-label={t("summary.copyAria")}
           >
@@ -78,9 +79,9 @@ export function LotterySlipSummary({ slip, continuePlayHref }: LotterySlipSummar
             <Copy className="h-3.5 w-3.5 shrink-0 opacity-80" aria-hidden />
           </button>
         </div>
-        <div className="flex items-start justify-between gap-3">
-          <p className="m-0 text-xs text-[var(--text-muted)]">{t("summary.purchased", { date: purchasedLabel })}</p>
-          <p className="m-0 whitespace-nowrap text-xs font-semibold">
+        <div className="lottery-slip-summary__head-row flex items-start justify-between gap-3">
+          <p className="lottery-slip-summary__meta m-0 text-xs text-[var(--text-muted)]">{t("summary.purchased", { date: purchasedLabel })}</p>
+          <p className="lottery-slip-summary__status m-0 whitespace-nowrap text-xs font-semibold">
             {slip.status === "submitted" && statusKey === "waitingDraw" ? (
               <span className="text-[var(--text-on-light)]">{t("summary.submitted")}</span>
             ) : (
@@ -101,26 +102,27 @@ export function LotterySlipSummary({ slip, continuePlayHref }: LotterySlipSummar
         ) : null}
       </header>
 
-      <p className="m-0 text-xs text-[var(--text-muted)]">
+      <p className="lottery-slip-summary__note m-0 text-xs text-[var(--text-muted)]">
         {t("summary.note", { note: slip.note?.trim() ? slip.note : t("summary.noNote") })}
       </p>
+      </div>
 
-      <div className="flex flex-col gap-2.5">
+      <div className="lottery-slip-summary__groups flex flex-col gap-2.5">
         {groups.map((group) => (
-          <section key={group.typeLabelKey} className="lottery-soft-card overflow-hidden">
+          <section key={group.typeLabelKey} className="lottery-slip-summary__group overflow-hidden">
             <div className="lottery-slip-summary__group-head flex items-center justify-between gap-3 px-3.5 py-2.5 sm:px-4">
-              <span className="text-sm font-semibold text-[var(--text-on-light)]">{t(group.typeLabelKey)}</span>
-              <span className="shrink-0 text-xs text-[var(--text-muted)]">
+              <span className="lottery-slip-summary__group-title text-sm font-semibold text-[var(--text-on-light)]">{t(group.typeLabelKey)}</span>
+              <span className="lottery-slip-summary__group-count shrink-0 text-xs text-[var(--text-muted)]">
                 {t("slip.itemCount", { count: group.items.length })}
               </span>
             </div>
-            <ul className="m-0 list-none px-3 pb-2.5 pt-1.5 sm:px-3.5">
+            <ul className="lottery-slip-summary__rows m-0 list-none px-3 pb-2.5 pt-1.5 sm:px-3.5">
               {group.items.map((line) => (
                 <li
                   key={`${line.typeKey}-${line.number}-${line.amount}`}
-                  className="grid grid-cols-[minmax(0,1fr)_auto_auto_minmax(4.25rem,auto)] items-center gap-1.5 py-2"
+                  className="lottery-slip-summary__row grid grid-cols-[minmax(0,1fr)_auto_auto_minmax(4.25rem,auto)] items-center gap-1.5 py-2"
                 >
-                  <span className="font-semibold tabular-nums tracking-wide text-[var(--text-on-light)]">
+                  <span className="lottery-slip-summary__number font-semibold tabular-nums tracking-wide text-[var(--text-on-light)]">
                     {formatLotteryDigitsDisplay(line.number)}
                   </span>
                   <span className={`${PILL} min-w-[3rem] text-[var(--text-on-light)]`}>
@@ -145,17 +147,17 @@ export function LotterySlipSummary({ slip, continuePlayHref }: LotterySlipSummar
         ))}
       </div>
 
-      <footer className="lottery-soft-card grid grid-cols-2 gap-3 px-3.5 py-3.5 sm:px-4">
+      <footer className="lottery-slip-summary__totals grid grid-cols-2 gap-3 px-3.5 py-3.5 sm:px-4">
         <div className="flex flex-col items-center gap-1 text-center">
-          <span className="text-xs text-[var(--text-muted)]">{t("summary.stake")}</span>
-          <strong className="text-base font-semibold tabular-nums text-[var(--text-on-light)]">
+          <span className="lottery-slip-summary__total-label text-xs text-[var(--text-muted)]">{t("summary.stake")}</span>
+          <strong className="lottery-slip-summary__total-value text-base font-semibold tabular-nums text-[var(--text-on-light)]">
             {formatBaht(slip.totalStake)}
           </strong>
         </div>
         <div className="flex flex-col items-center gap-1 text-center">
-          <span className="text-xs text-[var(--text-muted)]">{t("summary.winLoss")}</span>
+          <span className="lottery-slip-summary__total-label text-xs text-[var(--text-muted)]">{t("summary.winLoss")}</span>
           {slip.winLoss === null ? (
-            <span className="text-base text-[var(--text-muted)]">—</span>
+            <span className="lottery-slip-summary__total-muted text-base text-[var(--text-muted)]">—</span>
           ) : (
             <span className={signedMoneyToneClass(slip.winLoss, "text-base font-semibold")}>
               {formatSignedBaht(slip.winLoss)}
@@ -164,7 +166,7 @@ export function LotterySlipSummary({ slip, continuePlayHref }: LotterySlipSummar
         </div>
       </footer>
 
-      <div className="grid grid-cols-2 gap-2.5">
+      <div className="lottery-slip-summary__actions grid grid-cols-2 gap-2.5">
         <Link
           href="/lottery/slips"
           className="soft-btn-outline grid min-h-11 place-items-center px-3 text-center text-sm font-semibold no-underline"

@@ -31,7 +31,7 @@ type LotteryLatestResultsTableProps = {
 
 export function LotteryLatestResultsTable({
   results,
-  resultsPageHref = "/lottery/slips",
+  resultsPageHref = "/lottery/results",
 }: LotteryLatestResultsTableProps) {
   const { t, shortDate } = useLotteryI18n();
   const top3Label = t("betTypes.threeTop");
@@ -39,26 +39,26 @@ export function LotteryLatestResultsTable({
   return (
     <section className="lottery-results-board w-full min-w-0" aria-labelledby="lottery-results-title">
       <div className="lottery-results-board__head mb-3 flex flex-wrap items-center justify-between gap-2">
-        <div className="flex min-w-0 items-center gap-2 text-[var(--text-on-light)]">
+        <div className="flex min-w-0 items-center gap-2">
           <MegaphoneMiniIcon />
           <h3
             id="lottery-results-title"
-            className="text-lg font-semibold tracking-tight leading-snug sm:text-xl"
+            className="text-[18px] font-medium tracking-tight text-[var(--text-primary)] leading-[1.4] sm:text-[20px]"
           >
             {t("results.title")}
           </h3>
         </div>
         <Link
           href={resultsPageHref}
-          className="lottery-results-board__more-link shrink-0 text-xs font-semibold text-[var(--text-muted)] sm:text-sm"
+          className="lottery-results-board__more-link shrink-0 text-xs font-medium text-[var(--text-secondary)] sm:text-sm"
         >
-          {t("hub.mySlips")} &gt;&gt;
+          {t("results.morePage")}
         </Link>
       </div>
 
       <div className="lottery-results-board__table" role="table" aria-label={t("results.tableAria")}>
         <div
-          className="lottery-results-board__header grid grid-cols-[var(--lottery-results-board-cols)] items-center gap-x-2 px-[0.15rem] pb-2"
+          className="lottery-results-board__header grid grid-cols-[var(--lottery-results-board-cols)] items-center gap-x-2 px-[0.15rem] pb-[0.4rem]"
           role="row"
         >
           <span className="lottery-results-board__header-cell" role="columnheader">
@@ -85,7 +85,7 @@ export function LotteryLatestResultsTable({
         </div>
 
         <ul
-          className="lottery-results-board__body m-0 flex list-none flex-col gap-2 p-0"
+          className="lottery-results-board__body m-0 flex list-none flex-col gap-[0.35rem] p-0 sm:gap-[0.4rem]"
           role="rowgroup"
         >
           {results.length === 0 ? (
@@ -96,7 +96,7 @@ export function LotteryLatestResultsTable({
             results.map((row) => (
               <li
                 key={row.id}
-                className="lottery-results-board__row lottery-soft-card grid grid-cols-[var(--lottery-results-board-cols)] items-center gap-x-2 m-0 px-3 py-2"
+                className="lottery-results-board__row lottery-soft-card grid grid-cols-[var(--lottery-results-board-cols)] items-center gap-x-2 m-0 px-[0.65rem] py-[0.45rem] sm:px-3 sm:py-2"
                 role="row"
               >
                 <div
@@ -113,7 +113,7 @@ export function LotteryLatestResultsTable({
                 </div>
 
                 <div
-                  className="lottery-results-board__prize relative flex min-w-0 flex-col items-center justify-center gap-1"
+                  className="lottery-results-board__prize flex min-w-0 flex-col items-center justify-center gap-[0.2rem]"
                   role="cell"
                   aria-label={`${top3Label} ${row.top3}`}
                 >
@@ -124,7 +124,7 @@ export function LotteryLatestResultsTable({
                 </div>
 
                 <div
-                  className="lottery-results-board__prize relative flex min-w-0 flex-col items-center justify-center gap-1"
+                  className="lottery-results-board__prize flex min-w-0 flex-col items-center justify-center gap-[0.2rem]"
                   role="cell"
                   aria-label={`${bottom2Label} ${row.bottom2}`}
                 >

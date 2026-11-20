@@ -8,6 +8,7 @@ import type {
 } from "@/app/types/lottery";
 import { useLotteryHub } from "@/app/hooks/api/lottery";
 import { lotteryHrefToSlug } from "@/app/data/lotteryIconAssets";
+import { gameCardEnterListKey, GameCardStaggerShell } from "@/lib/gameCardEnterMotion";
 import { useLotteryI18n } from "@/app/components/lottery/useLotteryI18n";
 import { LotterySlipsEntryButton } from "@/app/components/lottery/LotterySlipsEntryButton";
 import { LotteryHubMarketLink } from "./LotteryHubMarketLink";
@@ -61,9 +62,12 @@ export function LotteryHubContent({
         className={`lottery-hub__featured${pending ? " min-h-[21rem] sm:min-h-[7.5rem]" : ""}`}
         aria-label={t("hub.featuredAria")}
       >
-        <div className="lottery-feature-grid grid grid-cols-1 gap-3 sm:grid-cols-3">
-          {resolvedFeatured.map((item) => (
-            <div key={item.id} className="min-w-0">
+        <div
+          key={gameCardEnterListKey(resolvedFeatured.map((item) => item.id))}
+          className="lottery-feature-grid grid grid-cols-1 gap-3 sm:grid-cols-3"
+        >
+          {resolvedFeatured.map((item, index) => (
+            <GameCardStaggerShell key={item.id} index={index} className="min-w-0">
               <LotteryHubMarketLink
                 href={item.href}
                 marketSlug={lotteryHrefToSlug(item.href)}
@@ -73,7 +77,7 @@ export function LotteryHubContent({
                 fallbackLabel={item.visual === "thai-gov" ? "TH" : "YK"}
                 fallbackTone={item.visual === "thai-gov" ? "th" : "gold"}
               />
-            </div>
+            </GameCardStaggerShell>
           ))}
         </div>
       </section>
@@ -82,9 +86,12 @@ export function LotteryHubContent({
         className={`lottery-hub__markets min-w-0${pending ? " min-h-[32rem] md:min-h-[14rem] lg:min-h-[6rem]" : ""}`}
         aria-label={t("hub.allMarketsAria")}
       >
-        <div className="lottery-type-grid grid grid-cols-2 gap-2 md:grid-cols-3 md:gap-3 lg:grid-cols-6">
-          {resolvedGridItems.map((item) => (
-            <div key={item.id} className="min-w-0">
+        <div
+          key={gameCardEnterListKey(resolvedGridItems.map((item) => item.id))}
+          className="lottery-type-grid grid grid-cols-2 gap-2 md:grid-cols-3 md:gap-3 lg:grid-cols-6"
+        >
+          {resolvedGridItems.map((item, index) => (
+            <GameCardStaggerShell key={item.id} index={index} className="min-w-0">
               <LotteryHubMarketLink
                 href={item.href}
                 marketSlug={lotteryHrefToSlug(item.href)}
@@ -95,7 +102,7 @@ export function LotteryHubContent({
                 fallbackLabel={item.flagLabel}
                 fallbackTone={item.flagTone}
               />
-            </div>
+            </GameCardStaggerShell>
           ))}
         </div>
       </section>

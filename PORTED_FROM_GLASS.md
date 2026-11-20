@@ -340,3 +340,13 @@ Lotto-only: notification bell kept top-left (lotto's frozen header has no bell),
 
 ## Footer
 - `app/components/layout/CosmicFooter.tsx` + `CosmicFooterGate.tsx`, `app/data/footerMockData.ts`, `app/types/footer.ts`, `styles/footer.css` (ก๊อปจาก glass; โลโก้เป็นตัวอักษร CM-SaturnLotto, ตัดป้าย Web3, เติม glass-control/pill + ตัวแปร nav ใน footer.css) — mount ใน `app/[lang]/layout.tsx` ต่อจาก children
+
+## sync lottery UI กับ glass (รอบล่าสุด)
+
+- `lib/gameCardEnterMotion.ts`: เพิ่ม `gameCardEnterListKey` / `GameCardStaggerShell` (ตาม glass) → `LotteryHubContent` ใช้ stagger ของการ์ด featured/grid
+- `LotteryLatestResultsTable`: ลิงก์ไป `/lottery/results` + `results.morePage`, สเกลระยะ/ฟอนต์ตาม glass
+- `LotteryMarketRoundsView`: ผลงวดก่อน (thai-government) อยู่ใน `LotteryMarketShell` (`lottery-market-rounds__result`) · `LotteryPlayRoundList` gap ตาม glass
+- `LotterySlipSummary`: ห่อหัว+หมายเหตุด้วย `lottery-slip-summary__info` และใส่คลาส `lottery-slip-summary__*` แบบ glass
+- `LotterySlipsPageContent`: `TabPanelTransition` ครอบรายการโพย (date picker min/max มีอยู่แล้ว)
+- `LotteryPriceControls`: ปุ่มกลับใช้ `lottery-price-controls__back` · `LotteryHubMarketLink`: `rounded-[var(--radius-panel)]`
+- คงต่างจาก glass โดยตั้งใจ: `LotteryBetResultDialog` (ไม่มี `@radix-ui/react-dialog` — ใช้ overlay/usePresence ของ lotto), shell/หน้า (`SubPageShell`), ปุ่ม `soft-btn-*`, token สี, `EmptyState variant="card"` (lotto ไม่มี variant)

@@ -70,7 +70,7 @@ export function LotteryPlayRoundList({ rounds, marketSlug, basePath }: LotteryPl
               nowMs === null
                 ? "--:--"
                 : formatCountdown(new Date(round.closeAt).getTime() - nowMs);
-            const className = `lottery-play-round-grid__cell flex min-h-[5.5rem] flex-col items-center justify-center gap-1 px-1 py-2 text-center${
+            const className = `lottery-play-round-grid__cell flex min-h-[5.5rem] flex-col items-center justify-center gap-[0.35rem] px-1 py-2 text-center${
               playable ? " is-playable" : ""
             }${round.status === "open" ? " is-open" : ""}`;
 
@@ -121,7 +121,7 @@ export function LotteryPlayRoundList({ rounds, marketSlug, basePath }: LotteryPl
   const openRounds = cardRounds.filter((round) => round.status === "open");
 
   return (
-    <div className="lottery-play-rounds flex flex-col gap-3">
+    <div className="lottery-play-rounds flex flex-col gap-4">
       {openRounds.length === 0 ? (
         <p className="py-10 text-center text-sm text-[var(--text-muted)]">{t("rounds.empty")}</p>
       ) : null}
