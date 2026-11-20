@@ -48,17 +48,6 @@ export const THEMES: ThemeOption[] = [
     "bgColor": "#040813"
   },
   {
-    "key": "tron",
-    "name": "Tron",
-    "isDark": true,
-    "colors": [
-      "#102993",
-      "#050f3b",
-      "#51b0ff"
-    ],
-    "bgColor": "#0c0303"
-  },
-  {
     "key": "sanim",
     "name": "Sanim",
     "isDark": true,
