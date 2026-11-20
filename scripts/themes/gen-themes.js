@@ -15,7 +15,7 @@ const DEFAULT_THEME = "cosmic";
 const DARK_SURF = { page: "#06070a", nav: "#0b0d11", card: "#17181b", card2: "#121316", inner: "#202020" };
 const T = [
   { key: "thunder-x", name: "Thunder X", dark: true, colors: ["#202020", "#0b0d11", "#ffd600"], bg: "#0c0303", ...DARK_SURF, accent: "#ffd600" },
-  { key: "dark-mix-berry", name: "Dark Mix Berry", dark: true, colors: ["#ff2d95", "#b5179e", "#ff7ac3"], bg: "#0f0f12", page: "#0b0b0e", nav: "#101015", card: "#17131a", card2: "#130f16", inner: "#1d1722", accent: "#ff7ac3" },
+  { key: "dark-navy-blue", name: "Dark Navy Blue", dark: true, colors: ["#1e3a8a", "#0b1a45", "#60a5fa"], bg: "#040813", page: "#040813", nav: "#070d1f", card: "#0c1530", card2: "#09112a", inner: "#121d40", accent: "#60a5fa" },
   { key: "tron", name: "Tron", dark: true, colors: ["#102993", "#050f3b", "#51b0ff"], bg: "#0c0303", page: "#030821", nav: "#040b30", card: "#081348", card2: "#061038", inner: "#0a1a62", accent: "#51b0ff" },
   { key: "sanim", name: "Sanim", dark: true, colors: ["#202020", "#0b0d11", "#df6709"], bg: "#0c0303", ...DARK_SURF, accent: "#df6709" },
   { key: "gatsby", name: "Gatsby", dark: true, colors: ["#101421", "#002830", "#fef1cf"], bg: "#000000", page: "#04060b", nav: "#0a0d18", card: "#101421", card2: "#0c101b", inner: "#0b2229", accent: "#fef1cf" },
@@ -36,7 +36,7 @@ const T = [
 // บทบาทสี: ga→gb ไล่สี header/footer/bottom nav/หัวแถวเกม · icon = ไอคอน+ขอบ · action(+at ตัวอักษร) = ปุ่มหลัก · active(+act) = แท็บ/ชิป active
 const ROLES = {
   "thunder-x": { ga: "#202020", gb: "#0b0d11", icon: "#ffd600", action: "#ffd600", at: "#111111", active: "#ffd600", act: "#111111" },
-  "dark-mix-berry": { ga: "#ff2d95", gb: "#b5179e", icon: "#ff7ac3", action: "#ff7ac3", at: "#2a0a1c", active: "#ff2d95", act: "#ffffff" },
+  "dark-navy-blue": { ga: "#1e3a8a", gb: "#0b1a45", icon: "#93c5fd", action: "#60a5fa", at: "#07163a", active: "#1d4ed8", act: "#ffffff" },
   tron: { ga: "#102993", gb: "#050f3b", icon: "#51b0ff", action: "#51b0ff", at: "#04123a", active: "#102993", act: "#ffffff" },
   sanim: { ga: "#202020", gb: "#0b0d11", icon: "#df6709", action: "#df6709", at: "#ffffff", active: "#df6709", act: "#ffffff" },
   gatsby: { ga: "#101421", gb: "#002830", icon: "#fef1cf", action: "#fef1cf", at: "#1a1405", active: "#fef1cf", act: "#1a1405" },

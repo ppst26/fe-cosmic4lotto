@@ -211,7 +211,7 @@ export const LIGHT_THEME_KEYS: string[] = THEMES.filter((t) => !t.isDark).map((t
 | ธีม | โหมด | ga → gb | icon | action (ตัวอักษร) | active (ตัวอักษร) |
 |---|---|---|---|---|---|
 | thunder-x | มืด | #202020 → #0b0d11 | #ffd600 | #ffd600 (#111) | #ffd600 (#111) |
-| dark-mix-berry | มืด | #ff2d95 → #b5179e | #ff7ac3 | #ff7ac3 (#2a0a1c) | #ff2d95 (#fff) |
+| dark-navy-blue | มืด | #1e3a8a → #0b1a45 | #93c5fd | #60a5fa (#07163a) | #1d4ed8 (#fff) |
 | tron | มืด | #102993 → #050f3b | #51b0ff | #51b0ff (#04123a) | #102993 (#fff) |
 | sanim | มืด | #202020 → #0b0d11 | #df6709 | #df6709 (#fff) | #df6709 (#fff) |
 | gatsby | มืด | #101421 → #002830 | #fef1cf | #fef1cf (#1a1405) | #fef1cf (#1a1405) |

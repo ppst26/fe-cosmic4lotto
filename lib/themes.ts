@@ -37,15 +37,15 @@ export const THEMES: ThemeOption[] = [
     "bgColor": "#0c0303"
   },
   {
-    "key": "dark-mix-berry",
-    "name": "Dark Mix Berry",
+    "key": "dark-navy-blue",
+    "name": "Dark Navy Blue",
     "isDark": true,
     "colors": [
-      "#ff2d95",
-      "#b5179e",
-      "#ff7ac3"
+      "#1e3a8a",
+      "#0b1a45",
+      "#60a5fa"
     ],
-    "bgColor": "#0f0f12"
+    "bgColor": "#040813"
   },
   {
     "key": "tron",
