@@ -2,7 +2,7 @@
 
 .lotto-site-header {
   position: sticky;
-  top: 0;
+  top: var(--pwa-banner-h, 0px);
   z-index: 40;
   width: 100%;
 }

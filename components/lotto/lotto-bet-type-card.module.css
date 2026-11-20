@@ -110,9 +110,13 @@
 }
 
 .btnBet {
-  /* เหมือนปุ่มฝากเงิน (btnPrimary ของ quick menu) */
-  background: var(--btn-theme-gradient, linear-gradient(180deg, #ffe082 0%, #ffd15c 45%, #c9a227 100%));
-  color: var(--btn-theme-fg, #2a0607);
+  /* พื้นโทนเข้มของธีม (--t-gb) ตัวหนังสือสีอ่อน — อ่านชัดบนการ์ดสีอ่อน */
+  background: linear-gradient(
+    to bottom,
+    color-mix(in srgb, var(--t-gb, #140c1f) 78%, #fff),
+    color-mix(in srgb, var(--t-gb, #140c1f) 72%, #000)
+  );
+  color: #fff;
   text-decoration: none;
   border: 0;
 }
@@ -130,6 +134,11 @@
 /* ธีมสว่าง: การ์ดใช้สีที่ 1 ของธีม (เข้ม) + ชื่อสีอ่อนให้อ่านออก */
 :global(html[data-mode="light"]) .card {
   --card-solid: color-mix(in srgb, var(--t-ga) 56%, #000);
+}
+
+/* การ์ดโหมดสว่างเข้มอยู่แล้ว — เพิ่มขอบอ่อนให้ปุ่มแยกจากพื้นการ์ด */
+:global(html[data-mode="light"]) .btnBet {
+  border: 1px solid rgba(255, 255, 255, 0.4);
 }
 
 :global(html[data-mode="light"]) .name {

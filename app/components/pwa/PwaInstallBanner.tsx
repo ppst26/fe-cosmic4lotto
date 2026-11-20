@@ -104,17 +104,17 @@ export function PwaInstallBanner() {
             {/* ลิงก์ดูวิธีโหลด — ต่อท้ายโลโก้ ตัวอักษรสีม่วงเด่น เปิดหน้า /download */}
             <Link
               href="/download"
-              className="whitespace-nowrap text-xs font-extrabold text-[color-mix(in_srgb,var(--t-action,var(--brand,var(--action-solid,#7c3aed)))_55%,#ffffff)] underline decoration-2 underline-offset-2"
+              className="whitespace-nowrap text-[13px] font-bold text-white underline decoration-2 underline-offset-[3px]"
             >
               {t("a2hs.howTo")}
             </Link>
           </div>
-          <p className="mt-1 line-clamp-2 text-[11px] leading-snug text-white/75">{t("a2hs.bannerSubtitle")}</p>
+          <p className="mt-1 line-clamp-2 text-[11px] leading-snug text-white/85">{t("a2hs.bannerSubtitle")}</p>
         </div>
 
         <Link
           href="/download"
-          className="shrink-0 whitespace-nowrap rounded-lg bg-[var(--t-action,var(--brand,var(--action-solid,#7c3aed)))] px-4 py-2 text-xs font-bold text-white no-underline"
+          className="btn-theme-gradient shrink-0 whitespace-nowrap rounded-lg px-4 py-2 text-xs font-bold no-underline"
         >
           {t("a2hs.addButton")}
         </Link>

@@ -3,6 +3,16 @@
   flex-direction: column;
   gap: 8px;
   margin-top: 0;
+  /* ติด header ตอนเลื่อน (ใต้แบนเนอร์ PWA ถ้ามี) — พื้นทึบกันเนื้อหาทะลุ */
+  position: sticky;
+  top: calc(var(--pwa-banner-h, 0px) + var(--site-header-h, 0px));
+  z-index: 30;
+  padding-block: 4px;
+  background: color-mix(in srgb, #fff 7%, var(--cosmic-page-base, #060409));
+}
+
+:global(html[data-mode="light"]) .root {
+  background: var(--cosmic-page-base, #fff);
 }
 
 /* หมวดเกม 6 ช่อง — เลื่อนข้างได้เมื่อจอแคบ (ซ่อน scrollbar) */

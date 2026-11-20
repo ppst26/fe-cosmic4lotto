@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import type { ReactNode } from "react";
+import { useEffect, type ReactNode } from "react";
 import Link, { usePathname } from "@/lib/i18n/navigation";
 import { useAuth } from "@/app/components/auth/AuthProvider";
 import { useAuthUI } from "@/context/AuthUIContext";
@@ -37,6 +37,21 @@ export function LottoMobileHeroPanel({ children }: { children?: ReactNode }) {
 /** หมวดเกม — มือถือเท่านั้น (desktop ใช้ sidebar) · หมวด active ตาม route */
 export function LottoMobileQuickMenu() {
   const active = resolveLobbyCategory(usePathname());
+
+  /** แถบหมวด sticky ต่อใต้ header — บอกความสูง header ผ่าน --site-header-h (ใช้ใน .root) */
+  useEffect(() => {
+    const header = document.querySelector<HTMLElement>(".lotto-site-header");
+    if (!header) return;
+    const root = document.documentElement;
+    const sync = () => root.style.setProperty("--site-header-h", `${header.offsetHeight}px`);
+    sync();
+    const observer = new ResizeObserver(sync);
+    observer.observe(header);
+    return () => {
+      observer.disconnect();
+      root.style.removeProperty("--site-header-h");
+    };
+  }, []);
 
   return (
     <div className={`${layout.hideDesktop} ${styles.root}`}>
