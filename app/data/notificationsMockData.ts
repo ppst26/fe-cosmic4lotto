@@ -19,6 +19,4 @@ export const NOTIFICATION_POPOVER_SOCIAL: {
   href: string;
   icon: "line" | "telegram";
 }[] = [
-  { label: "LINE", href: "/support", icon: "line" },
-  { label: "Telegram", href: "/support", icon: "telegram" },
 ];

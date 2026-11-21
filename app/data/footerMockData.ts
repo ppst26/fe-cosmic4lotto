@@ -31,8 +31,6 @@ export const FOOTER_DESKTOP_COLUMNS: FooterLinkColumn[] = [
       { labelKey: "footer.link.accountSettings", href: "/profile/account" },
       { labelKey: "footer.link.dailyCheckIn", href: "/missions/check-in" },
       { labelKey: "footer.link.gemStore", href: "/gems-store" },
-      { labelKey: "footer.link.leaderboard", href: "/support" },
-      { labelKey: "footer.link.predictions", href: "/support" },
     ],
   },
   {
@@ -44,8 +42,6 @@ export const FOOTER_DESKTOP_COLUMNS: FooterLinkColumn[] = [
       { labelKey: "footer.link.tournaments", href: "/event" },
       { labelKey: "footer.link.football", href: "/sport" },
       { labelKey: "footer.link.basketball", href: "/sport" },
-      { labelKey: "footer.link.tennis", href: "/support" },
-      { labelKey: "footer.link.cricket", href: "/support" },
     ],
   },
   {
@@ -55,10 +51,8 @@ export const FOOTER_DESKTOP_COLUMNS: FooterLinkColumn[] = [
       { labelKey: "footer.link.popularGames", href: "/" },
       { labelKey: "footer.link.liveCasino", href: "/casino" },
       { labelKey: "footer.link.newGames", href: "/slots" },
-      { labelKey: "footer.link.crashGames", href: "/support" },
       { labelKey: "footer.link.tableGames", href: "/cards" },
       { labelKey: "footer.link.slots", href: "/slots" },
-      { labelKey: "footer.link.bonusBuy", href: "/support" },
       { labelKey: "footer.link.roulette", href: "/casino" },
       { labelKey: "footer.link.providers", href: "/slots" },
     ],
@@ -78,20 +72,13 @@ export const FOOTER_DESKTOP_COLUMNS: FooterLinkColumn[] = [
   {
     titleKey: "footer.columns.info",
     links: [
-      { labelKey: "footer.link.aboutUs", href: "/support" },
       { labelKey: "footer.link.events", href: "/event" },
       { labelKey: "footer.link.tournaments", href: "/activities" },
-      { labelKey: "footer.link.careers", href: "/support" },
-      { labelKey: "footer.link.contactUs", href: "/support" },
-      { labelKey: "footer.link.brand", href: "/support" },
-      { labelKey: "footer.link.responsibleGaming", href: "/support" },
     ],
   },
   {
     titleKey: "footer.columns.services",
     links: [
-      { labelKey: "footer.link.helpCenter", href: "/support" },
-      { labelKey: "footer.link.guide", href: "/support" },
       { labelKey: "footer.link.luckyWheel", href: "/wheel" },
       { labelKey: "footer.link.lottery", href: "/lottery" },
       { labelKey: "footer.link.fishing", href: "/fishing" },
@@ -101,31 +88,13 @@ export const FOOTER_DESKTOP_COLUMNS: FooterLinkColumn[] = [
 ];
 
 export const FOOTER_DESKTOP_SOCIAL: FooterSocialIcon[] = [
-  { label: "Telegram", href: "/support", icon: "telegram" },
-  { label: "X", href: "/support", icon: "x" },
-  { label: "Discord", href: "/support", icon: "discord" },
-  { label: "Instagram", href: "/support", icon: "instagram" },
-  { label: "YouTube", href: "/support", icon: "youtube" },
-  { label: "LINE", href: "/support", icon: "line" },
 ];
 
 /** แถวไอคอนโซเชียล footer มือถือ (Dexsport-style) */
 export const FOOTER_MOBILE_SOCIAL: FooterSocialIcon[] = [
-  { label: "Medium", href: "/support", icon: "medium" },
-  { label: "Telegram", href: "/support", icon: "telegram" },
-  { label: "X", href: "/support", icon: "x" },
-  { label: "Discord", href: "/support", icon: "discord" },
-  { label: "LinkedIn", href: "/support", icon: "linkedin" },
-  { label: "Reddit", href: "/support", icon: "reddit" },
-  { label: "Instagram", href: "/support", icon: "instagram" },
-  { label: "YouTube", href: "/support", icon: "youtube" },
-  { label: "TikTok", href: "/support", icon: "tiktok" },
 ];
 
 export const FOOTER_EXTERNAL_MOCK_LINKS: FooterBrandLink[] = [
-  { label: "CoinMarketCap", href: "/support" },
-  { label: "CoinGecko", href: "/support" },
-  { label: "DEXTools", href: "/support" },
 ];
 
 export const FOOTER_DISCLAIMER_KEY: MessageKey<"nav"> = "footer.disclaimer";
@@ -146,8 +115,6 @@ export const FOOTER_INFO_LINKS: FooterNavLink[] = [
 ];
 
 export const FOOTER_SOCIAL_LINKS: FooterBrandLink[] = [
-  { label: "LINE", href: "/support" },
-  { label: "Telegram", href: "/support" },
 ];
 
 export const FOOTER_PAYMENT_BANKS: readonly FooterPaymentBank[] = [
@@ -172,10 +139,6 @@ export const FOOTER_PAYMENT_BANKS: readonly FooterPaymentBank[] = [
 export const FOOTER_PAYMENT_LABELS: readonly string[] = ["PromptPay", "TrueMoney", "ธนาคาร"];
 
 export const FOOTER_LEGAL_LINKS: FooterNavLink[] = [
-  { labelKey: "footer.link.privacy", href: "/support" },
-  { labelKey: "footer.link.terms", href: "/support" },
-  { labelKey: "footer.link.feedback", href: "/support" },
-  { labelKey: "footer.link.sitemap", href: "/support" },
 ];
 
 export const FOOTER_COPYRIGHT = "Copyright © cosmicbet 2026";

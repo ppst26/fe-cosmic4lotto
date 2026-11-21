@@ -371,5 +371,4 @@ export const BOTTOM_NAV_DATA: BottomNavItem[] = [
   { id: "nav-deposit", labelKey: "bottomNav.deposit", href: "/deposit", icon: "deposit" },
   { id: "nav-menu", labelKey: "bottomNav.menu", href: "#menu", icon: "menu" },
   { id: "nav-cashback", labelKey: "bottomNav.cashback", href: "/cashback", icon: "cashback" },
-  { id: "nav-contact", labelKey: "bottomNav.contact", href: "/support", icon: "contact" },
 ];

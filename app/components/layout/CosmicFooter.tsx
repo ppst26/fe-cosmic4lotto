@@ -53,7 +53,6 @@ function CosmicFooterMobile() {
         <BrandLogo className="sm:text-2xl" />
       </Link>
 
-      <FooterCommunityChatCta className="cosmic-footer__cta-row w-full max-w-md" />
 
       <FooterPaymentMethodsBand variant="mobile" />
 
@@ -112,36 +111,6 @@ function FooterPaymentMethodsBand({ variant = "desktop" }: { variant?: "desktop"
   );
 }
 
-/** ปุ่มชุมชน + แชทออนไลน์ — มือถือ Dexsport footer */
-function FooterCommunityChatCta({ className }: { className?: string }) {
-  const t = useT("nav");
-  return (
-    <div className={cn("grid grid-cols-2 gap-2.5", className)}>
-      <Link
-        href="/support"
-        className={cn(
-          COSMIC_BTN_GLASS_PILL,
-          "cosmic-footer__cta-community inline-flex min-h-11 items-center justify-center rounded-full px-3 text-sm font-medium text-[var(--text-primary)]",
-        )}
-      >
-        {t("footer.community")}
-      </Link>
-      <Link
-        href="/support"
-        className={cn(
-          COSMIC_BTN_GLASS_PILL,
-          "cosmic-footer__cta-chat inline-flex min-h-11 items-center justify-center gap-2 rounded-full px-3 text-sm font-medium text-[var(--text-primary)]",
-        )}
-      >
-        <span className="relative inline-flex">
-          <HeadsetIcon className="text-[var(--icon-default)]" />
-          <span className="cosmic-footer__chat-online" aria-hidden />
-        </span>
-        {t("footer.liveChat")}
-      </Link>
-    </div>
-  );
-}
 
 /** Footer desktop — โลโก้ + social · 6 คอลัมน์ · trust · CTA · copyright */
 function CosmicFooterDesktop() {
