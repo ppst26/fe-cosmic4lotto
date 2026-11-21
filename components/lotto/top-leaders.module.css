@@ -29,8 +29,8 @@
 
 .card {
   /* สีประจำอันดับ — อันดับ 4-5 ใช้สีกลาง */
-  --lead: color-mix(in srgb, var(--Text-Icon-Body) 45%, transparent);
-  --lead-fg: var(--Text-Icon-Body);
+  --lead: color-mix(in srgb, #fff 22%, #15151a);
+  --lead-fg: #fff;
   flex: 0 0 160px;
   display: flex;
   flex-direction: column;

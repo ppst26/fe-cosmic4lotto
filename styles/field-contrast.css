@@ -83,3 +83,22 @@ input.lotto-field:focus-visible,
 .app-select-trigger[data-state="open"] {
   border-color: var(--field-accent);
 }
+
+/* ปุ่มปิดใช้งาน (การ์ดแทงหวยที่ปิดรับ) — พื้นเข้มโปร่ง + ตัวอักษรขาวจาง ทุกธีม
+ * (เดิมเทาอ่อนบนพื้น --Main-Disable ที่ผสมกับสีการ์ด → ในบางธีม contrast ~2.4) */
+html [class*="lotto-bet-type-card-module"][class*="__btnDisabled"] {
+  background: rgb(0 0 0 / 0.38);
+  color: rgb(255 255 255 / 0.8);
+  border: 1px solid rgb(255 255 255 / 0.18);
+}
+
+/* แถวผลหวย/การ์ดนุ่ม — ขอบเดิม 8% จางเกินในธีมที่พื้นการ์ดใกล้พื้นหลัง (graphite ฯลฯ) */
+.lottery-soft-card {
+  border-color: rgb(255 255 255 / 0.15);
+}
+
+/* ช่องกรอกที่ใช้ --input-bg (AuthSheet / โปรไฟล์) — พื้นเดิมเป็นเทาทึบ กลืนกับธีมสีเขียว/ฟ้า */
+[class*="bg-[var(--input-bg)]"] {
+  background: var(--field-bg);
+  border-color: var(--field-border);
+}
