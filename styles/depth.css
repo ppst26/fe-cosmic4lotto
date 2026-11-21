@@ -58,14 +58,11 @@ html [class*="lobby-sidebar-module"][class*="__btnSecondary"] {
 }
 
 /* ── ไทล์หมวดเกม ── lotto: แถบเมนูมือถือ · cas: CategoryRail + CategoryPills (มือถือ) */
-html [class*="lotto-mobile-quick-module"][class*="__menuItem"],
-html [class*="category-rail-module"][class*="__item"] {
+html [class*="lotto-mobile-quick-module"][class*="__menuItem"] {
   box-shadow: var(--shadow-tile);
 }
 
-html [class*="lotto-mobile-quick-module"][class*="__menuActive"],
-html [class*="category-rail-module"][class*="__itemActive"],
-html [class*="category-rail-module"][class*="__itemActive"]:hover {
+html [class*="lotto-mobile-quick-module"][class*="__menuActive"] {
   box-shadow: var(--shadow-tile-active-sm);
 }
 
@@ -75,8 +72,23 @@ html [class*="lotto-mobile-quick-module"][class*="__categories"] {
   margin: -4px -2px;
 }
 
+/* CategoryRail (cas): ไม่มีกล่อง/พื้น/padding ครอบ — ไทล์เต็มคอลัมน์ · ring เป็น inset เพราะ root มี overflow-y:auto (ring ด้านนอกจะโดนตัด) */
 html [class*="category-rail-module"][class*="__root"] {
-  box-shadow: inset 0 1px 0 rgb(255 255 255 / 0.08), 0 8px 20px -12px rgb(0 0 0 / 0.6);
+  background: transparent;
+  box-shadow: none;
+}
+
+html [class*="category-rail-module"][class*="__nav"] {
+  padding: 0;
+}
+
+html [class*="category-rail-module"][class*="__item"] {
+  box-shadow: var(--shadow-edge-tile), inset 0 1px 0 rgb(255 255 255 / 0.22), inset 0 0 0 1px rgb(255 255 255 / 0.14);
+}
+
+html [class*="category-rail-module"][class*="__itemActive"],
+html [class*="category-rail-module"][class*="__itemActive"]:hover {
+  box-shadow: var(--shadow-edge-tile), inset 0 1px 0 rgb(255 255 255 / 0.22), inset 0 0 0 1px var(--depth-accent);
 }
 
 @media (max-width: 1023px) {

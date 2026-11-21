@@ -37,11 +37,13 @@ html [class*="lotto-mobile-quick-module"][class*="__textGold"] {
 }
 
 /* เมนูหมวดแนวตั้ง (CategoryRail) */
+/* ไม่มีกล่องพื้นครอบเมนู — พื้นอยู่ที่ตัวไทล์เอง (ไทล์เต็มคอลัมน์ ไม่โดนบีบด้วย padding) */
 html [class*="category-rail-module"][class*="__root"] {
-  background: var(--t-rail-bg, color-mix(in srgb, #fff 6%, var(--BG-Surface-Darker)));
+  background: transparent;
 }
 
 html [class*="category-rail-module"][class*="__item"] {
+  background: var(--t-rail-bg, color-mix(in srgb, #fff 6%, var(--BG-Surface-Darker)));
   color: var(--t-rail-fg, var(--Text-Icon-Body));
 }
 
