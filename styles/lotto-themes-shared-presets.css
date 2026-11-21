@@ -27,13 +27,14 @@ html [class*="lotto-mobile-quick-module"][class*="__menuItem"] {
   color: var(--t-rail-fg, var(--Text-Icon-Body));
 }
 
+/* ไทล์ active ต้องต่างจากไทล์อื่นชัดเจน — ใช้ไล่สีปุ่มของธีม (เหมือน CategoryRail ของ cas) แทนขาวจาง 10% */
 html [class*="lotto-mobile-quick-module"][class*="__menuActive"] {
-  background: var(--t-rail-active-bg, color-mix(in srgb, #fff 10%, transparent));
-  color: var(--t-rail-active-fg, var(--Text-Icon-Body));
+  background: var(--t-rail-active-bg, linear-gradient(180deg, var(--btn-gradient1), var(--btn-gradient2)));
+  color: var(--t-rail-active-fg, var(--btn-text));
 }
 
 html [class*="lotto-mobile-quick-module"][class*="__textGold"] {
-  color: var(--t-rail-active-fg, var(--Main-Secondary));
+  color: var(--t-rail-active-fg, var(--btn-text));
 }
 
 /* เมนูหมวดแนวตั้ง (CategoryRail) */
