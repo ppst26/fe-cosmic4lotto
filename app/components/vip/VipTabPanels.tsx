@@ -1,8 +1,6 @@
 "use client";
 
 import React from "react";
-import Image from "next/image";
-import { ChevronRight } from "lucide-react";
 import type { VipModalTabId, VipPlayerState, VipRankTier } from "@/app/types/vip";
 import { VipBenefitsComparisonTable } from "./VipBenefitsComparisonTable";
 import { VipMaintainRankPanel } from "./VipMaintainRankPanel";
@@ -10,7 +8,6 @@ import { VipMyLevelBenefitsCard } from "./VipMyLevelBenefitsCard";
 import { VipRankCarousel } from "./VipRankCarousel";
 import { VipRankLevelUpCard } from "./VipRankLevelUpCard";
 import { useT } from "@/lib/i18n/I18nProvider";
-import s from "./vip-page.module.css";
 
 interface VipTabPanelsProps {
   tab: VipModalTabId;
@@ -42,23 +39,6 @@ export function VipTabPanels({
         </div>
         <div className="flex min-w-0 flex-col gap-3.5">
           <VipMyLevelBenefitsCard player={player} onViewAll={onSelectTab ? () => onSelectTab("benefits") : undefined} />
-          <section className={`${s.cta} motion-reveal`}>
-            <h3 className={s.ctaTitle}>CLIMB HIGHER</h3>
-            <p className={s.ctaSub}>{t("cta.sub")}</p>
-            <button type="button" className={s.ctaBtn} onClick={() => onSelectTab?.("benefits")}>
-              {t("cta.button")}
-              <ChevronRight size={16} aria-hidden />
-            </button>
-            <Image
-              src="/assets/check-in/diamon3.avif"
-              alt=""
-              width={260}
-              height={200}
-              sizes="(min-width: 1024px) 260px, 50vw"
-              className={s.ctaArt}
-              aria-hidden
-            />
-          </section>
         </div>
       </div>
     );
