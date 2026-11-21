@@ -19,6 +19,8 @@
   --shadow-tile: var(--bevel-top), var(--bevel-bottom), var(--depth-hairline);
   --shadow-tile-active: var(--bevel-top), 0 0 0 1px var(--depth-accent), 0 8px 24px -10px color-mix(in srgb, var(--depth-accent) 65%, transparent);
   --shadow-nav: 0 -4px 16px -6px rgb(0 0 0 / 0.5);
+  /* ไทล์ในพื้นที่ที่เลื่อนได้ (sidebar / แถบหมวด): ring + glow สั้น ไม่ให้โดน overflow ตัด */
+  --shadow-tile-active-sm: var(--bevel-top), 0 0 0 1px var(--depth-accent), 0 5px 10px -6px color-mix(in srgb, var(--depth-accent) 60%, transparent);
 }
 
 /* ── ปุ่มหลัก: bevel + gloss + เงาสีธีมใต้ปุ่ม · กด = inset ── (html นำหน้าเพื่อชนะกฎ .lotto-site-header .bb-btn-* ที่ตั้ง box-shadow:none) */
@@ -50,7 +52,13 @@ html [class*="category-rail-module"][class*="__item"] {
 html [class*="lotto-mobile-quick-module"][class*="__menuActive"],
 html [class*="category-rail-module"][class*="__itemActive"],
 html [class*="category-rail-module"][class*="__itemActive"]:hover {
-  box-shadow: var(--shadow-tile-active);
+  box-shadow: var(--shadow-tile-active-sm);
+}
+
+/* แถบหมวดมือถือเลื่อนแนวนอน (overflow-x:auto ตัด ring ขอบไทล์) → padding 4px + margin ติดลบกลับ ให้ layout เท่าเดิม */
+html [class*="lotto-mobile-quick-module"][class*="__categories"] {
+  padding: 4px;
+  margin: -4px -2px;
 }
 
 html [class*="category-rail-module"][class*="__root"] {
@@ -64,7 +72,7 @@ html [class*="category-rail-module"][class*="__root"] {
 
   html [class*="category-pills-module"][class*="__pillActive"],
   html [class*="category-pills-module"][class*="__pillActive"]:hover {
-    box-shadow: var(--shadow-tile-active);
+    box-shadow: var(--shadow-tile-active-sm);
   }
 }
 
