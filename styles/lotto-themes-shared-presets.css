@@ -1,0 +1,73 @@
+/*
+ * preset กลาง (solid / gradient — scripts/themes/presets.shared.json) → token/คลาสของ lotto
+ * โหลดต่อจาก lotto-themes-bridge.css · ธีมเดิมไม่ตั้ง --t-chrome-* / --t-rail-* จึงได้ค่า fallback = ค่าเดิมทุกจุด
+ * CSS module (lotto-mobile-quick / category-rail / category-pills) เลือกด้วย [class*="<ไฟล์>-module"][class*="__<คลาส>"]
+ * เพราะ Next เติม hash กลางชื่อคลาส — ไม่ต้องแก้ไฟล์ component
+ */
+
+/* สีตัวอักษร/ไอคอนบน chrome: bottom nav ทุกจอ · header เฉพาะมือถือ (desktop header เป็นพื้นเข้มกลาง ไม่ใช่สี chrome) */
+html[data-theme]:not([data-theme="cosmic"]) .lotto-bottom-nav {
+  --Text-Icon-Body: var(--t-chrome-fg, #ffffff);
+  --main-icon-1: var(--t-chrome-fg, #ffffff);
+}
+
+@media (max-width: 1023px) {
+  html[data-theme]:not([data-theme="cosmic"]) .lotto-site-header .header-shell {
+    --Text-Icon-Body: var(--t-chrome-fg, #ffffff);
+    --main-icon-1: var(--t-chrome-fg, #ffffff);
+  }
+}
+
+/* แถบเมนูหมวดมือถือของ lotto (LottoMobileQuickMenu) */
+html [class*="lotto-mobile-quick-module"][class*="__root"] {
+  background: var(--t-rail-bg, color-mix(in srgb, #fff 7%, var(--cosmic-page-base, #060409)));
+}
+
+html [class*="lotto-mobile-quick-module"][class*="__menuItem"] {
+  color: var(--t-rail-fg, var(--Text-Icon-Body));
+}
+
+html [class*="lotto-mobile-quick-module"][class*="__menuActive"] {
+  background: var(--t-rail-active-bg, color-mix(in srgb, #fff 10%, transparent));
+  color: var(--t-rail-active-fg, var(--Text-Icon-Body));
+}
+
+html [class*="lotto-mobile-quick-module"][class*="__textGold"] {
+  color: var(--t-rail-active-fg, var(--Main-Secondary));
+}
+
+/* เมนูหมวดแนวตั้ง (CategoryRail) */
+html [class*="category-rail-module"][class*="__root"] {
+  background: var(--t-rail-bg, color-mix(in srgb, #fff 6%, var(--BG-Surface-Darker)));
+}
+
+html [class*="category-rail-module"][class*="__item"] {
+  color: var(--t-rail-fg, var(--Text-Icon-Body));
+}
+
+html [class*="category-rail-module"][class*="__item"]:hover {
+  background: var(--t-rail-item-bg, color-mix(in srgb, #fff 8%, transparent));
+  color: var(--t-rail-fg, var(--Text-Icon-Title));
+}
+
+html [class*="category-rail-module"][class*="__itemActive"],
+html [class*="category-rail-module"][class*="__itemActive"]:hover {
+  background: var(--t-rail-active-bg, linear-gradient(180deg, var(--btn-gradient1), var(--btn-gradient2)));
+  color: var(--t-rail-active-fg, var(--btn-text));
+}
+
+/* pill หมวดเกม (CategoryPills) */
+html [class*="category-pills-module"][class*="__root"] {
+  --pill-bg: var(--t-rail-bg, color-mix(in srgb, #fff 16%, var(--ui-surface)));
+  --pill-bg-hover: var(--t-rail-item-bg, color-mix(in srgb, #fff 24%, var(--ui-surface)));
+}
+
+html [class*="category-pills-module"][class*="__pill"] {
+  color: var(--t-rail-fg, var(--Text-Icon-Title));
+}
+
+html [class*="category-pills-module"][class*="__pillActive"],
+html [class*="category-pills-module"][class*="__pillActive"]:hover {
+  background: var(--t-rail-active-bg, linear-gradient(180deg, var(--btn-gradient1), var(--btn-gradient2)));
+  color: var(--t-rail-active-fg, var(--btn-text));
+}

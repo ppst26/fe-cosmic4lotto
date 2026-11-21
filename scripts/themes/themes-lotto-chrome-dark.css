@@ -1,0 +1,34 @@
+
+/* =========================================================
+   header ของ lotto/cas บน preset ที่ chrome พื้นสว่าง/พาสเทล (ตัวอักษร chrome เป็นสีเข้ม)
+   __DARK_CHROME__ = selector รวมที่ gen-themes.js สร้างจาก presets.shared.json (chrome.fg เข้ม)
+   ธีมอื่นไม่โดนกฎนี้ — ใช้ตัวอักษรขาวเดิมของ bblotto-header.css
+========================================================= */
+/* desktop header ของ lotto/cas เป็นพื้นเข้มกลาง ไม่ใช่สี chrome → ใช้เฉพาะมือถือ (header ไล่สี --t-ga/--t-gb) */
+@media (max-width: 1023px) {
+  html__DARK_CHROME__ .lotto-site-header .header-shell {
+    color: var(--t-chrome-fg);
+  }
+
+  html__DARK_CHROME__ .lotto-site-header .header-shell :is(.wallet-value, .wallet-row--credit, .dh-nav a, .dh-nav a:hover, .dh-account__name, .dh-balance, .dh-ticket__title, .dh-ticket__sub, .dh-auth--ghost, .dh-lang) {
+    color: var(--t-chrome-fg);
+  }
+
+  html__DARK_CHROME__ .lotto-site-header :is(.header-logo, .dh-logo__img) {
+    filter: var(--t-chrome-logo-filter, none);
+  }
+
+  html__DARK_CHROME__ .lotto-site-header .hamburger-template-1 label span {
+    background: var(--t-chrome-fg);
+  }
+
+  html__DARK_CHROME__ .lotto-site-header .wallet-wrapper {
+    background: var(--t-chrome-inner-fill);
+  }
+}
+
+/* preset กลุ่ม solid: ปุ่มหลักเรียบสีเดียว (ไม่ไล่เข้มลง) — เขียนทับ token ที่ lotto-theme.css / bridge สร้างจาก --t-action */
+html:root[data-theme]__SOLID__ {
+  --btn-gradient2: var(--t-action);
+  --btn-theme-gradient: linear-gradient(var(--t-action), var(--t-action));
+}

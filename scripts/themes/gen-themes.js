@@ -7,6 +7,7 @@
  */
 const fs = require("fs");
 const path = require("path");
+const { loadSharedPresets, extraTokens, solidFlatTokens, darkChromeSelector, solidSelector } = require("./lib/shared-presets");
 process.chdir(path.resolve(__dirname, "../.."));
 
 const DEFAULT_THEME = "cosmic";
@@ -51,13 +52,18 @@ const ROLES = {
   "venom": { ga: "#3f6212", gb: "#1a2e05", icon: "#bef264", action: "#a3e635", at: "#1a2e05", active: "#4d7c0f", act: "#ffffff" },
   "nebula": { ga: "#3730a3", gb: "#1e1b4b", icon: "#a5b4fc", action: "#818cf8", at: "#12104a", active: "#4338ca", act: "#ffffff" },
 };
-for (const t of T) Object.assign(t, ROLES[t.key]);
+for (const t of T) Object.assign(t, ROLES[t.key], { group: "gradient", style: "mono", glow: true });
+
+// preset กลาง (solid / gradient) — scripts/themes/presets.shared.json (ไฟล์เดียวกันทุกโปรเจกต์)
+const shared = loadSharedPresets(__dirname);
+T.push(...shared.rows);
+if (process.env.THEME_REPORT) console.table(shared.report);
 
 const mix = (a, pa, b) => `color-mix(in srgb, ${a} ${pa}%, ${b})`;
 
 /** token ที่ได้จากบทบาทสี — ใช้ทั้งธีมมืดและสว่าง (ชื่อ token = ของ glass: tokens.css) */
 function common(t) {
-  return `  --t-ga: ${t.ga};
+  let css = `  --t-ga: ${t.ga};
   --t-gb: ${t.gb};
   --t-icon: ${t.icon};
   --t-action: ${t.action};
@@ -117,6 +123,10 @@ function common(t) {
   --nebula-violet: ${mix("var(--t-accent)", 30, "transparent")};
   --nebula-blue: ${mix("var(--t-ga)", 28, "transparent")};
   --cosmic-nebula-bg-image: radial-gradient(ellipse 55% 38% at 42% 0%, ${mix("var(--t-accent)", 20, "transparent")}, transparent 75%), radial-gradient(ellipse 42% 32% at 75% 0%, ${mix("var(--t-ga)", 18, "transparent")}, transparent 78%), radial-gradient(ellipse 30% 32% at 29% 55%, ${mix("var(--t-gb)", 26, "transparent")}, transparent 78%), radial-gradient(ellipse 32% 34% at 65% 54%, ${mix("var(--t-accent)", 12, "transparent")}, transparent 80%);`;
+  // พื้นหลังชั้นหลังสุดกลางจริง (solid / duo): ปิดสีฟุ้ง
+  if (t.glow === false) css = css.replace(/--cosmic-nebula-bg-image:[^\n]*;$/, "--cosmic-nebula-bg-image: none;");
+  const extra = [...extraTokens(t), ...solidFlatTokens(t)];
+  return extra.length ? css + "\n  " + extra.join("\n  ") : css;
 }
 
 function darkBlock(t) {
@@ -287,7 +297,7 @@ const header = `/**
 `;
 fs.writeFileSync(
   "app/styles/themes.css",
-  header + T.map((t) => (t.dark ? darkBlock(t) : lightBlock(t))).join("\n\n") + "\n" + fs.readFileSync(__dirname + "/themes-static.css", "utf8"),
+  header + T.map((t) => (t.dark ? darkBlock(t) : lightBlock(t))).join("\n\n") + "\n" + fs.readFileSync(__dirname + "/themes-static.css", "utf8") + fs.readFileSync(__dirname + "/themes-lotto-chrome-dark.css", "utf8").split("__DARK_CHROME__").join(darkChromeSelector(T)).split("__SOLID__").join(solidSelector(T)),
 );
 
 const ts = `/**
@@ -301,14 +311,18 @@ export interface ThemeOption {
   key: string;
   name: string;
   isDark: boolean;
+  /** solid = navbar เรียบ · gradient = ไล่สี */
+  group: "solid" | "gradient";
+  /** solid: tonal | complementary · gradient: mono | duo */
+  style: "tonal" | "complementary" | "mono" | "duo";
   colors: string[];
   bgColor: string;
 }
 
 export const THEMES: ThemeOption[] = ${JSON.stringify(
   [
-    { key: DEFAULT_THEME, name: "Cosmic", isDark: true, colors: ["#4930df", "#121127", "#0968f8"], bgColor: "#0d0814" },
-    ...T.map((t) => ({ key: t.key, name: t.name, isDark: t.dark, colors: t.colors, bgColor: t.bg })),
+    { key: DEFAULT_THEME, name: "Cosmic", isDark: true, group: "gradient", style: "mono", colors: ["#4930df", "#121127", "#0968f8"], bgColor: "#0d0814" },
+    ...T.map((t) => ({ key: t.key, name: t.name, isDark: t.dark, group: t.group, style: t.style, colors: t.colors, bgColor: t.bg })),
   ],
   null,
   2,

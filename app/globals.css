@@ -4,6 +4,7 @@
 @import "../styles/lotto-ui-compat.css";
 @import "./styles/themes.css";
 @import "../styles/lotto-themes-bridge.css";
+@import "../styles/lotto-themes-shared-presets.css";
 @import "../styles/lotto-floating-actions.css";
 @import "../styles/lottery-hub.css";
 @import "../styles/lottery-glass.css";

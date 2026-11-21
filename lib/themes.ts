@@ -9,6 +9,10 @@ export interface ThemeOption {
   key: string;
   name: string;
   isDark: boolean;
+  /** solid = navbar เรียบ · gradient = ไล่สี */
+  group: "solid" | "gradient";
+  /** solid: tonal | complementary · gradient: mono | duo */
+  style: "tonal" | "complementary" | "mono" | "duo";
   colors: string[];
   bgColor: string;
 }
@@ -18,6 +22,8 @@ export const THEMES: ThemeOption[] = [
     "key": "cosmic",
     "name": "Cosmic",
     "isDark": true,
+    "group": "gradient",
+    "style": "mono",
     "colors": [
       "#4930df",
       "#121127",
@@ -29,6 +35,8 @@ export const THEMES: ThemeOption[] = [
     "key": "thunder-x",
     "name": "Thunder X",
     "isDark": true,
+    "group": "gradient",
+    "style": "mono",
     "colors": [
       "#202020",
       "#0b0d11",
@@ -40,6 +48,8 @@ export const THEMES: ThemeOption[] = [
     "key": "dark-navy-blue",
     "name": "Dark Navy Blue",
     "isDark": true,
+    "group": "gradient",
+    "style": "mono",
     "colors": [
       "#1e3a8a",
       "#0b1a45",
@@ -51,6 +61,8 @@ export const THEMES: ThemeOption[] = [
     "key": "sanim",
     "name": "Sanim",
     "isDark": true,
+    "group": "gradient",
+    "style": "mono",
     "colors": [
       "#202020",
       "#0b0d11",
@@ -62,6 +74,8 @@ export const THEMES: ThemeOption[] = [
     "key": "gatsby",
     "name": "Gatsby",
     "isDark": true,
+    "group": "gradient",
+    "style": "mono",
     "colors": [
       "#101421",
       "#002830",
@@ -73,6 +87,8 @@ export const THEMES: ThemeOption[] = [
     "key": "navy",
     "name": "Navy",
     "isDark": true,
+    "group": "gradient",
+    "style": "mono",
     "colors": [
       "#090c0f",
       "#0c121f",
@@ -84,6 +100,8 @@ export const THEMES: ThemeOption[] = [
     "key": "wisdom",
     "name": "Wisdom",
     "isDark": true,
+    "group": "gradient",
+    "style": "mono",
     "colors": [
       "#772639",
       "#400A1A",
@@ -95,6 +113,8 @@ export const THEMES: ThemeOption[] = [
     "key": "midnight-violet",
     "name": "Midnight Violet",
     "isDark": true,
+    "group": "gradient",
+    "style": "mono",
     "colors": [
       "#4c1d95",
       "#1e0b45",
@@ -106,6 +126,8 @@ export const THEMES: ThemeOption[] = [
     "key": "emerald-night",
     "name": "Emerald Night",
     "isDark": true,
+    "group": "gradient",
+    "style": "mono",
     "colors": [
       "#0f5c43",
       "#052e22",
@@ -117,6 +139,8 @@ export const THEMES: ThemeOption[] = [
     "key": "crimson-noir",
     "name": "Crimson Noir",
     "isDark": true,
+    "group": "gradient",
+    "style": "mono",
     "colors": [
       "#9f1239",
       "#4c0519",
@@ -128,6 +152,8 @@ export const THEMES: ThemeOption[] = [
     "key": "ocean-deep",
     "name": "Ocean Deep",
     "isDark": true,
+    "group": "gradient",
+    "style": "mono",
     "colors": [
       "#0e5a8a",
       "#052a45",
@@ -139,6 +165,8 @@ export const THEMES: ThemeOption[] = [
     "key": "royal-gold",
     "name": "Royal Gold",
     "isDark": true,
+    "group": "gradient",
+    "style": "mono",
     "colors": [
       "#5a4310",
       "#231a05",
@@ -150,6 +178,8 @@ export const THEMES: ThemeOption[] = [
     "key": "ember",
     "name": "Ember",
     "isDark": true,
+    "group": "gradient",
+    "style": "mono",
     "colors": [
       "#c2410c",
       "#5a1d06",
@@ -161,6 +191,8 @@ export const THEMES: ThemeOption[] = [
     "key": "graphite",
     "name": "Graphite",
     "isDark": true,
+    "group": "gradient",
+    "style": "mono",
     "colors": [
       "#2b3038",
       "#0e1013",
@@ -172,6 +204,8 @@ export const THEMES: ThemeOption[] = [
     "key": "orchid",
     "name": "Orchid",
     "isDark": true,
+    "group": "gradient",
+    "style": "mono",
     "colors": [
       "#a21caf",
       "#4a044e",
@@ -183,6 +217,8 @@ export const THEMES: ThemeOption[] = [
     "key": "venom",
     "name": "Venom",
     "isDark": true,
+    "group": "gradient",
+    "style": "mono",
     "colors": [
       "#3f6212",
       "#1a2e05",
@@ -194,12 +230,222 @@ export const THEMES: ThemeOption[] = [
     "key": "nebula",
     "name": "Nebula",
     "isDark": true,
+    "group": "gradient",
+    "style": "mono",
     "colors": [
       "#3730a3",
       "#1e1b4b",
       "#818cf8"
     ],
     "bgColor": "#05060f"
+  },
+  {
+    "key": "solid-violet",
+    "name": "Violet Solid",
+    "isDark": true,
+    "group": "solid",
+    "style": "tonal",
+    "colors": [
+      "#2a1660",
+      "#4527a0",
+      "#a78bfa"
+    ],
+    "bgColor": "#0a0a0b"
+  },
+  {
+    "key": "solid-teal",
+    "name": "Teal Solid",
+    "isDark": true,
+    "group": "solid",
+    "style": "tonal",
+    "colors": [
+      "#0b3b3a",
+      "#0f766e",
+      "#2dd4bf"
+    ],
+    "bgColor": "#0a0a0b"
+  },
+  {
+    "key": "solid-rose",
+    "name": "Rose Solid",
+    "isDark": true,
+    "group": "solid",
+    "style": "tonal",
+    "colors": [
+      "#5b1230",
+      "#be185d",
+      "#f472b6"
+    ],
+    "bgColor": "#0a0a0b"
+  },
+  {
+    "key": "solid-azure",
+    "name": "Azure Solid",
+    "isDark": true,
+    "group": "solid",
+    "style": "tonal",
+    "colors": [
+      "#0c2a5c",
+      "#1d4ed8",
+      "#60a5fa"
+    ],
+    "bgColor": "#0a0a0b"
+  },
+  {
+    "key": "solid-violet-gold",
+    "name": "Violet + Gold",
+    "isDark": true,
+    "group": "solid",
+    "style": "complementary",
+    "colors": [
+      "#3b1a7a",
+      "#facc15",
+      "#facc15"
+    ],
+    "bgColor": "#050506"
+  },
+  {
+    "key": "solid-teal-coral",
+    "name": "Teal + Coral",
+    "isDark": true,
+    "group": "solid",
+    "style": "complementary",
+    "colors": [
+      "#0b4a47",
+      "#fb7185",
+      "#fb7185"
+    ],
+    "bgColor": "#050506"
+  },
+  {
+    "key": "solid-navy-orange",
+    "name": "Navy + Orange",
+    "isDark": true,
+    "group": "solid",
+    "style": "complementary",
+    "colors": [
+      "#14306e",
+      "#f97316",
+      "#fb923c"
+    ],
+    "bgColor": "#0f0f11"
+  },
+  {
+    "key": "solid-crimson-mint",
+    "name": "Crimson + Mint",
+    "isDark": true,
+    "group": "solid",
+    "style": "complementary",
+    "colors": [
+      "#6b0f2c",
+      "#34d399",
+      "#34d399"
+    ],
+    "bgColor": "#050506"
+  },
+  {
+    "key": "grad-mocha",
+    "name": "Mocha",
+    "isDark": true,
+    "group": "gradient",
+    "style": "mono",
+    "colors": [
+      "#78350f",
+      "#271405",
+      "#e0b184"
+    ],
+    "bgColor": "#0a0a0b"
+  },
+  {
+    "key": "grad-sakura",
+    "name": "Sakura",
+    "isDark": true,
+    "group": "gradient",
+    "style": "mono",
+    "colors": [
+      "#be185d",
+      "#500724",
+      "#f9a8d4"
+    ],
+    "bgColor": "#0a0a0b"
+  },
+  {
+    "key": "grad-lagoon",
+    "name": "Lagoon",
+    "isDark": true,
+    "group": "gradient",
+    "style": "mono",
+    "colors": [
+      "#0f766e",
+      "#042f2e",
+      "#2dd4bf"
+    ],
+    "bgColor": "#0a0a0b"
+  },
+  {
+    "key": "grad-sage",
+    "name": "Sage",
+    "isDark": true,
+    "group": "gradient",
+    "style": "mono",
+    "colors": [
+      "#4d6b57",
+      "#1c2a21",
+      "#a7c4a0"
+    ],
+    "bgColor": "#0a0a0b"
+  },
+  {
+    "key": "duo-violet-gold",
+    "name": "Violet → Gold",
+    "isDark": true,
+    "group": "gradient",
+    "style": "duo",
+    "colors": [
+      "#4c1d95",
+      "#2a1660",
+      "#facc15"
+    ],
+    "bgColor": "#050506"
+  },
+  {
+    "key": "duo-rose-orange",
+    "name": "Rose → Orange (Pastel)",
+    "isDark": true,
+    "group": "gradient",
+    "style": "duo",
+    "colors": [
+      "#fda4af",
+      "#fed7aa",
+      "#fdba74"
+    ],
+    "bgColor": "#0a0a0b"
+  },
+  {
+    "key": "duo-mint-sky",
+    "name": "Mint → Sky (Pastel)",
+    "isDark": true,
+    "group": "gradient",
+    "style": "duo",
+    "colors": [
+      "#99f6e4",
+      "#cffafe",
+      "#5eead4"
+    ],
+    "bgColor": "#0f0f11"
+  },
+  {
+    "key": "duo-lilac-peach",
+    "name": "Lilac → Peach (Pastel)",
+    "isDark": true,
+    "group": "gradient",
+    "style": "duo",
+    "colors": [
+      "#ddd6fe",
+      "#ede9fe",
+      "#fdba74"
+    ],
+    "bgColor": "#0a0a0b"
   }
 ];
 

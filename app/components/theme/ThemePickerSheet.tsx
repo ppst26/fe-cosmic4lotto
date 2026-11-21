@@ -1,12 +1,21 @@
 "use client";
 
-import React from "react";
+import React, { useState } from "react";
 import { OverlayPanel } from "@/app/components/ui/OverlayPanel";
 import { LOTTO_SHEET_SURFACE } from "@/app/components/menu/lottoSurface";
 import { DEFAULT_THEME, THEMES, type ThemeOption } from "@/lib/themes";
 import { useTheme } from "@/lib/theme";
 import { useT } from "@/lib/i18n/I18nProvider";
 import { cn } from "@/lib/utils";
+
+type ThemeGroup = ThemeOption["group"];
+type ThemeStyle = ThemeOption["style"];
+
+/** กลุ่มใหญ่ → กลุ่มย่อยตามลำดับที่แสดง (ตรงกับ group/style ใน scripts/themes/presets.shared.json) */
+const GROUPS: { id: ThemeGroup; styles: ThemeStyle[] }[] = [
+  { id: "solid", styles: ["tonal", "complementary"] },
+  { id: "gradient", styles: ["mono", "duo"] },
+];
 
 interface ThemePickerSheetProps {
   isOpen: boolean;
@@ -109,6 +118,8 @@ function ThemeGrid({
 export function ThemePickerSheet({ isOpen, onClose }: ThemePickerSheetProps) {
   const t = useT("common");
   const { theme, setTheme } = useTheme();
+  const [group, setGroup] = useState<ThemeGroup>(() => THEMES.find((x) => x.key === theme)?.group ?? "gradient");
+  const current = GROUPS.find((g) => g.id === group) ?? GROUPS[1];
 
   const pick = (key: string) => {
     setTheme(key);
@@ -125,7 +136,32 @@ export function ThemePickerSheet({ isOpen, onClose }: ThemePickerSheetProps) {
       closeLabel={t("theme.close")}
     >
       <p className="mb-3 text-xs text-[var(--text-muted)]">{t("theme.description")}</p>
-      <ThemeGrid title={t("theme.dark")} themes={THEMES.filter((x) => x.isDark)} activeTheme={theme} onSelect={pick} />
+      <div role="tablist" aria-label={t("theme.title")} className="mb-3 grid grid-cols-2 gap-1 rounded-xl bg-[var(--surface-mid)] p-1">
+        {GROUPS.map((g) => (
+          <button
+            key={g.id}
+            type="button"
+            role="tab"
+            aria-selected={group === g.id}
+            onClick={() => setGroup(g.id)}
+            className={cn(
+              "h-9 cursor-pointer rounded-lg border-0 text-sm font-semibold outline-none transition-colors",
+              group === g.id
+                ? "bg-[var(--action-solid)] text-[var(--t-action-text,#fff)]"
+                : "bg-transparent text-[var(--text-secondary)] hover:text-[var(--text-primary)]",
+            )}
+          >
+            {t(`theme.group.${g.id}`)}
+          </button>
+        ))}
+      </div>
+      {current.styles.map((style) => {
+        const themes = THEMES.filter((x) => x.isDark && x.group === group && x.style === style);
+        if (themes.length === 0) return null;
+        return (
+          <ThemeGrid key={style} title={t(`theme.style.${style}`)} themes={themes} activeTheme={theme} onSelect={pick} />
+        );
+      })}
     </OverlayPanel>
   );
 }
