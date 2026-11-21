@@ -543,6 +543,13 @@ html[data-mode="light"] .wheel-winners__bar {
   margin-top: 2.75rem;
   border-radius: 14px;
 }
+/* แท็บเพชร/ตั๋ว ยังไม่มีประวัติ */
+.wheel-history__empty {
+  justify-content: center;
+  min-height: 3.5rem;
+  color: var(--ww-muted);
+  font-size: 0.875rem;
+}
 .wheel-history__row {
   justify-content: space-between;
   gap: 0.5rem;

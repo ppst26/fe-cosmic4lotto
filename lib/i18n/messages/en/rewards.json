@@ -158,6 +158,9 @@
       "latest": "My latest spins",
       "usedGems": "Gems",
       "usedTicket": "Ticket",
+      "tabGems": "Gems",
+      "tabTicket": "Tickets",
+      "empty": "No spins yet",
       "prevPage": "Previous page",
       "nextPage": "Next page"
     }

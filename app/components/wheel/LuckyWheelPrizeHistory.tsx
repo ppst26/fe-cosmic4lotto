@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useMemo } from "react";
+import React, { useMemo, useState } from "react";
 import { Clock } from "lucide-react";
 import { useWheel } from "@/app/hooks/api/member";
 import type { WheelPrizeHistoryRow, WheelSpinMethod } from "@/app/types/reward";
@@ -25,9 +25,14 @@ export function LuckyWheelPrizeHistory({ extraRows = [], variant = "default" }: 
   const t = useT("rewards");
   /** ใช้ cache เดียวกับ LuckyWheelPageContent (SWR) */
   const prizeHistory = useWheel().data?.prizeHistory;
+  /** แท็บแยกตามวิธีหมุน: เพชร / ตั๋ว (สไตล์เดียวกับแท็บของตารางผู้ได้รับรางวัล) */
+  const [tab, setTab] = useState<WheelSpinMethod>("gems");
   const rows = useMemo(
-    () => [...extraRows, ...(prizeHistory ?? [])].slice(0, WHEEL_LIST_MAX_ROWS),
-    [extraRows, prizeHistory],
+    () =>
+      [...extraRows, ...(prizeHistory ?? [])]
+        .filter((row) => row.method === tab)
+        .slice(0, WHEEL_LIST_MAX_ROWS),
+    [extraRows, prizeHistory, tab],
   );
 
   return (
@@ -44,13 +49,31 @@ export function LuckyWheelPrizeHistory({ extraRows = [], variant = "default" }: 
         </h2>
       </header>
 
-      <div className="wheel-winners__panel wheel-winners__panel--solo">
+      <div className="wheel-winners__tabs" role="tablist" aria-label={t("wheel.history.title")}>
+        {HISTORY_TABS.map((method) => (
+          <button
+            key={method}
+            type="button"
+            role="tab"
+            aria-selected={tab === method}
+            className="wheel-winners__tab"
+            onClick={() => setTab(method)}
+          >
+            {method === "gems" ? t("wheel.history.tabGems") : t("wheel.history.tabTicket")}
+          </button>
+        ))}
+      </div>
+
+      <div className="wheel-winners__panel" role="tabpanel">
         <div className="wheel-winners__bar">
           <Clock size={18} className="wheel-winners__bar-icon" aria-hidden="true" />
           <span>{t("wheel.history.latest")}</span>
         </div>
 
         <ul className="wheel-winners__list">
+          {rows.length === 0 ? (
+            <li className="wheel-winners__row wheel-history__row wheel-history__empty">{t("wheel.history.empty")}</li>
+          ) : null}
           {rows.map((row) => (
             <li key={row.id} className="wheel-winners__row wheel-history__row">
               <div className="wheel-history__main">
@@ -73,6 +96,8 @@ export function LuckyWheelPrizeHistory({ extraRows = [], variant = "default" }: 
     </section>
   );
 }
+
+const HISTORY_TABS: readonly WheelSpinMethod[] = ["gems", "ticket"];
 
 /** สีค่าใช้จ่าย — ใช้เพชรแดงอ่อน (ลด) · ใช้ตั๋ว neutral */
 function wheelSpinCostRole(method: WheelSpinMethod): ValueRole {
