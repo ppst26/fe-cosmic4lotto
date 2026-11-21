@@ -122,3 +122,23 @@
 @utility soft-card-bg {
   background: var(--Card-Normal);
 }
+
+/* VIP — token ที่ glass นิยามใน tokens.css แต่ lotto ไม่มี (ค่าเดียวกับ glass โหมดมืด) */
+:root {
+  --vip-progress-track-bg: color-mix(in srgb, #27272a 88%, #18181b);
+  --vip-progress-deposit-fill: linear-gradient(90deg, #b45309 0%, #f59e0b 45%, #fde68a 100%);
+  --vip-progress-turnover-fill: linear-gradient(90deg, #5b21b6 0%, #7c3aed 42%, #c4b5fd 100%);
+  --vip-progress-complete-fill: linear-gradient(90deg, #047857 0%, #34d399 55%, #6ee7b7 100%);
+  --vip-rank-accent-line: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgb(161 161 170 / 0.35) 28%,
+    rgb(228 228 231 / 0.55) 50%,
+    rgb(161 161 170 / 0.35) 72%,
+    transparent 100%
+  );
+  --vip-rank-card-radius: var(--radius-panel);
+  --vip-rank-card-bg: #0e0e10;
+  --vip-rank-benefit-cell-a: color-mix(in srgb, var(--surface-end) 94%, var(--vip-rank-card-bg) 6%);
+  --vip-rank-benefit-cell-b: color-mix(in srgb, var(--surface-end) 90%, var(--vip-rank-card-bg) 10%);
+}

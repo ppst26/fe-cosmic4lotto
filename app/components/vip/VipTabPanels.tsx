@@ -1,7 +1,11 @@
 "use client";
 
 import React from "react";
-import type { VipModalTabId, VipPlayerState, VipRankTier } from "@/app/types/vip";
+import type {
+  VipModalTabId,
+  VipPlayerState,
+  VipRankTier,
+} from "@/app/types/vip";
 import { VipBenefitsComparisonTable } from "./VipBenefitsComparisonTable";
 import { VipMaintainRankPanel } from "./VipMaintainRankPanel";
 import { VipMyLevelBenefitsCard } from "./VipMyLevelBenefitsCard";
@@ -19,7 +23,9 @@ interface VipTabPanelsProps {
   onSelectTab?: (tab: VipModalTabId) => void;
 }
 
-/** เนื้อหาแท็บ VIP — มือถือเรียงแนวตั้ง · จอกว้าง (lg) แยก 2 คอลัมน์ */
+/**
+ * เนื้อหาแท็บ VIP — มือถือเรียงแนวตั้ง · จอกว้าง (lg) แยก 2 คอลัมน์
+ */
 export function VipTabPanels({
   tab,
   player,
@@ -32,13 +38,23 @@ export function VipTabPanels({
 
   if (tab === "my-level") {
     return (
-      <div className="grid w-full items-start gap-3.5 lg:grid-cols-2" aria-label={t("level.benefitsAndMaintainAriaLabel")}>
+      <div
+        className="grid w-full items-start gap-3.5 lg:grid-cols-2"
+        aria-label={t("level.benefitsAndMaintainAriaLabel")}
+      >
         <div className="flex min-w-0 flex-col gap-3.5">
-          <VipRankLevelUpCard player={player} focusRankId={player.currentRankId} mode="current" />
+          <VipRankLevelUpCard
+            player={player}
+            focusRankId={player.currentRankId}
+            mode="current"
+          />
           <VipMaintainRankPanel activeRankId={player.currentRankId} />
         </div>
         <div className="flex min-w-0 flex-col gap-3.5">
-          <VipMyLevelBenefitsCard player={player} onViewAll={onSelectTab ? () => onSelectTab("benefits") : undefined} />
+          <VipMyLevelBenefitsCard
+            player={player}
+            onViewAll={onSelectTab ? () => onSelectTab("benefits") : undefined}
+          />
         </div>
       </div>
     );

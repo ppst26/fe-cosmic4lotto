@@ -9,7 +9,7 @@ import {
   getVipRankViewStatus,
   getVipRequirementRankForFocus,
 } from "@/app/data/vipMockData";
-import { VipRankProgressMetric } from "./VipRankProgressMetric";
+import { VipRankProgressMetric } from "@/app/components/vip/VipRankProgressMetric";
 import { useT } from "@/lib/i18n/I18nProvider";
 import { cn } from "@/lib/utils";
 import s from "./vip-page.module.css";
@@ -21,62 +21,84 @@ interface VipRankLevelUpCardProps {
   mode?: "current" | "carousel";
 }
 
-/** การ์ดความคืบหน้าเลื่อนแรงค์ — ฝาก + เทิร์น (AND ทั้งสองเงื่อนไข) */
-export function VipRankLevelUpCard({ player, focusRankId, mode = "carousel" }: VipRankLevelUpCardProps) {
+/**
+ * การ์ดความคืบหน้าเลื่อนแรงค์ — ฝาก + เทิร์น (AND ทั้งสองเงื่อนไข)
+ */
+export function VipRankLevelUpCard({
+  player,
+  focusRankId,
+  mode = "carousel",
+}: VipRankLevelUpCardProps) {
   const t = useT("vip");
   const status = getVipRankViewStatus(focusRankId, player.currentRankId);
 
   /** ถึงแรงค์สูงสุดแล้ว — แสดงเป้าของแรงค์ปัจจุบันครบ 100% (ไม่มีขั้นถัดไป) */
-  const maxed = !player.nextRankId && (mode === "current" || focusRankId === player.currentRankId);
+  const maxed =
+    !player.nextRankId &&
+    (mode === "current" || focusRankId === player.currentRankId);
 
   const requirementRankId = maxed
     ? player.currentRankId
     : mode === "current" && player.nextRankId
       ? player.nextRankId
       : getVipRequirementRankForFocus(focusRankId, player);
-  const levelUpFromPlayer = mode === "current" && !maxed ? player.levelUpTarget : null;
+  const levelUpFromPlayer =
+    mode === "current" && !maxed ? player.levelUpTarget : null;
   const fallbackAmounts = getVipRankLevelUpAmounts(requirementRankId);
-  const targetVipNumber = levelUpFromPlayer?.vipLevel ?? getVipRankDisplayNumber(requirementRankId);
-  const depositTarget = levelUpFromPlayer?.depositTarget ?? fallbackAmounts.depositTarget;
-  const turnoverTarget = levelUpFromPlayer?.turnoverTarget ?? fallbackAmounts.turnoverTarget;
+  const targetVipNumber =
+    levelUpFromPlayer?.vipLevel ?? getVipRankDisplayNumber(requirementRankId);
+  const depositTarget =
+    levelUpFromPlayer?.depositTarget ?? fallbackAmounts.depositTarget;
+  const turnoverTarget =
+    levelUpFromPlayer?.turnoverTarget ?? fallbackAmounts.turnoverTarget;
 
   const locked = mode === "carousel" && status === "locked";
   const cleared = maxed || (mode === "carousel" && status === "cleared");
 
-  const depositProgress = locked ? 0 : cleared ? depositTarget : player.depositProgress;
-  const turnoverProgress = locked ? 0 : cleared ? turnoverTarget : player.turnoverProgress;
+  const depositProgress = locked
+    ? 0
+    : cleared
+      ? depositTarget
+      : player.depositProgress;
+  const turnoverProgress = locked
+    ? 0
+    : cleared
+      ? turnoverTarget
+      : player.turnoverProgress;
 
-  const overallPct = getVipLevelUpOverallPercent(depositProgress, turnoverProgress, depositTarget, turnoverTarget);
+  const overallPct = getVipLevelUpOverallPercent(
+    depositProgress,
+    turnoverProgress,
+    depositTarget,
+    turnoverTarget,
+  );
 
-  /** เน้น "VIP 10" เป็นสีทองในหัวข้อ (ตัดจากข้อความแปล) */
-  const marker = `VIP ${targetVipNumber}`;
-  const raw = cleared ? marker : t("progress.levelUpTo", { level: targetVipNumber });
-  const at = raw.indexOf(marker);
-  const title =
-    at >= 0 ? (
-      <>
-        {raw.slice(0, at)}
-        <span className={s.hl}>{marker}</span>
-        {raw.slice(at + marker.length)}
-      </>
-    ) : (
-      raw
-    );
+  const title = cleared
+    ? `VIP ${targetVipNumber}`
+    : t("progress.levelUpTo", { level: targetVipNumber });
 
   return (
-    <section className={`${s.panel} motion-reveal`}>
+    <section className={s.panel}>
       <div className={s.panelHead}>
         <div className="min-w-0">
           <h3 className={s.panelTitle}>{title}</h3>
           <p className={s.panelSub}>{t("progress.bothRequired")}</p>
         </div>
-        <div className={s.percentWrap} aria-label={t("progress.overallAriaLabel", { percent: Math.round(overallPct) })}>
+        <div
+          className={s.percentWrap}
+          aria-label={t("progress.overallAriaLabel", {
+            percent: Math.round(overallPct),
+          })}
+        >
           <span className={s.percent}>
             {Math.round(overallPct)}
             <small>%</small>
           </span>
           <div className={cn(s.bar, s.barTop)}>
-            <div className={cn(s.barFill, s.barPurple, "motion-bar")} style={{ width: `${Math.min(100, overallPct)}%` }} />
+            <div
+              className={cn(s.barFill, s.barDeposit)}
+              style={{ width: `${Math.min(100, overallPct)}%` }}
+            />
           </div>
         </div>
       </div>

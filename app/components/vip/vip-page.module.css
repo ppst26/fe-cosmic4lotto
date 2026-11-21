@@ -1,30 +1,25 @@
-/* หน้า VIP — สีทั้งหมดอิงธีม: พื้นการ์ด --t-ga → --t-gb · เน้นด้วย --t-accent (โหมดสว่างใช้สีอ่อนจาก --t-ga) */
+/* หน้า VIP — layout (hero · แท็บแคปซูล · การ์ด 2 คอลัมน์) · สีทั้งหมดอิง token ของ glass (tokens.css / themes.css) */
 .root {
-  --v-ink: #f4f1fb;
-  --v-acc: var(--t-accent, #f7edd2);
-  --v-muted: color-mix(in srgb, var(--v-ink) 62%, transparent);
-  --v-line: color-mix(in srgb, var(--v-acc) 26%, transparent);
-  --v-glow: color-mix(in srgb, var(--v-acc) 16%, transparent);
-  --v-sub: color-mix(in srgb, var(--v-acc) 78%, var(--v-ink));
-  --v-gold: linear-gradient(
+  --v-ink: var(--text-primary);
+  --v-muted: var(--text-secondary);
+  --v-faint: var(--text-muted);
+  --v-line: var(--vip-panel-border);
+  --v-glow: color-mix(in srgb, var(--accent-primary) 16%, transparent);
+  --v-title: linear-gradient(
     180deg,
-    color-mix(in srgb, var(--v-acc) 55%, #fff) 0%,
-    var(--v-acc) 48%,
-    color-mix(in srgb, var(--v-acc) 62%, #000) 100%
+    var(--text-primary) 0%,
+    var(--text-secondary) 100%
   );
-  --v-panel: linear-gradient(160deg, color-mix(in srgb, var(--t-gb, #140c1f) 90%, #fff) 0%, var(--t-ga, #0c090f) 100%);
+  --v-panel-bg: var(--vip-rank-card-bg);
+  --v-panel-face: var(--vip-rank-card-face-gradient);
+  --v-inner: var(--vip-rank-benefit-cell-a);
   display: flex;
   flex-direction: column;
   gap: 10px;
   color: var(--v-ink);
 }
 
-:global(html[data-mode="light"]) .root {
-  --v-acc: color-mix(in srgb, var(--t-ga, #0c090f) 35%, #fff);
-}
-
 /* ── hero ── */
-/* hero ดันขึ้นไปซ้อนใต้แถว breadcrumb ของ SubPageShell */
 .hero {
   position: relative;
   display: flex;
@@ -32,22 +27,157 @@
   justify-content: space-between;
   gap: 4px;
   min-height: 190px;
-  margin: -44px -12px 0;
-  padding: 48px 12px 0;
+  padding: 12px 8px 0 12px;
   overflow: hidden;
-  border-radius: 0 0 18px 18px;
-  background:
-    radial-gradient(1.5px 1.5px at 14% 30%, rgba(255, 255, 255, 0.9) 50%, transparent 52%),
-    radial-gradient(1.5px 1.5px at 30% 72%, rgba(255, 255, 255, 0.7) 50%, transparent 52%),
-    radial-gradient(2px 2px at 46% 22%, rgba(255, 255, 255, 0.8) 50%, transparent 52%),
-    radial-gradient(1.5px 1.5px at 60% 85%, rgba(255, 255, 255, 0.7) 50%, transparent 52%),
-    radial-gradient(2px 2px at 70% 14%, rgba(255, 255, 255, 0.9) 50%, transparent 52%),
-    radial-gradient(1.5px 1.5px at 88% 24%, rgba(255, 255, 255, 0.7) 50%, transparent 52%),
-    radial-gradient(1.5px 1.5px at 94% 60%, rgba(255, 255, 255, 0.8) 50%, transparent 52%),
-    radial-gradient(circle at 72% 42%, var(--v-glow), transparent 32%),
-    radial-gradient(55% 70% at 88% 20%, color-mix(in srgb, var(--v-acc) 22%, transparent), transparent 70%),
-    radial-gradient(45% 60% at 6% 95%, var(--v-glow), transparent 70%),
-    linear-gradient(180deg, color-mix(in srgb, var(--t-ga, #0c090f) 82%, #000) 0%, var(--t-gb, #140c1f) 100%);
+  /* ไม่ใช่การ์ด — พื้นเต็มความกว้าง ไม่มีขอบ/มุมมน */
+  border-radius: 0;
+  border: 0;
+  /*
+   * พื้นหลังอวกาศวาดด้วย CSS (ไม่ใช้รูป — ตัวอักษรอ่านง่ายกว่า)
+   * เนบิวลาม่วงเกือบดำด้านขวา + ฝุ่นดาว · วงโค้งทองใน ::before/::after
+   * ธีมสว่างปิดเนบิวลา/วงโค้งแล้วใช้ไล่สีธีมแทน (themes-static.css)
+   */
+  --vip-hero-face: linear-gradient(
+    160deg,
+    #040208 0%,
+    #0a0516 40%,
+    #110a24 75%,
+    #190f33 100%
+  );
+  --vip-hero-nebula:
+    radial-gradient(
+      58% 85% at 80% 28%,
+      rgb(124 58 237 / 0.26) 0%,
+      rgb(76 29 149 / 0.18) 38%,
+      transparent 72%
+    ),
+    radial-gradient(
+      36% 48% at 94% 72%,
+      rgb(147 85 246 / 0.15) 0%,
+      transparent 70%
+    ),
+    radial-gradient(
+      42% 60% at 4% 100%,
+      rgb(40 15 90 / 0.42) 0%,
+      transparent 70%
+    ),
+    radial-gradient(
+      70% 40% at 50% 115%,
+      rgb(245 197 66 / 0.14) 0%,
+      transparent 70%
+    );
+  background-color: var(--v-panel-bg);
+  background-image:
+    radial-gradient(
+      1.5px 1.5px at 14% 30%,
+      rgb(255 255 255 / 0.9) 50%,
+      transparent 52%
+    ),
+    radial-gradient(
+      1.5px 1.5px at 30% 72%,
+      rgb(255 255 255 / 0.7) 50%,
+      transparent 52%
+    ),
+    radial-gradient(
+      2px 2px at 46% 22%,
+      rgb(255 255 255 / 0.8) 50%,
+      transparent 52%
+    ),
+    radial-gradient(
+      1.5px 1.5px at 60% 85%,
+      rgb(255 255 255 / 0.7) 50%,
+      transparent 52%
+    ),
+    radial-gradient(
+      2px 2px at 70% 14%,
+      rgb(255 255 255 / 0.9) 50%,
+      transparent 52%
+    ),
+    radial-gradient(
+      1.5px 1.5px at 88% 24%,
+      rgb(255 255 255 / 0.7) 50%,
+      transparent 52%
+    ),
+    radial-gradient(
+      1.5px 1.5px at 94% 60%,
+      rgb(255 255 255 / 0.8) 50%,
+      transparent 52%
+    ),
+    radial-gradient(
+      1px 1px at 22% 52%,
+      rgb(255 255 255 / 0.55) 50%,
+      transparent 52%
+    ),
+    radial-gradient(
+      1px 1px at 40% 40%,
+      rgb(255 255 255 / 0.5) 50%,
+      transparent 52%
+    ),
+    radial-gradient(
+      1px 1px at 78% 78%,
+      rgb(255 236 170 / 0.7) 50%,
+      transparent 52%
+    ),
+    radial-gradient(
+      1px 1px at 84% 48%,
+      rgb(255 255 255 / 0.6) 50%,
+      transparent 52%
+    ),
+    var(--vip-hero-nebula), var(--vip-hero-face);
+}
+
+/* หน้า standalone: ดึง hero ให้เต็มขอบจอ ไม่เหลือช่องว่าง (บน = padding-top ของ main · ข้าง = gutter · ล่าง = gap ของ root) */
+.root:not(.embedded) .hero {
+  margin-top: -1rem;
+  margin-inline: calc(var(--layout-inline-gutter) * -1);
+  margin-bottom: -10px;
+}
+
+/* วงโค้งทอง 2 เส้น — วงกลมใหญ่ล้นขอบ ขอบเป็น conic-gradient (เส้นสว่างเฉพาะช่วง) */
+.hero::before,
+.hero::after {
+  content: "";
+  position: absolute;
+  z-index: 0;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  border: 2px solid transparent;
+  background: conic-gradient(
+      from 180deg,
+      transparent 0 18%,
+      rgb(245 197 66 / 0.35) 26%,
+      rgb(253 224 130 / 0.95) 36%,
+      rgb(255 243 196 / 1) 42%,
+      rgb(245 197 66 / 0.7) 52%,
+      transparent 62% 100%
+    )
+    border-box;
+  -webkit-mask:
+    linear-gradient(#000 0 0) padding-box,
+    linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+  mask:
+    linear-gradient(#000 0 0) padding-box,
+    linear-gradient(#000 0 0);
+  mask-composite: exclude;
+  opacity: var(--vip-hero-arcs, 1);
+  pointer-events: none;
+}
+
+.hero::before {
+  top: -78%;
+  right: -46%;
+  width: 150%;
+  border-width: 3px;
+}
+
+.hero::after {
+  top: -34%;
+  right: -22%;
+  width: 92%;
+  border-width: 1.5px;
+  opacity: calc(var(--vip-hero-arcs, 1) * 0.65);
+  transform: rotate(14deg);
 }
 
 .heroText {
@@ -60,12 +190,12 @@
 
 .heroVip {
   margin: 0;
-  font-family: inherit;
+  font-family: "Cinzel", "Trajan Pro", Georgia, "Times New Roman", serif;
   font-size: clamp(56px, 16vw, 84px);
-  font-weight: 600;
+  font-weight: 700;
   line-height: 0.9;
   letter-spacing: 0.02em;
-  background: var(--v-gold);
+  background: var(--v-title);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
@@ -77,32 +207,38 @@
   font-size: clamp(16px, 4.6vw, 20px);
   font-weight: 600;
   line-height: 1.2;
+  color: var(--v-ink);
 }
 
 .heroSub {
   margin: 2px 0 0;
   font-size: 13px;
-  color: var(--v-sub);
+  color: var(--v-muted);
 }
 
 .heroEmblem {
-  --vip-glow: var(--v-acc);
+  --vip-glow: var(--accent-primary);
   position: relative;
   z-index: 1;
   display: flex;
   flex: 0 0 auto;
   flex-direction: column;
   align-items: center;
-  padding-bottom: 10px;
+  padding-bottom: 4px;
   text-align: center;
 }
 
-/* ตราแรงค์ลอยเหนือแท่น — แท่นวงรีซ้อน 2 ชั้น */
+/* ตราแรงค์ (ภาพมีแท่นในตัวแล้ว) */
 .emblemWrap {
   position: relative;
   z-index: 2;
-  margin-bottom: -12px;
   filter: drop-shadow(0 10px 18px rgb(0 0 0 / 0.55));
+}
+
+/* hero: ตราใหญ่กว่า xl ปกติ — ภาพถูกตัดขอบโปร่งใสแล้ว เหลือ padding น้อย */
+.emblemWrap > div {
+  width: 176px;
+  height: 176px;
 }
 
 /* แสงเรืองสีประจำระดับหลังตรา (--vip-glow ตั้งจาก tier.accent) */
@@ -183,132 +319,20 @@
   }
 }
 
-.pedestal {
-  position: relative;
-  width: 160px;
-  height: 38px;
-  border-radius: 50%;
-  background: radial-gradient(ellipse at 50% 35%, var(--t-gb, #140c1f) 0%, var(--t-ga, #0c090f) 75%);
-  box-shadow:
-    0 0 0 2px var(--v-line),
-    0 0 22px var(--v-glow),
-    inset 0 -6px 12px rgb(0 0 0 / 0.6);
-}
-
-.pedestal::after {
-  content: "";
-  position: absolute;
-  z-index: -1;
-  inset: 12px -12px -15px;
-  border-radius: 50%;
-  background: linear-gradient(180deg, var(--t-gb, #140c1f), var(--t-ga, #0c090f));
-  box-shadow: 0 0 0 1px var(--v-line), 0 8px 20px rgb(0 0 0 / 0.6);
-}
-
-/* ป้ายชื่อระดับใต้ตรา — แผ่นหกเหลี่ยมขอบทอง + pill "ระดับถัดไป" ซ้อนใต้ */
-.heroPlate {
-  position: relative;
-  z-index: 3;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-top: -26px;
-}
-
-.heroRank {
-  --rank-accent: var(--value-reward);
-  position: relative;
-  isolation: isolate;
-  margin: 0;
-  min-width: 138px;
-  padding: 5px 22px 3px;
-  text-align: center;
-  font-family: "Cinzel", "Trajan Pro", Georgia, "Times New Roman", serif;
-  font-size: clamp(16px, 4.6vw, 21px);
-  font-weight: 700;
-  line-height: 1.1;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  /* ขอบทอง = พื้นของ p · พื้นดำ = ::after หดเข้า 2px · ตัวอักษรไล่เฉดอยู่ใน .heroRankText (ชั้นบนสุด) */
-  background: linear-gradient(
-    100deg,
-    #8a6a1f 0%,
-    #f6d77a 22%,
-    #fff3c4 38%,
-    #d9ad4b 55%,
-    #fff0b8 72%,
-    #9c7a2a 100%
-  );
-  clip-path: polygon(9% 0, 91% 0, 100% 50%, 91% 100%, 9% 100%, 0 50%);
-}
-
-.heroRank::after {
-  content: "";
-  position: absolute;
-  inset: 2px 3px;
-  z-index: 0;
-  clip-path: polygon(9% 0, 91% 0, 100% 50%, 91% 100%, 9% 100%, 0 50%);
-  background:
-    radial-gradient(80% 120% at 50% -20%, rgb(255 255 255 / 0.12), transparent 60%),
-    linear-gradient(180deg, #1c1626 0%, #0d0a14 100%);
-}
-
-.heroRankText {
-  position: relative;
-  z-index: 1;
-  display: block;
-  color: transparent;
-  background: linear-gradient(
-    180deg,
-    #fff8dc 0%,
-    color-mix(in srgb, var(--rank-accent) 72%, #ffffff) 30%,
-    var(--rank-accent) 55%,
-    color-mix(in srgb, var(--rank-accent) 72%, #000000) 100%
-  );
-  -webkit-background-clip: text;
-  background-clip: text;
-}
-
-.heroNext {
-  position: relative;
-  z-index: -1;
-  margin: -6px 0 0;
-  padding: 8px 12px 3px;
-  border-radius: 0 0 14px 14px;
-  border: 1px solid rgb(245 197 66 / 0.28);
-  border-top: 0;
-  background: linear-gradient(180deg, #17121f 0%, #0a0812 100%);
-  box-shadow: 0 6px 14px rgb(0 0 0 / 0.45);
-  font-size: 11px;
-  line-height: 1.2;
-  white-space: nowrap;
-  color: rgb(255 255 255 / 0.8);
-}
-
-.heroNext b {
-  font-weight: 700;
-  letter-spacing: 0.06em;
-  color: transparent;
-  background: linear-gradient(180deg, #ffffff 0%, #d9dce6 45%, #8f95a8 100%);
-  -webkit-background-clip: text;
-  background-clip: text;
-}
-
-/* ── tabs (แคปซูลเดียว · แท็บละเท่ากัน · active ใช้สีปุ่มของธีม) ── */
+/* ── tabs (แคปซูลเดียว · แท็บละเท่ากัน · active ใช้สีปุ่มหลักของ glass) ── */
 .tabs {
   position: relative;
   display: flex;
   width: 100%;
   overflow: hidden;
   border-radius: 12px;
-  border: 0;
-  background: var(--v-panel);
+  border: 1px solid var(--v-line);
+  background: var(--v-panel-bg);
 }
 
 .tab {
   position: relative;
   z-index: 1;
-  transition: color var(--dur-base) var(--ease-out);
   display: flex;
   flex: 1 1 0;
   min-width: 0;
@@ -321,7 +345,7 @@
   background: transparent;
   color: var(--v-muted);
   font-size: 13px;
-  font-weight: 600;
+  font-weight: 500;
   cursor: pointer;
   transition: color 0.2s;
 }
@@ -348,7 +372,7 @@
 }
 
 .tabActive {
-  color: var(--btn-theme-fg, var(--t-action-text, #0c090f));
+  color: #fff;
 }
 
 /* พื้นแท็บที่เลือก — เลื่อนไปหาแท็บใหม่ */
@@ -356,8 +380,12 @@
   position: absolute;
   inset: 0 auto 0 0;
   border-radius: 12px;
-  background: var(--btn-theme-gradient, var(--v-acc));
-  transition: transform var(--dur-slow) var(--ease-out);
+  background: linear-gradient(
+    90deg,
+    var(--t-ga, #4a148c),
+    var(--t-gb, #6d28d9)
+  );
+  transition: transform var(--motion-slow) var(--ease-out);
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -375,13 +403,34 @@
   position: relative;
   min-width: 0;
   padding: 12px;
-  border-radius: 14px;
-  border: 0;
-  background:
-    radial-gradient(90% 70% at 50% -20%, var(--v-glow), transparent 60%),
-    var(--v-panel);
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+  overflow: hidden;
+  border-radius: var(--vip-rank-card-radius);
+  border: 1px solid var(--v-line);
+  background-color: var(--v-panel-bg);
+  background-image:
+    linear-gradient(
+      180deg,
+      var(--vip-panel-shade, rgb(0 0 0 / 0.22)) 0%,
+      transparent 38%
+    ),
+    var(--vip-rank-card-top-radial), var(--v-panel-face);
+  box-shadow: var(
+    --vip-panel-shadow,
+    inset 0 1px 0 color-mix(in srgb, var(--text-primary) 3%, transparent)
+  );
   color: var(--v-ink);
+}
+
+.panel::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 12%;
+  right: 12%;
+  height: 2px;
+  border-radius: 999px;
+  background: var(--vip-rank-accent-line);
+  pointer-events: none;
 }
 
 .infoIcon {
@@ -390,7 +439,7 @@
   height: 16px;
   margin-left: 6px;
   vertical-align: -2px;
-  color: var(--v-sub);
+  color: var(--v-muted);
 }
 
 .panelHead {
@@ -406,16 +455,13 @@
   font-weight: 600;
   line-height: 1.15;
   white-space: nowrap;
-}
-
-.hl {
-  color: var(--v-acc);
+  color: var(--v-ink);
 }
 
 .panelSub {
   margin: 4px 0 0;
   font-size: 12px;
-  color: var(--v-sub);
+  color: var(--v-muted);
 }
 
 .percentWrap {
@@ -431,15 +477,12 @@
   font-size: 28px;
   font-weight: 600;
   line-height: 1;
-  background: var(--v-gold);
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
+  color: var(--vip-level-up-percent);
 }
 
 .percent small {
   font-size: 0.62em;
-  font-weight: 600;
+  font-weight: 500;
 }
 
 .percentWrap .bar {
@@ -452,8 +495,7 @@
   padding: 5px 10px;
   text-align: center;
   border-radius: 12px;
-  border: 0;
-  background: rgba(0, 0, 0, 0.3);
+  background: transparent;
 }
 
 .daysNum {
@@ -461,10 +503,7 @@
   font-size: 24px;
   font-weight: 600;
   line-height: 1;
-  background: var(--v-gold);
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
+  color: var(--vip-level-up-percent);
 }
 
 .daysLabel {
@@ -482,23 +521,9 @@
   margin-top: 10px;
 }
 
-/* เส้นคั่นกลางระหว่างกล่องฝาก/เทิร์น */
-.metrics::before {
-  content: "";
-  position: absolute;
-  top: 8px;
-  bottom: 8px;
-  left: 50%;
-  width: 1px;
-  background: transparent;
-}
-
 .metric {
   min-width: 0;
-  padding: 8px 8px 7px;
-  border-radius: 10px;
-  border: 0;
-  background: rgba(0, 0, 0, 0.28);
+  padding: 2px 0;
 }
 
 /* ยอดยาว (14,647 / 10,000) ตกไปบรรทัดถัดไปแทนที่จะล้นกล่อง */
@@ -517,18 +542,14 @@
   align-items: center;
   gap: 4px;
   font-size: 13px;
-  font-weight: 600;
+  font-weight: 500;
 }
 
 .metricLabel svg {
   width: 16px;
   height: 16px;
   flex: 0 0 auto;
-  color: var(--v-acc);
-}
-
-.metricTurn .metricLabel svg {
-  color: var(--v-sub);
+  color: var(--icon-default);
 }
 
 .metricAmt {
@@ -557,8 +578,7 @@
   margin-top: 8px;
   overflow: hidden;
   border-radius: 999px;
-  border: 1px solid var(--v-line);
-  background: rgba(0, 0, 0, 0.35);
+  background: var(--vip-progress-track-bg);
 }
 
 .barFill {
@@ -567,22 +587,21 @@
   transition: width 0.5s;
 }
 
-.barGold {
-  background: linear-gradient(90deg, color-mix(in srgb, var(--v-acc) 62%, #000), color-mix(in srgb, var(--v-acc) 70%, #fff));
+.barDeposit {
+  background: var(--vip-progress-deposit-fill);
 }
 
-.barPurple {
-  background: linear-gradient(90deg, color-mix(in srgb, var(--v-acc) 38%, #000), color-mix(in srgb, var(--v-acc) 88%, #000));
+.barTurnover {
+  background: var(--vip-progress-turnover-fill);
 }
 
 .barDone {
-  background: linear-gradient(90deg, #14c996, #3be8b0);
+  background: var(--vip-progress-complete-fill);
 }
 
 .barTop {
   height: 7px;
   margin: 0;
-  background: rgba(255, 255, 255, 0.06);
 }
 
 .metricFoot {
@@ -596,8 +615,8 @@
   display: inline-flex;
   align-items: center;
   gap: 4px;
-  color: #3be8b0;
-  font-weight: 600;
+  color: var(--vip-rank-metric-complete);
+  font-weight: 500;
 }
 
 .locked {
@@ -618,12 +637,16 @@
   gap: 4px;
   padding: 5px 12px;
   border-radius: 999px;
-  border: 1px solid color-mix(in srgb, var(--v-acc) 60%, transparent);
-  background: var(--v-glow);
+  border: 1px solid var(--v-line);
+  background: transparent;
   color: var(--v-ink);
   font-size: 12px;
-  font-weight: 600;
+  font-weight: 500;
   cursor: pointer;
+}
+
+.viewAll:hover {
+  background: var(--surface-hover);
 }
 
 .tiles {
@@ -641,17 +664,16 @@
   flex-direction: column;
   align-items: center;
   gap: 3px;
-  padding: 8px 2px 8px;
+  padding: 8px 2px;
   text-align: center;
   border-radius: 10px;
-  border: 0;
-  background: rgba(0, 0, 0, 0.28);
+  background: transparent;
 }
 
 .tileIcon {
   width: 40px;
   height: 40px;
-  color: var(--v-acc);
+  color: var(--icon-active);
 }
 
 /* ภาพ 3D จาก public/assets */
@@ -659,11 +681,7 @@
   width: 44px;
   height: 44px;
   object-fit: contain;
-  filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.45));
-}
-
-.tintGold {
-  filter: sepia(1) saturate(2.8) hue-rotate(-8deg) brightness(1.02) drop-shadow(0 4px 8px rgba(0, 0, 0, 0.45));
+  filter: drop-shadow(0 4px 8px rgb(0 0 0 / 0.45));
 }
 
 .tileValue {
@@ -674,16 +692,34 @@
   font-size: 16px;
   font-weight: 600;
   line-height: 1.1;
-  background: var(--v-gold);
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
+  color: var(--v-ink);
 }
 
 .tileLabel {
   font-size: 11px;
   line-height: 1.2;
-  color: var(--v-ink);
+  color: var(--v-muted);
+}
+
+@media (min-width: 1024px) {
+  .hero {
+    min-height: 240px;
+    padding: 28px 32px 0;
+  }
+
+  .heroEmblem {
+    margin-right: 6%;
+  }
+
+  .panel {
+    padding: 16px;
+  }
+}
+
+/* hub modal (embedded) — hero เตี้ยลงให้เห็นการ์ดโดยไม่ต้องเลื่อนมาก */
+.embedded .hero {
+  min-height: 170px;
+  padding-top: 18px;
 }
 
 /* ── แท็บแร็งค์: เวทีตราแรงค์ (ข้างละ 1–2 ตราจาง) ──
@@ -695,10 +731,14 @@
   position: relative;
   min-height: 190px;
   overflow: hidden;
-  border-radius: 14px;
+  border-radius: var(--vip-rank-card-radius);
   background:
     radial-gradient(45% 70% at 50% 45%, var(--v-glow), transparent 70%),
-    radial-gradient(70% 90% at 50% 100%, color-mix(in srgb, var(--v-acc) 10%, transparent), transparent 70%);
+    radial-gradient(
+      70% 90% at 50% 100%,
+      color-mix(in srgb, var(--accent-primary) 10%, transparent),
+      transparent 70%
+    );
 }
 
 .rankItem {
@@ -735,12 +775,38 @@
 }
 
 /* ตำแหน่งตามระยะจากตัวกลาง: ±1 ข้างๆ · ±2 ไกล (ซ่อนบนจอแคบ) · ±3 พ้นขอบ รอเลื่อนเข้า */
-.rankItem[data-offset="-1"] { --x: -120px; --scale: 0.6875; }
-.rankItem[data-offset="1"] { --x: 120px; --scale: 0.6875; }
-.rankItem[data-offset="-2"] { --x: -196px; --scale: 0.375; opacity: 0; pointer-events: none; }
-.rankItem[data-offset="2"] { --x: 196px; --scale: 0.375; opacity: 0; pointer-events: none; }
-.rankItem[data-offset="-3"] { --x: -260px; --scale: 0.375; opacity: 0; pointer-events: none; }
-.rankItem[data-offset="3"] { --x: 260px; --scale: 0.375; opacity: 0; pointer-events: none; }
+.rankItem[data-offset="-1"] {
+  --x: -120px;
+  --scale: 0.6875;
+}
+.rankItem[data-offset="1"] {
+  --x: 120px;
+  --scale: 0.6875;
+}
+.rankItem[data-offset="-2"] {
+  --x: -196px;
+  --scale: 0.375;
+  opacity: 0;
+  pointer-events: none;
+}
+.rankItem[data-offset="2"] {
+  --x: 196px;
+  --scale: 0.375;
+  opacity: 0;
+  pointer-events: none;
+}
+.rankItem[data-offset="-3"] {
+  --x: -260px;
+  --scale: 0.375;
+  opacity: 0;
+  pointer-events: none;
+}
+.rankItem[data-offset="3"] {
+  --x: 260px;
+  --scale: 0.375;
+  opacity: 0;
+  pointer-events: none;
+}
 
 @media (min-width: 420px) {
   .rankItem[data-offset="-2"],
@@ -758,19 +824,24 @@
   transition: transform var(--rank-dur) var(--rank-ease);
 }
 
+/* ขนาดตัวอักษรคงที่ที่ 20px แล้วย่อด้วย transform (ไม่เปลี่ยน font-size → ไม่ reflow/กระตุก ตอนเลื่อน) */
 .rankName {
+  --label-scale: 0.55;
   margin: -4px 0 0;
-  font-size: 11px;
+  font-size: 20px;
   font-weight: 600;
-  letter-spacing: 0.04em;
+  line-height: 1.5;
+  letter-spacing: 0.06em;
+  transform: scale(var(--label-scale));
+  transform-origin: 50% 0;
   transition:
-    font-size var(--rank-dur) var(--rank-ease),
+    transform var(--rank-dur) var(--rank-ease),
     color var(--rank-dur) var(--rank-ease);
+  will-change: transform;
 }
 
 .rankItemFocus .rankName {
-  font-size: 20px;
-  letter-spacing: 0.06em;
+  --label-scale: 1;
 }
 
 .rankStatus {
@@ -805,7 +876,7 @@
   transform: translateY(-50%);
   border-radius: 999px;
   border: 1px solid var(--v-line);
-  background: rgba(0, 0, 0, 0.55);
+  background: var(--vip-arrow-bg, rgb(0 0 0 / 0.55));
   color: var(--v-ink);
   cursor: pointer;
 }
@@ -823,67 +894,56 @@
   right: 6px;
 }
 
-/* ── stardust: ประกายฝุ่นดาวลอยฟุ้งขึ้นด้านหลังตราแรงค์ ── */
-.stardust {
-  position: absolute;
-  inset: -45% -40% -10%;
-  z-index: 0;
-  pointer-events: none;
-  /* ขอบบนเลือนหายไปกับพื้นหลัง */
-  -webkit-mask-image: linear-gradient(to top, #000 35%, transparent 100%);
-  mask-image: linear-gradient(to top, #000 35%, transparent 100%);
+/* ── ตารางสิทธิประโยชน์ ── */
+.benTable {
+  overflow: hidden;
+  border-radius: var(--vip-rank-card-radius);
+  border: 1px solid var(--v-line);
+  background-color: var(--v-panel-bg);
+  background-image: var(--v-panel-face);
 }
 
-.stardustGlow {
-  position: absolute;
-  left: 50%;
-  top: 62%;
-  width: 70%;
-  aspect-ratio: 1;
-  transform: translate(-50%, -50%);
-  border-radius: 50%;
-  background: radial-gradient(circle, color-mix(in srgb, var(--sd-color) 50%, transparent) 0%, transparent 70%);
-  filter: blur(8px);
+.benStickyHead,
+.benStickyCell {
+  position: sticky;
+  left: 0;
+  z-index: 10;
+  min-width: 8.25rem;
+  padding: 0.75rem;
+  background: var(--vip-rank-card-bg);
 }
 
-.stardustDot {
-  position: absolute;
-  width: var(--sd-size);
-  height: var(--sd-size);
-  border-radius: 50%;
-  background: color-mix(in srgb, var(--sd-color) 55%, #fff);
-  box-shadow: 0 0 8px 2px color-mix(in srgb, var(--sd-color) 75%, transparent);
-  opacity: 0;
-  animation: vip-stardust var(--sd-dur) ease-out var(--sd-delay) infinite;
+.benStickyHead {
+  text-align: left;
+  font-weight: 500;
+  color: var(--text-secondary);
 }
 
-@keyframes vip-stardust {
-  0% {
-    opacity: 0;
-    transform: translate(0, 0) scale(0.4);
+.benStickyCell {
+  font-weight: 500;
+  color: var(--text-primary);
+}
+
+.benRowAlt {
+  background: color-mix(in srgb, var(--text-primary) 3%, transparent);
+}
+
+.benRowAlt .benStickyCell {
+  background: color-mix(
+    in srgb,
+    var(--vip-rank-card-bg) 97%,
+    var(--text-primary)
+  );
+}
+
+.benCurrent {
+  background: color-mix(in srgb, var(--accent-primary) 14%, transparent);
+}
+
+@media (min-width: 640px) {
+  .benStickyHead,
+  .benStickyCell {
+    min-width: 9rem;
+    padding-inline: 1rem;
   }
-  18% {
-    opacity: 0.95;
-  }
-  100% {
-    opacity: 0;
-    transform: translate(var(--sd-dx), var(--sd-dy)) scale(1.1);
-  }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .stardustDot {
-    animation: none;
-    opacity: 0.35;
-  }
-}
-
-.rankEmblemBox {
-  position: relative;
-}
-
-.rankEmblemBox > :not(.stardust),
-.emblemWrap > :not(.stardust) {
-  position: relative;
-  z-index: 1;
 }
