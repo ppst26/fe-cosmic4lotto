@@ -86,7 +86,9 @@ export const VIP_RANK_MAINTAIN_TARGETS: Record<
 };
 
 export function getVipRankImageSrc(rankId: VipRankId): string | null {
-  return VIP_RANK_IMAGE[rankId] ?? null;
+  const src = VIP_RANK_IMAGE[rankId];
+  /** ?v= = ล้างแคช service worker / เบราว์เซอร์ หลังเปลี่ยนชุดภาพตรา (เพิ่มเลขเมื่อเปลี่ยนภาพอีก) */
+  return src ? `${src}?v=2` : null;
 }
 
 /** เป้าเทิร์นอ้างอิงตาราง (fallback) */
