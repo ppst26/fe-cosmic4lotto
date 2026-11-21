@@ -32,6 +32,9 @@
   --shadow-card-hover: var(--bevel-top), 0 0 0 1px color-mix(in srgb, var(--depth-accent) 45%, transparent), 0 12px 26px -10px rgb(0 0 0 / 0.7);
   --shadow-tile: var(--bevel-top), var(--depth-outline), var(--shadow-edge-tile);
   --shadow-tile-active: var(--bevel-top), 0 0 0 1px var(--depth-accent), var(--shadow-edge-tile), 0 8px 24px -10px color-mix(in srgb, var(--depth-accent) 65%, transparent);
+  /* พื้นหัวหัวข้อ section: ไล่ซ้าย→ขวา จากสีเข้ม (สี chrome ของธีมผสมดำ) ค่อย ๆ เฟดโปร่งใสกลืนกับพื้นหลัง */
+  --section-bar-from: color-mix(in srgb, color-mix(in srgb, var(--t-ga, var(--depth-accent)) 78%, var(--depth-accent)) 82%, #000);
+  --section-bar-bg: linear-gradient(90deg, var(--section-bar-from) 0%, color-mix(in srgb, var(--section-bar-from) 55%, transparent) 45%, transparent 100%);
   --shadow-nav: 0 -4px 16px -6px rgb(0 0 0 / 0.5);
   /* ไทล์ในพื้นที่ที่เลื่อนได้ (sidebar / แถบหมวด): ring + glow สั้น ไม่ให้โดน overflow ตัด */
   --shadow-tile-active-sm: var(--bevel-top), 0 0 0 1px var(--depth-accent), var(--shadow-edge-tile), 0 5px 10px -6px color-mix(in srgb, var(--depth-accent) 60%, transparent);
@@ -135,6 +138,17 @@ html :is(.soft-card, .soft-panel) {
 html [class*="showcase-module"][class*="__viewAll"],
 html [class*="section-header-module"][class*="__viewAll"] {
   box-shadow: var(--shadow-tile);
+}
+
+/* ── หัวข้อ section (ดูทั้งหมด): พื้นไล่ซ้าย→ขวาจากสีเข้ม เฟดกลืนพื้นหลัง ── */
+html [class*="showcase-module"][class*="__header"]:not([class*="__headerLeft"]):not([class*="__headerIcon"]),
+html [class*="section-header-module"][class*="__header"],
+html [class*="lotto-carousel-module"][class*="__sectionHeader"],
+html [class*="hall-of-fame-module"][class*="__header"]:not([class*="__headerLeft"]):not([class*="__headerIcon"]),
+html [class*="top-leaders-module"][class*="__header"]:not([class*="__headerLeft"]):not([class*="__headerIcon"]) {
+  background: var(--section-bar-bg);
+  border-radius: 12px;
+  padding: 6px 8px;
 }
 
 /* ── Bottom nav: แถบมีเส้นบน + เงาขึ้นด้านบน · ไอเทม active = พื้นจาง + เส้นล่างสีธีม ── */
