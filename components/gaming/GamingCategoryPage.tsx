@@ -39,21 +39,19 @@ export function GamingCategoryPage({ categoryId }: { categoryId: GamingCategoryI
         <GamingFilterSidebar meta={meta} providers={providers} resultCount={providers.length} resultUnit="ค่าย" />
 
         <div className="flex min-w-0 flex-1 flex-col gap-3">
-          {/* แถวหัว (เหมือน glass): [ปุ่มกลับวงกลม · ชื่อหมวด (จำนวนค่าย)] ชิดซ้าย · ช่องค้นหาชิดขวา */}
-          <div className="flex min-w-0 items-center justify-between gap-3 px-3 py-1.5 lg:px-0">
-            <div className="flex min-w-0 items-center gap-2.5">
-              <Link href="/" className="cosmic-back-btn" aria-label="back">
-                <ArrowLeft className="h-5 w-5" />
+          {/* แถวหัว (เหมือน glass): [ปุ่มกลับ · ชื่อหมวด · จำนวนค่าย] · ช่องค้นหา — มือถือมีเมนูหมวดข้างซ้าย จึงกะทัดรัด */}
+          <div className="flex min-w-0 items-center justify-between gap-2 px-1 py-1.5 sm:gap-3 lg:px-0">
+            <div className="flex min-w-0 flex-1 items-center gap-2">
+              <Link href={"/"} className="cosmic-back-btn !h-8 !w-8 sm:!h-9 sm:!w-9" aria-label="back">
+                <ArrowLeft className="h-4 w-4 sm:h-5 sm:w-5" />
               </Link>
-              <div className="flex min-w-0 items-baseline gap-1.5">
-                <h2 className="m-0 whitespace-nowrap text-base font-medium text-[var(--text-on-light)] sm:text-lg">{meta.th}</h2>
-                <span className="whitespace-nowrap text-xs text-[var(--text-muted)]">
-                  {t("categoryProviders.providerCount", { count: allProviders.length })}
-                </span>
+              <div className="flex min-w-0 flex-col sm:flex-row sm:items-baseline sm:gap-1.5">
+                <h2 className="m-0 line-clamp-2 break-words text-sm font-medium leading-tight text-[var(--text-on-light)] sm:text-lg">{meta.th}</h2>
+                <span className="whitespace-nowrap text-[11px] leading-tight text-[var(--text-muted)] sm:text-xs">{t("categoryProviders.providerCount", { count: allProviders.length })}</span>
               </div>
             </div>
-            <div className="w-[42%] min-w-0 shrink-0 sm:w-[38%] lg:w-72">
-              <LobbySearchBar value={query} onChange={setQuery} placeholder={t(`categoryProviders.searchPlaceholder.${placeholderKey}`)} />
+            <div className="w-[9.25rem] min-w-0 shrink-0 sm:w-48 lg:w-72">
+              <LobbySearchBar compact value={query} onChange={setQuery} placeholder={t(`categoryProviders.searchPlaceholder.${placeholderKey}`)} />
             </div>
           </div>
 
