@@ -45,19 +45,6 @@ export const THEMES: ThemeOption[] = [
     "bgColor": "#0c0303"
   },
   {
-    "key": "dark-navy-blue",
-    "name": "Dark Navy Blue",
-    "isDark": true,
-    "group": "gradient",
-    "style": "mono",
-    "colors": [
-      "#1e3a8a",
-      "#0b1a45",
-      "#60a5fa"
-    ],
-    "bgColor": "#040813"
-  },
-  {
     "key": "sanim",
     "name": "Sanim",
     "isDark": true,
@@ -95,32 +82,6 @@ export const THEMES: ThemeOption[] = [
       "#f7edd2"
     ],
     "bgColor": "#05070a"
-  },
-  {
-    "key": "wisdom",
-    "name": "Wisdom",
-    "isDark": true,
-    "group": "gradient",
-    "style": "mono",
-    "colors": [
-      "#772639",
-      "#400A1A",
-      "#E6E6E6"
-    ],
-    "bgColor": "#0C0303"
-  },
-  {
-    "key": "midnight-violet",
-    "name": "Midnight Violet",
-    "isDark": true,
-    "group": "gradient",
-    "style": "mono",
-    "colors": [
-      "#4c1d95",
-      "#1e0b45",
-      "#a78bfa"
-    ],
-    "bgColor": "#08060f"
   },
   {
     "key": "emerald-night",
@@ -162,32 +123,6 @@ export const THEMES: ThemeOption[] = [
     "bgColor": "#03080d"
   },
   {
-    "key": "royal-gold",
-    "name": "Royal Gold",
-    "isDark": true,
-    "group": "gradient",
-    "style": "mono",
-    "colors": [
-      "#5a4310",
-      "#231a05",
-      "#fbbf24"
-    ],
-    "bgColor": "#0a0804"
-  },
-  {
-    "key": "ember",
-    "name": "Ember",
-    "isDark": true,
-    "group": "gradient",
-    "style": "mono",
-    "colors": [
-      "#c2410c",
-      "#5a1d06",
-      "#fb923c"
-    ],
-    "bgColor": "#0b0603"
-  },
-  {
     "key": "graphite",
     "name": "Graphite",
     "isDark": true,
@@ -212,32 +147,6 @@ export const THEMES: ThemeOption[] = [
       "#e879f9"
     ],
     "bgColor": "#0c0610"
-  },
-  {
-    "key": "venom",
-    "name": "Venom",
-    "isDark": true,
-    "group": "gradient",
-    "style": "mono",
-    "colors": [
-      "#3f6212",
-      "#1a2e05",
-      "#a3e635"
-    ],
-    "bgColor": "#060a04"
-  },
-  {
-    "key": "nebula",
-    "name": "Nebula",
-    "isDark": true,
-    "group": "gradient",
-    "style": "mono",
-    "colors": [
-      "#3730a3",
-      "#1e1b4b",
-      "#818cf8"
-    ],
-    "bgColor": "#05060f"
   },
   {
     "key": "solid-violet",
@@ -357,45 +266,6 @@ export const THEMES: ThemeOption[] = [
     "bgColor": "#0a0a0b"
   },
   {
-    "key": "grad-sakura",
-    "name": "Sakura",
-    "isDark": true,
-    "group": "gradient",
-    "style": "mono",
-    "colors": [
-      "#be185d",
-      "#500724",
-      "#f9a8d4"
-    ],
-    "bgColor": "#0a0a0b"
-  },
-  {
-    "key": "grad-lagoon",
-    "name": "Lagoon",
-    "isDark": true,
-    "group": "gradient",
-    "style": "mono",
-    "colors": [
-      "#0f766e",
-      "#042f2e",
-      "#2dd4bf"
-    ],
-    "bgColor": "#0a0a0b"
-  },
-  {
-    "key": "grad-sage",
-    "name": "Sage",
-    "isDark": true,
-    "group": "gradient",
-    "style": "mono",
-    "colors": [
-      "#4d6b57",
-      "#1c2a21",
-      "#a7c4a0"
-    ],
-    "bgColor": "#0a0a0b"
-  },
-  {
     "key": "duo-violet-gold",
     "name": "Violet → Gold",
     "isDark": true,
@@ -433,19 +303,6 @@ export const THEMES: ThemeOption[] = [
       "#5eead4"
     ],
     "bgColor": "#0f0f11"
-  },
-  {
-    "key": "duo-lilac-peach",
-    "name": "Lilac → Peach (Pastel)",
-    "isDark": true,
-    "group": "gradient",
-    "style": "duo",
-    "colors": [
-      "#ddd6fe",
-      "#ede9fe",
-      "#fdba74"
-    ],
-    "bgColor": "#0a0a0b"
   }
 ];
 
