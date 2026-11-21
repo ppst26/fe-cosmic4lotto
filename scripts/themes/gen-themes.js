@@ -40,6 +40,20 @@ const ROLES = {
 };
 for (const t of T) Object.assign(t, ROLES[t.key], { group: "gradient", style: "mono", glow: true });
 
+// พื้นหลังหลังสุดอ่อนลง ~7% (การ์ด/ช่องยกขึ้นน้อยกว่า เพื่อให้ page < card ยังห่างกัน เลเยอร์ไม่กลืน) — เฉพาะพรีเซ็ตเดิม พรีเซ็ตกลางกำหนดค่าเองใน presets.shared.json
+const lift = (hex, p) => {
+  const n = parseInt(hex.slice(1), 16);
+  const ch = [(n >> 16) & 255, (n >> 8) & 255, n & 255].map((v) => Math.round(v + (255 - v) * p));
+  return "#" + ch.map((v) => v.toString(16).padStart(2, "0")).join("");
+};
+for (const t of T) {
+  t.page = lift(t.page, 0.07);
+  t.nav = lift(t.nav, 0.05);
+  t.card = lift(t.card, 0.05);
+  t.card2 = lift(t.card2, 0.045);
+  t.inner = lift(t.inner, 0.04);
+}
+
 // preset กลาง (solid / gradient) — scripts/themes/presets.shared.json (ไฟล์เดียวกันทุกโปรเจกต์)
 const shared = loadSharedPresets(__dirname);
 T.push(...shared.rows);
@@ -57,24 +71,24 @@ function common(t) {
   --t-active: ${t.active};
   --t-active-text: ${t.act};
   --t-accent: ${t.accent};
-  --t-chrome-bg: linear-gradient(180deg, var(--t-ga) 0%, var(--t-gb) 100%);
-  --header-desktop-chrome-start: var(--t-ga);
-  --header-desktop-chrome-end: var(--t-gb);
-  --header-desktop-chrome-bg: var(--t-gb);
+  --t-chrome-bg: linear-gradient(180deg, var(--t-cga, var(--t-ga)) 0%, var(--t-cgb, var(--t-gb)) 100%);
+  --header-desktop-chrome-start: var(--t-cga, var(--t-ga));
+  --header-desktop-chrome-end: var(--t-cgb, var(--t-gb));
+  --header-desktop-chrome-bg: var(--t-cgb, var(--t-gb));
   --header-desktop-chrome-gradient: var(--t-chrome-bg);
-  --bottom-nav-bg: var(--t-gb);
-  --bottom-nav-radial: radial-gradient(ellipse 92% 150% at 50% 100%, ${mix("var(--t-ga)", 55, "var(--t-gb)")} 0%, var(--t-gb) 70%);
+  --bottom-nav-bg: var(--t-cgb, var(--t-gb));
+  --bottom-nav-radial: radial-gradient(ellipse 92% 150% at 50% 100%, ${mix("var(--t-cga, var(--t-ga))", 55, "var(--t-cgb, var(--t-gb))")} 0%, var(--t-cgb, var(--t-gb)) 70%);
   --nav-top-line: rgba(255, 255, 255, 0.14);
   --cosmic-chrome-border: rgba(255, 255, 255, 0.12);
-  --lobby-announcement-mobile-lead-fill: var(--t-gb);
-  --lobby-announcement-mobile-marquee-fill: var(--t-ga);
-  --lobby-announcement-mobile-fade-edge: var(--t-ga);
-  --lobby-section-title-band-start: ${mix("var(--t-ga)", 94, "transparent")};
-  --lobby-section-title-band-mid: ${mix("var(--t-ga)", 70, "var(--t-gb)")};
-  --lobby-section-title-band-fade: ${mix("var(--t-gb)", 38, "transparent")};
-  --lobby-section-title-band-tail: ${mix("var(--t-gb)", 10, "transparent")};
-  --menu-drawer-scrim: radial-gradient(ellipse 110% 56% at 50% -4%, ${mix("var(--t-ga)", 60, "var(--t-gb)")} 0%, transparent 74%), linear-gradient(180deg, var(--t-gb) 0%, ${mix("var(--t-gb)", 55, "black")} 100%);
-  --menu-bottom: ${mix("var(--t-gb)", 60, "black")};
+  --lobby-announcement-mobile-lead-fill: var(--t-cgb, var(--t-gb));
+  --lobby-announcement-mobile-marquee-fill: var(--t-cga, var(--t-ga));
+  --lobby-announcement-mobile-fade-edge: var(--t-cga, var(--t-ga));
+  --lobby-section-title-band-start: ${mix("var(--t-cga, var(--t-ga))", 94, "transparent")};
+  --lobby-section-title-band-mid: ${mix("var(--t-cga, var(--t-ga))", 70, "var(--t-cgb, var(--t-gb))")};
+  --lobby-section-title-band-fade: ${mix("var(--t-cgb, var(--t-gb))", 38, "transparent")};
+  --lobby-section-title-band-tail: ${mix("var(--t-cgb, var(--t-gb))", 10, "transparent")};
+  --menu-drawer-scrim: radial-gradient(ellipse 110% 56% at 50% -4%, ${mix("var(--t-cga, var(--t-ga))", 60, "var(--t-cgb, var(--t-gb))")} 0%, transparent 74%), linear-gradient(180deg, var(--t-cgb, var(--t-gb)) 0%, ${mix("var(--t-cgb, var(--t-gb))", 55, "black")} 100%);
+  --menu-bottom: ${mix("var(--t-cgb, var(--t-gb))", 60, "black")};
   --menu-border: ${mix("var(--t-action)", 80, "white")};
   --accent-primary: var(--t-accent);
   --accent-highlight: var(--focus-ring);

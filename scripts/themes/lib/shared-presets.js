@@ -34,9 +34,10 @@ const chroma = (hex) => {
 };
 
 const NEUTRALS = {
-  black: { page: "#050506", card: "#111113", card2: "#0c0c0e", inner: "#1a1a1d" },
-  charcoal: { page: "#0a0a0b", card: "#141416", card2: "#101012", inner: "#1d1d20" },
-  graphite: { page: "#0f0f11", card: "#18181b", card2: "#141417", inner: "#222226" },
+  // พื้นหลังหลังสุดอ่อนลงเล็กน้อย (เดิม #050506–#0f0f11 มืดจนทั้งหน้าดูทึบ) · ลำดับชั้น page < card2 < card < inner ห่างกันพอให้เลเยอร์ไม่กลืนกัน
+  black: { page: "#111114", card: "#1c1c21", card2: "#18181d", inner: "#28282e" },
+  charcoal: { page: "#17171b", card: "#222228", card2: "#1e1e23", inner: "#2e2e35" },
+  graphite: { page: "#1d1d22", card: "#292930", card2: "#25252b", inner: "#34343c" },
 };
 
 const HEX = /^#[0-9a-f]{6}$/i;
@@ -104,8 +105,10 @@ function loadSharedPresets(themesDir = path.resolve(__dirname, "..")) {
       nav: to,
       accent: p.accent,
       icon: p.icon,
-      ga: from,
-      gb: to,
+      ga: isDarkFg(fg) ? darken(from) : from,
+      gb: isDarkFg(fg) ? darken(to) : to,
+      cga: from,
+      cgb: to,
       chromeFg: fg,
       action: p.action.color,
       at: p.action.text,
@@ -122,6 +125,15 @@ function loadSharedPresets(themesDir = path.resolve(__dirname, "..")) {
 
 const lum = luminance;
 
+/** chrome.fg เข้ม = chrome พื้นสว่าง/พาสเทล */
+const isDarkFg = (fg) => luminance(fg) < 0.4;
+/** ผสมสีกับดำ 64% — ใช้ทำ --t-ga/--t-gb ของพรีเซ็ตพาสเทลให้เป็นพื้นเข้ม (ตัวอักษรขาวอ่านออก) */
+function darken(hex) {
+  const base = [10, 10, 12];
+  const [r, g, b] = hexToRgb(hex).map((v, i) => Math.round(v * 0.36 + base[i] * 0.64));
+  return "#" + [r, g, b].map((v) => v.toString(16).padStart(2, "0")).join("");
+}
+
 /** ใช้ใน gen-themes: สร้างบล็อก token ใหม่ (--t-chrome-*, --t-rail-*) — ธีมเดิม (ไม่มี chromeFg/rail) ไม่ได้ token พวกนี้ → CSS ใช้ fallback เดิม */
 function extraTokens(t) {
   const lines = [];
@@ -135,7 +147,14 @@ function extraTokens(t) {
       `--t-chrome-inner-fill-hover: ${darkFg ? "rgba(255, 255, 255, 0.52)" : "rgba(0, 0, 0, 0.34)"};`,
       `--t-chrome-logo-filter: ${darkFg ? "brightness(0)" : "brightness(0) invert(1)"};`,
     );
-    if (darkFg) lines.push(`--t-chrome-label: ${t.chromeFg};`);
+    if (darkFg) {
+      lines.push(
+        `--t-chrome-label: ${t.chromeFg};`,
+        // พรีเซ็ตพาสเทล: --t-ga/--t-gb ถูกทำให้เข้ม (พื้น panel/การ์ดที่ใช้ตัวอักษรขาวทั่วแอป) ส่วนสี chrome พาสเทลจริงอยู่ที่ --t-cga/--t-cgb
+        `--t-cga: ${t.cga};`,
+        `--t-cgb: ${t.cgb};`,
+      );
+    }
   }
   if (t.rail) {
     lines.push(

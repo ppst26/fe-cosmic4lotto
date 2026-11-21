@@ -159,7 +159,7 @@ export const THEMES: ThemeOption[] = [
       "#4527a0",
       "#a78bfa"
     ],
-    "bgColor": "#0a0a0b"
+    "bgColor": "#17171b"
   },
   {
     "key": "solid-teal",
@@ -172,7 +172,7 @@ export const THEMES: ThemeOption[] = [
       "#0f766e",
       "#2dd4bf"
     ],
-    "bgColor": "#0a0a0b"
+    "bgColor": "#17171b"
   },
   {
     "key": "solid-rose",
@@ -185,7 +185,7 @@ export const THEMES: ThemeOption[] = [
       "#be185d",
       "#f472b6"
     ],
-    "bgColor": "#0a0a0b"
+    "bgColor": "#17171b"
   },
   {
     "key": "solid-azure",
@@ -198,7 +198,7 @@ export const THEMES: ThemeOption[] = [
       "#1d4ed8",
       "#60a5fa"
     ],
-    "bgColor": "#0a0a0b"
+    "bgColor": "#17171b"
   },
   {
     "key": "solid-violet-gold",
@@ -211,7 +211,7 @@ export const THEMES: ThemeOption[] = [
       "#facc15",
       "#facc15"
     ],
-    "bgColor": "#050506"
+    "bgColor": "#111114"
   },
   {
     "key": "solid-teal-coral",
@@ -224,7 +224,7 @@ export const THEMES: ThemeOption[] = [
       "#fb7185",
       "#fb7185"
     ],
-    "bgColor": "#050506"
+    "bgColor": "#111114"
   },
   {
     "key": "solid-navy-orange",
@@ -237,7 +237,7 @@ export const THEMES: ThemeOption[] = [
       "#f97316",
       "#fb923c"
     ],
-    "bgColor": "#0f0f11"
+    "bgColor": "#1d1d22"
   },
   {
     "key": "solid-crimson-mint",
@@ -250,7 +250,7 @@ export const THEMES: ThemeOption[] = [
       "#34d399",
       "#34d399"
     ],
-    "bgColor": "#050506"
+    "bgColor": "#111114"
   },
   {
     "key": "grad-mocha",
@@ -263,7 +263,7 @@ export const THEMES: ThemeOption[] = [
       "#271405",
       "#e0b184"
     ],
-    "bgColor": "#0a0a0b"
+    "bgColor": "#17171b"
   },
   {
     "key": "duo-violet-gold",
@@ -276,33 +276,46 @@ export const THEMES: ThemeOption[] = [
       "#2a1660",
       "#facc15"
     ],
-    "bgColor": "#050506"
+    "bgColor": "#111114"
   },
   {
-    "key": "duo-rose-orange",
-    "name": "Rose → Orange (Pastel)",
+    "key": "duo-wine-teal",
+    "name": "Wine → Teal",
     "isDark": true,
     "group": "gradient",
     "style": "duo",
     "colors": [
-      "#fda4af",
-      "#fed7aa",
-      "#fdba74"
+      "#7a1236",
+      "#3a0f22",
+      "#2dd4bf"
     ],
-    "bgColor": "#0a0a0b"
+    "bgColor": "#17171b"
   },
   {
-    "key": "duo-mint-sky",
-    "name": "Mint → Sky (Pastel)",
+    "key": "duo-navy-coral",
+    "name": "Navy → Coral",
     "isDark": true,
     "group": "gradient",
     "style": "duo",
     "colors": [
-      "#99f6e4",
-      "#cffafe",
-      "#5eead4"
+      "#1b2f7a",
+      "#14214f",
+      "#fb7185"
     ],
-    "bgColor": "#0f0f11"
+    "bgColor": "#17171b"
+  },
+  {
+    "key": "duo-forest-amber",
+    "name": "Forest → Amber",
+    "isDark": true,
+    "group": "gradient",
+    "style": "duo",
+    "colors": [
+      "#14532d",
+      "#0f3a22",
+      "#fbbf24"
+    ],
+    "bgColor": "#17171b"
   }
 ];
 

@@ -5,6 +5,12 @@
  * เพราะ Next เติม hash กลางชื่อคลาส — ไม่ต้องแก้ไฟล์ component
  */
 
+/* พื้น header + bottom nav ใช้สี chrome จริง (--t-cga/--t-cgb) — พรีเซ็ตพาสเทลทำ --t-ga/--t-gb ให้เข้มเพื่อใช้เป็นพื้นการ์ด/panel ทั่วแอป */
+html[data-theme]:not([data-theme="cosmic"]) :is(.lotto-site-header .header-shell, .lotto-bottom-nav) {
+  --BG-Surface-Lighter: var(--t-cga, var(--t-ga));
+  --BG-Surface-Darker: var(--t-cgb, var(--t-gb));
+}
+
 /* สีตัวอักษร/ไอคอนบน chrome: bottom nav ทุกจอ · header เฉพาะมือถือ (desktop header เป็นพื้นเข้มกลาง ไม่ใช่สี chrome) */
 html[data-theme]:not([data-theme="cosmic"]) .lotto-bottom-nav {
   --Text-Icon-Body: var(--t-chrome-fg, #ffffff);

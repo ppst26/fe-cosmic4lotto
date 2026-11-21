@@ -30,7 +30,7 @@
 
 /* ---- พื้นไล่สี ga→gb: header มือถือ/desktop · bottom nav · หัวแถวเกม — ตัวหนังสือขาวเสมอ ---- */
 [data-theme]:not([data-theme="cosmic"]) .cosmic-mobile-chrome-surface {
-  background-color: var(--t-gb);
+  background-color: var(--t-cgb, var(--t-gb));
   background-image: var(--t-chrome-bg);
   background-size: 100% 100%;
 }
@@ -1418,10 +1418,11 @@ html[data-mode="light"] .provider-category-toolbar .provider-category-toolbar__s
   color: #ffffff;
 }
 
+/* ปุ่ม segment active ในหน้าแทงหวย: เดิมใช้ --t-gb ซึ่งใกล้สีรางจนกลืน (contrast ≈ 1.2) → ขาวทึบ ตัวอักษรเข้ม ทุกธีม */
 [data-theme]:not([data-theme="cosmic"]) :is(.thai-lotto-layout, .yiki-layout) .cosmic-segment-btn.is-active {
-  background: var(--t-gb);
-  color: #ffffff;
-  box-shadow: none;
+  background: rgb(255 255 255 / 0.94);
+  color: #14161c;
+  box-shadow: 0 2px 10px rgb(0 0 0 / 0.28);
 }
 
 [data-theme]:not([data-theme="cosmic"]) .lottery-slip-toolbar {
