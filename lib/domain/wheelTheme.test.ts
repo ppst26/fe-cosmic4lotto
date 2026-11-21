@@ -87,4 +87,10 @@ test("resolveWheelRays builds css vars, clamps values and drops unsafe colors", 
   assert.equal(bad.vars["--wheel-rays-color" as keyof typeof bad.vars], undefined);
   assert.equal(bad.vars["--wheel-rays-opacity" as keyof typeof bad.vars], "0.4");
   assert.equal(bad.vars["--wheel-rays-step" as keyof typeof bad.vars], "22.5deg");
+  assert.equal(bad.vars["--wheel-rays-edge" as keyof typeof bad.vars], "22%");
+  assert.equal(bad.vars["--wheel-rays-scale" as keyof typeof bad.vars], "1.7");
+  const edge = resolveWheelRays({ rays: { enabled: true, edgeFadePercent: 30, sizePercent: 200 } });
+  assert.ok(edge);
+  assert.equal(edge.vars["--wheel-rays-edge" as keyof typeof edge.vars], "30%");
+  assert.equal(edge.vars["--wheel-rays-scale" as keyof typeof edge.vars], "2");
 });

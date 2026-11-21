@@ -673,24 +673,52 @@ html[data-mode="light"] .wheel-balance {
 .lucky-wheel__stage {
   isolation: isolate;
 }
+/* กรอบรัศมี: เต็มความกว้างจอ (ทะลุ padding ของหน้า) ไม่หมุน · ขอบซ้าย/ขวาไล่เป็นมืด (--wheel-rays-edge) */
+.lucky-wheel__stage:has(> .lucky-wheel__rays) {
+  container-type: inline-size;
+}
 .lucky-wheel__rays {
   position: absolute;
   top: 50%;
   left: 50%;
   z-index: -1;
-  width: var(--wheel-rays-size, 170%);
+  width: 100vw;
+  height: calc(var(--wheel-rays-scale, 1.7) * 100cqw);
+  translate: -50% -50%;
+  overflow: hidden;
+  pointer-events: none;
+  -webkit-mask-image: linear-gradient(
+    90deg,
+    transparent 0,
+    #000 var(--wheel-rays-edge, 22%),
+    #000 calc(100% - var(--wheel-rays-edge, 22%)),
+    transparent 100%
+  );
+  mask-image: linear-gradient(
+    90deg,
+    transparent 0,
+    #000 var(--wheel-rays-edge, 22%),
+    #000 calc(100% - var(--wheel-rays-edge, 22%)),
+    transparent 100%
+  );
+}
+/* แผ่นแฉกที่หมุน — ใหญ่พอให้แฉกถึงขอบจอทั้งสองข้าง */
+.lucky-wheel__rays-disc {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: max(calc(var(--wheel-rays-scale, 1.7) * 100cqw), 150vw);
   aspect-ratio: 1;
   translate: -50% -50%;
   border-radius: 50%;
-  pointer-events: none;
   background: repeating-conic-gradient(
     from calc(var(--wheel-rays-width, 20deg) / -2),
     var(--wheel-rays-color, #f5b301) 0 var(--wheel-rays-width, 20deg),
     transparent var(--wheel-rays-width, 20deg) var(--wheel-rays-step, 22.5deg)
   );
   opacity: var(--wheel-rays-opacity, 0.4);
-  -webkit-mask-image: radial-gradient(closest-side, #000 18%, rgb(0 0 0 / 0.55) 55%, transparent 100%);
-  mask-image: radial-gradient(closest-side, #000 18%, rgb(0 0 0 / 0.55) 55%, transparent 100%);
+  -webkit-mask-image: radial-gradient(closest-side, #000 0, #000 45%, rgb(0 0 0 / 0.5) 75%, transparent 100%);
+  mask-image: radial-gradient(closest-side, #000 0, #000 45%, rgb(0 0 0 / 0.5) 75%, transparent 100%);
   animation: wheel-rays-spin var(--wheel-rays-duration, 60s) linear infinite;
 }
 .lucky-wheel__rays--static {
@@ -703,7 +731,7 @@ html[data-mode="light"] .wheel-balance {
   to { rotate: 360deg; }
 }
 @media (prefers-reduced-motion: reduce) {
-  .lucky-wheel__rays { animation: none; }
+  .lucky-wheel__rays-disc { animation: none; }
 }
 /* รัศมียื่นเกินวงล้อ — กันหน้าเลื่อนแนวนอน */
 .lucky-wheel-page {

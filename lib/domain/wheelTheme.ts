@@ -128,7 +128,10 @@ export function resolveWheelRays(theme: WheelTheme | undefined): ResolvedWheelRa
     "--wheel-rays-width": `${width}deg`,
     "--wheel-rays-color": safeCssColor(rays.color),
     "--wheel-rays-opacity": String(safeNumber(rays.opacity, 0, 1) ?? 0.4),
-    "--wheel-rays-size": `${safeNumber(rays.sizePercent, 100, 300) ?? 170}%`,
+    /** ตัวคูณขนาดวงล้อ (170% → 1.7) */
+    "--wheel-rays-scale": String((safeNumber(rays.sizePercent, 100, 300) ?? 170) / 100),
+    /** ความกว้างขอบมืดซ้าย/ขวา เป็น % ของความกว้างจอ */
+    "--wheel-rays-edge": `${safeNumber(rays.edgeFadePercent, 0, 45) ?? 22}%`,
     "--wheel-rays-duration": `${rotate !== undefined && rotate >= 4 ? rotate : 60}s`,
   };
   return {
