@@ -51,9 +51,9 @@ export function SubPageShell({ title, children, backHref = "/", fit = false, hid
           </div>
         ) : null}
         {/* มือถือ: แถบหัวหน้าย่อยแบบ glass (ปุ่มย้อนกลับวงกลม + ชื่อหน้ากึ่งกลาง) — หน้ากะทัดรัด/fit ใช้ lotto-fit__bar ด้านบนแทน */}
-        {showBar ? null : <PageSubHeader title={title} backHref={backHref} className="-mx-3 mb-3 lg:hidden" />}
+        {showBar ? null : <PageSubHeader title={title} backHref={backHref} className="-mx-3 mb-4 lg:hidden" />}
         <h1 className={`${fit || hideTitle ? "hidden " : "max-lg:hidden "}mb-4 text-xl font-semibold text-[var(--text-on-light)] sm:text-2xl`}>{title}</h1>
-        {fit ? <div className="lotto-fit__body">{children}</div> : children}
+        <div className="px-1 lg:px-0">{fit ? <div className="lotto-fit__body">{children}</div> : children}</div>
       </div>
     </>
   );
