@@ -7,6 +7,7 @@ import { useT } from "@/lib/i18n/I18nProvider";
 import { getGamesByProvider } from "@/app/data/providerGamesData";
 import { buildGamePlayHref } from "@/lib/gamePlayPaths";
 import type { ProviderGameItem } from "@/app/types/providers";
+import { ArrowLeft } from "lucide-react";
 import { LobbySearchBar } from "./LobbySearchBar";
 import { gameCardEnterClassName, gameCardEnterStyle } from "@/lib/gameCardEnterMotion";
 
@@ -14,6 +15,10 @@ type LobbyProviderGamesViewProps = {
   /** providerId สำหรับ getGamesByProvider (สล็อตใช้ slug ตรง) */
   providerId: string;
   providerName: string;
+  /** ชื่อหมวด (สล็อต/ยิงปลา/เกมไพ่) — ใช้ใน aria-label ปุ่มกลับ */
+  categoryLabel: string;
+  /** หน้ารายการค่ายของหมวด — ปุ่มกลับพาไปที่นี่ */
+  backHref: string;
 };
 
 function GameTile({
@@ -66,7 +71,7 @@ function GameTile({
  * รายการเกมในค่ายสล็อต — ตรรกะเดียวกับ LobbyProviderGamesView + ProviderGameGrid ของ glass
  * (ค้นหาตามชื่อเกม · หัวใจโปรดเก็บใน state หน้านี้ · กดการ์ด → /play/[id])
  */
-export function LobbyProviderGamesView({ providerId, providerName }: LobbyProviderGamesViewProps) {
+export function LobbyProviderGamesView({ providerId, providerName, categoryLabel, backHref }: LobbyProviderGamesViewProps) {
   const t = useT("games");
   const [query, setQuery] = useState("");
   const [favorites, setFavorites] = useState<Record<string, boolean>>({});
@@ -80,11 +85,23 @@ export function LobbyProviderGamesView({ providerId, providerName }: LobbyProvid
 
   return (
     <section className="flex min-w-0 flex-col gap-4" aria-label={providerName}>
-      <LobbySearchBar value={query} onChange={setQuery} placeholder={t("providerGames.searchPlaceholder")} />
-
-      <p className="text-xs font-medium text-[var(--text-muted)] sm:text-sm">
-        {t("providerGames.gameCount", { count: games.length })}
-      </p>
+      {/* แถวหัว (เหมือน glass): [ปุ่มกลับวงกลม · ชื่อค่าย (จำนวนเกม)] ชิดซ้าย · ช่องค้นหาชิดขวา — อยู่ใน layout หน้าแรก ไม่เปิดหน้าใหม่ */}
+      <div className="flex min-w-0 items-center justify-between gap-3 px-3 py-2.5 lg:px-0">
+        <div className="flex min-w-0 items-center gap-2.5">
+          <Link href={backHref} className="cosmic-back-btn" aria-label={`${categoryLabel}`}>
+            <ArrowLeft className="h-5 w-5" />
+          </Link>
+          <div className="flex min-w-0 items-baseline gap-1.5">
+            <h1 className="m-0 truncate text-base font-medium uppercase text-[var(--text-on-light)] sm:text-lg">{providerName}</h1>
+            <span className="whitespace-nowrap text-xs text-[var(--text-muted)]">
+              {t("providerGames.gameCount", { count: games.length })}
+            </span>
+          </div>
+        </div>
+        <div className="w-[42%] min-w-0 shrink-0 sm:w-[38%] lg:w-72">
+          <LobbySearchBar value={query} onChange={setQuery} placeholder={t("providerGames.searchPlaceholder")} />
+        </div>
+      </div>
 
       {games.length === 0 ? (
         <div className="my-10 flex flex-col items-center text-center">

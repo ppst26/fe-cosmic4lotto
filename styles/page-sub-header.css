@@ -1,0 +1,53 @@
+/**
+ * แถบหัวหน้าย่อย (ปุ่มย้อนกลับวงกลม + ชื่อหน้ากึ่งกลาง) — ซิงก์จาก glass (SlotProvidersHeader / layout.css)
+ * ใช้ร่วมกันทุกหน้าย่อย: โปรไฟล์ · แนะนำเพื่อน · VIP · ธุรกรรม · โปรโมชัน ฯลฯ (ไม่ใช้กับหน้าเกม)
+ */
+.page-sub-header {
+  background-color: var(--page-sub-header-bg, var(--cosmic-chrome-surface-bg, var(--bg-nav, #121014)));
+  background-image: none;
+  border-bottom: 1px solid color-mix(in srgb, var(--border-subtle, #2a2a2e) 55%, transparent);
+}
+
+/** ปุ่มย้อนกลับแบบวงกลม — ใช้ร่วมกันทุกหน้า (sub header · หัวรายการเกมในค่าย) */
+.cosmic-back-btn {
+  display: inline-grid;
+  flex-shrink: 0;
+  place-items: center;
+  width: 2.25rem;
+  height: 2.25rem;
+  border-radius: 9999px;
+  background: var(--surface-solid-inner);
+  color: var(--text-primary);
+  cursor: pointer;
+  text-decoration: none;
+  transition:
+    background-color var(--motion-base, 0.18s) var(--ease-out, ease-out),
+    transform var(--motion-instant, 0.1s) var(--ease-out, ease-out);
+  -webkit-tap-highlight-color: transparent;
+}
+
+.cosmic-back-btn:hover {
+  background: var(--surface-hover);
+}
+
+.cosmic-back-btn:active {
+  transform: scale(0.92);
+}
+
+.cosmic-back-btn svg {
+  color: inherit;
+}
+
+/** ชื่อหน้ากลางแถบย่อย — ตัวเล็ก น้ำหนักบาง */
+.page-sub-header__title {
+  font-size: 0.8125rem;
+  font-weight: 400;
+  letter-spacing: 0;
+  line-height: 1.2;
+}
+
+@media (min-width: 640px) {
+  .page-sub-header__title {
+    font-size: 0.875rem;
+  }
+}
