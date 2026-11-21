@@ -3,10 +3,14 @@
   flex-direction: column;
   align-items: stretch;
   gap: 8px;
-  /* สี solid อ่อนกว่าพื้นหลังหน้า (ฐาน --surface-start ของธีม) — ไม่ใช้ --t-ga เพราะบางธีมเป็นสีสด */
-  --card-solid: color-mix(in srgb, var(--surface-start, var(--BG-Surface-Normal)) 86%, #fff);
-  background: var(--card-solid);
+  /* พื้นไล่เฉดสีโทนเข้มของธีม: --t-ga → --t-gb ผสมขาวเล็กน้อย ให้เห็นแยกจากพื้นหลังหน้า (ปุ่ม "แทงหวย" เข้มกว่าพื้นนี้) */
+  background: linear-gradient(
+    135deg,
+    color-mix(in srgb, var(--t-ga, #6a45a8) 88%, #fff) 0%,
+    color-mix(in srgb, var(--t-gb, #3a2268) 92%, #fff) 100%
+  );
   border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.14);
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
   padding: 10px 12px;
   height: 100%;
@@ -110,15 +114,11 @@
 }
 
 .btnBet {
-  /* พื้นโทนเข้มของธีม (--t-gb) ตัวหนังสือสีอ่อน — อ่านชัดบนการ์ดสีอ่อน */
-  background: linear-gradient(
-    to bottom,
-    color-mix(in srgb, var(--t-gb, #140c1f) 78%, #fff),
-    color-mix(in srgb, var(--t-gb, #140c1f) 72%, #000)
-  );
+  /* สีเข้มทึบ (solid) จากโทนธีม --t-gb ผสมดำ ตัวหนังสือสีอ่อน */
+  background: color-mix(in srgb, var(--t-gb, #140c1f) 55%, #000);
   color: #fff;
   text-decoration: none;
-  border: 0;
+  border: 1px solid rgba(255, 255, 255, 0.14);
 }
 
 .btnBet:hover {
@@ -131,14 +131,9 @@
   cursor: not-allowed;
 }
 
-/* ธีมสว่าง: การ์ดใช้สีที่ 1 ของธีม (เข้ม) + ชื่อสีอ่อนให้อ่านออก */
-:global(html[data-mode="light"]) .card {
-  --card-solid: color-mix(in srgb, var(--t-ga) 56%, #000);
-}
-
 /* การ์ดโหมดสว่างเข้มอยู่แล้ว — เพิ่มขอบอ่อนให้ปุ่มแยกจากพื้นการ์ด */
 :global(html[data-mode="light"]) .btnBet {
-  border: 1px solid rgba(255, 255, 255, 0.4);
+  border-color: rgba(255, 255, 255, 0.4);
 }
 
 :global(html[data-mode="light"]) .name {

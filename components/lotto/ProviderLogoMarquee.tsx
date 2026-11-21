@@ -26,21 +26,21 @@ const PROVIDER_LOGOS: LogoItem[] = [
 
 /**
  * แถวโลโก้ค่ายเลื่อนอัตโนมัติ — พอร์ตจาก glass ProviderLogoMarquee
- * โลโก้สีจริง ระยะห่างกว้าง · หยุดเลื่อนเมื่อ hover (CSS ใน styles/motion-glass.css)
+ * โลโก้ grayscale อยู่ในการ์ด · หยุดเลื่อนเมื่อ hover (CSS ใน styles/motion-glass.css)
  */
 export function ProviderLogoMarquee() {
   const t = useT("home");
 
   const renderGroup = (groupKey: string, ariaHidden?: boolean) => (
     <div
-      className="provider-logo-marquee__group flex shrink-0 items-center gap-[clamp(3rem,9vw,4.5rem)] px-[clamp(1.5rem,4.5vw,2.25rem)]"
+      className="provider-logo-marquee__group flex shrink-0 items-center gap-[clamp(0.75rem,2vw,1rem)] px-[clamp(1.5rem,4.5vw,2.25rem)]"
       aria-hidden={ariaHidden || undefined}
     >
       {PROVIDER_LOGOS.map((item) => (
         <Link
           key={`${groupKey}-${item.id}`}
           href={item.href}
-          className="provider-logo-marquee__link flex h-10 w-[clamp(6.25rem,13vw,9.5rem)] shrink-0 items-center justify-center"
+          className="provider-logo-marquee__link flex h-14 w-[clamp(7.5rem,14vw,10.5rem)] shrink-0 items-center justify-center rounded-xl border border-white/10 bg-white/[0.16] px-4 py-2.5"
           aria-label={t("providers.logoAriaLabel", { name: item.name })}
           tabIndex={ariaHidden ? -1 : undefined}
         >
@@ -50,7 +50,7 @@ export function ProviderLogoMarquee() {
             width={152}
             height={40}
             unoptimized
-            className="provider-logo-marquee__img h-full w-auto max-w-full object-contain"
+            className="provider-logo-marquee__img h-full w-auto max-w-full object-contain grayscale opacity-80 transition-opacity hover:opacity-100"
           />
         </Link>
       ))}

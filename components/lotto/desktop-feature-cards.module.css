@@ -21,22 +21,13 @@
   }
 
   /* การ์ดบน: เลื่อนข้างแบบ snap เห็นใบถัดไปโผล่ */
-  .rootMobile .heroRow {
-    display: flex;
-    gap: 8px;
-    overflow-x: auto;
-    scroll-snap-type: x mandatory;
-    scrollbar-width: none;
-  }
-
-  .rootMobile .heroRow::-webkit-scrollbar {
-    display: none;
-  }
-
-  .rootMobile .hero {
+  .rootMobile .heroRow > .hero {
     flex: 0 0 78%;
     min-height: 0;
-    scroll-snap-align: start;
+  }
+
+  .rootMobile .dot {
+    background: rgb(255 255 255 / 0.35);
   }
 
   .rootMobile .heroBody {
@@ -102,10 +93,85 @@
   }
 }
 
+/* carousel การ์ดหวยเด่น — scroll-snap ทั้ง mobile และ desktop */
+.carousel {
+  position: relative;
+  min-width: 0;
+}
+
 .heroRow {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 14px;
+  display: flex;
+  gap: 8px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+}
+
+.heroRow::-webkit-scrollbar {
+  display: none;
+}
+
+.heroRow > .hero {
+  flex: 0 0 calc((100% - 8px) / 2);
+  scroll-snap-align: start;
+}
+
+.navBtn {
+  position: absolute;
+  top: calc(50% - 14px);
+  z-index: 2;
+  display: none;
+  place-content: center;
+  width: 32px;
+  height: 32px;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background: rgb(0 0 0 / 0.55);
+  color: #fff;
+  cursor: pointer;
+}
+
+.navBtn:disabled {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.navPrev {
+  left: 8px;
+}
+
+.navNext {
+  right: 8px;
+}
+
+@media (min-width: 1024px) {
+  .navBtn {
+    display: grid;
+  }
+}
+
+.dots {
+  display: flex;
+  justify-content: center;
+  gap: 6px;
+  padding-top: 8px;
+}
+
+.dot {
+  width: 6px;
+  height: 6px;
+  padding: 0;
+  border: 0;
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--ink, #fff) 30%, transparent);
+  cursor: pointer;
+  transition: width 0.2s ease, background 0.2s ease;
+}
+
+.dotActive {
+  width: 18px;
+  background: var(--t-active, var(--t-icon, #fff));
 }
 
 .stripRow {

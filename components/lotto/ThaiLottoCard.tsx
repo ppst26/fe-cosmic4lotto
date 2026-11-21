@@ -24,13 +24,6 @@ export function ThaiLottoCard({ data }: Props) {
         <p className={styles.date}>({data.dateLabel})</p>
       </div>
       <div className={styles.rowMain}>
-        <Image
-          src="/_nuxt/png/mascot.BBO-U5sD.png"
-          alt=""
-          width={80}
-          height={120}
-          className={styles.mascot}
-        />
         <div className={styles.right}>
           <div className={styles.card}>
             <div className={styles.label}>รางวัลที่ 1</div>

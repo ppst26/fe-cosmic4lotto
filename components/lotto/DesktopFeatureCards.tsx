@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { ArrowRight, Gift, Megaphone, Star } from "lucide-react";
 import Link from "@/lib/i18n/navigation";
+import { FeatureHeroCarousel } from "./FeatureHeroCarousel";
 import styles from "./desktop-feature-cards.module.css";
 
 type HeroCard = {
@@ -12,12 +13,19 @@ type HeroCard = {
   art: string;
   /** สีธีมของการ์ด (glow + ขอบ) */
   tone: "blue" | "purple" | "orange";
-  /** true = ชื่อการ์ดอยู่บน ลิงก์อยู่ล่าง (แบบการ์ดกลางในภาพอ้างอิง) */
-  titleFirst?: boolean;
 };
 
-/** ข้อความ mock — ยังไม่เชื่อมข้อมูลจริง */
+/** การ์ดหวยเด่น (carousel) — หวยไทย · ยี่กี 15 นาที · หวยลาว — ข้อความ mock ยังไม่เชื่อมข้อมูลจริง */
 const HERO_CARDS: HeroCard[] = [
+  {
+    key: "thai",
+    href: "/lottery/thai-government",
+    title: "หวยไทย",
+    linkTitle: "ออกผลวันที่ 1 และ 16",
+    linkDesc: "รางวัลที่ 1 จ่ายสูงสุด\nแทงได้จนถึงก่อนออกผล",
+    art: "/lottery/ic-government-effect.webp",
+    tone: "orange",
+  },
   {
     key: "yiki15",
     href: "/lottery/yiki-15",
@@ -28,23 +36,13 @@ const HERO_CARDS: HeroCard[] = [
     tone: "blue",
   },
   {
-    key: "winners",
-    href: "/vip",
-    title: "ผู้เล่นชนะรางวัลสูงสุด",
-    linkTitle: "อันดับผู้ชนะประจำสัปดาห์",
-    linkDesc: "ดูรายชื่อผู้เล่นที่\nถูกรางวัลสูงสุด",
-    art: "/assets/coins/coins1.webp",
+    key: "laos",
+    href: "/lottery/laos",
+    title: "หวยลาว",
+    linkTitle: "ออกผลทุกวันจันทร์ พุธ ศุกร์",
+    linkDesc: "ผลออกรวดเร็ว\nเลือกแทง 2-3 ตัว",
+    art: "/lottery/ic-laos-effect.webp",
     tone: "purple",
-    titleFirst: true,
-  },
-  {
-    key: "markets",
-    href: "/lottery",
-    title: "ชิงโชคหวยแต่ละค่าย",
-    linkTitle: "หวยครบทุกค่าย",
-    linkDesc: "รัฐบาล ยี่กี หวยหุ้น\nและหวยต่างประเทศ",
-    art: "/lottery/ic-government-effect.webp",
-    tone: "orange",
   },
 ];
 
@@ -55,13 +53,13 @@ const HERO_CARDS: HeroCard[] = [
 export function DesktopFeatureCards({ mobile = false }: { mobile?: boolean }) {
   return (
     <section className={`${styles.root} ${mobile ? styles.rootMobile : styles.rootDesktop}`} aria-label="ฟีเจอร์แนะนำ">
-      <div className={styles.heroRow}>
+      <FeatureHeroCarousel label="หวยแนะนำ">
         {HERO_CARDS.map((card) => (
           <Link key={card.key} href={card.href} className={`${styles.hero} ${styles[card.tone]}`}>
             <span className={styles.heroArt} aria-hidden>
               <Image src={card.art} alt="" fill sizes="220px" className={styles.heroArtImg} unoptimized />
             </span>
-            <span className={`${styles.heroBody} ${card.titleFirst ? styles.heroBodyTitleFirst : ""}`}>
+            <span className={`${styles.heroBody}`}>
               <span className={styles.linkRow}>
                 <span className={styles.linkArrow}>
                   <ArrowRight className="h-3 w-3" strokeWidth={3} aria-hidden="true" />
@@ -75,7 +73,7 @@ export function DesktopFeatureCards({ mobile = false }: { mobile?: boolean }) {
             </span>
           </Link>
         ))}
-      </div>
+      </FeatureHeroCarousel>
 
       <div className={styles.stripRow}>
         <Link href="/promotions" className={`${styles.strip} ${styles.stripPromo}`}>

@@ -210,3 +210,47 @@ html[data-mode] :is(.lottery-bet-slip__group-head, .lottery-price-slip__group-he
 html[data-mode] :is(.lottery-bet-slip__group-head, .lottery-price-slip__group-head, .lottery-slip-summary__group-head) span {
   color: #fff;
 }
+
+/* ธีมมืดที่เพิ่มใหม่: header + bottom nav เข้มมาก ให้โลโก้อ่านชัดและเห็น hamburger */
+html[data-theme="midnight-violet"] :is(.lotto-site-header .header-shell, .lotto-bottom-nav),
+html[data-theme="emerald-night"] :is(.lotto-site-header .header-shell, .lotto-bottom-nav),
+html[data-theme="crimson-noir"] :is(.lotto-site-header .header-shell, .lotto-bottom-nav),
+html[data-theme="ocean-deep"] :is(.lotto-site-header .header-shell, .lotto-bottom-nav),
+html[data-theme="royal-gold"] :is(.lotto-site-header .header-shell, .lotto-bottom-nav),
+html[data-theme="ember"] :is(.lotto-site-header .header-shell, .lotto-bottom-nav),
+html[data-theme="graphite"] :is(.lotto-site-header .header-shell, .lotto-bottom-nav),
+html[data-theme="orchid"] :is(.lotto-site-header .header-shell, .lotto-bottom-nav),
+html[data-theme="venom"] :is(.lotto-site-header .header-shell, .lotto-bottom-nav),
+html[data-theme="nebula"] :is(.lotto-site-header .header-shell, .lotto-bottom-nav),
+html[data-theme="dark-navy-blue"] :is(.lotto-site-header .header-shell, .lotto-bottom-nav) {
+  --BG-Surface-Lighter: color-mix(in srgb, var(--t-ga) 22%, #000);
+  --BG-Surface-Darker: color-mix(in srgb, var(--t-gb) 18%, #000);
+  --Text-Icon-Body: #ffffff;
+  --main-icon-1: #ffffff;
+}
+
+html[data-theme="midnight-violet"] .lotto-site-header .hamburger-template-1 label span,
+html[data-theme="emerald-night"] .lotto-site-header .hamburger-template-1 label span,
+html[data-theme="crimson-noir"] .lotto-site-header .hamburger-template-1 label span,
+html[data-theme="ocean-deep"] .lotto-site-header .hamburger-template-1 label span,
+html[data-theme="royal-gold"] .lotto-site-header .hamburger-template-1 label span,
+html[data-theme="ember"] .lotto-site-header .hamburger-template-1 label span,
+html[data-theme="graphite"] .lotto-site-header .hamburger-template-1 label span,
+html[data-theme="orchid"] .lotto-site-header .hamburger-template-1 label span,
+html[data-theme="venom"] .lotto-site-header .hamburger-template-1 label span,
+html[data-theme="nebula"] .lotto-site-header .hamburger-template-1 label span,
+html[data-theme="dark-navy-blue"] .lotto-site-header .hamburger-template-1 label span {
+  background: #ffffff;
+}
+
+/* ธีม cosmic: header + bottom nav ไล่เฉดม่วงเข้มไปดำ ให้โลโก้และไอคอนอ่านชัด */
+html[data-theme="cosmic"] :is(.lotto-site-header .header-shell, .lotto-bottom-nav) {
+  --BG-Surface-Lighter: #2a1d47;
+  --BG-Surface-Darker: #0a0612;
+  --Text-Icon-Body: #ffffff;
+  --main-icon-1: #ffffff;
+}
+
+html[data-theme="cosmic"] .lotto-site-header .hamburger-template-1 label span {
+  background: #ffffff;
+}

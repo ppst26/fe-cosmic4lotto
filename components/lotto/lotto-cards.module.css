@@ -53,23 +53,20 @@
 
 .rowMain {
   align-items: center;
+  background: url("/lottery/thai-lotto-mascot.webp") no-repeat left -30px bottom / auto 100%;
   display: flex;
   gap: 8px;
+  justify-content: flex-end;
   margin-top: 8px;
   width: 100%;
 }
 
-.mascot {
-  height: 100%;
-  object-fit: cover;
-  width: 80px;
-}
-
 .right {
   display: flex;
-  flex: 1;
+  flex: 0 0 50%;
   flex-direction: column;
   gap: 8px;
+  width: 50%;
 }
 
 .card {
@@ -166,11 +163,11 @@
 }
 
 .cardHeader {
-  align-items: center;
+  align-items: flex-start;
   border-bottom: 1px solid var(--Main-Disable);
   display: flex;
-  gap: 10px;
-  justify-content: space-between;
+  flex-direction: column;
+  gap: 4px;
   margin-bottom: 8px;
   padding-bottom: 8px;
 }
@@ -184,9 +181,8 @@
 .cardPeriod {
   color: var(--Text-Icon-Body);
   font-size: 0.9rem;
-  text-align: right;
-  flex-shrink: 0;
-  max-width: 55%;
+  text-align: left;
+  max-width: 100%;
 }
 
 .flag {

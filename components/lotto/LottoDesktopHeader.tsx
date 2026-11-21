@@ -13,7 +13,6 @@ import { useLotterySlipFirstPage } from "@/app/hooks/api/lotterySlips";
 import { useLazyOverlayMount } from "@/app/hooks/useLazyOverlayMount";
 import { useAuthUI } from "@/context/AuthUIContext";
 import type { WalletSnapshot } from "@/lib/lotto/load-wallet-snapshot";
-import { DevQuickLogin } from "./DevQuickLogin";
 
 const ThemePickerSheet = dynamic(() =>
   import("@/app/components/theme/ThemePickerSheet").then((m) => m.ThemePickerSheet),
@@ -82,7 +81,6 @@ function GuestCluster({ onOpenTheme }: { onOpenTheme: () => void }) {
   const { openLogin, openRegister } = useAuthUI();
   return (
     <>
-      <DevQuickLogin className="dh-auth dh-auth--dev" />
       <button type="button" className="dh-auth dh-auth--ghost" onClick={openLogin}>
         เข้าสู่ระบบ
       </button>
