@@ -1,8 +1,12 @@
 "use client";
 
+import { useMemo, useState } from "react";
 import Image from "next/image";
+import { ArrowLeft } from "lucide-react";
 import Link from "@/lib/i18n/navigation";
 import { gameCardEnterClassName, gameCardEnterStyle } from "@/lib/gameCardEnterMotion";
+import { useT } from "@/lib/i18n/I18nProvider";
+import { LobbySearchBar } from "@/app/components/lobby/LobbySearchBar";
 import { GamingFilterSidebar } from "./GamingFilterSidebar";
 import { GAMING_CATEGORIES, getGamingProviders, type GamingCategoryId } from "./gaming-category";
 
@@ -13,7 +17,14 @@ import { GAMING_CATEGORIES, getGamingProviders, type GamingCategoryId } from "./
  */
 export function GamingCategoryPage({ categoryId }: { categoryId: GamingCategoryId }) {
   const meta = GAMING_CATEGORIES[categoryId];
-  const providers = getGamingProviders(categoryId);
+  const allProviders = useMemo(() => getGamingProviders(categoryId), [categoryId]);
+  const t = useT("home");
+  const [query, setQuery] = useState("");
+  const providers = useMemo(() => {
+    const q = query.toLowerCase().trim();
+    return q ? allProviders.filter((p) => p.title.toLowerCase().includes(q)) : allProviders;
+  }, [allProviders, query]);
+  const placeholderKey = categoryId === "casino" || categoryId === "fishing" || categoryId === "cards" || categoryId === "sports" ? categoryId : "default";
 
   return (
     <>
@@ -28,9 +39,23 @@ export function GamingCategoryPage({ categoryId }: { categoryId: GamingCategoryI
         <GamingFilterSidebar meta={meta} providers={providers} resultCount={providers.length} resultUnit="ค่าย" />
 
         <div className="flex min-w-0 flex-1 flex-col gap-3">
-          <h2 className="text-base font-semibold text-[var(--text-on-light)] sm:text-xl">
-            {meta.th} <span className="text-[var(--text-muted)]">({providers.length.toLocaleString("en-US")} ค่าย)</span>
-          </h2>
+          {/* แถวหัว (เหมือน glass): [ปุ่มกลับวงกลม · ชื่อหมวด (จำนวนค่าย)] ชิดซ้าย · ช่องค้นหาชิดขวา */}
+          <div className="flex min-w-0 items-center justify-between gap-3 px-3 py-1.5 lg:px-0">
+            <div className="flex min-w-0 items-center gap-2.5">
+              <Link href="/" className="cosmic-back-btn" aria-label="back">
+                <ArrowLeft className="h-5 w-5" />
+              </Link>
+              <div className="flex min-w-0 items-baseline gap-1.5">
+                <h2 className="m-0 whitespace-nowrap text-base font-medium text-[var(--text-on-light)] sm:text-lg">{meta.th}</h2>
+                <span className="whitespace-nowrap text-xs text-[var(--text-muted)]">
+                  {t("categoryProviders.providerCount", { count: allProviders.length })}
+                </span>
+              </div>
+            </div>
+            <div className="w-[42%] min-w-0 shrink-0 sm:w-[38%] lg:w-72">
+              <LobbySearchBar value={query} onChange={setQuery} placeholder={t(`categoryProviders.searchPlaceholder.${placeholderKey}`)} />
+            </div>
+          </div>
 
           <div className="grid grid-cols-3 gap-2 sm:gap-3 lg:grid-cols-4 xl:grid-cols-6">
             {providers.map((entry, index) => (
