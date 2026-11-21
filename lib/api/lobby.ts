@@ -5,7 +5,6 @@ import {
   FEATURE_ACTIONS_DATA,
   GAME_SECTIONS_DATA,
   HOME_DESKTOP_PEEK_CAROUSEL_DATA,
-  HOME_LOBBY_TOURNAMENT_ITEMS,
   HOME_SLOTS_PROVIDER_ITEMS,
   INTRO_STATS_DATA,
   POPULAR_HIGHLIGHTS_DATA,
@@ -29,6 +28,7 @@ import type {
   WelcomeBannerSlide,
 } from "@/app/types/lobby";
 import type { ApiResult } from "./http";
+import { fetchActivities } from "./activities";
 import { mockResult } from "./mock";
 
 /**
@@ -78,14 +78,28 @@ export function fetchHomeFeatureActions(): Promise<ApiResult<FeatureActionItem[]
   return mockResult(FEATURE_ACTIONS_DATA);
 }
 
-/** ทัวร์นาเมนต์ — GET /api/lobby/tournaments */
 /** แถบออนไลน์มากที่สุดหน้าแรก — GET /api/lobby/most-online */
 export function fetchHomeMostOnline(): Promise<ApiResult<MostOnlineLobbyItem[]>> {
   return mockResult(MOST_ONLINE_LOBBY_ITEMS);
 }
 
-export function fetchHomeTournaments(): Promise<ApiResult<HomeLobbyTournamentItem[]>> {
-  return mockResult(HOME_LOBBY_TOURNAMENT_ITEMS);
+/**
+ * กิจกรรม/ทายผลหน้าแรก — GET /api/lobby/tournaments
+ * ใช้ thumbnail จากข้อมูลกิจกรรม (fetchActivities · imageUrl) ไม่ hardcode รูป · ข้ามรายการที่ไม่มีรูป
+ * ต่อ backend: แทนด้วย apiFetch("/api/lobby/tournaments") ที่คืนรูปแบบเดียวกัน
+ */
+export async function fetchHomeTournaments(): Promise<ApiResult<HomeLobbyTournamentItem[]>> {
+  const res = await fetchActivities();
+  if (!res.ok) return res;
+  return {
+    ok: true,
+    status: res.status,
+    data: res.data.flatMap((activity) =>
+      activity.imageUrl
+        ? [{ id: activity.id, title: activity.title, imageSrc: activity.imageUrl, href: "/event" }]
+        : [],
+    ),
+  };
 }
 
 /** ประกาศวิ่ง — GET /api/lobby/announcements */

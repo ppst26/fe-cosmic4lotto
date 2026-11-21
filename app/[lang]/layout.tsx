@@ -15,6 +15,7 @@ import { MessagesBoundary } from "@/lib/i18n/MessagesBoundary";
 import { PwaInstallBanner } from "@/app/components/pwa/PwaInstallBanner";
 import { NAMESPACES } from "@/lib/i18n/messages";
 import { getT } from "@/lib/i18n/server";
+import { loadSiteBrand } from "@/lib/api/siteBrand";
 import { DEFAULT_THEME, LIGHT_THEME_KEYS, THEME_KEYS, THEME_STORAGE_KEY } from "@/lib/themes";
 
 /** ตั้ง data-theme / data-mode / class dark ก่อน paint ครั้งแรก — สคริปต์เดียวกับ glass */
@@ -31,13 +32,17 @@ export function generateStaticParams() {
 }
 
 export async function generateMetadata(): Promise<Metadata> {
-  const t = await getT("meta");
+  const [t, brand] = await Promise.all([getT("meta"), loadSiteBrand()]);
   return {
     applicationName: "CM-SaturnLotto",
-    title: t("title"),
+    title: brand.title,
     description: t("description"),
     appleWebApp: { capable: true, title: "CM-SaturnLotto", statusBarStyle: "black-translucent" },
-    icons: { apple: "/pwa/apple-touch-icon.png" },
+    icons: {
+      icon: brand.faviconUrl,
+      shortcut: brand.faviconUrl,
+      apple: brand.appleTouchIconUrl,
+    },
   };
 }
 

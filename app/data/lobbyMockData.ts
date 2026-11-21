@@ -291,37 +291,6 @@ export const FEATURE_ACTIONS_DATA: FeatureActionItem[] = [
 ];
 
 /**
- * กิจกรรมทัวร์นาเมนต์บน lobby — รูปจาก public/tournament
- * ถูกเรียกใช้โดย JackpotSection.tsx
- */
-export const HOME_LOBBY_TOURNAMENT_ITEMS: HomeLobbyTournamentItem[] = [
-  {
-    id: "tournament-esport",
-    title: "ทัวร์นาเมนต์อีสปอร์ต",
-    imageSrc: TOURNAMENT_IMAGE_PATHS.esport,
-    href: "/event",
-  },
-  {
-    id: "tournament-sport",
-    title: "ทัวร์นาเมนต์กีฬา",
-    imageSrc: TOURNAMENT_IMAGE_PATHS.sportWin,
-    href: "/event",
-  },
-  {
-    id: "tournament-slot",
-    title: "ทัวร์นาเมนต์สล็อต",
-    imageSrc: TOURNAMENT_IMAGE_PATHS.slotWin,
-    href: "/event",
-  },
-  {
-    id: "tournament-esport-2",
-    title: "ทัวร์นาเมนต์อีสปอร์ต",
-    imageSrc: TOURNAMENT_IMAGE_PATHS.esport2,
-    href: "/event",
-  },
-];
-
-/**
  * กิจกรรม — section หลัง Hall of Fame · รูปจาก public/tournament
  * ถูกเรียกใช้โดย TournamentsSection.tsx
  */
