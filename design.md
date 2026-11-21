@@ -102,3 +102,17 @@
 | ความลึก | ขอบโปร่งแสง + glow สีเดียวกับธีมการ์ด แทนเงาดำล้วน |
 | ภาพประกอบ | 3D ล้นกรอบการ์ดด้านขวา, ข้อความ UPPERCASE หนาทางซ้าย |
 | ตัวอักษร | หัวข้อ UPPERCASE หนา, caption เล็กสี muted |
+
+---
+
+## Depth system (border / shadow / bevel)
+
+สูตรเดียวกันทุกโปรเจกต์ (glass · black-purple · lotto · cas) — ไฟล์ `depth.css` (โหลดท้ายสุดใน `globals.css`) เป็นเจ้าของ token และกฎทั้งหมด
+
+- **หลักการ:** มิติมาจากสูตรเล็ก ๆ ที่ใช้ซ้ำ ไม่ใช่เงาใหญ่ — highlight ขอบบน + เงาขอบล่าง + เงาสีธีมแบบ negative spread ใต้ปุ่ม · ไทล์ active = วงแหวนสีธีม + glow · การ์ด = ขอบบาง + เงาอ่อน
+- **สี:** ใช้ `--depth-accent` (= `--t-action` ของธีมที่เลือก ถอยไป `--accent-primary` ในธีมเริ่มต้น) — ห้าม hard-code สีทอง
+- **เส้นขอบ:** ใช้ `box-shadow` ring (`0 0 0 1px …`) ไม่ใช้ `border` เพื่อไม่ให้ layout ขยับ
+- **Token:** `--bevel-top` `--bevel-bottom` `--depth-hairline` `--depth-gloss` `--shadow-btn` `--shadow-btn-pressed` `--shadow-card` `--shadow-card-hover` `--shadow-tile` `--shadow-tile-active` `--shadow-nav`
+- **ใช้กับ:** ปุ่มหลัก/รอง · ไทล์หมวดเกม · การ์ดเกม/ค่าย (`.depth-card`) · พื้นผิว (`glass-card--soft` / `soft-card`) · หัวแถวเกม · bottom nav (แถบ + ไอเทม active)
+- **ความเข้ม "ปานกลาง":** highlight .22 · เงาใช้ spread ติดลบ · glow เฉพาะไทล์ active — เพิ่ม/ลดที่ `:root` ของ `depth.css` จุดเดียว
+- **ไม่ลบกฎอื่น:** ไม่มี animation วนซ้ำ · hover ยก (`translateY`) ใช้ได้เฉพาะการ์ด ไม่ใช้กับแถบเมนู

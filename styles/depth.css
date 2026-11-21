@@ -1,0 +1,122 @@
+/*
+ * Depth system — ขอบบาง · bevel · เงาแบบ negative spread ให้ปุ่ม/ไทล์/การ์ดมีมิติ (ความเข้ม "ปานกลาง")
+ * สูตรเดียวกันทุกโปรเจกต์ (glass / black-purple / lotto / cas) — ใช้สีธีมที่เลือก (--t-action) ไม่ใช้สีทองตายตัว
+ * โหลดท้ายสุดใน globals.css · ไฟล์นี้ไม่อยู่ใน @layer จึงชนะ Tailwind utilities (.soft-card / shadow-*) โดยไม่ต้องใช้ !important
+ * เส้นขอบใช้ box-shadow ring (0 0 0 1px) เพื่อไม่ให้ layout ขยับ · ดู design.md หัวข้อ "Depth system"
+ * CSS module เลือกด้วย [class*="<ไฟล์>-module"][class*="__<คลาส>"] เพราะ Next เติม hash กลางชื่อคลาส — ไม่ต้องแก้ไฟล์ component
+ */
+:root {
+  --depth-accent: var(--t-action, var(--Main-Primary, #f7edd2));
+  --bevel-top: inset 0 1px 0 rgb(255 255 255 / 0.22);
+  --bevel-bottom: inset 0 -1px 0 rgb(0 0 0 / 0.2);
+  --depth-hairline: 0 0 0 1px rgb(255 255 255 / 0.07);
+  /* gloss ครึ่งบนของปุ่ม แบบ inset shadow (ไม่ต้องเขียน background ทับ gradient เดิมของแต่ละปุ่ม) */
+  --depth-gloss: inset 0 12px 12px -10px rgb(255 255 255 / 0.2);
+  --shadow-btn: var(--bevel-top), var(--depth-gloss), var(--bevel-bottom), 0 6px 16px -8px color-mix(in srgb, var(--depth-accent) 75%, #000);
+  --shadow-btn-pressed: inset 0 2px 5px rgb(0 0 0 / 0.32);
+  --shadow-card: var(--bevel-top), var(--depth-hairline), 0 8px 20px -10px rgb(0 0 0 / 0.65);
+  --shadow-card-hover: var(--bevel-top), 0 0 0 1px color-mix(in srgb, var(--depth-accent) 45%, transparent), 0 12px 26px -10px rgb(0 0 0 / 0.7);
+  --shadow-tile: var(--bevel-top), var(--bevel-bottom), var(--depth-hairline);
+  --shadow-tile-active: var(--bevel-top), 0 0 0 1px var(--depth-accent), 0 8px 24px -10px color-mix(in srgb, var(--depth-accent) 65%, transparent);
+  --shadow-nav: 0 -4px 16px -6px rgb(0 0 0 / 0.5);
+}
+
+/* ── ปุ่มหลัก: bevel + gloss + เงาสีธีมใต้ปุ่ม · กด = inset ── (html นำหน้าเพื่อชนะกฎ .lotto-site-header .bb-btn-* ที่ตั้ง box-shadow:none) */
+html :is(.btn-gold, .soft-btn-primary, .btn-theme-gradient, .lotto-site-header .bb-btn-primary),
+html [class*="lotto-mobile-quick-module"][class*="__btnPrimary"],
+html [class*="lobby-sidebar-module"][class*="__btnPrimary"] {
+  box-shadow: var(--shadow-btn);
+}
+
+html :is(.btn-gold, .soft-btn-primary, .btn-theme-gradient, .lotto-site-header .bb-btn-primary):active,
+html [class*="lotto-mobile-quick-module"][class*="__btnPrimary"]:active,
+html [class*="lobby-sidebar-module"][class*="__btnPrimary"]:active {
+  box-shadow: var(--shadow-btn-pressed);
+}
+
+/* ปุ่มรอง/outline: highlight บน + ขอบบาง */
+html :is(.btn-outline-gold, .soft-btn-outline, .lotto-site-header .bb-btn-secondary),
+html [class*="lotto-mobile-quick-module"][class*="__btnSecondary"],
+html [class*="lobby-sidebar-module"][class*="__btnSecondary"] {
+  box-shadow: var(--bevel-top), var(--depth-hairline);
+}
+
+/* ── ไทล์หมวดเกม ── lotto: แถบเมนูมือถือ · cas: CategoryRail + CategoryPills (มือถือ) */
+html [class*="lotto-mobile-quick-module"][class*="__menuItem"],
+html [class*="category-rail-module"][class*="__item"] {
+  box-shadow: var(--shadow-tile);
+}
+
+html [class*="lotto-mobile-quick-module"][class*="__menuActive"],
+html [class*="category-rail-module"][class*="__itemActive"],
+html [class*="category-rail-module"][class*="__itemActive"]:hover {
+  box-shadow: var(--shadow-tile-active);
+}
+
+html [class*="category-rail-module"][class*="__root"] {
+  box-shadow: inset 0 1px 0 rgb(255 255 255 / 0.08), 0 8px 20px -12px rgb(0 0 0 / 0.6);
+}
+
+@media (max-width: 1023px) {
+  html [class*="category-pills-module"][class*="__pill"] {
+    box-shadow: var(--shadow-tile);
+  }
+
+  html [class*="category-pills-module"][class*="__pillActive"],
+  html [class*="category-pills-module"][class*="__pillActive"]:hover {
+    box-shadow: var(--shadow-tile-active);
+  }
+}
+
+/* เมนู lobby desktop (lotto): ลิงก์ active = วงแหวนสีธีมบาง · การ์ด hub = การ์ดยก */
+html [class*="lobby-sidebar-module"][class*="__linkActive"] {
+  box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--depth-accent) 60%, transparent);
+}
+
+html [class*="lobby-sidebar-module"][class*="__hubCard"] {
+  box-shadow: var(--shadow-card);
+}
+
+html [class*="lobby-sidebar-module"][class*="__hubCard"]:hover {
+  box-shadow: var(--shadow-card-hover);
+}
+
+/* ── การ์ดเกม ── */
+html [class*="game-card-module"][class*="__wrapper"],
+html [class*="game-card-module"][class*="__card"] {
+  box-shadow: var(--shadow-card);
+  transition: box-shadow 200ms ease;
+}
+
+html [class*="game-card-module"][class*="__wrapper"]:hover,
+html [class*="game-card-module"][class*="__card"]:hover {
+  box-shadow: var(--shadow-card-hover);
+}
+
+/* ── พื้นผิวทั่วไป + ปุ่ม "ดูทั้งหมด" ── */
+html :is(.soft-card, .soft-panel) {
+  box-shadow: var(--shadow-card);
+}
+
+html [class*="showcase-module"][class*="__viewAll"],
+html [class*="section-header-module"][class*="__viewAll"] {
+  box-shadow: var(--shadow-tile);
+}
+
+/* ── Bottom nav: แถบมีเส้นบน + เงาขึ้นด้านบน · ไอเทม active = พื้นจาง + เส้นล่างสีธีม ── */
+html [class*="bottom-nav-module"][class*="__menu"] {
+  box-shadow: inset 0 1px 0 rgb(255 255 255 / 0.1), var(--shadow-nav);
+}
+
+html [class*="bottom-nav-module"][class*="__item"][data-active="true"]:not([class*="__center"]) {
+  background: rgb(255 255 255 / 0.06);
+  border-radius: 14px;
+  box-shadow: inset 0 -3px 0 var(--depth-accent);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html [class*="game-card-module"][class*="__wrapper"],
+  html [class*="game-card-module"][class*="__card"] {
+    transition: none;
+  }
+}
