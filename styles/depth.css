@@ -17,6 +17,10 @@
   --depth-edge: color-mix(in srgb, var(--t-ga, var(--depth-accent)) 72%, #000);
   --depth-edge-w: 4px;
   --shadow-edge: inset 0 calc(var(--depth-edge-w) * -1) 0 var(--depth-edge);
+  /* ไทล์หมวดเกม: ทุกไทล์ (ไม่ใช่แค่ active) มีขอบล่างหนา 4px เป็นสีสว่างของธีม (แบบเว็บอ้างอิง: ขอบล่างสีทองใต้ทุกไทล์)
+   * ผสมดำ 32% ให้เห็นทั้งบนไทล์เข้มและบนไทล์ที่พื้นเป็นสี accent (ธีม solid) */
+  --depth-edge-tile: color-mix(in srgb, var(--depth-accent) 68%, #000);
+  --shadow-edge-tile: inset 0 calc(var(--depth-edge-w) * -1) 0 var(--depth-edge-tile);
   --shadow-edge-soft: inset 0 -3px 0 color-mix(in srgb, var(--depth-accent) 48%, #000);
   /* เส้นใต้ header 2px (ในเว็บอ้างอิง: 0 2px 0 0 สี primary-dark) */
   --depth-line: color-mix(in srgb, var(--depth-accent) 55%, #000);
@@ -26,11 +30,11 @@
   --shadow-btn-pressed: inset 0 -1px 0 var(--depth-edge), inset 0 2px 5px rgb(0 0 0 / 0.32);
   --shadow-card: var(--bevel-top), var(--depth-hairline), 0 8px 20px -10px rgb(0 0 0 / 0.65);
   --shadow-card-hover: var(--bevel-top), 0 0 0 1px color-mix(in srgb, var(--depth-accent) 45%, transparent), 0 12px 26px -10px rgb(0 0 0 / 0.7);
-  --shadow-tile: var(--bevel-top), var(--depth-outline), inset 0 -3px 0 rgb(0 0 0 / 0.42);
-  --shadow-tile-active: var(--bevel-top), 0 0 0 1px var(--depth-accent), var(--shadow-edge), 0 8px 24px -10px color-mix(in srgb, var(--depth-accent) 65%, transparent);
+  --shadow-tile: var(--bevel-top), var(--depth-outline), var(--shadow-edge-tile);
+  --shadow-tile-active: var(--bevel-top), 0 0 0 1px var(--depth-accent), var(--shadow-edge-tile), 0 8px 24px -10px color-mix(in srgb, var(--depth-accent) 65%, transparent);
   --shadow-nav: 0 -4px 16px -6px rgb(0 0 0 / 0.5);
   /* ไทล์ในพื้นที่ที่เลื่อนได้ (sidebar / แถบหมวด): ring + glow สั้น ไม่ให้โดน overflow ตัด */
-  --shadow-tile-active-sm: var(--bevel-top), 0 0 0 1px var(--depth-accent), var(--shadow-edge), 0 5px 10px -6px color-mix(in srgb, var(--depth-accent) 60%, transparent);
+  --shadow-tile-active-sm: var(--bevel-top), 0 0 0 1px var(--depth-accent), var(--shadow-edge-tile), 0 5px 10px -6px color-mix(in srgb, var(--depth-accent) 60%, transparent);
 }
 
 /* ── ปุ่มหลัก: bevel + gloss + เงาสีธีมใต้ปุ่ม · กด = inset ── (html นำหน้าเพื่อชนะกฎ .lotto-site-header .bb-btn-* ที่ตั้ง box-shadow:none) */
