@@ -340,3 +340,19 @@ generator + static CSS ไม่ทำงานเองถ้าไม่มี
 - `CosmicbetLogo` เรนเดอร์ `cosmic-dark.png` + `cosmic-light.png` สลับด้วย `[data-mode]` · BottomNav ใส่ class `theme-brand-surface`
 - UI: `app/components/theme/ThemePickerSheet.tsx` (sheet เลือกธีม, ข้อความใน `common.theme.*`) และ `app/components/layout/FloatingActions.tsx` (ปุ่มลอยล่างขวา ธีม + live chat → toast ยังไม่เชื่อมต่อ; ซ่อนบน `/play` และหน้าเลือกเลขหวยที่มี action bar) mount ใน `app/providers.tsx`
 - ยังไม่ได้ทำ: tokenize hex พื้นผิวที่ฝังใน `menu-drawer.css` / `hub-modals.css` ทั้งหมด (ธีมมืดยังเป็นกราไฟต์เดิมในพื้นที่เหล่านั้น), ภาษาอื่น 7 ภาษาใช้ fallback th/en สำหรับคีย์ `common.theme.*`
+
+---
+
+## Preset กลาง (solid / gradient) — ใช้ร่วมทุกโปรเจกต์
+
+> ส่วนบน ๆ ของเอกสารนี้เป็นของเดิม (นับธีม/โหมดสว่างอาจล้าสมัย) — ใช้หัวข้อนี้เป็นหลักสำหรับเพิ่ม/แก้ preset
+
+- **ต้นทาง:** `scripts/themes/presets.shared.json` — ไฟล์เดียวกันทุกโปรเจกต์ (glass / black-purple / lotto / cas) แก้ที่เดียวแล้วคัดลอกไปอีก 3 repo
+  (พร้อม `scripts/themes/lib/shared-presets.js`) แล้วรัน `node scripts/themes/gen-themes.js` ในแต่ละ repo
+- **กลุ่ม:** `group` = `solid` (navbar/ปุ่มเรียบสีเดียว) | `gradient` · `style` = `tonal` (โทนเดียวกัน เข้ม-อ่อน) | `complementary` (สีตรงข้าม) | `mono` (ไล่เฉดสีเดียว) | `duo` (ไล่สีคู่แมทช์/พาสเทล)
+- **ฟิลด์:** `chrome {from,to,fg}` navbar/footer/bottom nav (solid ต้อง `from === to`) · `rail {bg,fg,activeBg,activeFg}` แถบหมวดเกม (ไม่ใส่ = ใช้หน้าตาเดิม) ·
+  `action {color,text}` ปุ่มหลัก · `accent` `icon` · `neutral` = `black|charcoal|graphite` พื้นหลังชั้นหลังสุด · `glow` เปิดสีฟุ้งบนพื้นหลัง (solid/duo = `false`)
+- **ตัวตรวจ (ตอน generate):** contrast ของ `chrome.fg`/`rail.fg`/`action.text` ≥ 4.5 · พื้นหลัง `page` ต้องเข้มและเป็นสีกลาง · solid ต้อง `from === to` — ไม่ผ่านจะ throw พร้อมบอก preset
+  (ดูตาราง contrast: `THEME_REPORT=1 node scripts/themes/gen-themes.js`)
+- **token ใหม่:** `--t-chrome-fg*` (ตัวอักษร/โลโก้บน chrome) · `--t-rail-*` (แถบหมวดเกม) · `--t-page-glow` (black-purple) — ธีมเดิมไม่ตั้ง จึงใช้ค่า fallback เดิมทุกที่
+- **ธีมเดิม** ทั้งหมดถือเป็น `gradient · mono` · ตัวเลือกใน picker แบ่งแท็บ Solid / Gradient ตาม `group`/`style`
