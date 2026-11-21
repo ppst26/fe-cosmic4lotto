@@ -10,17 +10,27 @@
   --bevel-top: inset 0 1px 0 rgb(255 255 255 / 0.22);
   --bevel-bottom: inset 0 -1px 0 rgb(0 0 0 / 0.2);
   --depth-hairline: 0 0 0 1px rgb(255 255 255 / 0.07);
+  --depth-outline: 0 0 0 1px rgb(255 255 255 / 0.14);
+  /* ขอบล่างหนาแบบ 3D (สูตรจากเว็บอ้างอิง: inset 0 -4px 0 สีที่ 3)
+   * สีที่ 3 = สี chrome (navbar) ของธีมที่เลือก — ต่างจากสีปุ่ม/แท็บจึงเห็นชัด (solid สีตรงข้าม = ม่วงใต้ปุ่มเหลือง)
+   * ธีมเริ่มต้นไม่มี --t-ga จึงถอยไปใช้เฉดเข้มของ accent */
+  --depth-edge: color-mix(in srgb, var(--t-ga, var(--depth-accent)) 72%, #000);
+  --depth-edge-w: 4px;
+  --shadow-edge: inset 0 calc(var(--depth-edge-w) * -1) 0 var(--depth-edge);
+  --shadow-edge-soft: inset 0 -3px 0 color-mix(in srgb, var(--depth-accent) 48%, #000);
+  /* เส้นใต้ header 2px (ในเว็บอ้างอิง: 0 2px 0 0 สี primary-dark) */
+  --depth-line: color-mix(in srgb, var(--depth-accent) 55%, #000);
   /* gloss ครึ่งบนของปุ่ม แบบ inset shadow (ไม่ต้องเขียน background ทับ gradient เดิมของแต่ละปุ่ม) */
   --depth-gloss: inset 0 12px 12px -10px rgb(255 255 255 / 0.2);
-  --shadow-btn: var(--bevel-top), var(--depth-gloss), var(--bevel-bottom), 0 6px 16px -8px color-mix(in srgb, var(--depth-accent) 75%, #000);
-  --shadow-btn-pressed: inset 0 2px 5px rgb(0 0 0 / 0.32);
+  --shadow-btn: var(--bevel-top), var(--depth-gloss), var(--shadow-edge), 0 6px 16px -8px color-mix(in srgb, var(--depth-accent) 75%, #000);
+  --shadow-btn-pressed: inset 0 -1px 0 var(--depth-edge), inset 0 2px 5px rgb(0 0 0 / 0.32);
   --shadow-card: var(--bevel-top), var(--depth-hairline), 0 8px 20px -10px rgb(0 0 0 / 0.65);
   --shadow-card-hover: var(--bevel-top), 0 0 0 1px color-mix(in srgb, var(--depth-accent) 45%, transparent), 0 12px 26px -10px rgb(0 0 0 / 0.7);
-  --shadow-tile: var(--bevel-top), var(--bevel-bottom), var(--depth-hairline);
-  --shadow-tile-active: var(--bevel-top), 0 0 0 1px var(--depth-accent), 0 8px 24px -10px color-mix(in srgb, var(--depth-accent) 65%, transparent);
+  --shadow-tile: var(--bevel-top), var(--depth-outline), inset 0 -3px 0 rgb(0 0 0 / 0.42);
+  --shadow-tile-active: var(--bevel-top), 0 0 0 1px var(--depth-accent), var(--shadow-edge), 0 8px 24px -10px color-mix(in srgb, var(--depth-accent) 65%, transparent);
   --shadow-nav: 0 -4px 16px -6px rgb(0 0 0 / 0.5);
   /* ไทล์ในพื้นที่ที่เลื่อนได้ (sidebar / แถบหมวด): ring + glow สั้น ไม่ให้โดน overflow ตัด */
-  --shadow-tile-active-sm: var(--bevel-top), 0 0 0 1px var(--depth-accent), 0 5px 10px -6px color-mix(in srgb, var(--depth-accent) 60%, transparent);
+  --shadow-tile-active-sm: var(--bevel-top), 0 0 0 1px var(--depth-accent), var(--shadow-edge), 0 5px 10px -6px color-mix(in srgb, var(--depth-accent) 60%, transparent);
 }
 
 /* ── ปุ่มหลัก: bevel + gloss + เงาสีธีมใต้ปุ่ม · กด = inset ── (html นำหน้าเพื่อชนะกฎ .lotto-site-header .bb-btn-* ที่ตั้ง box-shadow:none) */
@@ -40,7 +50,7 @@ html [class*="lobby-sidebar-module"][class*="__btnPrimary"]:active {
 html :is(.btn-outline-gold, .soft-btn-outline, .lotto-site-header .bb-btn-secondary),
 html [class*="lotto-mobile-quick-module"][class*="__btnSecondary"],
 html [class*="lobby-sidebar-module"][class*="__btnSecondary"] {
-  box-shadow: var(--bevel-top), var(--depth-hairline);
+  box-shadow: var(--bevel-top), var(--depth-hairline), var(--shadow-edge-soft);
 }
 
 /* ── ไทล์หมวดเกม ── lotto: แถบเมนูมือถือ · cas: CategoryRail + CategoryPills (มือถือ) */
