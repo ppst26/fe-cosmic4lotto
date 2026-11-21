@@ -213,9 +213,9 @@
 .wheel-spin-btn {
   --wsb-depth: 6px;
   /* ฐานรองใต้ปุ่ม — แผ่นเข้มกว้างกว่าปุ่มเล็กน้อย มีขอบบนสว่าง */
-  --wsb-base-top: #4b4672;
-  --wsb-base: #2b2747;
-  --wsb-base-edge: #15122a;
+  --wsb-base-top: #4a4d57;
+  --wsb-base: #2a2c33;
+  --wsb-base-edge: #121316;
   position: relative;
   display: flex;
   min-height: 3.5rem;
@@ -252,20 +252,20 @@
   position: relative;
 }
 .wheel-spin-btn--gems {
-  --wsb-top: #8b5cf6;
-  --wsb-mid: #6d28d9;
-  --wsb-bot: #4c1d95;
-  --wsb-edge: #2e1065;
-  --wsb-text: #ffffff;
-  --wsb-text-shadow: 0 1px 0 rgb(0 0 0 / 0.4);
+  --wsb-top: #ffffff;
+  --wsb-mid: #e6e9f0;
+  --wsb-bot: #b4bac8;
+  --wsb-edge: #6f768a;
+  --wsb-text: #171b26;
+  --wsb-text-shadow: 0 1px 0 rgb(255 255 255 / 0.7);
 }
 .wheel-spin-btn--ticket {
-  --wsb-top: #ffe14d;
-  --wsb-mid: #ffb800;
-  --wsb-bot: #f08a00;
-  --wsb-edge: #a85a00;
-  --wsb-text: #3b2400;
-  --wsb-text-shadow: 0 1px 0 rgb(255 255 255 / 0.35);
+  --wsb-top: #5d626e;
+  --wsb-mid: #34373f;
+  --wsb-bot: #1a1c21;
+  --wsb-edge: #08090b;
+  --wsb-text: #f4f5f8;
+  --wsb-text-shadow: 0 1px 0 rgb(0 0 0 / 0.6);
 }
 .wheel-spin-btn__title {
   font-size: 0.9375rem;
