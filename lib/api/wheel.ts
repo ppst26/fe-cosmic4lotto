@@ -16,7 +16,7 @@ import {
 } from "@/app/data/luckyWheelMockData";
 import { LUCKY_WHEEL_HISTORY_PAGE_SIZE } from "@/lib/uiConstants";
 import type { ApiResult } from "./http";
-import { mockResult } from "./mock";
+import { mockAction, mockResult, type ActionResult } from "./mock";
 
 function wheelMock() {
   return {
@@ -47,4 +47,21 @@ export type WheelData = ReturnType<typeof wheelMock>;
  */
 export function fetchWheel(): Promise<ApiResult<WheelData>> {
   return mockResult(wheelMock());
+}
+
+export type WheelSpinMethodInput = "gems" | "ticket";
+
+export interface WheelSpinData {
+  /** ช่องที่ได้ (ผลสุ่มจากฝั่ง server) — UI หมุนวงไปหยุดที่ช่องนี้ */
+  segmentIndex: number;
+  method: WheelSpinMethodInput;
+}
+
+/**
+ * หมุนวงล้อ — POST /api/wheel/spin { method }
+ * mock สุ่มช่องฝั่งนี้แทน server · ต่อ backend: ให้ server สุ่มและตัดยอด Gems/ตั๋ว แล้วคืน segmentIndex
+ */
+export function spinWheel(input: { method: WheelSpinMethodInput; segmentCount: number }): Promise<ActionResult<WheelSpinData>> {
+  const segmentIndex = Math.floor(Math.random() * input.segmentCount);
+  return mockAction({ segmentIndex, method: input.method }, 150);
 }

@@ -1,4 +1,7 @@
 import type {
+  MyPromotionsResponse,
+  PromotionClaimStatusResponse,
+  PromotionClaimSubmitResponse,
   PromotionDetailContent,
   PromotionDetailId,
   PromotionsCatalogResponse,
@@ -35,4 +38,28 @@ export async function fetchPromotionDetailResult(
     return { ok: false, error: { code: "HTTP", status: 404, message: "Not found" } };
   }
   return { ok: true, status: res.status, data: res.data.detail };
+}
+
+/** สถานะรับโปรของสมาชิก — ต้อง login */
+export function fetchPromotionClaimStatus(
+  id: PromotionDetailId,
+): Promise<ApiResult<PromotionClaimStatusResponse>> {
+  return apiFetch<PromotionClaimStatusResponse>(
+    `/api/promotions/${encodeURIComponent(id)}/claim`,
+  );
+}
+
+/** รับโปรโมชั่น — ต้อง login · ข้อความสำเร็จจาก server */
+export function submitPromotionClaim(
+  id: PromotionDetailId,
+): Promise<ApiResult<PromotionClaimSubmitResponse>> {
+  return apiFetch<PromotionClaimSubmitResponse>(
+    `/api/promotions/${encodeURIComponent(id)}/claim`,
+    { method: "POST" },
+  );
+}
+
+/** โปรโมชั่นของฉัน — ต้อง login */
+export function fetchMyPromotions(): Promise<ApiResult<MyPromotionsResponse>> {
+  return apiFetch<MyPromotionsResponse>("/api/promotions/mine");
 }

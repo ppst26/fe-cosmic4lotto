@@ -9,7 +9,7 @@ import {
   GEMS_STORE_TERMS,
 } from "@/app/data/gemsStoreMockData";
 import type { ApiResult } from "./http";
-import { mockResult } from "./mock";
+import { mockAction, mockResult, type ActionResult } from "./mock";
 
 function gemsStoreMock() {
   return {
@@ -32,4 +32,22 @@ export type GemsStoreData = ReturnType<typeof gemsStoreMock>;
  */
 export function fetchGemsStore(): Promise<ApiResult<GemsStoreData>> {
   return mockResult(gemsStoreMock());
+}
+
+export interface GemsRedeemData {
+  packageId: string;
+  gemsSpent: number;
+  credits: number;
+}
+
+/**
+ * แลกเครดิตด้วย Gems — POST /api/gems-store/redeem { packageId }
+ * ต่อ backend: apiFetch<GemsRedeemData>(...) แล้ว toActionResult · บันทึกยอดเครดิตเข้ากระเป๋าหลัก
+ */
+export function redeemGemsPackage(input: {
+  packageId: string;
+  gemsCost: number;
+  credits: number;
+}): Promise<ActionResult<GemsRedeemData>> {
+  return mockAction({ packageId: input.packageId, gemsSpent: input.gemsCost, credits: input.credits }, 400);
 }

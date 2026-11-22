@@ -18,7 +18,7 @@ export interface WheelRimTheme {
   color?: CssColor;
   /** ความหนาเส้น (หน่วย SVG ของวงล้อขนาด 400 · ค่าเริ่มต้น 2) */
   width?: number;
-  /** สีเรืองแสงรอบวง (drop-shadow) */
+  /** สีเรืองแสงรอบวง */
   glow?: CssColor;
   /** พื้นแถบวงนอก (ระหว่างช่องรางวัลกับไฟ) */
   bandColor?: CssColor;

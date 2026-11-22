@@ -77,7 +77,7 @@ export function apiUrl(path: string, query?: Record<string, QueryValue>): string
 }
 
 /** ดึงข้อความ error จาก body รูปแบบที่ใช้อยู่: { error } · { message } */
-function messageFromBody(body: unknown): string | null {
+export function messageFromBody(body: unknown): string | null {
   if (!body || typeof body !== "object") return null;
   const record = body as Record<string, unknown>;
   for (const key of ["error", "message"]) {

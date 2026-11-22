@@ -71,6 +71,8 @@ export interface PromoHubActivityItem {
 export interface PromoHubMobileListItem {
   id: string;
   title: string;
+  /** บรรทัดรองในการ์ดรายการ (มือถือ) — ไม่ใส่จะใช้ title */
+  subtitle?: string;
   detailId: PromotionDetailId;
   bannerSrc: string;
   expiresLabel: string;
@@ -98,4 +100,52 @@ export interface PromotionsCatalogResponse {
 /** GET /api/promotions/[id] */
 export interface PromotionDetailResponse {
   detail: PromotionDetailContent;
+}
+
+/** GET /api/promotions/[id]/claim */
+export interface PromotionClaimStatusResponse {
+  ok: true;
+  promotionId: PromotionDetailId;
+  claimed: boolean;
+  claimedAt: string | null;
+}
+
+/** POST /api/promotions/[id]/claim — สำเร็จ */
+export interface PromotionClaimSubmitResponse {
+  ok: true;
+  promotionId: PromotionDetailId;
+  claimedAt: string;
+  message: string;
+}
+
+export type PromotionClaimErrorResponse = {
+  ok: false;
+  error: string;
+  code?: "ALREADY_CLAIMED";
+  claimedAt?: string;
+};
+
+export type MyPromotionStatus = "active" | "completed" | "expired";
+
+export interface MyPromotionProgressMetric {
+  current: number;
+  target: number;
+}
+
+/** โปรที่สมาชิกรับแล้ว — GET /api/promotions/mine */
+export interface MyPromotionItem {
+  id: string;
+  promotionId: PromotionDetailId;
+  title: string;
+  status: MyPromotionStatus;
+  claimedAt: string;
+  expiresAt: string;
+  deposit: MyPromotionProgressMetric;
+  turnover: MyPromotionProgressMetric;
+}
+
+export interface MyPromotionsResponse {
+  ok: true;
+  updatedAt: string;
+  items: MyPromotionItem[];
 }

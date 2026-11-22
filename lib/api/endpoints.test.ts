@@ -12,3 +12,11 @@ test("endpoint map lists the deposit contract", () => {
   assert.equal(ENDPOINTS.submitCoupon.method, "POST");
   assert.equal(ENDPOINTS.submitCoupon.path, "/api/coupons/redeem");
 });
+
+test("endpoint map lists the action and game/notification contracts", () => {
+  assert.equal(ENDPOINTS.claimCashback.method, "POST");
+  assert.equal(ENDPOINTS.claimCashback.path, "/api/cashback/claim");
+  assert.equal(ENDPOINTS.spinWheel.path, "/api/wheel/spin");
+  assert.equal(ENDPOINTS.redeemGemsPackage.path, "/api/gems-store/redeem");
+  assert.equal(ENDPOINTS.fetchNotifications.path, "/api/notifications");
+});

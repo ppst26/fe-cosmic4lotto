@@ -27,8 +27,8 @@ import type {
   ProviderItem,
   WelcomeBannerSlide,
 } from "@/app/types/lobby";
-import type { ApiResult } from "./http";
 import { fetchActivities } from "./activities";
+import type { ApiResult } from "./http";
 import { mockResult } from "./mock";
 
 /**

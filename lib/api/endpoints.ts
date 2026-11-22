@@ -73,4 +73,25 @@ export const ENDPOINTS = {
   fetchLotterySlip: { method: "GET", path: "/api/lottery/slips/:slipId", auth: true, client: "fetchLotterySlip" },
   fetchPromotionsCatalog: { method: "GET", path: "/api/promotions", auth: false, client: "fetchPromotionsCatalog" },
   fetchPromotionDetail: { method: "GET", path: "/api/promotions/:id", auth: false, client: "fetchPromotionDetail" },
+  fetchPromotionClaimStatus: {
+    method: "GET",
+    path: "/api/promotions/:id/claim",
+    auth: true,
+    client: "fetchPromotionClaimStatus",
+  },
+  submitPromotionClaim: {
+    method: "POST",
+    path: "/api/promotions/:id/claim",
+    auth: true,
+    client: "submitPromotionClaim",
+  },
+  fetchMyPromotions: { method: "GET", path: "/api/promotions/mine", auth: true, client: "fetchMyPromotions" },
+  fetchNotifications: { method: "GET", path: "/api/notifications", auth: true, client: "fetchNotifications" },
+  // การกระทำของผู้ใช้ (POST) — ตอนนี้ mock ผ่าน mockAction · ต่อ backend ด้วย apiFetch + toActionResult
+  claimCashback: { method: "POST", path: "/api/cashback/claim", auth: true, client: "claimCashback" },
+  claimCheckInDay: { method: "POST", path: "/api/missions/check-in/claim", auth: true, client: "claimCheckInDay" },
+  claimCheckInMilestone: { method: "POST", path: "/api/missions/check-in/milestones/claim", auth: true, client: "claimCheckInMilestone" },
+  redeemGemsPackage: { method: "POST", path: "/api/gems-store/redeem", auth: true, client: "redeemGemsPackage" },
+  spinWheel: { method: "POST", path: "/api/wheel/spin", auth: true, client: "spinWheel" },
+  claimReferralEarnings: { method: "POST", path: "/api/referral/claim", auth: true, client: "claimReferralEarnings" },
 } as const satisfies Record<string, EndpointDef>;

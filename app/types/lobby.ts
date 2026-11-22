@@ -27,8 +27,10 @@ export interface PromoItem {
   subtitle: string;
   href: string;
   accentColor?: string;
-  /** รูปแบนเนอร์เต็มการ์ด — จาก public/HomeProBanner */
+  /** รูปแบนเนอร์เต็มการ์ด (desktop) — จาก public/HomeProBanner */
   bannerSrc?: string;
+  /** รูปแบนเนอร์มือถือ — HeroBanner md:hidden ใช้ก่อน bannerSrc */
+  bannerSrcMobile?: string;
 }
 
 /** สไลด์ Welcome Hero หน้าแรก — WelcomeBanner carousel */

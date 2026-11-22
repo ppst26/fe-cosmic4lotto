@@ -10,7 +10,7 @@ import {
   REFERRAL_USERS_MOCK,
 } from "@/app/data/referralMockData";
 import type { ApiResult } from "./http";
-import { mockResult } from "./mock";
+import { mockAction, mockResult, type ActionResult } from "./mock";
 
 function referralOverviewMock() {
   return {
@@ -62,4 +62,16 @@ export type ReferralEarningsData = ReturnType<typeof referralEarningsMock>;
  */
 export function fetchReferralEarnings(): Promise<ApiResult<ReferralEarningsData>> {
   return mockResult(referralEarningsMock());
+}
+
+export interface ReferralClaimData {
+  claimedThb: number;
+}
+
+/**
+ * รับรายได้จากการแนะนำเพื่อน — POST /api/referral/claim
+ * ต่อ backend: apiFetch<ReferralClaimData>(...) แล้ว toActionResult · เพิ่มยอดเข้ากระเป๋าหลัก
+ */
+export function claimReferralEarnings(input: { claimableThb: number }): Promise<ActionResult<ReferralClaimData>> {
+  return mockAction({ claimedThb: input.claimableThb }, 400);
 }

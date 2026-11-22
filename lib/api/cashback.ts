@@ -5,8 +5,9 @@ import {
   LOSS_REBATE_SUMMARY_MOCK,
   LOSS_REBATE_TERMS,
 } from "@/app/data/lossRebateMockData";
+import type { CashbackPanelMock } from "@/app/types/cashback";
 import type { ApiResult } from "./http";
-import { mockResult } from "./mock";
+import { mockAction, mockResult, type ActionResult } from "./mock";
 
 function cashbackPanelsMock() {
   return { tabs: CASHBACK_TABS, play: CASHBACK_PLAY_PANEL_MOCK, loss: CASHBACK_LOSS_PANEL_MOCK };
@@ -39,4 +40,31 @@ export type LossRebateData = ReturnType<typeof lossRebateMock>;
  */
 export function fetchLossRebate(): Promise<ApiResult<LossRebateData>> {
   return mockResult(lossRebateMock());
+}
+
+export type CashbackClaimKind = "play" | "loss";
+
+export interface CashbackClaimData {
+  claimedThb: number;
+  /** panel หลังรับแล้ว — UI แทนที่ state ด้วยค่านี้ */
+  panel: CashbackPanelMock;
+}
+
+/**
+ * รับคืนยอด — POST /api/cashback/claim { kind }
+ * mock: รีเซ็ตยอดที่รับได้เป็น 0 เหมือนพฤติกรรมเดิมในหน้า
+ * ต่อ backend: apiFetch<CashbackClaimData>(ENDPOINTS.claimCashback.path, { method: "POST", body }) แล้ว toActionResult
+ */
+export function claimCashback(input: { kind: CashbackClaimKind }): Promise<ActionResult<CashbackClaimData>> {
+  const base = input.kind === "play" ? CASHBACK_PLAY_PANEL_MOCK : CASHBACK_LOSS_PANEL_MOCK;
+  return mockAction({
+    claimedThb: base.claimableThb,
+    panel: {
+      ...base,
+      claimableThb: 0,
+      canClaim: false,
+      statusHintKey: "panel.claimed" as const,
+      claimButtonLabelKey: "panel.claimed" as const,
+    },
+  });
 }
