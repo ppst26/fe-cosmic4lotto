@@ -1,13 +1,14 @@
-<!-- สำเนามาตรฐานจาก glass/docs/api/backend-integration.md — แก้ที่ glass ก่อนแล้วคัดลอกมา อย่าแก้เนื้อหาด้านล่างเฉพาะโปรเจคนี้ -->
+<!-- ซิงก์จาก glass/docs/api/backend-integration.md ด้วย glass/scripts/backend-layer/sync.mjs — ห้ามแก้ที่นี่ แก้ที่ glass แล้วซิงก์ -->
 
-> **มาตรฐานเดียวกันทุกโปรเจค** (glass · black-purple · lotto · cas) — เนื้อหาตั้งแต่หัวข้อ "คู่มือเชื่อมต่อ Back-end" ลงไปตรงกับ glass ทุกตัวอักษร
-> ชั้นเชื่อม backend (`lib/api` · `lib/auth` · `lib/server` · hooks/api · types · mock route) ซิงก์ให้เหมือน glass แล้ว · ต่างกันเฉพาะตำแหน่งไฟล์ตามตารางนี้
+> **มาตรฐานเดียวกันทุกโปรเจค** (glass · black-purple · lotto · cas) — เนื้อหาใต้เส้นคั่นตรงกับ glass ทุกตัวอักษร
+> โปรเจคนี้: **lotto** · ตำแหน่งไฟล์ที่ต่างจาก glass:
 
 | ใน glass | ในโปรเจคนี้ |
 |---|---|
+| (ทั่วไป) | ตำแหน่งเดียวกับ glass |
 | `app/providers.tsx` (SWR defaults) | `components/AppProviders.tsx` |
 | UI component | `app/components/*` และ `components/*` |
-| `pnpm test` | `npm test` |
+| `pnpm test` · `pnpm lint` | `npm test` · `npm run lint` |
 
 ---
 

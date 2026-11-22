@@ -9,7 +9,7 @@ description: >-
 
 # Cosmicbet Back-end Integration
 
-> โปรเจคนี้ใช้มาตรฐานเดียวกับ glass — ตำแหน่งไฟล์ที่ต่างจาก glass ดูตารางต้น `docs/api/backend-integration.md`
+> ซิงก์จาก glass — ตำแหน่งไฟล์ที่ต่างจาก glass ดูตารางต้น `docs/api/shared-backend-layer.md` · ห้ามแก้ที่นี่
 
 คู่มือเต็มสำหรับทีม: `docs/api/backend-integration.md` — อ่านก่อนถ้าเป็นงานใหญ่ (ต่อทั้งโดเมน/auth)
 
