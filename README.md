@@ -35,3 +35,7 @@ The easiest way to deploy your Next.js app is to use the [Vercel Platform](https
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
 # fe-cosmic4lotto
+
+## เชื่อมต่อ back-end
+
+คู่มือฉบับเต็ม (มาตรฐานเดียวกับ glass): [`docs/api/backend-integration.md`](docs/api/backend-integration.md)

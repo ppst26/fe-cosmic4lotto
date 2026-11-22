@@ -54,6 +54,8 @@ export const ENDPOINTS = {
   fetchLotteryHub: { method: "GET", path: "/api/lottery/hub", auth: false, client: "fetchLotteryHub" },
   fetchLotteryMarkets: { method: "GET", path: "/api/lottery/markets", auth: false, client: "fetchLotteryMarkets" },
   fetchLotteryPlayRounds: { method: "GET", path: "/api/lottery/markets/:slug/rounds", auth: false, client: "fetchLotteryPlayRounds" },
+  // query: ?date=YYYY-MM-DD
+  fetchLotteryResults: { method: "GET", path: "/api/lottery/results", auth: false, client: "fetchLotteryResults" },
   fetchYikiBoard: { method: "GET", path: "/api/lottery/yiki/board", auth: false, client: "fetchYikiBoard" },
   fetchThaiLottoBoard: { method: "GET", path: "/api/lottery/thai/board", auth: false, client: "fetchThaiLottoBoard" },
   fetchRewardHub: { method: "GET", path: "/api/reward/hub", auth: true, client: "fetchRewardHub" },

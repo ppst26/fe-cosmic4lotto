@@ -8,8 +8,8 @@ import {
   fetchThaiLottoBoard,
   fetchYikiBoard,
 } from "@/lib/api/lotteryContent";
+import { useMemo } from "react";
 import { useApi, usePrefetchApi, type PrefetchTarget } from "@/app/hooks/useApi";
-import { LOTTERY_CATALOG_ENTRIES } from "@/app/data/lotteryCatalogMockData";
 
 /** เนื้อหาหวย (สาธารณะ) — แคตตาล็อก · hub · รอบเปิดรับ · กระดานแทง */
 export const useLotteryCatalog = () => useApi(["lottery-catalog"], fetchLotteryCatalog);
@@ -18,17 +18,24 @@ export const useLotteryHub = () => useApi(["lottery-hub"], fetchLotteryHub);
 export const useLotteryPlayRounds = (slug: string) =>
   useApi(["lottery-rounds", slug], () => fetchLotteryPlayRounds(slug));
 
-/** รอบของทุกตลาดใน sidebar + กระดานแทงยี่กี (step 3) — key/load ต้องตรงกับ useLotteryPlayRounds / useYikiBoard */
-const LOTTERY_ROUNDS_TARGETS: readonly PrefetchTarget[] = [
-  ...LOTTERY_CATALOG_ENTRIES.map((entry) => ({
-    key: ["lottery-rounds", entry.slug],
-    load: () => fetchLotteryPlayRounds(entry.slug),
-  })),
-  { key: ["yiki-board"], load: fetchYikiBoard },
-];
-
-/** อุ่น cache รอบของตลาดอื่น + กระดานแทงตอนว่าง — กดเปลี่ยนตลาด / กดรอบแล้วเห็นเนื้อหาทันที ไม่ขึ้นสถานะโหลด */
-export const usePrefetchLotteryRounds = () => usePrefetchApi(LOTTERY_ROUNDS_TARGETS);
+/**
+ * อุ่น cache รอบของทุกตลาดในแคตตาล็อก + กระดานแทงยี่กี (step 3) ตอนว่าง — กดเปลี่ยนตลาด / กดรอบแล้วเห็นเนื้อหาทันที
+ * รายชื่อตลาดมาจาก useLotteryCatalog() (API) · key/load ต้องตรงกับ useLotteryPlayRounds / useYikiBoard
+ */
+export function usePrefetchLotteryRounds(): void {
+  const catalog = useLotteryCatalog();
+  const targets = useMemo<readonly PrefetchTarget[]>(
+    () => [
+      ...(catalog.data ?? []).map((entry) => ({
+        key: ["lottery-rounds", entry.slug],
+        load: () => fetchLotteryPlayRounds(entry.slug),
+      })),
+      { key: ["yiki-board"], load: fetchYikiBoard },
+    ],
+    [catalog.data],
+  );
+  usePrefetchApi(targets);
+}
 
 export const useYikiBoard = () => useApi(["yiki-board"], fetchYikiBoard);
 export const useThaiLottoBoard = () => useApi(["thai-lotto-board"], fetchThaiLottoBoard);

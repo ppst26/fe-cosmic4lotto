@@ -19,4 +19,6 @@ test("endpoint map lists the action and game/notification contracts", () => {
   assert.equal(ENDPOINTS.spinWheel.path, "/api/wheel/spin");
   assert.equal(ENDPOINTS.redeemGemsPackage.path, "/api/gems-store/redeem");
   assert.equal(ENDPOINTS.fetchNotifications.path, "/api/notifications");
+  assert.equal(ENDPOINTS.fetchLotteryResults.path, "/api/lottery/results");
+  assert.equal(ENDPOINTS.submitWithdraw.method, "POST");
 });

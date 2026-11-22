@@ -3,7 +3,7 @@
 import type { ReactNode } from "react";
 import { useSelectedLayoutSegments } from "next/navigation";
 import { SubPageShell } from "@/components/layout/SubPageShell";
-import { getLotteryCatalogEntry } from "@/app/data/lotteryCatalogMockData";
+import { useLotteryCatalog } from "@/app/hooks/api/lottery";
 import { useT } from "@/lib/i18n/I18nProvider";
 import { LotteryMarketRoundsView } from "./LotteryMarketRoundsView";
 
@@ -18,11 +18,12 @@ const NON_MARKET_SEGMENTS = new Set(["slips", "rules", "results"]);
 export function LotteryMarketsLayout({ children }: { children: ReactNode }) {
   const t = useT("lottery");
   const segments = useSelectedLayoutSegments();
+  const catalog = useLotteryCatalog();
   const marketSlug = segments.length === 1 && !NON_MARKET_SEGMENTS.has(segments[0]) ? segments[0] : null;
 
   if (!marketSlug) return <>{children}</>;
 
-  const entry = getLotteryCatalogEntry(marketSlug);
+  const entry = catalog.data?.find((item) => item.slug === marketSlug);
   const title = entry ? t(entry.titleKey) : t("markets.generic");
 
   return (

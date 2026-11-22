@@ -65,6 +65,7 @@ export function DepositSheet({ onClose, onCompleted }: DepositSheetProps) {
   }
   const [copied, setCopied] = useState(false);
   const [slipFileName, setSlipFileName] = useState<string | null>(null);
+  const [slipFile, setSlipFile] = useState<File | null>(null);
   const [submitting, setSubmitting] = useState(false);
   const [submitMessage, setSubmitMessage] = useState<string | null>(null);
   const [finalConfirmOpen, setFinalConfirmOpen] = useState(false);
@@ -118,7 +119,7 @@ export function DepositSheet({ onClose, onCompleted }: DepositSheetProps) {
     if (amount <= 0) return;
     setSubmitting(true);
     setSubmitMessage(null);
-    const result = await submitDeposit({ amount, methodId: "bank" });
+    const result = await submitDeposit({ amount, methodId: "bank", slip: slipFile });
     setSubmitting(false);
     setFinalConfirmOpen(false);
     if (!result.ok) {
@@ -282,7 +283,11 @@ export function DepositSheet({ onClose, onCompleted }: DepositSheetProps) {
                     type="file"
                     accept="image/*"
                     className="sr-only"
-                    onChange={(e) => setSlipFileName(e.target.files?.[0]?.name ?? null)}
+                    onChange={(e) => {
+                      const file = e.target.files?.[0] ?? null;
+                      setSlipFileName(file?.name ?? null);
+                      setSlipFile(file);
+                    }}
                   />
                   <button
                     type="button"

@@ -5,9 +5,10 @@ import {
   WITHDRAW_USER_BANK_MOCK,
 } from "@/app/data/withdrawMockData";
 import type { WithdrawUserBankMock } from "@/app/types/wallet";
-import type { MoneySubmitResult, QuickAmounts } from "./deposit";
-import type { ApiResult } from "./http";
-import { mockResult } from "./mock";
+import { toMoneySubmitResult, type MoneySubmitResult, type QuickAmounts } from "./deposit";
+import { ENDPOINTS } from "./endpoints";
+import { apiFetch, type ApiResult } from "./http";
+import { isMockMode, mockResult } from "./mock";
 
 /** บัญชีรับเงินถอนของผู้ใช้ — GET /api/withdraw/account */
 export function fetchWithdrawAccount(): Promise<ApiResult<WithdrawUserBankMock>> {
@@ -25,11 +26,16 @@ export function fetchWithdrawQuickAmounts(): Promise<ApiResult<QuickAmounts>> {
 }
 
 /**
- * ยืนยันถอน — mock หน่วง 500ms แล้วสำเร็จเสมอ
- * ต่อ backend: apiFetch POST /api/withdraw แล้ว map เป็น MoneySubmitResult
+ * ยืนยันถอน — POST /api/withdraw { amount }
+ * โหมด mock (ไม่ตั้ง NEXT_PUBLIC_API_BASE_URL): หน่วง 500ms แล้วสำเร็จเสมอ
  */
-export function submitWithdraw(_input: { amount: number }) {
-  return new Promise<MoneySubmitResult>((resolve) => {
-    setTimeout(() => resolve({ ok: true }), 500);
-  });
+export async function submitWithdraw(input: { amount: number }): Promise<MoneySubmitResult> {
+  if (isMockMode()) {
+    return new Promise<MoneySubmitResult>((resolve) => {
+      setTimeout(() => resolve({ ok: true }), 500);
+    });
+  }
+  return toMoneySubmitResult(
+    await apiFetch<unknown>(ENDPOINTS.submitWithdraw.path, { method: "POST", body: { amount: input.amount } }),
+  );
 }

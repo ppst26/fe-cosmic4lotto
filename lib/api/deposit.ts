@@ -5,8 +5,9 @@ import {
   DEPOSIT_QUICK_AMOUNTS,
 } from "@/app/data/depositMockData";
 import type { DepositBankAccountMock, DepositMethodId, DepositMethodOption } from "@/app/types/wallet";
-import type { ApiResult } from "./http";
-import { mockResult } from "./mock";
+import { ENDPOINTS } from "./endpoints";
+import { apiFetch, type ApiResult } from "./http";
+import { isMockMode, mockResult } from "./mock";
 
 /** ยอดด่วน + ยอดเริ่มต้นของแผงฝาก/ถอน — สัญญา GET .../quick-amounts */
 export interface QuickAmounts {
@@ -32,12 +33,31 @@ export function fetchDepositQuickAmounts(): Promise<ApiResult<QuickAmounts>> {
 /** ผลส่งรายการฝาก/ถอน — ok:false พร้อมข้อความพร้อมแสดงผู้ใช้ */
 export type MoneySubmitResult = { ok: true } | { ok: false; error: string };
 
+/** แปลงผล apiFetch ของฝาก/ถอน เป็น MoneySubmitResult (error = ข้อความพร้อมแสดงผู้ใช้) */
+export function toMoneySubmitResult(res: ApiResult<unknown>): MoneySubmitResult {
+  return res.ok ? { ok: true } : { ok: false, error: res.error.message };
+}
+
+export interface SubmitDepositInput {
+  amount: number;
+  methodId: DepositMethodId;
+  /** ไฟล์สลิปโอนเงิน (ถ้ามี) — ส่งเป็น multipart field "slip" */
+  slip?: File | null;
+}
+
 /**
- * ยืนยันฝาก — mock หน่วง 500ms แล้วสำเร็จเสมอ · ชื่อสลิปยังไม่เข้าฟังก์ชันนี้
- * ต่อ backend: apiFetch POST /api/deposit (FormData พร้อมไฟล์สลิป) แล้ว map เป็น MoneySubmitResult
+ * ยืนยันฝาก — POST /api/deposit (multipart: amount · methodId · slip)
+ * โหมด mock (ไม่ตั้ง NEXT_PUBLIC_API_BASE_URL): หน่วง 500ms แล้วสำเร็จเสมอ
  */
-export function submitDeposit(_input: { amount: number; methodId: DepositMethodId }) {
-  return new Promise<MoneySubmitResult>((resolve) => {
-    setTimeout(() => resolve({ ok: true }), 500);
-  });
+export async function submitDeposit(input: SubmitDepositInput): Promise<MoneySubmitResult> {
+  if (isMockMode()) {
+    return new Promise<MoneySubmitResult>((resolve) => {
+      setTimeout(() => resolve({ ok: true }), 500);
+    });
+  }
+  const form = new FormData();
+  form.set("amount", String(input.amount));
+  form.set("methodId", input.methodId);
+  if (input.slip) form.set("slip", input.slip);
+  return toMoneySubmitResult(await apiFetch<unknown>(ENDPOINTS.submitDeposit.path, { method: "POST", body: form }));
 }

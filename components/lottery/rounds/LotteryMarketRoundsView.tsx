@@ -1,7 +1,6 @@
 "use client";
 
-import { getLotteryCatalogEntry } from "@/app/data/lotteryCatalogMockData";
-import { useLotteryPlayRounds, usePrefetchLotteryRounds, useThaiLottoBoard } from "@/app/hooks/api/lottery";
+import { useLotteryCatalog, useLotteryPlayRounds, usePrefetchLotteryRounds, useThaiLottoBoard } from "@/app/hooks/api/lottery";
 import { EmptyState } from "@/app/components/ui/StatusState";
 import { ResourceGate } from "@/app/components/ui/ResourceGate";
 import { useT } from "@/lib/i18n/I18nProvider";
@@ -15,12 +14,18 @@ type LotteryMarketRoundsViewProps = {
 
 export function LotteryMarketRoundsView({ marketSlug }: LotteryMarketRoundsViewProps) {
   const t = useT("lottery");
-  const entry = getLotteryCatalogEntry(marketSlug);
+  const catalog = useLotteryCatalog();
+  const entry = catalog.data?.find((item) => item.slug === marketSlug);
   /** รอบอิงเวลาจริง — ดึงฝั่ง client ไม่มี SSR snapshot คนละเวลา */
   const roundsResource = useLotteryPlayRounds(marketSlug);
   const rounds = roundsResource.data ?? [];
   const thaiLastResult = useThaiLottoBoard().data?.lastResult ?? null;
   usePrefetchLotteryRounds();
+
+  /** แคตตาล็อกยังไม่มา / โหลดไม่สำเร็จ — ให้ ResourceGate แสดงโหลด/ลองใหม่ (ไม่ขึ้น "ไม่พบตลาด" ผิดพลาด) */
+  if (catalog.data === null) {
+    return <ResourceGate resource={catalog}>{() => null}</ResourceGate>;
+  }
 
   if (!entry) {
     return (

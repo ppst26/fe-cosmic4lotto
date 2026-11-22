@@ -113,7 +113,7 @@ export function fetchThaiLottoBoard(): Promise<ApiResult<ThaiLottoBoardData>> {
 
 /**
  * ผลรางวัลทุกตลาดของวันที่ระบุ (YYYY-MM-DD) — หน้า /lottery/results
- * ต่อ backend: return apiFetch<LotteryResultsDay>(`/api/lottery/results?date=${date}`)
+ * ต่อ backend: return apiFetch<LotteryResultsDay>(ENDPOINTS.fetchLotteryResults.path, { query: { date } })
  */
 export function fetchLotteryResults(date: string): Promise<ApiResult<LotteryResultsDay>> {
   return mockResult(buildLotteryResultsForDate(date));

@@ -1,4 +1,12 @@
-import type { ApiResult } from "./http";
+import { API_BASE_URL, type ApiResult } from "./http";
+
+/**
+ * โหมด mock = ยังไม่ตั้ง NEXT_PUBLIC_API_BASE_URL — ฟังก์ชันที่ยังไม่มี mock route ใน app/api
+ * (ฝาก · ถอน · คูปอง) ใช้เช็กตัวนี้: โหมด mock คืนผลจำลอง · ตั้ง base URL แล้วยิง backend จริงทันที (ไม่ต้องแก้โค้ด)
+ */
+export function isMockMode(): boolean {
+  return API_BASE_URL === "";
+}
 
 /**
  * ห่อ mock ให้มีรูปเดียวกับ apiFetch — ใช้ใน lib/api/* ระหว่างยังไม่มี backend

@@ -1,3 +1,9 @@
+## เชื่อมต่อ back-end (มาตรฐานเดียวกับ glass)
+
+- อ่านก่อน: `docs/api/backend-integration.md` + skill `agent/skills/cosmicbet-backend/SKILL.md`
+- component เรียกเฉพาะ hook ใน `app/hooks/api/*` · ต่อ API จริงแก้เฉพาะ body ใน `lib/api/*` ด้วย `apiFetch` (ห้าม `fetch()` ตรง)
+- ชั้นเชื่อม backend ต้องเหมือน glass — เปลี่ยนสัญญา API ให้แก้ที่ glass ก่อนแล้วซิงก์มาที่นี่
+
 <!-- BEGIN:nextjs-agent-rules -->
 
 # This is NOT the Next.js you know

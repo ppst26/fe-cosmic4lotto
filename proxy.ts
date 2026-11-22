@@ -1,5 +1,6 @@
 import { NextResponse, type NextRequest } from "next/server";
-import { COOKIE_NAME, parseSessionToken } from "@/lib/auth/session";
+import { API_BASE_URL } from "@/lib/api/http";
+import { hasProxySession } from "@/lib/auth/proxySession";
 import { LOCALE_COOKIE } from "@/lib/i18n/config";
 import { decideProxyAction } from "@/lib/i18n/routing";
 
@@ -8,6 +9,7 @@ import { decideProxyAction } from "@/lib/i18n/routing";
  * 1) ไทย (default) ไม่มี prefix ใน URL → rewrite ภายในไป /th/... · ภาษาอื่นใช้ /{locale}/...
  * 2) ผู้ใช้ที่เลือกภาษาอื่นไว้ (cookie → Accept-Language) เปิด URL ไทย → redirect ไปภาษานั้น
  * 3) กันหน้าที่ต้อง login (lib/auth/protectedPaths.ts) → หน้าแรกของภาษา ?layer=login
+ *    วิธีตรวจ session ขึ้นกับโหมด — ดู lib/auth/proxySession.ts (mock / backend จริง)
  * เป็นด่านแรกเท่านั้น — route handler / backend ต้องตรวจสิทธิ์เองทุกครั้ง
  */
 export function proxy(request: NextRequest) {
@@ -16,7 +18,11 @@ export function proxy(request: NextRequest) {
     search: request.nextUrl.search,
     cookieLocale: request.cookies.get(LOCALE_COOKIE)?.value,
     acceptLanguage: request.headers.get("accept-language"),
-    hasSession: Boolean(parseSessionToken(request.cookies.get(COOKIE_NAME)?.value)),
+    hasSession: hasProxySession({
+      apiBaseUrl: API_BASE_URL,
+      sessionCookieName: process.env.AUTH_SESSION_COOKIE,
+      getCookie: (name) => request.cookies.get(name)?.value,
+    }),
   });
   if (action.type === "next") return NextResponse.next();
 
